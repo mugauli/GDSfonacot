@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.textNoSucursal = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
-            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.txtFonFijo = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox43 = new System.Windows.Forms.TextBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.txtPromocionales = new System.Windows.Forms.TextBox();
+            this.txtUTYS = new System.Windows.Forms.TextBox();
+            this.txtTransfer = new System.Windows.Forms.TextBox();
+            this.txtCredito = new System.Windows.Forms.TextBox();
+            this.txtCobranza = new System.Windows.Forms.TextBox();
+            this.txtOriginacion = new System.Windows.Forms.TextBox();
+            this.txtGesDireccion = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.txtInmueble = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtDirEstatal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDirRegional = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSucursal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNoSupervision = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNoOficio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -80,14 +80,14 @@
             this.label47.TabIndex = 197;
             this.label47.Text = "No de Sucursal";
             // 
-            // textBox42
+            // textNoSucursal
             // 
-            this.textBox42.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox42.Location = new System.Drawing.Point(1047, 146);
-            this.textBox42.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(105, 20);
-            this.textBox42.TabIndex = 196;
+            this.textNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textNoSucursal.Location = new System.Drawing.Point(1047, 146);
+            this.textNoSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.textNoSucursal.Name = "textNoSucursal";
+            this.textNoSucursal.Size = new System.Drawing.Size(105, 20);
+            this.textNoSucursal.TabIndex = 196;
             // 
             // label46
             // 
@@ -101,15 +101,15 @@
             this.label46.TabIndex = 195;
             this.label46.Text = "Fondo Fijo";
             // 
-            // textBox45
+            // txtFonFijo
             // 
-            this.textBox45.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox45.Location = new System.Drawing.Point(22, 1566);
-            this.textBox45.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox45.Multiline = true;
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(1534, 143);
-            this.textBox45.TabIndex = 194;
+            this.txtFonFijo.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtFonFijo.Location = new System.Drawing.Point(22, 1566);
+            this.txtFonFijo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFonFijo.Multiline = true;
+            this.txtFonFijo.Name = "txtFonFijo";
+            this.txtFonFijo.Size = new System.Drawing.Size(1534, 143);
+            this.txtFonFijo.TabIndex = 194;
             // 
             // label45
             // 
@@ -183,75 +183,75 @@
             this.label40.TabIndex = 188;
             this.label40.Text = "Originación\r\n";
             // 
-            // textBox44
+            // txtPromocionales
             // 
-            this.textBox44.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox44.Location = new System.Drawing.Point(23, 1230);
-            this.textBox44.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox44.Multiline = true;
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(1533, 143);
-            this.textBox44.TabIndex = 187;
+            this.txtPromocionales.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtPromocionales.Location = new System.Drawing.Point(23, 1230);
+            this.txtPromocionales.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPromocionales.Multiline = true;
+            this.txtPromocionales.Name = "txtPromocionales";
+            this.txtPromocionales.Size = new System.Drawing.Size(1533, 143);
+            this.txtPromocionales.TabIndex = 187;
             // 
-            // textBox43
+            // txtUTYS
             // 
-            this.textBox43.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox43.Location = new System.Drawing.Point(23, 1062);
-            this.textBox43.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox43.Multiline = true;
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(1534, 143);
-            this.textBox43.TabIndex = 186;
+            this.txtUTYS.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtUTYS.Location = new System.Drawing.Point(23, 1062);
+            this.txtUTYS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUTYS.Multiline = true;
+            this.txtUTYS.Name = "txtUTYS";
+            this.txtUTYS.Size = new System.Drawing.Size(1534, 143);
+            this.txtUTYS.TabIndex = 186;
             // 
-            // textBox41
+            // txtTransfer
             // 
-            this.textBox41.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox41.Location = new System.Drawing.Point(23, 725);
-            this.textBox41.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox41.Multiline = true;
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(1533, 146);
-            this.textBox41.TabIndex = 185;
+            this.txtTransfer.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtTransfer.Location = new System.Drawing.Point(23, 725);
+            this.txtTransfer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTransfer.Multiline = true;
+            this.txtTransfer.Name = "txtTransfer";
+            this.txtTransfer.Size = new System.Drawing.Size(1533, 146);
+            this.txtTransfer.TabIndex = 185;
             // 
-            // textBox40
+            // txtCredito
             // 
-            this.textBox40.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox40.Location = new System.Drawing.Point(23, 892);
-            this.textBox40.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox40.Multiline = true;
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(1533, 146);
-            this.textBox40.TabIndex = 184;
+            this.txtCredito.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtCredito.Location = new System.Drawing.Point(23, 892);
+            this.txtCredito.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCredito.Multiline = true;
+            this.txtCredito.Name = "txtCredito";
+            this.txtCredito.Size = new System.Drawing.Size(1533, 146);
+            this.txtCredito.TabIndex = 184;
             // 
-            // textBox39
+            // txtCobranza
             // 
-            this.textBox39.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox39.Location = new System.Drawing.Point(23, 1399);
-            this.textBox39.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox39.Multiline = true;
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(1533, 143);
-            this.textBox39.TabIndex = 183;
+            this.txtCobranza.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtCobranza.Location = new System.Drawing.Point(23, 1399);
+            this.txtCobranza.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCobranza.Multiline = true;
+            this.txtCobranza.Name = "txtCobranza";
+            this.txtCobranza.Size = new System.Drawing.Size(1533, 143);
+            this.txtCobranza.TabIndex = 183;
             // 
-            // textBox38
+            // txtOriginacion
             // 
-            this.textBox38.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox38.Location = new System.Drawing.Point(23, 558);
-            this.textBox38.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox38.Multiline = true;
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(1533, 146);
-            this.textBox38.TabIndex = 182;
+            this.txtOriginacion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtOriginacion.Location = new System.Drawing.Point(23, 558);
+            this.txtOriginacion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOriginacion.Multiline = true;
+            this.txtOriginacion.Name = "txtOriginacion";
+            this.txtOriginacion.Size = new System.Drawing.Size(1533, 146);
+            this.txtOriginacion.TabIndex = 182;
             // 
-            // textBox37
+            // txtGesDireccion
             // 
-            this.textBox37.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox37.Location = new System.Drawing.Point(23, 385);
-            this.textBox37.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox37.Multiline = true;
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(1531, 143);
-            this.textBox37.TabIndex = 181;
+            this.txtGesDireccion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtGesDireccion.Location = new System.Drawing.Point(23, 385);
+            this.txtGesDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGesDireccion.Multiline = true;
+            this.txtGesDireccion.Name = "txtGesDireccion";
+            this.txtGesDireccion.Size = new System.Drawing.Size(1531, 143);
+            this.txtGesDireccion.TabIndex = 181;
             // 
             // label39
             // 
@@ -265,15 +265,15 @@
             this.label39.TabIndex = 180;
             this.label39.Text = "Gestión de la Dirección\r\n";
             // 
-            // textBox36
+            // txtInmueble
             // 
-            this.textBox36.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox36.Location = new System.Drawing.Point(23, 217);
-            this.textBox36.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox36.Multiline = true;
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(1533, 143);
-            this.textBox36.TabIndex = 179;
+            this.txtInmueble.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtInmueble.Location = new System.Drawing.Point(23, 217);
+            this.txtInmueble.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInmueble.Multiline = true;
+            this.txtInmueble.Name = "txtInmueble";
+            this.txtInmueble.Size = new System.Drawing.Size(1533, 143);
+            this.txtInmueble.TabIndex = 179;
             // 
             // label38
             // 
@@ -345,14 +345,14 @@
             this.label8.TabIndex = 120;
             this.label8.Text = "Director Estatal";
             // 
-            // textBox7
+            // txtDirEstatal
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox7.Location = new System.Drawing.Point(1160, 146);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(409, 20);
-            this.textBox7.TabIndex = 119;
+            this.txtDirEstatal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtDirEstatal.Location = new System.Drawing.Point(1160, 146);
+            this.txtDirEstatal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDirEstatal.Name = "txtDirEstatal";
+            this.txtDirEstatal.Size = new System.Drawing.Size(409, 20);
+            this.txtDirEstatal.TabIndex = 119;
             // 
             // label4
             // 
@@ -366,14 +366,14 @@
             this.label4.TabIndex = 112;
             this.label4.Text = "Dirección Regional";
             // 
-            // textBox3
+            // txtDirRegional
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox3.Location = new System.Drawing.Point(836, 146);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(199, 20);
-            this.textBox3.TabIndex = 111;
+            this.txtDirRegional.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtDirRegional.Location = new System.Drawing.Point(836, 146);
+            this.txtDirRegional.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDirRegional.Name = "txtDirRegional";
+            this.txtDirRegional.Size = new System.Drawing.Size(199, 20);
+            this.txtDirRegional.TabIndex = 111;
             // 
             // label3
             // 
@@ -387,14 +387,14 @@
             this.label3.TabIndex = 110;
             this.label3.Text = "Sucursal";
             // 
-            // textBox2
+            // txtSucursal
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox2.Location = new System.Drawing.Point(609, 146);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 20);
-            this.textBox2.TabIndex = 109;
+            this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtSucursal.Location = new System.Drawing.Point(609, 146);
+            this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSucursal.Name = "txtSucursal";
+            this.txtSucursal.Size = new System.Drawing.Size(219, 20);
+            this.txtSucursal.TabIndex = 109;
             // 
             // label1
             // 
@@ -408,14 +408,14 @@
             this.label1.TabIndex = 107;
             this.label1.Text = "No de Supervisión";
             // 
-            // textBox1
+            // txtNoSupervision
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox1.Location = new System.Drawing.Point(318, 145);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 20);
-            this.textBox1.TabIndex = 106;
+            this.txtNoSupervision.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtNoSupervision.Location = new System.Drawing.Point(318, 145);
+            this.txtNoSupervision.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNoSupervision.Name = "txtNoSupervision";
+            this.txtNoSupervision.Size = new System.Drawing.Size(279, 20);
+            this.txtNoSupervision.TabIndex = 106;
             // 
             // panel1
             // 
@@ -431,14 +431,14 @@
             this.panel1.Size = new System.Drawing.Size(1569, 108);
             this.panel1.TabIndex = 105;
             // 
-            // textBox4
+            // txtNoOficio
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox4.Location = new System.Drawing.Point(23, 145);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(287, 20);
-            this.textBox4.TabIndex = 198;
+            this.txtNoOficio.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtNoOficio.Location = new System.Drawing.Point(23, 145);
+            this.txtNoOficio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNoOficio.Name = "txtNoOficio";
+            this.txtNoOficio.Size = new System.Drawing.Size(287, 20);
+            this.txtNoOficio.TabIndex = 198;
             // 
             // label5
             // 
@@ -460,36 +460,36 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1533, 740);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtNoOficio);
             this.Controls.Add(this.label47);
-            this.Controls.Add(this.textBox42);
+            this.Controls.Add(this.textNoSucursal);
             this.Controls.Add(this.label46);
-            this.Controls.Add(this.textBox45);
+            this.Controls.Add(this.txtFonFijo);
             this.Controls.Add(this.label45);
             this.Controls.Add(this.label44);
             this.Controls.Add(this.label43);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
-            this.Controls.Add(this.textBox44);
-            this.Controls.Add(this.textBox43);
-            this.Controls.Add(this.textBox41);
-            this.Controls.Add(this.textBox40);
-            this.Controls.Add(this.textBox39);
-            this.Controls.Add(this.textBox38);
-            this.Controls.Add(this.textBox37);
+            this.Controls.Add(this.txtPromocionales);
+            this.Controls.Add(this.txtUTYS);
+            this.Controls.Add(this.txtTransfer);
+            this.Controls.Add(this.txtCredito);
+            this.Controls.Add(this.txtCobranza);
+            this.Controls.Add(this.txtOriginacion);
+            this.Controls.Add(this.txtGesDireccion);
             this.Controls.Add(this.label39);
-            this.Controls.Add(this.textBox36);
+            this.Controls.Add(this.txtInmueble);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtDirEstatal);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDirRegional);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSucursal);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNoSupervision);
             this.Controls.Add(this.panel1);
             this.Name = "ContestSuc";
             this.Text = "ContestSuc";
@@ -507,39 +507,39 @@
         #endregion
 
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.TextBox textNoSucursal;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.TextBox txtFonFijo;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox44;
-        private System.Windows.Forms.TextBox textBox43;
-        private System.Windows.Forms.TextBox textBox41;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.TextBox txtPromocionales;
+        private System.Windows.Forms.TextBox txtUTYS;
+        private System.Windows.Forms.TextBox txtTransfer;
+        private System.Windows.Forms.TextBox txtCredito;
+        private System.Windows.Forms.TextBox txtCobranza;
+        private System.Windows.Forms.TextBox txtOriginacion;
+        private System.Windows.Forms.TextBox txtGesDireccion;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox txtInmueble;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtDirEstatal;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDirRegional;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSucursal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNoSupervision;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNoOficio;
         private System.Windows.Forms.Label label5;
     }
 }

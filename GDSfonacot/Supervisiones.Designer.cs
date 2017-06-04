@@ -142,6 +142,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "Supervisiones";
             this.Text = "Supervisiones";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Supervisiones_Load);
             this.tabContrPersonal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

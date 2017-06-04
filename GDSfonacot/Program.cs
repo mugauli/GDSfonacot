@@ -16,7 +16,7 @@ namespace GDSfonacot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PanelDeControl());
+            Application.Run(new Supervisiones());
         }
     }
 }

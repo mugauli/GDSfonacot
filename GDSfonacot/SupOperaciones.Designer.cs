@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtFechaSup = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.textNoSuc = new System.Windows.Forms.TextBox();
+            this.textNoSucursal = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.txtFonFijo = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.txtPromocionales = new System.Windows.Forms.TextBox();
-            this.textBox43 = new System.Windows.Forms.TextBox();
+            this.txtUTYS = new System.Windows.Forms.TextBox();
             this.txtTransfer = new System.Windows.Forms.TextBox();
             this.txtCredito = new System.Windows.Forms.TextBox();
             this.txtCobranza = new System.Windows.Forms.TextBox();
@@ -115,14 +115,14 @@
             this.label47.TabIndex = 229;
             this.label47.Text = "No de Sucursal";
             // 
-            // textNoSuc
+            // textNoSucursal
             // 
-            this.textNoSuc.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textNoSuc.Location = new System.Drawing.Point(20, 116);
-            this.textNoSuc.Margin = new System.Windows.Forms.Padding(4);
-            this.textNoSuc.Name = "textNoSuc";
-            this.textNoSuc.Size = new System.Drawing.Size(105, 20);
-            this.textNoSuc.TabIndex = 228;
+            this.textNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textNoSucursal.Location = new System.Drawing.Point(20, 116);
+            this.textNoSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.textNoSucursal.Name = "textNoSucursal";
+            this.textNoSucursal.Size = new System.Drawing.Size(105, 20);
+            this.textNoSucursal.TabIndex = 228;
             // 
             // label46
             // 
@@ -228,15 +228,15 @@
             this.txtPromocionales.Size = new System.Drawing.Size(1533, 143);
             this.txtPromocionales.TabIndex = 219;
             // 
-            // textBox43
+            // txtUTYS
             // 
-            this.textBox43.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox43.Location = new System.Drawing.Point(20, 1031);
-            this.textBox43.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox43.Multiline = true;
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(1534, 143);
-            this.textBox43.TabIndex = 218;
+            this.txtUTYS.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtUTYS.Location = new System.Drawing.Point(20, 1031);
+            this.txtUTYS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUTYS.Multiline = true;
+            this.txtUTYS.Name = "txtUTYS";
+            this.txtUTYS.Size = new System.Drawing.Size(1534, 143);
+            this.txtUTYS.TabIndex = 218;
             // 
             // txtTransfer
             // 
@@ -457,11 +457,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1596, 873);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtFechaSup);
             this.Controls.Add(this.label47);
-            this.Controls.Add(this.textNoSuc);
+            this.Controls.Add(this.textNoSucursal);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.txtFonFijo);
             this.Controls.Add(this.label45);
@@ -471,7 +472,7 @@
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.txtPromocionales);
-            this.Controls.Add(this.textBox43);
+            this.Controls.Add(this.txtUTYS);
             this.Controls.Add(this.txtTransfer);
             this.Controls.Add(this.txtCredito);
             this.Controls.Add(this.txtCobranza);
@@ -493,6 +494,7 @@
             this.Name = "SupOperaciones";
             this.Text = "SupOperaciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.SupOperaciones_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -510,7 +512,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFechaSup;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textNoSuc;
+        private System.Windows.Forms.TextBox textNoSucursal;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox txtFonFijo;
         private System.Windows.Forms.Label label45;
@@ -520,7 +522,7 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox txtPromocionales;
-        private System.Windows.Forms.TextBox textBox43;
+        private System.Windows.Forms.TextBox txtUTYS;
         private System.Windows.Forms.TextBox txtTransfer;
         private System.Windows.Forms.TextBox txtCredito;
         private System.Windows.Forms.TextBox txtCobranza;

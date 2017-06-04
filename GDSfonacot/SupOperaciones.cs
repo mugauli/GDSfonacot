@@ -16,5 +16,10 @@ namespace GDSfonacot
         {
             InitializeComponent();
         }
+
+        private void SupOperaciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
