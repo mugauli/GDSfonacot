@@ -38,13 +38,13 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.btnHisSupervision = new System.Windows.Forms.Button();
+            this.btnMinuta = new System.Windows.Forms.Button();
+            this.btnFichasSuc = new System.Windows.Forms.Button();
+            this.btnCerrarApl = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnHisSupervision = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -114,7 +114,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.Location = new System.Drawing.Point(757, 378);
+            this.textBox3.Location = new System.Drawing.Point(757, 380);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(425, 25);
             this.textBox3.TabIndex = 260;
@@ -125,7 +125,7 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox4.Location = new System.Drawing.Point(757, 477);
+            this.textBox4.Location = new System.Drawing.Point(757, 480);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(425, 25);
             this.textBox4.TabIndex = 262;
@@ -136,7 +136,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox5.Location = new System.Drawing.Point(757, 571);
+            this.textBox5.Location = new System.Drawing.Point(757, 585);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(425, 25);
             this.textBox5.TabIndex = 264;
@@ -147,7 +147,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox6.Location = new System.Drawing.Point(757, 681);
+            this.textBox6.Location = new System.Drawing.Point(757, 699);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(425, 25);
             this.textBox6.TabIndex = 266;
@@ -163,6 +163,51 @@
             this.textBox7.Size = new System.Drawing.Size(413, 74);
             this.textBox7.TabIndex = 267;
             this.textBox7.Text = "Bienvenido";
+            // 
+            // btnHisSupervision
+            // 
+            this.btnHisSupervision.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnHisSupervision.Location = new System.Drawing.Point(670, 266);
+            this.btnHisSupervision.Name = "btnHisSupervision";
+            this.btnHisSupervision.Size = new System.Drawing.Size(41, 39);
+            this.btnHisSupervision.TabIndex = 269;
+            this.btnHisSupervision.UseVisualStyleBackColor = false;
+            // 
+            // btnMinuta
+            // 
+            this.btnMinuta.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnMinuta.Location = new System.Drawing.Point(670, 475);
+            this.btnMinuta.Name = "btnMinuta";
+            this.btnMinuta.Size = new System.Drawing.Size(41, 39);
+            this.btnMinuta.TabIndex = 270;
+            this.btnMinuta.UseVisualStyleBackColor = false;
+            // 
+            // btnFichasSuc
+            // 
+            this.btnFichasSuc.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnFichasSuc.Location = new System.Drawing.Point(670, 375);
+            this.btnFichasSuc.Name = "btnFichasSuc";
+            this.btnFichasSuc.Size = new System.Drawing.Size(41, 39);
+            this.btnFichasSuc.TabIndex = 271;
+            this.btnFichasSuc.UseVisualStyleBackColor = false;
+            // 
+            // btnCerrarApl
+            // 
+            this.btnCerrarApl.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCerrarApl.Location = new System.Drawing.Point(670, 694);
+            this.btnCerrarApl.Name = "btnCerrarApl";
+            this.btnCerrarApl.Size = new System.Drawing.Size(41, 39);
+            this.btnCerrarApl.TabIndex = 272;
+            this.btnCerrarApl.UseVisualStyleBackColor = false;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnReportes.Location = new System.Drawing.Point(670, 580);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(41, 39);
+            this.btnReportes.TabIndex = 273;
+            this.btnReportes.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -182,61 +227,16 @@
             this.pictureBox1.TabIndex = 256;
             this.pictureBox1.TabStop = false;
             // 
-            // btnHisSupervision
-            // 
-            this.btnHisSupervision.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnHisSupervision.Location = new System.Drawing.Point(670, 266);
-            this.btnHisSupervision.Name = "btnHisSupervision";
-            this.btnHisSupervision.Size = new System.Drawing.Size(41, 39);
-            this.btnHisSupervision.TabIndex = 269;
-            this.btnHisSupervision.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button3.Location = new System.Drawing.Point(670, 472);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(41, 39);
-            this.button3.TabIndex = 270;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button4.Location = new System.Drawing.Point(670, 373);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(41, 39);
-            this.button4.TabIndex = 271;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button5.Location = new System.Drawing.Point(670, 676);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(41, 39);
-            this.button5.TabIndex = 272;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button6.Location = new System.Drawing.Point(670, 566);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(41, 39);
-            this.button6.TabIndex = 273;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
             // PanelDeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1596, 736);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(1596, 745);
+            this.Controls.Add(this.btnReportes);
+            this.Controls.Add(this.btnCerrarApl);
+            this.Controls.Add(this.btnFichasSuc);
+            this.Controls.Add(this.btnMinuta);
             this.Controls.Add(this.btnHisSupervision);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.textBox7);
@@ -276,9 +276,9 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnHisSupervision;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnMinuta;
+        private System.Windows.Forms.Button btnFichasSuc;
+        private System.Windows.Forms.Button btnCerrarApl;
+        private System.Windows.Forms.Button btnReportes;
     }
 }
