@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDSfonacot", "GDSfonacot\GDSfonacot.csproj", "{65B51393-CC5F-447F-9635-E3DEDBF3698E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDSfonacotDatos", "GDSfonacotDatos\GDSfonacotDatos.csproj", "{ED3D5C64-801B-4407-9222-EA8639CBBF9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{65B51393-CC5F-447F-9635-E3DEDBF3698E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B51393-CC5F-447F-9635-E3DEDBF3698E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B51393-CC5F-447F-9635-E3DEDBF3698E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3D5C64-801B-4407-9222-EA8639CBBF9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3D5C64-801B-4407-9222-EA8639CBBF9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3D5C64-801B-4407-9222-EA8639CBBF9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3D5C64-801B-4407-9222-EA8639CBBF9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

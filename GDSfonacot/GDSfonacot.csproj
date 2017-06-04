@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GDSfonacotDatos\GDSfonacotDatos.csproj">
+      <Project>{ed3d5c64-801b-4407-9222-ea8639cbbf9b}</Project>
+      <Name>GDSfonacotDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

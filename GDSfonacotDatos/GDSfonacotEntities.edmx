@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GDSfonacotModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Historial de Supervisiones">
+          <Key>
+            <PropertyRef Name="IdSupervisiones" />
+          </Key>
+          <Property Name="IdSupervisiones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSucursal" Type="int" />
+          <Property Name="NoSupervision" Type="nvarchar" MaxLength="255" />
+          <Property Name="FechaSupervision" Type="datetime" />
+          <Property Name="AfiliacionOtorgamientoCredito" Type="ntext" />
+          <Property Name="ActividadesPromocionAfiliaciónCT" Type="ntext" />
+          <Property Name="ProcesoCobranza" Type="ntext" />
+          <Property Name="Revisión_de_UTYS" Type="ntext" />
+          <Property Name="Situaciones_de_Orden_General_e_Infraestructura" Type="ntext" />
+          <Property Name="AcuerdosCompromisos" Type="ntext" />
+          <Property Name="No_de_Respuesta_Supervision" Type="nvarchar" MaxLength="255" />
+          <Property Name="FechaRespuestaSupervision" Type="datetime" />
+          <Property Name="Seguimiento_a_la_Supervisión" Type="ntext" />
+          <Property Name="Respuesta_Supervision" Type="ntext" />
+          <Property Name="Solventada" Type="bit" />
+          <Property Name="IdSupervisor1" Type="int" />
+          <Property Name="IdSupervisor2" Type="int" />
+          <Property Name="NoOficio" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sucursales">
+          <Key>
+            <PropertyRef Name="IdSucursal" />
+          </Key>
+          <Property Name="IdSucursal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NoSucursal" Type="smallint" Nullable="false" />
+          <Property Name="DireccionRegional" Type="nvarchar" MaxLength="255" />
+          <Property Name="DescripcionSucursal" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dirección" Type="nvarchar" MaxLength="255" />
+          <Property Name="Representaciones" Type="nvarchar" MaxLength="255" />
+          <Property Name="Director_Regional" Type="nvarchar" MaxLength="255" />
+          <Property Name="Director_Estatal" Type="nvarchar" MaxLength="255" />
+          <Property Name="Coordinador_Administrativo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Coordinador_Crédito" Type="nvarchar" MaxLength="255" />
+          <Property Name="Coordinador_Cobranza" Type="nvarchar" MaxLength="255" />
+          <Property Name="Analistas" Type="smallint" />
+          <Property Name="Ventanillas" Type="smallint" />
+          <Property Name="Analistas_Otorgamiento_de_Crédito" Type="smallint" />
+          <Property Name="Analistas_Administrativo_y_SAM" Type="smallint" />
+          <Property Name="Analistas_Crédito_Control_Documental" Type="smallint" />
+          <Property Name="Analistas_Cobranza" Type="smallint" />
+          <Property Name="Fotografia" Type="image" />
+          <Property Name="Empresas_Afiliadas" Type="int" />
+          <Property Name="Trabajadores_Afiliados" Type="int" />
+          <Property Name="Potencial_de_Empresas" Type="int" />
+          <Property Name="Potencial_de_Trabajadores" Type="int" />
+          <Property Name="Empresas_Status_1" Type="int" />
+          <Property Name="Empresas_Status_18" Type="int" />
+          <Property Name="Empresas_Status_21" Type="int" />
+          <Property Name="Empresas_Status_30" Type="int" />
+          <Property Name="Meta_Anual" Type="money" />
+          <Property Name="Meta_Mensual" Type="money" />
+          <Property Name="Colocación_Anual" Type="money" />
+          <Property Name="Colocación_Mensual" Type="money" />
+          <Property Name="Fecha_baja" Type="datetime" />
+          <Property Name="Meta_Acumulada_Porcentaje" Type="money" />
+          <Property Name="Cobranza_Meta_Anual" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cobranza_Porcentaje_Meta" Type="nvarchar" MaxLength="255" />
+          <Property Name="Cobranza_Cumplimiento_Meta" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TiraAuditora">
+          <Key>
+            <PropertyRef Name="IdTiraAuditora" />
+          </Key>
+          <Property Name="IdTiraAuditora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" />
+          <Property Name="DescripcionMovimiento" Type="nvarchar" MaxLength="255" />
+          <Property Name="FechaAlta" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Usuario" Type="ntext" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="255" />
+          <Property Name="IdNivel" Type="int" />
+        </EntityType>
+        <EntityType Name="Usuarios_Nivel">
+          <Key>
+            <PropertyRef Name="IdNivel" />
+          </Key>
+          <Property Name="IdNivel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nivel_Usuario" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_Historial de Supervisiones_Sucursales">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Historial de Supervisiones" Type="Self.Historial de Supervisiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="IdSucursal" />
+            </Principal>
+            <Dependent Role="Historial de Supervisiones">
+              <PropertyRef Name="IdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Historial de Supervisiones_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Historial de Supervisiones" Type="Self.Historial de Supervisiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Historial de Supervisiones">
+              <PropertyRef Name="IdSupervisor1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Historial de Supervisiones_Usuarios1">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Historial de Supervisiones" Type="Self.Historial de Supervisiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Historial de Supervisiones">
+              <PropertyRef Name="IdSupervisor2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TiraAuditora_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="TiraAuditora" Type="Self.TiraAuditora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="TiraAuditora">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Usuarios_Nivel">
+          <End Role="Usuarios_Nivel" Type="Self.Usuarios_Nivel" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios_Nivel">
+              <PropertyRef Name="IdNivel" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="IdNivel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GDSfonacotModelStoreContainer">
+          <EntitySet Name="Historial de Supervisiones" EntityType="Self.Historial de Supervisiones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sucursales" EntityType="Self.Sucursales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiraAuditora" EntityType="Self.TiraAuditora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios_Nivel" EntityType="Self.Usuarios_Nivel" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Historial de Supervisiones_Sucursales" Association="Self.FK_Historial de Supervisiones_Sucursales">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Historial de Supervisiones" EntitySet="Historial de Supervisiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Historial de Supervisiones_Usuarios" Association="Self.FK_Historial de Supervisiones_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Historial de Supervisiones" EntitySet="Historial de Supervisiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Historial de Supervisiones_Usuarios1" Association="Self.FK_Historial de Supervisiones_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Historial de Supervisiones" EntitySet="Historial de Supervisiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TiraAuditora_Usuarios" Association="Self.FK_TiraAuditora_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="TiraAuditora" EntitySet="TiraAuditora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Usuarios_Nivel" Association="Self.FK_Usuarios_Usuarios_Nivel">
+            <End Role="Usuarios_Nivel" EntitySet="Usuarios_Nivel" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GDSfonacotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GDSfonacotEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Historial_de_Supervisiones" EntityType="GDSfonacotModel.Historial_de_Supervisiones" />
+          <EntitySet Name="Sucursales" EntityType="GDSfonacotModel.Sucursales" />
+          <EntitySet Name="TiraAuditora" EntityType="GDSfonacotModel.TiraAuditora" />
+          <EntitySet Name="Usuarios" EntityType="GDSfonacotModel.Usuarios" />
+          <EntitySet Name="Usuarios_Nivel" EntityType="GDSfonacotModel.Usuarios_Nivel" />
+          <AssociationSet Name="FK_Historial_de_Supervisiones_Sucursales" Association="GDSfonacotModel.FK_Historial_de_Supervisiones_Sucursales">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Historial_de_Supervisiones" EntitySet="Historial_de_Supervisiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Historial_de_Supervisiones_Usuarios" Association="GDSfonacotModel.FK_Historial_de_Supervisiones_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Historial_de_Supervisiones" EntitySet="Historial_de_Supervisiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Historial_de_Supervisiones_Usuarios1" Association="GDSfonacotModel.FK_Historial_de_Supervisiones_Usuarios1">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Historial_de_Supervisiones" EntitySet="Historial_de_Supervisiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TiraAuditora_Usuarios" Association="GDSfonacotModel.FK_TiraAuditora_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="TiraAuditora" EntitySet="TiraAuditora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Usuarios_Nivel" Association="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel">
+            <End Role="Usuarios_Nivel" EntitySet="Usuarios_Nivel" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Historial_de_Supervisiones">
+          <Key>
+            <PropertyRef Name="IdSupervisiones" />
+          </Key>
+          <Property Name="IdSupervisiones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSucursal" Type="Int32" />
+          <Property Name="NoSupervision" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FechaSupervision" Type="DateTime" Precision="3" />
+          <Property Name="AfiliacionOtorgamientoCredito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ActividadesPromocionAfiliaciónCT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProcesoCobranza" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Revisión_de_UTYS" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Situaciones_de_Orden_General_e_Infraestructura" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AcuerdosCompromisos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="No_de_Respuesta_Supervision" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FechaRespuestaSupervision" Type="DateTime" Precision="3" />
+          <Property Name="Seguimiento_a_la_Supervisión" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Respuesta_Supervision" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Solventada" Type="Boolean" />
+          <Property Name="IdSupervisor1" Type="Int32" />
+          <Property Name="IdSupervisor2" Type="Int32" />
+          <Property Name="NoOficio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Historial_de_Supervisiones_Sucursales" FromRole="Historial_de_Supervisiones" ToRole="Sucursales" />
+          <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Historial_de_Supervisiones_Usuarios" FromRole="Historial_de_Supervisiones" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios1" Relationship="GDSfonacotModel.FK_Historial_de_Supervisiones_Usuarios1" FromRole="Historial_de_Supervisiones" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Sucursales">
+          <Key>
+            <PropertyRef Name="IdSucursal" />
+          </Key>
+          <Property Name="IdSucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoSucursal" Type="Int16" Nullable="false" />
+          <Property Name="DireccionRegional" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DescripcionSucursal" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dirección" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Representaciones" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Regional" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Director_Estatal" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Coordinador_Administrativo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Coordinador_Crédito" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Coordinador_Cobranza" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Analistas" Type="Int16" />
+          <Property Name="Ventanillas" Type="Int16" />
+          <Property Name="Analistas_Otorgamiento_de_Crédito" Type="Int16" />
+          <Property Name="Analistas_Administrativo_y_SAM" Type="Int16" />
+          <Property Name="Analistas_Crédito_Control_Documental" Type="Int16" />
+          <Property Name="Analistas_Cobranza" Type="Int16" />
+          <Property Name="Fotografia" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Empresas_Afiliadas" Type="Int32" />
+          <Property Name="Trabajadores_Afiliados" Type="Int32" />
+          <Property Name="Potencial_de_Empresas" Type="Int32" />
+          <Property Name="Potencial_de_Trabajadores" Type="Int32" />
+          <Property Name="Empresas_Status_1" Type="Int32" />
+          <Property Name="Empresas_Status_18" Type="Int32" />
+          <Property Name="Empresas_Status_21" Type="Int32" />
+          <Property Name="Empresas_Status_30" Type="Int32" />
+          <Property Name="Meta_Anual" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Meta_Mensual" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Colocación_Anual" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Colocación_Mensual" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Fecha_baja" Type="DateTime" Precision="3" />
+          <Property Name="Meta_Acumulada_Porcentaje" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Cobranza_Meta_Anual" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Cobranza_Porcentaje_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Cobranza_Cumplimiento_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Historial_de_Supervisiones" Relationship="GDSfonacotModel.FK_Historial_de_Supervisiones_Sucursales" FromRole="Sucursales" ToRole="Historial_de_Supervisiones" />
+        </EntityType>
+        <EntityType Name="TiraAuditora">
+          <Key>
+            <PropertyRef Name="IdTiraAuditora" />
+          </Key>
+          <Property Name="IdTiraAuditora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdUsuario" Type="Int32" />
+          <Property Name="DescripcionMovimiento" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_TiraAuditora_Usuarios" FromRole="TiraAuditora" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Usuario" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IdNivel" Type="Int32" />
+          <NavigationProperty Name="Historial_de_Supervisiones" Relationship="GDSfonacotModel.FK_Historial_de_Supervisiones_Usuarios" FromRole="Usuarios" ToRole="Historial_de_Supervisiones" />
+          <NavigationProperty Name="Historial_de_Supervisiones1" Relationship="GDSfonacotModel.FK_Historial_de_Supervisiones_Usuarios1" FromRole="Usuarios" ToRole="Historial_de_Supervisiones" />
+          <NavigationProperty Name="TiraAuditora" Relationship="GDSfonacotModel.FK_TiraAuditora_Usuarios" FromRole="Usuarios" ToRole="TiraAuditora" />
+          <NavigationProperty Name="Usuarios_Nivel" Relationship="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel" FromRole="Usuarios" ToRole="Usuarios_Nivel" />
+        </EntityType>
+        <EntityType Name="Usuarios_Nivel">
+          <Key>
+            <PropertyRef Name="IdNivel" />
+          </Key>
+          <Property Name="IdNivel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nivel_Usuario" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel" FromRole="Usuarios_Nivel" ToRole="Usuarios" />
+        </EntityType>
+        <Association Name="FK_Historial_de_Supervisiones_Sucursales">
+          <End Type="GDSfonacotModel.Sucursales" Role="Sucursales" Multiplicity="0..1" />
+          <End Type="GDSfonacotModel.Historial_de_Supervisiones" Role="Historial_de_Supervisiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="IdSucursal" />
+            </Principal>
+            <Dependent Role="Historial_de_Supervisiones">
+              <PropertyRef Name="IdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Historial_de_Supervisiones_Usuarios">
+          <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="GDSfonacotModel.Historial_de_Supervisiones" Role="Historial_de_Supervisiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Historial_de_Supervisiones">
+              <PropertyRef Name="IdSupervisor1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Historial_de_Supervisiones_Usuarios1">
+          <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="GDSfonacotModel.Historial_de_Supervisiones" Role="Historial_de_Supervisiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Historial_de_Supervisiones">
+              <PropertyRef Name="IdSupervisor2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TiraAuditora_Usuarios">
+          <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+          <End Type="GDSfonacotModel.TiraAuditora" Role="TiraAuditora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="TiraAuditora">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Usuarios_Nivel">
+          <End Type="GDSfonacotModel.Usuarios_Nivel" Role="Usuarios_Nivel" Multiplicity="0..1" />
+          <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios_Nivel">
+              <PropertyRef Name="IdNivel" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="IdNivel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GDSfonacotModelStoreContainer" CdmEntityContainer="GDSfonacotEntities">
+          <EntitySetMapping Name="Historial_de_Supervisiones">
+            <EntityTypeMapping TypeName="GDSfonacotModel.Historial_de_Supervisiones">
+              <MappingFragment StoreEntitySet="Historial de Supervisiones">
+                <ScalarProperty Name="NoOficio" ColumnName="NoOficio" />
+                <ScalarProperty Name="IdSupervisor2" ColumnName="IdSupervisor2" />
+                <ScalarProperty Name="IdSupervisor1" ColumnName="IdSupervisor1" />
+                <ScalarProperty Name="Solventada" ColumnName="Solventada" />
+                <ScalarProperty Name="Respuesta_Supervision" ColumnName="Respuesta_Supervision" />
+                <ScalarProperty Name="Seguimiento_a_la_Supervisión" ColumnName="Seguimiento_a_la_Supervisión" />
+                <ScalarProperty Name="FechaRespuestaSupervision" ColumnName="FechaRespuestaSupervision" />
+                <ScalarProperty Name="No_de_Respuesta_Supervision" ColumnName="No_de_Respuesta_Supervision" />
+                <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
+                <ScalarProperty Name="Situaciones_de_Orden_General_e_Infraestructura" ColumnName="Situaciones_de_Orden_General_e_Infraestructura" />
+                <ScalarProperty Name="Revisión_de_UTYS" ColumnName="Revisión_de_UTYS" />
+                <ScalarProperty Name="ProcesoCobranza" ColumnName="ProcesoCobranza" />
+                <ScalarProperty Name="ActividadesPromocionAfiliaciónCT" ColumnName="ActividadesPromocionAfiliaciónCT" />
+                <ScalarProperty Name="AfiliacionOtorgamientoCredito" ColumnName="AfiliacionOtorgamientoCredito" />
+                <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
+                <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="IdSupervisiones" ColumnName="IdSupervisiones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sucursales">
+            <EntityTypeMapping TypeName="GDSfonacotModel.Sucursales">
+              <MappingFragment StoreEntitySet="Sucursales">
+                <ScalarProperty Name="Cobranza_Cumplimiento_Meta" ColumnName="Cobranza_Cumplimiento_Meta" />
+                <ScalarProperty Name="Cobranza_Porcentaje_Meta" ColumnName="Cobranza_Porcentaje_Meta" />
+                <ScalarProperty Name="Cobranza_Meta_Anual" ColumnName="Cobranza_Meta_Anual" />
+                <ScalarProperty Name="Meta_Acumulada_Porcentaje" ColumnName="Meta_Acumulada_Porcentaje" />
+                <ScalarProperty Name="Fecha_baja" ColumnName="Fecha_baja" />
+                <ScalarProperty Name="Colocación_Mensual" ColumnName="Colocación_Mensual" />
+                <ScalarProperty Name="Colocación_Anual" ColumnName="Colocación_Anual" />
+                <ScalarProperty Name="Meta_Mensual" ColumnName="Meta_Mensual" />
+                <ScalarProperty Name="Meta_Anual" ColumnName="Meta_Anual" />
+                <ScalarProperty Name="Empresas_Status_30" ColumnName="Empresas_Status_30" />
+                <ScalarProperty Name="Empresas_Status_21" ColumnName="Empresas_Status_21" />
+                <ScalarProperty Name="Empresas_Status_18" ColumnName="Empresas_Status_18" />
+                <ScalarProperty Name="Empresas_Status_1" ColumnName="Empresas_Status_1" />
+                <ScalarProperty Name="Potencial_de_Trabajadores" ColumnName="Potencial_de_Trabajadores" />
+                <ScalarProperty Name="Potencial_de_Empresas" ColumnName="Potencial_de_Empresas" />
+                <ScalarProperty Name="Trabajadores_Afiliados" ColumnName="Trabajadores_Afiliados" />
+                <ScalarProperty Name="Empresas_Afiliadas" ColumnName="Empresas_Afiliadas" />
+                <ScalarProperty Name="Fotografia" ColumnName="Fotografia" />
+                <ScalarProperty Name="Analistas_Cobranza" ColumnName="Analistas_Cobranza" />
+                <ScalarProperty Name="Analistas_Crédito_Control_Documental" ColumnName="Analistas_Crédito_Control_Documental" />
+                <ScalarProperty Name="Analistas_Administrativo_y_SAM" ColumnName="Analistas_Administrativo_y_SAM" />
+                <ScalarProperty Name="Analistas_Otorgamiento_de_Crédito" ColumnName="Analistas_Otorgamiento_de_Crédito" />
+                <ScalarProperty Name="Ventanillas" ColumnName="Ventanillas" />
+                <ScalarProperty Name="Analistas" ColumnName="Analistas" />
+                <ScalarProperty Name="Coordinador_Cobranza" ColumnName="Coordinador_Cobranza" />
+                <ScalarProperty Name="Coordinador_Crédito" ColumnName="Coordinador_Crédito" />
+                <ScalarProperty Name="Coordinador_Administrativo" ColumnName="Coordinador_Administrativo" />
+                <ScalarProperty Name="Director_Estatal" ColumnName="Director_Estatal" />
+                <ScalarProperty Name="Director_Regional" ColumnName="Director_Regional" />
+                <ScalarProperty Name="Representaciones" ColumnName="Representaciones" />
+                <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+                <ScalarProperty Name="DescripcionSucursal" ColumnName="DescripcionSucursal" />
+                <ScalarProperty Name="DireccionRegional" ColumnName="DireccionRegional" />
+                <ScalarProperty Name="NoSucursal" ColumnName="NoSucursal" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiraAuditora">
+            <EntityTypeMapping TypeName="GDSfonacotModel.TiraAuditora">
+              <MappingFragment StoreEntitySet="TiraAuditora">
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="DescripcionMovimiento" ColumnName="DescripcionMovimiento" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdTiraAuditora" ColumnName="IdTiraAuditora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="GDSfonacotModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+                <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios_Nivel">
+            <EntityTypeMapping TypeName="GDSfonacotModel.Usuarios_Nivel">
+              <MappingFragment StoreEntitySet="Usuarios_Nivel">
+                <ScalarProperty Name="Nivel_Usuario" ColumnName="Nivel_Usuario" />
+                <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
