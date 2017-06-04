@@ -31,11 +31,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSupOperaciones = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnHisSupervision = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,65 +80,181 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(762, 142);
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox1.Location = new System.Drawing.Point(757, 271);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(425, 25);
             this.textBox1.TabIndex = 254;
             this.textBox1.Text = "Historico de Supervisión de Operaciones";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // btnSupOperaciones
             // 
-            this.button1.Location = new System.Drawing.Point(653, 139);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 28);
-            this.button1.TabIndex = 255;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(254, 218);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 178);
-            this.pictureBox1.TabIndex = 256;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(653, 235);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 28);
-            this.button2.TabIndex = 257;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSupOperaciones.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSupOperaciones.Location = new System.Drawing.Point(670, 149);
+            this.btnSupOperaciones.Name = "btnSupOperaciones";
+            this.btnSupOperaciones.Size = new System.Drawing.Size(41, 39);
+            this.btnSupOperaciones.TabIndex = 255;
+            this.btnSupOperaciones.UseVisualStyleBackColor = false;
+            this.btnSupOperaciones.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(762, 238);
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox2.Location = new System.Drawing.Point(757, 154);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(425, 25);
             this.textBox2.TabIndex = 258;
-            this.textBox2.Text = "Historico de Supervisión de Operaciones";
+            this.textBox2.Text = "Supervisión de Operaciones";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox3.Location = new System.Drawing.Point(757, 378);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(425, 25);
+            this.textBox3.TabIndex = 260;
+            this.textBox3.Text = "Fichas Sucursales";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox4.Location = new System.Drawing.Point(757, 477);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(425, 25);
+            this.textBox4.TabIndex = 262;
+            this.textBox4.Text = "Minuta de Trabajo";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox5.Location = new System.Drawing.Point(757, 571);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(425, 25);
+            this.textBox5.TabIndex = 264;
+            this.textBox5.Text = "Reportes";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox6.Location = new System.Drawing.Point(757, 681);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(425, 25);
+            this.textBox6.TabIndex = 266;
+            this.textBox6.Text = "Cerrar Aplicativo";
+            // 
+            // textBox7
+            // 
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.textBox7.Location = new System.Drawing.Point(71, 373);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(413, 74);
+            this.textBox7.TabIndex = 267;
+            this.textBox7.Text = "Bienvenido";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GDSfonacot.Properties.Resources.Logo_STPS;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 115);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(269, 75);
+            this.pictureBox2.TabIndex = 268;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GDSfonacot.Properties.Resources.Logo_Fonacot_1;
+            this.pictureBox1.Location = new System.Drawing.Point(1379, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(217, 83);
+            this.pictureBox1.TabIndex = 256;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnHisSupervision
+            // 
+            this.btnHisSupervision.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnHisSupervision.Location = new System.Drawing.Point(670, 266);
+            this.btnHisSupervision.Name = "btnHisSupervision";
+            this.btnHisSupervision.Size = new System.Drawing.Size(41, 39);
+            this.btnHisSupervision.TabIndex = 269;
+            this.btnHisSupervision.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button3.Location = new System.Drawing.Point(670, 472);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(41, 39);
+            this.button3.TabIndex = 270;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button4.Location = new System.Drawing.Point(670, 373);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(41, 39);
+            this.button4.TabIndex = 271;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button5.Location = new System.Drawing.Point(670, 676);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(41, 39);
+            this.button5.TabIndex = 272;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button6.Location = new System.Drawing.Point(670, 566);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(41, 39);
+            this.button6.TabIndex = 273;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // PanelDeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1596, 873);
+            this.ClientSize = new System.Drawing.Size(1596, 736);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnHisSupervision);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSupOperaciones);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Name = "PanelDeControl";
             this.Text = "PanelDeControl";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,9 +266,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSupOperaciones;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnHisSupervision;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
