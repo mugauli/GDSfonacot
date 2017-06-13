@@ -222,7 +222,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1596, 108);
+            this.panel1.Size = new System.Drawing.Size(1565, 108);
             this.panel1.TabIndex = 200;
             // 
             // pictureBox3
@@ -344,7 +344,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1596, 608);
+            this.ClientSize = new System.Drawing.Size(1362, 625);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label9);
@@ -369,7 +369,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Name = "SeguimientoSup";
-            this.Text = "SeguimientoSup";
+            this.Text = "Seguimiento a las Supervisiones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SeguimientoSup_Load);
             this.panel1.ResumeLayout(false);

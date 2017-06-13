@@ -397,7 +397,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1579, 108);
+            this.panel1.Size = new System.Drawing.Size(1573, 108);
             this.panel1.TabIndex = 226;
             // 
             // pictureBox3
@@ -413,7 +413,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GDSfonacot.Properties.Resources.ffff;
-            this.pictureBox2.Location = new System.Drawing.Point(74, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(73, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(241, 89);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -449,7 +449,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1596, 692);
+            this.ClientSize = new System.Drawing.Size(1362, 692);
             this.Controls.Add(this.tabContrPersonal);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.textBox42);
@@ -478,7 +478,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Name = "PersonalSucursales";
-            this.Text = "PersonalSucursales";
+            this.Text = "Fichas de Personal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PersonalSucursales_Load);
             this.tabContrPersonal.ResumeLayout(false);

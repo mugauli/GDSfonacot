@@ -14,7 +14,7 @@ namespace GDSfonacot
     {
         public Supervisiones()
         {
-            InitializeComponent();
+            InitializeComponent();//
         }
 
         private void Supervisiones_Load(object sender, EventArgs e)

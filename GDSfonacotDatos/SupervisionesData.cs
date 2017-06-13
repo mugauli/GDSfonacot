@@ -20,10 +20,8 @@ namespace GDSfonacotDatos
 
                     var usuariosDB = context.Historial_de_Supervisiones.Add(supervision);
                     context.SaveChanges();
-
-
-
-
+                    
+                    //Cambios de chucho
 
                     return response;
                 }
