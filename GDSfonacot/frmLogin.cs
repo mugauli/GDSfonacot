@@ -19,7 +19,7 @@ namespace GDSfonacot
 
         private void butEntrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Acceso Correcto");// Mensaje en pantalla
+            MessageBox.Show("Acceso Correcto");// Mensaje en pantallas
             PanelDeControl frmPanel = new PanelDeControl();//crea una instancia del formulario
             this.Hide();  //oculta el formulario
             frmPanel.ShowDialog();//muestra el formulario forma modal

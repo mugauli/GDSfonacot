@@ -42,7 +42,7 @@ namespace GDSfonacot
         private void btnHisSupervision_Click(object sender, EventArgs e)
         {
             FichasSupervision frmfichassup = new FichasSupervision();//crea una instancia del formulario
-            frmfichassup.ShowDialog(); //muestra el formulario en forma modal
+            frmfichassup.ShowDialog(); //muestra el formulario de forma modal
         }
 
         private void btnMinuta_Click(object sender, EventArgs e)

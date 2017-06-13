@@ -14,7 +14,7 @@ namespace GDSfonacot
     {
         public SeguimientoSup()
         {
-            InitializeComponent();
+            InitializeComponent();//
         }
 
         private void SeguimientoSup_Load(object sender, EventArgs e)
