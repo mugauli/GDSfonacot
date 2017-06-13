@@ -25,5 +25,10 @@ namespace GDSfonacot
             frmPanel.ShowDialog();//muestra el formulario forma modal
             this.Close();//cierra el formulario
         }
+
+        private void butCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();//salir de aplicacion completamentes
+        }
     }
 }

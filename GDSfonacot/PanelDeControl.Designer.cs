@@ -45,6 +45,10 @@
             this.btnReportes = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.butFicPerson = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.butSegSup = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,7 +77,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1362, 108);
+            this.panel1.Size = new System.Drawing.Size(1596, 108);
             this.panel1.TabIndex = 253;
             // 
             // textBox1
@@ -81,7 +85,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.Location = new System.Drawing.Point(757, 271);
+            this.textBox1.Location = new System.Drawing.Point(757, 216);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(425, 25);
             this.textBox1.TabIndex = 254;
@@ -114,7 +118,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox3.Location = new System.Drawing.Point(757, 380);
+            this.textBox3.Location = new System.Drawing.Point(757, 279);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(425, 25);
             this.textBox3.TabIndex = 260;
@@ -136,7 +140,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox5.Location = new System.Drawing.Point(757, 585);
+            this.textBox5.Location = new System.Drawing.Point(757, 543);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(425, 25);
             this.textBox5.TabIndex = 264;
@@ -147,7 +151,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox6.Location = new System.Drawing.Point(757, 699);
+            this.textBox6.Location = new System.Drawing.Point(757, 602);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(425, 25);
             this.textBox6.TabIndex = 266;
@@ -167,11 +171,12 @@
             // btnHisSupervision
             // 
             this.btnHisSupervision.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnHisSupervision.Location = new System.Drawing.Point(670, 266);
+            this.btnHisSupervision.Location = new System.Drawing.Point(670, 211);
             this.btnHisSupervision.Name = "btnHisSupervision";
             this.btnHisSupervision.Size = new System.Drawing.Size(41, 39);
             this.btnHisSupervision.TabIndex = 269;
             this.btnHisSupervision.UseVisualStyleBackColor = false;
+            this.btnHisSupervision.Click += new System.EventHandler(this.btnHisSupervision_Click);
             // 
             // btnMinuta
             // 
@@ -181,11 +186,12 @@
             this.btnMinuta.Size = new System.Drawing.Size(41, 39);
             this.btnMinuta.TabIndex = 270;
             this.btnMinuta.UseVisualStyleBackColor = false;
+            this.btnMinuta.Click += new System.EventHandler(this.btnMinuta_Click);
             // 
             // btnFichasSuc
             // 
             this.btnFichasSuc.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnFichasSuc.Location = new System.Drawing.Point(670, 375);
+            this.btnFichasSuc.Location = new System.Drawing.Point(670, 274);
             this.btnFichasSuc.Name = "btnFichasSuc";
             this.btnFichasSuc.Size = new System.Drawing.Size(41, 39);
             this.btnFichasSuc.TabIndex = 271;
@@ -195,20 +201,22 @@
             // btnCerrarApl
             // 
             this.btnCerrarApl.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnCerrarApl.Location = new System.Drawing.Point(670, 694);
+            this.btnCerrarApl.Location = new System.Drawing.Point(670, 597);
             this.btnCerrarApl.Name = "btnCerrarApl";
             this.btnCerrarApl.Size = new System.Drawing.Size(41, 39);
             this.btnCerrarApl.TabIndex = 272;
             this.btnCerrarApl.UseVisualStyleBackColor = false;
+            this.btnCerrarApl.Click += new System.EventHandler(this.btnCerrarApl_Click);
             // 
             // btnReportes
             // 
             this.btnReportes.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnReportes.Location = new System.Drawing.Point(670, 580);
+            this.btnReportes.Location = new System.Drawing.Point(670, 538);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(41, 39);
             this.btnReportes.TabIndex = 273;
             this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // pictureBox2
             // 
@@ -228,12 +236,59 @@
             this.pictureBox1.TabIndex = 256;
             this.pictureBox1.TabStop = false;
             // 
+            // butFicPerson
+            // 
+            this.butFicPerson.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.butFicPerson.Location = new System.Drawing.Point(670, 339);
+            this.butFicPerson.Name = "butFicPerson";
+            this.butFicPerson.Size = new System.Drawing.Size(41, 39);
+            this.butFicPerson.TabIndex = 275;
+            this.butFicPerson.UseVisualStyleBackColor = false;
+            this.butFicPerson.Click += new System.EventHandler(this.butFicPerson_Click);
+            // 
+            // textBox8
+            // 
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox8.Location = new System.Drawing.Point(757, 344);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(425, 25);
+            this.textBox8.TabIndex = 274;
+            this.textBox8.Text = "Fichas Personal";
+            // 
+            // butSegSup
+            // 
+            this.butSegSup.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.butSegSup.Location = new System.Drawing.Point(670, 406);
+            this.butSegSup.Name = "butSegSup";
+            this.butSegSup.Size = new System.Drawing.Size(41, 39);
+            this.butSegSup.TabIndex = 277;
+            this.butSegSup.UseVisualStyleBackColor = false;
+            this.butSegSup.Click += new System.EventHandler(this.butSegSup_Click);
+            // 
+            // textBox9
+            // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textBox9.Location = new System.Drawing.Point(757, 411);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(425, 25);
+            this.textBox9.TabIndex = 276;
+            this.textBox9.Text = "Seguimiento a las Supervisiones";
+            // 
             // PanelDeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 758);
+            this.Controls.Add(this.butSegSup);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.butFicPerson);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnCerrarApl);
             this.Controls.Add(this.btnFichasSuc);
@@ -251,7 +306,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Name = "PanelDeControl";
-            this.Text = "PanelDeControl";
+            this.Text = "Panel de Control";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -281,5 +336,9 @@
         private System.Windows.Forms.Button btnFichasSuc;
         private System.Windows.Forms.Button btnCerrarApl;
         private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button butFicPerson;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button butSegSup;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }
