@@ -27,7 +27,13 @@ namespace GDSfonacot
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSupOperaciones_Click(object sender, EventArgs e)
+        {
+             SeguimientoSup frmsupOp = new SeguimientoSup();//crea una instancia del formulario
+            frmsupOp.ShowDialog(); //muestra el formulario en forma modal
+        }
+
+        private void btnFichasSuc_Click(object sender, EventArgs e)
         {
 
         }

@@ -73,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1596, 108);
+            this.panel1.Size = new System.Drawing.Size(1362, 108);
             this.panel1.TabIndex = 253;
             // 
             // textBox1
@@ -96,7 +96,7 @@
             this.btnSupOperaciones.Size = new System.Drawing.Size(41, 39);
             this.btnSupOperaciones.TabIndex = 255;
             this.btnSupOperaciones.UseVisualStyleBackColor = false;
-            this.btnSupOperaciones.Click += new System.EventHandler(this.button1_Click);
+            this.btnSupOperaciones.Click += new System.EventHandler(this.btnSupOperaciones_Click);
             // 
             // textBox2
             // 
@@ -190,6 +190,7 @@
             this.btnFichasSuc.Size = new System.Drawing.Size(41, 39);
             this.btnFichasSuc.TabIndex = 271;
             this.btnFichasSuc.UseVisualStyleBackColor = false;
+            this.btnFichasSuc.Click += new System.EventHandler(this.btnFichasSuc_Click);
             // 
             // btnCerrarApl
             // 
@@ -232,7 +233,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1596, 745);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.btnCerrarApl);
             this.Controls.Add(this.btnFichasSuc);

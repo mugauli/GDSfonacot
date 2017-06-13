@@ -17,10 +17,14 @@ namespace GDSfonacotDatos
                 using (var context = new GDSfonacotEntities())
                 {
                     var response = new MethodResponse<int> { Code = 0 };
-                    //comentarios 2
+
                     var usuariosDB = context.Historial_de_Supervisiones.Add(supervision);
                     context.SaveChanges();
-                    //comentarios
+
+
+
+
+
                     return response;
                 }
 
