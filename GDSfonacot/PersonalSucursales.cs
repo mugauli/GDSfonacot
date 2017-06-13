@@ -19,7 +19,7 @@ namespace GDSfonacot
 
         private void PersonalSucursales_Load(object sender, EventArgs e)
         {
-            //iniciando form
+            //iniciando formS
         }
     }
 }
