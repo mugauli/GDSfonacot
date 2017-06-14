@@ -59,7 +59,7 @@
             this.menuayuda});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(98, 453);
+            this.menuPrincipal.Size = new System.Drawing.Size(78, 453);
             this.menuPrincipal.TabIndex = 256;
             this.menuPrincipal.Text = "Menu";
             // 
@@ -79,7 +79,7 @@
             this.menuSalir});
             this.menuModulos.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.menuModulos.Name = "menuModulos";
-            this.menuModulos.Size = new System.Drawing.Size(85, 19);
+            this.menuModulos.Size = new System.Drawing.Size(65, 19);
             this.menuModulos.Text = "&Modulos";
             // 
             // menuSupOp
@@ -88,6 +88,7 @@
             this.menuSupOp.Name = "menuSupOp";
             this.menuSupOp.Size = new System.Drawing.Size(287, 22);
             this.menuSupOp.Text = "Supervision de Operaciones";
+            this.menuSupOp.Click += new System.EventHandler(this.menuSupOp_Click);
             // 
             // menuHistsupOp
             // 
@@ -95,28 +96,31 @@
             this.menuHistsupOp.Name = "menuHistsupOp";
             this.menuHistsupOp.Size = new System.Drawing.Size(287, 22);
             this.menuHistsupOp.Text = "Histórico de Supervisión de Operaciones";
+            this.menuHistsupOp.Click += new System.EventHandler(this.menuHistsupOp_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(327, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(284, 6);
             // 
             // menuFichasSuc
             // 
             this.menuFichasSuc.Name = "menuFichasSuc";
-            this.menuFichasSuc.Size = new System.Drawing.Size(330, 22);
+            this.menuFichasSuc.Size = new System.Drawing.Size(287, 22);
             this.menuFichasSuc.Text = "Fichas Sucursales";
+            this.menuFichasSuc.Click += new System.EventHandler(this.menuFichasSuc_Click);
             // 
             // menuFichasPerson
             // 
             this.menuFichasPerson.Name = "menuFichasPerson";
-            this.menuFichasPerson.Size = new System.Drawing.Size(330, 22);
+            this.menuFichasPerson.Size = new System.Drawing.Size(287, 22);
             this.menuFichasPerson.Text = "Fichas Personal";
+            this.menuFichasPerson.Click += new System.EventHandler(this.menuFichasPerson_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(327, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(284, 6);
             // 
             // menuSeguSup
             // 
@@ -124,30 +128,33 @@
             this.menuSeguSup.Name = "menuSeguSup";
             this.menuSeguSup.Size = new System.Drawing.Size(287, 22);
             this.menuSeguSup.Text = "Seguimiento a las Supervisiones";
+            this.menuSeguSup.Click += new System.EventHandler(this.menuSeguSup_Click);
             // 
             // menuMinutas
             // 
             this.menuMinutas.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuMinutas.Name = "menuMinutas";
-            this.menuMinutas.Size = new System.Drawing.Size(330, 22);
+            this.menuMinutas.Size = new System.Drawing.Size(287, 22);
             this.menuMinutas.Text = "Minuta de Trabajo";
+            this.menuMinutas.Click += new System.EventHandler(this.menuMinutas_Click);
             // 
             // menuReportes
             // 
             this.menuReportes.Name = "menuReportes";
-            this.menuReportes.Size = new System.Drawing.Size(330, 22);
+            this.menuReportes.Size = new System.Drawing.Size(287, 22);
             this.menuReportes.Text = "Reportes";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(327, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(284, 6);
             // 
             // menuSalir
             // 
             this.menuSalir.Name = "menuSalir";
-            this.menuSalir.Size = new System.Drawing.Size(330, 22);
+            this.menuSalir.Size = new System.Drawing.Size(287, 22);
             this.menuSalir.Text = "Cerrar Aplicativo";
+            this.menuSalir.Click += new System.EventHandler(this.menuSalir_Click);
             // 
             // menuCatalogos
             // 
@@ -156,34 +163,34 @@
             this.submenuUsers,
             this.toolStripSeparator6});
             this.menuCatalogos.Name = "menuCatalogos";
-            this.menuCatalogos.Size = new System.Drawing.Size(85, 19);
+            this.menuCatalogos.Size = new System.Drawing.Size(65, 19);
             this.menuCatalogos.Text = "&Catalogos";
             // 
             // submenuSuc
             // 
             this.submenuSuc.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuSuc.Name = "submenuSuc";
-            this.submenuSuc.Size = new System.Drawing.Size(152, 22);
+            this.submenuSuc.Size = new System.Drawing.Size(129, 22);
             this.submenuSuc.Text = "Sucursales";
             // 
             // submenuUsers
             // 
             this.submenuUsers.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuUsers.Name = "submenuUsers";
-            this.submenuUsers.Size = new System.Drawing.Size(152, 22);
+            this.submenuUsers.Size = new System.Drawing.Size(129, 22);
             this.submenuUsers.Text = "Usuarios";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(167, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(126, 6);
             // 
             // menuayuda
             // 
             this.menuayuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAbout});
             this.menuayuda.Name = "menuayuda";
-            this.menuayuda.Size = new System.Drawing.Size(85, 19);
+            this.menuayuda.Size = new System.Drawing.Size(65, 19);
             this.menuayuda.Text = "Ay&uda";
             // 
             // menuAbout

@@ -42,14 +42,15 @@ namespace GDSfonacot
         {
             SupOperaciones frmsupOp = new SupOperaciones();//crea una instancia del formulario
             frmsupOp.MdiParent = this;
+            frmsupOp.Show();
             // frmsupOp.ShowDialog(); //muestra el formulario en forma modal
         }
 
         private void menuFichasPerson_Click(object sender, EventArgs e)
         {
-            Supervisiones frmsup = new Supervisiones();//crea una instancia del formulario
-            frmsup.MdiParent = this;
-            frmsup.Show();
+            PersonalSucursales frmPersonsuc = new PersonalSucursales();//crea una instancia del formulario
+            frmPersonsuc.MdiParent = this;
+            frmPersonsuc.Show();
             //   frmsup.ShowDialog(); //muestra el formulario en forma modal
         }
 
