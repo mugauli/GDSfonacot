@@ -19,16 +19,66 @@ namespace GDSfonacot
 
         private void butEntrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Acceso Correcto");// Mensaje en pantallas
-            PanelDeControl frmPanel = new PanelDeControl();//crea una instancia del formulario
-            this.Hide();  //oculta el formulario
-            frmPanel.ShowDialog();//muestra el formulario forma modal
-            this.Close();//cierra el formulario
+            //
+            ValidaCajastexto(); //void que valida
+
         }
 
         private void butCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();//salir de aplicacion completamentes
+        }
+
+        private void textUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ValidaCajastexto();
+            }
+
+        }
+
+        private void textPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ValidaCajastexto();
+            }
+        }
+        private void ValidaCajastexto()
+        {
+            #region ValidacajasUser
+            if (String.IsNullOrEmpty(textUsuario.Text.Trim()))
+            {//primer if valida usuario
+
+                MessageBox.Show("Usuario incorrecto,verifique nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textUsuario.Focus();
+
+            }//llave cierre del primer if que valida el usuario
+            #endregion ValidacajasUser
+
+            #region ValidacajasPassword
+            else
+            {//else1 para anidar un segundo if y validar solo la contraseña
+                if (String.IsNullOrEmpty(textPass.Text.Trim()))
+                {
+                    MessageBox.Show("Contraseña Incorrecta,verifique nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textPass.Focus();
+                }
+                #endregion ValidacajasPassword
+
+                #region PermiteAcceso
+                else
+                {// este else2 va ligado al segundo if anidado  (linea27)
+
+                    MessageBox.Show("Acceso Correcto", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
+                    MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
+                    this.Hide();  //oculta el formulario
+                    frmPanel.ShowDialog();//muestra el formulario forma modal
+                    this.Close();//cierra el formulario
+                }//llave cierre del else2
+            }//llave cierre del else1
+            #endregion Permiteacceso
         }
     }
 }
