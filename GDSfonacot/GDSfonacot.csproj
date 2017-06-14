@@ -64,30 +64,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MDIPrincip.cs">
+    <Compile Include="forms\MDIPrincip.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDIPrincip.Designer.cs">
+    <Compile Include="forms\MDIPrincip.Designer.cs">
       <DependentUpon>MDIPrincip.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SupOperaciones.cs">
+    <Compile Include="forms\SupOperaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SupOperaciones.Designer.cs">
+    <Compile Include="forms\SupOperaciones.Designer.cs">
       <DependentUpon>SupOperaciones.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDIPrincip.resx">
+    <EmbeddedResource Include="forms\MDIPrincip.resx">
       <DependentUpon>MDIPrincip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -100,7 +100,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SupOperaciones.resx">
+    <EmbeddedResource Include="forms\SupOperaciones.resx">
       <DependentUpon>SupOperaciones.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -117,67 +117,67 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContestSuc.cs">
+    <Compile Include="forms\ContestSuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContestSuc.Designer.cs">
+    <Compile Include="forms\ContestSuc.Designer.cs">
       <DependentUpon>ContestSuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FichasSupervision.cs">
+    <Compile Include="forms\FichasSupervision.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FichasSupervision.Designer.cs">
+    <Compile Include="forms\FichasSupervision.Designer.cs">
       <DependentUpon>FichasSupervision.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormContestSuperv.cs">
+    <Compile Include="forms\FormContestSuperv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormContestSuperv.Designer.cs">
+    <Compile Include="forms\FormContestSuperv.Designer.cs">
       <DependentUpon>FormContestSuperv.cs</DependentUpon>
     </Compile>
-    <Compile Include="PanelDeControl.cs">
+    <Compile Include="forms\PanelDeControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PanelDeControl.Designer.cs">
+    <Compile Include="forms\PanelDeControl.Designer.cs">
       <DependentUpon>PanelDeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonalSucursales.cs">
+    <Compile Include="forms\PersonalSucursales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonalSucursales.Designer.cs">
+    <Compile Include="forms\PersonalSucursales.Designer.cs">
       <DependentUpon>PersonalSucursales.cs</DependentUpon>
     </Compile>
-    <Compile Include="SeguimientoSup.cs">
+    <Compile Include="forms\SeguimientoSup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SeguimientoSup.Designer.cs">
+    <Compile Include="forms\SeguimientoSup.Designer.cs">
       <DependentUpon>SeguimientoSup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Supervisiones.cs">
+    <Compile Include="forms\Supervisiones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Supervisiones.Designer.cs">
+    <Compile Include="forms\Supervisiones.Designer.cs">
       <DependentUpon>Supervisiones.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ContestSuc.resx">
+    <EmbeddedResource Include="forms\ContestSuc.resx">
       <DependentUpon>ContestSuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FichasSupervision.resx">
+    <EmbeddedResource Include="forms\FichasSupervision.resx">
       <DependentUpon>FichasSupervision.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormContestSuperv.resx">
+    <EmbeddedResource Include="forms\FormContestSuperv.resx">
       <DependentUpon>FormContestSuperv.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PanelDeControl.resx">
+    <EmbeddedResource Include="forms\PanelDeControl.resx">
       <DependentUpon>PanelDeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonalSucursales.resx">
+    <EmbeddedResource Include="forms\PersonalSucursales.resx">
       <DependentUpon>PersonalSucursales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SeguimientoSup.resx">
+    <EmbeddedResource Include="forms\SeguimientoSup.resx">
       <DependentUpon>SeguimientoSup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Supervisiones.resx">
+    <EmbeddedResource Include="forms\Supervisiones.resx">
       <DependentUpon>Supervisiones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
