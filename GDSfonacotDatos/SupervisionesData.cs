@@ -95,7 +95,7 @@ namespace GDSfonacotDatos
                 {
                     var response = new MethodResponse<Usuarios> { Code = 0 };
 
-                    var usuariosDB = context.Usuarios.Where(x => x.Usuario == Usuario || x.Pass == password).SingleOrDefault();
+                    var usuariosDB = context.Usuarios.Where(x => x.Usuario == Usuario && x.Pass == password).SingleOrDefault();
 
                     if(usuariosDB != null) response.Result = usuariosDB;
 

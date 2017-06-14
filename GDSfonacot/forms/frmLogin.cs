@@ -74,14 +74,20 @@ namespace GDSfonacot
                 else
                 {// este else2 va ligado al segundo if anidado  (linea27)
                     var logueo = objusuario.LoginUsuario(textUsuario.Text, textPass.Text);
-
+                  
                     if (logueo.Result != null)
                     {
-                        MessageBox.Show("Acceso Correcto", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
+                                                
+                        MessageBox.Show("Bienvenido " + logueo.Result.Nombre_Usuario, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
                         MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
                         this.Hide();  //oculta el formulario
                         frmPanel.ShowDialog();//muestra el formulario forma modal
                         this.Close();//cierra el formulario
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario " + textUsuario.Text.Trim() + " y/o contraseña ingresado," + Environment.NewLine +
+                        "no existe o son invalidos.Intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
                     }
                 }//llave cierre del else2
             }//llave cierre del else1
