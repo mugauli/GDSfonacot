@@ -27,6 +27,7 @@ namespace GDSfonacotDatos
         public string Usuario { get; set; }
         public string Pass { get; set; }
         public Nullable<int> IdNivel { get; set; }
+        public Nullable<System.DateTime> fechaalta { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Historial_de_Supervisiones> Historial_de_Supervisiones { get; set; }

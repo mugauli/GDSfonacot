@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="98d4d929f7f94116a8c814521ad5b86e" Name="Diagram1" ZoomLevel="46">
-        <EntityTypeShape EntityType="GDSfonacotModel.Historial_de_Supervisiones" Width="1.5" PointX="8.25" PointY="2.625" />
+      <Diagram DiagramId="98d4d929f7f94116a8c814521ad5b86e" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="GDSfonacotModel.Historial_de_Supervisiones" Width="4.5" PointX="8.25" PointY="2.625" />
         <EntityTypeShape EntityType="GDSfonacotModel.Sucursales" Width="1.5" PointX="6" PointY="8.125" />
         <EntityTypeShape EntityType="GDSfonacotModel.TiraAuditora" Width="1.5" PointX="5.25" PointY="4.125" />
         <EntityTypeShape EntityType="GDSfonacotModel.Usuarios" Width="1.5" PointX="3" PointY="3.75" />

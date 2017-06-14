@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace GDSfonacot
 {
+    
     public partial class frmLogin : Form
     {
+        GDSfonacotDatos.SupervisionesData objusuario = new GDSfonacotDatos.SupervisionesData();
         public frmLogin()
         {
             InitializeComponent();
@@ -66,19 +68,29 @@ namespace GDSfonacot
                     textPass.Focus();
                 }
                 #endregion ValidacajasPassword
+           
 
                 #region PermiteAcceso
                 else
                 {// este else2 va ligado al segundo if anidado  (linea27)
+                    var logueo = objusuario.LoginUsuario(textUsuario.Text, textPass.Text);
 
-                    MessageBox.Show("Acceso Correcto", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
-                    MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
-                    this.Hide();  //oculta el formulario
-                    frmPanel.ShowDialog();//muestra el formulario forma modal
-                    this.Close();//cierra el formulario
+                    if (logueo.Result != null)
+                    {
+                        MessageBox.Show("Acceso Correcto", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
+                        MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
+                        this.Hide();  //oculta el formulario
+                        frmPanel.ShowDialog();//muestra el formulario forma modal
+                        this.Close();//cierra el formulario
+                    }
                 }//llave cierre del else2
             }//llave cierre del else1
             #endregion Permiteacceso
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
