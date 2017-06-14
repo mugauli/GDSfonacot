@@ -59,7 +59,7 @@
             this.menuayuda});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(78, 453);
+            this.menuPrincipal.Size = new System.Drawing.Size(98, 453);
             this.menuPrincipal.TabIndex = 256;
             this.menuPrincipal.Text = "Menu";
             // 
@@ -86,16 +86,14 @@
             // 
             this.menuSupOp.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuSupOp.Name = "menuSupOp";
-            this.menuSupOp.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.menuSupOp.Size = new System.Drawing.Size(330, 22);
+            this.menuSupOp.Size = new System.Drawing.Size(287, 22);
             this.menuSupOp.Text = "Supervision de Operaciones";
             // 
             // menuHistsupOp
             // 
             this.menuHistsupOp.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuHistsupOp.Name = "menuHistsupOp";
-            this.menuHistsupOp.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.menuHistsupOp.Size = new System.Drawing.Size(330, 22);
+            this.menuHistsupOp.Size = new System.Drawing.Size(287, 22);
             this.menuHistsupOp.Text = "Histórico de Supervisión de Operaciones";
             // 
             // toolStripSeparator3
@@ -124,8 +122,7 @@
             // 
             this.menuSeguSup.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuSeguSup.Name = "menuSeguSup";
-            this.menuSeguSup.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.menuSeguSup.Size = new System.Drawing.Size(330, 22);
+            this.menuSeguSup.Size = new System.Drawing.Size(287, 22);
             this.menuSeguSup.Text = "Seguimiento a las Supervisiones";
             // 
             // menuMinutas
@@ -166,16 +163,14 @@
             // 
             this.submenuSuc.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuSuc.Name = "submenuSuc";
-            this.submenuSuc.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.submenuSuc.Size = new System.Drawing.Size(170, 22);
+            this.submenuSuc.Size = new System.Drawing.Size(152, 22);
             this.submenuSuc.Text = "Sucursales";
             // 
             // submenuUsers
             // 
             this.submenuUsers.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuUsers.Name = "submenuUsers";
-            this.submenuUsers.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.submenuUsers.Size = new System.Drawing.Size(170, 22);
+            this.submenuUsers.Size = new System.Drawing.Size(152, 22);
             this.submenuUsers.Text = "Usuarios";
             // 
             // toolStripSeparator6
