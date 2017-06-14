@@ -117,6 +117,7 @@
             this.textPass.PasswordChar = '*';
             this.textPass.Size = new System.Drawing.Size(240, 20);
             this.textPass.TabIndex = 1;
+            this.textPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPass_KeyPress);
             // 
             // textUsuario
             // 
@@ -124,6 +125,7 @@
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Size = new System.Drawing.Size(240, 20);
             this.textUsuario.TabIndex = 0;
+            this.textUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUsuario_KeyPress);
             // 
             // butEntrar
             // 
