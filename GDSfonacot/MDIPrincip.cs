@@ -76,9 +76,6 @@ namespace GDSfonacot
             Application.Exit();//
         }
 
-        private void MDIPrincip_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
