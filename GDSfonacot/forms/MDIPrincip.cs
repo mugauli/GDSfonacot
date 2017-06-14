@@ -77,6 +77,12 @@ namespace GDSfonacot
             Application.Exit();//
         }
 
-      
+        private void menuConstSuc_Click(object sender, EventArgs e)
+        {
+            ContestSuc frmConstSuc= new ContestSuc();//crea una instancia del formulario
+            frmConstSuc.MdiParent = this;
+            frmConstSuc.Show();
+            // frmsegSup.ShowDialog(); //muestra el formulario en forma modal
+        }
     }
 }

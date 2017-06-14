@@ -47,6 +47,7 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.menuayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuConstSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.menuayuda});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(78, 453);
+            this.menuPrincipal.Size = new System.Drawing.Size(98, 453);
             this.menuPrincipal.TabIndex = 256;
             this.menuPrincipal.Text = "Menu";
             // 
@@ -73,13 +74,14 @@
             this.menuFichasPerson,
             this.toolStripSeparator4,
             this.menuSeguSup,
+            this.menuConstSuc,
             this.menuMinutas,
             this.menuReportes,
             this.toolStripSeparator5,
             this.menuSalir});
             this.menuModulos.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.menuModulos.Name = "menuModulos";
-            this.menuModulos.Size = new System.Drawing.Size(65, 19);
+            this.menuModulos.Size = new System.Drawing.Size(85, 19);
             this.menuModulos.Text = "&Modulos";
             // 
             // menuSupOp
@@ -163,7 +165,7 @@
             this.submenuUsers,
             this.toolStripSeparator6});
             this.menuCatalogos.Name = "menuCatalogos";
-            this.menuCatalogos.Size = new System.Drawing.Size(65, 19);
+            this.menuCatalogos.Size = new System.Drawing.Size(85, 19);
             this.menuCatalogos.Text = "&Catalogos";
             // 
             // submenuSuc
@@ -190,7 +192,7 @@
             this.menuayuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAbout});
             this.menuayuda.Name = "menuayuda";
-            this.menuayuda.Size = new System.Drawing.Size(65, 19);
+            this.menuayuda.Size = new System.Drawing.Size(85, 19);
             this.menuayuda.Text = "Ay&uda";
             // 
             // menuAbout
@@ -198,6 +200,13 @@
             this.menuAbout.Name = "menuAbout";
             this.menuAbout.Size = new System.Drawing.Size(147, 22);
             this.menuAbout.Text = "&Acerca de... ...";
+            // 
+            // menuConstSup
+            // 
+            this.menuConstSuc.Name = "menuConstSuc";
+            this.menuConstSuc.Size = new System.Drawing.Size(287, 22);
+            this.menuConstSuc.Text = "Contestación a las Supervisiones";
+            this.menuConstSuc.Click += new System.EventHandler(this.menuConstSuc_Click);
             // 
             // MDIPrincip
             // 
@@ -238,5 +247,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem menuayuda;
         private System.Windows.Forms.ToolStripMenuItem menuAbout;
+        private System.Windows.Forms.ToolStripMenuItem menuConstSuc;
     }
 }
