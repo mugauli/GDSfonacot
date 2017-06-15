@@ -41,7 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textSupervision = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -202,14 +202,15 @@
             this.label1.TabIndex = 202;
             this.label1.Text = "No de Supervisión";
             // 
-            // textBox1
+            // textSupervision
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox1.Location = new System.Drawing.Point(20, 117);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 20);
-            this.textBox1.TabIndex = 201;
+            this.textSupervision.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textSupervision.Location = new System.Drawing.Point(20, 117);
+            this.textSupervision.Margin = new System.Windows.Forms.Padding(4);
+            this.textSupervision.Name = "textSupervision";
+            this.textSupervision.Size = new System.Drawing.Size(279, 20);
+            this.textSupervision.TabIndex = 201;
+            this.textSupervision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSupervision_KeyPress);
             // 
             // panel1
             // 
@@ -366,7 +367,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textSupervision);
             this.Controls.Add(this.panel1);
             this.Name = "SeguimientoSup";
             this.Text = "Seguimiento a las Supervisiones";
@@ -398,7 +399,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textSupervision;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox36;
         private System.Windows.Forms.TextBox textBox5;

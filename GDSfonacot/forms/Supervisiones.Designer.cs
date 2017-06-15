@@ -28,39 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabContrPersonal = new System.Windows.Forms.TabControl();
-            this.Supervisión = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textSucursal = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tabContrPersonal.SuspendLayout();
+            this.dataGlistaSup = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGlistaSup)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tabContrPersonal
-            // 
-            this.tabContrPersonal.Appearance = System.Windows.Forms.TabAppearance.Buttons;
-            this.tabContrPersonal.Controls.Add(this.Supervisión);
-            this.tabContrPersonal.Location = new System.Drawing.Point(496, 167);
-            this.tabContrPersonal.Name = "tabContrPersonal";
-            this.tabContrPersonal.SelectedIndex = 0;
-            this.tabContrPersonal.Size = new System.Drawing.Size(740, 469);
-            this.tabContrPersonal.TabIndex = 279;
-            // 
-            // Supervisión
-            // 
-            this.Supervisión.BackColor = System.Drawing.Color.Black;
-            this.Supervisión.Location = new System.Drawing.Point(4, 25);
-            this.Supervisión.Name = "Supervisión";
-            this.Supervisión.Padding = new System.Windows.Forms.Padding(3);
-            this.Supervisión.Size = new System.Drawing.Size(732, 440);
-            this.Supervisión.TabIndex = 4;
-            this.Supervisión.Text = "No de Supervisión";
             // 
             // label2
             // 
@@ -88,14 +67,15 @@
             this.label10.TabIndex = 270;
             this.label10.Text = "Sucursal";
             // 
-            // textBox9
+            // textSucursal
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox9.Location = new System.Drawing.Point(74, 167);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(381, 20);
-            this.textBox9.TabIndex = 269;
+            this.textSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textSucursal.Location = new System.Drawing.Point(74, 167);
+            this.textSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.textSucursal.Name = "textSucursal";
+            this.textSucursal.Size = new System.Drawing.Size(381, 20);
+            this.textSucursal.TabIndex = 269;
+            this.textSucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSucursal_KeyPress);
             // 
             // panel1
             // 
@@ -131,38 +111,44 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
+            // dataGlistaSup
+            // 
+            this.dataGlistaSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGlistaSup.Location = new System.Drawing.Point(469, 166);
+            this.dataGlistaSup.Name = "dataGlistaSup";
+            this.dataGlistaSup.Size = new System.Drawing.Size(753, 289);
+            this.dataGlistaSup.TabIndex = 271;
+            // 
             // Supervisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 665);
-            this.Controls.Add(this.tabContrPersonal);
+            this.Controls.Add(this.dataGlistaSup);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.textSucursal);
             this.Controls.Add(this.panel1);
             this.Name = "Supervisiones";
             this.Text = "Supervisión de Operaciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Supervisiones_Load);
-            this.tabContrPersonal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGlistaSup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabContrPersonal;
-        private System.Windows.Forms.TabPage Supervisión;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textSucursal;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGlistaSup;
     }
 }

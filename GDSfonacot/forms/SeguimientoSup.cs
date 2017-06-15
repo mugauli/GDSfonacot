@@ -26,5 +26,14 @@ namespace GDSfonacot
         {
 
         }
+
+        private void textSupervision_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+            if (e.KeyChar==13)
+            {
+              
+            }
+        }
     }
 }

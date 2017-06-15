@@ -17,8 +17,6 @@ namespace GDSfonacot
         {
             InitializeComponent();//
 
-
-
         }
 
         private void SupOperaciones_Load(object sender, EventArgs e)
@@ -38,12 +36,25 @@ namespace GDSfonacot
         private void button1_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void toolButNuevo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("nuevo");
+
+
+        }
+
+        private void toolButGuardar_Click(object sender, EventArgs e)
+        {
+
             var objSupervision = new Historial_de_Supervisiones();
 
             objSupervision.IdSucursal = Convert.ToInt32(cmbSucursales.SelectedValue);
-            objSupervision.NoSupervision = "12";
+            objSupervision.NoSupervision = txtNoSupervision.Text.Trim();
             objSupervision.FechaSupervision = dtFechaSupervision.Value;
-            objSupervision.AfiliacionOtorgamientoCredito = ""; 
+            objSupervision.AfiliacionOtorgamientoCredito = "";
             objSupervision.ActividadesPromocionAfiliaciónCT = "";
             objSupervision.ProcesoCobranza = "";
             objSupervision.Revisión_de_UTYS = "";
@@ -64,9 +75,6 @@ namespace GDSfonacot
             {
                 //Mensage de error con g
             }
-
         }
-
-
     }
 }
