@@ -30,9 +30,6 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtFechaSup = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.textNoSucursal = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.txtFonFijo = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -57,12 +54,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSupervisor1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSucursal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmbSucursales = new System.Windows.Forms.ComboBox();
+            this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -93,36 +92,6 @@
             this.label2.Text = "Dirección General Adjunta Comercial\r\nSubdirección General Comercial\r\nDirección de" +
     " Supervisión de Operaciones \r\n\r\n";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtFechaSup
-            // 
-            this.txtFechaSup.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtFechaSup.Location = new System.Drawing.Point(647, 116);
-            this.txtFechaSup.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFechaSup.Name = "txtFechaSup";
-            this.txtFechaSup.Size = new System.Drawing.Size(184, 20);
-            this.txtFechaSup.TabIndex = 230;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.DimGray;
-            this.label47.Location = new System.Drawing.Point(21, 141);
-            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(104, 16);
-            this.label47.TabIndex = 229;
-            this.label47.Text = "No de Sucursal";
-            // 
-            // textNoSucursal
-            // 
-            this.textNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textNoSucursal.Location = new System.Drawing.Point(20, 116);
-            this.textNoSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.textNoSucursal.Name = "textNoSucursal";
-            this.textNoSucursal.Size = new System.Drawing.Size(105, 20);
-            this.textNoSucursal.TabIndex = 228;
             // 
             // label46
             // 
@@ -381,21 +350,12 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(138, 142);
+            this.label3.Location = new System.Drawing.Point(24, 139);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 204;
             this.label3.Text = "Sucursal";
-            // 
-            // txtSucursal
-            // 
-            this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtSucursal.Location = new System.Drawing.Point(133, 116);
-            this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(219, 20);
-            this.txtSucursal.TabIndex = 203;
             // 
             // label1
             // 
@@ -452,6 +412,37 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1475, 1690);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 232;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmbSucursales
+            // 
+            this.cmbSucursales.BackColor = System.Drawing.Color.Black;
+            this.cmbSucursales.ForeColor = System.Drawing.Color.White;
+            this.cmbSucursales.FormattingEnabled = true;
+            this.cmbSucursales.Location = new System.Drawing.Point(20, 115);
+            this.cmbSucursales.Name = "cmbSucursales";
+            this.cmbSucursales.Size = new System.Drawing.Size(333, 21);
+            this.cmbSucursales.TabIndex = 233;
+            // 
+            // dtFechaSupervision
+            // 
+            this.dtFechaSupervision.CalendarForeColor = System.Drawing.Color.White;
+            this.dtFechaSupervision.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtFechaSupervision.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtFechaSupervision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaSupervision.Location = new System.Drawing.Point(648, 115);
+            this.dtFechaSupervision.Name = "dtFechaSupervision";
+            this.dtFechaSupervision.Size = new System.Drawing.Size(183, 20);
+            this.dtFechaSupervision.TabIndex = 234;
+            // 
             // SupOperaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,10 +450,10 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.dtFechaSupervision);
+            this.Controls.Add(this.cmbSucursales);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtFechaSup);
-            this.Controls.Add(this.label47);
-            this.Controls.Add(this.textNoSucursal);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.txtFonFijo);
             this.Controls.Add(this.label45);
@@ -487,7 +478,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSupervisor1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtSucursal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNoSupervision);
             this.Controls.Add(this.panel1);
@@ -510,9 +500,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtFechaSup;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textNoSucursal;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox txtFonFijo;
         private System.Windows.Forms.Label label45;
@@ -537,9 +524,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSupervisor1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSucursal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNoSupervision;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbSucursales;
+        private System.Windows.Forms.DateTimePicker dtFechaSupervision;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GDSfonacotDatos.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,37 @@ namespace GDSfonacotDatos
                 {
                     var response = new MethodResponse<int> { Code = 0 };
 
-                    var usuariosDB = context.Historial_de_Supervisiones.Add(supervision);
-                    context.SaveChanges();
-                    
+                    if (supervision.IdSupervisiones == 0)
+                    {
+                        var usuariosDB = context.Historial_de_Supervisiones.Add(supervision);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        var objUsuario = context.Historial_de_Supervisiones.Where(x => x.IdSupervisiones == supervision.IdSupervisiones).FirstOrDefault();
+
+
+                        objUsuario.IdSucursal = supervision.IdSucursal;
+                        objUsuario.NoSupervision = supervision.NoSupervision;
+                        objUsuario.FechaSupervision = supervision.FechaSupervision;
+                        objUsuario.AfiliacionOtorgamientoCredito = supervision.AfiliacionOtorgamientoCredito;
+                        objUsuario.ActividadesPromocionAfiliaciónCT = supervision.ActividadesPromocionAfiliaciónCT;
+                        objUsuario.ProcesoCobranza = supervision.ProcesoCobranza;
+                        objUsuario.Revisión_de_UTYS = supervision.Revisión_de_UTYS;
+                        objUsuario.Situaciones_de_Orden_General_e_Infraestructura = supervision.Situaciones_de_Orden_General_e_Infraestructura;
+                        objUsuario.AcuerdosCompromisos = supervision.AcuerdosCompromisos;
+                        objUsuario.No_de_Respuesta_Supervision = supervision.No_de_Respuesta_Supervision;
+                        objUsuario.FechaRespuestaSupervision = supervision.FechaRespuestaSupervision;
+                        objUsuario.Seguimiento_a_la_Supervisión = supervision.Seguimiento_a_la_Supervisión;
+                        objUsuario.Respuesta_Supervision = supervision.Respuesta_Supervision;
+                        objUsuario.Solventada = supervision.Solventada;
+                        objUsuario.IdSupervisor1 = supervision.IdSupervisor1;
+                        objUsuario.IdSupervisor2 = supervision.IdSupervisor2;
+                        objUsuario.NoOficio = supervision.NoOficio;
+
+                        context.SaveChanges();
+
+                    }
                     //Cambios de chucho
 
                     return response;
@@ -43,7 +72,7 @@ namespace GDSfonacotDatos
                     var response = new MethodResponse<List<Historial_de_Supervisiones>> { Code = 0 };
 
                     var usuariosDB = context.Historial_de_Supervisiones
-                        .Join(context.Sucursales, s => s.IdSucursal, c => c.IdSucursal,(s, c) => new { s, c })
+                        .Join(context.Sucursales, s => s.IdSucursal, c => c.IdSucursal, (s, c) => new { s, c })
                         .Where(sc => (sc.s.IdSupervisiones == IdSupervisiones || IdSupervisiones == 0) && (sc.c.DescripcionSucursal.Contains(filter) || filter == "")).Select(x => x.s).ToList();
 
                     response.Result = usuariosDB;
@@ -59,11 +88,12 @@ namespace GDSfonacotDatos
             }
         }
 
-        public MethodResponse<List<Usuarios>> ObtenerUsuarios(int IdUsuario) {
-            
+        public MethodResponse<List<Usuarios>> ObtenerUsuarios(int IdUsuario)
+        {
+
             try
             {
-                
+
 
                 using (var context = new GDSfonacotEntities())
                 {
@@ -75,7 +105,7 @@ namespace GDSfonacotDatos
 
                     return response;
                 }
-                   
+
             }
             catch (Exception ex)
             {
@@ -84,7 +114,7 @@ namespace GDSfonacotDatos
             }
         }
 
-        public MethodResponse<Usuarios> LoginUsuario(string Usuario ,string password)
+        public MethodResponse<Usuarios> LoginUsuario(string Usuario, string password)
         {
 
             try
@@ -97,7 +127,7 @@ namespace GDSfonacotDatos
 
                     var usuariosDB = context.Usuarios.Where(x => x.Usuario == Usuario && x.Pass == password).SingleOrDefault();
 
-                    if(usuariosDB != null) response.Result = usuariosDB;
+                    if (usuariosDB != null) response.Result = usuariosDB;
 
                     return response;
                 }
@@ -132,7 +162,32 @@ namespace GDSfonacotDatos
 
                 return new MethodResponse<List<Sucursales>> { Code = -100, Message = ex.Message };
             }
-        }    
+        }
+
+        public MethodResponse<List<DatosComboSucursales>> ObtenerSucursalesCombo()
+        {
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
+
+                    var usuariosDB = context.Sucursales.OrderBy(x => x.NoSucursal)
+                        .Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NameSucursal = (x.NoSucursal + " - " + x.DescripcionSucursal) }).ToList();
+
+                    response.Result = usuariosDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<DatosComboSucursales>> { Code = -100, Message = ex.Message };
+            }
+        }
 
     }
 }

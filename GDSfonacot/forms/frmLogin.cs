@@ -74,7 +74,7 @@ namespace GDSfonacot
                 else
                 {// este else2 va ligado al segundo if anidado  (linea27)
                     var logueo = objusuario.LoginUsuario(textUsuario.Text, textPass.Text);
-                  
+                 //var insertar=   objusuario.GuardarSupervision(;
                     if (logueo.Result != null)
                     {
                                                 
