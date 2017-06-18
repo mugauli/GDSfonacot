@@ -189,5 +189,34 @@ namespace GDSfonacotDatos
             }
         }
 
+        public MethodResponse<List<DatosGridSupervisiones>> ObtenerSupervisonesporSuc(int IdSupervisiones, string filter)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<DatosGridSupervisiones>> { Code = 0 };
+
+                    var HistoricoSucursalesDB = context.Historial_de_Supervisiones // seleccion de tabla inicial
+                        .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
+                        .Where(sc => sc.HistSup.NoSupervision!=null &&  (sc.HistSup.IdSupervisiones == IdSupervisiones || IdSupervisiones == 0) && (sc.Suc.DescripcionSucursal.Contains(filter) || filter == "")) //ya teniendo los datos, se filtran con el where
+                        .Select(x => new DatosGridSupervisiones { IdSupervisiones = x.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                                                                  NoSupervision = x.HistSup.NoSupervision,
+                                                                  FechaSupervision = x.HistSup.FechaSupervision,
+                                                                  DescripcionSucursal = x.Suc.DescripcionSucursal }).ToList();
+
+                    response.Result = HistoricoSucursalesDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<DatosGridSupervisiones>> { Code = -100, Message = ex.Message };
+            }
+        }
+
     }
 }

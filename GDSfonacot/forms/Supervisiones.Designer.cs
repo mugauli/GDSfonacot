@@ -34,6 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblTotRegistros = new System.Windows.Forms.Label();
             this.dataGlistaSup = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -57,24 +58,25 @@
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(71, 191);
+            this.label10.Location = new System.Drawing.Point(71, 164);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 16);
+            this.label10.Size = new System.Drawing.Size(384, 33);
             this.label10.TabIndex = 270;
-            this.label10.Text = "Sucursal";
+            this.label10.Text = "Por favor ingresa el nombre de Sucursal /Representacion a filtrar";
             // 
             // textSucursal
             // 
             this.textSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textSucursal.Location = new System.Drawing.Point(74, 167);
+            this.textSucursal.ForeColor = System.Drawing.SystemColors.Info;
+            this.textSucursal.Location = new System.Drawing.Point(74, 140);
             this.textSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.textSucursal.Name = "textSucursal";
             this.textSucursal.Size = new System.Drawing.Size(381, 20);
             this.textSucursal.TabIndex = 269;
+            this.textSucursal.TextChanged += new System.EventHandler(this.textSucursal_TextChanged);
             this.textSucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSucursal_KeyPress);
             // 
             // panel1
@@ -111,13 +113,25 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
+            // lblTotRegistros
+            // 
+            this.lblTotRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotRegistros.Location = new System.Drawing.Point(470, 465);
+            this.lblTotRegistros.Name = "lblTotRegistros";
+            this.lblTotRegistros.Size = new System.Drawing.Size(751, 23);
+            this.lblTotRegistros.TabIndex = 272;
+            // 
             // dataGlistaSup
             // 
+            this.dataGlistaSup.AllowUserToAddRows = false;
+            this.dataGlistaSup.AllowUserToDeleteRows = false;
+            this.dataGlistaSup.AllowUserToOrderColumns = true;
             this.dataGlistaSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGlistaSup.Location = new System.Drawing.Point(469, 166);
+            this.dataGlistaSup.Location = new System.Drawing.Point(470, 140);
             this.dataGlistaSup.Name = "dataGlistaSup";
-            this.dataGlistaSup.Size = new System.Drawing.Size(753, 289);
-            this.dataGlistaSup.TabIndex = 271;
+            this.dataGlistaSup.ReadOnly = true;
+            this.dataGlistaSup.Size = new System.Drawing.Size(722, 280);
+            this.dataGlistaSup.TabIndex = 273;
             // 
             // Supervisiones
             // 
@@ -125,6 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 665);
             this.Controls.Add(this.dataGlistaSup);
+            this.Controls.Add(this.lblTotRegistros);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textSucursal);
             this.Controls.Add(this.panel1);
@@ -149,6 +164,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textSucursal;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTotRegistros;
         private System.Windows.Forms.DataGridView dataGlistaSup;
     }
 }

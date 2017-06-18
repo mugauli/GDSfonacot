@@ -431,7 +431,7 @@
             this.cmbSucursales.FormattingEnabled = true;
             this.cmbSucursales.Location = new System.Drawing.Point(20, 146);
             this.cmbSucursales.Name = "cmbSucursales";
-            this.cmbSucursales.Size = new System.Drawing.Size(333, 21);
+            this.cmbSucursales.Size = new System.Drawing.Size(351, 21);
             this.cmbSucursales.TabIndex = 233;
             // 
             // dtFechaSupervision

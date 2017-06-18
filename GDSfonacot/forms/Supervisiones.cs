@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GDSfonacotDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace GDSfonacot
 
         private void Supervisiones_Load(object sender, EventArgs e)
         {
+  
 
         }
 
@@ -27,6 +29,58 @@ namespace GDSfonacot
             if (e.KeyChar == 13)
             {
 
+            }
+        }
+
+        private void textSucursal_TextChanged(object sender, EventArgs e)
+        {
+            lblTotRegistros.Text = "";
+            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim());
+            if (totalsupe.Code != 0)
+            {
+                MessageBox.Show("error");
+            }
+
+
+            dataGlistaSup.DataSource = totalsupe.Result;            
+            dataGlistaSup.Columns[0].Visible = false;
+            dataGlistaSup.AutoResizeColumns();
+
+
+            lblTotRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+
+           
+
+
+        }
+
+        private void dataGlistaSup_SelectionChanged(object sender, EventArgs e)
+        {
+
+            
+
+        }
+
+        private void dataGlistaSup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGlistaSup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+          
+         
+        }
+
+        private void dataGlistaSup_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex>-1 && e.ColumnIndex > -1) { 
+                if(dataGlistaSup.CurrentCell.Selected)
+                 {
+                    var valor = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value;
+                    MessageBox.Show("Has seleccionado la supervision" + valor);
+                 }
             }
         }
     }
