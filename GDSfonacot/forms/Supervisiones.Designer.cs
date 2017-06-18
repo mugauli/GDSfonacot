@@ -60,10 +60,10 @@
             // 
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(71, 164);
+            this.label10.Location = new System.Drawing.Point(13, 164);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(384, 33);
+            this.label10.Size = new System.Drawing.Size(442, 33);
             this.label10.TabIndex = 270;
             this.label10.Text = "Por favor ingresa el nombre de Sucursal /Representacion a filtrar";
             // 
@@ -71,10 +71,10 @@
             // 
             this.textSucursal.BackColor = System.Drawing.SystemColors.MenuText;
             this.textSucursal.ForeColor = System.Drawing.SystemColors.Info;
-            this.textSucursal.Location = new System.Drawing.Point(74, 140);
+            this.textSucursal.Location = new System.Drawing.Point(13, 140);
             this.textSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.textSucursal.Name = "textSucursal";
-            this.textSucursal.Size = new System.Drawing.Size(381, 20);
+            this.textSucursal.Size = new System.Drawing.Size(442, 20);
             this.textSucursal.TabIndex = 269;
             this.textSucursal.TextChanged += new System.EventHandler(this.textSucursal_TextChanged);
             this.textSucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSucursal_KeyPress);
