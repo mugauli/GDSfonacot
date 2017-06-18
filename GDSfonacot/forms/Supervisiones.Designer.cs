@@ -132,6 +132,7 @@
             this.dataGlistaSup.ReadOnly = true;
             this.dataGlistaSup.Size = new System.Drawing.Size(722, 280);
             this.dataGlistaSup.TabIndex = 273;
+            this.dataGlistaSup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellContentDoubleClick);
             // 
             // Supervisiones
             // 
