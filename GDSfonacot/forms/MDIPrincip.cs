@@ -142,7 +142,7 @@ namespace GDSfonacot
             }
             else
             {
-                essageBox.Show("Catalogo de las  sucursales");// Mensaje en pantalla
+                MessageBox.Show("Catalogo de las  sucursales");// Mensaje en pantalla
             }
 
         }
