@@ -41,10 +41,17 @@ namespace GDSfonacot
 
         private void menuHistsupOp_Click(object sender, EventArgs e)
         {
-            FichasSupervision frmfichassup = new FichasSupervision();//crea una instancia del formulario
-            frmfichassup.MdiParent = this;
-            frmfichassup.Show();
-            //   frmfichassup.ShowDialog(); //muestra el formulario de forma modal
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                FichasSupervision frmfichassup = new FichasSupervision();//crea una instancia del formulario
+                frmfichassup.MdiParent = this;
+                frmfichassup.Show();
+                //   frmfichassup.ShowDialog(); //muestra el formulario de forma modal
+            }
         }
 
         private void menuFichasSuc_Click(object sender, EventArgs e)
@@ -57,23 +64,44 @@ namespace GDSfonacot
 
         private void menuFichasPerson_Click(object sender, EventArgs e)
         {
-            PersonalSucursales frmPersonsuc = new PersonalSucursales();//crea una instancia del formulario
-            frmPersonsuc.MdiParent = this;
-            frmPersonsuc.Show();
-            //   frmsup.ShowDialog(); //muestra el formulario en forma modal
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                PersonalSucursales frmPersonsuc = new PersonalSucursales();//crea una instancia del formulario
+                frmPersonsuc.MdiParent = this;
+                frmPersonsuc.Show();
+                //   frmsup.ShowDialog(); //muestra el formulario en forma modal
+            }
         }
 
         private void menuSeguSup_Click(object sender, EventArgs e)
         {
-            SeguimientoSup frmsegSup = new SeguimientoSup();//crea una instancia del formulario
-            frmsegSup.MdiParent = this;
-            frmsegSup.Show();
-            // frmsegSup.ShowDialog(); //muestra el formulario en forma modal
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                SeguimientoSup frmsegSup = new SeguimientoSup();//crea una instancia del formulario
+                frmsegSup.MdiParent = this;
+                frmsegSup.Show();
+                // frmsegSup.ShowDialog(); //muestra el formulario en forma modal
+            }
         }
 
         private void menuMinutas_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Minutas de trabajo");// Mensaje en pantalla
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                MessageBox.Show("Minutas de trabajo");// Mensaje en pantalla
+            }
         }
 
         private void MDIPrincip_Resize(object sender, EventArgs e)
@@ -88,10 +116,17 @@ namespace GDSfonacot
 
         private void menuConstSuc_Click(object sender, EventArgs e)
         {
-            ContestSuc frmConstSuc= new ContestSuc();//crea una instancia del formulario
-            frmConstSuc.MdiParent = this;
-            frmConstSuc.Show();
-            // frmsegSup.ShowDialog(); //muestra el formulario en forma modal
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                ContestSuc frmConstSuc = new ContestSuc();//crea una instancia del formulario
+                frmConstSuc.MdiParent = this;
+                frmConstSuc.Show();
+                // frmsegSup.ShowDialog(); //muestra el formulario en forma modal
+            }
         }
 
         private void menuCatalogos_Click(object sender, EventArgs e)
@@ -107,7 +142,7 @@ namespace GDSfonacot
             }
             else
             {
-
+                essageBox.Show("Catalogo de sucursales");// Mensaje en pantalla
             }
 
         }
@@ -120,7 +155,7 @@ namespace GDSfonacot
             }
             else
             {
-
+                MessageBox.Show("Catalogo de usuarios");// Mensaje en pantalla
             }
         }
     }
