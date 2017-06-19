@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GDSfonacotDatos;
+
 
 namespace GDSfonacot
 {
@@ -14,6 +16,8 @@ namespace GDSfonacot
     public partial class frmLogin : Form
     {
         GDSfonacotDatos.SupervisionesData objusuario = new GDSfonacotDatos.SupervisionesData();
+      
+
         public frmLogin()
         {
             InitializeComponent();
@@ -77,15 +81,30 @@ namespace GDSfonacot
                  //var insertar=   objusuario.GuardarSupervision(;
                     if (logueo.Result != null)
                     {
-                                                
-                        MessageBox.Show("Bienvenido " + logueo.Result.Nombre_Usuario, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
-                        MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
-                        this.Hide();  //oculta el formulario
-                        frmPanel.ShowDialog();//muestra el formulario forma modal
-                        this.Close();//cierra el formulario
+
+
+                        if (logueo.Result.fechabaja != null)
+                        {
+                            MessageBox.Show("El usuario " + logueo.Result.Nombre_Usuario + " gafete " + logueo.Result.Usuario + " esta dado de baja,favor de verificar con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);// Mensaje en pantallas
+
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Bienvenido " + logueo.Result.Nombre_Usuario, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
+                      
+                            Globales.objpasardatosusuario.IdNivel = logueo.Result.IdNivel;
+                            Globales.objpasardatosusuario.Nombre_Usuario = logueo.Result.Nombre_Usuario;
+                            MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
+                            this.Hide();  //oculta el formulario
+                            frmPanel.ShowDialog();//muestra el formulario forma modal
+                            this.Close();//cierra el formulario
+                        }
                     }
+                   
                     else
                     {
+
                         MessageBox.Show("El usuario " + textUsuario.Text.Trim() + " y/o contraseña ingresado," + Environment.NewLine +
                         "no existe o son invalidos.Intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
                     }

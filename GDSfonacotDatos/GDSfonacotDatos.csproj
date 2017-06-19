@@ -54,6 +54,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DTO\DatosComboSucursales.cs" />
     <Compile Include="DTO\DatosGridSupervisiones.cs" />
+    <Compile Include="DTO\DatosUsuario.cs" />
     <Compile Include="GDSfonacotEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +70,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GDSfonacotEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Globales.cs" />
     <Compile Include="Historial_de_Supervisiones.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>

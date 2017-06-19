@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GDSfonacotDatos;
 namespace GDSfonacot
 {
     public partial class MDIPrincip : Form
     {
+      
         public MDIPrincip()
         {
             InitializeComponent();
         }
-
+       
         private void MDIPrincip_Load(object sender, EventArgs e)
         {
 
@@ -24,10 +25,18 @@ namespace GDSfonacot
 
         private void menuSupOp_Click(object sender, EventArgs e)
         {
-            Supervisiones frmsup = new Supervisiones();//crea una instancia del formulario
-            frmsup.MdiParent = this;
-            frmsup.Show();
-            //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                Supervisiones frmsup = new Supervisiones();//crea una instancia del formulario
+                frmsup.MdiParent = this;
+                frmsup.Show();
+                //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+            }
+
         }
 
         private void menuHistsupOp_Click(object sender, EventArgs e)
@@ -83,6 +92,36 @@ namespace GDSfonacot
             frmConstSuc.MdiParent = this;
             frmConstSuc.Show();
             // frmsegSup.ShowDialog(); //muestra el formulario en forma modal
+        }
+
+        private void menuCatalogos_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void submenuSuc_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void submenuUsers_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+
+            }
         }
     }
 }

@@ -85,9 +85,92 @@ namespace GDSfonacot
                 return true;              
             }
 
+            if (string.IsNullOrEmpty(txtNoSupervision.Text.Trim()) || txtNoSupervision.Text.Trim()=="")
+            {
+                MessageBox.Show("Ingresa un numero de supervision", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNoSupervision.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtSupervisor1.Text.Trim()) || txtSupervisor1.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa el nombre del supervisor 1", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtSupervisor1.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtSupervisor2.Text.Trim()) || txtSupervisor2.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa el nombre del supervisor 2", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtSupervisor2.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtInmueble.Text.Trim()) || txtInmueble.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion del Inmueble", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtInmueble.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtGesDireccion.Text.Trim()) || txtGesDireccion.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de gestión de la dirección", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtGesDireccion.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtOriginacion.Text.Trim()) || txtOriginacion.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de Originación", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtOriginacion.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtTransfer.Text.Trim()) || txtTransfer.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de Tarjetas transfer", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtTransfer.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtCredito.Text.Trim()) || txtCredito.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de Crédito", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCredito.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtUTYS.Text.Trim()) || txtUTYS.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de UTYS", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtUTYS.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtPromocionales.Text.Trim()) || txtPromocionales.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de promocionales", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPromocionales.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtCobranza.Text.Trim()) || txtCobranza.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de cobranza", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCobranza.Focus();
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(txtFonFijo.Text.Trim()) || txtFonFijo.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de fondo fijo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtFonFijo.Focus();
+                return true;
+            }
 
 
-            return  false;
+            return false;
         }
 
         private void LoadingCatSucursales()

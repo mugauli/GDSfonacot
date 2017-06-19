@@ -79,7 +79,7 @@ namespace GDSfonacot
                 if(dataGlistaSup.CurrentCell.Selected)
                  {
                     var valor = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value;
-                    MessageBox.Show("Has seleccionado la supervision" + valor);
+                    MessageBox.Show("Has seleccionado la supervision " + valor);
                  }
             }
         }

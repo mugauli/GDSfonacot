@@ -37,6 +37,7 @@
             this.menuFichasPerson = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuSeguSup = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuConstSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMinutas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -47,7 +48,6 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.menuayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuConstSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,13 @@
             this.menuSeguSup.Text = "Seguimiento a las Supervisiones";
             this.menuSeguSup.Click += new System.EventHandler(this.menuSeguSup_Click);
             // 
+            // menuConstSuc
+            // 
+            this.menuConstSuc.Name = "menuConstSuc";
+            this.menuConstSuc.Size = new System.Drawing.Size(287, 22);
+            this.menuConstSuc.Text = "Contestación a las Supervisiones";
+            this.menuConstSuc.Click += new System.EventHandler(this.menuConstSuc_Click);
+            // 
             // menuMinutas
             // 
             this.menuMinutas.ImageTransparentColor = System.Drawing.Color.Black;
@@ -167,25 +174,28 @@
             this.menuCatalogos.Name = "menuCatalogos";
             this.menuCatalogos.Size = new System.Drawing.Size(85, 19);
             this.menuCatalogos.Text = "&Catalogos";
+            this.menuCatalogos.Click += new System.EventHandler(this.menuCatalogos_Click);
             // 
             // submenuSuc
             // 
             this.submenuSuc.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuSuc.Name = "submenuSuc";
-            this.submenuSuc.Size = new System.Drawing.Size(129, 22);
+            this.submenuSuc.Size = new System.Drawing.Size(152, 22);
             this.submenuSuc.Text = "Sucursales";
+            this.submenuSuc.Click += new System.EventHandler(this.submenuSuc_Click);
             // 
             // submenuUsers
             // 
             this.submenuUsers.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuUsers.Name = "submenuUsers";
-            this.submenuUsers.Size = new System.Drawing.Size(129, 22);
+            this.submenuUsers.Size = new System.Drawing.Size(152, 22);
             this.submenuUsers.Text = "Usuarios";
+            this.submenuUsers.Click += new System.EventHandler(this.submenuUsers_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(126, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
             // 
             // menuayuda
             // 
@@ -198,15 +208,8 @@
             // menuAbout
             // 
             this.menuAbout.Name = "menuAbout";
-            this.menuAbout.Size = new System.Drawing.Size(147, 22);
+            this.menuAbout.Size = new System.Drawing.Size(152, 22);
             this.menuAbout.Text = "&Acerca de... ...";
-            // 
-            // menuConstSup
-            // 
-            this.menuConstSuc.Name = "menuConstSuc";
-            this.menuConstSuc.Size = new System.Drawing.Size(287, 22);
-            this.menuConstSuc.Text = "Contestación a las Supervisiones";
-            this.menuConstSuc.Click += new System.EventHandler(this.menuConstSuc_Click);
             // 
             // MDIPrincip
             // 

@@ -59,7 +59,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.cmbSucursales = new System.Windows.Forms.ComboBox();
             this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -112,6 +111,7 @@
             // txtFonFijo
             // 
             this.txtFonFijo.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtFonFijo.ForeColor = System.Drawing.SystemColors.Info;
             this.txtFonFijo.Location = new System.Drawing.Point(19, 1626);
             this.txtFonFijo.Margin = new System.Windows.Forms.Padding(4);
             this.txtFonFijo.Multiline = true;
@@ -125,7 +125,7 @@
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.ForeColor = System.Drawing.Color.DimGray;
-            this.label45.Location = new System.Drawing.Point(29, 1440);
+            this.label45.Location = new System.Drawing.Point(17, 1438);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(69, 16);
@@ -173,7 +173,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.DimGray;
-            this.label41.Location = new System.Drawing.Point(24, 705);
+            this.label41.Location = new System.Drawing.Point(22, 764);
             this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(113, 16);
@@ -195,6 +195,7 @@
             // txtPromocionales
             // 
             this.txtPromocionales.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtPromocionales.ForeColor = System.Drawing.SystemColors.Info;
             this.txtPromocionales.Location = new System.Drawing.Point(20, 1289);
             this.txtPromocionales.Margin = new System.Windows.Forms.Padding(4);
             this.txtPromocionales.Multiline = true;
@@ -206,6 +207,7 @@
             // txtUTYS
             // 
             this.txtUTYS.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtUTYS.ForeColor = System.Drawing.SystemColors.Info;
             this.txtUTYS.Location = new System.Drawing.Point(20, 1121);
             this.txtUTYS.Margin = new System.Windows.Forms.Padding(4);
             this.txtUTYS.Multiline = true;
@@ -217,6 +219,7 @@
             // txtTransfer
             // 
             this.txtTransfer.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtTransfer.ForeColor = System.Drawing.SystemColors.Info;
             this.txtTransfer.Location = new System.Drawing.Point(20, 784);
             this.txtTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.txtTransfer.Multiline = true;
@@ -228,6 +231,7 @@
             // txtCredito
             // 
             this.txtCredito.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtCredito.ForeColor = System.Drawing.SystemColors.Info;
             this.txtCredito.Location = new System.Drawing.Point(20, 951);
             this.txtCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtCredito.Multiline = true;
@@ -239,6 +243,7 @@
             // txtCobranza
             // 
             this.txtCobranza.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtCobranza.ForeColor = System.Drawing.SystemColors.Info;
             this.txtCobranza.Location = new System.Drawing.Point(20, 1458);
             this.txtCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranza.Multiline = true;
@@ -250,6 +255,7 @@
             // txtOriginacion
             // 
             this.txtOriginacion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtOriginacion.ForeColor = System.Drawing.SystemColors.Info;
             this.txtOriginacion.Location = new System.Drawing.Point(20, 617);
             this.txtOriginacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtOriginacion.Multiline = true;
@@ -261,6 +267,7 @@
             // txtGesDireccion
             // 
             this.txtGesDireccion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtGesDireccion.ForeColor = System.Drawing.SystemColors.Info;
             this.txtGesDireccion.Location = new System.Drawing.Point(20, 444);
             this.txtGesDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtGesDireccion.Multiline = true;
@@ -284,6 +291,7 @@
             // txtInmueble
             // 
             this.txtInmueble.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtInmueble.ForeColor = System.Drawing.SystemColors.Info;
             this.txtInmueble.Location = new System.Drawing.Point(20, 276);
             this.txtInmueble.Margin = new System.Windows.Forms.Padding(4);
             this.txtInmueble.Multiline = true;
@@ -319,6 +327,7 @@
             // txtSupervisor2
             // 
             this.txtSupervisor2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtSupervisor2.ForeColor = System.Drawing.SystemColors.Info;
             this.txtSupervisor2.Location = new System.Drawing.Point(391, 203);
             this.txtSupervisor2.Margin = new System.Windows.Forms.Padding(4);
             this.txtSupervisor2.Multiline = true;
@@ -341,6 +350,7 @@
             // txtSupervisor1
             // 
             this.txtSupervisor1.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtSupervisor1.ForeColor = System.Drawing.SystemColors.Info;
             this.txtSupervisor1.Location = new System.Drawing.Point(25, 203);
             this.txtSupervisor1.Margin = new System.Windows.Forms.Padding(4);
             this.txtSupervisor1.Name = "txtSupervisor1";
@@ -374,6 +384,7 @@
             // txtNoSupervision
             // 
             this.txtNoSupervision.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtNoSupervision.ForeColor = System.Drawing.SystemColors.Info;
             this.txtNoSupervision.Location = new System.Drawing.Point(391, 147);
             this.txtNoSupervision.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoSupervision.Name = "txtNoSupervision";
@@ -414,20 +425,10 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(320, 174);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 232;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // cmbSucursales
             // 
             this.cmbSucursales.BackColor = System.Drawing.Color.Black;
-            this.cmbSucursales.ForeColor = System.Drawing.Color.White;
+            this.cmbSucursales.ForeColor = System.Drawing.SystemColors.Info;
             this.cmbSucursales.FormattingEnabled = true;
             this.cmbSucursales.Location = new System.Drawing.Point(20, 146);
             this.cmbSucursales.Name = "cmbSucursales";
@@ -483,7 +484,6 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dtFechaSupervision);
             this.Controls.Add(this.cmbSucursales);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.txtFonFijo);
@@ -558,7 +558,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNoSupervision;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbSucursales;
         private System.Windows.Forms.DateTimePicker dtFechaSupervision;
         private System.Windows.Forms.ToolStrip toolStrip1;
