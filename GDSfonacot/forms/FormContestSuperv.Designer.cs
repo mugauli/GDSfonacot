@@ -1116,7 +1116,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1553, 108);
+            this.panel1.Size = new System.Drawing.Size(1547, 108);
             this.panel1.TabIndex = 105;
             // 
             // pictureBox3
@@ -1157,7 +1157,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1553, 873);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.textBox42);
             this.Controls.Add(this.label46);
