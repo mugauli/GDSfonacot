@@ -13,6 +13,7 @@ namespace GDSfonacot.forms
 {
     public partial class formVisorReportes : Form
     {
+        public string valor = "";
         public formVisorReportes()
         {
             InitializeComponent();

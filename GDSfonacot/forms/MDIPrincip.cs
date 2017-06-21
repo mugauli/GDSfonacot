@@ -164,10 +164,9 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1)
             {
-                 forms.formVisorReportes   frmvisor = new forms.formVisorReportes();//crea una instancia del formulario
-                frmvisor.MdiParent = this;
-                frmvisor.Show();
-                // frmsegSup.ShowDialog(); //muestra el formulario en forma modal
+                 forms.FormTemplParametroCR   frmtempparam = new forms.FormTemplParametroCR();//crea una instancia del formulario
+                frmtempparam.ShowDialog();//muestra el formulario forma modal
+              
             }
             else
             {

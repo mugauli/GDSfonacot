@@ -28,22 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textparam = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textparam
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 20);
-            this.textBox1.TabIndex = 0;
+            this.textparam.Location = new System.Drawing.Point(15, 87);
+            this.textparam.Name = "textparam";
+            this.textparam.Size = new System.Drawing.Size(283, 20);
+            this.textparam.TabIndex = 0;
+            this.textparam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textparam_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(286, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ingresa el numero de supervision completo y presiona enter";
             // 
             // FormTemplParametroCR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(311, 175);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textparam);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormTemplParametroCR";
             this.Text = "FormTemplParametroCR";
             this.ResumeLayout(false);
@@ -53,6 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textparam;
+        private System.Windows.Forms.Label label1;
     }
 }
