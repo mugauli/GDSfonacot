@@ -98,12 +98,6 @@
     <Compile Include="forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\MDIParent1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\MDIParent1.Designer.cs">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\MDIPrincip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,9 +126,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\MDIParent1.resx">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MDIPrincip.resx">
       <DependentUpon>MDIPrincip.cs</DependentUpon>

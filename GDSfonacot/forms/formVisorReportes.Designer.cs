@@ -51,6 +51,7 @@
             this.Controls.Add(this.crpvisor);
             this.Name = "formVisorReportes";
             this.Text = "formVisorReportes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formVisorReportes_Load);
             this.ResumeLayout(false);
 
