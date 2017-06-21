@@ -159,5 +159,21 @@ namespace GDSfonacot
                 MessageBox.Show("Catalogo de los usuarios");// Mensaje en pantalla
             }
         }
+
+        private void menuReportes_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1)
+            {
+                 forms.formVisorReportes   frmvisor = new forms.formVisorReportes();//crea una instancia del formulario
+                frmvisor.MdiParent = this;
+                frmvisor.Show();
+                // frmsegSup.ShowDialog(); //muestra el formulario en forma modal
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+                
+            }
+        }
     }
 }
