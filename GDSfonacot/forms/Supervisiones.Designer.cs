@@ -90,7 +90,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1362, 108);
+            this.panel1.Size = new System.Drawing.Size(1354, 108);
             this.panel1.TabIndex = 253;
             // 
             // pictureBox3
@@ -116,7 +116,7 @@
             // lblTotRegistros
             // 
             this.lblTotRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotRegistros.Location = new System.Drawing.Point(470, 465);
+            this.lblTotRegistros.Location = new System.Drawing.Point(470, 423);
             this.lblTotRegistros.Name = "lblTotRegistros";
             this.lblTotRegistros.Size = new System.Drawing.Size(751, 23);
             this.lblTotRegistros.TabIndex = 272;
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 665);
+            this.ClientSize = new System.Drawing.Size(1354, 665);
             this.Controls.Add(this.dataGlistaSup);
             this.Controls.Add(this.lblTotRegistros);
             this.Controls.Add(this.label10);
