@@ -20,7 +20,7 @@ namespace GDSfonacot.forms
 
         private void formVisorReportes_Load(object sender, EventArgs e)
         {
-            string valor = "DSO/SUP/ENE/007/2017";
+            
             reportes.crpMinutaTrabajo objreport = new reportes.crpMinutaTrabajo();
             objreport.SetParameterValue("@nosupervision", valor);
             objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
