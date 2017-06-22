@@ -16,7 +16,7 @@ namespace GDSfonacot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FichasSupervision());//linea para cambiar el formulario de inicio
+            Application.Run(new SeguimientoSup());//linea para cambiar el formulario de inicio
         }
     }  
 }

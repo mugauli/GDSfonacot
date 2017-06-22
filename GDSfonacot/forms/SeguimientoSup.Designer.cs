@@ -120,7 +120,7 @@
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.DimGray;
-            this.label38.Location = new System.Drawing.Point(21, 234);
+            this.label38.Location = new System.Drawing.Point(21, 258);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(196, 16);
@@ -145,7 +145,7 @@
             this.textBox7.Location = new System.Drawing.Point(939, 116);
             this.textBox7.Margin = new System.Windows.Forms.Padding(4);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(615, 20);
+            this.textBox7.Size = new System.Drawing.Size(297, 20);
             this.textBox7.TabIndex = 207;
             // 
             // label4
@@ -223,7 +223,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1565, 108);
+            this.panel1.Size = new System.Drawing.Size(1362, 108);
             this.panel1.TabIndex = 200;
             // 
             // pictureBox3
@@ -249,11 +249,11 @@
             // textBox36
             // 
             this.textBox36.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox36.Location = new System.Drawing.Point(24, 254);
+            this.textBox36.Location = new System.Drawing.Point(24, 278);
             this.textBox36.Margin = new System.Windows.Forms.Padding(4);
             this.textBox36.Multiline = true;
             this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(1537, 313);
+            this.textBox36.Size = new System.Drawing.Size(1036, 107);
             this.textBox36.TabIndex = 211;
             // 
             // textBox5
@@ -303,7 +303,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1126, 185);
+            this.label9.Location = new System.Drawing.Point(21, 228);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(136, 16);
@@ -313,7 +313,7 @@
             // textBox8
             // 
             this.textBox8.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox8.Location = new System.Drawing.Point(1125, 164);
+            this.textBox8.Location = new System.Drawing.Point(20, 207);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(224, 20);
@@ -322,7 +322,7 @@
             // textBox9
             // 
             this.textBox9.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox9.Location = new System.Drawing.Point(1372, 163);
+            this.textBox9.Location = new System.Drawing.Point(252, 207);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(95, 20);
@@ -331,11 +331,11 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(1485, 165);
+            this.checkBox1.Location = new System.Drawing.Point(252, 207);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 239;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Solventada";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -345,7 +345,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1362, 625);
+            this.ClientSize = new System.Drawing.Size(1362, 413);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label9);
