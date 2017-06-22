@@ -108,5 +108,10 @@ namespace GDSfonacot
         {
 
         }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
