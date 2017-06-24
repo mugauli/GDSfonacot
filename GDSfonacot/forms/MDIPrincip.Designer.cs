@@ -30,14 +30,15 @@
         {
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuModulos = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSupOp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBuscarSuperv = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSupContestSuc = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSupConsultaSuperv = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSupContestSeguimSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFichasSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFichasPerson = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuSeguSup = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuConstSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMinutas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -60,37 +61,58 @@
             this.menuayuda});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(98, 453);
+            this.menuPrincipal.Size = new System.Drawing.Size(78, 453);
             this.menuPrincipal.TabIndex = 256;
             this.menuPrincipal.Text = "Menu";
             // 
             // menuModulos
             // 
             this.menuModulos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuSupOp,
+            this.mnuBuscarSuperv,
             this.menuHistsupOp,
             this.toolStripSeparator3,
             this.menuFichasSuc,
             this.menuFichasPerson,
             this.toolStripSeparator4,
-            this.menuSeguSup,
-            this.menuConstSuc,
             this.menuMinutas,
             this.menuReportes,
             this.toolStripSeparator5,
             this.menuSalir});
             this.menuModulos.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.menuModulos.Name = "menuModulos";
-            this.menuModulos.Size = new System.Drawing.Size(85, 19);
+            this.menuModulos.Size = new System.Drawing.Size(65, 19);
             this.menuModulos.Text = "&Modulos";
             // 
-            // menuSupOp
+            // mnuBuscarSuperv
             // 
-            this.menuSupOp.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuSupOp.Name = "menuSupOp";
-            this.menuSupOp.Size = new System.Drawing.Size(287, 22);
-            this.menuSupOp.Text = "Supervision de Operaciones";
-            this.menuSupOp.Click += new System.EventHandler(this.menuSupOp_Click);
+            this.mnuBuscarSuperv.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSupContestSuc,
+            this.mnuSupConsultaSuperv,
+            this.mnuSupContestSeguimSuperv});
+            this.mnuBuscarSuperv.Name = "mnuBuscarSuperv";
+            this.mnuBuscarSuperv.Size = new System.Drawing.Size(287, 22);
+            this.mnuBuscarSuperv.Text = "Buscar Supervisiones";
+            // 
+            // mnuSupContestSuc
+            // 
+            this.mnuSupContestSuc.Name = "mnuSupContestSuc";
+            this.mnuSupContestSuc.Size = new System.Drawing.Size(347, 22);
+            this.mnuSupContestSuc.Text = "Para Contestacion de Sucursal";
+            this.mnuSupContestSuc.Click += new System.EventHandler(this.mnuSupContestSuc_Click);
+            // 
+            // mnuSupConsultaSuperv
+            // 
+            this.mnuSupConsultaSuperv.Name = "mnuSupConsultaSuperv";
+            this.mnuSupConsultaSuperv.Size = new System.Drawing.Size(347, 22);
+            this.mnuSupConsultaSuperv.Text = "Para Consulta de un Supervisor";
+            this.mnuSupConsultaSuperv.Click += new System.EventHandler(this.mnuSupConsultaSuperv_Click);
+            // 
+            // mnuSupContestSeguimSuperv
+            // 
+            this.mnuSupContestSeguimSuperv.Name = "mnuSupContestSeguimSuperv";
+            this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(347, 22);
+            this.mnuSupContestSeguimSuperv.Text = "Para Contestacion de Seguimiento de un Supervisor";
+            this.mnuSupContestSeguimSuperv.Click += new System.EventHandler(this.mnuSupContestSeguimSuperv_Click);
             // 
             // menuHistsupOp
             // 
@@ -123,21 +145,6 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(284, 6);
-            // 
-            // menuSeguSup
-            // 
-            this.menuSeguSup.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuSeguSup.Name = "menuSeguSup";
-            this.menuSeguSup.Size = new System.Drawing.Size(287, 22);
-            this.menuSeguSup.Text = "Seguimiento a las Supervisiones";
-            this.menuSeguSup.Click += new System.EventHandler(this.menuSeguSup_Click);
-            // 
-            // menuConstSuc
-            // 
-            this.menuConstSuc.Name = "menuConstSuc";
-            this.menuConstSuc.Size = new System.Drawing.Size(287, 22);
-            this.menuConstSuc.Text = "Contestación a las Supervisiones";
-            this.menuConstSuc.Click += new System.EventHandler(this.menuConstSuc_Click);
             // 
             // menuMinutas
             // 
@@ -173,7 +180,7 @@
             this.submenuUsers,
             this.toolStripSeparator6});
             this.menuCatalogos.Name = "menuCatalogos";
-            this.menuCatalogos.Size = new System.Drawing.Size(85, 19);
+            this.menuCatalogos.Size = new System.Drawing.Size(65, 19);
             this.menuCatalogos.Text = "&Catalogos";
             this.menuCatalogos.Click += new System.EventHandler(this.menuCatalogos_Click);
             // 
@@ -203,7 +210,7 @@
             this.menuayuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAbout});
             this.menuayuda.Name = "menuayuda";
-            this.menuayuda.Size = new System.Drawing.Size(85, 19);
+            this.menuayuda.Size = new System.Drawing.Size(65, 19);
             this.menuayuda.Text = "Ay&uda";
             // 
             // menuAbout
@@ -234,13 +241,11 @@
 
         private System.Windows.Forms.MenuStrip menuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem menuModulos;
-        private System.Windows.Forms.ToolStripMenuItem menuSupOp;
         private System.Windows.Forms.ToolStripMenuItem menuHistsupOp;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem menuFichasSuc;
         private System.Windows.Forms.ToolStripMenuItem menuFichasPerson;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem menuSeguSup;
         private System.Windows.Forms.ToolStripMenuItem menuMinutas;
         private System.Windows.Forms.ToolStripMenuItem menuReportes;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
@@ -251,6 +256,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem menuayuda;
         private System.Windows.Forms.ToolStripMenuItem menuAbout;
-        private System.Windows.Forms.ToolStripMenuItem menuConstSuc;
+        private System.Windows.Forms.ToolStripMenuItem mnuBuscarSuperv;
+        private System.Windows.Forms.ToolStripMenuItem mnuSupContestSuc;
+        private System.Windows.Forms.ToolStripMenuItem mnuSupConsultaSuperv;
+        private System.Windows.Forms.ToolStripMenuItem mnuSupContestSeguimSuperv;
     }
 }

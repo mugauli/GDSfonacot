@@ -14,27 +14,41 @@ namespace GDSfonacotDatos
     
     public partial class Historial_de_Supervisiones
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Historial_de_Supervisiones()
+        {
+            this.ContestacionesSuperv_Sucursales = new HashSet<ContestacionesSuperv_Sucursales>();
+            this.SeguimientoSupervision_Supervisores = new HashSet<SeguimientoSupervision_Supervisores>();
+        }
+    
         public int IdSupervisiones { get; set; }
         public Nullable<int> IdSucursal { get; set; }
         public string NoSupervision { get; set; }
         public Nullable<System.DateTime> FechaSupervision { get; set; }
-        public string AfiliacionOtorgamientoCredito { get; set; }
-        public string ActividadesPromocionAfiliaciónCT { get; set; }
-        public string ProcesoCobranza { get; set; }
-        public string Revisión_de_UTYS { get; set; }
-        public string Situaciones_de_Orden_General_e_Infraestructura { get; set; }
+        public string Inmueble { get; set; }
+        public string Gestion_direccion { get; set; }
+        public string Originacion { get; set; }
+        public string Tarjetas_transfer { get; set; }
+        public string Credito { get; set; }
+        public string Utys { get; set; }
+        public string Promocionales { get; set; }
+        public string Cobranza { get; set; }
+        public string Fondofijo { get; set; }
         public string AcuerdosCompromisos { get; set; }
-        public string No_de_Respuesta_Supervision { get; set; }
-        public Nullable<System.DateTime> FechaRespuestaSupervision { get; set; }
-        public string Seguimiento_a_la_Supervisión { get; set; }
-        public string Respuesta_Supervision { get; set; }
-        public Nullable<bool> Solventada { get; set; }
-        public Nullable<int> IdSupervisor1 { get; set; }
-        public Nullable<int> IdSupervisor2 { get; set; }
-        public string NoOficio { get; set; }
+        public Nullable<int> Idusuariocreador { get; set; }
+        public Nullable<System.DateTime> Fechacreacion { get; set; }
+        public Nullable<int> Idstatus { get; set; }
+        public Nullable<int> Idsupervisor1 { get; set; }
+        public Nullable<int> Idsupervisor2 { get; set; }
     
+        public virtual cat_estatus cat_estatus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ContestacionesSuperv_Sucursales> ContestacionesSuperv_Sucursales { get; set; }
         public virtual Sucursales Sucursales { get; set; }
         public virtual Usuarios Usuarios { get; set; }
         public virtual Usuarios Usuarios1 { get; set; }
+        public virtual Usuarios Usuarios2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SeguimientoSupervision_Supervisores> SeguimientoSupervision_Supervisores { get; set; }
     }
 }
