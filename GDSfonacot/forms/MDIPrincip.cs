@@ -22,7 +22,7 @@ namespace GDSfonacot
        
         private void MDIPrincip_Load(object sender, EventArgs e)
         {
-
+            lblNombreUsuario.Text = Globales.objpasardatosusuario.Nombre_Usuario;
         }
 
         private void menuSupOp_Click(object sender, EventArgs e)
@@ -183,6 +183,11 @@ namespace GDSfonacot
             {
                 MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
             }
+        }
+
+        private void lblNombreUsuario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,7 +35,6 @@
             this.textPass = new System.Windows.Forms.TextBox();
             this.textUsuario = new System.Windows.Forms.TextBox();
             this.butEntrar = new System.Windows.Forms.Button();
-            this.butCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +49,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(483, 68);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
@@ -63,6 +63,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Control de Acceso\r\nGDS Fonacot";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -86,7 +87,7 @@
             // 
             // textPass
             // 
-            this.textPass.Location = new System.Drawing.Point(125, 162);
+            this.textPass.Location = new System.Drawing.Point(136, 162);
             this.textPass.Name = "textPass";
             this.textPass.PasswordChar = '*';
             this.textPass.Size = new System.Drawing.Size(240, 20);
@@ -95,7 +96,7 @@
             // 
             // textUsuario
             // 
-            this.textUsuario.Location = new System.Drawing.Point(125, 121);
+            this.textUsuario.Location = new System.Drawing.Point(135, 121);
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Size = new System.Drawing.Size(240, 20);
             this.textUsuario.TabIndex = 0;
@@ -103,7 +104,7 @@
             // 
             // butEntrar
             // 
-            this.butEntrar.Location = new System.Drawing.Point(157, 187);
+            this.butEntrar.Location = new System.Drawing.Point(300, 197);
             this.butEntrar.Name = "butEntrar";
             this.butEntrar.Size = new System.Drawing.Size(75, 23);
             this.butEntrar.TabIndex = 2;
@@ -111,23 +112,12 @@
             this.butEntrar.UseVisualStyleBackColor = true;
             this.butEntrar.Click += new System.EventHandler(this.butEntrar_Click);
             // 
-            // butCancelar
-            // 
-            this.butCancelar.Location = new System.Drawing.Point(255, 187);
-            this.butCancelar.Name = "butCancelar";
-            this.butCancelar.Size = new System.Drawing.Size(75, 23);
-            this.butCancelar.TabIndex = 3;
-            this.butCancelar.Text = "Cancelar";
-            this.butCancelar.UseVisualStyleBackColor = true;
-            this.butCancelar.Click += new System.EventHandler(this.butCancelar_Click);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(483, 222);
-            this.Controls.Add(this.butCancelar);
+            this.ClientSize = new System.Drawing.Size(483, 238);
             this.Controls.Add(this.butEntrar);
             this.Controls.Add(this.textUsuario);
             this.Controls.Add(this.textPass);
@@ -156,6 +146,5 @@
         private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.TextBox textUsuario;
         private System.Windows.Forms.Button butEntrar;
-        private System.Windows.Forms.Button butCancelar;
     }
 }

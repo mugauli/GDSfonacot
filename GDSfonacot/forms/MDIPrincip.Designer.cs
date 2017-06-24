@@ -53,6 +53,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.menuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -67,17 +68,17 @@
             this.menuayuda});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(1480, 24);
+            this.menuPrincipal.Size = new System.Drawing.Size(1596, 24);
             this.menuPrincipal.TabIndex = 256;
             this.menuPrincipal.Text = "Menu";
             // 
             // menuModulos
             // 
             this.menuModulos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuFichasSuc,
             this.mnuBuscarSuperv,
             this.menuHistsupOp,
             this.toolStripSeparator3,
-            this.menuFichasSuc,
             this.menuFichasPerson,
             this.toolStripSeparator4,
             this.menuMinutas,
@@ -102,8 +103,8 @@
             // mnuSupContestSuc
             // 
             this.mnuSupContestSuc.Name = "mnuSupContestSuc";
-            this.mnuSupContestSuc.Size = new System.Drawing.Size(347, 22);
-            this.mnuSupContestSuc.Text = "Para Contestacion de Sucursal";
+            this.mnuSupContestSuc.Size = new System.Drawing.Size(283, 22);
+            this.mnuSupContestSuc.Text = "Respuesta de Sucursales a la Supervisón";
             this.mnuSupContestSuc.Click += new System.EventHandler(this.mnuSupContestSuc_Click);
             // 
             // mnuSupConsultaSuperv
@@ -116,8 +117,8 @@
             // mnuSupContestSeguimSuperv
             // 
             this.mnuSupContestSeguimSuperv.Name = "mnuSupContestSeguimSuperv";
-            this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(347, 22);
-            this.mnuSupContestSeguimSuperv.Text = "Para Contestacion de Seguimiento de un Supervisor";
+            this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(283, 22);
+            this.mnuSupContestSeguimSuperv.Text = "Seuimiento de Supervisiones";
             this.mnuSupContestSeguimSuperv.Click += new System.EventHandler(this.mnuSupContestSeguimSuperv_Click);
             // 
             // menuHistsupOp
@@ -137,7 +138,7 @@
             // 
             this.menuFichasSuc.Name = "menuFichasSuc";
             this.menuFichasSuc.Size = new System.Drawing.Size(287, 22);
-            this.menuFichasSuc.Text = "Fichas Sucursales";
+            this.menuFichasSuc.Text = "Inicio Supervisión";
             this.menuFichasSuc.Click += new System.EventHandler(this.menuFichasSuc_Click);
             // 
             // menuFichasPerson
@@ -194,7 +195,7 @@
             // 
             this.submenuSuc.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuSuc.Name = "submenuSuc";
-            this.submenuSuc.Size = new System.Drawing.Size(152, 22);
+            this.submenuSuc.Size = new System.Drawing.Size(129, 22);
             this.submenuSuc.Text = "Sucursales";
             this.submenuSuc.Click += new System.EventHandler(this.submenuSuc_Click);
             // 
@@ -202,14 +203,14 @@
             // 
             this.submenuUsers.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuUsers.Name = "submenuUsers";
-            this.submenuUsers.Size = new System.Drawing.Size(152, 22);
+            this.submenuUsers.Size = new System.Drawing.Size(129, 22);
             this.submenuUsers.Text = "Usuarios";
             this.submenuUsers.Click += new System.EventHandler(this.submenuUsers_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(126, 6);
             // 
             // menuayuda
             // 
@@ -222,7 +223,7 @@
             // menuAbout
             // 
             this.menuAbout.Name = "menuAbout";
-            this.menuAbout.Size = new System.Drawing.Size(152, 22);
+            this.menuAbout.Size = new System.Drawing.Size(147, 22);
             this.menuAbout.Text = "&Acerca de... ...";
             // 
             // panel1
@@ -236,7 +237,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1480, 108);
+            this.panel1.Size = new System.Drawing.Size(1596, 108);
             this.panel1.TabIndex = 275;
             // 
             // pictureBox3
@@ -273,11 +274,23 @@
     " Supervisión de Operaciones \r\n\r\n";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(0, 132);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(1596, 24);
+            this.lblNombreUsuario.TabIndex = 277;
+            this.lblNombreUsuario.Text = "Usuario";
+            this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
+            // 
             // MDIPrincip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1480, 550);
+            this.ClientSize = new System.Drawing.Size(1596, 550);
+            this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuPrincipal);
             this.IsMdiContainer = true;
@@ -323,5 +336,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNombreUsuario;
     }
 }
