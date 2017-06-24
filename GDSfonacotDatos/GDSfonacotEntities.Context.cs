@@ -25,10 +25,13 @@ namespace GDSfonacotDatos
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Historial_de_Supervisiones> Historial_de_Supervisiones { get; set; }
         public virtual DbSet<Sucursales> Sucursales { get; set; }
         public virtual DbSet<TiraAuditora> TiraAuditora { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Usuarios_Nivel> Usuarios_Nivel { get; set; }
+        public virtual DbSet<cat_estatus> cat_estatus { get; set; }
+        public virtual DbSet<ContestacionesSuperv_Sucursales> ContestacionesSuperv_Sucursales { get; set; }
+        public virtual DbSet<SeguimientoSupervision_Supervisores> SeguimientoSupervision_Supervisores { get; set; }
+        public virtual DbSet<Historial_de_Supervisiones> Historial_de_Supervisiones { get; set; }
     }
 }
