@@ -80,6 +80,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\FormBusConsultasSupervision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormBusConsultasSupervision.Designer.cs">
+      <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormBusSupervSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormBusSupervSeguimiento.Designer.cs">
+      <DependentUpon>FormBusSupervSeguimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormTemplParametroCR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
       <DependentUpon>crpMinutaTrabajo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="forms\FormBusConsultasSupervision.resx">
+      <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormBusSupervSeguimiento.resx">
+      <DependentUpon>FormBusSupervSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormTemplParametroCR.resx">
       <DependentUpon>FormTemplParametroCR.cs</DependentUpon>
     </EmbeddedResource>

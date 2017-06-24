@@ -25,17 +25,7 @@ namespace GDSfonacot
 
         private void menuSupOp_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1)
-            {
-                Supervisiones frmsup = new Supervisiones();//crea una instancia del formulario
-                frmsup.MdiParent = this;
-                frmsup.Show();
-                //  frmsup.ShowDialog(); //muestra el formulario en forma modal
-            }
-            else
-            {
-                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-            }
+            
 
         }
 
@@ -172,6 +162,51 @@ namespace GDSfonacot
             {
                 MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
                 
+            }
+        }
+
+        private void mnuSupContestSuc_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+                Supervisiones frmsup = new Supervisiones();//crea una instancia del formulario
+                frmsup.MdiParent = this;
+                frmsup.Show();
+                //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void mnuSupConsultaSuperv_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+                forms.FormBusConsultasSupervision frmsup = new forms.FormBusConsultasSupervision();//crea una instancia del formulario
+                frmsup.MdiParent = this;
+                frmsup.Show();
+                //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void mnuSupContestSeguimSuperv_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+                forms.FormBusSupervSeguimiento frmsup = new forms.FormBusSupervSeguimiento();//crea una instancia del formulario
+                frmsup.MdiParent = this;
+                frmsup.Show();
+                //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
             }
         }
     }

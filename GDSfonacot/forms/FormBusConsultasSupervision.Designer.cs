@@ -1,6 +1,6 @@
-﻿namespace GDSfonacot
+﻿namespace GDSfonacot.forms
 {
-    partial class Supervisiones
+    partial class FormBusConsultasSupervision
     {
         /// <summary>
         /// Required designer variable.
@@ -28,54 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
+            this.dataGlistaSup = new System.Windows.Forms.DataGridView();
+            this.lblTotRegistros = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textSucursal = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTotRegistros = new System.Windows.Forms.Label();
-            this.dataGlistaSup = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGlistaSup)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
+            // dataGlistaSup
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(677, 12);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(407, 96);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Dirección General Adjunta Comercial\r\nSubdirección General Comercial\r\nDirección de" +
-    " Supervisión de Operaciones \r\n\r\n";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dataGlistaSup.AllowUserToAddRows = false;
+            this.dataGlistaSup.AllowUserToDeleteRows = false;
+            this.dataGlistaSup.AllowUserToOrderColumns = true;
+            this.dataGlistaSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGlistaSup.Location = new System.Drawing.Point(466, 127);
+            this.dataGlistaSup.Name = "dataGlistaSup";
+            this.dataGlistaSup.ReadOnly = true;
+            this.dataGlistaSup.Size = new System.Drawing.Size(722, 280);
+            this.dataGlistaSup.TabIndex = 278;
+            this.dataGlistaSup.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellContentDoubleClick);
+            this.dataGlistaSup.SelectionChanged += new System.EventHandler(this.dataGlistaSup_SelectionChanged);
+            // 
+            // lblTotRegistros
+            // 
+            this.lblTotRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotRegistros.Location = new System.Drawing.Point(466, 410);
+            this.lblTotRegistros.Name = "lblTotRegistros";
+            this.lblTotRegistros.Size = new System.Drawing.Size(751, 23);
+            this.lblTotRegistros.TabIndex = 277;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(13, 164);
+            this.label10.Location = new System.Drawing.Point(9, 151);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(442, 33);
-            this.label10.TabIndex = 270;
+            this.label10.TabIndex = 276;
             this.label10.Text = "Por favor ingresa el nombre de Sucursal /Representacion a filtrar";
             // 
             // textSucursal
             // 
             this.textSucursal.BackColor = System.Drawing.SystemColors.MenuText;
             this.textSucursal.ForeColor = System.Drawing.SystemColors.Info;
-            this.textSucursal.Location = new System.Drawing.Point(13, 140);
+            this.textSucursal.Location = new System.Drawing.Point(9, 127);
             this.textSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.textSucursal.Name = "textSucursal";
             this.textSucursal.Size = new System.Drawing.Size(442, 20);
-            this.textSucursal.TabIndex = 269;
+            this.textSucursal.TabIndex = 275;
             this.textSucursal.TextChanged += new System.EventHandler(this.textSucursal_TextChanged);
             this.textSucursal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSucursal_KeyPress);
             // 
@@ -91,28 +99,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1354, 108);
-            this.panel1.TabIndex = 253;
-            // 
-            // lblTotRegistros
-            // 
-            this.lblTotRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotRegistros.Location = new System.Drawing.Point(470, 423);
-            this.lblTotRegistros.Name = "lblTotRegistros";
-            this.lblTotRegistros.Size = new System.Drawing.Size(751, 23);
-            this.lblTotRegistros.TabIndex = 272;
-            // 
-            // dataGlistaSup
-            // 
-            this.dataGlistaSup.AllowUserToAddRows = false;
-            this.dataGlistaSup.AllowUserToDeleteRows = false;
-            this.dataGlistaSup.AllowUserToOrderColumns = true;
-            this.dataGlistaSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGlistaSup.Location = new System.Drawing.Point(470, 140);
-            this.dataGlistaSup.Name = "dataGlistaSup";
-            this.dataGlistaSup.ReadOnly = true;
-            this.dataGlistaSup.Size = new System.Drawing.Size(722, 280);
-            this.dataGlistaSup.TabIndex = 273;
-            this.dataGlistaSup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellContentDoubleClick);
+            this.panel1.TabIndex = 274;
             // 
             // pictureBox3
             // 
@@ -134,7 +121,21 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // Supervisiones
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(677, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(407, 96);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Dirección General Adjunta Comercial\r\nSubdirección General Comercial\r\nDirección de" +
+    " Supervisión de Operaciones \r\n\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // FormBusConsultasSupervision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,13 +145,12 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textSucursal);
             this.Controls.Add(this.panel1);
-            this.Name = "Supervisiones";
-            this.Text = "Buscar Supervisiones para contestaciones de sucursal";
+            this.Name = "FormBusConsultasSupervision";
+            this.Text = "Buscar supervisiones para consulta de un supervisor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Supervisiones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGlistaSup)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGlistaSup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -159,13 +159,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
+
+        private System.Windows.Forms.DataGridView dataGlistaSup;
+        private System.Windows.Forms.Label lblTotRegistros;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textSucursal;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTotRegistros;
-        private System.Windows.Forms.DataGridView dataGlistaSup;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }
