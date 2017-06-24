@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GDSfonacotDatos;
+using GDSfonacot.forms;
+
 namespace GDSfonacot
 {
     public partial class MDIPrincip : Form
@@ -142,7 +144,7 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
-                Supervisiones frmsup = new Supervisiones();//crea una instancia del formulario
+                FormBusConsultasSupervision frmsup = new FormBusConsultasSupervision();//crea una instancia del formulario
                 frmsup.MdiParent = this;
                 frmsup.Show();
                 //  frmsup.ShowDialog(); //muestra el formulario en forma modal
@@ -172,7 +174,7 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
-                forms.FormBusSupervSeguimiento frmsup = new forms.FormBusSupervSeguimiento();//crea una instancia del formulario
+                forms.FormBusConsultasSupervision frmsup = new forms.FormBusConsultasSupervision();//crea una instancia del formulario
                 frmsup.MdiParent = this;
                 frmsup.Show();
                 //  frmsup.ShowDialog(); //muestra el formulario en forma modal

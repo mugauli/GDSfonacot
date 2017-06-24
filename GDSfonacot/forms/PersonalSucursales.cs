@@ -21,5 +21,10 @@ namespace GDSfonacot
         {
             //iniciando form
         }
+
+        private void tabadmin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

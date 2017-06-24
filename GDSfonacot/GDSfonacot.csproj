@@ -52,6 +52,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine.13.0.2000.0.Fakes">
+      <HintPath>FakesAssemblies\CrystalDecisions.CrystalReports.Engine.13.0.2000.0.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -64,6 +67,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -85,12 +91,6 @@
     </Compile>
     <Compile Include="forms\FormBusConsultasSupervision.Designer.cs">
       <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\FormBusSupervSeguimiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FormBusSupervSeguimiento.Designer.cs">
-      <DependentUpon>FormBusSupervSeguimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormTemplParametroCR.cs">
       <SubType>Form</SubType>
@@ -132,9 +132,6 @@
     </Compile>
     <EmbeddedResource Include="forms\FormBusConsultasSupervision.resx">
       <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FormBusSupervSeguimiento.resx">
-      <DependentUpon>FormBusSupervSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormTemplParametroCR.resx">
       <DependentUpon>FormTemplParametroCR.cs</DependentUpon>
@@ -216,12 +213,6 @@
     <Compile Include="forms\SeguimientoSup.Designer.cs">
       <DependentUpon>SeguimientoSup.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Supervisiones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\Supervisiones.Designer.cs">
-      <DependentUpon>Supervisiones.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="forms\ContestSuc.resx">
       <DependentUpon>ContestSuc.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,9 +230,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\SeguimientoSup.resx">
       <DependentUpon>SeguimientoSup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\Supervisiones.resx">
-      <DependentUpon>Supervisiones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

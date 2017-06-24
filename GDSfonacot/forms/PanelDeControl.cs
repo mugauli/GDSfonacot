@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GDSfonacot.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace GDSfonacot
 
         private void btnSupOperaciones_Click(object sender, EventArgs e)
         {
-             Supervisiones frmsup = new Supervisiones();//crea una instancia del formulario
+            FormBusConsultasSupervision frmsup = new FormBusConsultasSupervision();//crea una instancia del formulario
             frmsup.ShowDialog(); //muestra el formulario en forma modal
         }
 

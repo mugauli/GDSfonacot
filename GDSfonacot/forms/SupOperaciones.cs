@@ -186,6 +186,11 @@ namespace GDSfonacot
             cmbSucursales.ValueMember = "IdSucursal";
             cmbSucursales.SelectedIndex = -1;
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }
