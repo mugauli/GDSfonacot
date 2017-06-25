@@ -98,6 +98,12 @@
     <Compile Include="forms\FormTemplParametroCR.Designer.cs">
       <DependentUpon>FormTemplParametroCR.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormVisorConsultarSupervCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormVisorConsultarSupervCR.Designer.cs">
+      <DependentUpon>FormVisorConsultarSupervCR.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\formVisorReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormTemplParametroCR.resx">
       <DependentUpon>FormTemplParametroCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormVisorConsultarSupervCR.resx">
+      <DependentUpon>FormVisorConsultarSupervCR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\formVisorReportes.resx">
       <DependentUpon>formVisorReportes.cs</DependentUpon>

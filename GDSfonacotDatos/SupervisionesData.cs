@@ -142,6 +142,34 @@ namespace GDSfonacotDatos
             }
         }
 
+
+
+        public MethodResponse<HistorialSupervisiones> BuscarSupervision(string Supervision)
+        {
+
+            try
+            {
+
+
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<HistorialSupervisiones> { Code = 0 };
+
+                    var nosupver = context.HistorialSupervisiones.Where(x => x.NoSupervision == Supervision).SingleOrDefault();
+
+                    if (nosupver != null) response.Result = nosupver;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<HistorialSupervisiones> { Code = -100, Message = ex.Message };
+            }
+        }
+
         public MethodResponse<List<Sucursales>> ObtenerSucursales(int IdSucursal)
         {
 
