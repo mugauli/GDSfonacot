@@ -30,13 +30,13 @@
         {
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuModulos = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFichasSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBuscarSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupContestSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupConsultaSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupContestSeguimSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuFichasSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFichasPerson = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuMinutas = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +54,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.pruebaResponsiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -84,11 +85,19 @@
             this.menuMinutas,
             this.menuReportes,
             this.toolStripSeparator5,
-            this.menuSalir});
+            this.menuSalir,
+            this.pruebaResponsiveToolStripMenuItem});
             this.menuModulos.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.menuModulos.Name = "menuModulos";
             this.menuModulos.Size = new System.Drawing.Size(66, 20);
             this.menuModulos.Text = "&Modulos";
+            // 
+            // menuFichasSuc
+            // 
+            this.menuFichasSuc.Name = "menuFichasSuc";
+            this.menuFichasSuc.Size = new System.Drawing.Size(287, 22);
+            this.menuFichasSuc.Text = "Inicio Supervisión";
+            this.menuFichasSuc.Click += new System.EventHandler(this.menuFichasSuc_Click);
             // 
             // mnuBuscarSuperv
             // 
@@ -110,7 +119,7 @@
             // mnuSupConsultaSuperv
             // 
             this.mnuSupConsultaSuperv.Name = "mnuSupConsultaSuperv";
-            this.mnuSupConsultaSuperv.Size = new System.Drawing.Size(347, 22);
+            this.mnuSupConsultaSuperv.Size = new System.Drawing.Size(283, 22);
             this.mnuSupConsultaSuperv.Text = "Para Consulta de un Supervisor";
             this.mnuSupConsultaSuperv.Click += new System.EventHandler(this.mnuSupConsultaSuperv_Click);
             // 
@@ -133,13 +142,6 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(284, 6);
-            // 
-            // menuFichasSuc
-            // 
-            this.menuFichasSuc.Name = "menuFichasSuc";
-            this.menuFichasSuc.Size = new System.Drawing.Size(287, 22);
-            this.menuFichasSuc.Text = "Inicio Supervisión";
-            this.menuFichasSuc.Click += new System.EventHandler(this.menuFichasSuc_Click);
             // 
             // menuFichasPerson
             // 
@@ -285,6 +287,13 @@
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
+            // pruebaResponsiveToolStripMenuItem
+            // 
+            this.pruebaResponsiveToolStripMenuItem.Name = "pruebaResponsiveToolStripMenuItem";
+            this.pruebaResponsiveToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.pruebaResponsiveToolStripMenuItem.Text = "Prueba responsive";
+            this.pruebaResponsiveToolStripMenuItem.Click += new System.EventHandler(this.pruebaResponsiveToolStripMenuItem_Click);
+            // 
             // MDIPrincip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,5 +346,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.ToolStripMenuItem pruebaResponsiveToolStripMenuItem;
     }
 }
