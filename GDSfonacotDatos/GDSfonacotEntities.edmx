@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Idcontestacion" />
           </Key>
-          <Property Name="Idcontestacion" Type="int" Nullable="false" />
+          <Property Name="Idcontestacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Idsupervision" Type="int" />
           <Property Name="Inmueble" Type="ntext" />
           <Property Name="Gestion_direccion" Type="ntext" />
@@ -181,6 +181,7 @@
           <Property Name="IdNivel" Type="int" />
           <Property Name="fechaalta" Type="datetime" Nullable="false" />
           <Property Name="fechabaja" Type="datetime" />
+          <Property Name="IdSucursal" Type="int" />
         </EntityType>
         <EntityType Name="Usuarios_Nivel">
           <Key>
@@ -381,6 +382,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Usuarios_Sucursales">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="IdSucursal" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="IdSucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Usuarios_Usuarios_Nivel">
           <End Role="Usuarios_Nivel" Type="Self.Usuarios_Nivel" Multiplicity="0..1" />
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
@@ -472,6 +485,10 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="TiraAuditora" EntitySet="TiraAuditora" />
           </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Sucursales" Association="Self.FK_Usuarios_Sucursales">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
           <AssociationSet Name="FK_Usuarios_Usuarios_Nivel" Association="Self.FK_Usuarios_Usuarios_Nivel">
             <End Role="Usuarios_Nivel" EntitySet="Usuarios_Nivel" />
             <End Role="Usuarios" EntitySet="Usuarios" />
@@ -556,6 +573,10 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="SeguimientoSupervision_Supervisores" EntitySet="SeguimientoSupervision_Supervisores" />
           </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Sucursales" Association="GDSfonacotModel.FK_Usuarios_Sucursales">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
           <AssociationSet Name="FK_TiraAuditora_Usuarios" Association="GDSfonacotModel.FK_TiraAuditora_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="TiraAuditora" EntitySet="TiraAuditora" />
@@ -569,7 +590,7 @@
           <Key>
             <PropertyRef Name="Idcontestacion" />
           </Key>
-          <Property Name="Idcontestacion" Type="Int32" Nullable="false" />
+          <Property Name="Idcontestacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Idsupervision" Type="Int32" />
           <Property Name="Inmueble" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Gestion_direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -745,6 +766,7 @@
           <Property Name="Cobranza_Cumplimiento_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Sucursales" ToRole="Empleados" />
           <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" FromRole="Sucursales" ToRole="HistorialSupervisiones" />
+          <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Usuarios_Sucursales" FromRole="Sucursales" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="TiraAuditora">
           <Key>
@@ -767,11 +789,13 @@
           <Property Name="IdNivel" Type="Int32" />
           <Property Name="fechaalta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="fechabaja" Type="DateTime" Precision="3" />
+          <Property Name="IdSucursal" Type="Int32" />
           <NavigationProperty Name="ContestacionesSuperv_Sucursales" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_UsuarioCreador" FromRole="Usuarios" ToRole="ContestacionesSuperv_Sucursales" />
           <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosCreador" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
           <NavigationProperty Name="HistorialSupervisiones1" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Usuariossup1" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
           <NavigationProperty Name="HistorialSupervisiones2" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosSup2" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
           <NavigationProperty Name="SeguimientoSupervision_Supervisores" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios" FromRole="Usuarios" ToRole="SeguimientoSupervision_Supervisores" />
+          <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Usuarios_Sucursales" FromRole="Usuarios" ToRole="Sucursales" />
           <NavigationProperty Name="TiraAuditora" Relationship="GDSfonacotModel.FK_TiraAuditora_Usuarios" FromRole="Usuarios" ToRole="TiraAuditora" />
           <NavigationProperty Name="Usuarios_Nivel" Relationship="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel" FromRole="Usuarios" ToRole="Usuarios_Nivel" />
         </EntityType>
@@ -960,6 +984,18 @@
             </Principal>
             <Dependent Role="SeguimientoSupervision_Supervisores">
               <PropertyRef Name="IdusuarioCreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Sucursales">
+          <End Type="GDSfonacotModel.Sucursales" Role="Sucursales" Multiplicity="0..1" />
+          <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="IdSucursal" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="IdSucursal" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1173,6 +1209,7 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="GDSfonacotModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
                 <ScalarProperty Name="fechabaja" ColumnName="fechabaja" />
                 <ScalarProperty Name="fechaalta" ColumnName="fechaalta" />
                 <ScalarProperty Name="IdNivel" ColumnName="IdNivel" />

@@ -199,6 +199,13 @@ namespace GDSfonacot
                 return true;
             }
 
+            if (string.IsNullOrEmpty(textAcuerdosCompr.Text.Trim()) || textAcuerdosCompr.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa la informacion de fondo fijo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textAcuerdosCompr.Focus();
+                return true;
+            }
+
 
             return false;
         }

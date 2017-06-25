@@ -64,6 +64,44 @@ namespace GDSfonacotDatos
             }
         }
 
+        public MethodResponse<int> ActualizarSupervision(HistorialSupervisiones supervision)
+        {
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<int> { Code = 0 };
+
+                    if (supervision.IdSupervisiones == 0)
+                    {
+                        //Edicion de Historial de supervisiones
+                       //error
+                    }
+                    else
+                    {
+
+                        //Edicion de Historial de supervisiones
+                        var objUsuario = context.HistorialSupervisiones.Where(x => x.IdSupervisiones == supervision.IdSupervisiones).FirstOrDefault();
+
+                        objUsuario.IdSupervisiones = supervision.IdSupervisiones;
+                        objUsuario.Idstatus = supervision.Idstatus;
+                        context.SaveChanges();
+
+                    }
+                    //Cambios de chucho
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<int> { Code = -100, Message = ex.Message };
+            }
+        }
+ 
+
         public MethodResponse<int> GuardarConstestacionSucursal(ContestacionesSuperv_Sucursales contestacion)
         {
 
@@ -115,7 +153,7 @@ namespace GDSfonacotDatos
             }
             catch (Exception ex)
             {
-
+                
                 return new MethodResponse<int> { Code = -100, Message = ex.Message };
             }
         }
