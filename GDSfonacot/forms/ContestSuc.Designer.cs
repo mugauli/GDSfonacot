@@ -66,6 +66,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
             this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
+            this.txthidIdConst = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textAcuerdosCompr = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -93,7 +97,7 @@
             this.textNoSucursal.Name = "textNoSucursal";
             this.textNoSucursal.ReadOnly = true;
             this.textNoSucursal.Size = new System.Drawing.Size(105, 20);
-            this.textNoSucursal.TabIndex = 196;
+            this.textNoSucursal.TabIndex = 3;
             // 
             // label46
             // 
@@ -116,7 +120,7 @@
             this.txtFonFijo.Multiline = true;
             this.txtFonFijo.Name = "txtFonFijo";
             this.txtFonFijo.Size = new System.Drawing.Size(1165, 143);
-            this.txtFonFijo.TabIndex = 194;
+            this.txtFonFijo.TabIndex = 15;
             // 
             // label45
             // 
@@ -199,17 +203,18 @@
             this.txtPromocionales.Multiline = true;
             this.txtPromocionales.Name = "txtPromocionales";
             this.txtPromocionales.Size = new System.Drawing.Size(1165, 143);
-            this.txtPromocionales.TabIndex = 187;
+            this.txtPromocionales.TabIndex = 13;
             // 
             // txtUTYS
             // 
             this.txtUTYS.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtUTYS.ForeColor = System.Drawing.Color.White;
             this.txtUTYS.Location = new System.Drawing.Point(11, 1101);
             this.txtUTYS.Margin = new System.Windows.Forms.Padding(4);
             this.txtUTYS.Multiline = true;
             this.txtUTYS.Name = "txtUTYS";
             this.txtUTYS.Size = new System.Drawing.Size(1165, 143);
-            this.txtUTYS.TabIndex = 186;
+            this.txtUTYS.TabIndex = 12;
             // 
             // txtTransfer
             // 
@@ -220,17 +225,18 @@
             this.txtTransfer.Multiline = true;
             this.txtTransfer.Name = "txtTransfer";
             this.txtTransfer.Size = new System.Drawing.Size(1165, 143);
-            this.txtTransfer.TabIndex = 185;
+            this.txtTransfer.TabIndex = 10;
             // 
             // txtCredito
             // 
             this.txtCredito.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtCredito.ForeColor = System.Drawing.Color.White;
             this.txtCredito.Location = new System.Drawing.Point(11, 931);
             this.txtCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtCredito.Multiline = true;
             this.txtCredito.Name = "txtCredito";
             this.txtCredito.Size = new System.Drawing.Size(1165, 143);
-            this.txtCredito.TabIndex = 184;
+            this.txtCredito.TabIndex = 11;
             // 
             // txtCobranza
             // 
@@ -241,7 +247,7 @@
             this.txtCobranza.Multiline = true;
             this.txtCobranza.Name = "txtCobranza";
             this.txtCobranza.Size = new System.Drawing.Size(1165, 143);
-            this.txtCobranza.TabIndex = 183;
+            this.txtCobranza.TabIndex = 14;
             // 
             // txtOriginacion
             // 
@@ -252,17 +258,18 @@
             this.txtOriginacion.Multiline = true;
             this.txtOriginacion.Name = "txtOriginacion";
             this.txtOriginacion.Size = new System.Drawing.Size(1165, 143);
-            this.txtOriginacion.TabIndex = 182;
+            this.txtOriginacion.TabIndex = 8;
             // 
             // txtGesDireccion
             // 
             this.txtGesDireccion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtGesDireccion.ForeColor = System.Drawing.Color.White;
             this.txtGesDireccion.Location = new System.Drawing.Point(11, 424);
             this.txtGesDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtGesDireccion.Multiline = true;
             this.txtGesDireccion.Name = "txtGesDireccion";
             this.txtGesDireccion.Size = new System.Drawing.Size(1165, 143);
-            this.txtGesDireccion.TabIndex = 181;
+            this.txtGesDireccion.TabIndex = 7;
             // 
             // label39
             // 
@@ -285,7 +292,7 @@
             this.txtInmueble.Multiline = true;
             this.txtInmueble.Name = "txtInmueble";
             this.txtInmueble.Size = new System.Drawing.Size(1165, 143);
-            this.txtInmueble.TabIndex = 179;
+            this.txtInmueble.TabIndex = 6;
             // 
             // label38
             // 
@@ -334,7 +341,7 @@
             this.txtDirEstatal.Name = "txtDirEstatal";
             this.txtDirEstatal.ReadOnly = true;
             this.txtDirEstatal.Size = new System.Drawing.Size(409, 20);
-            this.txtDirEstatal.TabIndex = 119;
+            this.txtDirEstatal.TabIndex = 4;
             // 
             // label4
             // 
@@ -357,7 +364,7 @@
             this.txtDirRegional.Name = "txtDirRegional";
             this.txtDirRegional.ReadOnly = true;
             this.txtDirRegional.Size = new System.Drawing.Size(199, 20);
-            this.txtDirRegional.TabIndex = 111;
+            this.txtDirRegional.TabIndex = 2;
             // 
             // label3
             // 
@@ -380,7 +387,7 @@
             this.txtSucursal.Name = "txtSucursal";
             this.txtSucursal.ReadOnly = true;
             this.txtSucursal.Size = new System.Drawing.Size(219, 20);
-            this.txtSucursal.TabIndex = 109;
+            this.txtSucursal.TabIndex = 1;
             // 
             // label1
             // 
@@ -403,7 +410,7 @@
             this.txtNoSupervision.Name = "txtNoSupervision";
             this.txtNoSupervision.ReadOnly = true;
             this.txtNoSupervision.Size = new System.Drawing.Size(279, 20);
-            this.txtNoSupervision.TabIndex = 106;
+            this.txtNoSupervision.TabIndex = 0;
             // 
             // panel1
             // 
@@ -447,7 +454,7 @@
             this.txtNoOficio.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoOficio.Name = "txtNoOficio";
             this.txtNoOficio.Size = new System.Drawing.Size(287, 20);
-            this.txtNoOficio.TabIndex = 198;
+            this.txtNoOficio.TabIndex = 5;
             // 
             // label5
             // 
@@ -480,6 +487,7 @@
             this.toolButGuardar.Name = "toolButGuardar";
             this.toolButGuardar.Size = new System.Drawing.Size(69, 22);
             this.toolButGuardar.Text = "Guardar";
+            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
             // 
             // toolButImprimir
             // 
@@ -490,6 +498,50 @@
             this.toolButImprimir.Size = new System.Drawing.Size(73, 22);
             this.toolButImprimir.Text = "Imprimir";
             // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(861, 142);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdSup.TabIndex = 242;
+            // 
+            // txthidIdConst
+            // 
+            this.txthidIdConst.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdConst.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdConst.Location = new System.Drawing.Point(887, 141);
+            this.txthidIdConst.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdConst.Name = "txthidIdConst";
+            this.txthidIdConst.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdConst.TabIndex = 243;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(17, 1754);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(168, 16);
+            this.label6.TabIndex = 245;
+            this.label6.Text = "Acuerdos y Compromisos";
+            // 
+            // textAcuerdosCompr
+            // 
+            this.textAcuerdosCompr.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textAcuerdosCompr.ForeColor = System.Drawing.SystemColors.Info;
+            this.textAcuerdosCompr.Location = new System.Drawing.Point(12, 1774);
+            this.textAcuerdosCompr.Margin = new System.Windows.Forms.Padding(4);
+            this.textAcuerdosCompr.Multiline = true;
+            this.textAcuerdosCompr.Name = "textAcuerdosCompr";
+            this.textAcuerdosCompr.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textAcuerdosCompr.Size = new System.Drawing.Size(1165, 143);
+            this.textAcuerdosCompr.TabIndex = 16;
+            // 
             // ContestSuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,6 +549,10 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1274, 741);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textAcuerdosCompr);
+            this.Controls.Add(this.txthidIdConst);
+            this.Controls.Add(this.txthidIdSup);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNoOficio);
@@ -530,7 +586,7 @@
             this.Controls.Add(this.txtNoSupervision);
             this.Controls.Add(this.panel1);
             this.Name = "ContestSuc";
-            this.Text = "ContestSuc";
+            this.Text = "Contestaciones de Sucursales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ContestSuc_Load);
             this.panel1.ResumeLayout(false);
@@ -583,5 +639,9 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolButGuardar;
         private System.Windows.Forms.ToolStripButton toolButImprimir;
+        private System.Windows.Forms.TextBox txthidIdSup;
+        private System.Windows.Forms.TextBox txthidIdConst;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textAcuerdosCompr;
     }
 }
