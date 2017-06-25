@@ -37,5 +37,10 @@ namespace GDSfonacot.forms
             //Chucho es grande :-DDD
 
         }
+
+        private void textparam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
