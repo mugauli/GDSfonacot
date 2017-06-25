@@ -36,10 +36,5 @@ namespace GDSfonacot.forms
         {
 
         }
-
-        private void txtUtys_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
