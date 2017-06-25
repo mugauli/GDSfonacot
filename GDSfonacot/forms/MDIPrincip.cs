@@ -192,8 +192,8 @@ namespace GDSfonacot
 
         private void pruebaResponsiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frmsup = new forms.pruebaResponsive();//crea una instancia del formulario
-            frmsup.MdiParent = this;
+            var frmsup = new forms.frmEmpleados(1);//crea una instancia del formulario
+            frmsup.MdiParent = this;            
             frmsup.Show();
         }
     }

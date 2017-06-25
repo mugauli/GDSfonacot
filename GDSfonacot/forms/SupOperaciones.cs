@@ -191,6 +191,11 @@ namespace GDSfonacot
         {
 
         }
+
+        private void cmbSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }

@@ -59,9 +59,9 @@
             this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolButNuevo = new System.Windows.Forms.ToolStripButton();
-            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -382,6 +382,7 @@
             this.cmbSucursales.Name = "cmbSucursales";
             this.cmbSucursales.Size = new System.Drawing.Size(278, 21);
             this.cmbSucursales.TabIndex = 233;
+            this.cmbSucursales.SelectedIndexChanged += new System.EventHandler(this.cmbSucursales_SelectedIndexChanged);
             // 
             // dtFechaSupervision
             // 
@@ -413,15 +414,6 @@
             this.toolButNuevo.Text = "Nuevo";
             this.toolButNuevo.Click += new System.EventHandler(this.toolButNuevo_Click);
             // 
-            // toolButGuardar
-            // 
-            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
-            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButGuardar.Name = "toolButGuardar";
-            this.toolButGuardar.Size = new System.Drawing.Size(69, 22);
-            this.toolButGuardar.Text = "Guardar";
-            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.MenuText;
@@ -445,6 +437,15 @@
             this.label6.Size = new System.Drawing.Size(168, 16);
             this.label6.TabIndex = 237;
             this.label6.Text = "Acuerdos y Compromisos";
+            // 
+            // toolButGuardar
+            // 
+            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
+            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButGuardar.Name = "toolButGuardar";
+            this.toolButGuardar.Size = new System.Drawing.Size(69, 22);
+            this.toolButGuardar.Text = "Guardar";
+            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
             // 
             // SupOperaciones
             // 

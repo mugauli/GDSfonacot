@@ -104,6 +104,12 @@
     <Compile Include="forms\formVisorReportes.Designer.cs">
       <DependentUpon>formVisorReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\formVisorReportes.resx">
       <DependentUpon>formVisorReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmEmpleados.resx">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -244,6 +253,7 @@
   <ItemGroup>
     <Content Include="Imagenes\ffff.png" />
     <Content Include="Imagenes\ggg.png" />
+    <None Include="Resources\save-png-image-97076.png" />
     <None Include="Imagenes\Logo STPS.png" />
     <None Include="Imagenes\Logo Fonacot 1.png" />
   </ItemGroup>

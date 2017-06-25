@@ -89,6 +89,8 @@
     <Compile Include="ctTipoPersonal.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\CatalogosData.cs" />
+    <Compile Include="Data\EmpleadosData.cs" />
     <Compile Include="DTO\DatosComboSucursales.cs" />
     <Compile Include="DTO\DatosGridSupervisiones.cs" />
     <Compile Include="DTO\DatosUsuario.cs" />

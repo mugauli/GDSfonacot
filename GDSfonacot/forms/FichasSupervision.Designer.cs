@@ -119,9 +119,9 @@
             this.label46 = new System.Windows.Forms.Label();
             this.textBox42 = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox46 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1107,15 +1107,6 @@
             this.label47.TabIndex = 104;
             this.label47.Text = "No de Sucursal";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(395, 241);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // textBox46
             // 
             this.textBox46.BackColor = System.Drawing.SystemColors.MenuText;
@@ -1138,6 +1129,15 @@
             this.label2.TabIndex = 106;
             this.label2.Text = "Acuerdos y Compromisos";
             this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(395, 241);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // FichasSupervision
             // 

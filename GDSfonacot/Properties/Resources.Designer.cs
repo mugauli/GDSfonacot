@@ -99,5 +99,15 @@ namespace GDSfonacot.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_png_image_97076 {
+            get {
+                object obj = ResourceManager.GetObject("save-png-image-97076", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
