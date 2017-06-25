@@ -67,16 +67,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cat_estatus.cs">
-      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="ContestacionesSuperv_Sucursales.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ctActividad.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ctArea.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ctEstatusSupervision.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ctPerfilSistema.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ctRegional.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ctTipoPersonal.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTO\DatosComboSucursales.cs" />
     <Compile Include="DTO\DatosGridSupervisiones.cs" />
+    <Compile Include="DTO\DatosSupervisores.cs" />
     <Compile Include="DTO\DatosUsuario.cs" />
+    <Compile Include="Empleados.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="GDSfonacotEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,7 +112,7 @@
       <DependentUpon>GDSfonacotEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Globales.cs" />
-    <Compile Include="Historial_de_Supervisiones.cs">
+    <Compile Include="HistorialSupervisiones.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

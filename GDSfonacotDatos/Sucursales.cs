@@ -17,7 +17,8 @@ namespace GDSfonacotDatos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sucursales()
         {
-            this.Historial_de_Supervisiones = new HashSet<Historial_de_Supervisiones>();
+            this.Empleados = new HashSet<Empleados>();
+            this.HistorialSupervisiones = new HashSet<HistorialSupervisiones>();
         }
     
         public int IdSucursal { get; set; }
@@ -57,6 +58,8 @@ namespace GDSfonacotDatos
         public string Cobranza_Cumplimiento_Meta { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Historial_de_Supervisiones> Historial_de_Supervisiones { get; set; }
+        public virtual ICollection<Empleados> Empleados { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HistorialSupervisiones> HistorialSupervisiones { get; set; }
     }
 }

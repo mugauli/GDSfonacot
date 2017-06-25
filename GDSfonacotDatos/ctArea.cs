@@ -12,19 +12,18 @@ namespace GDSfonacotDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class cat_estatus
+    public partial class ctArea
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public cat_estatus()
+        public ctArea()
         {
-            this.Historial_de_Supervisiones = new HashSet<Historial_de_Supervisiones>();
+            this.Empleados = new HashSet<Empleados>();
         }
     
-        public int idstatus { get; set; }
-        public string statusdescrip { get; set; }
-        public Nullable<bool> activo { get; set; }
+        public int IdArea { get; set; }
+        public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Historial_de_Supervisiones> Historial_de_Supervisiones { get; set; }
+        public virtual ICollection<Empleados> Empleados { get; set; }
     }
 }
