@@ -51,6 +51,7 @@
             this.cmbActividad = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cachedcrpMinutaTrabajo1 = new GDSfonacot.reportes.CachedcrpMinutaTrabajo();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +87,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cmbPerfilSistema, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.cmbActividad, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 4, 8);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.DimGray;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -142,7 +144,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(272, 20);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Area";
+            this.label2.Text = "Area2";
             // 
             // txtNombre
             // 
@@ -371,6 +373,14 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(313, 263);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 28;
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,5 +427,6 @@
         private System.Windows.Forms.ComboBox cmbActividad;
         private reportes.CachedcrpMinutaTrabajo cachedcrpMinutaTrabajo1;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
