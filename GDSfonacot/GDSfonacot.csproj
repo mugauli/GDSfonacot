@@ -124,6 +124,12 @@
     <Compile Include="forms\SupOperaciones.Designer.cs">
       <DependentUpon>SupOperaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="reportes\crpContestSucursal.cs">
+      <DependentUpon>crpContestSucursal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="reportes\crpMinutaTrabajo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +166,10 @@
     </Compile>
     <EmbeddedResource Include="forms\SupOperaciones.resx">
       <DependentUpon>SupOperaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\crpContestSucursal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpContestSucursal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\crpMinutaTrabajo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
