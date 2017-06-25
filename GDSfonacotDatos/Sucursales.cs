@@ -19,7 +19,6 @@ namespace GDSfonacotDatos
         {
             this.Empleados = new HashSet<Empleados>();
             this.HistorialSupervisiones = new HashSet<HistorialSupervisiones>();
-            this.Usuarios = new HashSet<Usuarios>();
         }
     
         public int IdSucursal { get; set; }
@@ -62,7 +61,5 @@ namespace GDSfonacotDatos
         public virtual ICollection<Empleados> Empleados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistorialSupervisiones> HistorialSupervisiones { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuarios> Usuarios { get; set; }
     }
 }

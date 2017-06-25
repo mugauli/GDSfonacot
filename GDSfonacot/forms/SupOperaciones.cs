@@ -22,7 +22,10 @@ namespace GDSfonacot
         private void SupOperaciones_Load(object sender, EventArgs e)
         {
             LoadingCatSucursales();//load sucursales list of table
-         
+            LoadingCatSupervisor2();
+            LoadingCatSupervisor1();
+
+
 
         }
 
@@ -34,7 +37,9 @@ namespace GDSfonacot
 
         private void toolButNuevo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("nuevo");
+            toolButNuevo.Enabled = false;
+            txthidIdSup.Text = "0";
+             toolButGuardar.Enabled = true;
 
 
         }
@@ -47,9 +52,9 @@ namespace GDSfonacot
                return;
             }
 
-            MessageBox.Show("pASO VALIDACION");
+           // MessageBox.Show("pASO VALIDACION");
 
-            //var objSupervision = new Historial_de_Supervisiones();
+            var objSupervision = new HistorialSupervisiones();
 
             //objSupervision.IdSucursal = Convert.ToInt32(cmbSucursales.SelectedValue);
             //objSupervision.NoSupervision = txtNoSupervision.Text.Trim();
@@ -68,13 +73,40 @@ namespace GDSfonacot
             //objSupervision.IdSupervisor1 = 1;
             //objSupervision.IdSupervisor2 = 1;
             //objSupervision.NoOficio = "23";
+            objSupervision.IdSupervisiones = Convert.ToInt32(txthidIdSup.Text.Trim());
+            objSupervision.IdSucursal = Convert.ToInt32(cmbSucursales.SelectedValue);
+            objSupervision.NoSupervision = txtNoSupervision.Text.Trim();
+            objSupervision.FechaSupervision = dtFechaSupervision.Value;
+            objSupervision.Inmueble = txtInmueble.Text.Trim();
+            objSupervision.Gestion_direccion = txtGesDireccion.Text.Trim();
+            objSupervision.Originacion = txtOriginacion.Text.Trim();
+            objSupervision.Tarjetas_transfer = txtTransfer.Text.Trim();
+            objSupervision.Credito = txtCredito.Text.Trim();
+            objSupervision.Utys = txtUTYS.Text.Trim();
+            objSupervision.Promocionales =txtPromocionales.Text.Trim();
+            objSupervision.Cobranza = txtCobranza.Text.Trim();
+            objSupervision.Fondofijo = txtFonFijo.Text.Trim();
+            objSupervision.AcuerdosCompromisos = textAcuerdosCompr.Text.Trim();
+            objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
+            objSupervision.Idstatus = 1;
+            objSupervision.Idsupervisor1 = Convert.ToInt32(cmbSupervisor1.SelectedValue);
+            objSupervision.Idsupervisor2 = Convert.ToInt32(cmbSupervisor2.SelectedValue);
+            objSupervision.Fechacreacion = DateTime.Now;
+            var gdSupervisiones = new SupervisionesData().GuardarSupervision(objSupervision);
 
-            //var gdSupervisiones = new SupervisionesData().GuardarSupervision(objSupervision);
+            if (gdSupervisiones.Code != 0)
+            {
+                //Mensage de error con g
+                toolButNuevo.Enabled = false;
+                toolButGuardar.Enabled = true;
+                MessageBox.Show(gdSupervisiones.Message.ToString());
+            }
+            else {
+                toolButNuevo.Enabled = true;
+                toolButGuardar.Enabled = false;
+                MessageBox.Show("La supervision ha sido guardada correctamente");
+            }
 
-            //if (gdSupervisiones.Code != 0)
-            //{
-            //    //Mensage de error con g
-            //}
         }
         private bool validarDatos()
         {
@@ -92,17 +124,17 @@ namespace GDSfonacot
                 return true;
             }
 
-            if (string.IsNullOrEmpty(txtSupervisor1.Text.Trim()) || txtSupervisor1.Text.Trim() == "")
+            if (string.IsNullOrEmpty(cmbSupervisor1.Text.Trim()) || cmbSupervisor1.Text.Trim() == "")
             {
                 MessageBox.Show("Ingresa el nombre del supervisor 1", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtSupervisor1.Focus();
+                cmbSupervisor1.Focus();
                 return true;
             }
 
-            if (string.IsNullOrEmpty(txtSupervisor2.Text.Trim()) || txtSupervisor2.Text.Trim() == "")
+            if (string.IsNullOrEmpty(cmbSupervisor2.Text.Trim()) || cmbSupervisor2.Text.Trim() == "")
             {
                 MessageBox.Show("Ingresa el nombre del supervisor 2", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtSupervisor2.Focus();
+                cmbSupervisor2.Focus();
                 return true;
             }
 
@@ -196,6 +228,35 @@ namespace GDSfonacot
         {
 
         }
+ private void LoadingCatSupervisor1()
+        {
+            var sucursales = new SupervisionesData().ObtenerSupervisores();
+            if (sucursales.Code != 0)
+            {
+                //Mandar mensaje de error con sucursales.Message
+            }
+
+            cmbSupervisor1.DataSource = sucursales.Result;
+            cmbSupervisor1.DisplayMember = "Nombre_Usuario";
+            cmbSupervisor1.ValueMember = "IdUsuario";
+            cmbSupervisor1.SelectedIndex = -1;
+        }
+
+        private void LoadingCatSupervisor2()
+        {
+            var sucursales = new SupervisionesData().ObtenerSupervisores();
+            if (sucursales.Code != 0)
+            {
+                //Mandar mensaje de error con sucursales.Message
+            }
+
+            cmbSupervisor2.DataSource = sucursales.Result;
+            cmbSupervisor2.DisplayMember = "Nombre_Usuario";
+            cmbSupervisor2.ValueMember = "IdUsuario";
+            cmbSupervisor2.SelectedIndex = -1;
+        }
+   
+
     }
    
 }

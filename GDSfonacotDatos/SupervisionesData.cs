@@ -26,26 +26,27 @@ namespace GDSfonacotDatos
                     }
                     else
                     {
+
+                        //Edicion de Historial de supervisiones
                         var objUsuario = context.HistorialSupervisiones.Where(x => x.IdSupervisiones == supervision.IdSupervisiones).FirstOrDefault();
-
-
-                        //objUsuario.IdSucursal = supervision.IdSucursal;
-                        //objUsuario.NoSupervision = supervision.NoSupervision;
-                        //objUsuario.FechaSupervision = supervision.FechaSupervision;
-                        //objUsuario.AfiliacionOtorgamientoCredito = supervision.AfiliacionOtorgamientoCredito;
-                        //objUsuario.ActividadesPromocionAfiliaciónCT = supervision.ActividadesPromocionAfiliaciónCT;
-                        //objUsuario.ProcesoCobranza = supervision.ProcesoCobranza;
-                        //objUsuario.Revisión_de_UTYS = supervision.Revisión_de_UTYS;
-                        //objUsuario.Situaciones_de_Orden_General_e_Infraestructura = supervision.Situaciones_de_Orden_General_e_Infraestructura;
-                        //objUsuario.AcuerdosCompromisos = supervision.AcuerdosCompromisos;
-                        //objUsuario.No_de_Respuesta_Supervision = supervision.No_de_Respuesta_Supervision;
-                        //objUsuario.FechaRespuestaSupervision = supervision.FechaRespuestaSupervision;
-                        //objUsuario.Seguimiento_a_la_Supervisión = supervision.Seguimiento_a_la_Supervisión;
-                        //objUsuario.Respuesta_Supervision = supervision.Respuesta_Supervision;
-                        //objUsuario.Solventada = supervision.Solventada;
-                        //objUsuario.IdSupervisor1 = supervision.IdSupervisor1;
-                        //objUsuario.IdSupervisor2 = supervision.IdSupervisor2;
-                        //objUsuario.NoOficio = supervision.NoOficio;
+                       
+                        objUsuario.IdSucursal = supervision.IdSucursal;
+                        objUsuario.NoSupervision = supervision.NoSupervision;
+                        objUsuario.FechaSupervision = supervision.FechaSupervision;
+                        objUsuario.Inmueble = supervision.Inmueble;
+                        objUsuario.Gestion_direccion = supervision.Gestion_direccion;
+                        objUsuario.Originacion = supervision.Originacion;
+                        objUsuario.Tarjetas_transfer = supervision.Tarjetas_transfer;
+                        objUsuario.Credito = supervision.Credito;
+                        objUsuario.Utys = supervision.Utys;
+                        objUsuario.Promocionales = supervision.Promocionales;
+                        objUsuario.Cobranza = supervision.Cobranza;
+                        objUsuario.Fondofijo = supervision.Fondofijo;
+                        objUsuario.AcuerdosCompromisos = supervision.AcuerdosCompromisos;
+                        objUsuario.Idusuariocreador = supervision.Idusuariocreador;
+                        objUsuario.Idstatus = supervision.Idstatus;
+                        objUsuario.Idsupervisor1 = supervision.Idsupervisor1;
+                        objUsuario.Idsupervisor2 = supervision.Idsupervisor2;
 
                         context.SaveChanges();
 
@@ -174,7 +175,7 @@ namespace GDSfonacotDatos
                     var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
 
                     var usuariosDB = context.Sucursales.OrderBy(x => x.NoSucursal)
-                        .Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NameSucursal = (x.NoSucursal + " - " + x.DescripcionSucursal) }).ToList();
+                       .Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NameSucursal = (x.NoSucursal + " - " + x.DescripcionSucursal) }).ToList();
 
                     response.Result = usuariosDB;
 
@@ -215,6 +216,8 @@ namespace GDSfonacotDatos
             }
         }
 
+
+
         public MethodResponse<List<DatosGridSupervisiones>> ObtenerSupervisonesporSuc(int IdSupervisiones, string filter)
         {
             try
@@ -225,11 +228,14 @@ namespace GDSfonacotDatos
 
                     var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
                         .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
-                        .Where(sc => sc.HistSup.NoSupervision!=null &&  (sc.HistSup.IdSupervisiones == IdSupervisiones || IdSupervisiones == 0) && (sc.Suc.DescripcionSucursal.Contains(filter) || filter == "")) //ya teniendo los datos, se filtran con el where
-                        .Select(x => new DatosGridSupervisiones { IdSupervisiones = x.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
-                                                                  NoSupervision = x.HistSup.NoSupervision,
-                                                                  FechaSupervision = x.HistSup.FechaSupervision,
-                                                                  DescripcionSucursal = x.Suc.DescripcionSucursal }).ToList();
+                        .Where(sc => sc.HistSup.NoSupervision != null && (sc.HistSup.IdSupervisiones == IdSupervisiones || IdSupervisiones == 0) && (sc.Suc.DescripcionSucursal.Contains(filter) || filter == "")) //ya teniendo los datos, se filtran con el where
+                        .Select(x => new DatosGridSupervisiones
+                        {
+                            IdSupervisiones = x.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                            NoSupervision = x.HistSup.NoSupervision,
+                            FechaSupervision = x.HistSup.FechaSupervision,
+                            DescripcionSucursal = x.Suc.DescripcionSucursal
+                        }).ToList();
 
                     response.Result = HistoricoSucursalesDB;
 
