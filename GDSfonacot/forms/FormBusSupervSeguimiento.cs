@@ -11,9 +11,9 @@ using GDSfonacotDatos;
 
 namespace GDSfonacot.forms
 {
-    public partial class FormBusConsultasSupervision : Form
+    public partial class FormBusSupervSeguimiento : Form
     {
-        public FormBusConsultasSupervision()
+        public FormBusSupervSeguimiento()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace GDSfonacot.forms
         private void textSucursal_TextChanged(object sender, EventArgs e)
         {
             lblTotRegistros.Text = "";
-            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim(),3);
+            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim(),1);
             if (totalsupe.Code != 0)
             {
                 MessageBox.Show("error");
@@ -69,13 +69,14 @@ namespace GDSfonacot.forms
 
         private void dataGlistaSup_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>-1 && e.ColumnIndex > -1) { 
-                if(dataGlistaSup.CurrentCell.Selected)
-                 {
-                    ContestSuc frmconstSuc = new ContestSuc();//crea una instancia del formulario
-                    frmconstSuc.valor1 =Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                    frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    frmconstSuc.ShowDialog();
+            if (e.RowIndex > -1 && e.ColumnIndex > -1)
+            {
+                if (dataGlistaSup.CurrentCell.Selected)
+                {
+                    SeguimientoSup frmSegSup = new SeguimientoSup();//crea una instancia del formulario
+                    frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                    frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    frmSegSup.ShowDialog();
                 }
             }
         }

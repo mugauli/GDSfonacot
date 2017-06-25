@@ -38,10 +38,11 @@ namespace GDSfonacot
         private void toolButNuevo_Click(object sender, EventArgs e)
         {
             toolButNuevo.Enabled = false;
-            txthidIdSup.Text = "0";
+          
              toolButGuardar.Enabled = true;
             toolButImprimir.Enabled = false;
             LimpiarDatos();
+            txthidIdSup.Text = "0";
 
         }
 
@@ -91,6 +92,7 @@ namespace GDSfonacot
                     toolButGuardar.Enabled = false;
                     toolButImprimir.Enabled = true;
                     MessageBox.Show("La supervision ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarDatos();
                 }
 
             }
@@ -253,7 +255,7 @@ namespace GDSfonacot
         }
         private void LimpiarDatos()
         {
-            txthidIdSup.Text = String.Empty;
+            txthidIdSup.Text = "0";
             cmbSucursales.SelectedIndex = -1;
             txtNoSupervision.Text=String.Empty;
             dtFechaSupervision.Value=DateTime.Now;
