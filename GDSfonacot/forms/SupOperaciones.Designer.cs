@@ -56,6 +56,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cmbSucursales = new System.Windows.Forms.ComboBox();
             this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -66,14 +68,10 @@
             this.cmbSupervisor1 = new System.Windows.Forms.ComboBox();
             this.cmbSupervisor2 = new System.Windows.Forms.ComboBox();
             this.txthidIdSup = new System.Windows.Forms.TextBox();
-            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
-            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -413,6 +411,26 @@
             this.panel1.Size = new System.Drawing.Size(1282, 108);
             this.panel1.TabIndex = 200;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GDSfonacot.Properties.Resources.ggg;
+            this.pictureBox3.Location = new System.Drawing.Point(1386, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(168, 89);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GDSfonacot.Properties.Resources.ffff;
+            this.pictureBox2.Location = new System.Drawing.Point(57, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(241, 89);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // cmbSucursales
             // 
             this.cmbSucursales.BackColor = System.Drawing.Color.Black;
@@ -474,7 +492,16 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox1.Size = new System.Drawing.Size(1543, 143);
             this.textBox1.TabIndex = 236;
-            //             // SupOperaciones
+ // 
+            // toolButImprimir
+            // 
+            this.toolButImprimir.Enabled = false;
+            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
+            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButImprimir.Name = "toolButImprimir";
+            this.toolButImprimir.Size = new System.Drawing.Size(73, 22);
+            this.toolButImprimir.Text = "Imprimir";
+            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);            //             // SupOperaciones
             // label6
             // 
             this.label6.AutoSize = true;
@@ -529,46 +556,6 @@
             this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
             this.txthidIdSup.TabIndex = 240;
             // 
-            // toolButGuardar
-            // 
-            this.toolButGuardar.Enabled = false;
-            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
-            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButGuardar.Name = "toolButGuardar";
-            this.toolButGuardar.Size = new System.Drawing.Size(69, 22);
-            this.toolButGuardar.Text = "Guardar";
-            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
-            // 
-            // toolButImprimir
-            // 
-            this.toolButImprimir.Enabled = false;
-            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
-            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButImprimir.Name = "toolButImprimir";
-            this.toolButImprimir.Size = new System.Drawing.Size(73, 22);
-            this.toolButImprimir.Text = "Imprimir";
-            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GDSfonacot.Properties.Resources.ggg;
-            this.pictureBox3.Location = new System.Drawing.Point(1386, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(168, 89);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GDSfonacot.Properties.Resources.ffff;
-            this.pictureBox2.Location = new System.Drawing.Point(57, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(241, 89);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // SupOperaciones
             // 
             // 
@@ -618,6 +605,8 @@
             this.Load += new System.EventHandler(this.SupOperaciones_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

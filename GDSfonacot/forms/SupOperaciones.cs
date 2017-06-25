@@ -53,45 +53,56 @@ namespace GDSfonacot
                return;
             }
 
-           // MessageBox.Show("pASO VALIDACION");
+                                                                                                                                                                                         // MessageBox.Show("pASO VALIDACION");
+            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) {;// Mensaje en pantallas)
+                var objSupervision = new HistorialSupervisiones();
+                objSupervision.IdSupervisiones = Convert.ToInt32(txthidIdSup.Text.Trim());
+                objSupervision.IdSucursal = Convert.ToInt32(cmbSucursales.SelectedValue);
+                objSupervision.NoSupervision = txtNoSupervision.Text.Trim();
+                objSupervision.FechaSupervision = dtFechaSupervision.Value;
+                objSupervision.Inmueble = txtInmueble.Text.Trim();
+                objSupervision.Gestion_direccion = txtGesDireccion.Text.Trim();
+                objSupervision.Originacion = txtOriginacion.Text.Trim();
+                objSupervision.Tarjetas_transfer = txtTransfer.Text.Trim();
+                objSupervision.Credito = txtCredito.Text.Trim();
+                objSupervision.Utys = txtUTYS.Text.Trim();
+                objSupervision.Promocionales = txtPromocionales.Text.Trim();
+                objSupervision.Cobranza = txtCobranza.Text.Trim();
+                objSupervision.Fondofijo = txtFonFijo.Text.Trim();
+                objSupervision.AcuerdosCompromisos = textAcuerdosCompr.Text.Trim();
+                objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
+                objSupervision.Idstatus = 1;
+                objSupervision.Idsupervisor1 = Convert.ToInt32(cmbSupervisor1.SelectedValue);
+                objSupervision.Idsupervisor2 = Convert.ToInt32(cmbSupervisor2.SelectedValue);
+                objSupervision.Fechacreacion = DateTime.Now;
+                var gdSupervisiones = new SupervisionesData().GuardarSupervision(objSupervision);
+                if (gdSupervisiones.Code != 0)
+                {
+                    //Mensage de error con g
+                    toolButNuevo.Enabled = false;
+                    toolButGuardar.Enabled = true;
+                    MessageBox.Show(gdSupervisiones.Message.ToString(),System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    toolButImprimir.Enabled = false;
 
-            var objSupervision = new HistorialSupervisiones();
-            objSupervision.IdSupervisiones = Convert.ToInt32(txthidIdSup.Text.Trim());
-            objSupervision.IdSucursal = Convert.ToInt32(cmbSucursales.SelectedValue);
-            objSupervision.NoSupervision = txtNoSupervision.Text.Trim();
-            objSupervision.FechaSupervision = dtFechaSupervision.Value;
-            objSupervision.Inmueble = txtInmueble.Text.Trim();
-            objSupervision.Gestion_direccion = txtGesDireccion.Text.Trim();
-            objSupervision.Originacion = txtOriginacion.Text.Trim();
-            objSupervision.Tarjetas_transfer = txtTransfer.Text.Trim();
-            objSupervision.Credito = txtCredito.Text.Trim();
-            objSupervision.Utys = txtUTYS.Text.Trim();
-            objSupervision.Promocionales =txtPromocionales.Text.Trim();
-            objSupervision.Cobranza = txtCobranza.Text.Trim();
-            objSupervision.Fondofijo = txtFonFijo.Text.Trim();
-            objSupervision.AcuerdosCompromisos = textAcuerdosCompr.Text.Trim();
-            objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
-            objSupervision.Idstatus = 1;
-            objSupervision.Idsupervisor1 = Convert.ToInt32(cmbSupervisor1.SelectedValue);
-            objSupervision.Idsupervisor2 = Convert.ToInt32(cmbSupervisor2.SelectedValue);
-            objSupervision.Fechacreacion = DateTime.Now;
-            var gdSupervisiones = new SupervisionesData().GuardarSupervision(objSupervision);
+                }
+                else
+                {
+                    toolButNuevo.Enabled = true;
+                    toolButGuardar.Enabled = false;
+                    toolButImprimir.Enabled = true;
+                    MessageBox.Show("La supervision ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-            if (gdSupervisiones.Code != 0)
+            }
+            else
             {
-                //Mensage de error con g
+                MessageBox.Show("La supervision no fue guardada, por favor intente nuevamente",System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 toolButNuevo.Enabled = false;
                 toolButGuardar.Enabled = true;
-                MessageBox.Show(gdSupervisiones.Message.ToString());
                 toolButImprimir.Enabled = false;
             }
-            else {
-                toolButNuevo.Enabled = true;
-                toolButGuardar.Enabled = false;
-                toolButImprimir.Enabled = true;
-                MessageBox.Show("La supervision ha sido guardada correctamente");
-            }
 
+          
         }
         private bool validarDatos()
         {
