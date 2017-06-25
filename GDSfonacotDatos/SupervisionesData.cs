@@ -249,37 +249,47 @@ namespace GDSfonacotDatos
 
 
 
-        public MethodResponse<List<DatosGridSupervisiones>> ObtenerSupervisonesporSuc(int IdSupervisiones, string filter)
+        public MethodResponse<List<DatosBuscarSupervision>> ObtenerDatosSupervision(int IdSupervisiones, string filter)
         {
             try
             {
                 using (var context = new GDSfonacotEntities())
                 {
-                    var response = new MethodResponse<List<DatosGridSupervisiones>> { Code = 0 };
+                    var response = new MethodResponse<List<DatosBuscarSupervision>> { Code = 0 };
 
                     var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
                         .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
-                        .Where(sc => sc.HistSup.NoSupervision != null && (sc.HistSup.IdSupervisiones == IdSupervisiones || IdSupervisiones == 0) && (sc.Suc.DescripcionSucursal.Contains(filter) || filter == "")) //ya teniendo los datos, se filtran con el where
-                        .Select(x => new DatosGridSupervisiones
+                        .Where(sc => sc.HistSup.NoSupervision != null && (sc.HistSup.IdSupervisiones == IdSupervisiones) && (sc.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
+                        .Select(x => new DatosBuscarSupervision
                         {
                             IdSupervisiones = x.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
                             NoSupervision = x.HistSup.NoSupervision,
                             FechaSupervision = x.HistSup.FechaSupervision,
-                            DescripcionSucursal = x.Suc.DescripcionSucursal
-                        }).ToList();
+                            DescripcionSucursal = x.Suc.DescripcionSucursal,
+                            Director_Regional=x.Suc.Director_Regional,
+                            Director_Estatal=x.Suc.Director_Estatal,
+                            NoSucursal=x.Suc.NoSucursal                         
 
-                    response.Result = HistoricoSucursalesDB;
+                        }).SingleOrDefault();
+
+                    if (HistoricoSucursalesDB != null) response.Result = HistoricoSucursalesDB;
 
                     return response;
+                  //  response.Result = HistoricoSucursalesDB;
+
+                   
                 }
 
             }
             catch (Exception ex)
             {
 
-                return new MethodResponse<List<DatosGridSupervisiones>> { Code = -100, Message = ex.Message };
+                return new MethodResponse<List<DatosBuscarSupervision>> { Code = -100, Message = ex.Message };
             }
         }
+
+      
+
 
     }
 }
