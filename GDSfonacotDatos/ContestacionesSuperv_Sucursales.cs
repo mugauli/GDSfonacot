@@ -30,7 +30,7 @@ namespace GDSfonacotDatos
         public Nullable<System.DateTime> FechaCreacionContest { get; set; }
         public Nullable<int> Idusuariocreador { get; set; }
     
+        public virtual HistorialSupervisiones HistorialSupervisiones { get; set; }
         public virtual Usuarios Usuarios { get; set; }
-        public virtual Historial_de_Supervisiones Historial_de_Supervisiones { get; set; }
     }
 }

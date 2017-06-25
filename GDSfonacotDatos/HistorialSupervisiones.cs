@@ -12,10 +12,10 @@ namespace GDSfonacotDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Historial_de_Supervisiones
+    public partial class HistorialSupervisiones
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Historial_de_Supervisiones()
+        public HistorialSupervisiones()
         {
             this.ContestacionesSuperv_Sucursales = new HashSet<ContestacionesSuperv_Sucursales>();
             this.SeguimientoSupervision_Supervisores = new HashSet<SeguimientoSupervision_Supervisores>();
@@ -41,9 +41,9 @@ namespace GDSfonacotDatos
         public Nullable<int> Idsupervisor1 { get; set; }
         public Nullable<int> Idsupervisor2 { get; set; }
     
-        public virtual cat_estatus cat_estatus { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ContestacionesSuperv_Sucursales> ContestacionesSuperv_Sucursales { get; set; }
+        public virtual ctEstatusSupervision ctEstatusSupervision { get; set; }
         public virtual Sucursales Sucursales { get; set; }
         public virtual Usuarios Usuarios { get; set; }
         public virtual Usuarios Usuarios1 { get; set; }
