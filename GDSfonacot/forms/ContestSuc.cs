@@ -29,28 +29,21 @@ namespace GDSfonacot
 
         private void ContestSuc_Load(object sender, EventArgs e)
         {
-          
+            LlenarDatos();
         }
         private void LlenarDatos()
         {
             var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2);
+            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2,2);
             if (busqueda.Result != null)
             {
               //  txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
               
                 txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-            
-                txtInmueble.Text = busqueda.Result.Inmueble.ToString();
-                txtGesDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
-                txtOriginacion.Text = busqueda.Result.Originacion.ToString();
-                txtTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
-                txtCredito.Text = busqueda.Result.Credito.ToString();
-                txtUTYS.Text = busqueda.Result.Utys.ToString();
-                txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
-                txtCobranza.Text = busqueda.Result.Cobranza.ToString();
-                txtFonFijo.Text = busqueda.Result.Fondofijo.ToString();
-               
+                txtDirRegional.Text = busqueda.Result.Director_Regional.ToString();
+                txtDirEstatal.Text= busqueda.Result.Director_Estatal.ToString();
+                txtSucursal.Text= busqueda.Result.NoSucursal.ToString() + "- " +busqueda.Result.DescripcionSucursal.ToString();
+
             }
         }
     }

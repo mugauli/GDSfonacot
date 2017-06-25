@@ -29,7 +29,7 @@ namespace GDSfonacot.forms
         private void textSucursal_TextChanged(object sender, EventArgs e)
         {
             lblTotRegistros.Text = "";
-            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim());
+            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim(),3);
             if (totalsupe.Code != 0)
             {
                 MessageBox.Show("error");

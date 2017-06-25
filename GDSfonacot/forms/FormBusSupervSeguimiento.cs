@@ -29,7 +29,7 @@ namespace GDSfonacot.forms
         private void textSucursal_TextChanged(object sender, EventArgs e)
         {
             lblTotRegistros.Text = "";
-            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim());
+            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim(),1);
             if (totalsupe.Code != 0)
             {
                 MessageBox.Show("error");
@@ -73,8 +73,10 @@ namespace GDSfonacot.forms
             {
                 if (dataGlistaSup.CurrentCell.Selected)
                 {
-                    var valor = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value;
-                    MessageBox.Show("Has seleccionado la supervision " + valor);
+                    SeguimientoSup frmSegSup = new SeguimientoSup();//crea una instancia del formulario
+                    frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                    frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    frmSegSup.ShowDialog();
                 }
             }
         }

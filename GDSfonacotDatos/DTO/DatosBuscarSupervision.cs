@@ -38,5 +38,5 @@ namespace GDSfonacotDatos.DTO
         public string Coordinador_Cobranza { get; set; }
 
     }
-    }
+    
 }
