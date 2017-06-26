@@ -120,6 +120,9 @@
     <Compile Include="SeguimientoSupervision_Supervisores.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Seguimiento_RespuestaSucursales.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sucursales.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>

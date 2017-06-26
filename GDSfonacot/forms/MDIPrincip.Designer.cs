@@ -35,6 +35,7 @@
             this.mnuSupContestSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupConsultaSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupContestSeguimSuperv = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSolventarSeg = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFichasPerson = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,9 +103,10 @@
             // mnuBuscarSuperv
             // 
             this.mnuBuscarSuperv.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSupContestSeguimSuperv,
             this.mnuSupContestSuc,
-            this.mnuSupConsultaSuperv,
-            this.mnuSupContestSeguimSuperv});
+            this.mnuSolventarSeg,
+            this.mnuSupConsultaSuperv});
             this.mnuBuscarSuperv.Name = "mnuBuscarSuperv";
             this.mnuBuscarSuperv.Size = new System.Drawing.Size(266, 22);
             this.mnuBuscarSuperv.Text = "Buscar Supervisiones";
@@ -129,6 +131,13 @@
             this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(270, 22);
             this.mnuSupContestSeguimSuperv.Text = "Seuimiento de Supervisiones";
             this.mnuSupContestSeguimSuperv.Click += new System.EventHandler(this.mnuSupContestSeguimSuperv_Click);
+            // 
+            // mnuSolventarSeg
+            // 
+            this.mnuSolventarSeg.Name = "mnuSolventarSeg";
+            this.mnuSolventarSeg.Size = new System.Drawing.Size(282, 22);
+            this.mnuSolventarSeg.Text = "3.Solventar Seguimiento de Supervision";
+            this.mnuSolventarSeg.Click += new System.EventHandler(this.mnuSolventarSeg_Click);
             // 
             // menuHistsupOp
             // 
