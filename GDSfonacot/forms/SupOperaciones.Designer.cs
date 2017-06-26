@@ -59,9 +59,9 @@
             this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolButNuevo = new System.Windows.Forms.ToolStripButton();
+            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -402,7 +402,7 @@
             this.toolButGuardar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1579, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1562, 25);
             this.toolStrip1.TabIndex = 235;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -410,9 +410,18 @@
             // 
             this.toolButNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolButNuevo.Name = "toolButNuevo";
-            this.toolButNuevo.Size = new System.Drawing.Size(46, 22);
+            this.toolButNuevo.Size = new System.Drawing.Size(42, 22);
             this.toolButNuevo.Text = "Nuevo";
             this.toolButNuevo.Click += new System.EventHandler(this.toolButNuevo_Click);
+            // 
+            // toolButGuardar
+            // 
+            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
+            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButGuardar.Name = "toolButGuardar";
+            this.toolButGuardar.Size = new System.Drawing.Size(66, 22);
+            this.toolButGuardar.Text = "Guardar";
+            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
             // 
             // textBox1
             // 
@@ -438,22 +447,13 @@
             this.label6.TabIndex = 237;
             this.label6.Text = "Acuerdos y Compromisos";
             // 
-            // toolButGuardar
-            // 
-            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
-            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButGuardar.Name = "toolButGuardar";
-            this.toolButGuardar.Size = new System.Drawing.Size(69, 22);
-            this.toolButGuardar.Text = "Guardar";
-            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
-            // 
             // SupOperaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1596, 741);
+            this.ClientSize = new System.Drawing.Size(1259, 741);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.toolStrip1);
