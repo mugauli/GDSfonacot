@@ -37,7 +37,7 @@ namespace GDSfonacot
             var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2,2);
             if (busqueda.Result != null)
             {
-                //  txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
+                txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
                 txthidIdConst.Text = "0";
                 txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
                 txtDirRegional.Text = busqueda.Result.Director_Regional.ToString();
@@ -205,6 +205,11 @@ namespace GDSfonacot
                 toolButGuardar.Enabled = true;
                 toolButImprimir.Enabled = false;
             }
+        }
+
+        private void txthidIdSup_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,6 +34,7 @@ namespace GDSfonacotDatos
         public virtual DbSet<ctTipoPersonal> ctTipoPersonal { get; set; }
         public virtual DbSet<Empleados> Empleados { get; set; }
         public virtual DbSet<HistorialSupervisiones> HistorialSupervisiones { get; set; }
+        public virtual DbSet<Seguimiento_RespuestaSucursales> Seguimiento_RespuestaSucursales { get; set; }
         public virtual DbSet<SeguimientoSupervision_Supervisores> SeguimientoSupervision_Supervisores { get; set; }
         public virtual DbSet<Sucursales> Sucursales { get; set; }
         public virtual DbSet<TiraAuditora> TiraAuditora { get; set; }

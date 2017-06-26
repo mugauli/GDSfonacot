@@ -46,18 +46,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.txtSegSupervisor = new System.Windows.Forms.TextBox();
             this.txtDirectorEstatal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtOficioRespuesta = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtSolventada = new System.Windows.Forms.TextBox();
-            this.checksolventada = new System.Windows.Forms.CheckBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
             this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
-            this.dtFechaRespuesta = new System.Windows.Forms.DateTimePicker();
+            this.txthidIdSeg = new System.Windows.Forms.TextBox();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -127,7 +123,7 @@
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.DimGray;
-            this.label38.Location = new System.Drawing.Point(21, 310);
+            this.label38.Location = new System.Drawing.Point(17, 265);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(196, 16);
@@ -234,7 +230,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1345, 108);
+            this.panel1.Size = new System.Drawing.Size(1362, 108);
             this.panel1.TabIndex = 200;
             // 
             // pictureBox3
@@ -257,15 +253,17 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox36
+            // txtSegSupervisor
             // 
-            this.textBox36.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textBox36.Location = new System.Drawing.Point(24, 330);
-            this.textBox36.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox36.Multiline = true;
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(1036, 107);
-            this.textBox36.TabIndex = 211;
+            this.txtSegSupervisor.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtSegSupervisor.ForeColor = System.Drawing.Color.White;
+            this.txtSegSupervisor.Location = new System.Drawing.Point(20, 285);
+            this.txtSegSupervisor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSegSupervisor.Multiline = true;
+            this.txtSegSupervisor.Name = "txtSegSupervisor";
+            this.txtSegSupervisor.Size = new System.Drawing.Size(1036, 107);
+            this.txtSegSupervisor.TabIndex = 211;
+            this.txtSegSupervisor.TextChanged += new System.EventHandler(this.txtSegSupervisor_TextChanged);
             // 
             // txtDirectorEstatal
             // 
@@ -289,60 +287,6 @@
             this.label6.TabIndex = 232;
             this.label6.Text = "Director Estatal";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(832, 237);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 16);
-            this.label7.TabIndex = 235;
-            this.label7.Text = "Oficio de Respuesta";
-            // 
-            // txtOficioRespuesta
-            // 
-            this.txtOficioRespuesta.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtOficioRespuesta.ForeColor = System.Drawing.Color.White;
-            this.txtOficioRespuesta.Location = new System.Drawing.Point(834, 216);
-            this.txtOficioRespuesta.Margin = new System.Windows.Forms.Padding(4);
-            this.txtOficioRespuesta.Name = "txtOficioRespuesta";
-            this.txtOficioRespuesta.Size = new System.Drawing.Size(283, 20);
-            this.txtOficioRespuesta.TabIndex = 234;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(21, 280);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(136, 16);
-            this.label9.TabIndex = 237;
-            this.label9.Text = "Fecha de Respuesta";
-            // 
-            // txtSolventada
-            // 
-            this.txtSolventada.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtSolventada.Location = new System.Drawing.Point(251, 261);
-            this.txtSolventada.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSolventada.Name = "txtSolventada";
-            this.txtSolventada.Size = new System.Drawing.Size(95, 20);
-            this.txtSolventada.TabIndex = 238;
-            // 
-            // checksolventada
-            // 
-            this.checksolventada.AutoSize = true;
-            this.checksolventada.Location = new System.Drawing.Point(251, 261);
-            this.checksolventada.Name = "checksolventada";
-            this.checksolventada.Size = new System.Drawing.Size(80, 17);
-            this.checksolventada.TabIndex = 239;
-            this.checksolventada.Text = "Solventada";
-            this.checksolventada.UseVisualStyleBackColor = true;
-            this.checksolventada.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -350,7 +294,7 @@
             this.toolButImprimir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 108);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1345, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1362, 25);
             this.toolStrip1.TabIndex = 240;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -362,6 +306,7 @@
             this.toolButGuardar.Name = "toolButGuardar";
             this.toolButGuardar.Size = new System.Drawing.Size(69, 22);
             this.toolButGuardar.Text = "Guardar";
+            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
             // 
             // toolButImprimir
             // 
@@ -372,16 +317,25 @@
             this.toolButImprimir.Size = new System.Drawing.Size(73, 22);
             this.toolButImprimir.Text = "Imprimir";
             // 
-            // dtFechaRespuesta
+            // txthidIdSeg
             // 
-            this.dtFechaRespuesta.CalendarForeColor = System.Drawing.Color.White;
-            this.dtFechaRespuesta.CalendarTitleBackColor = System.Drawing.Color.Black;
-            this.dtFechaRespuesta.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dtFechaRespuesta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaRespuesta.Location = new System.Drawing.Point(24, 261);
-            this.dtFechaRespuesta.Name = "dtFechaRespuesta";
-            this.dtFechaRespuesta.Size = new System.Drawing.Size(183, 20);
-            this.dtFechaRespuesta.TabIndex = 241;
+            this.txthidIdSeg.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSeg.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSeg.Location = new System.Drawing.Point(46, 140);
+            this.txthidIdSeg.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSeg.Name = "txthidIdSeg";
+            this.txthidIdSeg.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdSeg.TabIndex = 245;
+            // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(20, 141);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdSup.TabIndex = 244;
             // 
             // SeguimientoSup
             // 
@@ -390,20 +344,16 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1362, 413);
-            this.Controls.Add(this.dtFechaRespuesta);
+            this.Controls.Add(this.txthidIdSeg);
+            this.Controls.Add(this.txthidIdSup);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.checksolventada);
-            this.Controls.Add(this.txtSolventada);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtOficioRespuesta);
             this.Controls.Add(this.txtDirectorEstatal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSucursal);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.textBox42);
-            this.Controls.Add(this.textBox36);
+            this.Controls.Add(this.txtSegSupervisor);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textRepresentaciones);
@@ -448,17 +398,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNoSupervision;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox txtSegSupervisor;
         private System.Windows.Forms.TextBox txtDirectorEstatal;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtOficioRespuesta;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtSolventada;
-        private System.Windows.Forms.CheckBox checksolventada;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolButGuardar;
         private System.Windows.Forms.ToolStripButton toolButImprimir;
-        private System.Windows.Forms.DateTimePicker dtFechaRespuesta;
+        private System.Windows.Forms.TextBox txthidIdSeg;
+        private System.Windows.Forms.TextBox txthidIdSup;
     }
 }

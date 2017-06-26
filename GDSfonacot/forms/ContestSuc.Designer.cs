@@ -507,6 +507,7 @@
             this.txthidIdSup.Name = "txthidIdSup";
             this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
             this.txthidIdSup.TabIndex = 242;
+            this.txthidIdSup.TextChanged += new System.EventHandler(this.txthidIdSup_TextChanged);
             // 
             // txthidIdConst
             // 

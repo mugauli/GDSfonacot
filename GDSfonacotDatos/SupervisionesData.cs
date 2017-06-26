@@ -159,6 +159,90 @@ namespace GDSfonacotDatos
             }
         }
 
+        public MethodResponse<int> GuardarSeguimientoSupervisor(SeguimientoSupervision_Supervisores seguimiento)
+        {
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<int> { Code = 0 };
+
+                    if (seguimiento.Idseguimiento== 0)
+                    {
+                        //guardar una constestacion nueva
+                        var usuariosDB = context.SeguimientoSupervision_Supervisores.Add(seguimiento);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+
+                        //Edicion de una constestacion de sucursal
+                        var objUsuario = context.SeguimientoSupervision_Supervisores.Where(x => x.Idseguimiento == seguimiento.Idseguimiento).FirstOrDefault();
+                        objUsuario.Idsupervision = seguimiento.Idsupervision;
+                        objUsuario.Idseguimiento= seguimiento.Idseguimiento;
+                        objUsuario.FechaSeguimCreacion= seguimiento.FechaSeguimCreacion;
+                        objUsuario.IdusuarioCreador = seguimiento.IdusuarioCreador;
+                        objUsuario.SeguimientoSupervisor = seguimiento.SeguimientoSupervisor;
+                        context.SaveChanges();
+
+                    }
+                    //Cambios de chucho
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<int> { Code = -100, Message = ex.Message };
+            }
+        }
+
+        public MethodResponse<int> GuardarSeguimientoRespuestaContestacion(Seguimiento_RespuestaSucursales seguimiento)
+        {
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<int> { Code = 0 };
+
+                    if (seguimiento.IdRespuesta == 0)
+                    {
+                        //guardar una constestacion nueva
+                        var usuariosDB = context.Seguimiento_RespuestaSucursales.Add(seguimiento);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+
+                        var objUsuario = context.Seguimiento_RespuestaSucursales.Where(x => x.IdRespuesta == seguimiento.IdRespuesta).FirstOrDefault();
+                        objUsuario.IdSupervision= seguimiento.IdSupervision;
+                        objUsuario.IdRespuesta = seguimiento.IdRespuesta;
+                        objUsuario.FechaRespCreacion = seguimiento.FechaRespCreacion;
+                        objUsuario.IdusuarioCreador = seguimiento.IdusuarioCreador;
+                        objUsuario.OficioRespuesta = seguimiento.OficioRespuesta;
+                        objUsuario.FechaRespuesta = seguimiento.FechaRespuesta;
+                        objUsuario.Solventada = seguimiento.Solventada;
+                        context.SaveChanges();
+
+                    }
+                    //Cambios de chucho
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<int> { Code = -100, Message = ex.Message };
+            }
+        }
+
+
         public MethodResponse<List<HistorialSupervisiones>> ObtenerSupervisones(int IdSupervisiones, string filter)
         {
             try

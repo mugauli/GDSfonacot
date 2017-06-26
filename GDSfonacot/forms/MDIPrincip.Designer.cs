@@ -34,6 +34,7 @@
             this.mnuSupContestSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupConsultaSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupContestSeguimSuperv = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSolventarSeg = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFichasSuc = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,9 +87,10 @@
             // mnuBuscarSuperv
             // 
             this.mnuBuscarSuperv.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSupContestSeguimSuperv,
             this.mnuSupContestSuc,
-            this.mnuSupConsultaSuperv,
-            this.mnuSupContestSeguimSuperv});
+            this.mnuSolventarSeg,
+            this.mnuSupConsultaSuperv});
             this.mnuBuscarSuperv.Name = "mnuBuscarSuperv";
             this.mnuBuscarSuperv.Size = new System.Drawing.Size(287, 22);
             this.mnuBuscarSuperv.Text = "Buscar Supervisiones";
@@ -96,23 +98,30 @@
             // mnuSupContestSuc
             // 
             this.mnuSupContestSuc.Name = "mnuSupContestSuc";
-            this.mnuSupContestSuc.Size = new System.Drawing.Size(347, 22);
-            this.mnuSupContestSuc.Text = "Para Contestacion de Sucursal";
+            this.mnuSupContestSuc.Size = new System.Drawing.Size(282, 22);
+            this.mnuSupContestSuc.Text = "2. Contestacion de Sucursal";
             this.mnuSupContestSuc.Click += new System.EventHandler(this.mnuSupContestSuc_Click);
             // 
             // mnuSupConsultaSuperv
             // 
             this.mnuSupConsultaSuperv.Name = "mnuSupConsultaSuperv";
-            this.mnuSupConsultaSuperv.Size = new System.Drawing.Size(347, 22);
+            this.mnuSupConsultaSuperv.Size = new System.Drawing.Size(282, 22);
             this.mnuSupConsultaSuperv.Text = "Para Consulta de un Supervisor";
             this.mnuSupConsultaSuperv.Click += new System.EventHandler(this.mnuSupConsultaSuperv_Click);
             // 
             // mnuSupContestSeguimSuperv
             // 
             this.mnuSupContestSeguimSuperv.Name = "mnuSupContestSeguimSuperv";
-            this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(347, 22);
-            this.mnuSupContestSeguimSuperv.Text = "Para Contestacion de Seguimiento de un Supervisor";
+            this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(282, 22);
+            this.mnuSupContestSeguimSuperv.Text = "1. Dar Seguimiento a Supervision";
             this.mnuSupContestSeguimSuperv.Click += new System.EventHandler(this.mnuSupContestSeguimSuperv_Click);
+            // 
+            // mnuSolventarSeg
+            // 
+            this.mnuSolventarSeg.Name = "mnuSolventarSeg";
+            this.mnuSolventarSeg.Size = new System.Drawing.Size(282, 22);
+            this.mnuSolventarSeg.Text = "3.Solventar Seguimiento de Supervision";
+            this.mnuSolventarSeg.Click += new System.EventHandler(this.mnuSolventarSeg_Click);
             // 
             // menuHistsupOp
             // 
@@ -260,5 +269,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSupContestSuc;
         private System.Windows.Forms.ToolStripMenuItem mnuSupConsultaSuperv;
         private System.Windows.Forms.ToolStripMenuItem mnuSupContestSeguimSuperv;
+        private System.Windows.Forms.ToolStripMenuItem mnuSolventarSeg;
     }
 }
