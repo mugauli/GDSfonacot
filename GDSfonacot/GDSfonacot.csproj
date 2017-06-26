@@ -110,6 +110,12 @@
     <Compile Include="forms\frmBusquedaSucursal.Designer.cs">
       <DependentUpon>frmBusquedaSucursal.cs</DependentUpon>
     </Compile>
+ <Compile Include="forms\frmContestacionSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmContestacionSucursal.Designer.cs">
+      <DependentUpon>frmContestacionSucursal.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmBusquedaSucursal.resx">
       <DependentUpon>frmBusquedaSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+ <EmbeddedResource Include="forms\frmContestacionSucursal.resx">
+      <DependentUpon>frmContestacionSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
