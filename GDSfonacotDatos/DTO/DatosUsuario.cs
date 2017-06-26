@@ -15,5 +15,6 @@ namespace GDSfonacotDatos.DTO
         public Nullable<int> IdNivel { get; set; }
         public System.DateTime fechaalta { get; set; }
         public Nullable<System.DateTime> fechabaja { get; set; }
+        public Nullable<int> IdSucursal { get; set; }
     }
 }

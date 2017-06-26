@@ -17,10 +17,8 @@
         <EntityTypeShape EntityType="GDSfonacotModel.SeguimientoSupervision_Supervisores" Width="1.5" PointX="10.5" PointY="7.5" />
         <EntityTypeShape EntityType="GDSfonacotModel.Sucursales" Width="1.5" PointX="3" PointY="12.125" />
         <EntityTypeShape EntityType="GDSfonacotModel.TiraAuditora" Width="1.5" PointX="5.25" PointY="19.75" />
-        <EntityTypeShape EntityType="GDSfonacotModel.Usuarios" Width="1.5" PointX="3" PointY="7.125" />
         <EntityTypeShape EntityType="GDSfonacotModel.Usuarios_Nivel" Width="1.5" PointX="0.75" PointY="8.125" />
         <AssociationConnector Association="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" />
-        <AssociationConnector Association="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_UsuarioCreador" />
         <AssociationConnector Association="GDSfonacotModel.FK_Empleados_ctActividad" />
         <AssociationConnector Association="GDSfonacotModel.FK_Empleados_ctArea" />
         <AssociationConnector Association="GDSfonacotModel.FK_HistorialSupervisiones_cat_estatus" />
@@ -29,14 +27,17 @@
         <AssociationConnector Association="GDSfonacotModel.FK_Empleados_ctTipoPersonal" />
         <AssociationConnector Association="GDSfonacotModel.FK_Empleados_Sucursales" />
         <AssociationConnector Association="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" />
+        <AssociationConnector Association="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" />
+        <EntityTypeShape EntityType="GDSfonacotModel.Usuarios" Width="1.5" PointX="8.25" PointY="12.25" />
+        <AssociationConnector Association="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_UsuarioCreador" />
         <AssociationConnector Association="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosCreador" />
         <AssociationConnector Association="GDSfonacotModel.FK_HistorialSupervisiones_Usuariossup1" />
         <AssociationConnector Association="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosSup2" />
-        <AssociationConnector Association="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" />
         <AssociationConnector Association="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios" />
+        <AssociationConnector Association="GDSfonacotModel.FK_Usuarios_Sucursales" />
         <AssociationConnector Association="GDSfonacotModel.FK_TiraAuditora_Usuarios" />
         <AssociationConnector Association="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

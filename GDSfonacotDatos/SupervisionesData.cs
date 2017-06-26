@@ -189,6 +189,32 @@ namespace GDSfonacotDatos
             }
         }
 
+        public MethodResponse<List<DatosComboSucursales>> ObtenerSucursalesFilter(string filter)
+        {
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
+
+                    var usuariosDB = context.Sucursales.OrderBy(x => x.NoSucursal)
+                        .Where(x=>x.DescripcionSucursal.Contains(filter))
+                        .Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NoSucursal = x.NoSucursal, NameSucursal = x.DescripcionSucursal, DireccionRegional = x.DireccionRegional }).ToList();
+
+                    response.Result = usuariosDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<DatosComboSucursales>> { Code = -100, Message = ex.Message };
+            }
+        }
+
         public MethodResponse<List<DatosGridSupervisiones>> ObtenerSupervisonesporSuc(int IdSupervisiones, string filter)
         {
             try
@@ -216,6 +242,27 @@ namespace GDSfonacotDatos
 
                 return new MethodResponse<List<DatosGridSupervisiones>> { Code = -100, Message = ex.Message };
             }
+        }
+
+        public bool GuardarImagen(int idSucursal, byte[] imagen)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var sucursalDB = context.Sucursales.Where(x => x.IdSucursal == idSucursal).FirstOrDefault();
+
+                    sucursalDB.Fotografia = imagen;
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return true;
         }
 
     }
