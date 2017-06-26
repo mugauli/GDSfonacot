@@ -41,5 +41,15 @@ namespace GDSfonacot.forms
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNoSupervision_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
