@@ -37,7 +37,7 @@ namespace GDSfonacotDatos
         public virtual DbSet<SeguimientoSupervision_Supervisores> SeguimientoSupervision_Supervisores { get; set; }
         public virtual DbSet<Sucursales> Sucursales { get; set; }
         public virtual DbSet<TiraAuditora> TiraAuditora { get; set; }
-        public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Usuarios_Nivel> Usuarios_Nivel { get; set; }
+        public virtual DbSet<Usuarios> Usuarios { get; set; }
     }
 }

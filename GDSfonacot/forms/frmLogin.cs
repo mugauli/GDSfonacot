@@ -83,6 +83,7 @@ namespace GDSfonacot
                         Globales.objpasardatosusuario.Nombre_Usuario = logueo.Result.Nombre_Usuario;
                         Globales.objpasardatosusuario.IdUsuario = logueo.Result.IdUsuario;
                         Globales.objpasardatosusuario.fechabaja = logueo.Result.fechabaja;
+                        Globales.objpasardatosusuario.IdSucursal = logueo.Result.IdSucursal;
                         MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
                         this.Hide();  //oculta el formulario
                         frmPanel.ShowDialog();//muestra el formulario forma modal

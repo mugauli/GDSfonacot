@@ -32,6 +32,7 @@ namespace GDSfonacotDatos
         public Nullable<int> IdNivel { get; set; }
         public System.DateTime fechaalta { get; set; }
         public Nullable<System.DateTime> fechabaja { get; set; }
+        public Nullable<int> IdSucursal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ContestacionesSuperv_Sucursales> ContestacionesSuperv_Sucursales { get; set; }
@@ -43,6 +44,7 @@ namespace GDSfonacotDatos
         public virtual ICollection<HistorialSupervisiones> HistorialSupervisiones2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SeguimientoSupervision_Supervisores> SeguimientoSupervision_Supervisores { get; set; }
+        public virtual Sucursales Sucursales { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TiraAuditora> TiraAuditora { get; set; }
         public virtual Usuarios_Nivel Usuarios_Nivel { get; set; }

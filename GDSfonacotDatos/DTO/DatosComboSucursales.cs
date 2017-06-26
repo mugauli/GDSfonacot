@@ -10,5 +10,9 @@ namespace GDSfonacotDatos.DTO
     {
         public int IdSucursal { get; set; }
         public String NameSucursal { get; set; }
+        public short NoSucursal { get; set; }
+        public String DireccionRegional { get; set; }
+
+
     }
 }

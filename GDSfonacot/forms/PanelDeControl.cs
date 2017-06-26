@@ -65,7 +65,7 @@ namespace GDSfonacot
 
         private void butFicPerson_Click(object sender, EventArgs e)
         {
-            PersonalSucursales frmFichPer = new PersonalSucursales();//crea una instancia del formulario
+            PersonalSucursales frmFichPer = new PersonalSucursales(1);//crea una instancia del formulario
             frmFichPer.ShowDialog(); //muestra el formulario en forma modal
         }
 
