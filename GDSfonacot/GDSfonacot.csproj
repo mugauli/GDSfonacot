@@ -134,13 +134,13 @@
     <Compile Include="forms\frmBusquedaSucursal.Designer.cs">
       <DependentUpon>frmBusquedaSucursal.cs</DependentUpon>
     </Compile>
- <Compile Include="forms\frmAgregarSucursal.cs">
+    <Compile Include="forms\frmAgregarSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmAgregarSucursal.Designer.cs">
       <DependentUpon>frmAgregarSucursal.cs</DependentUpon>
     </Compile>
- <Compile Include="forms\frmContestacionSucursal.cs">
+    <Compile Include="forms\frmContestacionSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmContestacionSucursal.Designer.cs">
@@ -194,6 +194,9 @@
     <Compile Include="forms\frmSucursales.Designer.cs">
       <DependentUpon>frmSucursales.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Supervisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -239,10 +242,10 @@
     <EmbeddedResource Include="forms\frmBusquedaSucursal.resx">
       <DependentUpon>frmBusquedaSucursal.cs</DependentUpon>
     </EmbeddedResource>
- <EmbeddedResource Include="forms\frmAgregarSucursal.resx">
+    <EmbeddedResource Include="forms\frmAgregarSucursal.resx">
       <DependentUpon>frmAgregarSucursal.cs</DependentUpon>
     </EmbeddedResource>
- <EmbeddedResource Include="forms\frmContestacionSucursal.resx">
+    <EmbeddedResource Include="forms\frmContestacionSucursal.resx">
       <DependentUpon>frmContestacionSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmEmpleados.resx">

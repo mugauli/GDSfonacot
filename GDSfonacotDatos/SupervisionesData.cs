@@ -76,7 +76,7 @@ namespace GDSfonacotDatos
                     if (supervision.IdSupervisiones == 0)
                     {
                         //Edicion de Historial de supervisiones
-                       //error
+                        //error
                     }
                     else
                     {
@@ -100,7 +100,7 @@ namespace GDSfonacotDatos
                 return new MethodResponse<int> { Code = -100, Message = ex.Message };
             }
         }
- 
+
 
         public MethodResponse<int> GuardarConstestacionSucursal(ContestacionesSuperv_Sucursales contestacion)
         {
@@ -135,7 +135,7 @@ namespace GDSfonacotDatos
                         objUsuario.Fondofijo = contestacion.Fondofijo;
                         objUsuario.AcuerdosCompromisos = contestacion.AcuerdosCompromisos;
                         objUsuario.NoOficio = contestacion.NoOficio;
-                        objUsuario.FechaCreacionContest= contestacion.FechaCreacionContest;
+                        objUsuario.FechaCreacionContest = contestacion.FechaCreacionContest;
                         objUsuario.Idusuariocreador = contestacion.Idusuariocreador;
 
 
@@ -153,7 +153,7 @@ namespace GDSfonacotDatos
             }
             catch (Exception ex)
             {
-                
+
                 return new MethodResponse<int> { Code = -100, Message = ex.Message };
             }
         }
@@ -167,7 +167,7 @@ namespace GDSfonacotDatos
                 {
                     var response = new MethodResponse<int> { Code = 0 };
 
-                    if (seguimiento.Idseguimiento== 0)
+                    if (seguimiento.Idseguimiento == 0)
                     {
                         //guardar una constestacion nueva
                         var usuariosDB = context.SeguimientoSupervision_Supervisores.Add(seguimiento);
@@ -179,8 +179,8 @@ namespace GDSfonacotDatos
                         //Edicion de una constestacion de sucursal
                         var objUsuario = context.SeguimientoSupervision_Supervisores.Where(x => x.Idseguimiento == seguimiento.Idseguimiento).FirstOrDefault();
                         objUsuario.Idsupervision = seguimiento.Idsupervision;
-                        objUsuario.Idseguimiento= seguimiento.Idseguimiento;
-                        objUsuario.FechaSeguimCreacion= seguimiento.FechaSeguimCreacion;
+                        objUsuario.Idseguimiento = seguimiento.Idseguimiento;
+                        objUsuario.FechaSeguimCreacion = seguimiento.FechaSeguimCreacion;
                         objUsuario.IdusuarioCreador = seguimiento.IdusuarioCreador;
                         objUsuario.SeguimientoSupervisor = seguimiento.SeguimientoSupervisor;
                         context.SaveChanges();
@@ -218,7 +218,7 @@ namespace GDSfonacotDatos
                     {
 
                         var objUsuario = context.Seguimiento_RespuestaSucursales.Where(x => x.IdRespuesta == seguimiento.IdRespuesta).FirstOrDefault();
-                        objUsuario.IdSupervision= seguimiento.IdSupervision;
+                        objUsuario.IdSupervision = seguimiento.IdSupervision;
                         objUsuario.IdRespuesta = seguimiento.IdRespuesta;
                         objUsuario.FechaRespCreacion = seguimiento.FechaRespCreacion;
                         objUsuario.IdusuarioCreador = seguimiento.IdusuarioCreador;
@@ -405,10 +405,10 @@ namespace GDSfonacotDatos
                 {
                     var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
 
-                    var usuariosDB = context.Usuarios.Select(x => new DatosSupervisores { IdUsuario = x.IdUsuario, IdNivel = x.IdNivel, Nombre_Usuario = x.Nombre_Usuario }).ToList();
+                    var usuariosDB = context.Sucursales.Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NoSucursal = x.NoSucursal, NameSucursal = x.DescripcionSucursal, DireccionRegional = x.DireccionRegional }).ToList();
 
-                        
-                        
+
+
                     //var usuariosDB = context.Usuarios.Where(x => x.IdUsuario == IdUsuario && IdUsuario == 0).ToList();
 
 
@@ -426,7 +426,7 @@ namespace GDSfonacotDatos
         }
 
 
-  public MethodResponse<List<DatosSupervisores>> ObtenerSupervisores()
+        public MethodResponse<List<DatosSupervisores>> ObtenerSupervisores()
         {
             try
             {

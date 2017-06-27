@@ -53,7 +53,7 @@ namespace GDSfonacot.forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            new SupervisionesData().GuardarImagen(SucursalInt, ImageHelper.ImageToByteArray(pbxSucursal.Image));
+            //new SupervisionesData().GuardarImagen(SucursalInt, ImageHelper.ImageToByteArray(pbxSucursal.Image));
         }
     }
 }
