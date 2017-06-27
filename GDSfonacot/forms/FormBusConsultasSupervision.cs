@@ -69,13 +69,12 @@ namespace GDSfonacot.forms
 
         private void dataGlistaSup_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>-1 && e.ColumnIndex > -1) { 
-                if(dataGlistaSup.CurrentCell.Selected)
-                 {
-                    ContestSuc frmconstSuc = new ContestSuc();//crea una instancia del formulario
-                    frmconstSuc.valor1 =Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                    frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    frmconstSuc.ShowDialog();
+            if (e.RowIndex > -1 && e.ColumnIndex > -1)
+            {
+                if (dataGlistaSup.CurrentCell.Selected)
+                {
+                    var valor = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value;
+                    MessageBox.Show("Has seleccionado la supervision " + valor);
                 }
             }
         }
