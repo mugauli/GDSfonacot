@@ -11,13 +11,12 @@ using GDSfonacotDatos;
 
 namespace GDSfonacot.forms
 {
-    public partial class FormBusConsultasSupervision : Form
+    public partial class FormBusSegRespuesta : Form
     {
-        public FormBusConsultasSupervision()
+        public FormBusSegRespuesta()
         {
             InitializeComponent();
         }
-
         private void textSucursal_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -69,13 +68,14 @@ namespace GDSfonacot.forms
 
         private void dataGlistaSup_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>-1 && e.ColumnIndex > -1) { 
-                if(dataGlistaSup.CurrentCell.Selected)
-                 {
-                    ContestSuc frmconstSuc = new ContestSuc();//crea una instancia del formulario
-                    frmconstSuc.valor1 =Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                    frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    frmconstSuc.ShowDialog();
+            if (e.RowIndex > -1 && e.ColumnIndex > -1)
+            {
+                if (dataGlistaSup.CurrentCell.Selected)
+                {
+                    forms.formSeguiRespuesta frmSegSup = new forms.formSeguiRespuesta();//crea una instancia del formulario
+                    frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                    frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    frmSegSup.ShowDialog();
                 }
             }
         }

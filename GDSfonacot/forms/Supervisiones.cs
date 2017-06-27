@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GDSfonacotDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GDSfonacotDatos;
 
-namespace GDSfonacot.forms
+namespace GDSfonacot
 {
-    public partial class FormBusConsultasSupervision : Form
+    public partial class Supervisiones : Form
     {
-        public FormBusConsultasSupervision()
+        public Supervisiones()
         {
-            InitializeComponent();
+            InitializeComponent();//
+        }
+
+        private void Supervisiones_Load(object sender, EventArgs e)
+        {
+  
+
         }
 
         private void textSucursal_KeyPress(object sender, KeyPressEventArgs e)
@@ -29,21 +35,21 @@ namespace GDSfonacot.forms
         private void textSucursal_TextChanged(object sender, EventArgs e)
         {
             lblTotRegistros.Text = "";
-            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim(),3);
+            var totalsupe = new SupervisionesData().ObtenerSupervisonesporSuc(0, textSucursal.Text.Trim(),2);
             if (totalsupe.Code != 0)
             {
                 MessageBox.Show("error");
             }
 
 
-            dataGlistaSup.DataSource = totalsupe.Result;
+            dataGlistaSup.DataSource = totalsupe.Result;            
             dataGlistaSup.Columns[0].Visible = false;
             dataGlistaSup.AutoResizeColumns();
 
 
             lblTotRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
 
-
+           
 
 
         }
@@ -51,20 +57,20 @@ namespace GDSfonacot.forms
         private void dataGlistaSup_SelectionChanged(object sender, EventArgs e)
         {
 
-
+            
 
         }
 
         private void dataGlistaSup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void dataGlistaSup_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-
-
+          
+         
         }
 
         private void dataGlistaSup_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

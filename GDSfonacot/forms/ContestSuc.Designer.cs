@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContestSuc));
+            this.label47 = new System.Windows.Forms.Label();
+            this.textNoSucursal = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.txtFonFijo = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -54,20 +57,55 @@
             this.txtSucursal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtNoOficio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
+            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
+            this.txthidIdConst = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textAcuerdosCompr = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            this.SuspendLayout();
+
+  this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            this.label6 = new System.Windows.Forms.Label();            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.DimGray;
+            this.label47.Location = new System.Drawing.Point(1272, 171);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(104, 16);
+            this.label47.TabIndex = 197;
+            this.label47.Text = "No de Sucursal";
+            // 
+            // textNoSucursal
+            // 
+            this.textNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textNoSucursal.Location = new System.Drawing.Point(1271, 146);
+            this.textNoSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.textNoSucursal.Name = "textNoSucursal";
+            this.textNoSucursal.Size = new System.Drawing.Size(105, 20);
+            this.textNoSucursal.TabIndex = 3;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.DimGray;
-            this.label46.Location = new System.Drawing.Point(17, 1441);
+            this.label46.Location = new System.Drawing.Point(15, 1585);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(76, 16);
@@ -77,7 +115,8 @@
             // txtFonFijo
             // 
             this.txtFonFijo.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtFonFijo.Location = new System.Drawing.Point(12, 1461);
+            this.txtFonFijo.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtFonFijo.Location = new System.Drawing.Point(10, 1605);
             this.txtFonFijo.Margin = new System.Windows.Forms.Padding(4);
             this.txtFonFijo.Multiline = true;
             this.txtFonFijo.Name = "txtFonFijo";
@@ -241,7 +280,8 @@
             // txtInmueble
             // 
             this.txtInmueble.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtInmueble.Location = new System.Drawing.Point(11, 112);
+            this.txtInmueble.ForeColor = System.Drawing.Color.White;
+            this.txtInmueble.Location = new System.Drawing.Point(11, 256);
             this.txtInmueble.Margin = new System.Windows.Forms.Padding(4);
             this.txtInmueble.Multiline = true;
             this.txtInmueble.Name = "txtInmueble";
@@ -260,6 +300,20 @@
             this.label38.TabIndex = 178;
             this.label38.Text = "Inmueble\r\n";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(660, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(407, 96);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Dirección General Adjunta Comercial\r\nSubdirección General Comercial\r\nDirección de" +
+    " Supervisión de Operaciones \r\n\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -275,11 +329,13 @@
             // txtDirEstatal
             // 
             this.txtDirEstatal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtDirEstatal.Location = new System.Drawing.Point(1153, 27);
+            this.txtDirEstatal.ForeColor = System.Drawing.Color.White;
+            this.txtDirEstatal.Location = new System.Drawing.Point(10, 188);
             this.txtDirEstatal.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirEstatal.Name = "txtDirEstatal";
+            this.txtDirEstatal.ReadOnly = true;
             this.txtDirEstatal.Size = new System.Drawing.Size(409, 20);
-            this.txtDirEstatal.TabIndex = 119;
+            this.txtDirEstatal.TabIndex = 4;
             // 
             // label4
             // 
@@ -299,8 +355,9 @@
             this.txtDirRegional.Location = new System.Drawing.Point(802, 27);
             this.txtDirRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirRegional.Name = "txtDirRegional";
-            this.txtDirRegional.Size = new System.Drawing.Size(154, 20);
-            this.txtDirRegional.TabIndex = 111;
+            this.txtDirRegional.ReadOnly = true;
+            this.txtDirRegional.Size = new System.Drawing.Size(199, 20);
+            this.txtDirRegional.TabIndex = 2;
             // 
             // label3
             // 
@@ -320,8 +377,9 @@
             this.txtSucursal.Location = new System.Drawing.Point(597, 27);
             this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(197, 20);
-            this.txtSucursal.TabIndex = 109;
+            this.txtSucursal.ReadOnly = true;
+            this.txtSucursal.Size = new System.Drawing.Size(219, 20);
+            this.txtSucursal.TabIndex = 1;
             // 
             // label1
             // 
@@ -341,24 +399,25 @@
             this.txtNoSupervision.Location = new System.Drawing.Point(306, 26);
             this.txtNoSupervision.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoSupervision.Name = "txtNoSupervision";
+            this.txtNoSupervision.ReadOnly = true;
             this.txtNoSupervision.Size = new System.Drawing.Size(279, 20);
-            this.txtNoSupervision.TabIndex = 106;
+            this.txtNoSupervision.TabIndex = 0;
             // 
             // txtNoOficio
             // 
             this.txtNoOficio.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtNoOficio.Location = new System.Drawing.Point(11, 26);
+            this.txtNoOficio.Location = new System.Drawing.Point(247, 145);
             this.txtNoOficio.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoOficio.Name = "txtNoOficio";
             this.txtNoOficio.Size = new System.Drawing.Size(287, 20);
-            this.txtNoOficio.TabIndex = 198;
+            this.txtNoOficio.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(10, 50);
+            this.label5.Location = new System.Drawing.Point(246, 169);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 16);
@@ -411,6 +470,81 @@
             this.label6.TabIndex = 238;
             this.label6.Text = "Acuerdos y Compromisos";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolButGuardar,
+            this.toolButImprimir});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 108);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1257, 25);
+            this.toolStrip1.TabIndex = 241;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolButGuardar
+            // 
+            this.toolButGuardar.Enabled = false;
+            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
+            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButGuardar.Name = "toolButGuardar";
+            this.toolButGuardar.Size = new System.Drawing.Size(69, 22);
+            this.toolButGuardar.Text = "Guardar";
+            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
+            // 
+            // toolButImprimir
+            // 
+            this.toolButImprimir.Enabled = false;
+            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
+            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButImprimir.Name = "toolButImprimir";
+            this.toolButImprimir.Size = new System.Drawing.Size(73, 22);
+            this.toolButImprimir.Text = "Imprimir";
+            // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(861, 142);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdSup.TabIndex = 242;
+            this.txthidIdSup.TextChanged += new System.EventHandler(this.txthidIdSup_TextChanged);
+            // 
+            // txthidIdConst
+            // 
+            this.txthidIdConst.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdConst.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdConst.Location = new System.Drawing.Point(887, 141);
+            this.txthidIdConst.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdConst.Name = "txthidIdConst";
+            this.txthidIdConst.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdConst.TabIndex = 243;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(17, 1754);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(168, 16);
+            this.label6.TabIndex = 245;
+            this.label6.Text = "Acuerdos y Compromisos";
+            // 
+            // textAcuerdosCompr
+            // 
+            this.textAcuerdosCompr.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textAcuerdosCompr.ForeColor = System.Drawing.SystemColors.Info;
+            this.textAcuerdosCompr.Location = new System.Drawing.Point(12, 1774);
+            this.textAcuerdosCompr.Margin = new System.Windows.Forms.Padding(4);
+            this.textAcuerdosCompr.Multiline = true;
+            this.textAcuerdosCompr.Name = "textAcuerdosCompr";
+            this.textAcuerdosCompr.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textAcuerdosCompr.Size = new System.Drawing.Size(1165, 143);
+            this.textAcuerdosCompr.TabIndex = 16;
+            // 
             // ContestSuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,8 +556,15 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtFechaSupervision);
+
+ this.Controls.Add(this.textAcuerdosCompr);
+            this.Controls.Add(this.txthidIdConst);
+            this.Controls.Add(this.txthidIdSup);
+	    this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNoOficio);
+            this.Controls.Add(this.label47);
+            this.Controls.Add(this.textNoSucursal);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.txtFonFijo);
             this.Controls.Add(this.label45);
@@ -451,9 +592,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNoSupervision);
             this.Name = "ContestSuc";
-            this.Text = "ContestSuc";
+            this.Text = "Contestaciones de Sucursales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ContestSuc_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,5 +637,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolButGuardar;
+        private System.Windows.Forms.ToolStripButton toolButImprimir;
+        private System.Windows.Forms.TextBox txthidIdSup;
+        private System.Windows.Forms.TextBox txthidIdConst;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textAcuerdosCompr;
     }
 }

@@ -55,13 +55,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cmbSucursales = new System.Windows.Forms.ComboBox();
             this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolButNuevo = new System.Windows.Forms.ToolStripButton();
             this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox(); this.label6 = new System.Windows.Forms.Label();
+            this.textAcuerdosCompr = new System.Windows.Forms.TextBox();
+            this.cmbSupervisor1 = new System.Windows.Forms.ComboBox();
+            this.cmbSupervisor2 = new System.Windows.Forms.ComboBox();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +85,20 @@
             this.label5.Size = new System.Drawing.Size(146, 16);
             this.label5.TabIndex = 231;
             this.label5.Text = "Fecha de Supervisión";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(660, 12);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(407, 96);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Dirección General Adjunta Comercial\r\nSubdirección General Comercial\r\nDirección de" +
+    " Supervisión de Operaciones \r\n\r\n";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label46
             // 
@@ -93,12 +116,12 @@
             // 
             this.txtFonFijo.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtFonFijo.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtFonFijo.Location = new System.Drawing.Point(19, 1469);
+            this.txtFonFijo.Location = new System.Drawing.Point(1543, 1626);
             this.txtFonFijo.Margin = new System.Windows.Forms.Padding(4);
             this.txtFonFijo.Multiline = true;
             this.txtFonFijo.Name = "txtFonFijo";
             this.txtFonFijo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtFonFijo.Size = new System.Drawing.Size(1543, 143);
+            this.txtFonFijo.Size = new System.Drawing.Size(1165, 143);
             this.txtFonFijo.TabIndex = 226;
             // 
             // label45
@@ -182,7 +205,7 @@
             this.txtPromocionales.Multiline = true;
             this.txtPromocionales.Name = "txtPromocionales";
             this.txtPromocionales.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtPromocionales.Size = new System.Drawing.Size(1543, 143);
+            this.txtPromocionales.Size = new System.Drawing.Size(1165, 143);
             this.txtPromocionales.TabIndex = 219;
             // 
             // txtUTYS
@@ -194,7 +217,7 @@
             this.txtUTYS.Multiline = true;
             this.txtUTYS.Name = "txtUTYS";
             this.txtUTYS.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtUTYS.Size = new System.Drawing.Size(1546, 143);
+            this.txtUTYS.Size = new System.Drawing.Size(1165, 143);
             this.txtUTYS.TabIndex = 218;
             // 
             // txtTransfer
@@ -206,7 +229,7 @@
             this.txtTransfer.Multiline = true;
             this.txtTransfer.Name = "txtTransfer";
             this.txtTransfer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtTransfer.Size = new System.Drawing.Size(1546, 143);
+            this.txtTransfer.Size = new System.Drawing.Size(1165, 143);
             this.txtTransfer.TabIndex = 217;
             // 
             // txtCredito
@@ -218,7 +241,7 @@
             this.txtCredito.Multiline = true;
             this.txtCredito.Name = "txtCredito";
             this.txtCredito.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtCredito.Size = new System.Drawing.Size(1546, 143);
+            this.txtCredito.Size = new System.Drawing.Size(1165, 143);
             this.txtCredito.TabIndex = 216;
             // 
             // txtCobranza
@@ -230,7 +253,7 @@
             this.txtCobranza.Multiline = true;
             this.txtCobranza.Name = "txtCobranza";
             this.txtCobranza.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtCobranza.Size = new System.Drawing.Size(1543, 143);
+            this.txtCobranza.Size = new System.Drawing.Size(1165, 143);
             this.txtCobranza.TabIndex = 215;
             // 
             // txtOriginacion
@@ -242,7 +265,7 @@
             this.txtOriginacion.Multiline = true;
             this.txtOriginacion.Name = "txtOriginacion";
             this.txtOriginacion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOriginacion.Size = new System.Drawing.Size(1546, 143);
+            this.txtOriginacion.Size = new System.Drawing.Size(1165, 143);
             this.txtOriginacion.TabIndex = 214;
             // 
             // txtGesDireccion
@@ -254,7 +277,7 @@
             this.txtGesDireccion.Multiline = true;
             this.txtGesDireccion.Name = "txtGesDireccion";
             this.txtGesDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtGesDireccion.Size = new System.Drawing.Size(1546, 143);
+            this.txtGesDireccion.Size = new System.Drawing.Size(1165, 143);
             this.txtGesDireccion.TabIndex = 213;
             // 
             // label39
@@ -278,7 +301,7 @@
             this.txtInmueble.Multiline = true;
             this.txtInmueble.Name = "txtInmueble";
             this.txtInmueble.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtInmueble.Size = new System.Drawing.Size(1546, 143);
+            this.txtInmueble.Size = new System.Drawing.Size(1165, 143);
             this.txtInmueble.TabIndex = 211;
             // 
             // label38
@@ -370,8 +393,43 @@
             this.txtNoSupervision.Location = new System.Drawing.Point(301, 59);
             this.txtNoSupervision.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoSupervision.Name = "txtNoSupervision";
-            this.txtNoSupervision.Size = new System.Drawing.Size(277, 20);
-            this.txtNoSupervision.TabIndex = 201;
+            this.txtNoSupervision.Size = new System.Drawing.Size(401, 20);
+            this.txtNoSupervision.TabIndex = 1;
+            this.txtNoSupervision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoSupervision_KeyPress);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.Red;
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1282, 108);
+            this.panel1.TabIndex = 200;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GDSfonacot.Properties.Resources.ggg;
+            this.pictureBox3.Location = new System.Drawing.Point(1386, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(168, 89);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GDSfonacot.Properties.Resources.ffff;
+            this.pictureBox2.Location = new System.Drawing.Point(57, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(241, 89);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // cmbSucursales
             // 
@@ -380,9 +438,8 @@
             this.cmbSucursales.FormattingEnabled = true;
             this.cmbSucursales.Location = new System.Drawing.Point(16, 58);
             this.cmbSucursales.Name = "cmbSucursales";
-            this.cmbSucursales.Size = new System.Drawing.Size(278, 21);
-            this.cmbSucursales.TabIndex = 233;
-            this.cmbSucursales.SelectedIndexChanged += new System.EventHandler(this.cmbSucursales_SelectedIndexChanged);
+            this.cmbSucursales.Size = new System.Drawing.Size(351, 21);
+            this.cmbSucursales.TabIndex = 0;
             // 
             // dtFechaSupervision
             // 
@@ -393,14 +450,15 @@
             this.dtFechaSupervision.Location = new System.Drawing.Point(585, 60);
             this.dtFechaSupervision.Name = "dtFechaSupervision";
             this.dtFechaSupervision.Size = new System.Drawing.Size(183, 20);
-            this.dtFechaSupervision.TabIndex = 234;
+            this.dtFechaSupervision.TabIndex = 2;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolButNuevo,
-            this.toolButGuardar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolButGuardar,
+            this.toolButImprimir});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 108);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1562, 25);
             this.toolStrip1.TabIndex = 235;
@@ -423,7 +481,7 @@
             this.toolButGuardar.Text = "Guardar";
             this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
             // 
-            // textBox1
+ // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.MenuText;
             this.textBox1.ForeColor = System.Drawing.SystemColors.Info;
@@ -434,26 +492,84 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox1.Size = new System.Drawing.Size(1543, 143);
             this.textBox1.TabIndex = 236;
+ // 
+            // toolButImprimir
             // 
+            this.toolButImprimir.Enabled = false;
+            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
+            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButImprimir.Name = "toolButImprimir";
+            this.toolButImprimir.Size = new System.Drawing.Size(73, 22);
+            this.toolButImprimir.Text = "Imprimir";
+            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);            //             // SupOperaciones
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(20, 1616);
+            this.label6.Location = new System.Drawing.Point(27, 1779);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(168, 16);
             this.label6.TabIndex = 237;
             this.label6.Text = "Acuerdos y Compromisos";
             // 
+            // textAcuerdosCompr
+            // 
+            this.textAcuerdosCompr.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textAcuerdosCompr.ForeColor = System.Drawing.SystemColors.Info;
+            this.textAcuerdosCompr.Location = new System.Drawing.Point(22, 1799);
+            this.textAcuerdosCompr.Margin = new System.Windows.Forms.Padding(4);
+            this.textAcuerdosCompr.Multiline = true;
+            this.textAcuerdosCompr.Name = "textAcuerdosCompr";
+            this.textAcuerdosCompr.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textAcuerdosCompr.Size = new System.Drawing.Size(1165, 143);
+            this.textAcuerdosCompr.TabIndex = 14;
+            // 
+            // cmbSupervisor1
+            // 
+            this.cmbSupervisor1.BackColor = System.Drawing.Color.Black;
+            this.cmbSupervisor1.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbSupervisor1.FormattingEnabled = true;
+            this.cmbSupervisor1.Location = new System.Drawing.Point(20, 203);
+            this.cmbSupervisor1.Name = "cmbSupervisor1";
+            this.cmbSupervisor1.Size = new System.Drawing.Size(351, 21);
+            this.cmbSupervisor1.TabIndex = 3;
+            // 
+            // cmbSupervisor2
+            // 
+            this.cmbSupervisor2.BackColor = System.Drawing.Color.Black;
+            this.cmbSupervisor2.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbSupervisor2.FormattingEnabled = true;
+            this.cmbSupervisor2.Location = new System.Drawing.Point(391, 203);
+            this.cmbSupervisor2.Name = "cmbSupervisor2";
+            this.cmbSupervisor2.Size = new System.Drawing.Size(401, 21);
+            this.cmbSupervisor2.TabIndex = 4;
+            // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(0, 146);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdSup.TabIndex = 240;
+            // 
             // SupOperaciones
+            // 
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1259, 741);
+            this.ClientSize = new System.Drawing.Size(1299, 741);
+            this.Controls.Add(this.txthidIdSup);
+            this.Controls.Add(this.cmbSupervisor2);
+            this.Controls.Add(this.cmbSupervisor1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textAcuerdosCompr);
+
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.toolStrip1);
@@ -479,9 +595,7 @@
             this.Controls.Add(this.txtInmueble);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtSupervisor2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtSupervisor1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNoSupervision);
@@ -489,6 +603,10 @@
             this.Text = "Fichas Sucursales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SupOperaciones_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -518,9 +636,7 @@
         private System.Windows.Forms.TextBox txtInmueble;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSupervisor2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSupervisor1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNoSupervision;
@@ -531,5 +647,10 @@
         private System.Windows.Forms.ToolStripButton toolButGuardar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
+  private System.Windows.Forms.TextBox textAcuerdosCompr;
+        private System.Windows.Forms.ComboBox cmbSupervisor1;
+        private System.Windows.Forms.ComboBox cmbSupervisor2;
+        private System.Windows.Forms.TextBox txthidIdSup;
+        private System.Windows.Forms.ToolStripButton toolButImprimir;
     }
 }
