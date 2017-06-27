@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContestSuc));
-            this.label47 = new System.Windows.Forms.Label();
-            this.textNoSucursal = new System.Windows.Forms.TextBox();
+            //this.label47 = new System.Windows.Forms.Label();
+            //this.txtNoSucursal = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.txtFonFijo = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -57,9 +57,9 @@
             this.txtSucursal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            //this.panel1 = new System.Windows.Forms.Panel();
+            //this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            //this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtNoOficio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -69,36 +69,36 @@
             this.txthidIdConst = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textAcuerdosCompr = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            //this.panel1.SuspendLayout();
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
 
   this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();            // 
+            //this.label6 = new System.Windows.Forms.Label();            // 
             // label47
             // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.DimGray;
-            this.label47.Location = new System.Drawing.Point(1272, 171);
-            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(104, 16);
-            this.label47.TabIndex = 197;
-            this.label47.Text = "No de Sucursal";
+            //this.label47.AutoSize = true;
+            //this.label47.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.label47.ForeColor = System.Drawing.Color.DimGray;
+            //this.label47.Location = new System.Drawing.Point(1272, 171);
+            //this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            //this.label47.Name = "label47";
+            //this.label47.Size = new System.Drawing.Size(104, 16);
+            //this.label47.TabIndex = 197;
+            //this.label47.Text = "No de Sucursal";
             // 
             // textNoSucursal
             // 
-            this.textNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textNoSucursal.Location = new System.Drawing.Point(1271, 146);
-            this.textNoSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.textNoSucursal.Name = "textNoSucursal";
-            this.textNoSucursal.Size = new System.Drawing.Size(105, 20);
-            this.textNoSucursal.TabIndex = 3;
+            //this.textNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            //this.textNoSucursal.Location = new System.Drawing.Point(1271, 146);
+            //this.textNoSucursal.Margin = new System.Windows.Forms.Padding(4);
+            //this.textNoSucursal.Name = "textNoSucursal";
+            //this.textNoSucursal.Size = new System.Drawing.Size(105, 20);
+            //this.textNoSucursal.TabIndex = 3;
             // 
             // label46
             // 
@@ -446,7 +446,7 @@
             this.label2.Size = new System.Drawing.Size(136, 16);
             this.label2.TabIndex = 236;
             this.label2.Text = "Fecha de Respuesta";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox1
             // 
@@ -460,15 +460,15 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(13, 1608);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(168, 16);
-            this.label6.TabIndex = 238;
-            this.label6.Text = "Acuerdos y Compromisos";
+            //this.label6.AutoSize = true;
+            //this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.label6.ForeColor = System.Drawing.Color.DimGray;
+            //this.label6.Location = new System.Drawing.Point(13, 1608);
+            //this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            //this.label6.Name = "label6";
+            //this.label6.Size = new System.Drawing.Size(168, 16);
+            //this.label6.TabIndex = 238;
+            //this.label6.Text = "Acuerdos y Compromisos";
             // 
             // toolStrip1
             // 
@@ -563,8 +563,8 @@
 	    this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNoOficio);
-            this.Controls.Add(this.label47);
-            this.Controls.Add(this.textNoSucursal);
+            //this.Controls.Add(this.label47);
+            //this.Controls.Add(this.textNoSucursal);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.txtFonFijo);
             this.Controls.Add(this.label45);
@@ -595,10 +595,10 @@
             this.Text = "Contestaciones de Sucursales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ContestSuc_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            //this.panel1.ResumeLayout(false);
+            //this.panel1.PerformLayout();
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -641,8 +641,7 @@
         private System.Windows.Forms.ToolStripButton toolButGuardar;
         private System.Windows.Forms.ToolStripButton toolButImprimir;
         private System.Windows.Forms.TextBox txthidIdSup;
-        private System.Windows.Forms.TextBox txthidIdConst;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txthidIdConst;        
         private System.Windows.Forms.TextBox textAcuerdosCompr;
     }
 }
