@@ -52,9 +52,9 @@ namespace GDSfonacot
 
         private void menuFichasSuc_Click(object sender, EventArgs e)
         {
-            SupOperaciones frmsupOp = new SupOperaciones();//crea una instancia del formulario
-            frmsupOp.MdiParent = this;
-            frmsupOp.Show();
+            //SupOperaciones frmsupOp = new SupOperaciones();//crea una instancia del formulario
+            //frmsupOp.MdiParent = this;
+            //frmsupOp.Show();
             // frmsupOp.ShowDialog(); //muestra el formulario en forma modal
         }
 

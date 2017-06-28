@@ -50,7 +50,7 @@
             this.cmbPerfilSistema = new System.Windows.Forms.ComboBox();
             this.cmbActividad = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            //this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cachedcrpMinutaTrabajo1 = new GDSfonacot.reportes.CachedcrpMinutaTrabajo();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -371,15 +371,6 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(313, 263);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 28;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmEmpleados
             // 

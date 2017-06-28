@@ -95,6 +95,7 @@
             this.txtNoSucursal = new System.Windows.Forms.TextBox();
             this.txtSucursal = new System.Windows.Forms.TextBox();
             this.sucursal = new System.Windows.Forms.Label();
+            this.Agregar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgSucursal)).BeginInit();
             this.SuspendLayout();
@@ -113,7 +114,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel1.Controls.Add(this.Agregar, 9, 16);
             this.tableLayoutPanel1.Controls.Add(this.imgSucursal, 3, 11);
             this.tableLayoutPanel1.Controls.Add(this.FotografiaSucursal, 2, 11);
             this.tableLayoutPanel1.Controls.Add(this.dtFechaSupervision, 1, 11);
@@ -194,8 +196,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -210,10 +212,10 @@
             this.imgSucursal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tableLayoutPanel1.SetColumnSpan(this.imgSucursal, 2);
             this.imgSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imgSucursal.Location = new System.Drawing.Point(311, 333);
+            this.imgSucursal.Location = new System.Drawing.Point(311, 342);
             this.imgSucursal.Name = "imgSucursal";
             this.tableLayoutPanel1.SetRowSpan(this.imgSucursal, 6);
-            this.imgSucursal.Size = new System.Drawing.Size(252, 174);
+            this.imgSucursal.Size = new System.Drawing.Size(252, 165);
             this.imgSucursal.TabIndex = 278;
             this.imgSucursal.TabStop = false;
             // 
@@ -223,10 +225,10 @@
             this.FotografiaSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FotografiaSucursal.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FotografiaSucursal.ForeColor = System.Drawing.Color.DimGray;
-            this.FotografiaSucursal.Location = new System.Drawing.Point(183, 330);
+            this.FotografiaSucursal.Location = new System.Drawing.Point(183, 339);
             this.FotografiaSucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FotografiaSucursal.Name = "FotografiaSucursal";
-            this.FotografiaSucursal.Size = new System.Drawing.Size(121, 30);
+            this.FotografiaSucursal.Size = new System.Drawing.Size(121, 21);
             this.FotografiaSucursal.TabIndex = 277;
             this.FotografiaSucursal.Text = "Fotogafía  Sucursal";
             this.FotografiaSucursal.Click += new System.EventHandler(this.FotografiaSucursal_Click);
@@ -237,7 +239,7 @@
             this.dtFechaSupervision.CalendarTitleBackColor = System.Drawing.Color.Black;
             this.dtFechaSupervision.CalendarTitleForeColor = System.Drawing.Color.White;
             this.dtFechaSupervision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaSupervision.Location = new System.Drawing.Point(53, 333);
+            this.dtFechaSupervision.Location = new System.Drawing.Point(53, 342);
             this.dtFechaSupervision.Name = "dtFechaSupervision";
             this.dtFechaSupervision.Size = new System.Drawing.Size(123, 20);
             this.dtFechaSupervision.TabIndex = 276;
@@ -264,7 +266,7 @@
             this.CobranzaCumplimiento.Location = new System.Drawing.Point(1086, 300);
             this.CobranzaCumplimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CobranzaCumplimiento.Name = "CobranzaCumplimiento";
-            this.CobranzaCumplimiento.Size = new System.Drawing.Size(121, 30);
+            this.CobranzaCumplimiento.Size = new System.Drawing.Size(121, 39);
             this.CobranzaCumplimiento.TabIndex = 274;
             this.CobranzaCumplimiento.Text = "Cobranza Cumplimiento\r\n";
             // 
@@ -288,7 +290,7 @@
             this.CobranzaPorcentaje.Location = new System.Drawing.Point(957, 300);
             this.CobranzaPorcentaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CobranzaPorcentaje.Name = "CobranzaPorcentaje";
-            this.CobranzaPorcentaje.Size = new System.Drawing.Size(121, 30);
+            this.CobranzaPorcentaje.Size = new System.Drawing.Size(121, 39);
             this.CobranzaPorcentaje.TabIndex = 272;
             this.CobranzaPorcentaje.Text = "Cobranza Porcentaje";
             // 
@@ -312,7 +314,7 @@
             this.CobranzaMetaMensual.Location = new System.Drawing.Point(828, 300);
             this.CobranzaMetaMensual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CobranzaMetaMensual.Name = "CobranzaMetaMensual";
-            this.CobranzaMetaMensual.Size = new System.Drawing.Size(121, 30);
+            this.CobranzaMetaMensual.Size = new System.Drawing.Size(121, 39);
             this.CobranzaMetaMensual.TabIndex = 270;
             this.CobranzaMetaMensual.Text = "Cobranza Meta Mensual";
             // 
@@ -336,7 +338,7 @@
             this.MetaAcumulada.Location = new System.Drawing.Point(699, 300);
             this.MetaAcumulada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MetaAcumulada.Name = "MetaAcumulada";
-            this.MetaAcumulada.Size = new System.Drawing.Size(121, 30);
+            this.MetaAcumulada.Size = new System.Drawing.Size(121, 39);
             this.MetaAcumulada.TabIndex = 268;
             this.MetaAcumulada.Text = "Meta Acumulada";
             // 
@@ -360,7 +362,7 @@
             this.ColocacionMensual.Location = new System.Drawing.Point(570, 300);
             this.ColocacionMensual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ColocacionMensual.Name = "ColocacionMensual";
-            this.ColocacionMensual.Size = new System.Drawing.Size(121, 30);
+            this.ColocacionMensual.Size = new System.Drawing.Size(121, 39);
             this.ColocacionMensual.TabIndex = 266;
             this.ColocacionMensual.Text = "Colocación Mensual";
             // 
@@ -384,7 +386,7 @@
             this.ColocacionAnual.Location = new System.Drawing.Point(441, 300);
             this.ColocacionAnual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ColocacionAnual.Name = "ColocacionAnual";
-            this.ColocacionAnual.Size = new System.Drawing.Size(121, 30);
+            this.ColocacionAnual.Size = new System.Drawing.Size(121, 39);
             this.ColocacionAnual.TabIndex = 264;
             this.ColocacionAnual.Text = "Colocación Anual";
             // 
@@ -408,7 +410,7 @@
             this.MetaMensual.Location = new System.Drawing.Point(312, 300);
             this.MetaMensual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MetaMensual.Name = "MetaMensual";
-            this.MetaMensual.Size = new System.Drawing.Size(121, 30);
+            this.MetaMensual.Size = new System.Drawing.Size(121, 39);
             this.MetaMensual.TabIndex = 262;
             this.MetaMensual.Text = "Meta Mensual";
             // 
@@ -432,7 +434,7 @@
             this.EmpresasEstus30.Location = new System.Drawing.Point(183, 300);
             this.EmpresasEstus30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EmpresasEstus30.Name = "EmpresasEstus30";
-            this.EmpresasEstus30.Size = new System.Drawing.Size(121, 30);
+            this.EmpresasEstus30.Size = new System.Drawing.Size(121, 39);
             this.EmpresasEstus30.TabIndex = 260;
             this.EmpresasEstus30.Text = "Empresas Estatus 30";
             // 
@@ -456,7 +458,7 @@
             this.EmpresasEstatus21.Location = new System.Drawing.Point(54, 300);
             this.EmpresasEstatus21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EmpresasEstatus21.Name = "EmpresasEstatus21";
-            this.EmpresasEstatus21.Size = new System.Drawing.Size(121, 30);
+            this.EmpresasEstatus21.Size = new System.Drawing.Size(121, 39);
             this.EmpresasEstatus21.TabIndex = 258;
             this.EmpresasEstatus21.Text = "Empresas Estatus 21";
             // 
@@ -1013,6 +1015,18 @@
             this.sucursal.TabIndex = 14;
             this.sucursal.Text = "Sucursal";
             // 
+            // Agregar
+            // 
+            this.Agregar.BackColor = System.Drawing.Color.Blue;
+            this.Agregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Agregar.ForeColor = System.Drawing.SystemColors.Window;
+            this.Agregar.Location = new System.Drawing.Point(1085, 483);
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Size = new System.Drawing.Size(123, 24);
+            this.Agregar.TabIndex = 279;
+            this.Agregar.Text = "Agregar";
+            this.Agregar.UseVisualStyleBackColor = false;
+            // 
             // frmAgregarSucursal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1097,5 +1111,6 @@
         private System.Windows.Forms.Label FechaAltaSucursal;
         private System.Windows.Forms.Label FotografiaSucursal;
         private System.Windows.Forms.PictureBox imgSucursal;
+        private System.Windows.Forms.Button Agregar;
     }
 }

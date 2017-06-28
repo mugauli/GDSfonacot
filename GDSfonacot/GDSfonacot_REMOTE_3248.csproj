@@ -92,53 +92,17 @@
     <Compile Include="forms\FormBusConsultasSupervision.Designer.cs">
       <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\FormBusSegRespuesta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FormBusSegRespuesta.Designer.cs">
-      <DependentUpon>FormBusSegRespuesta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\FormBusSupervSeguimiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FormBusSupervSeguimiento.Designer.cs">
-      <DependentUpon>FormBusSupervSeguimiento.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\formSeguiRespuesta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\formSeguiRespuesta.Designer.cs">
-      <DependentUpon>formSeguiRespuesta.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\FormTemplParametroCR.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\FormTemplParametroCR.Designer.cs">
       <DependentUpon>FormTemplParametroCR.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\FormVisorConsultarSupervCR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FormVisorConsultarSupervCR.Designer.cs">
-      <DependentUpon>FormVisorConsultarSupervCR.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\formVisorReportes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\formVisorReportes.Designer.cs">
       <DependentUpon>formVisorReportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\frmBusquedaSucursal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmBusquedaSucursal.Designer.cs">
-      <DependentUpon>frmBusquedaSucursal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\frmAgregarSucursal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmAgregarSucursal.Designer.cs">
-      <DependentUpon>frmAgregarSucursal.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmContestacionSucursal.cs">
       <SubType>Form</SubType>
@@ -170,12 +134,6 @@
     <Compile Include="forms\frmSupervisiom.Designer.cs">
       <DependentUpon>frmSupervisiom.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmUsuarios.Designer.cs">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\MDIPrincip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,20 +146,13 @@
     <Compile Include="forms\pruebaResponsive.Designer.cs">
       <DependentUpon>pruebaResponsive.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmSucursales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmSucursales.Designer.cs">
-      <DependentUpon>frmSucursales.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reportes\crpContestSucursal.cs">
-      <DependentUpon>crpContestSucursal.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
+    <Compile Include="forms\SupOperaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SupOperaciones.Designer.cs">
+      <DependentUpon>SupOperaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="reportes\crpMinutaTrabajo.cs">
       <AutoGen>True</AutoGen>
@@ -212,29 +163,11 @@
     <EmbeddedResource Include="forms\FormBusConsultasSupervision.resx">
       <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FormBusSegRespuesta.resx">
-      <DependentUpon>FormBusSegRespuesta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FormBusSupervSeguimiento.resx">
-      <DependentUpon>FormBusSupervSeguimiento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\formSeguiRespuesta.resx">
-      <DependentUpon>formSeguiRespuesta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormTemplParametroCR.resx">
       <DependentUpon>FormTemplParametroCR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FormVisorConsultarSupervCR.resx">
-      <DependentUpon>FormVisorConsultarSupervCR.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\formVisorReportes.resx">
       <DependentUpon>formVisorReportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmBusquedaSucursal.resx">
-      <DependentUpon>frmBusquedaSucursal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmAgregarSucursal.resx">
-      <DependentUpon>frmAgregarSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmContestacionSucursal.resx">
       <DependentUpon>frmContestacionSucursal.cs</DependentUpon>
@@ -251,17 +184,11 @@
     <EmbeddedResource Include="forms\frmSupervisiom.resx">
       <DependentUpon>frmSupervisiom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmUsuarios.resx">
-      <DependentUpon>frmUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\MDIPrincip.resx">
       <DependentUpon>MDIPrincip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\pruebaResponsive.resx">
       <DependentUpon>pruebaResponsive.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmSucursales.resx">
-      <DependentUpon>frmSucursales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -273,9 +200,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="reportes\crpContestSucursal.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpContestSucursal.cs</LastGenOutput>
+    <EmbeddedResource Include="forms\SupOperaciones.resx">
+      <DependentUpon>SupOperaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\crpMinutaTrabajo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -354,8 +280,6 @@
   <ItemGroup>
     <Content Include="Imagenes\ffff.png" />
     <Content Include="Imagenes\ggg.png" />
-    <Content Include="Imagenes\sucursales.png" />
-    <None Include="Resources\sucursales.png" />
     <None Include="Resources\save-png-image-97076.png" />
     <None Include="Imagenes\Logo STPS.png" />
     <None Include="Imagenes\Logo Fonacot 1.png" />

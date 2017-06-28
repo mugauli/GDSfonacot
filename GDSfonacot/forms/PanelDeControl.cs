@@ -36,8 +36,8 @@ namespace GDSfonacot
 
         private void btnFichasSuc_Click(object sender, EventArgs e)
         {
-            SupOperaciones frmsupOp = new SupOperaciones();//crea una instancia del formulario
-            frmsupOp.ShowDialog(); //muestra el formulario en forma modal
+            //SupOperaciones frmsupOp = new SupOperaciones();//crea una instancia del formulario
+            //frmsupOp.ShowDialog(); //muestra el formulario en forma modal
         }
 
         private void btnHisSupervision_Click(object sender, EventArgs e)
