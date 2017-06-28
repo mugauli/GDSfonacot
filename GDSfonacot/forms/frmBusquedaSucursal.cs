@@ -80,6 +80,14 @@ namespace GDSfonacot.forms
                             frmsup.Show();
                             this.Close();
                         }
+                        else if (destinoInt == 3)
+                        {
+
+                            var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
+                            frmsup.MdiParent = this.ParentForm;
+                            frmsup.Show();
+                            this.Close();
+                        }
                     }
                 }
             }
