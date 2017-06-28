@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GDSfonacotModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ContestacionesSuperv_Sucursales">
+    <Key>
+      <PropertyRef Name="Idcontestacion" />
+    </Key>
+    <Property Name="Idcontestacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idsupervision" Type="int" />
+    <Property Name="Inmueble" Type="ntext" />
+    <Property Name="Gestion_direccion" Type="ntext" />
+    <Property Name="Originacion" Type="ntext" />
+    <Property Name="Tarjetas_transfer" Type="ntext" />
+    <Property Name="Credito" Type="ntext" />
+    <Property Name="Utys" Type="ntext" />
+    <Property Name="Promocionales" Type="ntext" />
+    <Property Name="Cobranza" Type="ntext" />
+    <Property Name="Fondofijo" Type="ntext" />
+    <Property Name="AcuerdosCompromisos" Type="ntext" />
+    <Property Name="NoOficio" Type="nvarchar" MaxLength="255" />
+    <Property Name="FechaCreacionContest" Type="datetime" />
+    <Property Name="Idusuariocreador" Type="int" />
+  </EntityType>
+  <EntityType Name="ctActividad">
+    <Key>
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="IdActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ctArea">
+    <Key>
+      <PropertyRef Name="IdArea" />
+    </Key>
+    <Property Name="IdArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ctEstatusSupervision">
+    <Key>
+      <PropertyRef Name="idstatus" />
+    </Key>
+    <Property Name="idstatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="statusdescrip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="ctPerfilSistema">
+    <Key>
+      <PropertyRef Name="IdPerfilSistema" />
+    </Key>
+    <Property Name="IdPerfilSistema" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ctRegional">
+    <Key>
+      <PropertyRef Name="IdRegional" />
+    </Key>
+    <Property Name="IdRegional" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="80" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ctTipoPersonal">
+    <Key>
+      <PropertyRef Name="IdTipoPersonal" />
+    </Key>
+    <Property Name="IdTipoPersonal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Gafete" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Jornada" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Horario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdRegional" Type="int" Nullable="false" />
+    <Property Name="IdSucursal" Type="int" Nullable="false" />
+    <Property Name="IdTipoPersonal" Type="int" Nullable="false" />
+    <Property Name="IdArea" Type="int" Nullable="false" />
+    <Property Name="IdPerfilSistema" Type="int" Nullable="false" />
+    <Property Name="IdActividad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistorialSupervisiones">
+    <Key>
+      <PropertyRef Name="IdSupervisiones" />
+    </Key>
+    <Property Name="IdSupervisiones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSucursal" Type="int" />
+    <Property Name="NoSupervision" Type="nvarchar" MaxLength="255" />
+    <Property Name="FechaSupervision" Type="datetime" />
+    <Property Name="Inmueble" Type="ntext" />
+    <Property Name="Gestion_direccion" Type="ntext" />
+    <Property Name="Originacion" Type="ntext" />
+    <Property Name="Tarjetas_transfer" Type="ntext" />
+    <Property Name="Credito" Type="ntext" />
+    <Property Name="Utys" Type="ntext" />
+    <Property Name="Promocionales" Type="ntext" />
+    <Property Name="Cobranza" Type="ntext" />
+    <Property Name="Fondofijo" Type="ntext" />
+    <Property Name="AcuerdosCompromisos" Type="ntext" />
+    <Property Name="Idusuariocreador" Type="int" />
+    <Property Name="Fechacreacion" Type="datetime" />
+    <Property Name="Idstatus" Type="int" />
+    <Property Name="Idsupervisor1" Type="int" />
+    <Property Name="Idsupervisor2" Type="int" />
+  </EntityType>
+  <EntityType Name="Seguimiento_RespuestaSucursales">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdSupervision" Type="int" />
+    <Property Name="OficioRespuesta" Type="nvarchar" MaxLength="255" />
+    <Property Name="FechaRespuesta" Type="datetime" />
+    <Property Name="Solventada" Type="bit" />
+    <Property Name="IdusuarioCreador" Type="int" />
+    <Property Name="FechaRespCreacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SeguimientoSupervision_Supervisores">
+    <Key>
+      <PropertyRef Name="Idseguimiento" />
+    </Key>
+    <Property Name="Idseguimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idsupervision" Type="int" />
+    <Property Name="SeguimientoSupervisor" Type="ntext" />
+    <Property Name="IdusuarioCreador" Type="int" />
+    <Property Name="FechaSeguimCreacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Sucursales">
+    <Key>
+      <PropertyRef Name="IdSucursal" />
+    </Key>
+    <Property Name="IdSucursal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoSucursal" Type="smallint" Nullable="false" />
+    <Property Name="DireccionRegional" Type="nvarchar" MaxLength="255" />
+    <Property Name="DescripcionSucursal" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dirección" Type="nvarchar" MaxLength="255" />
+    <Property Name="Representaciones" Type="nvarchar" MaxLength="255" />
+    <Property Name="Director_Regional" Type="nvarchar" MaxLength="255" />
+    <Property Name="Director_Estatal" Type="nvarchar" MaxLength="255" />
+    <Property Name="Coordinador_Administrativo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Coordinador_Crédito" Type="nvarchar" MaxLength="255" />
+    <Property Name="Coordinador_Cobranza" Type="nvarchar" MaxLength="255" />
+    <Property Name="Analistas" Type="smallint" />
+    <Property Name="Ventanillas" Type="smallint" />
+    <Property Name="Analistas_Otorgamiento_de_Crédito" Type="smallint" />
+    <Property Name="Analistas_Administrativo_y_SAM" Type="smallint" />
+    <Property Name="Analistas_Crédito_Control_Documental" Type="smallint" />
+    <Property Name="Analistas_Cobranza" Type="smallint" />
+    <Property Name="Fotografia" Type="image" />
+    <Property Name="Empresas_Afiliadas" Type="int" />
+    <Property Name="Trabajadores_Afiliados" Type="int" />
+    <Property Name="Potencial_de_Empresas" Type="int" />
+    <Property Name="Potencial_de_Trabajadores" Type="int" />
+    <Property Name="Empresas_Status_1" Type="int" />
+    <Property Name="Empresas_Status_18" Type="int" />
+    <Property Name="Empresas_Status_21" Type="int" />
+    <Property Name="Empresas_Status_30" Type="int" />
+    <Property Name="Meta_Anual" Type="money" />
+    <Property Name="Meta_Mensual" Type="money" />
+    <Property Name="Colocación_Anual" Type="money" />
+    <Property Name="Colocación_Mensual" Type="money" />
+    <Property Name="Fecha_baja" Type="datetime" />
+    <Property Name="Meta_Acumulada_Porcentaje" Type="money" />
+    <Property Name="Cobranza_Meta_Anual" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cobranza_Porcentaje_Meta" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cobranza_Cumplimiento_Meta" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TiraAuditora">
+    <Key>
+      <PropertyRef Name="IdTiraAuditora" />
+    </Key>
+    <Property Name="IdTiraAuditora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" />
+    <Property Name="DescripcionMovimiento" Type="nvarchar" MaxLength="255" />
+    <Property Name="FechaAlta" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre_Usuario" Type="ntext" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pass" Type="nvarchar" MaxLength="255" />
+    <Property Name="IdNivel" Type="int" />
+    <Property Name="fechaalta" Type="datetime" Nullable="false" />
+    <Property Name="fechabaja" Type="datetime" />
+    <Property Name="IdSucursal" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuarios_Nivel">
+    <Key>
+      <PropertyRef Name="IdNivel" />
+    </Key>
+    <Property Name="IdNivel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nivel_Usuario" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones">
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="0..1" />
+    <End Role="ContestacionesSuperv_Sucursales" Type="Self.ContestacionesSuperv_Sucursales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSupervisiones" />
+      </Principal>
+      <Dependent Role="ContestacionesSuperv_Sucursales">
+        <PropertyRef Name="Idsupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContestacionesSuperv_Sucursales_UsuarioCreador">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="ContestacionesSuperv_Sucursales" Type="Self.ContestacionesSuperv_Sucursales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="ContestacionesSuperv_Sucursales">
+        <PropertyRef Name="Idusuariocreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctActividad">
+    <End Role="ctActividad" Type="Self.ctActividad" Multiplicity="1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctActividad">
+        <PropertyRef Name="IdActividad" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdActividad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctArea">
+    <End Role="ctArea" Type="Self.ctArea" Multiplicity="1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctArea">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctPerfilSistema">
+    <End Role="ctPerfilSistema" Type="Self.ctPerfilSistema" Multiplicity="1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctPerfilSistema">
+        <PropertyRef Name="IdPerfilSistema" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdPerfilSistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctRegional">
+    <End Role="ctRegional" Type="Self.ctRegional" Multiplicity="1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctRegional">
+        <PropertyRef Name="IdRegional" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdRegional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctTipoPersonal">
+    <End Role="ctTipoPersonal" Type="Self.ctTipoPersonal" Multiplicity="1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctTipoPersonal">
+        <PropertyRef Name="IdTipoPersonal" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdTipoPersonal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Sucursales">
+    <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sucursales">
+        <PropertyRef Name="IdSucursal" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_cat_estatus">
+    <End Role="ctEstatusSupervision" Type="Self.ctEstatusSupervision" Multiplicity="0..1" />
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctEstatusSupervision">
+        <PropertyRef Name="idstatus" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="Idstatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_Sucursales">
+    <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sucursales">
+        <PropertyRef Name="IdSucursal" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_UsuariosCreador">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="Idusuariocreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_Usuariossup1">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="Idsupervisor1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_UsuariosSup2">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="Idsupervisor2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones">
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="0..1" />
+    <End Role="Seguimiento_RespuestaSucursales" Type="Self.Seguimiento_RespuestaSucursales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSupervisiones" />
+      </Principal>
+      <Dependent Role="Seguimiento_RespuestaSucursales">
+        <PropertyRef Name="IdSupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones">
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="0..1" />
+    <End Role="SeguimientoSupervision_Supervisores" Type="Self.SeguimientoSupervision_Supervisores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSupervisiones" />
+      </Principal>
+      <Dependent Role="SeguimientoSupervision_Supervisores">
+        <PropertyRef Name="Idsupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeguimientoSupervision_Supervisores_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="SeguimientoSupervision_Supervisores" Type="Self.SeguimientoSupervision_Supervisores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="SeguimientoSupervision_Supervisores">
+        <PropertyRef Name="IdusuarioCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TiraAuditora_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="TiraAuditora" Type="Self.TiraAuditora" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="TiraAuditora">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Sucursales">
+    <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sucursales">
+        <PropertyRef Name="IdSucursal" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Usuarios_Nivel">
+    <End Role="Usuarios_Nivel" Type="Self.Usuarios_Nivel" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios_Nivel">
+        <PropertyRef Name="IdNivel" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdNivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GDSfonacotModelStoreContainer">
+    <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="Self.ContestacionesSuperv_Sucursales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ctActividad" EntityType="Self.ctActividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ctArea" EntityType="Self.ctArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ctEstatusSupervision" EntityType="Self.ctEstatusSupervision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ctPerfilSistema" EntityType="Self.ctPerfilSistema" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ctRegional" EntityType="Self.ctRegional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ctTipoPersonal" EntityType="Self.ctTipoPersonal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistorialSupervisiones" EntityType="Self.HistorialSupervisiones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seguimiento_RespuestaSucursales" EntityType="Self.Seguimiento_RespuestaSucursales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SeguimientoSupervision_Supervisores" EntityType="Self.SeguimientoSupervision_Supervisores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sucursales" EntityType="Self.Sucursales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TiraAuditora" EntityType="Self.TiraAuditora" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios_Nivel" EntityType="Self.Usuarios_Nivel" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" Association="Self.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones">
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+      <End Role="ContestacionesSuperv_Sucursales" EntitySet="ContestacionesSuperv_Sucursales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContestacionesSuperv_Sucursales_UsuarioCreador" Association="Self.FK_ContestacionesSuperv_Sucursales_UsuarioCreador">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="ContestacionesSuperv_Sucursales" EntitySet="ContestacionesSuperv_Sucursales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctActividad" Association="Self.FK_Empleados_ctActividad">
+      <End Role="ctActividad" EntitySet="ctActividad" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctArea" Association="Self.FK_Empleados_ctArea">
+      <End Role="ctArea" EntitySet="ctArea" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctPerfilSistema" Association="Self.FK_Empleados_ctPerfilSistema">
+      <End Role="ctPerfilSistema" EntitySet="ctPerfilSistema" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctRegional" Association="Self.FK_Empleados_ctRegional">
+      <End Role="ctRegional" EntitySet="ctRegional" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctTipoPersonal" Association="Self.FK_Empleados_ctTipoPersonal">
+      <End Role="ctTipoPersonal" EntitySet="ctTipoPersonal" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Sucursales" Association="Self.FK_Empleados_Sucursales">
+      <End Role="Sucursales" EntitySet="Sucursales" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_cat_estatus" Association="Self.FK_HistorialSupervisiones_cat_estatus">
+      <End Role="ctEstatusSupervision" EntitySet="ctEstatusSupervision" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_Sucursales" Association="Self.FK_HistorialSupervisiones_Sucursales">
+      <End Role="Sucursales" EntitySet="Sucursales" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_UsuariosCreador" Association="Self.FK_HistorialSupervisiones_UsuariosCreador">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_Usuariossup1" Association="Self.FK_HistorialSupervisiones_Usuariossup1">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_UsuariosSup2" Association="Self.FK_HistorialSupervisiones_UsuariosSup2">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones" Association="Self.FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones">
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+      <End Role="Seguimiento_RespuestaSucursales" EntitySet="Seguimiento_RespuestaSucursales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" Association="Self.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones">
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+      <End Role="SeguimientoSupervision_Supervisores" EntitySet="SeguimientoSupervision_Supervisores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeguimientoSupervision_Supervisores_Usuarios" Association="Self.FK_SeguimientoSupervision_Supervisores_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="SeguimientoSupervision_Supervisores" EntitySet="SeguimientoSupervision_Supervisores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TiraAuditora_Usuarios" Association="Self.FK_TiraAuditora_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="TiraAuditora" EntitySet="TiraAuditora" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Sucursales" Association="Self.FK_Usuarios_Sucursales">
+      <End Role="Sucursales" EntitySet="Sucursales" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Usuarios_Nivel" Association="Self.FK_Usuarios_Usuarios_Nivel">
+      <End Role="Usuarios_Nivel" EntitySet="Usuarios_Nivel" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
