@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace GDSfonacot.forms
 {
-    public partial class frmAgregarSucursal : Form
+    public partial class frmMDIP : Form
     {
-        public frmAgregarSucursal()
+        public frmMDIP()
         {
             InitializeComponent();
         }
 
-        private void FotografiaSucursal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DireccionRegional_Click(object sender, EventArgs e)
+        private void frmMDIP_Load(object sender, EventArgs e)
         {
 
         }

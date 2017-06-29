@@ -86,6 +86,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\frmMDIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMDIP.Designer.cs">
+      <DependentUpon>frmMDIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormBusConsultasSupervision.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMDIP.resx">
+      <DependentUpon>frmMDIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmSupervisiom.resx">
       <DependentUpon>frmSupervisiom.cs</DependentUpon>

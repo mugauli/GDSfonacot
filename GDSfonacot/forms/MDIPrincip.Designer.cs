@@ -32,10 +32,9 @@
             this.menuModulos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFichasSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBuscarSuperv = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSupContestSeguimSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupContestSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupConsultaSuperv = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSupContestSeguimSuperv = new System.Windows.Forms.ToolStripMenuItem();
-            //this.mnuSolventarSeg = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuFichasPerson = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,10 +51,10 @@
             this.menuayuda = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -90,13 +89,13 @@
             this.pruebaResponsiveToolStripMenuItem});
             this.menuModulos.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.menuModulos.Name = "menuModulos";
-            this.menuModulos.Size = new System.Drawing.Size(58, 20);
+            this.menuModulos.Size = new System.Drawing.Size(66, 20);
             this.menuModulos.Text = "&Modulos";
             // 
             // menuFichasSuc
             // 
             this.menuFichasSuc.Name = "menuFichasSuc";
-            this.menuFichasSuc.Size = new System.Drawing.Size(266, 22);
+            this.menuFichasSuc.Size = new System.Drawing.Size(287, 22);
             this.menuFichasSuc.Text = "Inicio Supervisión";
             this.menuFichasSuc.Click += new System.EventHandler(this.menuFichasSuc_Click);
             // 
@@ -105,96 +104,88 @@
             this.mnuBuscarSuperv.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSupContestSeguimSuperv,
             this.mnuSupContestSuc,
-            //this.mnuSolventarSeg,
             this.mnuSupConsultaSuperv});
             this.mnuBuscarSuperv.Name = "mnuBuscarSuperv";
-            this.mnuBuscarSuperv.Size = new System.Drawing.Size(266, 22);
+            this.mnuBuscarSuperv.Size = new System.Drawing.Size(287, 22);
             this.mnuBuscarSuperv.Text = "Buscar Supervisiones";
+            // 
+            // mnuSupContestSeguimSuperv
+            // 
+            this.mnuSupContestSeguimSuperv.Name = "mnuSupContestSeguimSuperv";
+            this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(283, 22);
+            this.mnuSupContestSeguimSuperv.Text = "Seuimiento de Supervisiones";
+            this.mnuSupContestSeguimSuperv.Click += new System.EventHandler(this.mnuSupContestSeguimSuperv_Click);
             // 
             // mnuSupContestSuc
             // 
             this.mnuSupContestSuc.Name = "mnuSupContestSuc";
-            this.mnuSupContestSuc.Size = new System.Drawing.Size(270, 22);
+            this.mnuSupContestSuc.Size = new System.Drawing.Size(283, 22);
             this.mnuSupContestSuc.Text = "Respuesta de Sucursales a la Supervisón";
             this.mnuSupContestSuc.Click += new System.EventHandler(this.mnuSupContestSuc_Click);
             // 
             // mnuSupConsultaSuperv
             // 
             this.mnuSupConsultaSuperv.Name = "mnuSupConsultaSuperv";
-            this.mnuSupConsultaSuperv.Size = new System.Drawing.Size(270, 22);
+            this.mnuSupConsultaSuperv.Size = new System.Drawing.Size(283, 22);
             this.mnuSupConsultaSuperv.Text = "Para Consulta de un Supervisor";
             this.mnuSupConsultaSuperv.Click += new System.EventHandler(this.mnuSupConsultaSuperv_Click);
-            // 
-            // mnuSupContestSeguimSuperv
-            // 
-            this.mnuSupContestSeguimSuperv.Name = "mnuSupContestSeguimSuperv";
-            this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(270, 22);
-            this.mnuSupContestSeguimSuperv.Text = "Seuimiento de Supervisiones";
-            this.mnuSupContestSeguimSuperv.Click += new System.EventHandler(this.mnuSupContestSeguimSuperv_Click);
-            // 
-            // mnuSolventarSeg
-            // 
-            //this.mnuSolventarSeg.Name = "mnuSolventarSeg";
-            //this.mnuSolventarSeg.Size = new System.Drawing.Size(282, 22);
-            //this.mnuSolventarSeg.Text = "3.Solventar Seguimiento de Supervision";
-            //this.mnuSolventarSeg.Click += new System.EventHandler(this.mnuSolventarSeg_Click);
             // 
             // menuHistsupOp
             // 
             this.menuHistsupOp.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuHistsupOp.Name = "menuHistsupOp";
-            this.menuHistsupOp.Size = new System.Drawing.Size(266, 22);
+            this.menuHistsupOp.Size = new System.Drawing.Size(287, 22);
             this.menuHistsupOp.Text = "Histórico de Supervisión de Operaciones";
             this.menuHistsupOp.Click += new System.EventHandler(this.menuHistsupOp_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(284, 6);
             // 
             // menuFichasPerson
             // 
             this.menuFichasPerson.Name = "menuFichasPerson";
-            this.menuFichasPerson.Size = new System.Drawing.Size(266, 22);
+            this.menuFichasPerson.Size = new System.Drawing.Size(287, 22);
             this.menuFichasPerson.Text = "Fichas Personal";
             this.menuFichasPerson.Click += new System.EventHandler(this.menuFichasPerson_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(284, 6);
             // 
             // menuMinutas
             // 
             this.menuMinutas.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuMinutas.Name = "menuMinutas";
-            this.menuMinutas.Size = new System.Drawing.Size(266, 22);
+            this.menuMinutas.Size = new System.Drawing.Size(287, 22);
             this.menuMinutas.Text = "Minuta de Trabajo";
             this.menuMinutas.Click += new System.EventHandler(this.menuMinutas_Click);
             // 
             // menuReportes
             // 
             this.menuReportes.Name = "menuReportes";
-            this.menuReportes.Size = new System.Drawing.Size(266, 22);
+            this.menuReportes.Size = new System.Drawing.Size(287, 22);
             this.menuReportes.Text = "Reportes";
             this.menuReportes.Click += new System.EventHandler(this.menuReportes_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(263, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(284, 6);
             // 
             // menuSalir
             // 
             this.menuSalir.Name = "menuSalir";
-            this.menuSalir.Size = new System.Drawing.Size(266, 22);
+            this.menuSalir.Size = new System.Drawing.Size(287, 22);
             this.menuSalir.Text = "Cerrar Aplicativo";
             this.menuSalir.Click += new System.EventHandler(this.menuSalir_Click);
             // 
             // pruebaResponsiveToolStripMenuItem
             // 
             this.pruebaResponsiveToolStripMenuItem.Name = "pruebaResponsiveToolStripMenuItem";
-            this.pruebaResponsiveToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.pruebaResponsiveToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
             this.pruebaResponsiveToolStripMenuItem.Text = "Prueba responsive";
             this.pruebaResponsiveToolStripMenuItem.Click += new System.EventHandler(this.pruebaResponsiveToolStripMenuItem_Click);
             // 
@@ -205,7 +196,7 @@
             this.submenuUsers,
             this.toolStripSeparator6});
             this.menuCatalogos.Name = "menuCatalogos";
-            this.menuCatalogos.Size = new System.Drawing.Size(67, 20);
+            this.menuCatalogos.Size = new System.Drawing.Size(72, 20);
             this.menuCatalogos.Text = "&Catalogos";
             this.menuCatalogos.Click += new System.EventHandler(this.menuCatalogos_Click);
             // 
@@ -213,7 +204,7 @@
             // 
             this.submenuSuc.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuSuc.Name = "submenuSuc";
-            this.submenuSuc.Size = new System.Drawing.Size(125, 22);
+            this.submenuSuc.Size = new System.Drawing.Size(129, 22);
             this.submenuSuc.Text = "Sucursales";
             this.submenuSuc.Click += new System.EventHandler(this.submenuSuc_Click);
             // 
@@ -221,27 +212,27 @@
             // 
             this.submenuUsers.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuUsers.Name = "submenuUsers";
-            this.submenuUsers.Size = new System.Drawing.Size(125, 22);
+            this.submenuUsers.Size = new System.Drawing.Size(129, 22);
             this.submenuUsers.Text = "Usuarios";
             this.submenuUsers.Click += new System.EventHandler(this.submenuUsers_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(122, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(126, 6);
             // 
             // menuayuda
             // 
             this.menuayuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAbout});
             this.menuayuda.Name = "menuayuda";
-            this.menuayuda.Size = new System.Drawing.Size(50, 20);
+            this.menuayuda.Size = new System.Drawing.Size(53, 20);
             this.menuayuda.Text = "Ay&uda";
             // 
             // menuAbout
             // 
             this.menuAbout.Name = "menuAbout";
-            this.menuAbout.Size = new System.Drawing.Size(149, 22);
+            this.menuAbout.Size = new System.Drawing.Size(147, 22);
             this.menuAbout.Text = "&Acerca de... ...";
             // 
             // panel1
@@ -257,26 +248,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 108);
             this.panel1.TabIndex = 275;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GDSfonacot.Properties.Resources.ggg;
-            this.pictureBox3.Location = new System.Drawing.Point(1403, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(168, 89);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GDSfonacot.Properties.Resources.ffff;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(241, 89);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -303,15 +274,35 @@
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GDSfonacot.Properties.Resources.ggg;
+            this.pictureBox3.Location = new System.Drawing.Point(1403, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(168, 89);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GDSfonacot.Properties.Resources.ffff;
+            this.pictureBox2.Location = new System.Drawing.Point(23, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(241, 89);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // MDIPrincip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1370, 550);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuPrincipal);
-            this.IsMdiContainer = true;
             this.Name = "MDIPrincip";
             this.Text = "GDS INFONACOT";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
