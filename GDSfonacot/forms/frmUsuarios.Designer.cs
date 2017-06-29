@@ -30,16 +30,16 @@
         {
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
-            this.txtGafete = new System.Windows.Forms.TextBox();
             this.Gafete = new System.Windows.Forms.Label();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.Puesto = new System.Windows.Forms.Label();
             this.Sucursal = new System.Windows.Forms.Label();
-            this.txtSucursal = new System.Windows.Forms.TextBox();
             this.DireccionRegional = new System.Windows.Forms.Label();
-            this.txtDireccionRegional = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.Agregar = new System.Windows.Forms.Button();
+            this.txtDireccionRegional = new System.Windows.Forms.TextBox();
+            this.txtGafete = new System.Windows.Forms.TextBox();
+            this.txtPuesto = new System.Windows.Forms.TextBox();
+            this.txtSucursal = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,19 +48,20 @@
             this.txtNombre.BackColor = System.Drawing.SystemColors.MenuText;
             this.tableLayoutPanel1.SetColumnSpan(this.txtNombre, 2);
             this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.Window;
             this.txtNombre.Location = new System.Drawing.Point(237, 34);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(358, 20);
+            this.txtNombre.Size = new System.Drawing.Size(358, 22);
             this.txtNombre.TabIndex = 20;
             // 
             // Nombre
             // 
             this.Nombre.AutoSize = true;
             this.Nombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Nombre.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.ForeColor = System.Drawing.Color.DimGray;
+            this.Nombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Nombre.Location = new System.Drawing.Point(54, 30);
             this.Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nombre.Name = "Nombre";
@@ -68,48 +69,25 @@
             this.Nombre.TabIndex = 21;
             this.Nombre.Text = "Nombre";
             // 
-            // txtGafete
-            // 
-            this.txtGafete.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtGafete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGafete.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtGafete.Location = new System.Drawing.Point(786, 34);
-            this.txtGafete.Margin = new System.Windows.Forms.Padding(4);
-            this.txtGafete.Name = "txtGafete";
-            this.txtGafete.Size = new System.Drawing.Size(175, 20);
-            this.txtGafete.TabIndex = 31;
-            // 
             // Gafete
             // 
             this.Gafete.AutoSize = true;
             this.Gafete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Gafete.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Gafete.ForeColor = System.Drawing.Color.DimGray;
+            this.Gafete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gafete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Gafete.Location = new System.Drawing.Point(603, 30);
             this.Gafete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Gafete.Name = "Gafete";
-            this.Gafete.Size = new System.Drawing.Size(175, 30);
+            this.Gafete.Size = new System.Drawing.Size(114, 30);
             this.Gafete.TabIndex = 32;
             this.Gafete.Text = "Gafete";
-            // 
-            // txtPuesto
-            // 
-            this.txtPuesto.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtPuesto, 2);
-            this.txtPuesto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPuesto.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPuesto.Location = new System.Drawing.Point(237, 94);
-            this.txtPuesto.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(358, 20);
-            this.txtPuesto.TabIndex = 43;
             // 
             // Puesto
             // 
             this.Puesto.AutoSize = true;
             this.Puesto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Puesto.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Puesto.ForeColor = System.Drawing.Color.DimGray;
+            this.Puesto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Puesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Puesto.Location = new System.Drawing.Point(54, 90);
             this.Puesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Puesto.Name = "Puesto";
@@ -121,61 +99,54 @@
             // 
             this.Sucursal.AutoSize = true;
             this.Sucursal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Sucursal.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sucursal.ForeColor = System.Drawing.Color.DimGray;
+            this.Sucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Sucursal.Location = new System.Drawing.Point(603, 90);
             this.Sucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Sucursal.Name = "Sucursal";
-            this.Sucursal.Size = new System.Drawing.Size(175, 30);
+            this.Sucursal.Size = new System.Drawing.Size(114, 30);
             this.Sucursal.TabIndex = 46;
             this.Sucursal.Text = "Sucursal";
             this.Sucursal.Click += new System.EventHandler(this.Sucursal_Click);
-            // 
-            // txtSucursal
-            // 
-            this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSucursal.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSucursal.Location = new System.Drawing.Point(786, 94);
-            this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(175, 20);
-            this.txtSucursal.TabIndex = 45;
             // 
             // DireccionRegional
             // 
             this.DireccionRegional.AutoSize = true;
             this.DireccionRegional.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DireccionRegional.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DireccionRegional.ForeColor = System.Drawing.Color.DimGray;
+            this.DireccionRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DireccionRegional.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.DireccionRegional.Location = new System.Drawing.Point(54, 150);
             this.DireccionRegional.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DireccionRegional.Name = "DireccionRegional";
-            this.DireccionRegional.Size = new System.Drawing.Size(175, 30);
+            this.DireccionRegional.Size = new System.Drawing.Size(175, 49);
             this.DireccionRegional.TabIndex = 48;
             this.DireccionRegional.Text = "Dirección Regional";
             // 
-            // txtDireccionRegional
+            // btnGuardar
             // 
-            this.txtDireccionRegional.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtDireccionRegional.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDireccionRegional.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtDireccionRegional.Location = new System.Drawing.Point(237, 154);
-            this.txtDireccionRegional.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDireccionRegional.Name = "txtDireccionRegional";
-            this.txtDireccionRegional.Size = new System.Drawing.Size(175, 20);
-            this.txtDireccionRegional.TabIndex = 47;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGuardar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnGuardar.Location = new System.Drawing.Point(602, 153);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(116, 43);
+            this.btnGuardar.TabIndex = 287;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tableLayoutPanel1.ColumnCount = 7;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.34792F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.58643F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 4, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtDireccionRegional, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.DireccionRegional, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtSucursal, 5, 3);
@@ -186,8 +157,9 @@
             this.tableLayoutPanel1.Controls.Add(this.txtGafete, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.Nombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Agregar, 5, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.Window;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -196,23 +168,60 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1021, 224);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // Agregar
+            // txtDireccionRegional
             // 
-            this.Agregar.BackColor = System.Drawing.Color.Blue;
-            this.Agregar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Agregar.ForeColor = System.Drawing.SystemColors.Window;
-            this.Agregar.Location = new System.Drawing.Point(785, 153);
-            this.Agregar.Name = "Agregar";
-            this.Agregar.Size = new System.Drawing.Size(177, 24);
-            this.Agregar.TabIndex = 49;
-            this.Agregar.Text = "Agregar";
-            this.Agregar.UseVisualStyleBackColor = false;
+            this.txtDireccionRegional.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtDireccionRegional.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDireccionRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccionRegional.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtDireccionRegional.Location = new System.Drawing.Point(237, 154);
+            this.txtDireccionRegional.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccionRegional.Name = "txtDireccionRegional";
+            this.txtDireccionRegional.Size = new System.Drawing.Size(175, 22);
+            this.txtDireccionRegional.TabIndex = 47;
+            // 
+            // txtGafete
+            // 
+            this.txtGafete.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtGafete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtGafete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGafete.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtGafete.Location = new System.Drawing.Point(725, 34);
+            this.txtGafete.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGafete.Name = "txtGafete";
+            this.txtGafete.Size = new System.Drawing.Size(235, 22);
+            this.txtGafete.TabIndex = 31;
+            // 
+            // txtPuesto
+            // 
+            this.txtPuesto.BackColor = System.Drawing.SystemColors.MenuText;
+            this.tableLayoutPanel1.SetColumnSpan(this.txtPuesto, 2);
+            this.txtPuesto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPuesto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPuesto.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPuesto.Location = new System.Drawing.Point(237, 94);
+            this.txtPuesto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPuesto.Name = "txtPuesto";
+            this.txtPuesto.Size = new System.Drawing.Size(358, 22);
+            this.txtPuesto.TabIndex = 43;
+            // 
+            // txtSucursal
+            // 
+            this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSucursal.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtSucursal.Location = new System.Drawing.Point(725, 94);
+            this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSucursal.Name = "txtSucursal";
+            this.txtSucursal.Size = new System.Drawing.Size(235, 22);
+            this.txtSucursal.TabIndex = 45;
             // 
             // frmUsuarios
             // 
@@ -233,6 +242,7 @@
 
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtDireccionRegional;
         private System.Windows.Forms.Label DireccionRegional;
         private System.Windows.Forms.TextBox txtSucursal;
@@ -242,6 +252,5 @@
         private System.Windows.Forms.Label Gafete;
         private System.Windows.Forms.TextBox txtGafete;
         private System.Windows.Forms.Label Nombre;
-        private System.Windows.Forms.Button Agregar;
     }
 }

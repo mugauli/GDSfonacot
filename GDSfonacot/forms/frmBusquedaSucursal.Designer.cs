@@ -39,6 +39,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
@@ -58,7 +59,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 520F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1465, 801);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 750);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGlistaSup
@@ -69,23 +70,23 @@
             this.dataGlistaSup.BackgroundColor = System.Drawing.SystemColors.WindowText;
             this.dataGlistaSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGlistaSup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGlistaSup.Location = new System.Drawing.Point(593, 43);
+            this.dataGlistaSup.Location = new System.Drawing.Point(555, 43);
             this.dataGlistaSup.Name = "dataGlistaSup";
             this.dataGlistaSup.ReadOnly = true;
             this.tableLayoutPanel1.SetRowSpan(this.dataGlistaSup, 3);
-            this.dataGlistaSup.Size = new System.Drawing.Size(849, 574);
+            this.dataGlistaSup.Size = new System.Drawing.Size(792, 574);
             this.dataGlistaSup.TabIndex = 279;
             this.dataGlistaSup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellDoubleClick);
             // 
             // label10
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label10.Location = new System.Drawing.Point(24, 70);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(562, 30);
+            this.label10.Size = new System.Drawing.Size(524, 30);
             this.label10.TabIndex = 277;
             this.label10.Text = "Por favor ingresa el nombre de Sucursal /Representacion a filtrar";
             // 
@@ -93,11 +94,12 @@
             // 
             this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSucursal.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtSucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSucursal.ForeColor = System.Drawing.SystemColors.Window;
             this.txtSucursal.Location = new System.Drawing.Point(24, 44);
             this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(562, 20);
+            this.txtSucursal.Size = new System.Drawing.Size(524, 22);
             this.txtSucursal.TabIndex = 276;
             this.txtSucursal.TextChanged += new System.EventHandler(this.txtSucursal_TextChanged);
             // 
@@ -105,7 +107,7 @@
             // 
             this.lblRegistros.AutoSize = true;
             this.lblRegistros.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblRegistros.Location = new System.Drawing.Point(1442, 620);
+            this.lblRegistros.Location = new System.Drawing.Point(1347, 620);
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(0, 30);
             this.lblRegistros.TabIndex = 280;
@@ -114,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1465, 801);
+            this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmBusquedaSucursal";
             this.Text = "frmBusquedaSucursal";
