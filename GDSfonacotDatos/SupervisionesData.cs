@@ -405,7 +405,9 @@ namespace GDSfonacotDatos
                 {
                     var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
 
-                    var usuariosDB = context.Sucursales.Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NoSucursal = x.NoSucursal, NameSucursal = x.DescripcionSucursal, DireccionRegional = x.DireccionRegional }).ToList();
+                    var usuariosDB = context.Sucursales
+                        .Where(x=>x.DescripcionSucursal.Contains(filter))
+                        .Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NoSucursal = x.NoSucursal, NameSucursal = x.DescripcionSucursal, DireccionRegional = x.DireccionRegional }).ToList();
 
 
 

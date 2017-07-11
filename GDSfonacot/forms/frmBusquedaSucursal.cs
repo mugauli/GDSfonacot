@@ -37,18 +37,23 @@ namespace GDSfonacot.forms
                 dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 dataGlistaSup.Columns[0].Visible = false;
-                dataGlistaSup.Columns[0].Name = "ID";
+                dataGlistaSup.Columns[0].HeaderText = "ID";
                 dataGlistaSup.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
 
-                dataGlistaSup.Columns[1].Name = "No. Sucursal";
-                dataGlistaSup.Columns[2].Name = "Nombre";
-                dataGlistaSup.Columns[3].Name = "Regional";
+                dataGlistaSup.Columns[1].HeaderText = "Nombre";
+                dataGlistaSup.Columns[2].HeaderText= "No. Sucursal";
+                dataGlistaSup.Columns[3].HeaderText = "Regional";
 
 
 
 
-
+                
                 lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+            }
+            else
+            {
+                dataGlistaSup.Columns.Clear();
+                 dataGlistaSup.DataSource=null;
             }
         }
 
@@ -66,6 +71,7 @@ namespace GDSfonacot.forms
 
                         if (destinoInt == 1)
                         {
+
                            
                             PersonalSucursales frmPersonsuc = new PersonalSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             frmPersonsuc.MdiParent = this.ParentForm;
@@ -73,6 +79,14 @@ namespace GDSfonacot.forms
                             this.Close();
                         }
                         else if (destinoInt == 2)
+                        {
+
+                            var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
+                            frmsup.MdiParent = this.ParentForm;
+                            frmsup.Show();
+                            this.Close();
+                        }
+                        else if (destinoInt == 3)
                         {
 
                             var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
@@ -88,6 +102,16 @@ namespace GDSfonacot.forms
 
                 throw;
             }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGlistaSup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

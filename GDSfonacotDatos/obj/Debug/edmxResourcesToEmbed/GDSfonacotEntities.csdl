@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GDSfonacotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GDSfonacotEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="GDSfonacotModel.ContestacionesSuperv_Sucursales" />
+    <EntitySet Name="ctActividad" EntityType="GDSfonacotModel.ctActividad" />
+    <EntitySet Name="ctArea" EntityType="GDSfonacotModel.ctArea" />
+    <EntitySet Name="ctEstatusSupervision" EntityType="GDSfonacotModel.ctEstatusSupervision" />
+    <EntitySet Name="ctPerfilSistema" EntityType="GDSfonacotModel.ctPerfilSistema" />
+    <EntitySet Name="ctRegional" EntityType="GDSfonacotModel.ctRegional" />
+    <EntitySet Name="ctTipoPersonal" EntityType="GDSfonacotModel.ctTipoPersonal" />
+    <EntitySet Name="Empleados" EntityType="GDSfonacotModel.Empleados" />
+    <EntitySet Name="HistorialSupervisiones" EntityType="GDSfonacotModel.HistorialSupervisiones" />
+    <EntitySet Name="Seguimiento_RespuestaSucursales" EntityType="GDSfonacotModel.Seguimiento_RespuestaSucursales" />
+    <EntitySet Name="SeguimientoSupervision_Supervisores" EntityType="GDSfonacotModel.SeguimientoSupervision_Supervisores" />
+    <EntitySet Name="Sucursales" EntityType="GDSfonacotModel.Sucursales" />
+    <EntitySet Name="TiraAuditora" EntityType="GDSfonacotModel.TiraAuditora" />
+    <EntitySet Name="Usuarios" EntityType="GDSfonacotModel.Usuarios" />
+    <EntitySet Name="Usuarios_Nivel" EntityType="GDSfonacotModel.Usuarios_Nivel" />
+    <AssociationSet Name="FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" Association="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones">
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+      <End Role="ContestacionesSuperv_Sucursales" EntitySet="ContestacionesSuperv_Sucursales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContestacionesSuperv_Sucursales_UsuarioCreador" Association="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_UsuarioCreador">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="ContestacionesSuperv_Sucursales" EntitySet="ContestacionesSuperv_Sucursales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctActividad" Association="GDSfonacotModel.FK_Empleados_ctActividad">
+      <End Role="ctActividad" EntitySet="ctActividad" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctArea" Association="GDSfonacotModel.FK_Empleados_ctArea">
+      <End Role="ctArea" EntitySet="ctArea" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_cat_estatus" Association="GDSfonacotModel.FK_HistorialSupervisiones_cat_estatus">
+      <End Role="ctEstatusSupervision" EntitySet="ctEstatusSupervision" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctPerfilSistema" Association="GDSfonacotModel.FK_Empleados_ctPerfilSistema">
+      <End Role="ctPerfilSistema" EntitySet="ctPerfilSistema" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctRegional" Association="GDSfonacotModel.FK_Empleados_ctRegional">
+      <End Role="ctRegional" EntitySet="ctRegional" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctTipoPersonal" Association="GDSfonacotModel.FK_Empleados_ctTipoPersonal">
+      <End Role="ctTipoPersonal" EntitySet="ctTipoPersonal" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Sucursales" Association="GDSfonacotModel.FK_Empleados_Sucursales">
+      <End Role="Sucursales" EntitySet="Sucursales" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_Sucursales" Association="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales">
+      <End Role="Sucursales" EntitySet="Sucursales" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_UsuariosCreador" Association="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosCreador">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_Usuariossup1" Association="GDSfonacotModel.FK_HistorialSupervisiones_Usuariossup1">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialSupervisiones_UsuariosSup2" Association="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosSup2">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones" Association="GDSfonacotModel.FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones">
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+      <End Role="Seguimiento_RespuestaSucursales" EntitySet="Seguimiento_RespuestaSucursales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" Association="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones">
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+      <End Role="SeguimientoSupervision_Supervisores" EntitySet="SeguimientoSupervision_Supervisores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeguimientoSupervision_Supervisores_Usuarios" Association="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="SeguimientoSupervision_Supervisores" EntitySet="SeguimientoSupervision_Supervisores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Sucursales" Association="GDSfonacotModel.FK_Usuarios_Sucursales">
+      <End Role="Sucursales" EntitySet="Sucursales" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TiraAuditora_Usuarios" Association="GDSfonacotModel.FK_TiraAuditora_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="TiraAuditora" EntitySet="TiraAuditora" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Usuarios_Nivel" Association="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel">
+      <End Role="Usuarios_Nivel" EntitySet="Usuarios_Nivel" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ContestacionesSuperv_Sucursales">
+    <Key>
+      <PropertyRef Name="Idcontestacion" />
+    </Key>
+    <Property Name="Idcontestacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idsupervision" Type="Int32" />
+    <Property Name="Inmueble" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gestion_direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Originacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tarjetas_transfer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Credito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Utys" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Promocionales" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cobranza" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fondofijo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AcuerdosCompromisos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NoOficio" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FechaCreacionContest" Type="DateTime" Precision="3" />
+    <Property Name="Idusuariocreador" Type="Int32" />
+    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" FromRole="ContestacionesSuperv_Sucursales" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_UsuarioCreador" FromRole="ContestacionesSuperv_Sucursales" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="ctActividad">
+    <Key>
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="IdActividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctActividad" FromRole="ctActividad" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="ctArea">
+    <Key>
+      <PropertyRef Name="IdArea" />
+    </Key>
+    <Property Name="IdArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctArea" FromRole="ctArea" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="ctEstatusSupervision">
+    <Key>
+      <PropertyRef Name="idstatus" />
+    </Key>
+    <Property Name="idstatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="statusdescrip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="activo" Type="Boolean" />
+    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_cat_estatus" FromRole="ctEstatusSupervision" ToRole="HistorialSupervisiones" />
+  </EntityType>
+  <EntityType Name="ctPerfilSistema">
+    <Key>
+      <PropertyRef Name="IdPerfilSistema" />
+    </Key>
+    <Property Name="IdPerfilSistema" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctPerfilSistema" FromRole="ctPerfilSistema" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="ctRegional">
+    <Key>
+      <PropertyRef Name="IdRegional" />
+    </Key>
+    <Property Name="IdRegional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctRegional" FromRole="ctRegional" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="ctTipoPersonal">
+    <Key>
+      <PropertyRef Name="IdTipoPersonal" />
+    </Key>
+    <Property Name="IdTipoPersonal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctTipoPersonal" FromRole="ctTipoPersonal" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Gafete" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Jornada" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Horario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdRegional" Type="Int32" Nullable="false" />
+    <Property Name="IdSucursal" Type="Int32" Nullable="false" />
+    <Property Name="IdTipoPersonal" Type="Int32" Nullable="false" />
+    <Property Name="IdArea" Type="Int32" Nullable="false" />
+    <Property Name="IdPerfilSistema" Type="Int32" Nullable="false" />
+    <Property Name="IdActividad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ctActividad" Relationship="GDSfonacotModel.FK_Empleados_ctActividad" FromRole="Empleados" ToRole="ctActividad" />
+    <NavigationProperty Name="ctArea" Relationship="GDSfonacotModel.FK_Empleados_ctArea" FromRole="Empleados" ToRole="ctArea" />
+    <NavigationProperty Name="ctPerfilSistema" Relationship="GDSfonacotModel.FK_Empleados_ctPerfilSistema" FromRole="Empleados" ToRole="ctPerfilSistema" />
+    <NavigationProperty Name="ctRegional" Relationship="GDSfonacotModel.FK_Empleados_ctRegional" FromRole="Empleados" ToRole="ctRegional" />
+    <NavigationProperty Name="ctTipoPersonal" Relationship="GDSfonacotModel.FK_Empleados_ctTipoPersonal" FromRole="Empleados" ToRole="ctTipoPersonal" />
+    <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Empleados" ToRole="Sucursales" />
+  </EntityType>
+  <EntityType Name="HistorialSupervisiones">
+    <Key>
+      <PropertyRef Name="IdSupervisiones" />
+    </Key>
+    <Property Name="IdSupervisiones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdSucursal" Type="Int32" />
+    <Property Name="NoSupervision" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FechaSupervision" Type="DateTime" Precision="3" />
+    <Property Name="Inmueble" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gestion_direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Originacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tarjetas_transfer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Credito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Utys" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Promocionales" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cobranza" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fondofijo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AcuerdosCompromisos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Idusuariocreador" Type="Int32" />
+    <Property Name="Fechacreacion" Type="DateTime" Precision="3" />
+    <Property Name="Idstatus" Type="Int32" />
+    <Property Name="Idsupervisor1" Type="Int32" />
+    <Property Name="Idsupervisor2" Type="Int32" />
+    <NavigationProperty Name="ContestacionesSuperv_Sucursales" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="ContestacionesSuperv_Sucursales" />
+    <NavigationProperty Name="ctEstatusSupervision" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_cat_estatus" FromRole="HistorialSupervisiones" ToRole="ctEstatusSupervision" />
+    <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" FromRole="HistorialSupervisiones" ToRole="Sucursales" />
+    <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosCreador" FromRole="HistorialSupervisiones" ToRole="Usuarios" />
+    <NavigationProperty Name="Usuarios1" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Usuariossup1" FromRole="HistorialSupervisiones" ToRole="Usuarios" />
+    <NavigationProperty Name="Usuarios2" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosSup2" FromRole="HistorialSupervisiones" ToRole="Usuarios" />
+    <NavigationProperty Name="Seguimiento_RespuestaSucursales" Relationship="GDSfonacotModel.FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="Seguimiento_RespuestaSucursales" />
+    <NavigationProperty Name="SeguimientoSupervision_Supervisores" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="SeguimientoSupervision_Supervisores" />
+  </EntityType>
+  <EntityType Name="Seguimiento_RespuestaSucursales">
+    <Key>
+      <PropertyRef Name="IdRespuesta" />
+    </Key>
+    <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdSupervision" Type="Int32" />
+    <Property Name="OficioRespuesta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FechaRespuesta" Type="DateTime" Precision="3" />
+    <Property Name="Solventada" Type="Boolean" />
+    <Property Name="IdusuarioCreador" Type="Int32" />
+    <Property Name="FechaRespCreacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones" FromRole="Seguimiento_RespuestaSucursales" ToRole="HistorialSupervisiones" />
+  </EntityType>
+  <EntityType Name="SeguimientoSupervision_Supervisores">
+    <Key>
+      <PropertyRef Name="Idseguimiento" />
+    </Key>
+    <Property Name="Idseguimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idsupervision" Type="Int32" />
+    <Property Name="SeguimientoSupervisor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IdusuarioCreador" Type="Int32" />
+    <Property Name="FechaSeguimCreacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" FromRole="SeguimientoSupervision_Supervisores" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios" FromRole="SeguimientoSupervision_Supervisores" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Sucursales">
+    <Key>
+      <PropertyRef Name="IdSucursal" />
+    </Key>
+    <Property Name="IdSucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NoSucursal" Type="Int16" Nullable="false" />
+    <Property Name="DireccionRegional" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DescripcionSucursal" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dirección" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Representaciones" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Director_Regional" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Director_Estatal" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Coordinador_Administrativo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Coordinador_Crédito" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Coordinador_Cobranza" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Analistas" Type="Int16" />
+    <Property Name="Ventanillas" Type="Int16" />
+    <Property Name="Analistas_Otorgamiento_de_Crédito" Type="Int16" />
+    <Property Name="Analistas_Administrativo_y_SAM" Type="Int16" />
+    <Property Name="Analistas_Crédito_Control_Documental" Type="Int16" />
+    <Property Name="Analistas_Cobranza" Type="Int16" />
+    <Property Name="Fotografia" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Empresas_Afiliadas" Type="Int32" />
+    <Property Name="Trabajadores_Afiliados" Type="Int32" />
+    <Property Name="Potencial_de_Empresas" Type="Int32" />
+    <Property Name="Potencial_de_Trabajadores" Type="Int32" />
+    <Property Name="Empresas_Status_1" Type="Int32" />
+    <Property Name="Empresas_Status_18" Type="Int32" />
+    <Property Name="Empresas_Status_21" Type="Int32" />
+    <Property Name="Empresas_Status_30" Type="Int32" />
+    <Property Name="Meta_Anual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Meta_Mensual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Colocación_Anual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Colocación_Mensual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fecha_baja" Type="DateTime" Precision="3" />
+    <Property Name="Meta_Acumulada_Porcentaje" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Cobranza_Meta_Anual" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cobranza_Porcentaje_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cobranza_Cumplimiento_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Sucursales" ToRole="Empleados" />
+    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" FromRole="Sucursales" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Usuarios_Sucursales" FromRole="Sucursales" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="TiraAuditora">
+    <Key>
+      <PropertyRef Name="IdTiraAuditora" />
+    </Key>
+    <Property Name="IdTiraAuditora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" />
+    <Property Name="DescripcionMovimiento" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_TiraAuditora_Usuarios" FromRole="TiraAuditora" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Usuario" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Pass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IdNivel" Type="Int32" />
+    <Property Name="fechaalta" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechabaja" Type="DateTime" Precision="3" />
+    <Property Name="IdSucursal" Type="Int32" />
+    <NavigationProperty Name="ContestacionesSuperv_Sucursales" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_UsuarioCreador" FromRole="Usuarios" ToRole="ContestacionesSuperv_Sucursales" />
+    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosCreador" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="HistorialSupervisiones1" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Usuariossup1" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="HistorialSupervisiones2" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosSup2" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="SeguimientoSupervision_Supervisores" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios" FromRole="Usuarios" ToRole="SeguimientoSupervision_Supervisores" />
+    <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Usuarios_Sucursales" FromRole="Usuarios" ToRole="Sucursales" />
+    <NavigationProperty Name="TiraAuditora" Relationship="GDSfonacotModel.FK_TiraAuditora_Usuarios" FromRole="Usuarios" ToRole="TiraAuditora" />
+    <NavigationProperty Name="Usuarios_Nivel" Relationship="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel" FromRole="Usuarios" ToRole="Usuarios_Nivel" />
+  </EntityType>
+  <EntityType Name="Usuarios_Nivel">
+    <Key>
+      <PropertyRef Name="IdNivel" />
+    </Key>
+    <Property Name="IdNivel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nivel_Usuario" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel" FromRole="Usuarios_Nivel" ToRole="Usuarios" />
+  </EntityType>
+  <Association Name="FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones">
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.ContestacionesSuperv_Sucursales" Role="ContestacionesSuperv_Sucursales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSupervisiones" />
+      </Principal>
+      <Dependent Role="ContestacionesSuperv_Sucursales">
+        <PropertyRef Name="Idsupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContestacionesSuperv_Sucursales_UsuarioCreador">
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.ContestacionesSuperv_Sucursales" Role="ContestacionesSuperv_Sucursales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="ContestacionesSuperv_Sucursales">
+        <PropertyRef Name="Idusuariocreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctActividad">
+    <End Type="GDSfonacotModel.ctActividad" Role="ctActividad" Multiplicity="1" />
+    <End Type="GDSfonacotModel.Empleados" Role="Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctActividad">
+        <PropertyRef Name="IdActividad" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdActividad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctArea">
+    <End Type="GDSfonacotModel.ctArea" Role="ctArea" Multiplicity="1" />
+    <End Type="GDSfonacotModel.Empleados" Role="Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctArea">
+        <PropertyRef Name="IdArea" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_cat_estatus">
+    <End Type="GDSfonacotModel.ctEstatusSupervision" Role="ctEstatusSupervision" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctEstatusSupervision">
+        <PropertyRef Name="idstatus" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="Idstatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctPerfilSistema">
+    <End Type="GDSfonacotModel.ctPerfilSistema" Role="ctPerfilSistema" Multiplicity="1" />
+    <End Type="GDSfonacotModel.Empleados" Role="Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctPerfilSistema">
+        <PropertyRef Name="IdPerfilSistema" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdPerfilSistema" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctRegional">
+    <End Type="GDSfonacotModel.ctRegional" Role="ctRegional" Multiplicity="1" />
+    <End Type="GDSfonacotModel.Empleados" Role="Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctRegional">
+        <PropertyRef Name="IdRegional" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdRegional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctTipoPersonal">
+    <End Type="GDSfonacotModel.ctTipoPersonal" Role="ctTipoPersonal" Multiplicity="1" />
+    <End Type="GDSfonacotModel.Empleados" Role="Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctTipoPersonal">
+        <PropertyRef Name="IdTipoPersonal" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdTipoPersonal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Sucursales">
+    <End Type="GDSfonacotModel.Sucursales" Role="Sucursales" Multiplicity="1" />
+    <End Type="GDSfonacotModel.Empleados" Role="Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sucursales">
+        <PropertyRef Name="IdSucursal" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_Sucursales">
+    <End Type="GDSfonacotModel.Sucursales" Role="Sucursales" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sucursales">
+        <PropertyRef Name="IdSucursal" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_UsuariosCreador">
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="Idusuariocreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_Usuariossup1">
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="Idsupervisor1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialSupervisiones_UsuariosSup2">
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="HistorialSupervisiones">
+        <PropertyRef Name="Idsupervisor2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones">
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.Seguimiento_RespuestaSucursales" Role="Seguimiento_RespuestaSucursales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSupervisiones" />
+      </Principal>
+      <Dependent Role="Seguimiento_RespuestaSucursales">
+        <PropertyRef Name="IdSupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones">
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.SeguimientoSupervision_Supervisores" Role="SeguimientoSupervision_Supervisores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSupervisiones" />
+      </Principal>
+      <Dependent Role="SeguimientoSupervision_Supervisores">
+        <PropertyRef Name="Idsupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeguimientoSupervision_Supervisores_Usuarios">
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.SeguimientoSupervision_Supervisores" Role="SeguimientoSupervision_Supervisores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="SeguimientoSupervision_Supervisores">
+        <PropertyRef Name="IdusuarioCreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Sucursales">
+    <End Type="GDSfonacotModel.Sucursales" Role="Sucursales" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sucursales">
+        <PropertyRef Name="IdSucursal" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdSucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TiraAuditora_Usuarios">
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.TiraAuditora" Role="TiraAuditora" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="TiraAuditora">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Usuarios_Nivel">
+    <End Type="GDSfonacotModel.Usuarios_Nivel" Role="Usuarios_Nivel" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios_Nivel">
+        <PropertyRef Name="IdNivel" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdNivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
