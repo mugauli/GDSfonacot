@@ -37,7 +37,7 @@ namespace GDSfonacot.forms
                 dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 dataGlistaSup.Columns[0].Visible = false;
-                dataGlistaSup.Columns[0].Name = "ID";
+                dataGlistaSup.Columns[0].HeaderText = "ID";
                 dataGlistaSup.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
 
                 dataGlistaSup.Columns[1].HeaderText = "Nombre";
