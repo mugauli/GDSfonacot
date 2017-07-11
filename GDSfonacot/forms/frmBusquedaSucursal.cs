@@ -71,6 +71,7 @@ namespace GDSfonacot.forms
 
                         if (destinoInt == 1)
                         {
+
                            
                             PersonalSucursales frmPersonsuc = new PersonalSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             frmPersonsuc.MdiParent = this.ParentForm;
