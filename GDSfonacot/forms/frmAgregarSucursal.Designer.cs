@@ -998,8 +998,8 @@
             // 
             this.FechaAlta.AutoSize = true;
             this.FechaAlta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FechaAlta.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaAlta.ForeColor = System.Drawing.Color.DimGray;
+            this.FechaAlta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaAlta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FechaAlta.Location = new System.Drawing.Point(386, 351);
             this.FechaAlta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FechaAlta.Name = "FechaAlta";
@@ -1011,8 +1011,8 @@
             // 
             this.CobranzaCumplimiento.AutoSize = true;
             this.CobranzaCumplimiento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CobranzaCumplimiento.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CobranzaCumplimiento.ForeColor = System.Drawing.Color.DimGray;
+            this.CobranzaCumplimiento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CobranzaCumplimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CobranzaCumplimiento.Location = new System.Drawing.Point(262, 351);
             this.CobranzaCumplimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CobranzaCumplimiento.Name = "CobranzaCumplimiento";
@@ -1024,8 +1024,8 @@
             // 
             this.CobranzaPorcentaje.AutoSize = true;
             this.CobranzaPorcentaje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CobranzaPorcentaje.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CobranzaPorcentaje.ForeColor = System.Drawing.Color.DimGray;
+            this.CobranzaPorcentaje.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CobranzaPorcentaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CobranzaPorcentaje.Location = new System.Drawing.Point(138, 351);
             this.CobranzaPorcentaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CobranzaPorcentaje.Name = "CobranzaPorcentaje";
@@ -1037,8 +1037,8 @@
             // 
             this.CobranzaMetaMensual.AutoSize = true;
             this.CobranzaMetaMensual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CobranzaMetaMensual.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CobranzaMetaMensual.ForeColor = System.Drawing.Color.DimGray;
+            this.CobranzaMetaMensual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CobranzaMetaMensual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CobranzaMetaMensual.Location = new System.Drawing.Point(14, 351);
             this.CobranzaMetaMensual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CobranzaMetaMensual.Name = "CobranzaMetaMensual";

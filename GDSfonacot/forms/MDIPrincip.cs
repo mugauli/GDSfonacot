@@ -39,12 +39,11 @@ namespace GDSfonacot
             }
             else
             {
-                if (Globales.objpasardatosusuario.IdNivel == 1003)
-                {
+                
                     FichasSupervision frmfichassup = new FichasSupervision();//crea una instancia del formulario
                     frmfichassup.MdiParent = this;
                     frmfichassup.Show();
-                }
+                
                 //   frmfichassup.ShowDialog(); //muestra el formulario de forma modal
             }
 
@@ -69,7 +68,7 @@ namespace GDSfonacot
                 if (Globales.objpasardatosusuario.IdNivel == 1)
                 {
                     var frmPersonsuc = new frmBusquedaSucursal(1);//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this;
+                    frmPersonsuc.MdiParent = this.ParentForm;
                     frmPersonsuc.Show();
                 }
                 else
@@ -134,6 +133,7 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
             {
+
                 MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
             }
             else
@@ -162,7 +162,7 @@ namespace GDSfonacot
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
                 FormBusConsultasSupervision frmsup = new FormBusConsultasSupervision();//crea una instancia del formulario
-                frmsup.MdiParent = this;
+                frmsup.MdiParent = this.ParentForm;
                 frmsup.Show();
                 //  frmsup.ShowDialog(); //muestra el formulario en forma modal
             }
@@ -177,7 +177,7 @@ namespace GDSfonacot
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
                 forms.FormBusConsultasSupervision frmsup = new forms.FormBusConsultasSupervision();//crea una instancia del formulario
-                frmsup.MdiParent = this;
+                frmsup.MdiParent = this.ParentForm;
                 frmsup.Show();
                 //  frmsup.ShowDialog(); //muestra el formulario en forma modal
             }
@@ -192,7 +192,7 @@ namespace GDSfonacot
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
                 forms.FormBusConsultasSupervision frmsup = new forms.FormBusConsultasSupervision();//crea una instancia del formulario
-                frmsup.MdiParent = this;
+                frmsup.MdiParent = this.ParentForm;
                 frmsup.Show();
                 //  frmsup.ShowDialog(); //muestra el formulario en forma modal
             }
