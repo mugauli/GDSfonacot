@@ -272,6 +272,9 @@
     <EmbeddedResource Include="forms\frmMDIP.resx">
       <DependentUpon>frmMDIP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmSeguimiento.resx">
+      <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmSupervisiom.resx">
       <DependentUpon>frmSupervisiom.cs</DependentUpon>
     </EmbeddedResource>
