@@ -179,11 +179,11 @@ namespace GDSfonacot
                     
                     toolButGuardar.Enabled = false;
                     toolButImprimir.Enabled = true;
-                    MessageBox.Show("La Contestacion ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La Contestacion ha sido guardada correctamente,espere la revision del supervisor", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //  LimpiarDatos();
                     var obactualizarsup = new HistorialSupervisiones();
                     obactualizarsup.IdSupervisiones =Convert.ToInt32(txthidIdSup.Text.Trim());
-                    obactualizarsup.Idstatus = 3;
+                    obactualizarsup.Idstatus = 2;
                     var actualizarsup = new SupervisionesData().ActualizarSupervision(obactualizarsup);
                     if (actualizarsup.Code!=0)
                     {

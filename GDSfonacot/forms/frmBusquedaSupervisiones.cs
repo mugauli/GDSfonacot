@@ -91,7 +91,9 @@ namespace GDSfonacot.forms
                             ContestSuc frmconstSuc = new ContestSuc();//crea una instancia del formulario
                             frmconstSuc.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
                             frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                            frmconstSuc.ShowDialog();
+                            frmconstSuc.MdiParent = this.ParentForm;
+                            frmconstSuc.Show();
+                            this.Close();
                             //var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             //frmsup.MdiParent = this.ParentForm;
                             //frmsup.Show();
@@ -102,7 +104,9 @@ namespace GDSfonacot.forms
                             forms.formSeguiRespuesta frmSegSup = new forms.formSeguiRespuesta();//crea una instancia del formulario
                             frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
                             frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                            frmSegSup.ShowDialog();
+                            frmSegSup.MdiParent = this.ParentForm;
+                            frmSegSup.Show();
+                            this.Close();
 
                             //var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             //frmsup.MdiParent = this.ParentForm;
@@ -119,5 +123,9 @@ namespace GDSfonacot.forms
             }
         }
 
+        private void dataGlistaSup_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

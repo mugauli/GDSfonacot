@@ -47,7 +47,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel1.Controls.Add(this.dataGlistaSup, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblRegistros, 2, 4);
@@ -78,8 +78,9 @@
             this.dataGlistaSup.Location = new System.Drawing.Point(3, 103);
             this.dataGlistaSup.Name = "dataGlistaSup";
             this.dataGlistaSup.ReadOnly = true;
-            this.dataGlistaSup.Size = new System.Drawing.Size(1125, 514);
+            this.dataGlistaSup.Size = new System.Drawing.Size(1124, 514);
             this.dataGlistaSup.TabIndex = 279;
+            this.dataGlistaSup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellContentClick);
             this.dataGlistaSup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellDoubleClick);
             // 
             // label10
@@ -99,7 +100,7 @@
             // 
             this.lblRegistros.AutoSize = true;
             this.lblRegistros.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblRegistros.Location = new System.Drawing.Point(1128, 620);
+            this.lblRegistros.Location = new System.Drawing.Point(1127, 620);
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(0, 30);
             this.lblRegistros.TabIndex = 280;
