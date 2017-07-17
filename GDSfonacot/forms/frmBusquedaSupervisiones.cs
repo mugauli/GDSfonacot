@@ -77,7 +77,8 @@ namespace GDSfonacot.forms
                             SeguimientoSup frmSegSup = new SeguimientoSup();//crea una instancia del formulario
                             frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
                             frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                            frmSegSup.ShowDialog();
+                            frmSegSup.MdiParent = this.ParentForm;
+                            frmSegSup.Show();
 
                             //PersonalSucursales frmPersonsuc = new PersonalSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             //frmPersonsuc.MdiParent = this.ParentForm;

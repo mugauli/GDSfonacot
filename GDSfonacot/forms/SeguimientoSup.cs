@@ -45,7 +45,7 @@ namespace GDSfonacot
                 txthidIdSeg.Text = "0";
                 txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
                 txtDirectorRegional.Text = busqueda.Result.Director_Regional.ToString();
-                txtDirectorEstatal.Text = busqueda.Result.Director_Estatal.ToString();
+                txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
                 txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
                 textDireccRegional.Text = busqueda.Result.DireccionRegional.ToString();
                 textRepresentaciones.Text = (busqueda.Result.Representaciones !=null ? busqueda.Result.Representaciones.ToString() : "");
