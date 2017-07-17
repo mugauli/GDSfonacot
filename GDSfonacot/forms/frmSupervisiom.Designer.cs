@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupervisiom));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbSupervisor2 = new System.Windows.Forms.ComboBox();
+            this.cmbSupervisor1 = new System.Windows.Forms.ComboBox();
+            this.cmbSucursales = new System.Windows.Forms.ComboBox();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolButNuevo = new System.Windows.Forms.ToolStripButton();
+            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
+            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
             this.txtAcuerdosCompromisos = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFondoFijo = new System.Windows.Forms.TextBox();
@@ -50,16 +59,14 @@
             this.txtInmuble = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSupervisor2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSupervisor1 = new System.Windows.Forms.TextBox();
             this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSucursal = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -77,6 +84,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.Controls.Add(this.cmbSupervisor2, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbSupervisor1, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbSucursales, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdSup, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtAcuerdosCompromisos, 1, 23);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 22);
             this.tableLayoutPanel1.Controls.Add(this.txtFondoFijo, 1, 21);
@@ -98,15 +110,12 @@
             this.tableLayoutPanel1.Controls.Add(this.txtInmuble, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label38, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label8, 7, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtSupervisor2, 7, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtSupervisor1, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.dtFechaSupervision, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtNoSupervision, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtSucursal, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -139,7 +148,89 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1254, 519);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // cmbSupervisor2
+            // 
+            this.cmbSupervisor2.BackColor = System.Drawing.Color.Black;
+            this.tableLayoutPanel1.SetColumnSpan(this.cmbSupervisor2, 2);
+            this.cmbSupervisor2.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbSupervisor2.FormattingEnabled = true;
+            this.cmbSupervisor2.Location = new System.Drawing.Point(929, 23);
+            this.cmbSupervisor2.Name = "cmbSupervisor2";
+            this.cmbSupervisor2.Size = new System.Drawing.Size(296, 21);
+            this.cmbSupervisor2.TabIndex = 4;
+            // 
+            // cmbSupervisor1
+            // 
+            this.cmbSupervisor1.BackColor = System.Drawing.Color.Black;
+            this.tableLayoutPanel1.SetColumnSpan(this.cmbSupervisor1, 2);
+            this.cmbSupervisor1.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbSupervisor1.FormattingEnabled = true;
+            this.cmbSupervisor1.Location = new System.Drawing.Point(627, 23);
+            this.cmbSupervisor1.Name = "cmbSupervisor1";
+            this.cmbSupervisor1.Size = new System.Drawing.Size(296, 21);
+            this.cmbSupervisor1.TabIndex = 3;
+            // 
+            // cmbSucursales
+            // 
+            this.cmbSucursales.BackColor = System.Drawing.Color.Black;
+            this.cmbSucursales.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbSucursales.FormattingEnabled = true;
+            this.cmbSucursales.Location = new System.Drawing.Point(23, 23);
+            this.cmbSucursales.Name = "cmbSucursales";
+            this.cmbSucursales.Size = new System.Drawing.Size(145, 21);
+            this.cmbSucursales.TabIndex = 0;
+            // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(4, 24);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
+            this.txthidIdSup.TabIndex = 262;
+            // 
+            // toolStrip1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 3);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolButNuevo,
+            this.toolButGuardar,
+            this.toolButImprimir});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(322, 20);
+            this.toolStrip1.TabIndex = 261;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolButNuevo
+            // 
+            this.toolButNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButNuevo.Name = "toolButNuevo";
+            this.toolButNuevo.Size = new System.Drawing.Size(46, 17);
+            this.toolButNuevo.Text = "Nuevo";
+            this.toolButNuevo.Click += new System.EventHandler(this.toolButNuevo_Click);
+            // 
+            // toolButGuardar
+            // 
+            this.toolButGuardar.Enabled = false;
+            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
+            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButGuardar.Name = "toolButGuardar";
+            this.toolButGuardar.Size = new System.Drawing.Size(69, 17);
+            this.toolButGuardar.Text = "Guardar";
+            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
+            // 
+            // toolButImprimir
+            // 
+            this.toolButImprimir.Enabled = false;
+            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
+            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButImprimir.Name = "toolButImprimir";
+            this.toolButImprimir.Size = new System.Drawing.Size(73, 17);
+            this.toolButImprimir.Text = "Imprimir";
+            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);
             // 
             // txtAcuerdosCompromisos
             // 
@@ -153,7 +244,7 @@
             this.txtAcuerdosCompromisos.Multiline = true;
             this.txtAcuerdosCompromisos.Name = "txtAcuerdosCompromisos";
             this.txtAcuerdosCompromisos.Size = new System.Drawing.Size(1200, 92);
-            this.txtAcuerdosCompromisos.TabIndex = 260;
+            this.txtAcuerdosCompromisos.TabIndex = 14;
             // 
             // label2
             // 
@@ -181,7 +272,7 @@
             this.txtFondoFijo.Multiline = true;
             this.txtFondoFijo.Name = "txtFondoFijo";
             this.txtFondoFijo.Size = new System.Drawing.Size(1200, 92);
-            this.txtFondoFijo.TabIndex = 258;
+            this.txtFondoFijo.TabIndex = 13;
             // 
             // label46
             // 
@@ -209,7 +300,7 @@
             this.txtCobranza.Multiline = true;
             this.txtCobranza.Name = "txtCobranza";
             this.txtCobranza.Size = new System.Drawing.Size(1200, 92);
-            this.txtCobranza.TabIndex = 256;
+            this.txtCobranza.TabIndex = 12;
             // 
             // label45
             // 
@@ -237,7 +328,7 @@
             this.txtPromocionales.Multiline = true;
             this.txtPromocionales.Name = "txtPromocionales";
             this.txtPromocionales.Size = new System.Drawing.Size(1200, 92);
-            this.txtPromocionales.TabIndex = 254;
+            this.txtPromocionales.TabIndex = 11;
             // 
             // label44
             // 
@@ -265,7 +356,7 @@
             this.txtUtys.Multiline = true;
             this.txtUtys.Name = "txtUtys";
             this.txtUtys.Size = new System.Drawing.Size(1200, 92);
-            this.txtUtys.TabIndex = 252;
+            this.txtUtys.TabIndex = 10;
             // 
             // label43
             // 
@@ -293,7 +384,7 @@
             this.txtCredito.Multiline = true;
             this.txtCredito.Name = "txtCredito";
             this.txtCredito.Size = new System.Drawing.Size(1200, 92);
-            this.txtCredito.TabIndex = 250;
+            this.txtCredito.TabIndex = 9;
             // 
             // label42
             // 
@@ -321,7 +412,7 @@
             this.txtTarjetasTransfer.Multiline = true;
             this.txtTarjetasTransfer.Name = "txtTarjetasTransfer";
             this.txtTarjetasTransfer.Size = new System.Drawing.Size(1200, 92);
-            this.txtTarjetasTransfer.TabIndex = 248;
+            this.txtTarjetasTransfer.TabIndex = 8;
             // 
             // label41
             // 
@@ -349,7 +440,7 @@
             this.txtOriginacion.Multiline = true;
             this.txtOriginacion.Name = "txtOriginacion";
             this.txtOriginacion.Size = new System.Drawing.Size(1200, 92);
-            this.txtOriginacion.TabIndex = 246;
+            this.txtOriginacion.TabIndex = 7;
             // 
             // label40
             // 
@@ -377,7 +468,7 @@
             this.txtGestionDireccion.Multiline = true;
             this.txtGestionDireccion.Name = "txtGestionDireccion";
             this.txtGestionDireccion.Size = new System.Drawing.Size(1200, 92);
-            this.txtGestionDireccion.TabIndex = 244;
+            this.txtGestionDireccion.TabIndex = 6;
             // 
             // label39
             // 
@@ -405,7 +496,7 @@
             this.txtInmuble.Multiline = true;
             this.txtInmuble.Name = "txtInmuble";
             this.txtInmuble.Size = new System.Drawing.Size(1200, 92);
-            this.txtInmuble.TabIndex = 242;
+            this.txtInmuble.TabIndex = 5;
             // 
             // label38
             // 
@@ -435,19 +526,6 @@
             this.label8.TabIndex = 240;
             this.label8.Text = "Supervisor 2";
             // 
-            // txtSupervisor2
-            // 
-            this.txtSupervisor2.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtSupervisor2, 2);
-            this.txtSupervisor2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupervisor2.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSupervisor2.Location = new System.Drawing.Point(930, 24);
-            this.txtSupervisor2.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSupervisor2.Multiline = true;
-            this.txtSupervisor2.Name = "txtSupervisor2";
-            this.txtSupervisor2.Size = new System.Drawing.Size(294, 20);
-            this.txtSupervisor2.TabIndex = 239;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -462,19 +540,6 @@
             this.label4.TabIndex = 238;
             this.label4.Text = "Supervisor 1";
             // 
-            // txtSupervisor1
-            // 
-            this.txtSupervisor1.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtSupervisor1, 2);
-            this.txtSupervisor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSupervisor1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupervisor1.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSupervisor1.Location = new System.Drawing.Point(628, 24);
-            this.txtSupervisor1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSupervisor1.Name = "txtSupervisor1";
-            this.txtSupervisor1.Size = new System.Drawing.Size(294, 22);
-            this.txtSupervisor1.TabIndex = 237;
-            // 
             // dtFechaSupervision
             // 
             this.dtFechaSupervision.CalendarForeColor = System.Drawing.Color.White;
@@ -484,7 +549,7 @@
             this.dtFechaSupervision.Location = new System.Drawing.Point(476, 23);
             this.dtFechaSupervision.Name = "dtFechaSupervision";
             this.dtFechaSupervision.Size = new System.Drawing.Size(145, 20);
-            this.dtFechaSupervision.TabIndex = 236;
+            this.dtFechaSupervision.TabIndex = 2;
             // 
             // label5
             // 
@@ -510,7 +575,7 @@
             this.txtNoSupervision.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoSupervision.Name = "txtNoSupervision";
             this.txtNoSupervision.Size = new System.Drawing.Size(294, 22);
-            this.txtNoSupervision.TabIndex = 14;
+            this.txtNoSupervision.TabIndex = 1;
             // 
             // label1
             // 
@@ -539,18 +604,6 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Sucursal";
             // 
-            // txtSucursal
-            // 
-            this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSucursal.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSucursal.Location = new System.Drawing.Point(24, 24);
-            this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(143, 22);
-            this.txtSucursal.TabIndex = 12;
-            // 
             // frmSupervisiom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,10 +612,13 @@
             this.ClientSize = new System.Drawing.Size(1254, 519);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmSupervisiom";
-            this.Text = "frmSupervisiom";
+            this.Text = "Inicio de Supervision";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSupervisiom_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -570,16 +626,13 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox txtSucursal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNoSupervision;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtFechaSupervision;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSupervisor1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSupervisor2;
         private System.Windows.Forms.TextBox txtInmuble;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox txtGestionDireccion;
@@ -600,5 +653,13 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox txtAcuerdosCompromisos;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbSupervisor2;
+        private System.Windows.Forms.ComboBox cmbSupervisor1;
+        private System.Windows.Forms.ComboBox cmbSucursales;
+        private System.Windows.Forms.TextBox txthidIdSup;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolButNuevo;
+        private System.Windows.Forms.ToolStripButton toolButGuardar;
+        private System.Windows.Forms.ToolStripButton toolButImprimir;
     }
 }

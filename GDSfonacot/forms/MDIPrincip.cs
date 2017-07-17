@@ -50,13 +50,7 @@ namespace GDSfonacot
 
         }
 
-        private void menuFichasSuc_Click(object sender, EventArgs e)
-        {
-            //SupOperaciones frmsupOp = new SupOperaciones();//crea una instancia del formulario
-            //frmsupOp.MdiParent = this;
-            //frmsupOp.Show();
-            // frmsupOp.ShowDialog(); //muestra el formulario en forma modal
-        }
+      
 
         private void menuFichasPerson_Click(object sender, EventArgs e)
         {
@@ -138,7 +132,9 @@ namespace GDSfonacot
             }
             else
             {
-                MessageBox.Show("Catalogo de los usuarios");// Mensaje en pantalla
+                var frmPersonsuc = new frmBusquedaSucursal(3);//crea una instancia del formulario
+                frmPersonsuc.MdiParent = this;
+                frmPersonsuc.Show();
             }
         }
 
@@ -161,10 +157,10 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
-                FormBusConsultasSupervision frmsup = new FormBusConsultasSupervision();//crea una instancia del formulario
-                frmsup.MdiParent = this;
-                frmsup.Show();
-                //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+
+                var frmbusquedasup = new frmBusquedaSupervisiones(2,2);//crea una instancia del formulario
+                frmbusquedasup.MdiParent = this;
+                frmbusquedasup.Show();
             }
             else
             {
@@ -176,10 +172,10 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
-                forms.FormBusConsultasSupervision frmsup = new forms.FormBusConsultasSupervision();//crea una instancia del formulario
-                frmsup.MdiParent = this;
-                frmsup.Show();
-                //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+
+                var frmbusquedasup = new frmBusquedaSupervisiones(3, 3);//crea una instancia del formulario
+                frmbusquedasup.MdiParent = this;
+                frmbusquedasup.Show();
             }
             else
             {
@@ -191,10 +187,10 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
-                forms.FormBusConsultasSupervision frmsup = new forms.FormBusConsultasSupervision();//crea una instancia del formulario
-                frmsup.MdiParent = this;
-                frmsup.Show();
-                //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+            
+                var frmbusquedasup = new frmBusquedaSupervisiones(1,1);//crea una instancia del formulario
+                frmbusquedasup.MdiParent = this;
+                frmbusquedasup.Show();
             }
             else
             {
@@ -221,6 +217,21 @@ namespace GDSfonacot
                 frmsup.MdiParent = this;
                 frmsup.Show();
                 //  frmsup.ShowDialog(); //muestra el formulario en forma modal
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void menuInicioSup_Click(object sender, EventArgs e)
+        {
+            if ( Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+
+                var frminicioSup = new frmSupervisiom();//crea una instancia del formulario
+                frminicioSup.MdiParent = this;
+                frminicioSup.Show();
             }
             else
             {

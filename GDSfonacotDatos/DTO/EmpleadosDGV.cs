@@ -11,8 +11,14 @@ namespace GDSfonacotDatos.DTO
         public int IdEmpleado { get; set; }
         public string Nombre { get; set; }
         public string Gafete { get; set; }
+        public string TipoPersonal{ get; set; }
+        public string TipoPerfil { get; set; }
         public string Jornada { get; set; }
         public string Horario { get; set; }
        
+       
+
+
+
     }
 }

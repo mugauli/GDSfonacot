@@ -57,6 +57,7 @@ namespace GDSfonacotDatos
         public string Cobranza_Meta_Anual { get; set; }
         public string Cobranza_Porcentaje_Meta { get; set; }
         public string Cobranza_Cumplimiento_Meta { get; set; }
+        public Nullable<int> IdRegional { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Empleados> Empleados { get; set; }
@@ -64,5 +65,6 @@ namespace GDSfonacotDatos
         public virtual ICollection<HistorialSupervisiones> HistorialSupervisiones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuarios> Usuarios { get; set; }
+        public virtual ctRegional ctRegional { get; set; }
     }
 }

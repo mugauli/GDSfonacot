@@ -86,6 +86,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\frmBusquedaSupervisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmBusquedaSupervisiones.Designer.cs">
+      <DependentUpon>frmBusquedaSupervisiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmMDIP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmAgregarSucursal.resx">
       <DependentUpon>frmAgregarSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmBusquedaSupervisiones.resx">
+      <DependentUpon>frmBusquedaSupervisiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmContestacionSucursal.resx">
       <DependentUpon>frmContestacionSucursal.cs</DependentUpon>

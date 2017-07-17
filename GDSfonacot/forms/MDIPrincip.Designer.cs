@@ -30,7 +30,7 @@
         {
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuModulos = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFichasSuc = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuInicioSup = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBuscarSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupContestSeguimSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupContestSuc = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,14 +69,14 @@
             this.menuayuda});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(1362, 24);
+            this.menuPrincipal.Size = new System.Drawing.Size(1354, 24);
             this.menuPrincipal.TabIndex = 256;
             this.menuPrincipal.Text = "Menu";
             // 
             // menuModulos
             // 
             this.menuModulos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuFichasSuc,
+            this.menuInicioSup,
             this.mnuBuscarSuperv,
             this.menuHistsupOp,
             this.toolStripSeparator3,
@@ -92,12 +92,12 @@
             this.menuModulos.Size = new System.Drawing.Size(66, 20);
             this.menuModulos.Text = "&Modulos";
             // 
-            // menuFichasSuc
+            // menuInicioSup
             // 
-            this.menuFichasSuc.Name = "menuFichasSuc";
-            this.menuFichasSuc.Size = new System.Drawing.Size(287, 22);
-            this.menuFichasSuc.Text = "Inicio Supervisión";
-            this.menuFichasSuc.Click += new System.EventHandler(this.menuFichasSuc_Click);
+            this.menuInicioSup.Name = "menuInicioSup";
+            this.menuInicioSup.Size = new System.Drawing.Size(287, 22);
+            this.menuInicioSup.Text = "Inicio Supervisión";
+            this.menuInicioSup.Click += new System.EventHandler(this.menuInicioSup_Click);
             // 
             // mnuBuscarSuperv
             // 
@@ -113,7 +113,7 @@
             // 
             this.mnuSupContestSeguimSuperv.Name = "mnuSupContestSeguimSuperv";
             this.mnuSupContestSeguimSuperv.Size = new System.Drawing.Size(283, 22);
-            this.mnuSupContestSeguimSuperv.Text = "Seuimiento de Supervisiones";
+            this.mnuSupContestSeguimSuperv.Text = "Seguimiento de Supervisiones";
             this.mnuSupContestSeguimSuperv.Click += new System.EventHandler(this.mnuSupContestSeguimSuperv_Click);
             // 
             // mnuSupContestSuc
@@ -204,7 +204,7 @@
             // 
             this.submenuSuc.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuSuc.Name = "submenuSuc";
-            this.submenuSuc.Size = new System.Drawing.Size(152, 22);
+            this.submenuSuc.Size = new System.Drawing.Size(129, 22);
             this.submenuSuc.Text = "Sucursales";
             this.submenuSuc.Click += new System.EventHandler(this.submenuSuc_Click);
             // 
@@ -212,14 +212,14 @@
             // 
             this.submenuUsers.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuUsers.Name = "submenuUsers";
-            this.submenuUsers.Size = new System.Drawing.Size(152, 22);
+            this.submenuUsers.Size = new System.Drawing.Size(129, 22);
             this.submenuUsers.Text = "Usuarios";
             this.submenuUsers.Click += new System.EventHandler(this.submenuUsers_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(126, 6);
             // 
             // menuayuda
             // 
@@ -246,7 +246,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1362, 108);
+            this.panel1.Size = new System.Drawing.Size(1354, 108);
             this.panel1.TabIndex = 275;
             // 
             // pictureBox3
@@ -288,7 +288,7 @@
             this.lblNombreUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblNombreUsuario.Location = new System.Drawing.Point(0, 132);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(1362, 24);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(1354, 24);
             this.lblNombreUsuario.TabIndex = 277;
             this.lblNombreUsuario.Text = "Usuario";
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 550);
+            this.ClientSize = new System.Drawing.Size(1354, 550);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuPrincipal);
@@ -324,7 +324,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuModulos;
         private System.Windows.Forms.ToolStripMenuItem menuHistsupOp;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem menuFichasSuc;
+        private System.Windows.Forms.ToolStripMenuItem menuInicioSup;
         private System.Windows.Forms.ToolStripMenuItem menuFichasPerson;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem menuMinutas;

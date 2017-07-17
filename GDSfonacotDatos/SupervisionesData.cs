@@ -436,7 +436,9 @@ namespace GDSfonacotDatos
                 {
                     var response = new MethodResponse<List<DatosSupervisores>> { Code = 0 };
 
-                    var usuariosDB = context.Usuarios.Select(x => new DatosSupervisores { IdUsuario = x.IdUsuario, IdNivel = x.IdNivel, Nombre_Usuario = x.Nombre_Usuario }).ToList();
+                    var usuariosDB = context.Usuarios
+                        .Where(x=>x.IdNivel==3)
+                        .Select(x => new DatosSupervisores { IdUsuario = x.IdUsuario, IdNivel = x.IdNivel, Nombre_Usuario = x.Nombre_Usuario }).ToList();
 
 
 
@@ -519,6 +521,56 @@ namespace GDSfonacotDatos
                     response.Result = HistoricoSucursalesDB;
 
                     return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<DatosGridSupervisiones>> { Code = -100, Message = ex.Message };
+            }
+        }
+
+        public MethodResponse<List<DatosGridSupervisiones>> ObtenerSupervisonesporSucIndividual(int IdSupervisiones,int clavestatus)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<DatosGridSupervisiones>> { Code = 0 };
+
+
+                    if (Globales.objpasardatosusuario.IdUsuario == 1)
+                    {
+                        var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
+                       .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
+                       .Where(sc => sc.HistSup.NoSupervision != null && sc.HistSup.Idstatus == clavestatus  && (sc.HistSup.IdSupervisiones == IdSupervisiones || IdSupervisiones == 0)) //ya teniendo los datos, se filtran con el where
+                       .Select(x => new DatosGridSupervisiones
+                       {
+                           IdSupervisiones = x.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                           NoSupervision = x.HistSup.NoSupervision,
+                           FechaSupervision = x.HistSup.FechaSupervision,
+                           DescripcionSucursal = x.Suc.DescripcionSucursal
+                       }).ToList();
+                        response.Result = HistoricoSucursalesDB;
+                        return response;
+                    }
+                    else
+                    {
+                        var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
+                            .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
+                            .Where(sc => sc.HistSup.NoSupervision != null && sc.HistSup.Idstatus == clavestatus && sc.HistSup.IdSucursal == Globales.objpasardatosusuario.IdSucursal && (sc.HistSup.IdSupervisiones == IdSupervisiones || IdSupervisiones == 0)) //ya teniendo los datos, se filtran con el where
+                            .Select(x => new DatosGridSupervisiones
+                            {
+                                IdSupervisiones = x.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                            NoSupervision = x.HistSup.NoSupervision,
+                                FechaSupervision = x.HistSup.FechaSupervision,
+                                DescripcionSucursal = x.Suc.DescripcionSucursal
+                            }).ToList();
+                        response.Result = HistoricoSucursalesDB;
+                        return response;
+                    }
+                
                 }
 
             }

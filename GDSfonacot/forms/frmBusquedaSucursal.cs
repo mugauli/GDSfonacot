@@ -89,9 +89,9 @@ namespace GDSfonacot.forms
                         else if (destinoInt == 3)
                         {
 
-                            var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
-                            frmsup.MdiParent = this.ParentForm;
-                            frmsup.Show();
+                            var frmusu = new frmUsuarios(Convert.ToInt32(valor));//crea una instancia del formulario
+                            frmusu.MdiParent = this.ParentForm;
+                            frmusu.Show();
                             this.Close();
                         }
                     }
@@ -104,14 +104,5 @@ namespace GDSfonacot.forms
             }
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGlistaSup_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

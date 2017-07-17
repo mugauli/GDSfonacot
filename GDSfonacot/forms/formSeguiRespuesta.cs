@@ -116,6 +116,13 @@ namespace GDSfonacot.forms
                 return true;
             }
 
+            if (string.IsNullOrEmpty(txtOficioRespuesta.Text.Trim()) || txtOficioRespuesta.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingresa el oficio de respuesta enviado de la sucursal", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtNoSupervision.Focus();
+                return true;
+            }
+
             return false;
         }
 

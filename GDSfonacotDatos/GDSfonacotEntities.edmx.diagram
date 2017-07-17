@@ -39,6 +39,7 @@
         <AssociationConnector Association="GDSfonacotModel.FK_Usuarios_Sucursales" />
         <AssociationConnector Association="GDSfonacotModel.FK_TiraAuditora_Usuarios" />
         <AssociationConnector Association="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel" />
+        <AssociationConnector Association="GDSfonacotModel.FK_Sucursales_ctRegional" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

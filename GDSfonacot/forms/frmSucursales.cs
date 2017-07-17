@@ -55,5 +55,10 @@ namespace GDSfonacot.forms
         {
             //new SupervisionesData().GuardarImagen(SucursalInt, ImageHelper.ImageToByteArray(pbxSucursal.Image));
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

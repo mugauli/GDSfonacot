@@ -25,10 +25,23 @@ namespace GDSfonacot
             CargarDatos(Sucursal);
             sucursalInt = Sucursal;
         }
+        private void LoadingCatTipoPersonal()
+        {
+            var perfilessistema = new CatalogosData().ObtenerTipoPersonal();
+            if (perfilessistema.Code != 0)
+            {
+                //Mandar mensaje de error con sucursales.Message
+            }
 
+            cmbperfilsistema.DataSource = perfilessistema.Result;
+            cmbperfilsistema.DisplayMember = "Descripcion";
+            cmbperfilsistema.ValueMember = "IdTipoPersonal";
+            cmbperfilsistema.SelectedIndex = -1;
+        }
         private void PersonalSucursales_Load(object sender, EventArgs e)
         {
             //iniciando form
+            LoadingCatTipoPersonal();
 
         }
 
@@ -93,121 +106,34 @@ namespace GDSfonacot
 
         }
 
-        private void TabsEmpleados_Selected(object sender, TabControlEventArgs e)
+       
+        private void CargarGridEmpleados(int tipoperfil)
         {
-            MessageBox.Show("Tab seleccionado:" + e.TabPageIndex);
-            CargarGrid(e.TabPage.Name);
-        }
-
-        private void CargarGrid(string tabSelected)
-        {
-            //sucursalInt
-
             var _EmpleadosData = new EmpleadosData();
-
-
-            switch (tabSelected)
-            {
-                case "tabadmin":
-                    var empleados1 = _EmpleadosData.ObtenerEmpleadosAdministrativos(sucursalInt);
+            var empleados1 = _EmpleadosData.ObtenerEmpleadosGeneral2(sucursalInt,tipoperfil);
                     if (empleados1.Code != 0)
                     {
                         MessageBox.Show("Error: " + empleados1.Message);
-                        break;
                     }
+            else { 
 
-                    dgvAdministrativos.DataSource = empleados1.Result;
-                    dgvAdministrativos.ReadOnly = true;
-                    dgvAdministrativos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvAdministrativos.Columns[0].Visible = false;
-                    dgvAdministrativos.Columns[0].Name = "ID";
-                    dgvAdministrativos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                    dgvAdministrativos.Columns[1].Name = "Nombre";
-                    dgvAdministrativos.Columns[2].Name = "Gafete";
-                    dgvAdministrativos.Columns[3].Name = "Jornada";
-                    dgvAdministrativos.Columns[4].Name = "Horario";
-                    break;
-                case "taborig":
-                    var empleados2 = _EmpleadosData.ObtenerEmpleadosOriginacion(sucursalInt);
-                    if (empleados2.Code != 0)
-                    {
-                        MessageBox.Show("Error: " + empleados2.Message);
-                        break;
-                    }
-                    dgvOriginacion.DataSource = empleados2.Result;
-                    dgvOriginacion.ReadOnly = true;
-                    dgvOriginacion.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                    dgvOriginacion.Columns[0].Visible = false;
-                    dgvOriginacion.Columns[0].Name = "ID";
-                    dgvOriginacion.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-
-                    dgvOriginacion.Columns[1].Name = "Nombre";
-                    dgvOriginacion.Columns[2].Name = "Gafete";
-                    dgvOriginacion.Columns[3].Name = "Jornada";
-                    dgvOriginacion.Columns[4].Name = "Horario";
-                    break;
-                case "tabcred":
-                    var empleados3 = _EmpleadosData.ObtenerEmpleadosCredito(sucursalInt);
-                    if (empleados3.Code != 0)
-                    {
-                        MessageBox.Show("Error: " + empleados3.Message);
-                        break;
-                    }
-
-                    dgvCreditos.DataSource = empleados3.Result;
-                    dgvCreditos.ReadOnly = true;
-                    dgvCreditos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvCreditos.Columns[0].Visible = false;
-                    dgvCreditos.Columns[0].Name = "ID";
-                    dgvCreditos.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                    dgvCreditos.Columns[1].Name = "Nombre";
-                    dgvCreditos.Columns[2].Name = "Gafete";
-                    dgvCreditos.Columns[3].Name = "Jornada";
-                    dgvCreditos.Columns[4].Name = "Horario";
-                    break;
-                case "tabcobra":
-                    var empleados4 = _EmpleadosData.ObtenerEmpleadosCobranza(sucursalInt);
-                    if (empleados4.Code != 0)
-                    {
-                        MessageBox.Show("Error: " + empleados4.Message);
-                        break;
-                    }
-
-                    dgvCobranza.DataSource = empleados4.Result;
-                    dgvCobranza.ReadOnly = true;
-                    dgvCobranza.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvCobranza.Columns[0].Visible = false;
-                    dgvCobranza.Columns[0].Name = "ID";
-                    dgvCobranza.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                    dgvCobranza.Columns[1].Name = "Nombre";
-                    dgvCobranza.Columns[2].Name = "Gafete";
-                    dgvCobranza.Columns[3].Name = "Jornada";
-                    dgvCobranza.Columns[4].Name = "Horario";
-                    break;
-                case "taboutso":
-                    var empleados5 = _EmpleadosData.ObtenerEmpleadosOutsourcing(sucursalInt);
-                    if (empleados5.Code != 0)
-                    {
-                        MessageBox.Show("Error: " + empleados5.Message);
-                        break;
-                    }
-
-                    dgvOutsourcing.DataSource = empleados5.Result;
-                    dgvOutsourcing.ReadOnly = true;
-                    dgvOutsourcing.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvOutsourcing.Columns[0].Visible = false;
-                    dgvOutsourcing.Columns[0].Name = "ID";
-                    dgvOutsourcing.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                    dgvOutsourcing.Columns[1].Name = "Nombre";
-                    dgvOutsourcing.Columns[2].Name = "Gafete";
-                    dgvOutsourcing.Columns[3].Name = "Jornada";
-                    dgvOutsourcing.Columns[4].Name = "Horario";
-                    break;
-
+                    dgvEmpleados.DataSource = empleados1.Result;
+                    dgvEmpleados.ReadOnly = true;
+                    dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgvEmpleados.Columns[0].Visible = false;
+                    dgvEmpleados.Columns[0].HeaderText = "ID";
+                    dgvEmpleados.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                    dgvEmpleados.Columns[1].HeaderText = "Nombre";
+                    dgvEmpleados.Columns[2].HeaderText = "Gafete";
+                    dgvEmpleados.Columns[3].HeaderText = "Tipo Personal";
+                    dgvEmpleados.Columns[4].HeaderText = "Perfil Sistema";
+                    dgvEmpleados.Columns[5].HeaderText = "Jornada";
+                    dgvEmpleados.Columns[6].HeaderText = "Horario";
             }
 
+
         }
+       
 
         private DataGridView CargarDatos(List<EmpleadosDGV> empleados)
         {
@@ -217,124 +143,51 @@ namespace GDSfonacot
             dataGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dataGV.Columns[0].Visible = false;
-            dataGV.Columns[0].Name = "ID";
+            dataGV.Columns[0].HeaderText = "ID";
             dataGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
 
-            dataGV.Columns[1].Name = "Nombre";
-            dataGV.Columns[2].Name = "Gafete";
-            dataGV.Columns[3].Name = "Jornada";
-            dataGV.Columns[4].Name = "Horario";
-
+            dataGV.Columns[1].HeaderText = "Nombre";
+            dataGV.Columns[2].HeaderText = "Gafete";
+            dataGV.Columns[3].HeaderText = "Tipo Personal";
+            dataGV.Columns[4].HeaderText = "Perfil Sistema";
+            dataGV.Columns[5].HeaderText = "Jornada";
+            dataGV.Columns[6].HeaderText = "Horario";
             return dataGV;
         }
 
-        private void dgvAdministrativos_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void cmbperfilsistema_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+          
+            if (cmbperfilsistema.SelectedIndex!=0 || cmbperfilsistema.SelectedIndex!=-1)
+            {
+ 
+                CargarGridEmpleados(Convert.ToInt32(cmbperfilsistema.SelectedValue));
+                
+            }
+        }
+
+        private void dgvEmpleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1 && e.ColumnIndex > -1)
             {
-                if (dgvAdministrativos.CurrentCell.Selected)
+                if (dgvEmpleados.CurrentCell.Selected)
                 {
-                    var valor = dgvAdministrativos.Rows[e.RowIndex].Cells[0].Value;
+                    var valor = dgvEmpleados.Rows[e.RowIndex].Cells[0].Value;
 
 
                     var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.Show();
-                    this.Close();
+                   // frmPersonsuc.MdiParent = this.ParentForm;
+                    frmPersonsuc.ShowDialog();
+                   // this.Close();
 
                 }
             }
         }
 
-        private void dgvOriginacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1 && e.ColumnIndex > -1)
-            {
-                if (dgvOriginacion.CurrentCell.Selected)
-                {
-                    var valor = dgvOriginacion.Rows[e.RowIndex].Cells[0].Value;
 
-
-                    var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.Show();
-                    this.Close();
-
-                }
-            }
-        }
-
-        private void dgvCreditos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1 && e.ColumnIndex > -1)
-            {
-                if (dgvCreditos.CurrentCell.Selected)
-                {
-                    var valor = dgvCreditos.Rows[e.RowIndex].Cells[0].Value;
-
-
-                    var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.Show();
-                    this.Close();
-
-                }
-            }
-        }
-
-        private void dgvCobranza_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1 && e.ColumnIndex > -1)
-            {
-                if (dgvAdministrativos.CurrentCell.Selected)
-                {
-                    var valor = dgvAdministrativos.Rows[e.RowIndex].Cells[0].Value;
-
-
-                    var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.Show();
-                    this.Close();
-
-                }
-            }
-        }
-
-        private void dgvCobranza_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1 && e.ColumnIndex > -1)
-            {
-                if (dgvCobranza.CurrentCell.Selected)
-                {
-                    var valor = dgvCobranza.Rows[e.RowIndex].Cells[0].Value;
-
-
-                    var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.Show();
-                    this.Close();
-
-                }
-            }
-        }
-
-        private void dgvOutsourcing_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1 && e.ColumnIndex > -1)
-            {
-                if (dgvOutsourcing.CurrentCell.Selected)
-                {
-                    var valor = dgvOutsourcing.Rows[e.RowIndex].Cells[0].Value;
-
-                    var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.Show();
-                    this.Close();
-
-                }
-            }
-
-            
         }
     }
 }

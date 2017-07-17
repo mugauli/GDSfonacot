@@ -12,9 +12,11 @@ namespace GDSfonacot.forms
 {
     public partial class frmUsuarios : Form
     {
-        public frmUsuarios()
+        private int SucursalInt = 0;
+        public frmUsuarios(int Sucursal)
         {
             InitializeComponent();
+            SucursalInt = Sucursal;
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)

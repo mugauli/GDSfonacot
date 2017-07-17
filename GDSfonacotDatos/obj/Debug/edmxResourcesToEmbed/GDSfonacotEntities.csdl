@@ -92,6 +92,10 @@
       <End Role="Usuarios_Nivel" EntitySet="Usuarios_Nivel" />
       <End Role="Usuarios" EntitySet="Usuarios" />
     </AssociationSet>
+    <AssociationSet Name="FK_Sucursales_ctRegional" Association="GDSfonacotModel.FK_Sucursales_ctRegional">
+      <End Role="ctRegional" EntitySet="ctRegional" />
+      <End Role="Sucursales" EntitySet="Sucursales" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ContestacionesSuperv_Sucursales">
     <Key>
@@ -155,6 +159,7 @@
     <Property Name="IdRegional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctRegional" FromRole="ctRegional" ToRole="Empleados" />
+    <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="ctRegional" ToRole="Sucursales" />
   </EntityType>
   <EntityType Name="ctTipoPersonal">
     <Key>
@@ -285,6 +290,8 @@
     <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Sucursales" ToRole="Empleados" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" FromRole="Sucursales" ToRole="HistorialSupervisiones" />
     <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Usuarios_Sucursales" FromRole="Sucursales" ToRole="Usuarios" />
+    <Property Name="IdRegional" Type="Int32" />
+    <NavigationProperty Name="ctRegional" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="Sucursales" ToRole="ctRegional" />
   </EntityType>
   <EntityType Name="TiraAuditora">
     <Key>
@@ -550,6 +557,18 @@
       </Principal>
       <Dependent Role="Usuarios">
         <PropertyRef Name="IdNivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sucursales_ctRegional">
+    <End Type="GDSfonacotModel.ctRegional" Role="ctRegional" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.Sucursales" Role="Sucursales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctRegional">
+        <PropertyRef Name="IdRegional" />
+      </Principal>
+      <Dependent Role="Sucursales">
+        <PropertyRef Name="IdRegional" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

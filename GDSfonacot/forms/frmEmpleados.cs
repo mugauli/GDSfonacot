@@ -43,10 +43,10 @@ namespace GDSfonacot.forms
 
             var empleado = new Empleados();
             empleado.IdEmpleado = IdEmpleadoInt;
-            empleado.Nombre = txtNombre.Text;
-            empleado.Gafete = txtGafete.Text;
-            empleado.Jornada = txtJornada.Text;
-            empleado.Horario = txtHorario.Text;
+            empleado.Nombre = txtNombre.Text.ToString().Trim();
+            empleado.Gafete = txtGafete.Text.ToString().Trim();
+            empleado.Jornada = txtJornada.Text.ToString().Trim();
+            empleado.Horario = txtHorario.Text.ToString().Trim();
             empleado.IdRegional = cmbRegional.SelectedIndex;
             empleado.IdSucursal = cmbSucursal.SelectedIndex;
             empleado.IdTipoPersonal = cmbTipoPersonal.SelectedIndex;
@@ -201,16 +201,16 @@ namespace GDSfonacot.forms
 
             var emp = empleadoDB.Result.First();
 
-            txtNombre.Text = emp.Nombre;
-            txtGafete.Text = emp.Gafete;
-            txtJornada.Text = emp.Jornada;
-            txtHorario.Text = emp.Horario;
-            cmbRegional.SelectedIndex = emp.IdRegional;
-            cmbSucursal.SelectedIndex = emp.IdSucursal;
-            cmbTipoPersonal.SelectedIndex = emp.IdTipoPersonal;
-            cmbActividad.SelectedIndex = emp.IdActividad;
-            cmbPerfilSistema.SelectedIndex = emp.IdPerfilSistema;
-            cmbArea.SelectedIndex = emp.IdArea;
+            txtNombre.Text = emp.Nombre.ToString().Trim();
+            txtGafete.Text = emp.Gafete.ToString().Trim();
+            txtJornada.Text = emp.Jornada.ToString().Trim();
+            txtHorario.Text = emp.Horario.ToString().Trim();
+            cmbRegional.SelectedValue = emp.IdRegional;
+            cmbSucursal.SelectedValue= emp.IdSucursal;
+            cmbTipoPersonal.SelectedValue = emp.IdTipoPersonal;
+            cmbActividad.SelectedValue = emp.IdActividad;
+            cmbPerfilSistema.SelectedValue = emp.IdPerfilSistema;
+            cmbArea.SelectedValue = emp.IdArea;
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
