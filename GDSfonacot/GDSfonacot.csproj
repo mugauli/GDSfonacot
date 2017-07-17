@@ -176,6 +176,12 @@
     <Compile Include="forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmSeguimiento.Designer.cs">
+      <DependentUpon>frmSeguimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmSupervisiom.cs">
       <SubType>Form</SubType>
     </Compile>
