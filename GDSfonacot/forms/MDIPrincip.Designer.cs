@@ -32,8 +32,8 @@
             this.menuModulos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicioSup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuConstSupSuc = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuSegSup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCerrarSup = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSegSup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuBuscarSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupContestSuc = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,18 +117,18 @@
             this.menuConstSupSuc.Text = "Contestar una Supervisión";
             this.menuConstSupSuc.Click += new System.EventHandler(this.menuConstSupSuc_Click);
             // 
-            // menuSegSup
-            // 
-            this.menuSegSup.Name = "menuSegSup";
-            this.menuSegSup.Size = new System.Drawing.Size(287, 22);
-            this.menuSegSup.Text = "Seguimiento a Supervisión";
-            // 
             // menuCerrarSup
             // 
             this.menuCerrarSup.Name = "menuCerrarSup";
             this.menuCerrarSup.Size = new System.Drawing.Size(287, 22);
             this.menuCerrarSup.Text = "Cerrar una Supervisión";
             this.menuCerrarSup.Click += new System.EventHandler(this.menuCerrarSup_Click);
+            // 
+            // menuSegSup
+            // 
+            this.menuSegSup.Name = "menuSegSup";
+            this.menuSegSup.Size = new System.Drawing.Size(287, 22);
+            this.menuSegSup.Text = "Seguimiento a Supervisión";
             // 
             // toolStripSeparator3
             // 
@@ -235,6 +235,7 @@
             this.menubuscSup.Name = "menubuscSup";
             this.menubuscSup.Size = new System.Drawing.Size(235, 22);
             this.menubuscSup.Text = "Una Supervision";
+            this.menubuscSup.Click += new System.EventHandler(this.menubuscSup_Click);
             // 
             // menuBuscarConst
             // 

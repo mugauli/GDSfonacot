@@ -15,8 +15,8 @@ namespace GDSfonacot.forms
     {
         private int guardaractualizar =0;
         private int destinoInt = 0;
-        private int varstatus = 0;
-        public frmBusquedaSupervisiones(int Destino,int status,int guardaactualiza)
+        private int[] varstatus = { 0 };
+        public frmBusquedaSupervisiones(int Destino,int [] status,int guardaactualiza)
         {
             InitializeComponent();
             destinoInt = Destino;
@@ -117,28 +117,28 @@ namespace GDSfonacot.forms
                         }
                         else if (destinoInt == 3)
                         {
-                            //if (guardaractualizar == 0)
-                            //{
-                            //   // forms.formSeguiRespuesta frmSegSup = new forms.formSeguiRespuesta(0);//crea una instancia del formulario
-                            //    frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                            //    frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                            //    frmSegSup.MdiParent = this.ParentForm;
-                            //    frmSegSup.Show();
-                            //    this.Close();
-                            //}
-                            //else
-                            //{
-                            //    forms.formSeguiRespuesta frmSegSup = new forms.formSeguiRespuesta(1);//crea una instancia del formulario
-                            //    frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                            //    frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                            //    frmSegSup.MdiParent = this.ParentForm;
-                            //    frmSegSup.Show();
-                            //    this.Close();
-                            //}
-                            //var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
-                            //frmsup.MdiParent = this.ParentForm;
-                            //frmsup.Show();
-                            //this.Close();
+                            if (guardaractualizar == 0)
+                            {
+                                // forms.frmHistoricoSupervisiones frmhistSup = new forms.frmHistoricoSupervisiones(0);//crea una instancia del formulario
+                                //frmhistSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                                //frmhistSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                //frmhistSup.MdiParent = this.ParentForm;
+                                //frmhistSup.Show();
+                                //this.Close();
+                            }
+                            else
+                            {
+                                //forms.frmHistoricoSupervisiones frmhistSup = new forms.frmHistoricoSupervisiones(1);//crea una instancia del formulario
+                                //frmhistSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                                //frmhistSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                //frmhistSup.MdiParent = this.ParentForm;
+                                //frmhistSup.Show();
+                                //this.Close();
+                            }
+                            var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
+                            frmsup.MdiParent = this.ParentForm;
+                            frmsup.Show();
+                            this.Close();
                         }
                     }
                 }

@@ -100,7 +100,7 @@ namespace GDSfonacot
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("" + ex);
                 return null;
             }
 

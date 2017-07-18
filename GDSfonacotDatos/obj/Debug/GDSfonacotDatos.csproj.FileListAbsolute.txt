@@ -76,6 +76,6 @@ C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacotDatos\bin\Debug\CrystalDec
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacotDatos\bin\Debug\stdole.dll
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacotDatos\bin\Debug\EntityFramework.xml
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacotDatos\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacotDatos\obj\Debug\GDSfonacotDatos.csprojResolveAssemblyReference.cache
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacotDatos\obj\Debug\GDSfonacotDatos.dll
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacotDatos\obj\Debug\GDSfonacotDatos.pdb
+C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacotDatos\obj\Debug\GDSfonacotDatos.csprojResolveAssemblyReference.cache
