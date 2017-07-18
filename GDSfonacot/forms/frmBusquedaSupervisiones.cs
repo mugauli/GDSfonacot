@@ -13,13 +13,15 @@ namespace GDSfonacot.forms
 {
     public partial class frmBusquedaSupervisiones : Form
     {
+        private int guardaractualizar =0;
         private int destinoInt = 0;
         private int varstatus = 0;
-        public frmBusquedaSupervisiones(int Destino,int status)
+        public frmBusquedaSupervisiones(int Destino,int status,int guardaactualiza)
         {
             InitializeComponent();
             destinoInt = Destino;
             varstatus = status;
+            guardaractualizar = guardaactualiza;
             CargarSupervisiones();
         }
         private void CargarSupervisiones()
@@ -73,13 +75,14 @@ namespace GDSfonacot.forms
 
                         if (destinoInt == 1)
                         {
+                           
                             //abrir contestacion de sucursales
                             SeguimientoSup frmSegSup = new SeguimientoSup();//crea una instancia del formulario
                             frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
                             frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
                             frmSegSup.MdiParent = this.ParentForm;
                             frmSegSup.Show();
-
+                            
                             //PersonalSucursales frmPersonsuc = new PersonalSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             //frmPersonsuc.MdiParent = this.ParentForm;
                             //frmPersonsuc.Show();
@@ -88,12 +91,25 @@ namespace GDSfonacot.forms
                         else if (destinoInt == 2)
                         {
                             //
-                            ContestSuc frmconstSuc = new ContestSuc();//crea una instancia del formulario
-                            frmconstSuc.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                            frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                            frmconstSuc.MdiParent = this.ParentForm;
-                            frmconstSuc.Show();
-                            this.Close();
+                            if (guardaractualizar == 0)
+                            {
+                                ContestSuc frmconstSuc = new ContestSuc(0);//crea una instancia del formulario
+                                frmconstSuc.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                                frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                frmconstSuc.MdiParent = this.ParentForm;
+                                frmconstSuc.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                ContestSuc frmconstSuc = new ContestSuc(1);//crea una instancia del formulario
+                                frmconstSuc.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                                frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                frmconstSuc.MdiParent = this.ParentForm;
+                                frmconstSuc.Show();
+                                this.Close();
+
+                            }
                             //var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             //frmsup.MdiParent = this.ParentForm;
                             //frmsup.Show();
@@ -101,13 +117,24 @@ namespace GDSfonacot.forms
                         }
                         else if (destinoInt == 3)
                         {
-                            forms.formSeguiRespuesta frmSegSup = new forms.formSeguiRespuesta();//crea una instancia del formulario
-                            frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                            frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                            frmSegSup.MdiParent = this.ParentForm;
-                            frmSegSup.Show();
-                            this.Close();
-
+                            //if (guardaractualizar == 0)
+                            //{
+                            //   // forms.formSeguiRespuesta frmSegSup = new forms.formSeguiRespuesta(0);//crea una instancia del formulario
+                            //    frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                            //    frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                            //    frmSegSup.MdiParent = this.ParentForm;
+                            //    frmSegSup.Show();
+                            //    this.Close();
+                            //}
+                            //else
+                            //{
+                            //    forms.formSeguiRespuesta frmSegSup = new forms.formSeguiRespuesta(1);//crea una instancia del formulario
+                            //    frmSegSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                            //    frmSegSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                            //    frmSegSup.MdiParent = this.ParentForm;
+                            //    frmSegSup.Show();
+                            //    this.Close();
+                            //}
                             //var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             //frmsup.MdiParent = this.ParentForm;
                             //frmsup.Show();

@@ -9,7 +9,7 @@ namespace GDSfonacotDatos.DTO
     public class DatosBuscarContestacion
     {
         public int Idcontestacion { get; set; }
-        public int IdSupervision { get; set; }
+        public Nullable<int> Idsupervision { get; set; }
         public string NoSupervision { get; set; }
         public Nullable<System.DateTime> FechaSupervision { get; set; }
         public string Inmueble { get; set; }
@@ -23,10 +23,6 @@ namespace GDSfonacotDatos.DTO
         public string Fondofijo { get; set; }
         public string AcuerdosCompromisos { get; set; }
         public string NoOficio { get; set; }
-        public Nullable<int> Idusuariocreador { get; set; }
-        public Nullable<int> Idstatus { get; set; }
-        public Nullable<int> Idsupervisor1 { get; set; }
-        public Nullable<int> Idsupervisor2 { get; set; }
         public short NoSucursal { get; set; }
         public string DireccionRegional { get; set; }
         public string DescripcionSucursal { get; set; }
@@ -37,5 +33,6 @@ namespace GDSfonacotDatos.DTO
         public string Coordinador_Administrativo { get; set; }
         public string Coordinador_Crédito { get; set; }
         public string Coordinador_Cobranza { get; set; }
+        public Nullable<int> Idstatus { get; set; }
     }
 }

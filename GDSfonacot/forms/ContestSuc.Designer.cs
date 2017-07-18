@@ -66,6 +66,7 @@
             this.txtSucursal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
+            this.txthidStatus = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,7 +140,7 @@
             this.toolButImprimir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1362, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1345, 25);
             this.toolStrip1.TabIndex = 277;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -487,13 +488,24 @@
             this.txtNoSupervision.Size = new System.Drawing.Size(279, 20);
             this.txtNoSupervision.TabIndex = 246;
             // 
+            // txthidStatus
+            // 
+            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidStatus.Location = new System.Drawing.Point(915, 41);
+            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidStatus.Name = "txthidStatus";
+            this.txthidStatus.Size = new System.Drawing.Size(18, 20);
+            this.txthidStatus.TabIndex = 281;
+            // 
             // ContestSuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1379, 741);
+            this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.txthidStatus);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txthidIdConst);
             this.Controls.Add(this.txthidIdSup);
@@ -579,5 +591,6 @@
         private System.Windows.Forms.TextBox txtSucursal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNoSupervision;
+        private System.Windows.Forms.TextBox txthidStatus;
     }
 }
