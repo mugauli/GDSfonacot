@@ -155,32 +155,12 @@ namespace GDSfonacot
 
         private void mnuSupContestSuc_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
-            {
-
-                var frmbusquedasup = new frmBusquedaSupervisiones(2,1);//crea una instancia del formulario
-                frmbusquedasup.MdiParent = this;
-                frmbusquedasup.Show();
-            }
-            else
-            {
-                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-            }
+           
         }
 
         private void mnuSupConsultaSuperv_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
-            {
-
-                var frmbusquedasup = new frmBusquedaSupervisiones(3,2);//crea una instancia del formulario
-                frmbusquedasup.MdiParent = this;
-                frmbusquedasup.Show();
-            }
-            else
-            {
-                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-            }
+           
         }
 
         private void mnuSupContestSeguimSuperv_Click(object sender, EventArgs e)
@@ -188,7 +168,7 @@ namespace GDSfonacot
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
             
-                var frmbusquedasup = new frmBusquedaSupervisiones(1,1);//crea una instancia del formulario
+                var frmbusquedasup = new frmBusquedaSupervisiones(1,1,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
             }
@@ -232,6 +212,51 @@ namespace GDSfonacot
                 var frminicioSup = new frmSupervisiom();//crea una instancia del formulario
                 frminicioSup.MdiParent = this;
                 frminicioSup.Show();
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void menuConstSupSuc_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+
+                var frmbusquedasup = new frmBusquedaSupervisiones(2, 1,0);//crea una instancia del formulario
+                frmbusquedasup.MdiParent = this;
+                frmbusquedasup.Show();
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void menuCerrarSup_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+
+                var frmbusquedasup = new frmBusquedaSupervisiones(3, 2,0);//crea una instancia del formulario
+                frmbusquedasup.MdiParent = this;
+                frmbusquedasup.Show();
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void menuBuscarConst_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+
+                var frmbusquedasup = new frmBusquedaSupervisiones(2, 2, 1);//crea una instancia del formulario
+                frmbusquedasup.MdiParent = this;
+                frmbusquedasup.Show();
             }
             else
             {

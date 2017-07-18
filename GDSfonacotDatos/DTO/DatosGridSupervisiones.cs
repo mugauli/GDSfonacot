@@ -12,6 +12,7 @@ namespace GDSfonacotDatos.DTO
         public string NoSupervision { get; set; }
         public Nullable<System.DateTime> FechaSupervision { get; set; }
         public string DescripcionSucursal { get; set; }
+        public string Estatus { get; set; }
 
     }
 }

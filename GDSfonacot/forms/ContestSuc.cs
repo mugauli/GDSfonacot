@@ -14,36 +14,77 @@ namespace GDSfonacot
     
     public partial class ContestSuc : Form
     {
-        
-        
+
+        private int saveorupdate =0;
         public int valor1 = 0;
         public String valor2 = "";
-        public ContestSuc()
+        public ContestSuc(int actualizarconst)
         {
             InitializeComponent();
+            saveorupdate = actualizarconst;
+           
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void ContestSuc_Load(object sender, EventArgs e)
         {
-            LlenarDatos();
+            if (saveorupdate == 0)
+            {
+                LlenarDatos();
+            }
+            else
+            {
+                CargarContestacionSucursal();
+            }
+
+        }
+        private void CargarContestacionSucursal()
+        {
+            var objSupervision = new SupervisionesData();
+            var busqueda = objSupervision.ObtenerDatosContestacionSupervision(valor1);
+            if (busqueda.Result != null)
+            {
+                txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
+                txthidIdConst.Text = busqueda.Result.Idcontestacion.ToString();
+                txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
+                txtDirRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                txtDirEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
+                txtInmueble.Text = busqueda.Result.Inmueble.ToString();
+                txtGesDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
+                txtOriginacion.Text = busqueda.Result.Originacion.ToString();
+                txtTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
+                txtCredito.Text = busqueda.Result.Credito.ToString();
+                txtUTYS.Text = busqueda.Result.Utys.ToString();
+                txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
+                txtCobranza.Text = busqueda.Result.Cobranza.ToString();
+                txtFonFijo.Text = busqueda.Result.Fondofijo.ToString();
+                textAcuerdosCompr.Text = busqueda.Result.AcuerdosCompromisos.ToString();
+                txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
+                txthidStatus.Text = busqueda.Result.Idstatus.ToString();
+                toolButGuardar.Enabled = true;
+                toolButImprimir.Enabled = false;
+
+            }
+
         }
         private void LlenarDatos()
         {
             var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2,2);
+            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2,1);
             if (busqueda.Result != null)
             {
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
                 txthidIdConst.Text = "0";
                 txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtDirRegional.Text = busqueda.Result.Director_Regional.ToString();
-                txtDirEstatal.Text= busqueda.Result.Director_Estatal.ToString();
+                txtDirRegional.Text = (busqueda.Result.Director_Regional !=null ? busqueda.Result.Director_Regional.ToString(): "");
+                txtDirEstatal.Text= (busqueda.Result.Director_Estatal !=null ? busqueda.Result.Director_Estatal.ToString() : "");
                 txtSucursal.Text= busqueda.Result.NoSucursal.ToString() + "- " +busqueda.Result.DescripcionSucursal.ToString();
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
+                txthidStatus.Text = busqueda.Result.Idstatus.ToString();
                 toolButGuardar.Enabled = true;
                 toolButImprimir.Enabled = false;
 
@@ -179,22 +220,22 @@ namespace GDSfonacot
                     
                     toolButGuardar.Enabled = false;
                     toolButImprimir.Enabled = true;
-                    MessageBox.Show("La Contestacion ha sido guardada correctamente,espere la revision del supervisor", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La Contestacion ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //  LimpiarDatos();
-                    var obactualizarsup = new HistorialSupervisiones();
-                    obactualizarsup.IdSupervisiones =Convert.ToInt32(txthidIdSup.Text.Trim());
-                    obactualizarsup.Idstatus = 2;
-                    var actualizarsup = new SupervisionesData().ActualizarSupervision(obactualizarsup);
-                    if (actualizarsup.Code!=0)
-                    {
+                    if (txthidStatus.Text=="5" || txthidStatus.Text=="1") { 
+                        var obactualizarsup = new HistorialSupervisiones();
+                        obactualizarsup.IdSupervisiones =Convert.ToInt32(txthidIdSup.Text.Trim());
+                        obactualizarsup.Idstatus = 2;
+                        var actualizarsup = new SupervisionesData().ActualizarSupervision(obactualizarsup);
+                            if (actualizarsup.Code!=0)
+                            {
                         
-                        MessageBox.Show(gdSupervisiones.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show(gdSupervisiones.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         
+                            }
+                        MessageBox.Show("Favor de esperar a la revisión de un supervisor", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else
-                    {
-                        //La supervision se actualizo a estatus 3, se considera cerrada y ya no se pueden hacer mas contestaciones  a esa supervision
-                    }
+
                 }
 
             }
