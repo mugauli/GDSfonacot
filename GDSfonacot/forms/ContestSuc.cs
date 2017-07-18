@@ -14,8 +14,8 @@ namespace GDSfonacot
     
     public partial class ContestSuc : Form
     {
-        
-        
+
+        private int actualizar = -1;
         public int valor1 = 0;
         public String valor2 = "";
         public ContestSuc()
@@ -29,19 +29,46 @@ namespace GDSfonacot
 
         private void ContestSuc_Load(object sender, EventArgs e)
         {
-            LlenarDatos();
+            if (actualizar==-1)
+            {
+                LlenarDatos();
+            }
+            else
+            {
+
+            }
+        }
+        private void CargarContestacionSucursal()
+        {
+            var objSupervision = new SupervisionesData();
+            var busqueda = objSupervision.ObtenerDatosContestacionSupervision(valor2);
+            if (busqueda.Result != null)
+            {
+                txthidIdSup.Text = busqueda.Result.IdSupervision.ToString();
+                txthidIdConst.Text = busqueda.Result.Idcontestacion.ToString();
+                txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
+                txtDirRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                txtDirEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
+                txtInmueble.Text = busqueda.Result.Inmueble.ToString();
+                txtGesDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
+                toolButGuardar.Enabled = true;
+                toolButImprimir.Enabled = false;
+
+            }
+
         }
         private void LlenarDatos()
         {
             var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2,2);
+            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2,1);
             if (busqueda.Result != null)
             {
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
                 txthidIdConst.Text = "0";
                 txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtDirRegional.Text = busqueda.Result.Director_Regional.ToString();
-                txtDirEstatal.Text= busqueda.Result.Director_Estatal.ToString();
+                txtDirRegional.Text = (busqueda.Result.Director_Regional !=null ? busqueda.Result.Director_Regional.ToString(): "");
+                txtDirEstatal.Text= (busqueda.Result.Director_Estatal !=null ? busqueda.Result.Director_Estatal.ToString() : "");
                 txtSucursal.Text= busqueda.Result.NoSucursal.ToString() + "- " +busqueda.Result.DescripcionSucursal.ToString();
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
                 toolButGuardar.Enabled = true;

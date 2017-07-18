@@ -55,6 +55,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.menuConstSupSuc = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCerrarSup = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSegSup = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuBuscar = new System.Windows.Forms.ToolStripMenuItem();
+            this.menubuscSup = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguimientosDeSupervisionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,6 +72,7 @@
             // 
             this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuModulos,
+            this.toolStripMenuItem4,
             this.menuCatalogos,
             this.menuayuda});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
@@ -77,11 +85,14 @@
             // 
             this.menuModulos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuInicioSup,
-            this.mnuBuscarSuperv,
-            this.menuHistsupOp,
+            this.menuConstSupSuc,
+            this.menuSegSup,
+            this.menuCerrarSup,
             this.toolStripSeparator3,
-            this.menuFichasPerson,
+            this.mnuBuscarSuperv,
             this.toolStripSeparator4,
+            this.menuHistsupOp,
+            this.menuFichasPerson,
             this.menuMinutas,
             this.menuReportes,
             this.toolStripSeparator5,
@@ -96,7 +107,7 @@
             // 
             this.menuInicioSup.Name = "menuInicioSup";
             this.menuInicioSup.Size = new System.Drawing.Size(287, 22);
-            this.menuInicioSup.Text = "Inicio Supervisión";
+            this.menuInicioSup.Text = "Crear una Supervisión";
             this.menuInicioSup.Click += new System.EventHandler(this.menuInicioSup_Click);
             // 
             // mnuBuscarSuperv
@@ -204,7 +215,7 @@
             // 
             this.submenuSuc.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuSuc.Name = "submenuSuc";
-            this.submenuSuc.Size = new System.Drawing.Size(129, 22);
+            this.submenuSuc.Size = new System.Drawing.Size(152, 22);
             this.submenuSuc.Text = "Sucursales";
             this.submenuSuc.Click += new System.EventHandler(this.submenuSuc_Click);
             // 
@@ -212,14 +223,14 @@
             // 
             this.submenuUsers.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuUsers.Name = "submenuUsers";
-            this.submenuUsers.Size = new System.Drawing.Size(129, 22);
+            this.submenuUsers.Size = new System.Drawing.Size(152, 22);
             this.submenuUsers.Text = "Usuarios";
             this.submenuUsers.Click += new System.EventHandler(this.submenuUsers_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(126, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
             // 
             // menuayuda
             // 
@@ -294,6 +305,54 @@
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
+            // menuConstSupSuc
+            // 
+            this.menuConstSupSuc.Name = "menuConstSupSuc";
+            this.menuConstSupSuc.Size = new System.Drawing.Size(287, 22);
+            this.menuConstSupSuc.Text = "Contestar una Supervisión";
+            this.menuConstSupSuc.Click += new System.EventHandler(this.menuConstSupSuc_Click);
+            // 
+            // menuCerrarSup
+            // 
+            this.menuCerrarSup.Name = "menuCerrarSup";
+            this.menuCerrarSup.Size = new System.Drawing.Size(287, 22);
+            this.menuCerrarSup.Text = "Cerrar una Supervisión";
+            this.menuCerrarSup.Click += new System.EventHandler(this.menuCerrarSup_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menubuscSup,
+            this.menuBuscar,
+            this.seguimientosDeSupervisionToolStripMenuItem});
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(54, 20);
+            this.toolStripMenuItem4.Text = "Buscar";
+            // 
+            // menuSegSup
+            // 
+            this.menuSegSup.Name = "menuSegSup";
+            this.menuSegSup.Size = new System.Drawing.Size(287, 22);
+            this.menuSegSup.Text = "Seguimiento a Supervisión";
+            // 
+            // menuBuscar
+            // 
+            this.menuBuscar.Name = "menuBuscar";
+            this.menuBuscar.Size = new System.Drawing.Size(235, 22);
+            this.menuBuscar.Text = "Contestaciones de Supervision";
+            // 
+            // menubuscSup
+            // 
+            this.menubuscSup.Name = "menubuscSup";
+            this.menubuscSup.Size = new System.Drawing.Size(235, 22);
+            this.menubuscSup.Text = "Una Supervision";
+            // 
+            // seguimientosDeSupervisionToolStripMenuItem
+            // 
+            this.seguimientosDeSupervisionToolStripMenuItem.Name = "seguimientosDeSupervisionToolStripMenuItem";
+            this.seguimientosDeSupervisionToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.seguimientosDeSupervisionToolStripMenuItem.Text = "Seguimientos de Supervision";
+            // 
             // MDIPrincip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,5 +406,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.ToolStripMenuItem pruebaResponsiveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuConstSupSuc;
+        private System.Windows.Forms.ToolStripMenuItem menuSegSup;
+        private System.Windows.Forms.ToolStripMenuItem menuCerrarSup;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem menubuscSup;
+        private System.Windows.Forms.ToolStripMenuItem menuBuscar;
+        private System.Windows.Forms.ToolStripMenuItem seguimientosDeSupervisionToolStripMenuItem;
     }
 }
