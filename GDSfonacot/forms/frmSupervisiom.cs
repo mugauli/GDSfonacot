@@ -13,9 +13,13 @@ namespace GDSfonacot.forms
 {
     public partial class frmSupervisiom : Form
     {
-        public frmSupervisiom()
+        private int saveorupdate = 0;
+        public int valor1 = 0;
+        public String valor2 = "";
+        public frmSupervisiom(int actualizarconst)
         {
             InitializeComponent();
+            saveorupdate = actualizarconst;
         }
 
         private void frmSupervisiom_Load(object sender, EventArgs e)
@@ -23,6 +27,11 @@ namespace GDSfonacot.forms
             LoadingCatSucursales();//load sucursales list of table
             LoadingCatSupervisor2();
             LoadingCatSupervisor1();
+            if (saveorupdate == 1)
+            {
+               ConsultarDatos(valor2);
+            }
+            
         }
 
         private void toolButNuevo_Click(object sender, EventArgs e)
@@ -84,7 +93,7 @@ namespace GDSfonacot.forms
                     toolButGuardar.Enabled = false;
                     toolButImprimir.Enabled = true;
                     MessageBox.Show("La supervision ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarDatos();
+                    //LimpiarDatos();
                 }
 
             }
@@ -267,12 +276,13 @@ namespace GDSfonacot.forms
 
         private void ConsultarDatos(String Nosupervision)
         {
-            LimpiarDatos();
+            //LimpiarDatos();
             var objSupervision = new SupervisionesData();
             var busqueda = objSupervision.BuscarSupervision(Nosupervision);
             if (busqueda.Result != null)
             {
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
+                txthidStatus.Text = busqueda.Result.Idstatus.ToString();
                 cmbSucursales.SelectedValue = busqueda.Result.IdSucursal;
                 txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
                 dtFechaSupervision.Value = busqueda.Result.FechaSupervision.Value;

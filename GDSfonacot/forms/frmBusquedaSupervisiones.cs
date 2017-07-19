@@ -119,26 +119,44 @@ namespace GDSfonacot.forms
                         {
                             if (guardaractualizar == 0)
                             {
-                                // forms.frmHistoricoSupervisiones frmhistSup = new forms.frmHistoricoSupervisiones(0);//crea una instancia del formulario
-                                //frmhistSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                                //frmhistSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                                //frmhistSup.MdiParent = this.ParentForm;
-                                //frmhistSup.Show();
-                                //this.Close();
+                                forms.frmHistoricoSupervisiones frmhistSup = new forms.frmHistoricoSupervisiones(0);//crea una instancia del formulario
+                                frmhistSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                                frmhistSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                frmhistSup.MdiParent = this.ParentForm;
+                                frmhistSup.Show();
+                                this.Close();
                             }
                             else
                             {
-                                //forms.frmHistoricoSupervisiones frmhistSup = new forms.frmHistoricoSupervisiones(1);//crea una instancia del formulario
-                                //frmhistSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
-                                //frmhistSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
-                                //frmhistSup.MdiParent = this.ParentForm;
-                                //frmhistSup.Show();
-                                //this.Close();
+                                forms.frmHistoricoSupervisiones frmhistSup = new forms.frmHistoricoSupervisiones(1);//crea una instancia del formulario
+                                frmhistSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                                frmhistSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                frmhistSup.MdiParent = this.ParentForm;
+                                frmhistSup.Show();
+                                this.Close();
                             }
-                            var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
-                            frmsup.MdiParent = this.ParentForm;
-                            frmsup.Show();
-                            this.Close();
+                        }
+
+                        else if (destinoInt == 4)
+                        {
+                            if (guardaractualizar == 0)
+                            {
+                                forms.frmSupervisiom frmhistSup = new forms.frmSupervisiom(0);//crea una instancia del formulario
+                                frmhistSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                                frmhistSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                frmhistSup.MdiParent = this.ParentForm;
+                                frmhistSup.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                forms.frmSupervisiom frmhistSup = new forms.frmSupervisiom(1);//crea una instancia del formulario
+                                frmhistSup.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
+                                frmhistSup.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
+                                frmhistSup.MdiParent = this.ParentForm;
+                                frmhistSup.Show();
+                                this.Close();
+                            }
                         }
                     }
                 }

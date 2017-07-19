@@ -40,7 +40,6 @@
             this.mnuSupContestSeguimSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSupConsultaSuperv = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFichasPerson = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMinutas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReportes = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +61,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -91,7 +91,6 @@
             this.toolStripSeparator3,
             this.mnuBuscarSuperv,
             this.toolStripSeparator4,
-            this.menuHistsupOp,
             this.menuFichasPerson,
             this.menuMinutas,
             this.menuReportes,
@@ -106,34 +105,34 @@
             // menuInicioSup
             // 
             this.menuInicioSup.Name = "menuInicioSup";
-            this.menuInicioSup.Size = new System.Drawing.Size(287, 22);
+            this.menuInicioSup.Size = new System.Drawing.Size(214, 22);
             this.menuInicioSup.Text = "Crear una Supervisión";
             this.menuInicioSup.Click += new System.EventHandler(this.menuInicioSup_Click);
             // 
             // menuConstSupSuc
             // 
             this.menuConstSupSuc.Name = "menuConstSupSuc";
-            this.menuConstSupSuc.Size = new System.Drawing.Size(287, 22);
+            this.menuConstSupSuc.Size = new System.Drawing.Size(214, 22);
             this.menuConstSupSuc.Text = "Contestar una Supervisión";
             this.menuConstSupSuc.Click += new System.EventHandler(this.menuConstSupSuc_Click);
             // 
             // menuCerrarSup
             // 
             this.menuCerrarSup.Name = "menuCerrarSup";
-            this.menuCerrarSup.Size = new System.Drawing.Size(287, 22);
+            this.menuCerrarSup.Size = new System.Drawing.Size(214, 22);
             this.menuCerrarSup.Text = "Cerrar una Supervisión";
             this.menuCerrarSup.Click += new System.EventHandler(this.menuCerrarSup_Click);
             // 
             // menuSegSup
             // 
             this.menuSegSup.Name = "menuSegSup";
-            this.menuSegSup.Size = new System.Drawing.Size(287, 22);
+            this.menuSegSup.Size = new System.Drawing.Size(214, 22);
             this.menuSegSup.Text = "Seguimiento a Supervisión";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(284, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(211, 6);
             // 
             // mnuBuscarSuperv
             // 
@@ -142,7 +141,7 @@
             this.mnuSupContestSeguimSuperv,
             this.mnuSupConsultaSuperv});
             this.mnuBuscarSuperv.Name = "mnuBuscarSuperv";
-            this.mnuBuscarSuperv.Size = new System.Drawing.Size(287, 22);
+            this.mnuBuscarSuperv.Size = new System.Drawing.Size(214, 22);
             this.mnuBuscarSuperv.Text = "Buscar Supervisiones";
             // 
             // mnuSupContestSuc
@@ -169,20 +168,12 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(284, 6);
-            // 
-            // menuHistsupOp
-            // 
-            this.menuHistsupOp.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuHistsupOp.Name = "menuHistsupOp";
-            this.menuHistsupOp.Size = new System.Drawing.Size(287, 22);
-            this.menuHistsupOp.Text = "Histórico de Supervisión de Operaciones";
-            this.menuHistsupOp.Click += new System.EventHandler(this.menuHistsupOp_Click);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(211, 6);
             // 
             // menuFichasPerson
             // 
             this.menuFichasPerson.Name = "menuFichasPerson";
-            this.menuFichasPerson.Size = new System.Drawing.Size(287, 22);
+            this.menuFichasPerson.Size = new System.Drawing.Size(214, 22);
             this.menuFichasPerson.Text = "Fichas Personal";
             this.menuFichasPerson.Click += new System.EventHandler(this.menuFichasPerson_Click);
             // 
@@ -190,33 +181,33 @@
             // 
             this.menuMinutas.ImageTransparentColor = System.Drawing.Color.Black;
             this.menuMinutas.Name = "menuMinutas";
-            this.menuMinutas.Size = new System.Drawing.Size(287, 22);
+            this.menuMinutas.Size = new System.Drawing.Size(214, 22);
             this.menuMinutas.Text = "Minuta de Trabajo";
             this.menuMinutas.Click += new System.EventHandler(this.menuMinutas_Click);
             // 
             // menuReportes
             // 
             this.menuReportes.Name = "menuReportes";
-            this.menuReportes.Size = new System.Drawing.Size(287, 22);
+            this.menuReportes.Size = new System.Drawing.Size(214, 22);
             this.menuReportes.Text = "Reportes";
             this.menuReportes.Click += new System.EventHandler(this.menuReportes_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(284, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(211, 6);
             // 
             // menuSalir
             // 
             this.menuSalir.Name = "menuSalir";
-            this.menuSalir.Size = new System.Drawing.Size(287, 22);
+            this.menuSalir.Size = new System.Drawing.Size(214, 22);
             this.menuSalir.Text = "Cerrar Aplicativo";
             this.menuSalir.Click += new System.EventHandler(this.menuSalir_Click);
             // 
             // pruebaResponsiveToolStripMenuItem
             // 
             this.pruebaResponsiveToolStripMenuItem.Name = "pruebaResponsiveToolStripMenuItem";
-            this.pruebaResponsiveToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.pruebaResponsiveToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.pruebaResponsiveToolStripMenuItem.Text = "Prueba responsive";
             this.pruebaResponsiveToolStripMenuItem.Click += new System.EventHandler(this.pruebaResponsiveToolStripMenuItem_Click);
             // 
@@ -225,7 +216,8 @@
             this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menubuscSup,
             this.menuBuscarConst,
-            this.menubuscSeguim});
+            this.menubuscSeguim,
+            this.menuHistsupOp});
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(70, 20);
             this.toolStripMenuItem4.Text = "Consultar";
@@ -265,7 +257,7 @@
             // 
             this.submenuSuc.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuSuc.Name = "submenuSuc";
-            this.submenuSuc.Size = new System.Drawing.Size(129, 22);
+            this.submenuSuc.Size = new System.Drawing.Size(152, 22);
             this.submenuSuc.Text = "Sucursales";
             this.submenuSuc.Click += new System.EventHandler(this.submenuSuc_Click);
             // 
@@ -273,14 +265,14 @@
             // 
             this.submenuUsers.ImageTransparentColor = System.Drawing.Color.Black;
             this.submenuUsers.Name = "submenuUsers";
-            this.submenuUsers.Size = new System.Drawing.Size(129, 22);
+            this.submenuUsers.Size = new System.Drawing.Size(152, 22);
             this.submenuUsers.Text = "Usuarios";
             this.submenuUsers.Click += new System.EventHandler(this.submenuUsers_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(126, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
             // 
             // menuayuda
             // 
@@ -355,6 +347,13 @@
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
+            // menuHistsupOp
+            // 
+            this.menuHistsupOp.Name = "menuHistsupOp";
+            this.menuHistsupOp.Size = new System.Drawing.Size(235, 22);
+            this.menuHistsupOp.Text = "Histórico de una Supervisión";
+            this.menuHistsupOp.Click += new System.EventHandler(this.menuHistsupOp_Click);
+            // 
             // MDIPrincip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,7 +382,6 @@
 
         private System.Windows.Forms.MenuStrip menuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem menuModulos;
-        private System.Windows.Forms.ToolStripMenuItem menuHistsupOp;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem menuInicioSup;
         private System.Windows.Forms.ToolStripMenuItem menuFichasPerson;
@@ -415,5 +413,6 @@
         private System.Windows.Forms.ToolStripMenuItem menubuscSup;
         private System.Windows.Forms.ToolStripMenuItem menuBuscarConst;
         private System.Windows.Forms.ToolStripMenuItem menubuscSeguim;
+        private System.Windows.Forms.ToolStripMenuItem menuHistsupOp;
     }
 }

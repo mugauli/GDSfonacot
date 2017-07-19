@@ -65,6 +65,7 @@
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txthidStatus = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.Controls.Add(this.txthidStatus, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.cmbSupervisor2, 6, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbSupervisor1, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbSucursales, 1, 1);
@@ -604,6 +606,16 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Sucursal";
             // 
+            // txthidStatus
+            // 
+            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidStatus.Location = new System.Drawing.Point(4, 54);
+            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidStatus.Name = "txthidStatus";
+            this.txthidStatus.Size = new System.Drawing.Size(12, 20);
+            this.txthidStatus.TabIndex = 282;
+            // 
             // frmSupervisiom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,5 +673,6 @@
         private System.Windows.Forms.ToolStripButton toolButNuevo;
         private System.Windows.Forms.ToolStripButton toolButGuardar;
         private System.Windows.Forms.ToolStripButton toolButImprimir;
+        private System.Windows.Forms.TextBox txthidStatus;
     }
 }

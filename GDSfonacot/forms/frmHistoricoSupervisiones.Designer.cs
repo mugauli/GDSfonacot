@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoricoSupervisiones));
             this.txtRepresentaciones = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSucursal = new System.Windows.Forms.TextBox();
@@ -118,8 +119,13 @@
             this.txtTotalVentanillas = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTotalAnalistas = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolButNuevo = new System.Windows.Forms.ToolStripButton();
+            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
+            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtRepresentaciones
@@ -407,6 +413,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pbxSucursal, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label36, 7, 14);
             this.tableLayoutPanel1.Controls.Add(this.txtSupervisor2, 7, 13);
@@ -1446,6 +1453,44 @@
             this.txtTotalAnalistas.Size = new System.Drawing.Size(144, 22);
             this.txtTotalAnalistas.TabIndex = 29;
             // 
+            // toolStrip1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 3);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolButNuevo,
+            this.toolButGuardar,
+            this.toolButImprimir});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(324, 20);
+            this.toolStrip1.TabIndex = 283;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolButNuevo
+            // 
+            this.toolButNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButNuevo.Name = "toolButNuevo";
+            this.toolButNuevo.Size = new System.Drawing.Size(46, 17);
+            this.toolButNuevo.Text = "Nuevo";
+            // 
+            // toolButGuardar
+            // 
+            this.toolButGuardar.Enabled = false;
+            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
+            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButGuardar.Name = "toolButGuardar";
+            this.toolButGuardar.Size = new System.Drawing.Size(69, 17);
+            this.toolButGuardar.Text = "Guardar";
+            // 
+            // toolButImprimir
+            // 
+            this.toolButImprimir.Enabled = false;
+            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
+            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButImprimir.Name = "toolButImprimir";
+            this.toolButImprimir.Size = new System.Drawing.Size(73, 17);
+            this.toolButImprimir.Text = "Imprimir";
+            // 
             // frmHistoricoSupervisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1454,11 +1499,13 @@
             this.ClientSize = new System.Drawing.Size(1257, 741);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmHistoricoSupervisiones";
-            this.Text = "frmHistoricoSupervisiones";
+            this.Text = "Histórico de una supervisión";
             this.Load += new System.EventHandler(this.frmHistoricoSupervisiones_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1556,5 +1603,9 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolButNuevo;
+        private System.Windows.Forms.ToolStripButton toolButGuardar;
+        private System.Windows.Forms.ToolStripButton toolButImprimir;
     }
 }

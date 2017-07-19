@@ -12,9 +12,13 @@ namespace GDSfonacot.forms
 {
     public partial class frmHistoricoSupervisiones : Form
     {
-        public frmHistoricoSupervisiones()
+        private int saveorupdate = 0;
+        public int valor1 = 0;
+        public String valor2 = "";
+        public frmHistoricoSupervisiones(int actualizarconst)
         {
             InitializeComponent();
+            saveorupdate = actualizarconst;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
