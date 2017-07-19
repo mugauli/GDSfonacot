@@ -89,6 +89,7 @@ namespace GDSfonacot
         {
             try
             {
+                if (blob == null) return null;
                 MemoryStream mStream = new MemoryStream();
 
 
@@ -104,9 +105,10 @@ namespace GDSfonacot
                 return null;
             }
 
+
         }
 
-       
+
         private void CargarGridEmpleados(int tipoperfil)
         {
             var _EmpleadosData = new EmpleadosData();

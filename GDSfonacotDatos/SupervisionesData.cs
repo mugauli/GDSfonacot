@@ -515,6 +515,94 @@ namespace GDSfonacotDatos
             }
         }
 
+        public MethodResponse<DatosHistSupervision> ObtenerDatosHistoricoSupervision(int Idsupervision)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<DatosHistSupervision> { Code = 0 };
+
+                    var consultarContestacionDB = context.HistorialSupervisiones
+                        .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc })
+                        .Join(context.ContestacionesSuperv_Sucursales, tabla1 => tabla1.HistSup.IdSupervisiones, tabla2 => tabla2.Idsupervision, (HistSup2, Constsuc) => new { HistSup2, Constsuc })
+                       .Join(context.Usuarios, tabla1 => tabla1.HistSup2.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup3, Usu1) => new { HistSup3, Usu1 })
+                       .Join(context.Usuarios, tabla1 => tabla1.HistSup3.HistSup2.HistSup.Idsupervisor2, tabla3 => tabla3.IdUsuario, (HistSup4, Usu2) => new { HistSup4, Usu2 })
+                        .Where(q1 => (q1.HistSup4.HistSup3.HistSup2.HistSup.IdSupervisiones == Idsupervision && q1.HistSup4.Usu1.IdUsuario == q1.HistSup4.HistSup3.HistSup2.HistSup.Idsupervisor1 && q1.Usu2.IdUsuario == q1.HistSup4.HistSup3.HistSup2.HistSup.Idsupervisor2))
+                        .Select(x => new DatosHistSupervision
+                        {
+                            //datos de la supervision original
+                            Idsupervision = x.HistSup4.HistSup3.Constsuc.Idsupervision,
+                            Supervisor1 = x.HistSup4.Usu1.Nombre_Usuario,
+                            Supervisor2 = x.Usu2.Nombre_Usuario,            
+                            NoSupervision = x.HistSup4.HistSup3.HistSup2.HistSup.NoSupervision,
+                            //datos de la contestacion
+                            FechaSupervision = x.HistSup4.HistSup3.HistSup2.HistSup.FechaSupervision,
+                            Idcontestacion = x.HistSup4.HistSup3.Constsuc.Idcontestacion,
+                            Inmueble = x.HistSup4.HistSup3.Constsuc.Inmueble,
+                            Gestion_direccion = x.HistSup4.HistSup3.Constsuc.Gestion_direccion,
+                            Originacion = x.HistSup4.HistSup3.Constsuc.Originacion,
+                            Tarjetas_transfer = x.HistSup4.HistSup3.Constsuc.Tarjetas_transfer,
+                            Credito = x.HistSup4.HistSup3.Constsuc.Credito,
+                            Utys = x.HistSup4.HistSup3.Constsuc.Utys,
+                            Promocionales = x.HistSup4.HistSup3.Constsuc.Promocionales,
+                            Cobranza = x.HistSup4.HistSup3.Constsuc.Cobranza,
+                            Fondofijo = x.HistSup4.HistSup3.Constsuc.Fondofijo,
+                            AcuerdosCompromisos = x.HistSup4.HistSup3.Constsuc.AcuerdosCompromisos,
+                            NoOficio = x.HistSup4.HistSup3.Constsuc.NoOficio,
+                            Idstatus = x.HistSup4.HistSup3.HistSup2.HistSup.Idstatus,
+                            //datos la sucursal
+                             DescripcionSucursal = x.HistSup4.HistSup3.HistSup2.Suc.DescripcionSucursal,
+                            NoSucursal = x.HistSup4.HistSup3.HistSup2.Suc.NoSucursal,
+                            Dirección=x.HistSup4.HistSup3.HistSup2.Suc.Dirección,
+                            Representaciones=x.HistSup4.HistSup3.HistSup2.Suc.Representaciones,
+                            DireccionRegional=x.HistSup4.HistSup3.HistSup2.Suc.DireccionRegional,
+                            Director_Estatal = x.HistSup4.HistSup3.HistSup2.Suc.Director_Estatal,
+                            Director_Regional = x.HistSup4.HistSup3.HistSup2.Suc.Director_Regional,
+                            Coordinador_Administrativo=x.HistSup4.HistSup3.HistSup2.Suc.Coordinador_Administrativo,
+                            Coordinador_Cobranza=x.HistSup4.HistSup3.HistSup2.Suc.Coordinador_Cobranza,
+                            Coordinador_Crédito=x.HistSup4.HistSup3.HistSup2.Suc.Coordinador_Crédito,
+                            Analistas=x.HistSup4.HistSup3.HistSup2.Suc.Analistas,
+                            Ventanillas=x.HistSup4.HistSup3.HistSup2.Suc.Ventanillas,
+                            Analistas_Otorgamiento_de_Crédito=x.HistSup4.HistSup3.HistSup2.Suc.Analistas_Otorgamiento_de_Crédito,
+                            Analistas_Administrativo_y_SAM=x.HistSup4.HistSup3.HistSup2.Suc.Analistas_Administrativo_y_SAM,
+                            Analistas_Crédito_Control_Documental=x.HistSup4.HistSup3.HistSup2.Suc.Analistas_Crédito_Control_Documental,
+                            Analistas_Cobranza=x.HistSup4.HistSup3.HistSup2.Suc.Analistas_Cobranza,
+                            Empresas_Afiliadas=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Afiliadas,
+                            Trabajadores_Afiliados=x.HistSup4.HistSup3.HistSup2.Suc.Trabajadores_Afiliados,
+                            Potencial_de_Empresas=x.HistSup4.HistSup3.HistSup2.Suc.Potencial_de_Empresas,
+                            Potencial_de_Trabajadores=x.HistSup4.HistSup3.HistSup2.Suc.Potencial_de_Trabajadores,
+                            Empresas_Status_1=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Status_1,
+                            Empresas_Status_18=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Status_18,
+                            Empresas_Status_21=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Status_21,
+                            Empresas_Status_30=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Status_30,
+                            Meta_Anual=x.HistSup4.HistSup3.HistSup2.Suc.Meta_Anual,
+                            Meta_Mensual=x.HistSup4.HistSup3.HistSup2.Suc.Meta_Mensual,
+                            Colocación_Anual=x.HistSup4.HistSup3.HistSup2.Suc.Colocación_Anual,
+                            Colocación_Mensual=x.HistSup4.HistSup3.HistSup2.Suc.Colocación_Mensual,
+                            Fecha_baja=x.HistSup4.HistSup3.HistSup2.Suc.Fecha_baja,
+                            Meta_Acumulada_Porcentaje=x.HistSup4.HistSup3.HistSup2.Suc.Meta_Acumulada_Porcentaje,
+                            Cobranza_Meta_Anual=x.HistSup4.HistSup3.HistSup2.Suc.Cobranza_Meta_Anual,
+                            Cobranza_Porcentaje_Meta=x.HistSup4.HistSup3.HistSup2.Suc.Cobranza_Porcentaje_Meta,
+                            Cobranza_Cumplimiento_Meta=x.HistSup4.HistSup3.HistSup2.Suc.Cobranza_Cumplimiento_Meta,
+                            IdRegional=x.HistSup4.HistSup3.HistSup2.Suc.IdRegional,
+                            Fotografia=x.HistSup4.HistSup3.HistSup2.Suc.Fotografia
+                            
+
+                        }).SingleOrDefault();
+
+                    if (consultarContestacionDB != null) response.Result = consultarContestacionDB;
+                    return response;
+                    //  response.Result = HistoricoSucursalesDB;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<DatosHistSupervision> { Code = -100, Message = ex.Message };
+            }
+        }
 
         public MethodResponse<DatosBuscarSupervision> ObtenerDatosSupervision(int IdSupervisiones, string filter, int clavestatus)
         {

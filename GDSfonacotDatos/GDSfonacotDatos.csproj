@@ -95,6 +95,7 @@
     <Compile Include="DTO\DatosBuscarSupervision.cs" />
     <Compile Include="DTO\DatosComboSucursales.cs" />
     <Compile Include="DTO\DatosGridSupervisiones.cs" />
+    <Compile Include="DTO\DatosHistSupervision.cs" />
     <Compile Include="DTO\DatosSupervisores.cs" />
     <Compile Include="DTO\DatosUsuario.cs" />
     <Compile Include="DTO\EmpleadosDGV.cs" />

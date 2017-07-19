@@ -50,6 +50,9 @@
             this.txtCoordinadorCobranza = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolButReasignar = new System.Windows.Forms.ToolStripButton();
+            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
             this.pbxSucursal = new System.Windows.Forms.PictureBox();
             this.label36 = new System.Windows.Forms.Label();
             this.txtSupervisor2 = new System.Windows.Forms.TextBox();
@@ -119,13 +122,11 @@
             this.txtTotalVentanillas = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTotalAnalistas = new System.Windows.Forms.TextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolButNuevo = new System.Windows.Forms.ToolStripButton();
-            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
-            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
+            this.txthidStatus = new System.Windows.Forms.TextBox();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.SuspendLayout();
             // 
             // txtRepresentaciones
@@ -190,7 +191,6 @@
             this.txtDireccionRegional.Name = "txtDireccionRegional";
             this.txtDireccionRegional.Size = new System.Drawing.Size(144, 22);
             this.txtDireccionRegional.TabIndex = 13;
-            this.txtDireccionRegional.TextChanged += new System.EventHandler(this.txtDireccionRegional_TextChanged);
             // 
             // label1
             // 
@@ -205,7 +205,6 @@
             this.label1.Size = new System.Drawing.Size(296, 30);
             this.label1.TabIndex = 10;
             this.label1.Text = "No de Supervisión";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNoSupervision
             // 
@@ -219,7 +218,6 @@
             this.txtNoSupervision.Name = "txtNoSupervision";
             this.txtNoSupervision.Size = new System.Drawing.Size(296, 22);
             this.txtNoSupervision.TabIndex = 9;
-            this.txtNoSupervision.TextChanged += new System.EventHandler(this.txtNoSupervision_TextChanged);
             // 
             // label5
             // 
@@ -413,6 +411,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel1.Controls.Add(this.txthidStatus, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdSup, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pbxSucursal, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label36, 7, 14);
@@ -554,8 +554,36 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1257, 741);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // toolStrip1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 3);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolButReasignar,
+            this.toolButImprimir});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(324, 20);
+            this.toolStrip1.TabIndex = 283;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolButReasignar
+            // 
+            this.toolButReasignar.Enabled = false;
+            this.toolButReasignar.Image = ((System.Drawing.Image)(resources.GetObject("toolButReasignar.Image")));
+            this.toolButReasignar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButReasignar.Name = "toolButReasignar";
+            this.toolButReasignar.Size = new System.Drawing.Size(145, 17);
+            this.toolButReasignar.Text = "Reasignar Supervision ";
+            // 
+            // toolButImprimir
+            // 
+            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
+            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButImprimir.Name = "toolButImprimir";
+            this.toolButImprimir.Size = new System.Drawing.Size(73, 17);
+            this.toolButImprimir.Text = "Imprimir";
+            
             // pbxSucursal
             // 
             this.pbxSucursal.BackColor = System.Drawing.Color.White;
@@ -566,7 +594,7 @@
             this.pbxSucursal.Name = "pbxSucursal";
             this.tableLayoutPanel1.SetRowSpan(this.pbxSucursal, 8);
             this.pbxSucursal.Size = new System.Drawing.Size(298, 234);
-            this.pbxSucursal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbxSucursal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSucursal.TabIndex = 282;
             this.pbxSucursal.TabStop = false;
             // 
@@ -748,7 +776,6 @@
             this.txtUtys.Name = "txtUtys";
             this.txtUtys.Size = new System.Drawing.Size(1208, 92);
             this.txtUtys.TabIndex = 103;
-            this.txtUtys.TextChanged += new System.EventHandler(this.txtUtys_TextChanged);
             // 
             // label43
             // 
@@ -1453,43 +1480,25 @@
             this.txtTotalAnalistas.Size = new System.Drawing.Size(144, 22);
             this.txtTotalAnalistas.TabIndex = 29;
             // 
-            // toolStrip1
+            // txthidStatus
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 3);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolButNuevo,
-            this.toolButGuardar,
-            this.toolButImprimir});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(324, 20);
-            this.toolStrip1.TabIndex = 283;
-            this.toolStrip1.Text = "toolStrip1";
+            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidStatus.Location = new System.Drawing.Point(4, 54);
+            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidStatus.Name = "txthidStatus";
+            this.txthidStatus.Size = new System.Drawing.Size(12, 20);
+            this.txthidStatus.TabIndex = 285;
             // 
-            // toolButNuevo
+            // txthidIdSup
             // 
-            this.toolButNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButNuevo.Name = "toolButNuevo";
-            this.toolButNuevo.Size = new System.Drawing.Size(46, 17);
-            this.toolButNuevo.Text = "Nuevo";
-            // 
-            // toolButGuardar
-            // 
-            this.toolButGuardar.Enabled = false;
-            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
-            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButGuardar.Name = "toolButGuardar";
-            this.toolButGuardar.Size = new System.Drawing.Size(69, 17);
-            this.toolButGuardar.Text = "Guardar";
-            // 
-            // toolButImprimir
-            // 
-            this.toolButImprimir.Enabled = false;
-            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
-            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButImprimir.Name = "toolButImprimir";
-            this.toolButImprimir.Size = new System.Drawing.Size(73, 17);
-            this.toolButImprimir.Text = "Imprimir";
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(4, 24);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
+            this.txthidIdSup.TabIndex = 284;
             // 
             // frmHistoricoSupervisiones
             // 
@@ -1503,9 +1512,9 @@
             this.Load += new System.EventHandler(this.frmHistoricoSupervisiones_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1604,8 +1613,9 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolButNuevo;
-        private System.Windows.Forms.ToolStripButton toolButGuardar;
+        private System.Windows.Forms.ToolStripButton toolButReasignar;
         private System.Windows.Forms.ToolStripButton toolButImprimir;
+        private System.Windows.Forms.TextBox txthidStatus;
+        private System.Windows.Forms.TextBox txthidIdSup;
     }
 }
