@@ -64,6 +64,24 @@ namespace GDSfonacot.forms
 
 
         }
+        private bool ValidateEmpleado(out string mensaje)
+        {
+            mensaje = string.Empty;
+
+
+            if (txtNombre.Text == string.Empty) mensaje += "Favor de introducir el nombre\n";
+            if (txtGafete.Text == string.Empty) mensaje += "Favor de introducir el gafete\n";
+            if (txtJornada.Text == string.Empty) mensaje += "Favor de introducir la jornada\n";
+            if (txtHorario.Text == string.Empty) mensaje += "Favor de introducir el horario\n";
+            if (cmbRegional.SelectedIndex == -1) mensaje += "Favor de seleccionar regional\n";
+            if (cmbSucursal.SelectedIndex == -1) mensaje += "Favor de seleccionar sucursal\n";
+            if (cmbTipoPersonal.SelectedIndex == -1) mensaje += "Favor de seleccionar tipo de personal\n";
+            if (cmbActividad.SelectedIndex == -1) mensaje += "Favor de seleccionar actividad\n";
+            if (cmbPerfilSistema.SelectedIndex == -1) mensaje += "Favor de seleccionar perfil en sistema\n";
+            if (cmbArea.SelectedIndex == -1) mensaje += "Favor de seleccionar área\n";
+
+            return !(mensaje == string.Empty);
+        }
 
         private void LoadingCatalogos()
         {
@@ -171,24 +189,7 @@ namespace GDSfonacot.forms
 
         }
 
-        private bool ValidateEmpleado(out string mensaje)
-        {
-            mensaje = string.Empty;
-            
-
-            if (txtNombre.Text == string.Empty) mensaje += "Favor de introducir el nombre\n";
-            if (txtGafete.Text == string.Empty) mensaje += "Favor de introducir el gafete\n";
-            if (txtJornada.Text == string.Empty) mensaje += "Favor de introducir la jornada\n";
-            if (txtHorario.Text == string.Empty) mensaje += "Favor de introducir el horario\n";
-            if (cmbRegional.SelectedIndex == -1) mensaje += "Favor de seleccionar regional\n";
-            if (cmbSucursal.SelectedIndex == -1) mensaje += "Favor de seleccionar sucursal\n";
-            if (cmbTipoPersonal.SelectedIndex == -1) mensaje += "Favor de seleccionar tipo de personal\n";
-            if (cmbActividad.SelectedIndex == -1) mensaje += "Favor de seleccionar actividad\n";
-            if (cmbPerfilSistema.SelectedIndex == -1) mensaje += "Favor de seleccionar perfil en sistema\n";
-            if (cmbArea.SelectedIndex == -1) mensaje += "Favor de seleccionar área\n";
-
-            return !(mensaje == string.Empty);
-        }
+       
 
         private void CargarEmpleado(int IdEmpleado)
         {

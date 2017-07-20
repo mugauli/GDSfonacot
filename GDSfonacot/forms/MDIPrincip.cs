@@ -239,7 +239,7 @@ namespace GDSfonacot
 
         private void menuCerrarSup_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1004)
             {
                 int[] varstatus = { 2 };
 
@@ -272,7 +272,7 @@ namespace GDSfonacot
 
         private void menubuscSup_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
+            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1004)
             {
                 int[] varstatus = { 1,2,3,5 };
                 var frmbusquedasup = new frmBusquedaSupervisiones(4, varstatus, 1);//crea una instancia del formulario

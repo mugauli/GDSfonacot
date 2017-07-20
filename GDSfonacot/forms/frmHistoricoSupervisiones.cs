@@ -154,6 +154,109 @@ namespace GDSfonacot.forms
 
         }
 
+        private void label14_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void txtAnalistaComercial_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAnalistasCredito_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAnalistasCobranza_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasAfiliadas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTrabajadoresAfiliados_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPotencialEmpresas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPotencialTrabajadores_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasEstatus1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasEstatus18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasEstatus21_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasEstatus30_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -347,29 +347,7 @@ namespace GDSfonacotDatos
             }
         }
 
-        public MethodResponse<List<Sucursales>> ObtenerSucursales(int IdSucursal)
-        {
-
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    var response = new MethodResponse<List<Sucursales>> { Code = 0 };
-
-                    var usuariosDB = context.Sucursales.Where(x => x.IdSucursal == IdSucursal || IdSucursal == 0).ToList();
-
-                    response.Result = usuariosDB;
-
-                    return response;
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                return new MethodResponse<List<Sucursales>> { Code = -100, Message = ex.Message };
-            }
-        }
+        
 
         public MethodResponse<List<DatosComboSucursales>> ObtenerSucursalesCombo()
         {
@@ -396,36 +374,7 @@ namespace GDSfonacotDatos
             }
         }
 
-        public MethodResponse<List<DatosComboSucursales>> ObtenerSucursalesFilter(string filter)
-        {
 
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
-
-                    var usuariosDB = context.Sucursales
-                        .Where(x=>x.DescripcionSucursal.Contains(filter))
-                        .Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NoSucursal = x.NoSucursal, NameSucursal = x.DescripcionSucursal, DireccionRegional = x.DireccionRegional }).ToList();
-
-
-
-                    //var usuariosDB = context.Usuarios.Where(x => x.IdUsuario == IdUsuario && IdUsuario == 0).ToList();
-
-
-                    response.Result = usuariosDB;
-
-                    return response;
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                return new MethodResponse<List<DatosComboSucursales>> { Code = -100, Message = ex.Message };
-            }
-        }
 
 
         public MethodResponse<List<DatosSupervisores>> ObtenerSupervisores()
@@ -525,19 +474,21 @@ namespace GDSfonacotDatos
 
                     var consultarContestacionDB = context.HistorialSupervisiones
                         .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc })
-                        .Join(context.ContestacionesSuperv_Sucursales, tabla1 => tabla1.HistSup.IdSupervisiones, tabla2 => tabla2.Idsupervision, (HistSup2, Constsuc) => new { HistSup2, Constsuc })
-                       .Join(context.Usuarios, tabla1 => tabla1.HistSup2.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup3, Usu1) => new { HistSup3, Usu1 })
-                       .Join(context.Usuarios, tabla1 => tabla1.HistSup3.HistSup2.HistSup.Idsupervisor2, tabla3 => tabla3.IdUsuario, (HistSup4, Usu2) => new { HistSup4, Usu2 })
-                        .Where(q1 => (q1.HistSup4.HistSup3.HistSup2.HistSup.IdSupervisiones == Idsupervision && q1.HistSup4.Usu1.IdUsuario == q1.HistSup4.HistSup3.HistSup2.HistSup.Idsupervisor1 && q1.Usu2.IdUsuario == q1.HistSup4.HistSup3.HistSup2.HistSup.Idsupervisor2))
+                         .Join(context.ctRegional, tabla1 => tabla1.Suc.IdRegional, tabla2 => tabla2.IdRegional, (suc2, reg) => new { suc2, reg })
+                        .Join(context.ContestacionesSuperv_Sucursales, tabla1 => tabla1.suc2.HistSup.IdSupervisiones, tabla2 => tabla2.Idsupervision, (HistSup2, Constsuc) => new { HistSup2, Constsuc })
+                       .Join(context.Usuarios, tabla1 => tabla1.HistSup2.suc2.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup3, Usu1) => new { HistSup3, Usu1 })
+                       .Join(context.Usuarios, tabla1 => tabla1.HistSup3.HistSup2.suc2.HistSup.Idsupervisor2, tabla3 => tabla3.IdUsuario, (HistSup4, Usu2) => new { HistSup4, Usu2 })
+                        .Where(q1 => (q1.HistSup4.HistSup3.HistSup2.suc2.HistSup.IdSupervisiones == Idsupervision && q1.HistSup4.HistSup3.HistSup2.reg.IdRegional == q1.HistSup4.HistSup3.HistSup2.suc2.Suc.IdRegional && q1.HistSup4.Usu1.IdUsuario == q1.HistSup4.HistSup3.HistSup2.suc2.HistSup.Idsupervisor1 && q1.Usu2.IdUsuario == q1.HistSup4.HistSup3.HistSup2.suc2.HistSup.Idsupervisor2))
+                      
                         .Select(x => new DatosHistSupervision
                         {
                             //datos de la supervision original
                             Idsupervision = x.HistSup4.HistSup3.Constsuc.Idsupervision,
                             Supervisor1 = x.HistSup4.Usu1.Nombre_Usuario,
                             Supervisor2 = x.Usu2.Nombre_Usuario,            
-                            NoSupervision = x.HistSup4.HistSup3.HistSup2.HistSup.NoSupervision,
+                            NoSupervision = x.HistSup4.HistSup3.HistSup2.suc2.HistSup.NoSupervision,
                             //datos de la contestacion
-                            FechaSupervision = x.HistSup4.HistSup3.HistSup2.HistSup.FechaSupervision,
+                            FechaSupervision = x.HistSup4.HistSup3.HistSup2.suc2.HistSup.FechaSupervision,
                             Idcontestacion = x.HistSup4.HistSup3.Constsuc.Idcontestacion,
                             Inmueble = x.HistSup4.HistSup3.Constsuc.Inmueble,
                             Gestion_direccion = x.HistSup4.HistSup3.Constsuc.Gestion_direccion,
@@ -550,43 +501,43 @@ namespace GDSfonacotDatos
                             Fondofijo = x.HistSup4.HistSup3.Constsuc.Fondofijo,
                             AcuerdosCompromisos = x.HistSup4.HistSup3.Constsuc.AcuerdosCompromisos,
                             NoOficio = x.HistSup4.HistSup3.Constsuc.NoOficio,
-                            Idstatus = x.HistSup4.HistSup3.HistSup2.HistSup.Idstatus,
+                            Idstatus = x.HistSup4.HistSup3.HistSup2.suc2.HistSup.Idstatus,
                             //datos la sucursal
-                             DescripcionSucursal = x.HistSup4.HistSup3.HistSup2.Suc.DescripcionSucursal,
-                            NoSucursal = x.HistSup4.HistSup3.HistSup2.Suc.NoSucursal,
-                            Dirección=x.HistSup4.HistSup3.HistSup2.Suc.Dirección,
-                            Representaciones=x.HistSup4.HistSup3.HistSup2.Suc.Representaciones,
-                            DireccionRegional=x.HistSup4.HistSup3.HistSup2.Suc.DireccionRegional,
-                            Director_Estatal = x.HistSup4.HistSup3.HistSup2.Suc.Director_Estatal,
-                            Director_Regional = x.HistSup4.HistSup3.HistSup2.Suc.Director_Regional,
-                            Coordinador_Administrativo=x.HistSup4.HistSup3.HistSup2.Suc.Coordinador_Administrativo,
-                            Coordinador_Cobranza=x.HistSup4.HistSup3.HistSup2.Suc.Coordinador_Cobranza,
-                            Coordinador_Crédito=x.HistSup4.HistSup3.HistSup2.Suc.Coordinador_Crédito,
-                            Analistas=x.HistSup4.HistSup3.HistSup2.Suc.Analistas,
-                            Ventanillas=x.HistSup4.HistSup3.HistSup2.Suc.Ventanillas,
-                            Analistas_Otorgamiento_de_Crédito=x.HistSup4.HistSup3.HistSup2.Suc.Analistas_Otorgamiento_de_Crédito,
-                            Analistas_Administrativo_y_SAM=x.HistSup4.HistSup3.HistSup2.Suc.Analistas_Administrativo_y_SAM,
-                            Analistas_Crédito_Control_Documental=x.HistSup4.HistSup3.HistSup2.Suc.Analistas_Crédito_Control_Documental,
-                            Analistas_Cobranza=x.HistSup4.HistSup3.HistSup2.Suc.Analistas_Cobranza,
-                            Empresas_Afiliadas=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Afiliadas,
-                            Trabajadores_Afiliados=x.HistSup4.HistSup3.HistSup2.Suc.Trabajadores_Afiliados,
-                            Potencial_de_Empresas=x.HistSup4.HistSup3.HistSup2.Suc.Potencial_de_Empresas,
-                            Potencial_de_Trabajadores=x.HistSup4.HistSup3.HistSup2.Suc.Potencial_de_Trabajadores,
-                            Empresas_Status_1=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Status_1,
-                            Empresas_Status_18=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Status_18,
-                            Empresas_Status_21=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Status_21,
-                            Empresas_Status_30=x.HistSup4.HistSup3.HistSup2.Suc.Empresas_Status_30,
-                            Meta_Anual=x.HistSup4.HistSup3.HistSup2.Suc.Meta_Anual,
-                            Meta_Mensual=x.HistSup4.HistSup3.HistSup2.Suc.Meta_Mensual,
-                            Colocación_Anual=x.HistSup4.HistSup3.HistSup2.Suc.Colocación_Anual,
-                            Colocación_Mensual=x.HistSup4.HistSup3.HistSup2.Suc.Colocación_Mensual,
-                            Fecha_baja=x.HistSup4.HistSup3.HistSup2.Suc.Fecha_baja,
-                            Meta_Acumulada_Porcentaje=x.HistSup4.HistSup3.HistSup2.Suc.Meta_Acumulada_Porcentaje,
-                            Cobranza_Meta_Anual=x.HistSup4.HistSup3.HistSup2.Suc.Cobranza_Meta_Anual,
-                            Cobranza_Porcentaje_Meta=x.HistSup4.HistSup3.HistSup2.Suc.Cobranza_Porcentaje_Meta,
-                            Cobranza_Cumplimiento_Meta=x.HistSup4.HistSup3.HistSup2.Suc.Cobranza_Cumplimiento_Meta,
-                            IdRegional=x.HistSup4.HistSup3.HistSup2.Suc.IdRegional,
-                            Fotografia=x.HistSup4.HistSup3.HistSup2.Suc.Fotografia
+                             DescripcionSucursal = x.HistSup4.HistSup3.HistSup2.suc2.Suc.DescripcionSucursal,
+                            NoSucursal = x.HistSup4.HistSup3.HistSup2.suc2.Suc.NoSucursal,
+                            Dirección=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Dirección,
+                            Representaciones=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Representaciones,
+                            DireccionRegional=x.HistSup4.HistSup3.HistSup2.reg.Descripcion,
+                            Director_Estatal = x.HistSup4.HistSup3.HistSup2.suc2.Suc.Director_Estatal,
+                            Director_Regional = x.HistSup4.HistSup3.HistSup2.suc2.Suc.Director_Regional,
+                            Coordinador_Administrativo=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Coordinador_Administrativo,
+                            Coordinador_Cobranza=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Coordinador_Cobranza,
+                            Coordinador_Crédito=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Coordinador_Crédito,
+                            Analistas=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Analistas,
+                            Ventanillas=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Ventanillas,
+                            Analistas_Otorgamiento_de_Crédito=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Analistas_Otorgamiento_de_Crédito,
+                            Analistas_Administrativo_y_SAM=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Analistas_Administrativo_y_SAM,
+                            Analistas_Crédito_Control_Documental=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Analistas_Crédito_Control_Documental,
+                            Analistas_Cobranza=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Analistas_Cobranza,
+                            Empresas_Afiliadas=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Empresas_Afiliadas,
+                            Trabajadores_Afiliados=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Trabajadores_Afiliados,
+                            Potencial_de_Empresas=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Potencial_de_Empresas,
+                            Potencial_de_Trabajadores=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Potencial_de_Trabajadores,
+                            Empresas_Status_1=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Empresas_Status_1,
+                            Empresas_Status_18=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Empresas_Status_18,
+                            Empresas_Status_21=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Empresas_Status_21,
+                            Empresas_Status_30=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Empresas_Status_30,
+                            Meta_Anual=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Meta_Anual,
+                            Meta_Mensual=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Meta_Mensual,
+                            Colocación_Anual=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Colocación_Anual,
+                            Colocación_Mensual=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Colocación_Mensual,
+                            Fecha_baja=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Fecha_baja,
+                            Meta_Acumulada_Porcentaje=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Meta_Acumulada_Porcentaje,
+                            Cobranza_Meta_Anual=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Cobranza_Meta_Anual,
+                            Cobranza_Porcentaje_Meta=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Cobranza_Porcentaje_Meta,
+                            Cobranza_Cumplimiento_Meta=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Cobranza_Cumplimiento_Meta,
+                            IdRegional=x.HistSup4.HistSup3.HistSup2.suc2.Suc.IdRegional,
+                            Fotografia=x.HistSup4.HistSup3.HistSup2.suc2.Suc.Fotografia
                             
 
                         }).SingleOrDefault();
@@ -614,19 +565,20 @@ namespace GDSfonacotDatos
 
                     var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
                         .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
-                        .Where(sc => sc.HistSup.Idstatus == clavestatus && (sc.HistSup.IdSupervisiones == IdSupervisiones) && (sc.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
+                          .Join(context.ctRegional, tabla1 => tabla1.Suc.IdRegional, tabla2 => tabla2.IdRegional, (suc2, reg) => new { suc2, reg })
+                        .Where(sc => sc.suc2.HistSup.Idstatus == clavestatus && sc.reg.IdRegional == sc.suc2.Suc.IdRegional && (sc.suc2.HistSup.IdSupervisiones == IdSupervisiones) && (sc.suc2.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
                         .Select(x => new DatosBuscarSupervision
                         {
-                            IdSupervisiones = x.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
-                            NoSupervision = x.HistSup.NoSupervision,
-                            FechaSupervision = x.HistSup.FechaSupervision,
-                            DescripcionSucursal = x.Suc.DescripcionSucursal,
-                            Director_Regional = x.Suc.Director_Regional,
-                            Director_Estatal = x.Suc.Director_Estatal,
-                            NoSucursal = x.Suc.NoSucursal,
-                            DireccionRegional = x.Suc.DireccionRegional,
-                            Representaciones = x.Suc.Representaciones,
-                            Idstatus=x.HistSup.Idstatus
+                            IdSupervisiones = x.suc2.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                            NoSupervision = x.suc2.HistSup.NoSupervision,
+                            FechaSupervision = x.suc2.HistSup.FechaSupervision,
+                            DescripcionSucursal = x.suc2.Suc.DescripcionSucursal,
+                            Director_Regional = x.suc2.Suc.Director_Regional,
+                            Director_Estatal = x.suc2.Suc.Director_Estatal,
+                            NoSucursal = x.suc2.Suc.NoSucursal,
+                            DireccionRegional = x.reg.Descripcion,
+                            Representaciones = x.suc2.Suc.Representaciones,
+                            Idstatus=x.suc2.HistSup.Idstatus
                             
 
 

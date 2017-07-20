@@ -12,6 +12,8 @@ namespace GDSfonacotDatos
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class GDSfonacotEntities : DbContext
     {
@@ -40,5 +42,14 @@ namespace GDSfonacotDatos
         public virtual DbSet<TiraAuditora> TiraAuditora { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Usuarios_Nivel> Usuarios_Nivel { get; set; }
+    
+        public virtual ObjectResult<spconsultarminuta_Result> spconsultarminuta(string nosupervision)
+        {
+            var nosupervisionParameter = nosupervision != null ?
+                new ObjectParameter("nosupervision", nosupervision) :
+                new ObjectParameter("nosupervision", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spconsultarminuta_Result>("spconsultarminuta", nosupervisionParameter);
+        }
     }
 }

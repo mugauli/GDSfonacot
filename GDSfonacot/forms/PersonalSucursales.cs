@@ -1,7 +1,5 @@
 ﻿using GDSfonacot.forms;
 using GDSfonacotDatos;
-using GDSfonacotDatos.Data;
-using GDSfonacotDatos.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GDSfonacotDatos.Data;
+using GDSfonacotDatos.DTO;
 using static GDSfonacotDatos.Utilities.Util;
 
 namespace GDSfonacot
@@ -53,7 +53,7 @@ namespace GDSfonacot
         public void CargarDatos(int Sucursal)
         {
 
-            var SucursalDB = new SupervisionesData().ObtenerSucursales(Sucursal);
+            var SucursalDB = new SucursalesData().ObtenerSucursales(Sucursal);
             if (SucursalDB.Code != 0)
             {
                 MessageBox.Show("Error: " + SucursalDB.Message);

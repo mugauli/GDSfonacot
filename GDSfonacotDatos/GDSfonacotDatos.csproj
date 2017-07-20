@@ -91,11 +91,13 @@
     </Compile>
     <Compile Include="Data\CatalogosData.cs" />
     <Compile Include="Data\EmpleadosData.cs" />
+    <Compile Include="Data\SucursalesData.cs" />
     <Compile Include="DTO\DatosBuscarContestacion.cs" />
     <Compile Include="DTO\DatosBuscarSupervision.cs" />
     <Compile Include="DTO\DatosComboSucursales.cs" />
     <Compile Include="DTO\DatosGridSupervisiones.cs" />
     <Compile Include="DTO\DatosHistSupervision.cs" />
+    <Compile Include="DTO\DatosSucursales.cs" />
     <Compile Include="DTO\DatosSupervisores.cs" />
     <Compile Include="DTO\DatosUsuario.cs" />
     <Compile Include="DTO\EmpleadosDGV.cs" />
@@ -126,6 +128,9 @@
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Seguimiento_RespuestaSucursales.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spconsultarminuta_Result.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Sucursales.cs">

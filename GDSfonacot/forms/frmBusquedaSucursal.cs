@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GDSfonacotDatos.Data;
+using GDSfonacotDatos.DTO;
+using static GDSfonacotDatos.Utilities.Util;
 
 namespace GDSfonacot.forms
 {
     public partial class frmBusquedaSucursal : Form
     {
+        private int guardaractualizar = 0;
         private int destinoInt = 0;
         public frmBusquedaSucursal(int Destino)
         {
@@ -25,7 +29,7 @@ namespace GDSfonacot.forms
             if (txtSucursal.Text.Length > 3)
             {
                 lblRegistros.Text = "";
-                var totalsupe = new SupervisionesData().ObtenerSucursalesFilter(txtSucursal.Text.Trim());
+                var totalsupe = new SucursalesData().ObtenerSucursalesFilter(txtSucursal.Text.Trim());
                 if (totalsupe.Code != 0)
                 {
                     MessageBox.Show("error");
@@ -80,11 +84,24 @@ namespace GDSfonacot.forms
                         }
                         else if (destinoInt == 2)
                         {
+                            if (guardaractualizar == 0)
+                            {
+                                //forms.frmSupervisiom frmhistSup = new forms.frmSupervisiom(0);//crea una instancia del formulario
+                                var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
+                                frmsup.MdiParent = this.ParentForm;
+                                frmsup.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                //forms.frmSupervisiom frmhistSup = new forms.frmSupervisiom(1);//crea una instancia del formulario
+                                var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
+                                frmsup.MdiParent = this.ParentForm;
+                                frmsup.Show();
+                                this.Close();
+                            }
 
-                            var frmsup = new frmSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
-                            frmsup.MdiParent = this.ParentForm;
-                            frmsup.Show();
-                            this.Close();
+                    
                         }
                         else if (destinoInt == 3)
                         {

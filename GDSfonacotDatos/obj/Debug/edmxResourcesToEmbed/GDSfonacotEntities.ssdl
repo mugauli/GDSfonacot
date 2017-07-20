@@ -132,7 +132,6 @@
     <Property Name="IdSucursal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NoSucursal" Type="smallint" Nullable="false" />
     <Property Name="IdRegional" Type="int" />
-    <Property Name="DireccionRegional" Type="nvarchar" MaxLength="255" />
     <Property Name="DescripcionSucursal" Type="nvarchar" MaxLength="255" />
     <Property Name="Dirección" Type="nvarchar" MaxLength="255" />
     <Property Name="Representaciones" Type="nvarchar" MaxLength="255" />
@@ -158,11 +157,12 @@
     <Property Name="Empresas_Status_30" Type="int" />
     <Property Name="Meta_Anual" Type="money" />
     <Property Name="Meta_Mensual" Type="money" />
+    <Property Name="Meta_Acumulada_Porcentaje" Type="money" />
     <Property Name="Colocación_Anual" Type="money" />
     <Property Name="Colocación_Mensual" Type="money" />
     <Property Name="Fecha_baja" Type="datetime" />
-    <Property Name="Meta_Acumulada_Porcentaje" Type="money" />
     <Property Name="Cobranza_Meta_Anual" Type="nvarchar" MaxLength="255" />
+    <Property Name="Cobranza_Meta_Mensual" Type="nvarchar" MaxLength="255" />
     <Property Name="Cobranza_Porcentaje_Meta" Type="nvarchar" MaxLength="255" />
     <Property Name="Cobranza_Cumplimiento_Meta" Type="nvarchar" MaxLength="255" />
   </EntityType>
@@ -435,6 +435,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="spconsultarminuta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="GDSfonacotModelStoreContainer">
     <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="Self.ContestacionesSuperv_Sucursales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ctActividad" EntityType="Self.ctActividad" Schema="dbo" store:Type="Tables" />

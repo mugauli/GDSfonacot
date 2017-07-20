@@ -44,6 +44,10 @@
       <End Role="ctRegional" EntitySet="ctRegional" />
       <End Role="Empleados" EntitySet="Empleados" />
     </AssociationSet>
+    <AssociationSet Name="FK_Sucursales_ctRegional" Association="GDSfonacotModel.FK_Sucursales_ctRegional">
+      <End Role="ctRegional" EntitySet="ctRegional" />
+      <End Role="Sucursales" EntitySet="Sucursales" />
+    </AssociationSet>
     <AssociationSet Name="FK_Empleados_ctTipoPersonal" Association="GDSfonacotModel.FK_Empleados_ctTipoPersonal">
       <End Role="ctTipoPersonal" EntitySet="ctTipoPersonal" />
       <End Role="Empleados" EntitySet="Empleados" />
@@ -92,10 +96,9 @@
       <End Role="Usuarios_Nivel" EntitySet="Usuarios_Nivel" />
       <End Role="Usuarios" EntitySet="Usuarios" />
     </AssociationSet>
-    <AssociationSet Name="FK_Sucursales_ctRegional" Association="GDSfonacotModel.FK_Sucursales_ctRegional">
-      <End Role="ctRegional" EntitySet="ctRegional" />
-      <End Role="Sucursales" EntitySet="Sucursales" />
-    </AssociationSet>
+    <FunctionImport Name="spconsultarminuta" ReturnType="Collection(GDSfonacotModel.spconsultarminuta_Result)">
+      <Parameter Name="nosupervision" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="ContestacionesSuperv_Sucursales">
     <Key>
@@ -254,7 +257,7 @@
     </Key>
     <Property Name="IdSucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NoSucursal" Type="Int16" Nullable="false" />
-    <Property Name="DireccionRegional" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IdRegional" Type="Int32" />
     <Property Name="DescripcionSucursal" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Dirección" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Representaciones" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -280,18 +283,18 @@
     <Property Name="Empresas_Status_30" Type="Int32" />
     <Property Name="Meta_Anual" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Meta_Mensual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Meta_Acumulada_Porcentaje" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Colocación_Anual" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Colocación_Mensual" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Fecha_baja" Type="DateTime" Precision="3" />
-    <Property Name="Meta_Acumulada_Porcentaje" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Cobranza_Meta_Anual" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Cobranza_Meta_Mensual" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Cobranza_Porcentaje_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Cobranza_Cumplimiento_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ctRegional" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="Sucursales" ToRole="ctRegional" />
     <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Sucursales" ToRole="Empleados" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" FromRole="Sucursales" ToRole="HistorialSupervisiones" />
     <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Usuarios_Sucursales" FromRole="Sucursales" ToRole="Usuarios" />
-    <Property Name="IdRegional" Type="Int32" />
-    <NavigationProperty Name="ctRegional" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="Sucursales" ToRole="ctRegional" />
   </EntityType>
   <EntityType Name="TiraAuditora">
     <Key>
@@ -412,6 +415,18 @@
         <PropertyRef Name="IdRegional" />
       </Principal>
       <Dependent Role="Empleados">
+        <PropertyRef Name="IdRegional" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sucursales_ctRegional">
+    <End Type="GDSfonacotModel.ctRegional" Role="ctRegional" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.Sucursales" Role="Sucursales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctRegional">
+        <PropertyRef Name="IdRegional" />
+      </Principal>
+      <Dependent Role="Sucursales">
         <PropertyRef Name="IdRegional" />
       </Dependent>
     </ReferentialConstraint>
@@ -560,16 +575,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Sucursales_ctRegional">
-    <End Type="GDSfonacotModel.ctRegional" Role="ctRegional" Multiplicity="0..1" />
-    <End Type="GDSfonacotModel.Sucursales" Role="Sucursales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ctRegional">
-        <PropertyRef Name="IdRegional" />
-      </Principal>
-      <Dependent Role="Sucursales">
-        <PropertyRef Name="IdRegional" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <ComplexType Name="spconsultarminuta_Result">
+    <Property Type="Int32" Name="IdSupervisiones" Nullable="false" />
+    <Property Type="Int32" Name="IdSucursal" Nullable="true" />
+    <Property Type="String" Name="NoSupervision" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="FechaSupervision" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Inmueble" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Gestion_direccion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Originacion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Tarjetas_transfer" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Credito" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Utys" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Promocionales" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Cobranza" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Fondofijo" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="AcuerdosCompromisos" Nullable="true" MaxLength="Max" />
+    <Property Type="Int32" Name="Idusuariocreador" Nullable="true" />
+    <Property Type="DateTime" Name="Fechacreacion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Idstatus" Nullable="true" />
+    <Property Type="Int32" Name="Idsupervisor1" Nullable="true" />
+    <Property Type="Int32" Name="Idsupervisor2" Nullable="true" />
+  </ComplexType>
 </Schema>

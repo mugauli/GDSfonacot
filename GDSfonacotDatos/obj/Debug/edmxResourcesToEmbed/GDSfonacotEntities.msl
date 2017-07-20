@@ -140,14 +140,14 @@
     <EntitySetMapping Name="Sucursales">
       <EntityTypeMapping TypeName="GDSfonacotModel.Sucursales">
         <MappingFragment StoreEntitySet="Sucursales">
-          <ScalarProperty Name="IdRegional" ColumnName="IdRegional" />
           <ScalarProperty Name="Cobranza_Cumplimiento_Meta" ColumnName="Cobranza_Cumplimiento_Meta" />
           <ScalarProperty Name="Cobranza_Porcentaje_Meta" ColumnName="Cobranza_Porcentaje_Meta" />
+          <ScalarProperty Name="Cobranza_Meta_Mensual" ColumnName="Cobranza_Meta_Mensual" />
           <ScalarProperty Name="Cobranza_Meta_Anual" ColumnName="Cobranza_Meta_Anual" />
-          <ScalarProperty Name="Meta_Acumulada_Porcentaje" ColumnName="Meta_Acumulada_Porcentaje" />
           <ScalarProperty Name="Fecha_baja" ColumnName="Fecha_baja" />
           <ScalarProperty Name="Colocación_Mensual" ColumnName="Colocación_Mensual" />
           <ScalarProperty Name="Colocación_Anual" ColumnName="Colocación_Anual" />
+          <ScalarProperty Name="Meta_Acumulada_Porcentaje" ColumnName="Meta_Acumulada_Porcentaje" />
           <ScalarProperty Name="Meta_Mensual" ColumnName="Meta_Mensual" />
           <ScalarProperty Name="Meta_Anual" ColumnName="Meta_Anual" />
           <ScalarProperty Name="Empresas_Status_30" ColumnName="Empresas_Status_30" />
@@ -173,7 +173,7 @@
           <ScalarProperty Name="Representaciones" ColumnName="Representaciones" />
           <ScalarProperty Name="Dirección" ColumnName="Dirección" />
           <ScalarProperty Name="DescripcionSucursal" ColumnName="DescripcionSucursal" />
-          <ScalarProperty Name="DireccionRegional" ColumnName="DireccionRegional" />
+          <ScalarProperty Name="IdRegional" ColumnName="IdRegional" />
           <ScalarProperty Name="NoSucursal" ColumnName="NoSucursal" />
           <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
         </MappingFragment>
@@ -211,5 +211,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spconsultarminuta" FunctionName="GDSfonacotModel.Store.spconsultarminuta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GDSfonacotModel.spconsultarminuta_Result">
+          <ScalarProperty Name="IdSupervisiones" ColumnName="IdSupervisiones" />
+          <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+          <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
+          <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
+          <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
+          <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
+          <ScalarProperty Name="Originacion" ColumnName="Originacion" />
+          <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
+          <ScalarProperty Name="Credito" ColumnName="Credito" />
+          <ScalarProperty Name="Utys" ColumnName="Utys" />
+          <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
+          <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
+          <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
+          <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
+          <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
+          <ScalarProperty Name="Fechacreacion" ColumnName="Fechacreacion" />
+          <ScalarProperty Name="Idstatus" ColumnName="Idstatus" />
+          <ScalarProperty Name="Idsupervisor1" ColumnName="Idsupervisor1" />
+          <ScalarProperty Name="Idsupervisor2" ColumnName="Idsupervisor2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
