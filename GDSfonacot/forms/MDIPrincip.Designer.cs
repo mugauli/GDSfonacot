@@ -50,6 +50,7 @@
             this.menubuscSup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBuscarConst = new System.Windows.Forms.ToolStripMenuItem();
             this.menubuscSeguim = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCatalogos = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuSuc = new System.Windows.Forms.ToolStripMenuItem();
             this.submenuUsers = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +62,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.menuHistsupOp = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fichasPersonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -217,8 +221,13 @@
             this.menubuscSup,
             this.menuBuscarConst,
             this.menubuscSeguim,
-            this.menuHistsupOp});
+            this.menuHistsupOp,
+            this.toolStripSeparator1,
+            this.usuariosToolStripMenuItem,
+            this.sucursalesToolStripMenuItem,
+            this.fichasPersonalToolStripMenuItem});
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.ShowShortcutKeys = false;
             this.toolStripMenuItem4.Size = new System.Drawing.Size(70, 20);
             this.toolStripMenuItem4.Text = "Consultar";
             // 
@@ -241,6 +250,13 @@
             this.menubuscSeguim.Name = "menubuscSeguim";
             this.menubuscSeguim.Size = new System.Drawing.Size(235, 22);
             this.menubuscSeguim.Text = "Seguimientos de Supervision";
+            // 
+            // menuHistsupOp
+            // 
+            this.menuHistsupOp.Name = "menuHistsupOp";
+            this.menuHistsupOp.Size = new System.Drawing.Size(235, 22);
+            this.menuHistsupOp.Text = "Histórico de una Supervisión";
+            this.menuHistsupOp.Click += new System.EventHandler(this.menuHistsupOp_Click);
             // 
             // menuCatalogos
             // 
@@ -347,12 +363,28 @@
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
-            // menuHistsupOp
+            // toolStripSeparator1
             // 
-            this.menuHistsupOp.Name = "menuHistsupOp";
-            this.menuHistsupOp.Size = new System.Drawing.Size(235, 22);
-            this.menuHistsupOp.Text = "Histórico de una Supervisión";
-            this.menuHistsupOp.Click += new System.EventHandler(this.menuHistsupOp_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(232, 6);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // sucursalesToolStripMenuItem
+            // 
+            this.sucursalesToolStripMenuItem.Name = "sucursalesToolStripMenuItem";
+            this.sucursalesToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.sucursalesToolStripMenuItem.Text = "Sucursales";
+            // 
+            // fichasPersonalToolStripMenuItem
+            // 
+            this.fichasPersonalToolStripMenuItem.Name = "fichasPersonalToolStripMenuItem";
+            this.fichasPersonalToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.fichasPersonalToolStripMenuItem.Text = "Fichas Personal";
             // 
             // MDIPrincip
             // 
@@ -414,5 +446,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuBuscarConst;
         private System.Windows.Forms.ToolStripMenuItem menubuscSeguim;
         private System.Windows.Forms.ToolStripMenuItem menuHistsupOp;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sucursalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fichasPersonalToolStripMenuItem;
     }
 }

@@ -102,6 +102,7 @@
     <Compile Include="DTO\DatosSupervisores.cs" />
     <Compile Include="DTO\DatosUsuario.cs" />
     <Compile Include="DTO\EmpleadosDGV.cs" />
+    <Compile Include="DTO\UsuariosDGV.cs" />
     <Compile Include="Empleados.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>

@@ -20,8 +20,13 @@ namespace GDSfonacot.Helpers
         public static byte[] ImageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, ImageFormat.Jpeg);
-            return ms.ToArray();
+            if (imageIn != null)
+            {
+                imageIn.Save(ms, ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+            return null;
+          
         }
 
         public static Image ObtenerImagenNoDisponible()

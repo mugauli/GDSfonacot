@@ -22,7 +22,7 @@ namespace GDSfonacotDatos.Data
                     var usuariosDB = context.Usuarios
                         .Join(context.Usuarios_Nivel, tabla1 => tabla1.IdNivel, tabla2 => tabla2.IdNivel, (usu, nivelusu) => new { usu, nivelusu })
                         .Join(context.Sucursales, tabla1 => tabla1.usu.IdSucursal, tabla3 => tabla3.IdSucursal, (usu2, suc) => new { usu2, suc })
-                        .Where(x => x.usu2.nivelusu.IdNivel == x.usu2.usu.IdNivel && x.suc.IdSucursal == x.usu2.usu.IdNivel)
+                        .Where(x => x.usu2.nivelusu.IdNivel == x.usu2.usu.IdNivel && x.suc.IdSucursal == x.usu2.usu.IdSucursal && x.usu2.usu.IdUsuario==Idusuario)
                       .Select(x => new DatosUsuario
                       {
                           IdUsuario = x.usu2.usu.IdUsuario,
@@ -53,6 +53,42 @@ namespace GDSfonacotDatos.Data
             }
         }
 
+        public MethodResponse<List<UsuariosDGV>> ObtenerUsuariosGeneral(int IdSucursal, int IdNivelusuario)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<UsuariosDGV>> { Code = 0 };
+
+
+
+                    var devolverdatos = context.Usuarios // seleccion de tabla inicial
+                         .Join(context.Usuarios_Nivel, tabla1 => tabla1.IdNivel, tabla2 => tabla2.IdNivel, (usu, nivelusu) => new { usu, nivelusu })
+                        .Join(context.Sucursales, tabla1 => tabla1.usu.IdSucursal, tabla3 => tabla3.IdSucursal, (usu2, suc) => new { usu2, suc })
+                        .Where(x => x.usu2.nivelusu.IdNivel == x.usu2.usu.IdNivel && x.suc.IdSucursal == x.usu2.usu.IdSucursal  && x.usu2.usu.IdNivel==IdNivelusuario)
+
+                         .Select(x => new UsuariosDGV
+                         {
+                          IdUsuario=x.usu2.usu.IdUsuario,
+                          Nombre_Usuario=x.usu2.usu.Nombre_Usuario,                        
+                          NivelUsuarioDescrip=x.usu2.nivelusu.Nivel_Usuario,
+                          DescripcionSucursal = x.suc.DescripcionSucursal
+                         }).ToList();
+
+                    response.Result = devolverdatos;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<UsuariosDGV>> { Code = -100, Message = ex.Message };
+            }
+        }
+
         public MethodResponse<int> GuardarUsuario(Usuarios usuario)
         {
             var response = new MethodResponse<int> { Code = 0 };
@@ -68,7 +104,7 @@ namespace GDSfonacotDatos.Data
                     }
                     else
                     {
-                        var usuariosDB = context.Usuarios.FirstOrDefault(x => x.IdSucursal == usuario.IdUsuario);
+                        var usuariosDB = context.Usuarios.FirstOrDefault(x => x.IdUsuario == usuario.IdUsuario);
                         usuariosDB.IdUsuario = usuario.IdUsuario;
                         usuariosDB.IdNivel = usuario.IdNivel;
                         usuariosDB.IdSucursal = usuario.IdSucursal;

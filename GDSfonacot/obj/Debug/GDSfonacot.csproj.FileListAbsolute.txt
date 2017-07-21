@@ -175,3 +175,4 @@ C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\Enti
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.exe
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.pdb
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmUsuariosSucursales.resources

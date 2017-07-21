@@ -184,7 +184,7 @@
     <Property Name="Usuario" Type="nvarchar" MaxLength="255" />
     <Property Name="Pass" Type="nvarchar" MaxLength="255" />
     <Property Name="IdNivel" Type="int" />
-    <Property Name="fechaalta" Type="datetime" Nullable="false" />
+    <Property Name="fechaalta" Type="datetime" />
     <Property Name="fechabaja" Type="datetime" />
     <Property Name="IdSucursal" Type="int" />
   </EntityType>

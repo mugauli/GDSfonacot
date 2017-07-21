@@ -106,7 +106,7 @@ namespace GDSfonacot.forms
                         else if (destinoInt == 3)
                         {
 
-                            var frmusu = new frmUsuarios(Convert.ToInt32(valor));//crea una instancia del formulario
+                            var frmusu = new frmUsuariosSucursales(Convert.ToInt32(valor));//crea una instancia del formulario
                             frmusu.MdiParent = this.ParentForm;
                             frmusu.Show();
                             this.Close();

@@ -26,12 +26,6 @@ namespace GDSfonacot.forms
 
 
         }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             var mensaje = string.Empty;
@@ -189,8 +183,6 @@ namespace GDSfonacot.forms
 
         }
 
-       
-
         private void CargarEmpleado(int IdEmpleado)
         {
             var empleadoDB = new EmpleadosData().ObtenerEmpleados(IdEmpleado, 0);
@@ -212,16 +204,6 @@ namespace GDSfonacot.forms
             cmbActividad.SelectedValue = emp.IdActividad;
             cmbPerfilSistema.SelectedValue = emp.IdPerfilSistema;
             cmbArea.SelectedValue = emp.IdArea;
-        }
-
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

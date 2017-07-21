@@ -116,7 +116,7 @@
             this.label10.Size = new System.Drawing.Size(272, 20);
             this.label10.TabIndex = 26;
             this.label10.Text = "Actividad";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+        
             // 
             // label9
             // 
@@ -156,7 +156,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(552, 22);
             this.txtNombre.TabIndex = 6;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+          
             // 
             // txtGafete
             // 
