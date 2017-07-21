@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GDSfonacotDatos.DTO;
+using static GDSfonacotDatos.Utilities.Util;
+
 
 namespace GDSfonacotDatos.DTO
 {
@@ -16,5 +19,7 @@ namespace GDSfonacotDatos.DTO
         public System.DateTime fechaalta { get; set; }
         public Nullable<System.DateTime> fechabaja { get; set; }
         public Nullable<int> IdSucursal { get; set; }
+        public string DescripcionSucursal { get; set; }
+        public string NivelUsuarioDescrip { get; set; }
     }
 }

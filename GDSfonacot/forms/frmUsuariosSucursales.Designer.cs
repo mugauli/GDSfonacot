@@ -1,6 +1,6 @@
-﻿namespace GDSfonacot
+﻿namespace GDSfonacot.forms
 {
-    partial class PersonalSucursales
+    partial class frmUsuariosSucursales
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.TabsEmpleados = new System.Windows.Forms.TabControl();
+            this.tabadmin = new System.Windows.Forms.TabPage();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.cmbperfilsistema = new System.Windows.Forms.ComboBox();
             this.label47 = new System.Windows.Forms.Label();
             this.txtNoSucursal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -46,321 +51,40 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtDirectorEstatal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtDirectorRegional = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRepresentaciones = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtDirectorRegional = new System.Windows.Forms.TextBox();
             this.pbxSucursal = new System.Windows.Forms.PictureBox();
-            this.cmbperfilsistema = new System.Windows.Forms.ComboBox();
-            this.TabsEmpleados = new System.Windows.Forms.TabControl();
-            this.tabadmin = new System.Windows.Forms.TabPage();
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.TabsEmpleados.SuspendLayout();
             this.tabadmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.SuspendLayout();
             // 
-            // label47
+            // label1
             // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.DimGray;
-            this.label47.Location = new System.Drawing.Point(531, 58);
-            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(104, 16);
-            this.label47.TabIndex = 251;
-            this.label47.Text = "No de Sucursal";
-            // 
-            // txtNoSucursal
-            // 
-            this.txtNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtNoSucursal.ForeColor = System.Drawing.Color.White;
-            this.txtNoSucursal.Location = new System.Drawing.Point(530, 34);
-            this.txtNoSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNoSucursal.Name = "txtNoSucursal";
-            this.txtNoSucursal.Size = new System.Drawing.Size(105, 20);
-            this.txtNoSucursal.TabIndex = 250;
-            this.txtNoSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(1370, 221);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 16);
-            this.label13.TabIndex = 249;
-            this.label13.Text = "Ventanillas";
-            // 
-            // txtVentanillas
-            // 
-            this.txtVentanillas.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtVentanillas.ForeColor = System.Drawing.Color.White;
-            this.txtVentanillas.Location = new System.Drawing.Point(1369, 197);
-            this.txtVentanillas.Margin = new System.Windows.Forms.Padding(4);
-            this.txtVentanillas.Name = "txtVentanillas";
-            this.txtVentanillas.Size = new System.Drawing.Size(194, 20);
-            this.txtVentanillas.TabIndex = 247;
-            this.txtVentanillas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtAnalistas
-            // 
-            this.txtAnalistas.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtAnalistas.ForeColor = System.Drawing.Color.White;
-            this.txtAnalistas.Location = new System.Drawing.Point(1154, 197);
-            this.txtAnalistas.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAnalistas.Name = "txtAnalistas";
-            this.txtAnalistas.Size = new System.Drawing.Size(193, 20);
-            this.txtAnalistas.TabIndex = 246;
-            this.txtAnalistas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(720, 223);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(152, 16);
-            this.label11.TabIndex = 245;
-            this.label11.Text = "Coordinador Cobranza";
-            // 
-            // txtCoordinadorCobranza
-            // 
-            this.txtCoordinadorCobranza.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtCoordinadorCobranza.ForeColor = System.Drawing.Color.White;
-            this.txtCoordinadorCobranza.Location = new System.Drawing.Point(721, 197);
-            this.txtCoordinadorCobranza.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCoordinadorCobranza.Name = "txtCoordinadorCobranza";
-            this.txtCoordinadorCobranza.Size = new System.Drawing.Size(413, 20);
-            this.txtCoordinadorCobranza.TabIndex = 244;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(314, 223);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 16);
-            this.label10.TabIndex = 243;
-            this.label10.Text = "Coordinador Crédito";
-            // 
-            // txtCoordinadorCredito
-            // 
-            this.txtCoordinadorCredito.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtCoordinadorCredito.ForeColor = System.Drawing.Color.White;
-            this.txtCoordinadorCredito.Location = new System.Drawing.Point(317, 197);
-            this.txtCoordinadorCredito.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCoordinadorCredito.Name = "txtCoordinadorCredito";
-            this.txtCoordinadorCredito.Size = new System.Drawing.Size(381, 20);
-            this.txtCoordinadorCredito.TabIndex = 242;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(1153, 164);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(182, 16);
-            this.label9.TabIndex = 241;
-            this.label9.Text = "Coordinador Administrativo";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(1156, 223);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 16);
-            this.label12.TabIndex = 248;
-            this.label12.Text = "Analistas";
-            // 
-            // txtCoordinadorAdministrativo
-            // 
-            this.txtCoordinadorAdministrativo.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtCoordinadorAdministrativo.ForeColor = System.Drawing.Color.White;
-            this.txtCoordinadorAdministrativo.Location = new System.Drawing.Point(1153, 139);
-            this.txtCoordinadorAdministrativo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCoordinadorAdministrativo.Name = "txtCoordinadorAdministrativo";
-            this.txtCoordinadorAdministrativo.Size = new System.Drawing.Size(410, 20);
-            this.txtCoordinadorAdministrativo.TabIndex = 240;
-            // 
-            // txtDireccionRegional
-            // 
-            this.txtDireccionRegional.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtDireccionRegional.ForeColor = System.Drawing.Color.White;
-            this.txtDireccionRegional.Location = new System.Drawing.Point(317, 34);
-            this.txtDireccionRegional.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDireccionRegional.Name = "txtDireccionRegional";
-            this.txtDireccionRegional.Size = new System.Drawing.Size(199, 20);
-            this.txtDireccionRegional.TabIndex = 230;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(661, 60);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 16);
-            this.label3.TabIndex = 229;
-            this.label3.Text = "Sucursal";
-            // 
-            // txtSucursal
-            // 
-            this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtSucursal.ForeColor = System.Drawing.Color.White;
-            this.txtSucursal.Location = new System.Drawing.Point(656, 34);
-            this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(253, 20);
-            this.txtSucursal.TabIndex = 228;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(722, 165);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 16);
-            this.label8.TabIndex = 239;
-            this.label8.Text = "Director Estatal";
-            // 
-            // txtDirectorEstatal
-            // 
-            this.txtDirectorEstatal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtDirectorEstatal.ForeColor = System.Drawing.Color.White;
-            this.txtDirectorEstatal.Location = new System.Drawing.Point(721, 139);
-            this.txtDirectorEstatal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDirectorEstatal.Name = "txtDirectorEstatal";
-            this.txtDirectorEstatal.Size = new System.Drawing.Size(418, 20);
-            this.txtDirectorEstatal.TabIndex = 238;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(319, 167);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 16);
-            this.label7.TabIndex = 237;
-            this.label7.Text = "Director Regional";
-            // 
-            // txtDirectorRegional
-            // 
-            this.txtDirectorRegional.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtDirectorRegional.ForeColor = System.Drawing.Color.White;
-            this.txtDirectorRegional.Location = new System.Drawing.Point(317, 139);
-            this.txtDirectorRegional.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDirectorRegional.Name = "txtDirectorRegional";
-            this.txtDirectorRegional.Size = new System.Drawing.Size(381, 20);
-            this.txtDirectorRegional.TabIndex = 236;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(314, 107);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 16);
-            this.label6.TabIndex = 235;
-            this.label6.Text = "Dirección";
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtDireccion.ForeColor = System.Drawing.Color.White;
-            this.txtDireccion.Location = new System.Drawing.Point(317, 81);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(1249, 20);
-            this.txtDireccion.TabIndex = 234;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(935, 58);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 16);
-            this.label5.TabIndex = 233;
-            this.label5.Text = "Representaciones";
-            // 
-            // txtRepresentaciones
-            // 
-            this.txtRepresentaciones.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtRepresentaciones.ForeColor = System.Drawing.Color.White;
-            this.txtRepresentaciones.Location = new System.Drawing.Point(938, 34);
-            this.txtRepresentaciones.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRepresentaciones.Name = "txtRepresentaciones";
-            this.txtRepresentaciones.Size = new System.Drawing.Size(628, 20);
-            this.txtRepresentaciones.TabIndex = 232;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(317, 60);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 16);
-            this.label4.TabIndex = 231;
-            this.label4.Text = "Dirección Regional";
-            // 
-            // pbxSucursal
-            // 
-            this.pbxSucursal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbxSucursal.Location = new System.Drawing.Point(10, 15);
-            this.pbxSucursal.Name = "pbxSucursal";
-            this.pbxSucursal.Size = new System.Drawing.Size(298, 221);
-            this.pbxSucursal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxSucursal.TabIndex = 227;
-            this.pbxSucursal.TabStop = false;
-            // 
-            // cmbperfilsistema
-            // 
-            this.cmbperfilsistema.BackColor = System.Drawing.Color.Black;
-            this.cmbperfilsistema.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmbperfilsistema.FormattingEnabled = true;
-            this.cmbperfilsistema.Location = new System.Drawing.Point(10, 262);
-            this.cmbperfilsistema.Name = "cmbperfilsistema";
-            this.cmbperfilsistema.Size = new System.Drawing.Size(298, 21);
-            this.cmbperfilsistema.TabIndex = 253;
-            this.cmbperfilsistema.SelectionChangeCommitted += new System.EventHandler(this.cmbperfilsistema_SelectionChangeCommitted);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(6, 238);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 16);
+            this.label1.TabIndex = 282;
+            this.label1.Text = "Tipo nivel de usuario";
             // 
             // TabsEmpleados
             // 
             this.TabsEmpleados.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.TabsEmpleados.Controls.Add(this.tabadmin);
-            this.TabsEmpleados.Location = new System.Drawing.Point(12, 289);
+            this.TabsEmpleados.Location = new System.Drawing.Point(9, 284);
             this.TabsEmpleados.Name = "TabsEmpleados";
             this.TabsEmpleados.SelectedIndex = 0;
             this.TabsEmpleados.Size = new System.Drawing.Size(1548, 255);
-            this.TabsEmpleados.TabIndex = 252;
+            this.TabsEmpleados.TabIndex = 280;
             // 
             // tabadmin
             // 
@@ -371,7 +95,6 @@
             this.tabadmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabadmin.Size = new System.Drawing.Size(1540, 226);
             this.tabadmin.TabIndex = 0;
-            this.tabadmin.Click += new System.EventHandler(this.tabadmin_Click);
             // 
             // dgvEmpleados
             // 
@@ -385,31 +108,303 @@
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.Size = new System.Drawing.Size(1534, 220);
             this.dgvEmpleados.TabIndex = 0;
-            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
-            this.dgvEmpleados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentDoubleClick);
             // 
-            // label1
+            // cmbperfilsistema
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(9, 243);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 16);
-            this.label1.TabIndex = 254;
-            this.label1.Text = "Tipo de Personal";
+            this.cmbperfilsistema.BackColor = System.Drawing.Color.Black;
+            this.cmbperfilsistema.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbperfilsistema.FormattingEnabled = true;
+            this.cmbperfilsistema.Location = new System.Drawing.Point(7, 257);
+            this.cmbperfilsistema.Name = "cmbperfilsistema";
+            this.cmbperfilsistema.Size = new System.Drawing.Size(298, 21);
+            this.cmbperfilsistema.TabIndex = 281;
             // 
-            // PersonalSucursales
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.DimGray;
+            this.label47.Location = new System.Drawing.Point(528, 53);
+            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(104, 16);
+            this.label47.TabIndex = 279;
+            this.label47.Text = "No de Sucursal";
+            // 
+            // txtNoSucursal
+            // 
+            this.txtNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtNoSucursal.ForeColor = System.Drawing.Color.White;
+            this.txtNoSucursal.Location = new System.Drawing.Point(527, 29);
+            this.txtNoSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNoSucursal.Name = "txtNoSucursal";
+            this.txtNoSucursal.Size = new System.Drawing.Size(105, 20);
+            this.txtNoSucursal.TabIndex = 278;
+            this.txtNoSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DimGray;
+            this.label13.Location = new System.Drawing.Point(1367, 216);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 16);
+            this.label13.TabIndex = 277;
+            this.label13.Text = "Ventanillas";
+            // 
+            // txtVentanillas
+            // 
+            this.txtVentanillas.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtVentanillas.ForeColor = System.Drawing.Color.White;
+            this.txtVentanillas.Location = new System.Drawing.Point(1366, 192);
+            this.txtVentanillas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtVentanillas.Name = "txtVentanillas";
+            this.txtVentanillas.Size = new System.Drawing.Size(194, 20);
+            this.txtVentanillas.TabIndex = 275;
+            this.txtVentanillas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtAnalistas
+            // 
+            this.txtAnalistas.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtAnalistas.ForeColor = System.Drawing.Color.White;
+            this.txtAnalistas.Location = new System.Drawing.Point(1151, 192);
+            this.txtAnalistas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAnalistas.Name = "txtAnalistas";
+            this.txtAnalistas.Size = new System.Drawing.Size(193, 20);
+            this.txtAnalistas.TabIndex = 274;
+            this.txtAnalistas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(717, 218);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(152, 16);
+            this.label11.TabIndex = 273;
+            this.label11.Text = "Coordinador Cobranza";
+            // 
+            // txtCoordinadorCobranza
+            // 
+            this.txtCoordinadorCobranza.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtCoordinadorCobranza.ForeColor = System.Drawing.Color.White;
+            this.txtCoordinadorCobranza.Location = new System.Drawing.Point(718, 192);
+            this.txtCoordinadorCobranza.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCoordinadorCobranza.Name = "txtCoordinadorCobranza";
+            this.txtCoordinadorCobranza.Size = new System.Drawing.Size(413, 20);
+            this.txtCoordinadorCobranza.TabIndex = 272;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(311, 218);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(137, 16);
+            this.label10.TabIndex = 271;
+            this.label10.Text = "Coordinador Crédito";
+            // 
+            // txtCoordinadorCredito
+            // 
+            this.txtCoordinadorCredito.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtCoordinadorCredito.ForeColor = System.Drawing.Color.White;
+            this.txtCoordinadorCredito.Location = new System.Drawing.Point(314, 192);
+            this.txtCoordinadorCredito.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCoordinadorCredito.Name = "txtCoordinadorCredito";
+            this.txtCoordinadorCredito.Size = new System.Drawing.Size(381, 20);
+            this.txtCoordinadorCredito.TabIndex = 270;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(1150, 159);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(182, 16);
+            this.label9.TabIndex = 269;
+            this.label9.Text = "Coordinador Administrativo";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DimGray;
+            this.label12.Location = new System.Drawing.Point(1153, 218);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 16);
+            this.label12.TabIndex = 276;
+            this.label12.Text = "Analistas";
+            // 
+            // txtCoordinadorAdministrativo
+            // 
+            this.txtCoordinadorAdministrativo.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtCoordinadorAdministrativo.ForeColor = System.Drawing.Color.White;
+            this.txtCoordinadorAdministrativo.Location = new System.Drawing.Point(1150, 134);
+            this.txtCoordinadorAdministrativo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCoordinadorAdministrativo.Name = "txtCoordinadorAdministrativo";
+            this.txtCoordinadorAdministrativo.Size = new System.Drawing.Size(410, 20);
+            this.txtCoordinadorAdministrativo.TabIndex = 268;
+            // 
+            // txtDireccionRegional
+            // 
+            this.txtDireccionRegional.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtDireccionRegional.ForeColor = System.Drawing.Color.White;
+            this.txtDireccionRegional.Location = new System.Drawing.Point(314, 29);
+            this.txtDireccionRegional.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccionRegional.Name = "txtDireccionRegional";
+            this.txtDireccionRegional.Size = new System.Drawing.Size(199, 20);
+            this.txtDireccionRegional.TabIndex = 258;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(658, 55);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 16);
+            this.label3.TabIndex = 257;
+            this.label3.Text = "Sucursal";
+            // 
+            // txtSucursal
+            // 
+            this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtSucursal.ForeColor = System.Drawing.Color.White;
+            this.txtSucursal.Location = new System.Drawing.Point(653, 29);
+            this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSucursal.Name = "txtSucursal";
+            this.txtSucursal.Size = new System.Drawing.Size(253, 20);
+            this.txtSucursal.TabIndex = 256;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(719, 160);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 16);
+            this.label8.TabIndex = 267;
+            this.label8.Text = "Director Estatal";
+            // 
+            // txtDirectorEstatal
+            // 
+            this.txtDirectorEstatal.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtDirectorEstatal.ForeColor = System.Drawing.Color.White;
+            this.txtDirectorEstatal.Location = new System.Drawing.Point(718, 134);
+            this.txtDirectorEstatal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDirectorEstatal.Name = "txtDirectorEstatal";
+            this.txtDirectorEstatal.Size = new System.Drawing.Size(418, 20);
+            this.txtDirectorEstatal.TabIndex = 266;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(316, 162);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 16);
+            this.label7.TabIndex = 265;
+            this.label7.Text = "Director Regional";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(311, 102);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 16);
+            this.label6.TabIndex = 263;
+            this.label6.Text = "Dirección";
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtDireccion.ForeColor = System.Drawing.Color.White;
+            this.txtDireccion.Location = new System.Drawing.Point(314, 76);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(1249, 20);
+            this.txtDireccion.TabIndex = 262;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(932, 53);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 16);
+            this.label5.TabIndex = 261;
+            this.label5.Text = "Representaciones";
+            // 
+            // txtRepresentaciones
+            // 
+            this.txtRepresentaciones.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtRepresentaciones.ForeColor = System.Drawing.Color.White;
+            this.txtRepresentaciones.Location = new System.Drawing.Point(935, 29);
+            this.txtRepresentaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRepresentaciones.Name = "txtRepresentaciones";
+            this.txtRepresentaciones.Size = new System.Drawing.Size(628, 20);
+            this.txtRepresentaciones.TabIndex = 260;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(314, 55);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(129, 16);
+            this.label4.TabIndex = 259;
+            this.label4.Text = "Dirección Regional";
+            // 
+            // txtDirectorRegional
+            // 
+            this.txtDirectorRegional.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtDirectorRegional.ForeColor = System.Drawing.Color.White;
+            this.txtDirectorRegional.Location = new System.Drawing.Point(314, 134);
+            this.txtDirectorRegional.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDirectorRegional.Name = "txtDirectorRegional";
+            this.txtDirectorRegional.Size = new System.Drawing.Size(381, 20);
+            this.txtDirectorRegional.TabIndex = 264;
+            // 
+            // pbxSucursal
+            // 
+            this.pbxSucursal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxSucursal.Location = new System.Drawing.Point(7, 10);
+            this.pbxSucursal.Name = "pbxSucursal";
+            this.pbxSucursal.Size = new System.Drawing.Size(298, 221);
+            this.pbxSucursal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxSucursal.TabIndex = 255;
+            this.pbxSucursal.TabStop = false;
+            // 
+            // frmUsuariosSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1362, 574);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbperfilsistema);
             this.Controls.Add(this.TabsEmpleados);
+            this.Controls.Add(this.cmbperfilsistema);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.txtNoSucursal);
             this.Controls.Add(this.label13);
@@ -428,27 +423,31 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtDirectorEstatal);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtDirectorRegional);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtRepresentaciones);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtDirectorRegional);
             this.Controls.Add(this.pbxSucursal);
-            this.Name = "PersonalSucursales";
-            this.Text = "Fichas de Personal";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.PersonalSucursales_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).EndInit();
+            this.Name = "frmUsuariosSucursales";
+            this.Text = "frmUsuariosSucursales";
             this.TabsEmpleados.ResumeLayout(false);
             this.tabadmin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl TabsEmpleados;
+        private System.Windows.Forms.TabPage tabadmin;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.ComboBox cmbperfilsistema;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TextBox txtNoSucursal;
         private System.Windows.Forms.Label label13;
@@ -467,17 +466,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDirectorEstatal;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtDirectorRegional;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRepresentaciones;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDirectorRegional;
         private System.Windows.Forms.PictureBox pbxSucursal;
-        private System.Windows.Forms.ComboBox cmbperfilsistema;
-        private System.Windows.Forms.TabControl TabsEmpleados;
-        private System.Windows.Forms.TabPage tabadmin;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.Label label1;
     }
 }

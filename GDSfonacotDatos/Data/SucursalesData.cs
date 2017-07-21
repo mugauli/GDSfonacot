@@ -1,10 +1,11 @@
 ﻿using GDSfonacotDatos.DTO;
+using static GDSfonacotDatos.Utilities.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GDSfonacotDatos.Utilities.Util;
+
 
 namespace GDSfonacotDatos.Data
 {

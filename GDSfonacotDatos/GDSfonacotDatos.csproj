@@ -92,6 +92,7 @@
     <Compile Include="Data\CatalogosData.cs" />
     <Compile Include="Data\EmpleadosData.cs" />
     <Compile Include="Data\SucursalesData.cs" />
+    <Compile Include="Data\UsuariosData.cs" />
     <Compile Include="DTO\DatosBuscarContestacion.cs" />
     <Compile Include="DTO\DatosBuscarSupervision.cs" />
     <Compile Include="DTO\DatosComboSucursales.cs" />
