@@ -1,6 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GDSfonacotModelStoreContainer" CdmEntityContainer="GDSfonacotEntities">
+    <FunctionImportMapping FunctionImportName="spconsultarminuta" FunctionName="GDSfonacotModel.Store.spconsultarminuta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GDSfonacotModel.spconsultarminuta_Result">
+          <ScalarProperty Name="IdSupervisiones" ColumnName="IdSupervisiones" />
+          <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+          <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
+          <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
+          <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
+          <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
+          <ScalarProperty Name="Originacion" ColumnName="Originacion" />
+          <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
+          <ScalarProperty Name="Credito" ColumnName="Credito" />
+          <ScalarProperty Name="Utys" ColumnName="Utys" />
+          <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
+          <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
+          <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
+          <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
+          <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
+          <ScalarProperty Name="Fechacreacion" ColumnName="Fechacreacion" />
+          <ScalarProperty Name="Idstatus" ColumnName="Idstatus" />
+          <ScalarProperty Name="Idsupervisor1" ColumnName="Idsupervisor1" />
+          <ScalarProperty Name="Idsupervisor2" ColumnName="Idsupervisor2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="ContestacionesSuperv_Sucursales">
       <EntityTypeMapping TypeName="GDSfonacotModel.ContestacionesSuperv_Sucursales">
         <MappingFragment StoreEntitySet="ContestacionesSuperv_Sucursales">
@@ -211,30 +236,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spconsultarminuta" FunctionName="GDSfonacotModel.Store.spconsultarminuta">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="GDSfonacotModel.spconsultarminuta_Result">
-          <ScalarProperty Name="IdSupervisiones" ColumnName="IdSupervisiones" />
-          <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
-          <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
-          <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
-          <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
-          <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
-          <ScalarProperty Name="Originacion" ColumnName="Originacion" />
-          <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
-          <ScalarProperty Name="Credito" ColumnName="Credito" />
-          <ScalarProperty Name="Utys" ColumnName="Utys" />
-          <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
-          <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
-          <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
-          <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
-          <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
-          <ScalarProperty Name="Fechacreacion" ColumnName="Fechacreacion" />
-          <ScalarProperty Name="Idstatus" ColumnName="Idstatus" />
-          <ScalarProperty Name="Idsupervisor1" ColumnName="Idsupervisor1" />
-          <ScalarProperty Name="Idsupervisor2" ColumnName="Idsupervisor2" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

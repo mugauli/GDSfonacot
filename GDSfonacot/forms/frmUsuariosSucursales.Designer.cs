@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TabsEmpleados = new System.Windows.Forms.TabControl();
             this.tabadmin = new System.Windows.Forms.TabPage();
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.cmbperfilsistema = new System.Windows.Forms.ComboBox();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.cmbNivelusuario = new System.Windows.Forms.ComboBox();
             this.label47 = new System.Windows.Forms.Label();
             this.txtNoSucursal = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.pbxSucursal = new System.Windows.Forms.PictureBox();
             this.TabsEmpleados.SuspendLayout();
             this.tabadmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,35 +89,37 @@
             // tabadmin
             // 
             this.tabadmin.BackColor = System.Drawing.Color.DarkGray;
-            this.tabadmin.Controls.Add(this.dgvEmpleados);
+            this.tabadmin.Controls.Add(this.dgvUsuarios);
             this.tabadmin.Location = new System.Drawing.Point(4, 25);
             this.tabadmin.Name = "tabadmin";
             this.tabadmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabadmin.Size = new System.Drawing.Size(1540, 226);
             this.tabadmin.TabIndex = 0;
             // 
-            // dgvEmpleados
+            // dgvUsuarios
             // 
-            this.dgvEmpleados.AllowUserToAddRows = false;
-            this.dgvEmpleados.AllowUserToDeleteRows = false;
-            this.dgvEmpleados.AllowUserToOrderColumns = true;
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEmpleados.Location = new System.Drawing.Point(3, 3);
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.Size = new System.Drawing.Size(1534, 220);
-            this.dgvEmpleados.TabIndex = 0;
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.AllowUserToOrderColumns = true;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.Size = new System.Drawing.Size(1534, 220);
+            this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentDoubleClick);
             // 
-            // cmbperfilsistema
+            // cmbNivelusuario
             // 
-            this.cmbperfilsistema.BackColor = System.Drawing.Color.Black;
-            this.cmbperfilsistema.ForeColor = System.Drawing.SystemColors.Info;
-            this.cmbperfilsistema.FormattingEnabled = true;
-            this.cmbperfilsistema.Location = new System.Drawing.Point(7, 257);
-            this.cmbperfilsistema.Name = "cmbperfilsistema";
-            this.cmbperfilsistema.Size = new System.Drawing.Size(298, 21);
-            this.cmbperfilsistema.TabIndex = 281;
+            this.cmbNivelusuario.BackColor = System.Drawing.Color.Black;
+            this.cmbNivelusuario.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbNivelusuario.FormattingEnabled = true;
+            this.cmbNivelusuario.Location = new System.Drawing.Point(7, 257);
+            this.cmbNivelusuario.Name = "cmbNivelusuario";
+            this.cmbNivelusuario.Size = new System.Drawing.Size(298, 21);
+            this.cmbNivelusuario.TabIndex = 281;
+            this.cmbNivelusuario.SelectionChangeCommitted += new System.EventHandler(this.cmbNivelusuario_SelectionChangeCommitted);
             // 
             // label47
             // 
@@ -404,7 +406,7 @@
             this.ClientSize = new System.Drawing.Size(1362, 574);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TabsEmpleados);
-            this.Controls.Add(this.cmbperfilsistema);
+            this.Controls.Add(this.cmbNivelusuario);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.txtNoSucursal);
             this.Controls.Add(this.label13);
@@ -432,9 +434,10 @@
             this.Controls.Add(this.pbxSucursal);
             this.Name = "frmUsuariosSucursales";
             this.Text = "frmUsuariosSucursales";
+            this.Load += new System.EventHandler(this.frmUsuariosSucursales_Load);
             this.TabsEmpleados.ResumeLayout(false);
             this.tabadmin.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -446,8 +449,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl TabsEmpleados;
         private System.Windows.Forms.TabPage tabadmin;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.ComboBox cmbperfilsistema;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.ComboBox cmbNivelusuario;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TextBox txtNoSucursal;
         private System.Windows.Forms.Label label13;

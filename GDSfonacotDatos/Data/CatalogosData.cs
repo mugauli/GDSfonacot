@@ -113,5 +113,25 @@ namespace GDSfonacotDatos.Data
                 return response;
             }
         }
+
+        public MethodResponse<List<Usuarios_Nivel>> ObtenerNivelUsuario()
+        {
+            var response = new MethodResponse<List<Usuarios_Nivel>> { Code = 0 };
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    response.Result = context.Usuarios_Nivel.ToList();
+                }
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Code = -100;
+                response.Message = ex.Message;
+                return response;
+            }
+        }
     }
 }

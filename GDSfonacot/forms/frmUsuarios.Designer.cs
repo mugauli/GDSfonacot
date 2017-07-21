@@ -31,43 +31,51 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
             this.Gafete = new System.Windows.Forms.Label();
-            this.Puesto = new System.Windows.Forms.Label();
+            this.Nivelusuario = new System.Windows.Forms.Label();
             this.Sucursal = new System.Windows.Forms.Label();
-            this.DireccionRegional = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtDireccionRegional = new System.Windows.Forms.TextBox();
-            this.txtSucursal = new System.Windows.Forms.TextBox();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
+            this.txthidIdusuario = new System.Windows.Forms.TextBox();
             this.txtGafete = new System.Windows.Forms.TextBox();
+            this.txtpassword = new System.Windows.Forms.TextBox();
+            this.cmbNivelusuario = new System.Windows.Forms.ComboBox();
+            this.cmbSucursales = new System.Windows.Forms.ComboBox();
+            this.checkinactivar = new System.Windows.Forms.CheckBox();
+            this.dtFechaalta = new System.Windows.Forms.DateTimePicker();
+            this.fechaalta = new System.Windows.Forms.Label();
+            this.dtpickerfechabaja = new System.Windows.Forms.DateTimePicker();
+            this.fechabaja = new System.Windows.Forms.Label();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.chkverpassword = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtNombre, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtNombre, 3);
             this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNombre.Location = new System.Drawing.Point(235, 34);
+            this.txtNombre.Location = new System.Drawing.Point(4, 34);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(354, 22);
+            this.txtNombre.Size = new System.Drawing.Size(460, 22);
             this.txtNombre.TabIndex = 20;
             // 
             // Nombre
             // 
             this.Nombre.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.Nombre, 2);
             this.Nombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Nombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Nombre.Location = new System.Drawing.Point(54, 30);
+            this.Nombre.Location = new System.Drawing.Point(4, 60);
             this.Nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Nombre.Name = "Nombre";
-            this.Nombre.Size = new System.Drawing.Size(173, 30);
+            this.Nombre.Size = new System.Drawing.Size(251, 30);
             this.Nombre.TabIndex = 21;
-            this.Nombre.Text = "Nombre";
+            this.Nombre.Text = "Nombre completo";
             // 
             // Gafete
             // 
@@ -75,88 +83,83 @@
             this.Gafete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gafete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gafete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Gafete.Location = new System.Drawing.Point(597, 30);
+            this.Gafete.Location = new System.Drawing.Point(472, 60);
             this.Gafete.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Gafete.Name = "Gafete";
-            this.Gafete.Size = new System.Drawing.Size(113, 30);
+            this.Gafete.Size = new System.Drawing.Size(201, 30);
             this.Gafete.TabIndex = 32;
             this.Gafete.Text = "Gafete";
             // 
-            // Puesto
+            // Nivelusuario
             // 
-            this.Puesto.AutoSize = true;
-            this.Puesto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Puesto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Puesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Puesto.Location = new System.Drawing.Point(54, 90);
-            this.Puesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Puesto.Name = "Puesto";
-            this.Puesto.Size = new System.Drawing.Size(173, 30);
-            this.Puesto.TabIndex = 44;
-            this.Puesto.Text = "Puesto";
+            this.Nivelusuario.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.Nivelusuario, 2);
+            this.Nivelusuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Nivelusuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nivelusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Nivelusuario.Location = new System.Drawing.Point(4, 120);
+            this.Nivelusuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Nivelusuario.Name = "Nivelusuario";
+            this.Nivelusuario.Size = new System.Drawing.Size(251, 30);
+            this.Nivelusuario.TabIndex = 44;
+            this.Nivelusuario.Text = "Nivel de usuario";
             // 
             // Sucursal
             // 
             this.Sucursal.AutoSize = true;
-            this.Sucursal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.SetColumnSpan(this.Sucursal, 2);
             this.Sucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sucursal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Sucursal.Location = new System.Drawing.Point(597, 90);
+            this.Sucursal.Location = new System.Drawing.Point(263, 120);
             this.Sucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Sucursal.Name = "Sucursal";
-            this.Sucursal.Size = new System.Drawing.Size(113, 30);
+            this.Sucursal.Size = new System.Drawing.Size(59, 16);
             this.Sucursal.TabIndex = 46;
             this.Sucursal.Text = "Sucursal";
-            this.Sucursal.Click += new System.EventHandler(this.Sucursal_Click);
-            // 
-            // DireccionRegional
-            // 
-            this.DireccionRegional.AutoSize = true;
-            this.DireccionRegional.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DireccionRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DireccionRegional.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.DireccionRegional.Location = new System.Drawing.Point(54, 150);
-            this.DireccionRegional.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.DireccionRegional.Name = "DireccionRegional";
-            this.DireccionRegional.Size = new System.Drawing.Size(173, 49);
-            this.DireccionRegional.TabIndex = 48;
-            this.DireccionRegional.Text = "Dirección Regional";
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGuardar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnGuardar.Location = new System.Drawing.Point(596, 153);
+            this.btnGuardar.Location = new System.Drawing.Point(680, 153);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(115, 43);
+            this.btnGuardar.Size = new System.Drawing.Size(115, 31);
             this.btnGuardar.TabIndex = 287;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.34792F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.58643F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.15504F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.71207F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdusuario, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Nombre, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtGafete, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Gafete, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtpassword, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbNivelusuario, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Nivelusuario, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cmbSucursales, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.Sucursal, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.checkinactivar, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.dtFechaalta, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.fechaalta, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.dtpickerfechabaja, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.fechabaja, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 4, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtDireccionRegional, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.DireccionRegional, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtSucursal, 5, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Sucursal, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Puesto, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtPuesto, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Gafete, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtGafete, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Nombre, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.chkverpassword, 4, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.Window;
@@ -168,48 +171,20 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1021, 224);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(889, 208);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // txtDireccionRegional
+            // txthidIdusuario
             // 
-            this.txtDireccionRegional.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtDireccionRegional.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDireccionRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccionRegional.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtDireccionRegional.Location = new System.Drawing.Point(235, 154);
-            this.txtDireccionRegional.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDireccionRegional.Name = "txtDireccionRegional";
-            this.txtDireccionRegional.Size = new System.Drawing.Size(173, 22);
-            this.txtDireccionRegional.TabIndex = 47;
-            // 
-            // txtSucursal
-            // 
-            this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSucursal.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSucursal.Location = new System.Drawing.Point(718, 94);
-            this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(233, 22);
-            this.txtSucursal.TabIndex = 45;
-            // 
-            // txtPuesto
-            // 
-            this.txtPuesto.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtPuesto, 2);
-            this.txtPuesto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPuesto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPuesto.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPuesto.Location = new System.Drawing.Point(235, 94);
-            this.txtPuesto.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(354, 22);
-            this.txtPuesto.TabIndex = 43;
+            this.txthidIdusuario.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdusuario.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdusuario.Location = new System.Drawing.Point(4, 4);
+            this.txthidIdusuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdusuario.Name = "txthidIdusuario";
+            this.txthidIdusuario.Size = new System.Drawing.Size(12, 22);
+            this.txthidIdusuario.TabIndex = 320;
             // 
             // txtGafete
             // 
@@ -217,17 +192,144 @@
             this.txtGafete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtGafete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGafete.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtGafete.Location = new System.Drawing.Point(718, 34);
+            this.txtGafete.Location = new System.Drawing.Point(472, 34);
             this.txtGafete.Margin = new System.Windows.Forms.Padding(4);
             this.txtGafete.Name = "txtGafete";
-            this.txtGafete.Size = new System.Drawing.Size(233, 22);
+            this.txtGafete.Size = new System.Drawing.Size(201, 22);
             this.txtGafete.TabIndex = 31;
+            // 
+            // txtpassword
+            // 
+            this.txtpassword.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txtpassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtpassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassword.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtpassword.Location = new System.Drawing.Point(681, 34);
+            this.txtpassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '*';
+            this.txtpassword.Size = new System.Drawing.Size(204, 22);
+            this.txtpassword.TabIndex = 47;
+            // 
+            // cmbNivelusuario
+            // 
+            this.cmbNivelusuario.BackColor = System.Drawing.Color.Black;
+            this.tableLayoutPanel1.SetColumnSpan(this.cmbNivelusuario, 2);
+            this.cmbNivelusuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbNivelusuario.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbNivelusuario.FormattingEnabled = true;
+            this.cmbNivelusuario.Location = new System.Drawing.Point(3, 93);
+            this.cmbNivelusuario.Name = "cmbNivelusuario";
+            this.cmbNivelusuario.Size = new System.Drawing.Size(253, 24);
+            this.cmbNivelusuario.TabIndex = 288;
+            // 
+            // cmbSucursales
+            // 
+            this.cmbSucursales.BackColor = System.Drawing.Color.Black;
+            this.tableLayoutPanel1.SetColumnSpan(this.cmbSucursales, 2);
+            this.cmbSucursales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSucursales.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbSucursales.FormattingEnabled = true;
+            this.cmbSucursales.Location = new System.Drawing.Point(262, 93);
+            this.cmbSucursales.Name = "cmbSucursales";
+            this.cmbSucursales.Size = new System.Drawing.Size(412, 24);
+            this.cmbSucursales.TabIndex = 289;
+            // 
+            // checkinactivar
+            // 
+            this.checkinactivar.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.checkinactivar, 2);
+            this.checkinactivar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkinactivar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.checkinactivar.Location = new System.Drawing.Point(3, 153);
+            this.checkinactivar.Name = "checkinactivar";
+            this.checkinactivar.Size = new System.Drawing.Size(253, 31);
+            this.checkinactivar.TabIndex = 290;
+            this.checkinactivar.Text = "Inactivo";
+            this.checkinactivar.UseVisualStyleBackColor = true;
+            // 
+            // dtFechaalta
+            // 
+            this.dtFechaalta.CalendarForeColor = System.Drawing.Color.White;
+            this.dtFechaalta.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtFechaalta.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtFechaalta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtFechaalta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaalta.Location = new System.Drawing.Point(680, 93);
+            this.dtFechaalta.Name = "dtFechaalta";
+            this.dtFechaalta.Size = new System.Drawing.Size(206, 22);
+            this.dtFechaalta.TabIndex = 291;
+            // 
+            // fechaalta
+            // 
+            this.fechaalta.AutoSize = true;
+            this.fechaalta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fechaalta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaalta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fechaalta.Location = new System.Drawing.Point(681, 120);
+            this.fechaalta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.fechaalta.Name = "fechaalta";
+            this.fechaalta.Size = new System.Drawing.Size(204, 30);
+            this.fechaalta.TabIndex = 292;
+            this.fechaalta.Text = "Fecha de Alta";
+            // 
+            // dtpickerfechabaja
+            // 
+            this.dtpickerfechabaja.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpickerfechabaja.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtpickerfechabaja.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpickerfechabaja.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpickerfechabaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpickerfechabaja.Location = new System.Drawing.Point(262, 153);
+            this.dtpickerfechabaja.Name = "dtpickerfechabaja";
+            this.dtpickerfechabaja.Size = new System.Drawing.Size(203, 22);
+            this.dtpickerfechabaja.TabIndex = 293;
+            // 
+            // fechabaja
+            // 
+            this.fechabaja.AutoSize = true;
+            this.fechabaja.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fechabaja.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechabaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fechabaja.Location = new System.Drawing.Point(263, 187);
+            this.fechabaja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.fechabaja.Name = "fechabaja";
+            this.fechabaja.Size = new System.Drawing.Size(201, 23);
+            this.fechabaja.TabIndex = 294;
+            this.fechabaja.Text = "Fecha de Baja";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnNuevo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNuevo.Location = new System.Drawing.Point(550, 153);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(124, 31);
+            this.btnNuevo.TabIndex = 319;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // chkverpassword
+            // 
+            this.chkverpassword.AutoSize = true;
+            this.chkverpassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.chkverpassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.chkverpassword.Location = new System.Drawing.Point(680, 63);
+            this.chkverpassword.Name = "chkverpassword";
+            this.chkverpassword.Size = new System.Drawing.Size(139, 20);
+            this.chkverpassword.TabIndex = 321;
+            this.chkverpassword.Text = "Mostrar Password";
+            this.chkverpassword.UseVisualStyleBackColor = false;
+            this.chkverpassword.CheckedChanged += new System.EventHandler(this.chkverpassword_CheckedChanged);
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 224);
+            this.ClientSize = new System.Drawing.Size(889, 208);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
@@ -243,14 +345,21 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtDireccionRegional;
-        private System.Windows.Forms.Label DireccionRegional;
-        private System.Windows.Forms.TextBox txtSucursal;
+        private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.Label Sucursal;
-        private System.Windows.Forms.Label Puesto;
-        private System.Windows.Forms.TextBox txtPuesto;
+        private System.Windows.Forms.Label Nivelusuario;
         private System.Windows.Forms.Label Gafete;
         private System.Windows.Forms.TextBox txtGafete;
         private System.Windows.Forms.Label Nombre;
+        private System.Windows.Forms.ComboBox cmbNivelusuario;
+        private System.Windows.Forms.ComboBox cmbSucursales;
+        private System.Windows.Forms.CheckBox checkinactivar;
+        private System.Windows.Forms.DateTimePicker dtFechaalta;
+        private System.Windows.Forms.Label fechaalta;
+        private System.Windows.Forms.DateTimePicker dtpickerfechabaja;
+        private System.Windows.Forms.Label fechabaja;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.TextBox txthidIdusuario;
+        private System.Windows.Forms.CheckBox chkverpassword;
     }
 }

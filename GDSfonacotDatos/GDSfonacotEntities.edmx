@@ -189,7 +189,7 @@
           <Property Name="Usuario" Type="nvarchar" MaxLength="255" />
           <Property Name="Pass" Type="nvarchar" MaxLength="255" />
           <Property Name="IdNivel" Type="int" />
-          <Property Name="fechaalta" Type="datetime" Nullable="false" />
+          <Property Name="fechaalta" Type="datetime" />
           <Property Name="fechabaja" Type="datetime" />
           <Property Name="IdSucursal" Type="int" />
         </EntityType>
@@ -545,6 +545,9 @@
     <edmx:ConceptualModels>
       <Schema Namespace="GDSfonacotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="GDSfonacotEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="spconsultarminuta" ReturnType="Collection(GDSfonacotModel.spconsultarminuta_Result)">
+          <Parameter Name="nosupervision" Mode="In" Type="String" />
+          </FunctionImport>
           <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="GDSfonacotModel.ContestacionesSuperv_Sucursales" />
           <EntitySet Name="ctActividad" EntityType="GDSfonacotModel.ctActividad" />
           <EntitySet Name="ctArea" EntityType="GDSfonacotModel.ctArea" />
@@ -640,10 +643,28 @@
             <End Role="Usuarios_Nivel" EntitySet="Usuarios_Nivel" />
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
-          <FunctionImport Name="spconsultarminuta" ReturnType="Collection(GDSfonacotModel.spconsultarminuta_Result)">
-            <Parameter Name="nosupervision" Mode="In" Type="String" />
-          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="spconsultarminuta_Result">
+          <Property Type="Int32" Name="IdSupervisiones" Nullable="false" />
+          <Property Type="Int32" Name="IdSucursal" Nullable="true" />
+          <Property Type="String" Name="NoSupervision" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="FechaSupervision" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Inmueble" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Gestion_direccion" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Originacion" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Tarjetas_transfer" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Credito" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Utys" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Promocionales" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Cobranza" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Fondofijo" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="AcuerdosCompromisos" Nullable="true" MaxLength="Max" />
+          <Property Type="Int32" Name="Idusuariocreador" Nullable="true" />
+          <Property Type="DateTime" Name="Fechacreacion" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Idstatus" Nullable="true" />
+          <Property Type="Int32" Name="Idsupervisor1" Nullable="true" />
+          <Property Type="Int32" Name="Idsupervisor2" Nullable="true" />
+        </ComplexType>
         <EntityType Name="ContestacionesSuperv_Sucursales">
           <Key>
             <PropertyRef Name="Idcontestacion" />
@@ -859,7 +880,7 @@
           <Property Name="Usuario" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Pass" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="IdNivel" Type="Int32" />
-          <Property Name="fechaalta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechaalta" Type="DateTime" Precision="3" />
           <Property Name="fechabaja" Type="DateTime" Precision="3" />
           <Property Name="IdSucursal" Type="Int32" />
           <NavigationProperty Name="ContestacionesSuperv_Sucursales" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_UsuarioCreador" FromRole="Usuarios" ToRole="ContestacionesSuperv_Sucursales" />
@@ -1119,33 +1140,37 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="spconsultarminuta_Result">
-          <Property Type="Int32" Name="IdSupervisiones" Nullable="false" />
-          <Property Type="Int32" Name="IdSucursal" Nullable="true" />
-          <Property Type="String" Name="NoSupervision" Nullable="true" MaxLength="255" />
-          <Property Type="DateTime" Name="FechaSupervision" Nullable="true" Precision="23" />
-          <Property Type="String" Name="Inmueble" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Gestion_direccion" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Originacion" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Tarjetas_transfer" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Credito" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Utys" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Promocionales" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Cobranza" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="Fondofijo" Nullable="true" MaxLength="Max" />
-          <Property Type="String" Name="AcuerdosCompromisos" Nullable="true" MaxLength="Max" />
-          <Property Type="Int32" Name="Idusuariocreador" Nullable="true" />
-          <Property Type="DateTime" Name="Fechacreacion" Nullable="true" Precision="23" />
-          <Property Type="Int32" Name="Idstatus" Nullable="true" />
-          <Property Type="Int32" Name="Idsupervisor1" Nullable="true" />
-          <Property Type="Int32" Name="Idsupervisor2" Nullable="true" />
-        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GDSfonacotModelStoreContainer" CdmEntityContainer="GDSfonacotEntities">
+          <FunctionImportMapping FunctionImportName="spconsultarminuta" FunctionName="GDSfonacotModel.Store.spconsultarminuta">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GDSfonacotModel.spconsultarminuta_Result">
+                <ScalarProperty Name="IdSupervisiones" ColumnName="IdSupervisiones" />
+                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
+                <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
+                <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
+                <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
+                <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
+                <ScalarProperty Name="Originacion" ColumnName="Originacion" />
+                <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
+                <ScalarProperty Name="Credito" ColumnName="Credito" />
+                <ScalarProperty Name="Utys" ColumnName="Utys" />
+                <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
+                <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
+                <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
+                <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
+                <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
+                <ScalarProperty Name="Fechacreacion" ColumnName="Fechacreacion" />
+                <ScalarProperty Name="Idstatus" ColumnName="Idstatus" />
+                <ScalarProperty Name="Idsupervisor1" ColumnName="Idsupervisor1" />
+                <ScalarProperty Name="Idsupervisor2" ColumnName="Idsupervisor2" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="ContestacionesSuperv_Sucursales">
             <EntityTypeMapping TypeName="GDSfonacotModel.ContestacionesSuperv_Sucursales">
               <MappingFragment StoreEntitySet="ContestacionesSuperv_Sucursales">
@@ -1356,31 +1381,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="spconsultarminuta" FunctionName="GDSfonacotModel.Store.spconsultarminuta">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="GDSfonacotModel.spconsultarminuta_Result">
-                <ScalarProperty Name="IdSupervisiones" ColumnName="IdSupervisiones" />
-                <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
-                <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
-                <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
-                <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
-                <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
-                <ScalarProperty Name="Originacion" ColumnName="Originacion" />
-                <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
-                <ScalarProperty Name="Credito" ColumnName="Credito" />
-                <ScalarProperty Name="Utys" ColumnName="Utys" />
-                <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
-                <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
-                <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
-                <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
-                <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
-                <ScalarProperty Name="Fechacreacion" ColumnName="Fechacreacion" />
-                <ScalarProperty Name="Idstatus" ColumnName="Idstatus" />
-                <ScalarProperty Name="Idsupervisor1" ColumnName="Idsupervisor1" />
-                <ScalarProperty Name="Idsupervisor2" ColumnName="Idsupervisor2" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

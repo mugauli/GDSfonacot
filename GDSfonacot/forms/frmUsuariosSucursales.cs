@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,28 +23,24 @@ namespace GDSfonacot.forms
             CargarDatos(Sucursal);
             sucursalInt = Sucursal;
         }
-       
-       
-        private void LoadingCatTipoPersonal()
+        private void frmUsuariosSucursales_Load(object sender, EventArgs e)
         {
-            var perfilessistema = new CatalogosData().ObtenerTipoPersonal();
-            if (perfilessistema.Code != 0)
+            LoadingNivelUsuario();
+        }
+
+        private void LoadingNivelUsuario()
+        {
+            var nivelesusuario = new CatalogosData().ObtenerNivelUsuario();
+            if (nivelesusuario.Code != 0)
             {
                 //Mandar mensaje de error con sucursales.Message
             }
 
-            cmbperfilsistema.DataSource = perfilessistema.Result;
-            cmbperfilsistema.DisplayMember = "Descripcion";
-            cmbperfilsistema.ValueMember = "IdTipoPersonal";
-            cmbperfilsistema.SelectedIndex = -1;
+            cmbNivelusuario.DataSource = nivelesusuario.Result;
+            cmbNivelusuario.DisplayMember = "Nivel_Usuario";
+            cmbNivelusuario.ValueMember = "IdNivel";
+            cmbNivelusuario.SelectedIndex = -1;
         }
-        private void PersonalSucursales_Load(object sender, EventArgs e)
-        {
-            //iniciando form
-            LoadingCatTipoPersonal();
-
-        }
-
         private void tabadmin_Click(object sender, EventArgs e)
         {
 
@@ -75,13 +72,6 @@ namespace GDSfonacot.forms
             txtCoordinadorCobranza.Text = objSucursal.Coordinador_Cobranza;
             txtAnalistas.Text = objSucursal.Analistas.ToString();
             txtVentanillas.Text = objSucursal.Ventanillas.ToString();
-
-
-
-
-
-
-
         }
 
         public static Bitmap ByteToImage(byte[] blob)
@@ -106,41 +96,37 @@ namespace GDSfonacot.forms
 
 
         }
-
-
-        private void CargarGridEmpleados(int tipoperfil)
+        private void CargarGridUsuarios(int tipoacceso)
         {
-            var _EmpleadosData = new EmpleadosData();
-            var empleados1 = _EmpleadosData.ObtenerEmpleadosGeneral2(sucursalInt, tipoperfil);
-            if (empleados1.Code != 0)
+            var _usuariosData = new UsuariosData();
+            var usuarios = _usuariosData.ObtenerUsuariosGeneral(sucursalInt, tipoacceso);
+            if (usuarios.Code != 0)
             {
-                MessageBox.Show("Error: " + empleados1.Message);
+                MessageBox.Show("Error: " + usuarios.Message);
             }
             else
             {
 
-                dgvEmpleados.DataSource = empleados1.Result;
-                dgvEmpleados.ReadOnly = true;
-                dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgvEmpleados.Columns[0].Visible = false;
-                dgvEmpleados.Columns[0].HeaderText = "ID";
-                dgvEmpleados.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                dgvEmpleados.Columns[1].HeaderText = "Nombre";
-                dgvEmpleados.Columns[2].HeaderText = "Gafete";
-                dgvEmpleados.Columns[3].HeaderText = "Tipo Personal";
-                dgvEmpleados.Columns[4].HeaderText = "Perfil Sistema";
-                dgvEmpleados.Columns[5].HeaderText = "Jornada";
-                dgvEmpleados.Columns[6].HeaderText = "Horario";
+                dgvUsuarios.DataSource = usuarios.Result;
+                dgvUsuarios.ReadOnly = true;
+                dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvUsuarios.Columns[0].Visible = false;
+                dgvUsuarios.Columns[0].HeaderText = "ID";
+                dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                dgvUsuarios.Columns[1].HeaderText = "Nombre Usuario";
+                dgvUsuarios.Columns[2].HeaderText = "Nivel de Acceso";
+                dgvUsuarios.Columns[3].HeaderText = "Sucursal";
+
             }
 
 
         }
 
 
-        private DataGridView CargarDatos(List<EmpleadosDGV> empleados)
+        private DataGridView CargarDatos(List<UsuariosDGV> usuarios)
         {
             var dataGV = new DataGridView();
-            dataGV.DataSource = empleados;
+            dataGV.DataSource = usuarios;
             dataGV.ReadOnly = true;
             dataGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -148,37 +134,34 @@ namespace GDSfonacot.forms
             dataGV.Columns[0].HeaderText = "ID";
             dataGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
 
-            dataGV.Columns[1].HeaderText = "Nombre";
-            dataGV.Columns[2].HeaderText = "Gafete";
-            dataGV.Columns[3].HeaderText = "Tipo Personal";
-            dataGV.Columns[4].HeaderText = "Perfil Sistema";
-            dataGV.Columns[5].HeaderText = "Jornada";
-            dataGV.Columns[6].HeaderText = "Horario";
+            dataGV.Columns[1].HeaderText = "Nombre Usuario";
+            dataGV.Columns[2].HeaderText = "Nivel de Acceso";
+            dataGV.Columns[3].HeaderText = "Sucursal";
             return dataGV;
         }
 
 
-        private void cmbperfilsistema_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cmbNivelusuario_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
-            if (cmbperfilsistema.SelectedIndex != 0 || cmbperfilsistema.SelectedIndex != -1)
+            if (cmbNivelusuario.SelectedIndex != 0 || cmbNivelusuario.SelectedIndex != -1)
             {
 
-                CargarGridEmpleados(Convert.ToInt32(cmbperfilsistema.SelectedValue));
+                CargarGridUsuarios(Convert.ToInt32(cmbNivelusuario.SelectedValue));
 
             }
         }
 
-        private void dgvEmpleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvUsuarios_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1 && e.ColumnIndex > -1)
             {
-                if (dgvEmpleados.CurrentCell.Selected)
+                if (dgvUsuarios.CurrentCell.Selected)
                 {
-                    var valor = dgvEmpleados.Rows[e.RowIndex].Cells[0].Value;
+                    var valor = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value;
 
 
-                    var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
+                    var frmPersonsuc = new frmUsuarios(Convert.ToInt32(valor));//crea una instancia del formulario
                                                                                 // frmPersonsuc.MdiParent = this.ParentForm;
                     frmPersonsuc.ShowDialog();
                     // this.Close();
@@ -191,5 +174,7 @@ namespace GDSfonacot.forms
         {
 
         }
+
+       
     }
 }
