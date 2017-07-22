@@ -14,6 +14,7 @@ namespace GDSfonacot.forms
     public partial class FormVisorConsultarSupervCR : Form
     {
         public string valor = "";
+        public int destino = 0;
         public FormVisorConsultarSupervCR()
         {
             InitializeComponent();

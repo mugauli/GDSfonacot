@@ -39,8 +39,11 @@
             this.crpvisor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crpvisor.Location = new System.Drawing.Point(0, 0);
             this.crpvisor.Name = "crpvisor";
+            this.crpvisor.ShowGroupTreeButton = false;
+            this.crpvisor.ShowLogo = false;
             this.crpvisor.Size = new System.Drawing.Size(864, 419);
             this.crpvisor.TabIndex = 1;
+            this.crpvisor.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FormVisorConsultarSupervCR
             // 

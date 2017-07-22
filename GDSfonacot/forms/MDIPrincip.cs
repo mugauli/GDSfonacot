@@ -54,26 +54,7 @@ namespace GDSfonacot
 
         private void menuFichasPerson_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2)
-            {
-                MessageBox.Show("No tienes acceso a este modulo, verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-            }
-            else
-            {
-                if (Globales.objpasardatosusuario.IdNivel == 1)
-                {
-                    var frmPersonsuc = new frmBusquedaSucursal(1);//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this;
-                    frmPersonsuc.Show();
-                }
-                else
-                {
-                    PersonalSucursales frmPersonsuc = new PersonalSucursales(Globales.objpasardatosusuario.IdSucursal.Value);//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this;
-                    frmPersonsuc.Show();                  
-                }
-                //   frmfichassup.ShowDialog(); //muestra el formulario de forma modal
-            }
+           
           
         }
 
@@ -116,9 +97,9 @@ namespace GDSfonacot
             }
             else
             {
-                var frmPersonsuc = new frmBusquedaSucursal(2);//crea una instancia del formulario
-                frmPersonsuc.MdiParent = this;
-                frmPersonsuc.Show();
+                var frmsucurs = new frmSucursales(0);//crea una instancia del formulario
+                frmsucurs.MdiParent = this;
+                frmsucurs.Show();
 
             }
 
@@ -180,24 +161,16 @@ namespace GDSfonacot
             }
         }
 
-        private void lblNombreUsuario_Click(object sender, EventArgs e)
-        {
+   
 
-        }
-
-        private void pruebaResponsiveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frmsup = new forms.frmHistoricoSupervisiones(0);//crea una instancia del formulario
-            frmsup.MdiParent = this;            
-            frmsup.Show();
-        }
+   
  private void mnuSolventarSeg_Click(object sender, EventArgs e)
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
-                forms.FormBusSegRespuesta frmsup = new forms.FormBusSegRespuesta();//crea una instancia del formulario
-                frmsup.MdiParent = this;
-                frmsup.Show();
+                //forms.FormBusSegRespuesta frmsup = new forms.FormBusSegRespuesta();//crea una instancia del formulario
+                //frmsup.MdiParent = this;
+                //frmsup.Show();
                 //  frmsup.ShowDialog(); //muestra el formulario en forma modal
             }
             else
@@ -283,6 +256,74 @@ namespace GDSfonacot
             else
             {
                 MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void menuConsulUsu_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                var frmPersonsuc = new frmBusquedaSucursal(3);//crea una instancia del formulario
+                frmPersonsuc.MdiParent = this;
+                frmPersonsuc.Show();
+            }
+        }
+
+        private void menuConsulSucur_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                var frmPersonsuc = new frmBusquedaSucursal(2);//crea una instancia del formulario
+                frmPersonsuc.MdiParent = this;
+                frmPersonsuc.Show();
+            }
+        }
+
+        private void menuConsulEmp_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1004)
+            {
+                MessageBox.Show("No tienes acceso a este modulo, verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                //if (Globales.objpasardatosusuario.IdNivel == 1)
+                //{
+                    var frmPersonsuc = new frmBusquedaSucursal(1);//crea una instancia del formulario
+                    frmPersonsuc.MdiParent = this;
+                    frmPersonsuc.Show();
+                
+             }
+            //    else
+            //    {
+            //        PersonalSucursales frmPersonsuc = new PersonalSucursales(Globales.objpasardatosusuario.IdSucursal.Value);//crea una instancia del formulario
+            //        frmPersonsuc.MdiParent = this;
+            //        frmPersonsuc.Show();
+            //    }
+          }
+
+        private void menucatEmp_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+            {
+                MessageBox.Show("No tienes acceso a este modulo, verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+            else
+            {
+                //if (Globales.objpasardatosusuario.IdNivel == 1)
+                //{
+                var frmemp = new frmEmpleados(0);//crea una instancia del formulario
+                frmemp.MdiParent = this;
+                frmemp.Show();
+
             }
         }
     }

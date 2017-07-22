@@ -64,7 +64,7 @@ namespace GDSfonacot
             else
             {//else1 para anidar un segundo if y validar solo la contraseña
 
-                var logueo = objusuario.LoginUsuario(textUsuario.Text, textPass.Text);
+                var logueo = objusuario.LoginUsuario(textUsuario.Text,Globales.Encriptar(textPass.Text));
                 //var insertar=   objusuario.GuardarSupervision(;
                 if (logueo.Result != null)
                 {

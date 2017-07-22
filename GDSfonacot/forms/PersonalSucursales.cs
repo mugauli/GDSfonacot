@@ -179,9 +179,9 @@ namespace GDSfonacot
 
 
                     var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
-                   // frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.ShowDialog();
-                   // this.Close();
+                    frmPersonsuc.MdiParent = this.ParentForm;
+                    frmPersonsuc.Show();
+                    this.Close();
 
                 }
             }

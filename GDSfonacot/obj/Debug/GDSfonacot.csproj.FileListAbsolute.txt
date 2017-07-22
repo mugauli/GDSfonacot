@@ -85,8 +85,6 @@ C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\EntityFramework
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.csprojResolveAssemblyReference.cache
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormBusConsultasSupervision.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormBusSegRespuesta.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormBusSupervSeguimiento.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.formSeguiRespuesta.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormTemplParametroCR.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormVisorConsultarSupervCR.resources
@@ -98,18 +96,14 @@ C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.form
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmEmpleados.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmHistoricoSupervisiones.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.frmLogin.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmMDIP.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmSeguimiento.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmSupervisiom.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmUsuarios.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.MDIPrincip.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.pruebaResponsive.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmSucursales.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.Properties.Resources.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.ContestSuc.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.FichasSupervision.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.FormContestSuperv.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.PanelDeControl.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.PersonalSucursales.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.SeguimientoSup.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.csproj.GenerateResource.Cache
@@ -176,3 +170,4 @@ C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\Enti
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.exe
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.pdb
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmUsuariosSucursales.resources
+C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmUsuariosSucursales.resources

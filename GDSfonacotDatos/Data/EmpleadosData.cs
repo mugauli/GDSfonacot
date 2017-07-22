@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static GDSfonacotDatos.Utilities.Util;
 
+
 namespace GDSfonacotDatos.Data
 {
     public class EmpleadosData
@@ -22,6 +23,7 @@ namespace GDSfonacotDatos.Data
                     {
                         context.Empleados.Add(empleado);
                         context.SaveChanges();
+                       
                     }
                     else
                     {
@@ -39,6 +41,7 @@ namespace GDSfonacotDatos.Data
                         empleadoDB.IdActividad = empleado.IdActividad;
 
                         context.SaveChanges();
+
 
                     }
                 }

@@ -92,29 +92,11 @@
     <Compile Include="forms\frmBusquedaSupervisiones.Designer.cs">
       <DependentUpon>frmBusquedaSupervisiones.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmMDIP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmMDIP.Designer.cs">
-      <DependentUpon>frmMDIP.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\FormBusConsultasSupervision.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\FormBusConsultasSupervision.Designer.cs">
       <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\FormBusSegRespuesta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FormBusSegRespuesta.Designer.cs">
-      <DependentUpon>FormBusSegRespuesta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\FormBusSupervSeguimiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FormBusSupervSeguimiento.Designer.cs">
-      <DependentUpon>FormBusSupervSeguimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\formSeguiRespuesta.cs">
       <SubType>Form</SubType>
@@ -206,12 +188,6 @@
     <Compile Include="forms\MDIPrincip.Designer.cs">
       <DependentUpon>MDIPrincip.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\pruebaResponsive.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\pruebaResponsive.Designer.cs">
-      <DependentUpon>pruebaResponsive.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\frmSucursales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,12 +211,6 @@
     </Compile>
     <EmbeddedResource Include="forms\FormBusConsultasSupervision.resx">
       <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FormBusSegRespuesta.resx">
-      <DependentUpon>FormBusSegRespuesta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FormBusSupervSeguimiento.resx">
-      <DependentUpon>FormBusSupervSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\formSeguiRespuesta.resx">
       <DependentUpon>formSeguiRespuesta.cs</DependentUpon>
@@ -275,9 +245,6 @@
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmMDIP.resx">
-      <DependentUpon>frmMDIP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmSeguimiento.resx">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,9 +259,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MDIPrincip.resx">
       <DependentUpon>MDIPrincip.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\pruebaResponsive.resx">
-      <DependentUpon>pruebaResponsive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmSucursales.resx">
       <DependentUpon>frmSucursales.cs</DependentUpon>
@@ -338,23 +302,11 @@
     <Compile Include="forms\ContestSuc.Designer.cs">
       <DependentUpon>ContestSuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\FichasSupervision.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FichasSupervision.Designer.cs">
-      <DependentUpon>FichasSupervision.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\FormContestSuperv.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\FormContestSuperv.Designer.cs">
       <DependentUpon>FormContestSuperv.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\PanelDeControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\PanelDeControl.Designer.cs">
-      <DependentUpon>PanelDeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\PersonalSucursales.cs">
       <SubType>Form</SubType>
@@ -371,14 +323,8 @@
     <EmbeddedResource Include="forms\ContestSuc.resx">
       <DependentUpon>ContestSuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\FichasSupervision.resx">
-      <DependentUpon>FichasSupervision.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormContestSuperv.resx">
       <DependentUpon>FormContestSuperv.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\PanelDeControl.resx">
-      <DependentUpon>PanelDeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\PersonalSucursales.resx">
       <DependentUpon>PersonalSucursales.cs</DependentUpon>

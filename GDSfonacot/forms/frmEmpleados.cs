@@ -22,6 +22,10 @@ namespace GDSfonacot.forms
             IdEmpleadoInt = IdEmpleado;
 
             if (IdEmpleado != 0) CargarEmpleado(IdEmpleado);
+            else
+            {
+                LimpiarDatos();
+            }
 
 
 
@@ -34,28 +38,43 @@ namespace GDSfonacot.forms
                 MessageBox.Show(mensaje);
                 return;
             }
+            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            { 
+                var empleados = new Empleados();
+                empleados.IdEmpleado = Convert.ToInt32(txthidIdEmpleado.Text.ToString());
+                empleados.Nombre = txtNombre.Text.ToString().Trim();
+                empleados.Gafete = txtGafete.Text.ToString().Trim();
+                empleados.Jornada = txtJornada.Text.ToString().Trim();
+                empleados.Horario = txtHorario.Text.ToString().Trim();
+                empleados.IdRegional = Convert.ToInt32(cmbRegional.SelectedValue);
+                empleados.IdSucursal = Convert.ToInt32(cmbSucursal.SelectedValue);
+                empleados.IdTipoPersonal = Convert.ToInt32(cmbTipoPersonal.SelectedValue);
+                empleados.IdArea = Convert.ToInt32(cmbActividad.SelectedValue);
+                empleados.IdPerfilSistema = Convert.ToInt32(cmbPerfilSistema.SelectedValue);
+                empleados.IdActividad = Convert.ToInt32(cmbActividad.SelectedValue);
 
-            var empleado = new Empleados();
-            empleado.IdEmpleado = IdEmpleadoInt;
-            empleado.Nombre = txtNombre.Text.ToString().Trim();
-            empleado.Gafete = txtGafete.Text.ToString().Trim();
-            empleado.Jornada = txtJornada.Text.ToString().Trim();
-            empleado.Horario = txtHorario.Text.ToString().Trim();
-            empleado.IdRegional = cmbRegional.SelectedIndex;
-            empleado.IdSucursal = cmbSucursal.SelectedIndex;
-            empleado.IdTipoPersonal = cmbTipoPersonal.SelectedIndex;
-            empleado.IdArea = cmbActividad.SelectedIndex;
-            empleado.IdPerfilSistema = cmbPerfilSistema.SelectedIndex;
-            empleado.IdActividad = cmbActividad.SelectedIndex;
+                var objEmpleado = new EmpleadosData().GuadarEmpleado(empleados);
+                if (objEmpleado.Code != 0)
+                {
+                    MessageBox.Show("Error: " + objEmpleado.Message);
+                    return;
+                    //Mandar mensaje de error con sucursales.Message
+                }
+                else
+                {
+                    if (txthidIdEmpleado.Text =="0")
+                    {
+                        MessageBox.Show("El nuevo empleado ha sido guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarDatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El empleado ha sido actualizado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarEmpleado(Convert.ToInt32(txthidIdEmpleado.Text.ToString()));
+                    }
+                }
 
-            var objEmpleado = new EmpleadosData().GuadarEmpleado(empleado);
-            if (objEmpleado.Code != 0)
-            {
-                MessageBox.Show("Error: " + objEmpleado.Message);
-                return;
-                //Mandar mensaje de error con sucursales.Message
             }
-
 
         }
         private bool ValidateEmpleado(out string mensaje)
@@ -76,7 +95,23 @@ namespace GDSfonacot.forms
 
             return !(mensaje == string.Empty);
         }
-
+        private void LimpiarDatos()
+        {
+            txthidIdEmpleado.Text = "0";
+            txtNombre.Text = null;
+            txtGafete.Text = null;
+            txtJornada.Text=null;
+            txtHorario.Text = null;
+            cmbRegional.SelectedIndex = -1;
+            cmbSucursal.SelectedIndex = -1;
+            cmbTipoPersonal.SelectedIndex = -1;
+            cmbActividad.SelectedIndex = -1;
+            cmbArea.SelectedIndex = -1;
+            cmbPerfilSistema.SelectedIndex = -1;
+            cmbActividad.SelectedIndex = -1;
+            btnNuevo.Enabled = false;
+            btnGuardar.Enabled = true;
+        }
         private void LoadingCatalogos()
         {
             #region ctActividad
@@ -193,7 +228,7 @@ namespace GDSfonacot.forms
             }
 
             var emp = empleadoDB.Result.First();
-
+            txthidIdEmpleado.Text = IdEmpleado.ToString();
             txtNombre.Text = emp.Nombre.ToString().Trim();
             txtGafete.Text = emp.Gafete.ToString().Trim();
             txtJornada.Text = emp.Jornada.ToString().Trim();
@@ -204,6 +239,11 @@ namespace GDSfonacot.forms
             cmbActividad.SelectedValue = emp.IdActividad;
             cmbPerfilSistema.SelectedValue = emp.IdPerfilSistema;
             cmbArea.SelectedValue = emp.IdArea;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
         }
     }
 }

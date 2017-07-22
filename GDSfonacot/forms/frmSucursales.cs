@@ -274,12 +274,293 @@ namespace GDSfonacot.forms
         private void frmSucursales_Load(object sender, EventArgs e)
         {
             LoadingCatRegional();
-            CargarDatos(SucursalInt);
+            if (SucursalInt!=0)
+            {
+                CargarDatos(SucursalInt);
+            }
+            else {
+                LimpiarDatos();
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             LimpiarDatos();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtSucursal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNoSucursal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbZonaRegional_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRepresentaciones_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDirectorEstatal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCoordinadorAdministrativo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbxSucursal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDirectorRegional_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCoordinadorCredito_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalAnalistas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCoordinadorCobranza_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAnalistaComercial_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAnalistasCredito_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAnalistasCobranza_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTrabajadoresAfiliados_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPotencialEmpresas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPotencialTrabajadores_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasEstatus30_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasEstatus21_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasEstatus18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMetaAnual_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMetaAcumulada_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtColocacionMensual_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtColocacionAnual_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMetaMensual_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasEstatus1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmpresasAfiliadas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalVentanillas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,7 +20,7 @@ namespace GDSfonacot.forms
             InitializeComponent();
             LoadingCatalogos();
             Idusuario = usuario;
-            if (Idusuario != 0) CargarEmpleado(Idusuario);
+            if (Idusuario != 0) CargarUsuario(Idusuario);
 
         }
 
@@ -32,44 +32,56 @@ namespace GDSfonacot.forms
                 MessageBox.Show(mensaje);
                 return;
             }
-
-            var usuario = new Usuarios();
-            usuario.IdUsuario = Convert.ToInt32(txthidIdusuario.Text.ToString());
-            usuario.Nombre_Usuario = txtNombre.Text.ToString();
-            usuario.Usuario = txtGafete.Text.ToString();
-            usuario.Pass = txtpassword.Text.ToString();
-            usuario.IdNivel =Convert.ToInt32(cmbNivelusuario.SelectedValue);
-            usuario.IdSucursal= Convert.ToInt32(cmbSucursales.SelectedValue);
-
-            if (Convert.ToInt32(txthidIdusuario.Text.ToString()) == 0)
+            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                usuario.fechaalta = System.DateTime.Now;
-                usuario.fechabaja = null;
-            }
-            else
-            {
-                if (checkinactivar.Checked == true)
-                {
-                    usuario.fechabaja = System.DateTime.Now;
-                    usuario.fechaalta = null;
-                }
-                else
+                var usuario = new Usuarios();
+                usuario.IdUsuario = Convert.ToInt32(txthidIdusuario.Text.ToString());
+                usuario.Nombre_Usuario = txtNombre.Text.ToString();
+                usuario.Usuario = txtGafete.Text.ToString();
+                usuario.Pass = Globales.Encriptar(txtpassword.Text.ToString());
+                usuario.IdNivel = Convert.ToInt32(cmbNivelusuario.SelectedValue);
+                usuario.IdSucursal = Convert.ToInt32(cmbSucursales.SelectedValue);
+
+                if (Convert.ToInt32(txthidIdusuario.Text.ToString()) == 0)
                 {
                     usuario.fechaalta = System.DateTime.Now;
                     usuario.fechabaja = null;
                 }
-            }
+                else
+                {
+                    if (checkinactivar.Checked == true)
+                    {
+                        usuario.fechabaja = System.DateTime.Now;
+                        usuario.fechaalta = null;
+                    }
+                    else
+                    {
+                        usuario.fechaalta = System.DateTime.Now;
+                        usuario.fechabaja = null;
+                    }
+                }
 
-
-
-
-
-            var objusuario = new UsuariosData().GuardarUsuario(usuario);
-            if (objusuario.Code != 0)
-            {
-                MessageBox.Show("Error: " + objusuario.Message);
-                return;
-                //Mandar mensaje de error con sucursales.Message
+                var objusuario = new UsuariosData().GuardarUsuario(usuario,checkinactivar.Checked);
+                if (objusuario.Code != 0)
+                {
+                    MessageBox.Show("Error: " + objusuario.Message);
+                    return;
+                    //Mandar mensaje de error con sucursales.Message
+                }
+           
+                else
+                {
+                    if (txthidIdusuario.Text == "0")
+                    {
+                        MessageBox.Show("El nuevo usuario ha sido guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarDatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario ha sido actualizado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarUsuario(Convert.ToInt32(txthidIdusuario.Text.ToString()));
+                    }
+                }
             }
 
 
@@ -127,7 +139,7 @@ namespace GDSfonacot.forms
 
         }
 
-        private void CargarEmpleado(int Idusuario)
+        private void CargarUsuario(int Idusuario)
         {
             var usuarioDB = new UsuariosData().ObtenerUsuarios(Idusuario);
             if (usuarioDB.Code != 0 || usuarioDB.Result.Count < 1)
@@ -143,7 +155,7 @@ namespace GDSfonacot.forms
             cmbNivelusuario.SelectedValue = usu.IdNivel;
             txtNombre.Text = usu.Nombre_Usuario;
             txtGafete.Text = usu.Usuario;
-            txtpassword.Text = usu.Pass;
+            txtpassword.Text =Globales.Desencriptar(usu.Pass);
             if (usu.fechaalta!=null)
             {
                 dtFechaalta.Visible = true;
@@ -197,6 +209,7 @@ namespace GDSfonacot.forms
         private void chkverpassword_CheckedChanged(object sender, EventArgs e)
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1004)
+            { 
                 MessageBox.Show("No tienes privilegio para mostrar el password", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
             }
             else
@@ -204,11 +217,13 @@ namespace GDSfonacot.forms
                 if (chkverpassword.Checked == false)
                 {
                     txtpassword.PasswordChar = '*';
+                    
                 }
                 else
                 {
                     if (txtpassword.Text != "")
                     {
+                        txtpassword.Text.ToString();
                         txtpassword.PasswordChar = '\0';
                     }
                 }

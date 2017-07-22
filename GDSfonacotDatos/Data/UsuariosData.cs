@@ -89,7 +89,7 @@ namespace GDSfonacotDatos.Data
             }
         }
 
-        public MethodResponse<int> GuardarUsuario(Usuarios usuario)
+        public MethodResponse<int> GuardarUsuario(Usuarios usuario, bool inactivar)
         {
             var response = new MethodResponse<int> { Code = 0 };
 
@@ -108,8 +108,18 @@ namespace GDSfonacotDatos.Data
                         usuariosDB.IdUsuario = usuario.IdUsuario;
                         usuariosDB.IdNivel = usuario.IdNivel;
                         usuariosDB.IdSucursal = usuario.IdSucursal;
-                        usuariosDB.fechaalta = usuario.fechaalta;
-                        usuariosDB.fechabaja = usuario.fechabaja;
+                      
+                            if (inactivar == false)
+                            {                      
+                               usuariosDB.fechabaja = usuario.fechabaja;
+                            usuariosDB.fechaalta = usuario.fechaalta;
+                            }
+                            else
+                            {
+                                usuariosDB.fechaalta = null;
+                                usuariosDB.fechabaja = usuario.fechabaja;
+                            }
+                           
                         usuariosDB.Nombre_Usuario = usuario.Nombre_Usuario;
                         usuariosDB.Pass = usuario.Pass;
                         usuariosDB.Usuario = usuario.Usuario;
