@@ -17,8 +17,9 @@ namespace GDSfonacotDatos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HistorialSupervisiones()
         {
+            this.Cierres = new HashSet<Cierres>();
             this.ContestacionesSuperv_Sucursales = new HashSet<ContestacionesSuperv_Sucursales>();
-            this.Seguimiento_RespuestaSucursales = new HashSet<Seguimiento_RespuestaSucursales>();
+            this.Reasignaciones = new HashSet<Reasignaciones>();
             this.SeguimientoSupervision_Supervisores = new HashSet<SeguimientoSupervision_Supervisores>();
         }
     
@@ -43,6 +44,8 @@ namespace GDSfonacotDatos
         public Nullable<int> Idsupervisor2 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cierres> Cierres { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ContestacionesSuperv_Sucursales> ContestacionesSuperv_Sucursales { get; set; }
         public virtual ctEstatusSupervision ctEstatusSupervision { get; set; }
         public virtual Sucursales Sucursales { get; set; }
@@ -50,7 +53,7 @@ namespace GDSfonacotDatos
         public virtual Usuarios Usuarios1 { get; set; }
         public virtual Usuarios Usuarios2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Seguimiento_RespuestaSucursales> Seguimiento_RespuestaSucursales { get; set; }
+        public virtual ICollection<Reasignaciones> Reasignaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SeguimientoSupervision_Supervisores> SeguimientoSupervision_Supervisores { get; set; }
     }

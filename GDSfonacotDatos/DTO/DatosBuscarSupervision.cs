@@ -36,6 +36,8 @@ namespace GDSfonacotDatos.DTO
         public string Coordinador_Administrativo { get; set; }
         public string Coordinador_Crédito { get; set; }
         public string Coordinador_Cobranza { get; set; }
+        public string Supervisor1 { get; set; }
+        public string Supervisor2 { get; set; }
 
     }
     

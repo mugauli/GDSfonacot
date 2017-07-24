@@ -54,6 +54,7 @@
             this.txthidIdSup = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolButReasignar = new System.Windows.Forms.ToolStripButton();
+            this.toolButCerrarSup = new System.Windows.Forms.ToolStripButton();
             this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
             this.pbxSucursal = new System.Windows.Forms.PictureBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -136,10 +137,10 @@
             this.txtRepresentaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtRepresentaciones.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRepresentaciones.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtRepresentaciones.Location = new System.Drawing.Point(1002, 24);
+            this.txtRepresentaciones.Location = new System.Drawing.Point(996, 24);
             this.txtRepresentaciones.Margin = new System.Windows.Forms.Padding(4);
             this.txtRepresentaciones.Name = "txtRepresentaciones";
-            this.txtRepresentaciones.Size = new System.Drawing.Size(318, 22);
+            this.txtRepresentaciones.Size = new System.Drawing.Size(316, 22);
             this.txtRepresentaciones.TabIndex = 15;
             // 
             // label3
@@ -148,10 +149,10 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(676, 50);
+            this.label3.Location = new System.Drawing.Point(672, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 30);
+            this.label3.Size = new System.Drawing.Size(154, 30);
             this.label3.TabIndex = 12;
             this.label3.Text = "Sucursal";
             // 
@@ -161,10 +162,10 @@
             this.txtSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSucursal.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSucursal.Location = new System.Drawing.Point(676, 24);
+            this.txtSucursal.Location = new System.Drawing.Point(672, 24);
             this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(155, 22);
+            this.txtSucursal.Size = new System.Drawing.Size(154, 22);
             this.txtSucursal.TabIndex = 11;
             // 
             // label4
@@ -173,10 +174,10 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(839, 50);
+            this.label4.Location = new System.Drawing.Point(834, 50);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 30);
+            this.label4.Size = new System.Drawing.Size(154, 30);
             this.label4.TabIndex = 14;
             this.label4.Text = "Dirección Regional";
             // 
@@ -186,10 +187,10 @@
             this.txtDireccionRegional.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDireccionRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionRegional.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtDireccionRegional.Location = new System.Drawing.Point(839, 24);
+            this.txtDireccionRegional.Location = new System.Drawing.Point(834, 24);
             this.txtDireccionRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccionRegional.Name = "txtDireccionRegional";
-            this.txtDireccionRegional.Size = new System.Drawing.Size(155, 22);
+            this.txtDireccionRegional.Size = new System.Drawing.Size(154, 22);
             this.txtDireccionRegional.TabIndex = 13;
             // 
             // label1
@@ -199,10 +200,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(350, 50);
+            this.label1.Location = new System.Drawing.Point(348, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 30);
+            this.label1.Size = new System.Drawing.Size(316, 30);
             this.label1.TabIndex = 10;
             this.label1.Text = "No de Supervisión";
             // 
@@ -213,10 +214,10 @@
             this.txtNoSupervision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNoSupervision.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoSupervision.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNoSupervision.Location = new System.Drawing.Point(350, 24);
+            this.txtNoSupervision.Location = new System.Drawing.Point(348, 24);
             this.txtNoSupervision.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoSupervision.Name = "txtNoSupervision";
-            this.txtNoSupervision.Size = new System.Drawing.Size(318, 22);
+            this.txtNoSupervision.Size = new System.Drawing.Size(316, 22);
             this.txtNoSupervision.TabIndex = 9;
             // 
             // label5
@@ -226,10 +227,10 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(1002, 50);
+            this.label5.Location = new System.Drawing.Point(996, 50);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(318, 30);
+            this.label5.Size = new System.Drawing.Size(316, 30);
             this.label5.TabIndex = 16;
             this.label5.Text = "Representaciones";
             // 
@@ -240,10 +241,10 @@
             this.txtDireccion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDireccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtDireccion.Location = new System.Drawing.Point(350, 84);
+            this.txtDireccion.Location = new System.Drawing.Point(348, 84);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(970, 22);
+            this.txtDireccion.Size = new System.Drawing.Size(964, 22);
             this.txtDireccion.TabIndex = 17;
             // 
             // label6
@@ -253,10 +254,10 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(350, 110);
+            this.label6.Location = new System.Drawing.Point(348, 110);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(970, 30);
+            this.label6.Size = new System.Drawing.Size(964, 30);
             this.label6.TabIndex = 18;
             this.label6.Text = "Domicilio";
             // 
@@ -267,10 +268,10 @@
             this.txtDirectorRegional.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDirectorRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDirectorRegional.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtDirectorRegional.Location = new System.Drawing.Point(350, 144);
+            this.txtDirectorRegional.Location = new System.Drawing.Point(348, 144);
             this.txtDirectorRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirectorRegional.Name = "txtDirectorRegional";
-            this.txtDirectorRegional.Size = new System.Drawing.Size(318, 22);
+            this.txtDirectorRegional.Size = new System.Drawing.Size(316, 22);
             this.txtDirectorRegional.TabIndex = 19;
             // 
             // label7
@@ -280,10 +281,10 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(350, 170);
+            this.label7.Location = new System.Drawing.Point(348, 170);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(318, 30);
+            this.label7.Size = new System.Drawing.Size(316, 30);
             this.label7.TabIndex = 20;
             this.label7.Text = "Director Regional";
             // 
@@ -294,10 +295,10 @@
             this.txtDirectorEstatal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDirectorEstatal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDirectorEstatal.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtDirectorEstatal.Location = new System.Drawing.Point(676, 144);
+            this.txtDirectorEstatal.Location = new System.Drawing.Point(672, 144);
             this.txtDirectorEstatal.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirectorEstatal.Name = "txtDirectorEstatal";
-            this.txtDirectorEstatal.Size = new System.Drawing.Size(318, 22);
+            this.txtDirectorEstatal.Size = new System.Drawing.Size(316, 22);
             this.txtDirectorEstatal.TabIndex = 21;
             // 
             // label8
@@ -307,10 +308,10 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(676, 170);
+            this.label8.Location = new System.Drawing.Point(672, 170);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(318, 30);
+            this.label8.Size = new System.Drawing.Size(316, 30);
             this.label8.TabIndex = 22;
             this.label8.Text = "Director Estatal";
             // 
@@ -321,10 +322,10 @@
             this.txtCoordinadorAdministrativo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCoordinadorAdministrativo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCoordinadorAdministrativo.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCoordinadorAdministrativo.Location = new System.Drawing.Point(1002, 144);
+            this.txtCoordinadorAdministrativo.Location = new System.Drawing.Point(996, 144);
             this.txtCoordinadorAdministrativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorAdministrativo.Name = "txtCoordinadorAdministrativo";
-            this.txtCoordinadorAdministrativo.Size = new System.Drawing.Size(318, 22);
+            this.txtCoordinadorAdministrativo.Size = new System.Drawing.Size(316, 22);
             this.txtCoordinadorAdministrativo.TabIndex = 23;
             // 
             // label9
@@ -334,10 +335,10 @@
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(1002, 170);
+            this.label9.Location = new System.Drawing.Point(996, 170);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(318, 30);
+            this.label9.Size = new System.Drawing.Size(316, 30);
             this.label9.TabIndex = 24;
             this.label9.Text = "Coordinador Administrativo";
             // 
@@ -348,10 +349,10 @@
             this.txtCoordinadorCredito.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCoordinadorCredito.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCoordinadorCredito.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCoordinadorCredito.Location = new System.Drawing.Point(350, 204);
+            this.txtCoordinadorCredito.Location = new System.Drawing.Point(348, 204);
             this.txtCoordinadorCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorCredito.Name = "txtCoordinadorCredito";
-            this.txtCoordinadorCredito.Size = new System.Drawing.Size(318, 22);
+            this.txtCoordinadorCredito.Size = new System.Drawing.Size(316, 22);
             this.txtCoordinadorCredito.TabIndex = 25;
             // 
             // label10
@@ -361,10 +362,10 @@
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(350, 230);
+            this.label10.Location = new System.Drawing.Point(348, 230);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(318, 30);
+            this.label10.Size = new System.Drawing.Size(316, 30);
             this.label10.TabIndex = 26;
             this.label10.Text = "Coordinador Crédito";
             // 
@@ -375,10 +376,10 @@
             this.txtCoordinadorCobranza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCoordinadorCobranza.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCoordinadorCobranza.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCoordinadorCobranza.Location = new System.Drawing.Point(676, 204);
+            this.txtCoordinadorCobranza.Location = new System.Drawing.Point(672, 204);
             this.txtCoordinadorCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorCobranza.Name = "txtCoordinadorCobranza";
-            this.txtCoordinadorCobranza.Size = new System.Drawing.Size(318, 22);
+            this.txtCoordinadorCobranza.Size = new System.Drawing.Size(316, 22);
             this.txtCoordinadorCobranza.TabIndex = 27;
             // 
             // label11
@@ -388,10 +389,10 @@
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(676, 230);
+            this.label11.Location = new System.Drawing.Point(672, 230);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(318, 30);
+            this.label11.Size = new System.Drawing.Size(316, 30);
             this.label11.TabIndex = 28;
             this.label11.Text = "Coordinador Cobranza";
             // 
@@ -410,7 +411,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.Controls.Add(this.txthidStatus, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txthidIdSup, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
@@ -577,13 +578,14 @@
             // 
             // toolStrip1
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 3);
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 5);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolButReasignar,
+            this.toolButCerrarSup,
             this.toolButImprimir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(346, 20);
+            this.toolStrip1.Size = new System.Drawing.Size(668, 20);
             this.toolStrip1.TabIndex = 283;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -596,6 +598,15 @@
             this.toolButReasignar.Size = new System.Drawing.Size(145, 17);
             this.toolButReasignar.Text = "Reasignar Supervision ";
             // 
+            // toolButCerrarSup
+            // 
+            this.toolButCerrarSup.Enabled = false;
+            this.toolButCerrarSup.Image = ((System.Drawing.Image)(resources.GetObject("toolButCerrarSup.Image")));
+            this.toolButCerrarSup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButCerrarSup.Name = "toolButCerrarSup";
+            this.toolButCerrarSup.Size = new System.Drawing.Size(123, 17);
+            this.toolButCerrarSup.Text = "Cerrar Supervisión";
+            // 
             // toolButImprimir
             // 
             this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
@@ -603,6 +614,7 @@
             this.toolButImprimir.Name = "toolButImprimir";
             this.toolButImprimir.Size = new System.Drawing.Size(73, 17);
             this.toolButImprimir.Text = "Imprimir";
+            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);
             // 
             // pbxSucursal
             // 
@@ -613,7 +625,7 @@
             this.pbxSucursal.Location = new System.Drawing.Point(23, 23);
             this.pbxSucursal.Name = "pbxSucursal";
             this.tableLayoutPanel1.SetRowSpan(this.pbxSucursal, 8);
-            this.pbxSucursal.Size = new System.Drawing.Size(320, 234);
+            this.pbxSucursal.Size = new System.Drawing.Size(318, 234);
             this.pbxSucursal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxSucursal.TabIndex = 282;
             this.pbxSucursal.TabStop = false;
@@ -625,10 +637,10 @@
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label36.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label36.Location = new System.Drawing.Point(1002, 410);
+            this.label36.Location = new System.Drawing.Point(996, 410);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(318, 30);
+            this.label36.Size = new System.Drawing.Size(316, 30);
             this.label36.TabIndex = 244;
             this.label36.Text = "Supervisor 2";
             // 
@@ -638,7 +650,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.txtSupervisor2, 2);
             this.txtSupervisor2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSupervisor2.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSupervisor2.Location = new System.Drawing.Point(1002, 384);
+            this.txtSupervisor2.Location = new System.Drawing.Point(996, 384);
             this.txtSupervisor2.Margin = new System.Windows.Forms.Padding(4);
             this.txtSupervisor2.Name = "txtSupervisor2";
             this.txtSupervisor2.Size = new System.Drawing.Size(296, 22);
@@ -651,10 +663,10 @@
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label28.Location = new System.Drawing.Point(676, 410);
+            this.label28.Location = new System.Drawing.Point(672, 410);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(318, 30);
+            this.label28.Size = new System.Drawing.Size(316, 30);
             this.label28.TabIndex = 242;
             this.label28.Text = "Supervisor 1";
             // 
@@ -665,10 +677,10 @@
             this.txtSupervisor1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSupervisor1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSupervisor1.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSupervisor1.Location = new System.Drawing.Point(676, 384);
+            this.txtSupervisor1.Location = new System.Drawing.Point(672, 384);
             this.txtSupervisor1.Margin = new System.Windows.Forms.Padding(4);
             this.txtSupervisor1.Name = "txtSupervisor1";
-            this.txtSupervisor1.Size = new System.Drawing.Size(318, 22);
+            this.txtSupervisor1.Size = new System.Drawing.Size(316, 22);
             this.txtSupervisor1.TabIndex = 241;
             // 
             // txtAcuerdosCompromisos
@@ -682,7 +694,7 @@
             this.txtAcuerdosCompromisos.Margin = new System.Windows.Forms.Padding(4);
             this.txtAcuerdosCompromisos.Multiline = true;
             this.txtAcuerdosCompromisos.Name = "txtAcuerdosCompromisos";
-            this.txtAcuerdosCompromisos.Size = new System.Drawing.Size(1296, 92);
+            this.txtAcuerdosCompromisos.Size = new System.Drawing.Size(1288, 92);
             this.txtAcuerdosCompromisos.TabIndex = 111;
             // 
             // label2
@@ -695,7 +707,7 @@
             this.label2.Location = new System.Drawing.Point(24, 1560);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1296, 20);
+            this.label2.Size = new System.Drawing.Size(1288, 20);
             this.label2.TabIndex = 110;
             this.label2.Text = "Acuerdos y Compromisos";
             // 
@@ -710,7 +722,7 @@
             this.txtFondoFijo.Margin = new System.Windows.Forms.Padding(4);
             this.txtFondoFijo.Multiline = true;
             this.txtFondoFijo.Name = "txtFondoFijo";
-            this.txtFondoFijo.Size = new System.Drawing.Size(1296, 92);
+            this.txtFondoFijo.Size = new System.Drawing.Size(1288, 92);
             this.txtFondoFijo.TabIndex = 109;
             // 
             // label46
@@ -723,7 +735,7 @@
             this.label46.Location = new System.Drawing.Point(24, 1440);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(1296, 20);
+            this.label46.Size = new System.Drawing.Size(1288, 20);
             this.label46.TabIndex = 108;
             this.label46.Text = "Fondo Fijo";
             // 
@@ -738,7 +750,7 @@
             this.txtCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranza.Multiline = true;
             this.txtCobranza.Name = "txtCobranza";
-            this.txtCobranza.Size = new System.Drawing.Size(1296, 92);
+            this.txtCobranza.Size = new System.Drawing.Size(1288, 92);
             this.txtCobranza.TabIndex = 107;
             // 
             // label45
@@ -751,7 +763,7 @@
             this.label45.Location = new System.Drawing.Point(24, 1320);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(1296, 20);
+            this.label45.Size = new System.Drawing.Size(1288, 20);
             this.label45.TabIndex = 106;
             this.label45.Text = "Cobranza";
             // 
@@ -766,7 +778,7 @@
             this.txtPromocionales.Margin = new System.Windows.Forms.Padding(4);
             this.txtPromocionales.Multiline = true;
             this.txtPromocionales.Name = "txtPromocionales";
-            this.txtPromocionales.Size = new System.Drawing.Size(1296, 92);
+            this.txtPromocionales.Size = new System.Drawing.Size(1288, 92);
             this.txtPromocionales.TabIndex = 105;
             // 
             // label44
@@ -779,7 +791,7 @@
             this.label44.Location = new System.Drawing.Point(24, 1200);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(1296, 20);
+            this.label44.Size = new System.Drawing.Size(1288, 20);
             this.label44.TabIndex = 104;
             this.label44.Text = "Promocionales";
             // 
@@ -794,7 +806,7 @@
             this.txtUtys.Margin = new System.Windows.Forms.Padding(4);
             this.txtUtys.Multiline = true;
             this.txtUtys.Name = "txtUtys";
-            this.txtUtys.Size = new System.Drawing.Size(1296, 92);
+            this.txtUtys.Size = new System.Drawing.Size(1288, 92);
             this.txtUtys.TabIndex = 103;
             // 
             // label43
@@ -807,7 +819,7 @@
             this.label43.Location = new System.Drawing.Point(24, 1080);
             this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(1296, 20);
+            this.label43.Size = new System.Drawing.Size(1288, 20);
             this.label43.TabIndex = 102;
             this.label43.Text = "UTYS";
             // 
@@ -822,7 +834,7 @@
             this.txtCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtCredito.Multiline = true;
             this.txtCredito.Name = "txtCredito";
-            this.txtCredito.Size = new System.Drawing.Size(1296, 92);
+            this.txtCredito.Size = new System.Drawing.Size(1288, 92);
             this.txtCredito.TabIndex = 101;
             // 
             // label42
@@ -835,7 +847,7 @@
             this.label42.Location = new System.Drawing.Point(24, 960);
             this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(1296, 20);
+            this.label42.Size = new System.Drawing.Size(1288, 20);
             this.label42.TabIndex = 100;
             this.label42.Text = "Crédito";
             // 
@@ -850,7 +862,7 @@
             this.txtTarjetasTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.txtTarjetasTransfer.Multiline = true;
             this.txtTarjetasTransfer.Name = "txtTarjetasTransfer";
-            this.txtTarjetasTransfer.Size = new System.Drawing.Size(1296, 92);
+            this.txtTarjetasTransfer.Size = new System.Drawing.Size(1288, 92);
             this.txtTarjetasTransfer.TabIndex = 99;
             // 
             // label41
@@ -863,7 +875,7 @@
             this.label41.Location = new System.Drawing.Point(24, 840);
             this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(1296, 20);
+            this.label41.Size = new System.Drawing.Size(1288, 20);
             this.label41.TabIndex = 98;
             this.label41.Text = "Tarjetas Transfer";
             // 
@@ -878,7 +890,7 @@
             this.txtOriginacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtOriginacion.Multiline = true;
             this.txtOriginacion.Name = "txtOriginacion";
-            this.txtOriginacion.Size = new System.Drawing.Size(1296, 92);
+            this.txtOriginacion.Size = new System.Drawing.Size(1288, 92);
             this.txtOriginacion.TabIndex = 97;
             // 
             // label40
@@ -891,7 +903,7 @@
             this.label40.Location = new System.Drawing.Point(24, 720);
             this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(1296, 20);
+            this.label40.Size = new System.Drawing.Size(1288, 20);
             this.label40.TabIndex = 96;
             this.label40.Text = "Originación\r\n";
             // 
@@ -906,7 +918,7 @@
             this.txtGestionDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtGestionDireccion.Multiline = true;
             this.txtGestionDireccion.Name = "txtGestionDireccion";
-            this.txtGestionDireccion.Size = new System.Drawing.Size(1296, 92);
+            this.txtGestionDireccion.Size = new System.Drawing.Size(1288, 92);
             this.txtGestionDireccion.TabIndex = 90;
             // 
             // label39
@@ -919,7 +931,7 @@
             this.label39.Location = new System.Drawing.Point(24, 600);
             this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(1296, 20);
+            this.label39.Size = new System.Drawing.Size(1288, 20);
             this.label39.TabIndex = 89;
             this.label39.Text = "Gestión de la Dirección\r\n";
             // 
@@ -934,7 +946,7 @@
             this.txtInmuble.Margin = new System.Windows.Forms.Padding(4);
             this.txtInmuble.Multiline = true;
             this.txtInmuble.Name = "txtInmuble";
-            this.txtInmuble.Size = new System.Drawing.Size(1296, 92);
+            this.txtInmuble.Size = new System.Drawing.Size(1288, 92);
             this.txtInmuble.TabIndex = 88;
             // 
             // label38
@@ -947,7 +959,7 @@
             this.label38.Location = new System.Drawing.Point(24, 480);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(1296, 20);
+            this.label38.Size = new System.Drawing.Size(1288, 20);
             this.label38.TabIndex = 87;
             this.label38.Text = "Inmueble\r\n";
             // 
@@ -957,7 +969,7 @@
             this.dtFechaSupervision.CalendarTitleBackColor = System.Drawing.Color.Black;
             this.dtFechaSupervision.CalendarTitleForeColor = System.Drawing.Color.White;
             this.dtFechaSupervision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaSupervision.Location = new System.Drawing.Point(512, 383);
+            this.dtFechaSupervision.Location = new System.Drawing.Point(509, 383);
             this.dtFechaSupervision.Name = "dtFechaSupervision";
             this.dtFechaSupervision.Size = new System.Drawing.Size(145, 20);
             this.dtFechaSupervision.TabIndex = 245;
@@ -968,10 +980,10 @@
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label35.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label35.Location = new System.Drawing.Point(513, 410);
+            this.label35.Location = new System.Drawing.Point(510, 410);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(155, 30);
+            this.label35.Size = new System.Drawing.Size(154, 30);
             this.label35.TabIndex = 86;
             this.label35.Text = "Fecha de Supervisión\r\n";
             // 
@@ -981,10 +993,10 @@
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label34.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label34.Location = new System.Drawing.Point(350, 410);
+            this.label34.Location = new System.Drawing.Point(348, 410);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(155, 30);
+            this.label34.Size = new System.Drawing.Size(154, 30);
             this.label34.TabIndex = 84;
             this.label34.Text = "Cobranza Cumplimiento\r\n";
             // 
@@ -994,10 +1006,10 @@
             this.txtCobranzaCumplimiento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCobranzaCumplimiento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCobranzaCumplimiento.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCobranzaCumplimiento.Location = new System.Drawing.Point(350, 384);
+            this.txtCobranzaCumplimiento.Location = new System.Drawing.Point(348, 384);
             this.txtCobranzaCumplimiento.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaCumplimiento.Name = "txtCobranzaCumplimiento";
-            this.txtCobranzaCumplimiento.Size = new System.Drawing.Size(155, 22);
+            this.txtCobranzaCumplimiento.Size = new System.Drawing.Size(154, 22);
             this.txtCobranzaCumplimiento.TabIndex = 83;
             // 
             // label33
@@ -1006,10 +1018,10 @@
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label33.Location = new System.Drawing.Point(187, 410);
+            this.label33.Location = new System.Drawing.Point(186, 410);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(155, 30);
+            this.label33.Size = new System.Drawing.Size(154, 30);
             this.label33.TabIndex = 82;
             this.label33.Text = "Cobranza Porcentaje";
             // 
@@ -1019,10 +1031,10 @@
             this.txtCobranzaPorcentaje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCobranzaPorcentaje.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCobranzaPorcentaje.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCobranzaPorcentaje.Location = new System.Drawing.Point(187, 384);
+            this.txtCobranzaPorcentaje.Location = new System.Drawing.Point(186, 384);
             this.txtCobranzaPorcentaje.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaPorcentaje.Name = "txtCobranzaPorcentaje";
-            this.txtCobranzaPorcentaje.Size = new System.Drawing.Size(155, 22);
+            this.txtCobranzaPorcentaje.Size = new System.Drawing.Size(154, 22);
             this.txtCobranzaPorcentaje.TabIndex = 81;
             // 
             // label32
@@ -1034,7 +1046,7 @@
             this.label32.Location = new System.Drawing.Point(24, 410);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(155, 30);
+            this.label32.Size = new System.Drawing.Size(154, 30);
             this.label32.TabIndex = 80;
             this.label32.Text = "Cobranza Meta Mensual";
             // 
@@ -1047,7 +1059,7 @@
             this.txtCobranzaMetaMensual.Location = new System.Drawing.Point(24, 384);
             this.txtCobranzaMetaMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaMetaMensual.Name = "txtCobranzaMetaMensual";
-            this.txtCobranzaMetaMensual.Size = new System.Drawing.Size(155, 22);
+            this.txtCobranzaMetaMensual.Size = new System.Drawing.Size(154, 22);
             this.txtCobranzaMetaMensual.TabIndex = 79;
             // 
             // label31
@@ -1056,10 +1068,10 @@
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label31.Location = new System.Drawing.Point(1165, 350);
+            this.label31.Location = new System.Drawing.Point(1158, 350);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(155, 30);
+            this.label31.Size = new System.Drawing.Size(154, 30);
             this.label31.TabIndex = 78;
             this.label31.Text = "Meta Acumulada";
             // 
@@ -1069,10 +1081,10 @@
             this.txtMetaAcumulada.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMetaAcumulada.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMetaAcumulada.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtMetaAcumulada.Location = new System.Drawing.Point(1165, 324);
+            this.txtMetaAcumulada.Location = new System.Drawing.Point(1158, 324);
             this.txtMetaAcumulada.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetaAcumulada.Name = "txtMetaAcumulada";
-            this.txtMetaAcumulada.Size = new System.Drawing.Size(155, 22);
+            this.txtMetaAcumulada.Size = new System.Drawing.Size(154, 22);
             this.txtMetaAcumulada.TabIndex = 77;
             // 
             // label29
@@ -1081,10 +1093,10 @@
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label29.Location = new System.Drawing.Point(1002, 350);
+            this.label29.Location = new System.Drawing.Point(996, 350);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(155, 30);
+            this.label29.Size = new System.Drawing.Size(154, 30);
             this.label29.TabIndex = 76;
             this.label29.Text = "Colocación Mensual";
             // 
@@ -1094,10 +1106,10 @@
             this.txtColocacionMensual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtColocacionMensual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColocacionMensual.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtColocacionMensual.Location = new System.Drawing.Point(1002, 324);
+            this.txtColocacionMensual.Location = new System.Drawing.Point(996, 324);
             this.txtColocacionMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtColocacionMensual.Name = "txtColocacionMensual";
-            this.txtColocacionMensual.Size = new System.Drawing.Size(155, 22);
+            this.txtColocacionMensual.Size = new System.Drawing.Size(154, 22);
             this.txtColocacionMensual.TabIndex = 75;
             // 
             // label25
@@ -1106,10 +1118,10 @@
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label25.Location = new System.Drawing.Point(839, 350);
+            this.label25.Location = new System.Drawing.Point(834, 350);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(155, 30);
+            this.label25.Size = new System.Drawing.Size(154, 30);
             this.label25.TabIndex = 74;
             this.label25.Text = "Colocación Anual";
             // 
@@ -1119,10 +1131,10 @@
             this.txtColocacionAnual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtColocacionAnual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColocacionAnual.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtColocacionAnual.Location = new System.Drawing.Point(839, 324);
+            this.txtColocacionAnual.Location = new System.Drawing.Point(834, 324);
             this.txtColocacionAnual.Margin = new System.Windows.Forms.Padding(4);
             this.txtColocacionAnual.Name = "txtColocacionAnual";
-            this.txtColocacionAnual.Size = new System.Drawing.Size(155, 22);
+            this.txtColocacionAnual.Size = new System.Drawing.Size(154, 22);
             this.txtColocacionAnual.TabIndex = 73;
             // 
             // label30
@@ -1131,10 +1143,10 @@
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label30.Location = new System.Drawing.Point(676, 350);
+            this.label30.Location = new System.Drawing.Point(672, 350);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(155, 30);
+            this.label30.Size = new System.Drawing.Size(154, 30);
             this.label30.TabIndex = 72;
             this.label30.Text = "Meta Mensual";
             // 
@@ -1144,10 +1156,10 @@
             this.txtMetaMensual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMetaMensual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMetaMensual.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtMetaMensual.Location = new System.Drawing.Point(676, 324);
+            this.txtMetaMensual.Location = new System.Drawing.Point(672, 324);
             this.txtMetaMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetaMensual.Name = "txtMetaMensual";
-            this.txtMetaMensual.Size = new System.Drawing.Size(155, 22);
+            this.txtMetaMensual.Size = new System.Drawing.Size(154, 22);
             this.txtMetaMensual.TabIndex = 70;
             // 
             // label26
@@ -1155,7 +1167,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label26.Location = new System.Drawing.Point(513, 350);
+            this.label26.Location = new System.Drawing.Point(510, 350);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(134, 16);
@@ -1167,7 +1179,7 @@
             this.txtEmpresasEstatus30.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtEmpresasEstatus30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresasEstatus30.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasEstatus30.Location = new System.Drawing.Point(513, 324);
+            this.txtEmpresasEstatus30.Location = new System.Drawing.Point(510, 324);
             this.txtEmpresasEstatus30.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus30.Name = "txtEmpresasEstatus30";
             this.txtEmpresasEstatus30.Size = new System.Drawing.Size(144, 22);
@@ -1179,7 +1191,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label24.Location = new System.Drawing.Point(350, 350);
+            this.label24.Location = new System.Drawing.Point(348, 350);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(134, 16);
@@ -1192,7 +1204,7 @@
             this.txtEmpresasEstatus21.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtEmpresasEstatus21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresasEstatus21.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasEstatus21.Location = new System.Drawing.Point(350, 324);
+            this.txtEmpresasEstatus21.Location = new System.Drawing.Point(348, 324);
             this.txtEmpresasEstatus21.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus21.Name = "txtEmpresasEstatus21";
             this.txtEmpresasEstatus21.Size = new System.Drawing.Size(144, 22);
@@ -1204,7 +1216,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label23.Location = new System.Drawing.Point(187, 350);
+            this.label23.Location = new System.Drawing.Point(186, 350);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(134, 16);
@@ -1217,7 +1229,7 @@
             this.txtEmpresasEstatus18.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtEmpresasEstatus18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresasEstatus18.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasEstatus18.Location = new System.Drawing.Point(187, 324);
+            this.txtEmpresasEstatus18.Location = new System.Drawing.Point(186, 324);
             this.txtEmpresasEstatus18.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus18.Name = "txtEmpresasEstatus18";
             this.txtEmpresasEstatus18.Size = new System.Drawing.Size(144, 22);
@@ -1254,7 +1266,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label21.Location = new System.Drawing.Point(1165, 290);
+            this.label21.Location = new System.Drawing.Point(1158, 290);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(144, 16);
@@ -1267,7 +1279,7 @@
             this.txtPotencialTrabajadores.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtPotencialTrabajadores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPotencialTrabajadores.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPotencialTrabajadores.Location = new System.Drawing.Point(1165, 264);
+            this.txtPotencialTrabajadores.Location = new System.Drawing.Point(1158, 264);
             this.txtPotencialTrabajadores.Margin = new System.Windows.Forms.Padding(4);
             this.txtPotencialTrabajadores.Name = "txtPotencialTrabajadores";
             this.txtPotencialTrabajadores.Size = new System.Drawing.Size(144, 22);
@@ -1279,7 +1291,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(1002, 290);
+            this.label20.Location = new System.Drawing.Point(996, 290);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(125, 16);
@@ -1292,7 +1304,7 @@
             this.txtPotencialEmpresas.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtPotencialEmpresas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPotencialEmpresas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPotencialEmpresas.Location = new System.Drawing.Point(1002, 264);
+            this.txtPotencialEmpresas.Location = new System.Drawing.Point(996, 264);
             this.txtPotencialEmpresas.Margin = new System.Windows.Forms.Padding(4);
             this.txtPotencialEmpresas.Name = "txtPotencialEmpresas";
             this.txtPotencialEmpresas.Size = new System.Drawing.Size(144, 22);
@@ -1304,7 +1316,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label19.Location = new System.Drawing.Point(839, 290);
+            this.label19.Location = new System.Drawing.Point(834, 290);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(134, 16);
@@ -1317,7 +1329,7 @@
             this.txtTrabajadoresAfiliados.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtTrabajadoresAfiliados.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTrabajadoresAfiliados.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTrabajadoresAfiliados.Location = new System.Drawing.Point(839, 264);
+            this.txtTrabajadoresAfiliados.Location = new System.Drawing.Point(834, 264);
             this.txtTrabajadoresAfiliados.Margin = new System.Windows.Forms.Padding(4);
             this.txtTrabajadoresAfiliados.Name = "txtTrabajadoresAfiliados";
             this.txtTrabajadoresAfiliados.Size = new System.Drawing.Size(144, 22);
@@ -1329,7 +1341,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label18.Location = new System.Drawing.Point(676, 290);
+            this.label18.Location = new System.Drawing.Point(672, 290);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(119, 16);
@@ -1342,7 +1354,7 @@
             this.txtEmpresasAfiliadas.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtEmpresasAfiliadas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresasAfiliadas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasAfiliadas.Location = new System.Drawing.Point(676, 264);
+            this.txtEmpresasAfiliadas.Location = new System.Drawing.Point(672, 264);
             this.txtEmpresasAfiliadas.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasAfiliadas.Name = "txtEmpresasAfiliadas";
             this.txtEmpresasAfiliadas.Size = new System.Drawing.Size(144, 22);
@@ -1354,7 +1366,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(513, 290);
+            this.label17.Location = new System.Drawing.Point(510, 290);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(121, 16);
@@ -1367,7 +1379,7 @@
             this.txtAnalistasCobranza.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtAnalistasCobranza.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnalistasCobranza.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAnalistasCobranza.Location = new System.Drawing.Point(513, 264);
+            this.txtAnalistasCobranza.Location = new System.Drawing.Point(510, 264);
             this.txtAnalistasCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasCobranza.Name = "txtAnalistasCobranza";
             this.txtAnalistasCobranza.Size = new System.Drawing.Size(144, 22);
@@ -1379,7 +1391,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(350, 290);
+            this.label16.Location = new System.Drawing.Point(348, 290);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(107, 16);
@@ -1392,7 +1404,7 @@
             this.txtAnalistasCredito.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtAnalistasCredito.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnalistasCredito.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAnalistasCredito.Location = new System.Drawing.Point(350, 264);
+            this.txtAnalistasCredito.Location = new System.Drawing.Point(348, 264);
             this.txtAnalistasCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasCredito.Name = "txtAnalistasCredito";
             this.txtAnalistasCredito.Size = new System.Drawing.Size(144, 22);
@@ -1404,7 +1416,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(187, 290);
+            this.label14.Location = new System.Drawing.Point(186, 290);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(124, 16);
@@ -1417,7 +1429,7 @@
             this.txtAnalistaComercial.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtAnalistaComercial.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAnalistaComercial.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAnalistaComercial.Location = new System.Drawing.Point(187, 264);
+            this.txtAnalistaComercial.Location = new System.Drawing.Point(186, 264);
             this.txtAnalistaComercial.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistaComercial.Name = "txtAnalistaComercial";
             this.txtAnalistaComercial.Size = new System.Drawing.Size(144, 22);
@@ -1433,7 +1445,7 @@
             this.label15.Location = new System.Drawing.Point(24, 290);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(155, 30);
+            this.label15.Size = new System.Drawing.Size(154, 30);
             this.label15.TabIndex = 42;
             this.label15.Text = "Analistas Administrativos";
             // 
@@ -1446,7 +1458,7 @@
             this.txtAnalistasAdministrativos.Location = new System.Drawing.Point(24, 264);
             this.txtAnalistasAdministrativos.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasAdministrativos.Name = "txtAnalistasAdministrativos";
-            this.txtAnalistasAdministrativos.Size = new System.Drawing.Size(155, 22);
+            this.txtAnalistasAdministrativos.Size = new System.Drawing.Size(154, 22);
             this.txtAnalistasAdministrativos.TabIndex = 40;
             // 
             // label13
@@ -1455,10 +1467,10 @@
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(1165, 230);
+            this.label13.Location = new System.Drawing.Point(1158, 230);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(155, 30);
+            this.label13.Size = new System.Drawing.Size(154, 30);
             this.label13.TabIndex = 32;
             this.label13.Text = "Ventanillas";
             // 
@@ -1468,10 +1480,10 @@
             this.txtTotalVentanillas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotalVentanillas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalVentanillas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTotalVentanillas.Location = new System.Drawing.Point(1165, 204);
+            this.txtTotalVentanillas.Location = new System.Drawing.Point(1158, 204);
             this.txtTotalVentanillas.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalVentanillas.Name = "txtTotalVentanillas";
-            this.txtTotalVentanillas.Size = new System.Drawing.Size(155, 22);
+            this.txtTotalVentanillas.Size = new System.Drawing.Size(154, 22);
             this.txtTotalVentanillas.TabIndex = 31;
             // 
             // label12
@@ -1480,10 +1492,10 @@
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(1002, 230);
+            this.label12.Location = new System.Drawing.Point(996, 230);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(155, 30);
+            this.label12.Size = new System.Drawing.Size(154, 30);
             this.label12.TabIndex = 30;
             this.label12.Text = "Analistas";
             // 
@@ -1493,10 +1505,10 @@
             this.txtTotalAnalistas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotalAnalistas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalAnalistas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTotalAnalistas.Location = new System.Drawing.Point(1002, 204);
+            this.txtTotalAnalistas.Location = new System.Drawing.Point(996, 204);
             this.txtTotalAnalistas.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalAnalistas.Name = "txtTotalAnalistas";
-            this.txtTotalAnalistas.Size = new System.Drawing.Size(155, 22);
+            this.txtTotalAnalistas.Size = new System.Drawing.Size(154, 22);
             this.txtTotalAnalistas.TabIndex = 29;
             // 
             // frmHistoricoSupervisiones
@@ -1616,5 +1628,6 @@
         private System.Windows.Forms.ToolStripButton toolButImprimir;
         private System.Windows.Forms.TextBox txthidStatus;
         private System.Windows.Forms.TextBox txthidIdSup;
+        private System.Windows.Forms.ToolStripButton toolButCerrarSup;
     }
 }

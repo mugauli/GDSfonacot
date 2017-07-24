@@ -71,7 +71,7 @@ namespace GDSfonacot
                 var objSeguimiento = new SeguimientoSupervision_Supervisores();
                 objSeguimiento.Idseguimiento = Convert.ToInt32(txthidIdSeg.Text.Trim());
                 objSeguimiento.Idsupervision = Convert.ToInt32(txthidIdSup.Text.Trim());
-                objSeguimiento.SeguimientoSupervisor = txtSegSupervisor.Text.Trim();
+              
                 objSeguimiento.IdusuarioCreador = Globales.objpasardatosusuario.IdUsuario;
                 objSeguimiento.FechaSeguimCreacion = DateTime.Now;
 

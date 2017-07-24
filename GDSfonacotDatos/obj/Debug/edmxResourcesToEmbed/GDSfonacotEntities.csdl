@@ -4,6 +4,16 @@
     <FunctionImport Name="spconsultarminuta" ReturnType="Collection(GDSfonacotModel.spconsultarminuta_Result)">
       <Parameter Name="nosupervision" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="spconsultarContestacion" ReturnType="Collection(GDSfonacotModel.spconsultarContestacion_Result)">
+      <Parameter Name="nosupervision" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spconsultarHistoricoSup" ReturnType="Collection(GDSfonacotModel.spconsultarHistoricoSup_Result)">
+      <Parameter Name="nosupervision" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spconsultarSeguimiento" ReturnType="Collection(GDSfonacotModel.spconsultarSeguimiento_Result)">
+      <Parameter Name="nosupervision" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Cierres" EntityType="GDSfonacotModel.Cierres" />
     <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="GDSfonacotModel.ContestacionesSuperv_Sucursales" />
     <EntitySet Name="ctActividad" EntityType="GDSfonacotModel.ctActividad" />
     <EntitySet Name="ctArea" EntityType="GDSfonacotModel.ctArea" />
@@ -13,12 +23,20 @@
     <EntitySet Name="ctTipoPersonal" EntityType="GDSfonacotModel.ctTipoPersonal" />
     <EntitySet Name="Empleados" EntityType="GDSfonacotModel.Empleados" />
     <EntitySet Name="HistorialSupervisiones" EntityType="GDSfonacotModel.HistorialSupervisiones" />
-    <EntitySet Name="Seguimiento_RespuestaSucursales" EntityType="GDSfonacotModel.Seguimiento_RespuestaSucursales" />
+    <EntitySet Name="Reasignaciones" EntityType="GDSfonacotModel.Reasignaciones" />
     <EntitySet Name="SeguimientoSupervision_Supervisores" EntityType="GDSfonacotModel.SeguimientoSupervision_Supervisores" />
     <EntitySet Name="Sucursales" EntityType="GDSfonacotModel.Sucursales" />
     <EntitySet Name="TiraAuditora" EntityType="GDSfonacotModel.TiraAuditora" />
     <EntitySet Name="Usuarios" EntityType="GDSfonacotModel.Usuarios" />
     <EntitySet Name="Usuarios_Nivel" EntityType="GDSfonacotModel.Usuarios_Nivel" />
+    <AssociationSet Name="FK_Cierres_HistorialSupervisiones" Association="GDSfonacotModel.FK_Cierres_HistorialSupervisiones">
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+      <End Role="Cierres" EntitySet="Cierres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cierres_Usuarios" Association="GDSfonacotModel.FK_Cierres_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Cierres" EntitySet="Cierres" />
+    </AssociationSet>
     <AssociationSet Name="FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" Association="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones">
       <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
       <End Role="ContestacionesSuperv_Sucursales" EntitySet="ContestacionesSuperv_Sucursales" />
@@ -75,13 +93,17 @@
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
     </AssociationSet>
-    <AssociationSet Name="FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones" Association="GDSfonacotModel.FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones">
+    <AssociationSet Name="FK_Reasignaciones_Reasignaciones" Association="GDSfonacotModel.FK_Reasignaciones_Reasignaciones">
       <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
-      <End Role="Seguimiento_RespuestaSucursales" EntitySet="Seguimiento_RespuestaSucursales" />
+      <End Role="Reasignaciones" EntitySet="Reasignaciones" />
     </AssociationSet>
     <AssociationSet Name="FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" Association="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones">
       <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
       <End Role="SeguimientoSupervision_Supervisores" EntitySet="SeguimientoSupervision_Supervisores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reasignaciones_Usuarios" Association="GDSfonacotModel.FK_Reasignaciones_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Reasignaciones" EntitySet="Reasignaciones" />
     </AssociationSet>
     <AssociationSet Name="FK_SeguimientoSupervision_Supervisores_Usuarios" Association="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios">
       <End Role="Usuarios" EntitySet="Usuarios" />
@@ -121,6 +143,84 @@
     <Property Type="Int32" Name="Idsupervisor1" Nullable="true" />
     <Property Type="Int32" Name="Idsupervisor2" Nullable="true" />
   </ComplexType>
+  <ComplexType Name="spconsultarContestacion_Result">
+    <Property Type="String" Name="NoSupervision" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="FechaSupervision" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Inmueble" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Gestion_direccion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Originacion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Tarjetas_transfer" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Credito" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Utys" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Promocionales" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Cobranza" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Fondofijo" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="AcuerdosCompromisos" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="usuariocreador" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="DescripcionSucursal" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Dirección" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Director_Estatal" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Director_Regional" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="statusdescrip" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="supervisor1" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="supervisor2" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="spconsultarHistoricoSup_Result">
+    <Property Type="String" Name="NoSupervision" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="FechaSupervision" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Inmueble" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Gestion_direccion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Originacion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Tarjetas_transfer" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Credito" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Utys" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Promocionales" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Cobranza" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Fondofijo" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="AcuerdosCompromisos" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="usuariocreador" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="DescripcionSucursal" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Dirección" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Director_Estatal" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Director_Regional" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="statusdescrip" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="supervisor1" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="supervisor2" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <ComplexType Name="spconsultarSeguimiento_Result">
+    <Property Type="String" Name="NoSupervision" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="FechaSupervision" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Inmueble" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Gestion_direccion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Originacion" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Tarjetas_transfer" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Credito" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Utys" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Promocionales" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Cobranza" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Fondofijo" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="AcuerdosCompromisos" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="usuariocreador" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="DescripcionSucursal" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Dirección" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Director_Estatal" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="Director_Regional" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="statusdescrip" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="supervisor1" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="supervisor2" Nullable="true" MaxLength="Max" />
+  </ComplexType>
+  <EntityType Name="Cierres">
+    <Key>
+      <PropertyRef Name="Idcierre" />
+    </Key>
+    <Property Name="Idcierre" Type="Int32" Nullable="false" />
+    <Property Name="MotivoCierre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fechacierre" Type="DateTime" Precision="3" />
+    <Property Name="Idsupervision" Type="Int32" />
+    <Property Name="Idusuariocreador" Type="Int32" />
+    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_Cierres_HistorialSupervisiones" FromRole="Cierres" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Cierres_Usuarios" FromRole="Cierres" ToRole="Usuarios" />
+  </EntityType>
   <EntityType Name="ContestacionesSuperv_Sucursales">
     <Key>
       <PropertyRef Name="Idcontestacion" />
@@ -138,6 +238,7 @@
     <Property Name="Fondofijo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="AcuerdosCompromisos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="NoOficio" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FechaRespuesta" Type="DateTime" Precision="3" />
     <Property Name="FechaCreacionContest" Type="DateTime" Precision="3" />
     <Property Name="Idusuariocreador" Type="Int32" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" FromRole="ContestacionesSuperv_Sucursales" ToRole="HistorialSupervisiones" />
@@ -238,27 +339,27 @@
     <Property Name="Idstatus" Type="Int32" />
     <Property Name="Idsupervisor1" Type="Int32" />
     <Property Name="Idsupervisor2" Type="Int32" />
+    <NavigationProperty Name="Cierres" Relationship="GDSfonacotModel.FK_Cierres_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="Cierres" />
     <NavigationProperty Name="ContestacionesSuperv_Sucursales" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="ContestacionesSuperv_Sucursales" />
     <NavigationProperty Name="ctEstatusSupervision" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_cat_estatus" FromRole="HistorialSupervisiones" ToRole="ctEstatusSupervision" />
     <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" FromRole="HistorialSupervisiones" ToRole="Sucursales" />
     <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosCreador" FromRole="HistorialSupervisiones" ToRole="Usuarios" />
     <NavigationProperty Name="Usuarios1" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Usuariossup1" FromRole="HistorialSupervisiones" ToRole="Usuarios" />
     <NavigationProperty Name="Usuarios2" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosSup2" FromRole="HistorialSupervisiones" ToRole="Usuarios" />
-    <NavigationProperty Name="Seguimiento_RespuestaSucursales" Relationship="GDSfonacotModel.FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="Seguimiento_RespuestaSucursales" />
+    <NavigationProperty Name="Reasignaciones" Relationship="GDSfonacotModel.FK_Reasignaciones_Reasignaciones" FromRole="HistorialSupervisiones" ToRole="Reasignaciones" />
     <NavigationProperty Name="SeguimientoSupervision_Supervisores" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="SeguimientoSupervision_Supervisores" />
   </EntityType>
-  <EntityType Name="Seguimiento_RespuestaSucursales">
+  <EntityType Name="Reasignaciones">
     <Key>
-      <PropertyRef Name="IdRespuesta" />
+      <PropertyRef Name="Idreasignacion" />
     </Key>
-    <Property Name="IdRespuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdSupervision" Type="Int32" />
-    <Property Name="OficioRespuesta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="FechaRespuesta" Type="DateTime" Precision="3" />
-    <Property Name="Solventada" Type="Boolean" />
-    <Property Name="IdusuarioCreador" Type="Int32" />
-    <Property Name="FechaRespCreacion" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones" FromRole="Seguimiento_RespuestaSucursales" ToRole="HistorialSupervisiones" />
+    <Property Name="Idreasignacion" Type="Int32" Nullable="false" />
+    <Property Name="MotivoReasigna" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="fechareasignada" Type="DateTime" Precision="3" />
+    <Property Name="Idsupervision" Type="Int32" />
+    <Property Name="Idusuariocreador" Type="Int32" />
+    <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_Reasignaciones_Reasignaciones" FromRole="Reasignaciones" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Reasignaciones_Usuarios" FromRole="Reasignaciones" ToRole="Usuarios" />
   </EntityType>
   <EntityType Name="SeguimientoSupervision_Supervisores">
     <Key>
@@ -266,7 +367,16 @@
     </Key>
     <Property Name="Idseguimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Idsupervision" Type="Int32" />
-    <Property Name="SeguimientoSupervisor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Inmueble" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gestion_direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Originacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tarjetas_transfer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Credito" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Utys" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Promocionales" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cobranza" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fondofijo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AcuerdosCompromisos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IdusuarioCreador" Type="Int32" />
     <Property Name="FechaSeguimCreacion" Type="DateTime" Precision="3" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" FromRole="SeguimientoSupervision_Supervisores" ToRole="HistorialSupervisiones" />
@@ -339,10 +449,13 @@
     <Property Name="fechaalta" Type="DateTime" Precision="3" />
     <Property Name="fechabaja" Type="DateTime" Precision="3" />
     <Property Name="IdSucursal" Type="Int32" />
+    <Property Name="fechareingreso" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Cierres" Relationship="GDSfonacotModel.FK_Cierres_Usuarios" FromRole="Usuarios" ToRole="Cierres" />
     <NavigationProperty Name="ContestacionesSuperv_Sucursales" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_UsuarioCreador" FromRole="Usuarios" ToRole="ContestacionesSuperv_Sucursales" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosCreador" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
     <NavigationProperty Name="HistorialSupervisiones1" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Usuariossup1" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
     <NavigationProperty Name="HistorialSupervisiones2" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_UsuariosSup2" FromRole="Usuarios" ToRole="HistorialSupervisiones" />
+    <NavigationProperty Name="Reasignaciones" Relationship="GDSfonacotModel.FK_Reasignaciones_Usuarios" FromRole="Usuarios" ToRole="Reasignaciones" />
     <NavigationProperty Name="SeguimientoSupervision_Supervisores" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios" FromRole="Usuarios" ToRole="SeguimientoSupervision_Supervisores" />
     <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Usuarios_Sucursales" FromRole="Usuarios" ToRole="Sucursales" />
     <NavigationProperty Name="TiraAuditora" Relationship="GDSfonacotModel.FK_TiraAuditora_Usuarios" FromRole="Usuarios" ToRole="TiraAuditora" />
@@ -356,6 +469,30 @@
     <Property Name="Nivel_Usuario" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Usuarios_Usuarios_Nivel" FromRole="Usuarios_Nivel" ToRole="Usuarios" />
   </EntityType>
+  <Association Name="FK_Cierres_HistorialSupervisiones">
+    <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.Cierres" Role="Cierres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSupervisiones" />
+      </Principal>
+      <Dependent Role="Cierres">
+        <PropertyRef Name="Idsupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cierres_Usuarios">
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.Cierres" Role="Cierres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Cierres">
+        <PropertyRef Name="Idusuariocreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones">
     <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="0..1" />
     <End Type="GDSfonacotModel.ContestacionesSuperv_Sucursales" Role="ContestacionesSuperv_Sucursales" Multiplicity="*" />
@@ -524,15 +661,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones">
+  <Association Name="FK_Reasignaciones_Reasignaciones">
     <End Type="GDSfonacotModel.HistorialSupervisiones" Role="HistorialSupervisiones" Multiplicity="0..1" />
-    <End Type="GDSfonacotModel.Seguimiento_RespuestaSucursales" Role="Seguimiento_RespuestaSucursales" Multiplicity="*" />
+    <End Type="GDSfonacotModel.Reasignaciones" Role="Reasignaciones" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HistorialSupervisiones">
         <PropertyRef Name="IdSupervisiones" />
       </Principal>
-      <Dependent Role="Seguimiento_RespuestaSucursales">
-        <PropertyRef Name="IdSupervision" />
+      <Dependent Role="Reasignaciones">
+        <PropertyRef Name="Idsupervision" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -545,6 +682,18 @@
       </Principal>
       <Dependent Role="SeguimientoSupervision_Supervisores">
         <PropertyRef Name="Idsupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reasignaciones_Usuarios">
+    <End Type="GDSfonacotModel.Usuarios" Role="Usuarios" Multiplicity="0..1" />
+    <End Type="GDSfonacotModel.Reasignaciones" Role="Reasignaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Reasignaciones">
+        <PropertyRef Name="Idusuariocreador" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

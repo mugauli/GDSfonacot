@@ -26,11 +26,101 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spconsultarContestacion" FunctionName="GDSfonacotModel.Store.spconsultarContestacion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GDSfonacotModel.spconsultarContestacion_Result">
+          <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
+          <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
+          <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
+          <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
+          <ScalarProperty Name="Originacion" ColumnName="Originacion" />
+          <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
+          <ScalarProperty Name="Credito" ColumnName="Credito" />
+          <ScalarProperty Name="Utys" ColumnName="Utys" />
+          <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
+          <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
+          <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
+          <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
+          <ScalarProperty Name="usuariocreador" ColumnName="usuariocreador" />
+          <ScalarProperty Name="DescripcionSucursal" ColumnName="DescripcionSucursal" />
+          <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+          <ScalarProperty Name="Director_Estatal" ColumnName="Director_Estatal" />
+          <ScalarProperty Name="Director_Regional" ColumnName="Director_Regional" />
+          <ScalarProperty Name="statusdescrip" ColumnName="statusdescrip" />
+          <ScalarProperty Name="supervisor1" ColumnName="supervisor1" />
+          <ScalarProperty Name="supervisor2" ColumnName="supervisor2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spconsultarHistoricoSup" FunctionName="GDSfonacotModel.Store.spconsultarHistoricoSup">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GDSfonacotModel.spconsultarHistoricoSup_Result">
+          <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
+          <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
+          <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
+          <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
+          <ScalarProperty Name="Originacion" ColumnName="Originacion" />
+          <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
+          <ScalarProperty Name="Credito" ColumnName="Credito" />
+          <ScalarProperty Name="Utys" ColumnName="Utys" />
+          <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
+          <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
+          <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
+          <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
+          <ScalarProperty Name="usuariocreador" ColumnName="usuariocreador" />
+          <ScalarProperty Name="DescripcionSucursal" ColumnName="DescripcionSucursal" />
+          <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+          <ScalarProperty Name="Director_Estatal" ColumnName="Director_Estatal" />
+          <ScalarProperty Name="Director_Regional" ColumnName="Director_Regional" />
+          <ScalarProperty Name="statusdescrip" ColumnName="statusdescrip" />
+          <ScalarProperty Name="supervisor1" ColumnName="supervisor1" />
+          <ScalarProperty Name="supervisor2" ColumnName="supervisor2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spconsultarSeguimiento" FunctionName="GDSfonacotModel.Store.spconsultarSeguimiento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GDSfonacotModel.spconsultarSeguimiento_Result">
+          <ScalarProperty Name="NoSupervision" ColumnName="NoSupervision" />
+          <ScalarProperty Name="FechaSupervision" ColumnName="FechaSupervision" />
+          <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
+          <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
+          <ScalarProperty Name="Originacion" ColumnName="Originacion" />
+          <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
+          <ScalarProperty Name="Credito" ColumnName="Credito" />
+          <ScalarProperty Name="Utys" ColumnName="Utys" />
+          <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
+          <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
+          <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
+          <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
+          <ScalarProperty Name="usuariocreador" ColumnName="usuariocreador" />
+          <ScalarProperty Name="DescripcionSucursal" ColumnName="DescripcionSucursal" />
+          <ScalarProperty Name="Dirección" ColumnName="Dirección" />
+          <ScalarProperty Name="Director_Estatal" ColumnName="Director_Estatal" />
+          <ScalarProperty Name="Director_Regional" ColumnName="Director_Regional" />
+          <ScalarProperty Name="statusdescrip" ColumnName="statusdescrip" />
+          <ScalarProperty Name="supervisor1" ColumnName="supervisor1" />
+          <ScalarProperty Name="supervisor2" ColumnName="supervisor2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Cierres">
+      <EntityTypeMapping TypeName="GDSfonacotModel.Cierres">
+        <MappingFragment StoreEntitySet="Cierres">
+          <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
+          <ScalarProperty Name="Idsupervision" ColumnName="Idsupervision" />
+          <ScalarProperty Name="fechacierre" ColumnName="fechacierre" />
+          <ScalarProperty Name="MotivoCierre" ColumnName="MotivoCierre" />
+          <ScalarProperty Name="Idcierre" ColumnName="Idcierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ContestacionesSuperv_Sucursales">
       <EntityTypeMapping TypeName="GDSfonacotModel.ContestacionesSuperv_Sucursales">
         <MappingFragment StoreEntitySet="ContestacionesSuperv_Sucursales">
           <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
           <ScalarProperty Name="FechaCreacionContest" ColumnName="FechaCreacionContest" />
+          <ScalarProperty Name="FechaRespuesta" ColumnName="FechaRespuesta" />
           <ScalarProperty Name="NoOficio" ColumnName="NoOficio" />
           <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
           <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
@@ -138,16 +228,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Seguimiento_RespuestaSucursales">
-      <EntityTypeMapping TypeName="GDSfonacotModel.Seguimiento_RespuestaSucursales">
-        <MappingFragment StoreEntitySet="Seguimiento_RespuestaSucursales">
-          <ScalarProperty Name="FechaRespCreacion" ColumnName="FechaRespCreacion" />
-          <ScalarProperty Name="IdusuarioCreador" ColumnName="IdusuarioCreador" />
-          <ScalarProperty Name="Solventada" ColumnName="Solventada" />
-          <ScalarProperty Name="FechaRespuesta" ColumnName="FechaRespuesta" />
-          <ScalarProperty Name="OficioRespuesta" ColumnName="OficioRespuesta" />
-          <ScalarProperty Name="IdSupervision" ColumnName="IdSupervision" />
-          <ScalarProperty Name="IdRespuesta" ColumnName="IdRespuesta" />
+    <EntitySetMapping Name="Reasignaciones">
+      <EntityTypeMapping TypeName="GDSfonacotModel.Reasignaciones">
+        <MappingFragment StoreEntitySet="Reasignaciones">
+          <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
+          <ScalarProperty Name="Idsupervision" ColumnName="Idsupervision" />
+          <ScalarProperty Name="fechareasignada" ColumnName="fechareasignada" />
+          <ScalarProperty Name="MotivoReasigna" ColumnName="MotivoReasigna" />
+          <ScalarProperty Name="Idreasignacion" ColumnName="Idreasignacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -156,7 +244,16 @@
         <MappingFragment StoreEntitySet="SeguimientoSupervision_Supervisores">
           <ScalarProperty Name="FechaSeguimCreacion" ColumnName="FechaSeguimCreacion" />
           <ScalarProperty Name="IdusuarioCreador" ColumnName="IdusuarioCreador" />
-          <ScalarProperty Name="SeguimientoSupervisor" ColumnName="SeguimientoSupervisor" />
+          <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />
+          <ScalarProperty Name="Fondofijo" ColumnName="Fondofijo" />
+          <ScalarProperty Name="Cobranza" ColumnName="Cobranza" />
+          <ScalarProperty Name="Promocionales" ColumnName="Promocionales" />
+          <ScalarProperty Name="Utys" ColumnName="Utys" />
+          <ScalarProperty Name="Credito" ColumnName="Credito" />
+          <ScalarProperty Name="Tarjetas_transfer" ColumnName="Tarjetas_transfer" />
+          <ScalarProperty Name="Originacion" ColumnName="Originacion" />
+          <ScalarProperty Name="Gestion_direccion" ColumnName="Gestion_direccion" />
+          <ScalarProperty Name="Inmueble" ColumnName="Inmueble" />
           <ScalarProperty Name="Idsupervision" ColumnName="Idsupervision" />
           <ScalarProperty Name="Idseguimiento" ColumnName="Idseguimiento" />
         </MappingFragment>
@@ -217,6 +314,7 @@
     <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="GDSfonacotModel.Usuarios">
         <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="fechareingreso" ColumnName="fechareingreso" />
           <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
           <ScalarProperty Name="fechabaja" ColumnName="fechabaja" />
           <ScalarProperty Name="fechaalta" ColumnName="fechaalta" />

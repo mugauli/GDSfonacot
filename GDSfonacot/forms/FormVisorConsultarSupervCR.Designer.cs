@@ -39,8 +39,12 @@
             this.crpvisor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crpvisor.Location = new System.Drawing.Point(0, 0);
             this.crpvisor.Name = "crpvisor";
+            this.crpvisor.ShowCloseButton = false;
+            this.crpvisor.ShowCopyButton = false;
             this.crpvisor.ShowGroupTreeButton = false;
             this.crpvisor.ShowLogo = false;
+            this.crpvisor.ShowParameterPanelButton = false;
+            this.crpvisor.ShowRefreshButton = false;
             this.crpvisor.Size = new System.Drawing.Size(864, 419);
             this.crpvisor.TabIndex = 1;
             this.crpvisor.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -52,7 +56,6 @@
             this.ClientSize = new System.Drawing.Size(864, 419);
             this.Controls.Add(this.crpvisor);
             this.Name = "FormVisorConsultarSupervCR";
-            this.Text = "Minuta de Trabajo por Supervision";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormVisorConsultarSupervC_Load);
             this.ResumeLayout(false);

@@ -10,12 +10,11 @@
 namespace GDSfonacotDatos
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class SeguimientoSupervision_Supervisores
+    public partial class spconsultarHistoricoSup_Result
     {
-        public int Idseguimiento { get; set; }
-        public Nullable<int> Idsupervision { get; set; }
+        public string NoSupervision { get; set; }
+        public Nullable<System.DateTime> FechaSupervision { get; set; }
         public string Inmueble { get; set; }
         public string Gestion_direccion { get; set; }
         public string Originacion { get; set; }
@@ -26,10 +25,13 @@ namespace GDSfonacotDatos
         public string Cobranza { get; set; }
         public string Fondofijo { get; set; }
         public string AcuerdosCompromisos { get; set; }
-        public Nullable<int> IdusuarioCreador { get; set; }
-        public Nullable<System.DateTime> FechaSeguimCreacion { get; set; }
-    
-        public virtual HistorialSupervisiones HistorialSupervisiones { get; set; }
-        public virtual Usuarios Usuarios { get; set; }
+        public string usuariocreador { get; set; }
+        public string DescripcionSucursal { get; set; }
+        public string Dirección { get; set; }
+        public string Director_Estatal { get; set; }
+        public string Director_Regional { get; set; }
+        public string statusdescrip { get; set; }
+        public string supervisor1 { get; set; }
+        public string supervisor2 { get; set; }
     }
 }

@@ -16,6 +16,7 @@ namespace GDSfonacotDatos
         public static string basename = "DB_9F97CF_GDSFnt";
         public static string userbd = "DB_9F97CF_GDSFnt_admin";
         public static string pass = "GDSFonacot07.";
+        public static int longitudChars = 1000;
 
         #region Encriptar
         /// <summary>

@@ -27,6 +27,7 @@ namespace GDSfonacotDatos
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Cierres> Cierres { get; set; }
         public virtual DbSet<ContestacionesSuperv_Sucursales> ContestacionesSuperv_Sucursales { get; set; }
         public virtual DbSet<ctActividad> ctActividad { get; set; }
         public virtual DbSet<ctArea> ctArea { get; set; }
@@ -36,7 +37,7 @@ namespace GDSfonacotDatos
         public virtual DbSet<ctTipoPersonal> ctTipoPersonal { get; set; }
         public virtual DbSet<Empleados> Empleados { get; set; }
         public virtual DbSet<HistorialSupervisiones> HistorialSupervisiones { get; set; }
-        public virtual DbSet<Seguimiento_RespuestaSucursales> Seguimiento_RespuestaSucursales { get; set; }
+        public virtual DbSet<Reasignaciones> Reasignaciones { get; set; }
         public virtual DbSet<SeguimientoSupervision_Supervisores> SeguimientoSupervision_Supervisores { get; set; }
         public virtual DbSet<Sucursales> Sucursales { get; set; }
         public virtual DbSet<TiraAuditora> TiraAuditora { get; set; }
@@ -50,6 +51,33 @@ namespace GDSfonacotDatos
                 new ObjectParameter("nosupervision", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spconsultarminuta_Result>("spconsultarminuta", nosupervisionParameter);
+        }
+    
+        public virtual ObjectResult<spconsultarContestacion_Result> spconsultarContestacion(string nosupervision)
+        {
+            var nosupervisionParameter = nosupervision != null ?
+                new ObjectParameter("nosupervision", nosupervision) :
+                new ObjectParameter("nosupervision", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spconsultarContestacion_Result>("spconsultarContestacion", nosupervisionParameter);
+        }
+    
+        public virtual ObjectResult<spconsultarHistoricoSup_Result> spconsultarHistoricoSup(string nosupervision)
+        {
+            var nosupervisionParameter = nosupervision != null ?
+                new ObjectParameter("nosupervision", nosupervision) :
+                new ObjectParameter("nosupervision", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spconsultarHistoricoSup_Result>("spconsultarHistoricoSup", nosupervisionParameter);
+        }
+    
+        public virtual ObjectResult<spconsultarSeguimiento_Result> spconsultarSeguimiento(string nosupervision)
+        {
+            var nosupervisionParameter = nosupervision != null ?
+                new ObjectParameter("nosupervision", nosupervision) :
+                new ObjectParameter("nosupervision", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spconsultarSeguimiento_Result>("spconsultarSeguimiento", nosupervisionParameter);
         }
     }
 }

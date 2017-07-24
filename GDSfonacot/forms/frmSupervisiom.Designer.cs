@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupervisiom));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txthidStatus = new System.Windows.Forms.TextBox();
             this.cmbSupervisor2 = new System.Windows.Forms.ComboBox();
             this.cmbSupervisor1 = new System.Windows.Forms.ComboBox();
             this.cmbSucursales = new System.Windows.Forms.ComboBox();
@@ -65,7 +66,6 @@
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txthidStatus = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,6 +150,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1254, 519);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // txthidStatus
+            // 
+            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidStatus.Location = new System.Drawing.Point(4, 54);
+            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidStatus.Name = "txthidStatus";
+            this.txthidStatus.Size = new System.Drawing.Size(12, 20);
+            this.txthidStatus.TabIndex = 282;
             // 
             // cmbSupervisor2
             // 
@@ -243,8 +253,10 @@
             this.txtAcuerdosCompromisos.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAcuerdosCompromisos.Location = new System.Drawing.Point(24, 1314);
             this.txtAcuerdosCompromisos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAcuerdosCompromisos.MaxLength = 1000;
             this.txtAcuerdosCompromisos.Multiline = true;
             this.txtAcuerdosCompromisos.Name = "txtAcuerdosCompromisos";
+            this.txtAcuerdosCompromisos.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAcuerdosCompromisos.Size = new System.Drawing.Size(1200, 92);
             this.txtAcuerdosCompromisos.TabIndex = 14;
             // 
@@ -271,8 +283,10 @@
             this.txtFondoFijo.ForeColor = System.Drawing.SystemColors.Window;
             this.txtFondoFijo.Location = new System.Drawing.Point(24, 1184);
             this.txtFondoFijo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFondoFijo.MaxLength = 1000;
             this.txtFondoFijo.Multiline = true;
             this.txtFondoFijo.Name = "txtFondoFijo";
+            this.txtFondoFijo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtFondoFijo.Size = new System.Drawing.Size(1200, 92);
             this.txtFondoFijo.TabIndex = 13;
             // 
@@ -299,8 +313,10 @@
             this.txtCobranza.ForeColor = System.Drawing.SystemColors.Window;
             this.txtCobranza.Location = new System.Drawing.Point(24, 1054);
             this.txtCobranza.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCobranza.MaxLength = 1000;
             this.txtCobranza.Multiline = true;
             this.txtCobranza.Name = "txtCobranza";
+            this.txtCobranza.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCobranza.Size = new System.Drawing.Size(1200, 92);
             this.txtCobranza.TabIndex = 12;
             // 
@@ -327,8 +343,10 @@
             this.txtPromocionales.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPromocionales.Location = new System.Drawing.Point(24, 924);
             this.txtPromocionales.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPromocionales.MaxLength = 1000;
             this.txtPromocionales.Multiline = true;
             this.txtPromocionales.Name = "txtPromocionales";
+            this.txtPromocionales.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtPromocionales.Size = new System.Drawing.Size(1200, 92);
             this.txtPromocionales.TabIndex = 11;
             // 
@@ -355,8 +373,10 @@
             this.txtUtys.ForeColor = System.Drawing.SystemColors.Window;
             this.txtUtys.Location = new System.Drawing.Point(24, 794);
             this.txtUtys.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUtys.MaxLength = 1000;
             this.txtUtys.Multiline = true;
             this.txtUtys.Name = "txtUtys";
+            this.txtUtys.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtUtys.Size = new System.Drawing.Size(1200, 92);
             this.txtUtys.TabIndex = 10;
             // 
@@ -383,8 +403,10 @@
             this.txtCredito.ForeColor = System.Drawing.SystemColors.Window;
             this.txtCredito.Location = new System.Drawing.Point(24, 664);
             this.txtCredito.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCredito.MaxLength = 1000;
             this.txtCredito.Multiline = true;
             this.txtCredito.Name = "txtCredito";
+            this.txtCredito.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCredito.Size = new System.Drawing.Size(1200, 92);
             this.txtCredito.TabIndex = 9;
             // 
@@ -411,8 +433,10 @@
             this.txtTarjetasTransfer.ForeColor = System.Drawing.SystemColors.Window;
             this.txtTarjetasTransfer.Location = new System.Drawing.Point(24, 534);
             this.txtTarjetasTransfer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTarjetasTransfer.MaxLength = 1000;
             this.txtTarjetasTransfer.Multiline = true;
             this.txtTarjetasTransfer.Name = "txtTarjetasTransfer";
+            this.txtTarjetasTransfer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTarjetasTransfer.Size = new System.Drawing.Size(1200, 92);
             this.txtTarjetasTransfer.TabIndex = 8;
             // 
@@ -439,8 +463,10 @@
             this.txtOriginacion.ForeColor = System.Drawing.SystemColors.Window;
             this.txtOriginacion.Location = new System.Drawing.Point(24, 404);
             this.txtOriginacion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOriginacion.MaxLength = 10;
             this.txtOriginacion.Multiline = true;
             this.txtOriginacion.Name = "txtOriginacion";
+            this.txtOriginacion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtOriginacion.Size = new System.Drawing.Size(1200, 92);
             this.txtOriginacion.TabIndex = 7;
             // 
@@ -467,8 +493,10 @@
             this.txtGestionDireccion.ForeColor = System.Drawing.SystemColors.Window;
             this.txtGestionDireccion.Location = new System.Drawing.Point(24, 274);
             this.txtGestionDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGestionDireccion.MaxLength = 1000;
             this.txtGestionDireccion.Multiline = true;
             this.txtGestionDireccion.Name = "txtGestionDireccion";
+            this.txtGestionDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtGestionDireccion.Size = new System.Drawing.Size(1200, 92);
             this.txtGestionDireccion.TabIndex = 6;
             // 
@@ -495,8 +523,10 @@
             this.txtInmuble.ForeColor = System.Drawing.SystemColors.Window;
             this.txtInmuble.Location = new System.Drawing.Point(24, 144);
             this.txtInmuble.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInmuble.MaxLength = 1000;
             this.txtInmuble.Multiline = true;
             this.txtInmuble.Name = "txtInmuble";
+            this.txtInmuble.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtInmuble.Size = new System.Drawing.Size(1200, 92);
             this.txtInmuble.TabIndex = 5;
             // 
@@ -605,16 +635,6 @@
             this.label3.Size = new System.Drawing.Size(143, 30);
             this.label3.TabIndex = 13;
             this.label3.Text = "Sucursal";
-            // 
-            // txthidStatus
-            // 
-            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
-            this.txthidStatus.Location = new System.Drawing.Point(4, 54);
-            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.txthidStatus.Name = "txthidStatus";
-            this.txthidStatus.Size = new System.Drawing.Size(12, 20);
-            this.txthidStatus.TabIndex = 282;
             // 
             // frmSupervisiom
             // 

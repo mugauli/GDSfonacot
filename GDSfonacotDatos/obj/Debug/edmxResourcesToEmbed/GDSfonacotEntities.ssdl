@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GDSfonacotModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cierres">
+    <Key>
+      <PropertyRef Name="Idcierre" />
+    </Key>
+    <Property Name="Idcierre" Type="int" Nullable="false" />
+    <Property Name="MotivoCierre" Type="nvarchar" MaxLength="500" />
+    <Property Name="fechacierre" Type="datetime" />
+    <Property Name="Idsupervision" Type="int" />
+    <Property Name="Idusuariocreador" Type="int" />
+  </EntityType>
   <EntityType Name="ContestacionesSuperv_Sucursales">
     <Key>
       <PropertyRef Name="Idcontestacion" />
@@ -17,6 +27,7 @@
     <Property Name="Fondofijo" Type="ntext" />
     <Property Name="AcuerdosCompromisos" Type="ntext" />
     <Property Name="NoOficio" Type="nvarchar" MaxLength="255" />
+    <Property Name="FechaRespuesta" Type="datetime" />
     <Property Name="FechaCreacionContest" Type="datetime" />
     <Property Name="Idusuariocreador" Type="int" />
   </EntityType>
@@ -103,17 +114,15 @@
     <Property Name="Idsupervisor1" Type="int" />
     <Property Name="Idsupervisor2" Type="int" />
   </EntityType>
-  <EntityType Name="Seguimiento_RespuestaSucursales">
+  <EntityType Name="Reasignaciones">
     <Key>
-      <PropertyRef Name="IdRespuesta" />
+      <PropertyRef Name="Idreasignacion" />
     </Key>
-    <Property Name="IdRespuesta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdSupervision" Type="int" />
-    <Property Name="OficioRespuesta" Type="nvarchar" MaxLength="255" />
-    <Property Name="FechaRespuesta" Type="datetime" />
-    <Property Name="Solventada" Type="bit" />
-    <Property Name="IdusuarioCreador" Type="int" />
-    <Property Name="FechaRespCreacion" Type="datetime" />
+    <Property Name="Idreasignacion" Type="int" Nullable="false" />
+    <Property Name="MotivoReasigna" Type="nvarchar" MaxLength="500" />
+    <Property Name="fechareasignada" Type="datetime" />
+    <Property Name="Idsupervision" Type="int" />
+    <Property Name="Idusuariocreador" Type="int" />
   </EntityType>
   <EntityType Name="SeguimientoSupervision_Supervisores">
     <Key>
@@ -121,7 +130,16 @@
     </Key>
     <Property Name="Idseguimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Idsupervision" Type="int" />
-    <Property Name="SeguimientoSupervisor" Type="ntext" />
+    <Property Name="Inmueble" Type="ntext" />
+    <Property Name="Gestion_direccion" Type="ntext" />
+    <Property Name="Originacion" Type="ntext" />
+    <Property Name="Tarjetas_transfer" Type="ntext" />
+    <Property Name="Credito" Type="ntext" />
+    <Property Name="Utys" Type="ntext" />
+    <Property Name="Promocionales" Type="ntext" />
+    <Property Name="Cobranza" Type="ntext" />
+    <Property Name="Fondofijo" Type="ntext" />
+    <Property Name="AcuerdosCompromisos" Type="ntext" />
     <Property Name="IdusuarioCreador" Type="int" />
     <Property Name="FechaSeguimCreacion" Type="datetime" />
   </EntityType>
@@ -187,6 +205,7 @@
     <Property Name="fechaalta" Type="datetime" />
     <Property Name="fechabaja" Type="datetime" />
     <Property Name="IdSucursal" Type="int" />
+    <Property Name="fechareingreso" Type="datetime" />
   </EntityType>
   <EntityType Name="Usuarios_Nivel">
     <Key>
@@ -195,6 +214,30 @@
     <Property Name="IdNivel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nivel_Usuario" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <Association Name="FK_Cierres_HistorialSupervisiones">
+    <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="0..1" />
+    <End Role="Cierres" Type="Self.Cierres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistorialSupervisiones">
+        <PropertyRef Name="IdSupervisiones" />
+      </Principal>
+      <Dependent Role="Cierres">
+        <PropertyRef Name="Idsupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cierres_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Cierres" Type="Self.Cierres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Cierres">
+        <PropertyRef Name="Idusuariocreador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones">
     <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="0..1" />
     <End Role="ContestacionesSuperv_Sucursales" Type="Self.ContestacionesSuperv_Sucursales" Multiplicity="*" />
@@ -351,15 +394,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones">
+  <Association Name="FK_Reasignaciones_Reasignaciones">
     <End Role="HistorialSupervisiones" Type="Self.HistorialSupervisiones" Multiplicity="0..1" />
-    <End Role="Seguimiento_RespuestaSucursales" Type="Self.Seguimiento_RespuestaSucursales" Multiplicity="*" />
+    <End Role="Reasignaciones" Type="Self.Reasignaciones" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HistorialSupervisiones">
         <PropertyRef Name="IdSupervisiones" />
       </Principal>
-      <Dependent Role="Seguimiento_RespuestaSucursales">
-        <PropertyRef Name="IdSupervision" />
+      <Dependent Role="Reasignaciones">
+        <PropertyRef Name="Idsupervision" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reasignaciones_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Reasignaciones" Type="Self.Reasignaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Reasignaciones">
+        <PropertyRef Name="Idusuariocreador" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -435,10 +490,21 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="spconsultarContestacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spconsultarHistoricoSup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="spconsultarminuta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="spconsultarSeguimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="GDSfonacotModelStoreContainer">
+    <EntitySet Name="Cierres" EntityType="Self.Cierres" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="Self.ContestacionesSuperv_Sucursales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ctActividad" EntityType="Self.ctActividad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ctArea" EntityType="Self.ctArea" Schema="dbo" store:Type="Tables" />
@@ -448,12 +514,20 @@
     <EntitySet Name="ctTipoPersonal" EntityType="Self.ctTipoPersonal" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HistorialSupervisiones" EntityType="Self.HistorialSupervisiones" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Seguimiento_RespuestaSucursales" EntityType="Self.Seguimiento_RespuestaSucursales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reasignaciones" EntityType="Self.Reasignaciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SeguimientoSupervision_Supervisores" EntityType="Self.SeguimientoSupervision_Supervisores" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sucursales" EntityType="Self.Sucursales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TiraAuditora" EntityType="Self.TiraAuditora" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuarios_Nivel" EntityType="Self.Usuarios_Nivel" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cierres_HistorialSupervisiones" Association="Self.FK_Cierres_HistorialSupervisiones">
+      <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
+      <End Role="Cierres" EntitySet="Cierres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cierres_Usuarios" Association="Self.FK_Cierres_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Cierres" EntitySet="Cierres" />
+    </AssociationSet>
     <AssociationSet Name="FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" Association="Self.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones">
       <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
       <End Role="ContestacionesSuperv_Sucursales" EntitySet="ContestacionesSuperv_Sucursales" />
@@ -506,9 +580,13 @@
       <End Role="Usuarios" EntitySet="Usuarios" />
       <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
     </AssociationSet>
-    <AssociationSet Name="FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones" Association="Self.FK_Seguimiento_RespuestaSucursales_HistorialSupervisiones">
+    <AssociationSet Name="FK_Reasignaciones_Reasignaciones" Association="Self.FK_Reasignaciones_Reasignaciones">
       <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />
-      <End Role="Seguimiento_RespuestaSucursales" EntitySet="Seguimiento_RespuestaSucursales" />
+      <End Role="Reasignaciones" EntitySet="Reasignaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reasignaciones_Usuarios" Association="Self.FK_Reasignaciones_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Reasignaciones" EntitySet="Reasignaciones" />
     </AssociationSet>
     <AssociationSet Name="FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" Association="Self.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones">
       <End Role="HistorialSupervisiones" EntitySet="HistorialSupervisiones" />

@@ -27,6 +27,7 @@ namespace GDSfonacotDatos
         public string Fondofijo { get; set; }
         public string AcuerdosCompromisos { get; set; }
         public string NoOficio { get; set; }
+        public Nullable<System.DateTime> FechaRespuesta { get; set; }
         public Nullable<System.DateTime> FechaCreacionContest { get; set; }
         public Nullable<int> Idusuariocreador { get; set; }
     

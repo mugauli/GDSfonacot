@@ -124,10 +124,16 @@ namespace GDSfonacot.forms
             if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
             {
                 toolButReasignar.Enabled = true;
+                toolButReasignar.Visible = true;
+                toolButCerrarSup.Enabled = true;
+                toolButCerrarSup.Visible = true;
                 toolButImprimir.Enabled = true;
             }
             else {
                 toolButReasignar.Enabled = false;
+                toolButReasignar.Visible = false;
+                toolButCerrarSup.Enabled = false;
+                toolButCerrarSup.Visible = false;
                 toolButImprimir.Enabled = true;
             }
 
@@ -137,6 +143,7 @@ namespace GDSfonacot.forms
         {
             try
             {
+                if (blob == null) return null;
                 MemoryStream mStream = new MemoryStream();
 
 
@@ -151,6 +158,7 @@ namespace GDSfonacot.forms
                 MessageBox.Show("" + ex);
                 return null;
             }
+
 
         }
 
@@ -257,6 +265,14 @@ namespace GDSfonacot.forms
         private void txtEmpresasEstatus30_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolButImprimir_Click(object sender, EventArgs e)
+        {
+            forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(3);//crea una instancia del formulario
+            frmvisor.param1 = txtNoSupervision.Text.Trim();
+            //frmvisor.MdiParen8t = MDIPrincip();
+            frmvisor.ShowDialog();
         }
     }
 }

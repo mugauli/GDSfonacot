@@ -16,14 +16,14 @@ namespace GDSfonacot.reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crpContestSucursal : ReportClass {
+    public class crpContestacion : ReportClass {
         
-        public crpContestSucursal() {
+        public crpContestacion() {
         }
         
         public override string ResourceName {
             get {
-                return "crpContestSucursal.rpt";
+                return "crpContestacion.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace GDSfonacot.reportes {
         
         public override string FullResourceName {
             get {
-                return "GDSfonacot.reportes.crpContestSucursal.rpt";
+                return "GDSfonacot.reportes.crpContestacion.rpt";
             }
             set {
                 // Do nothing
@@ -98,9 +98,9 @@ namespace GDSfonacot.reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrpContestSucursal : Component, ICachedReport {
+    public class CachedcrpContestacion : Component, ICachedReport {
         
-        public CachedcrpContestSucursal() {
+        public CachedcrpContestacion() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace GDSfonacot.reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crpContestSucursal rpt = new crpContestSucursal();
+            crpContestacion rpt = new crpContestacion();
             rpt.Site = this.Site;
             return rpt;
         }

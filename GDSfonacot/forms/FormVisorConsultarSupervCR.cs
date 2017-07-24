@@ -13,21 +13,54 @@ namespace GDSfonacot.forms
 {
     public partial class FormVisorConsultarSupervCR : Form
     {
-        public string valor = "";
+        public string param1 = "";
+        public string param2 = "";
         public int destino = 0;
-        public FormVisorConsultarSupervCR()
+        public FormVisorConsultarSupervCR(int destinoreport)
         {
             InitializeComponent();
+            destino = destinoreport;
         }
        
 
         private void FormVisorConsultarSupervC_Load(object sender, EventArgs e)
         {
+            if (destino == 1)//consultando reporte de supervision creado por supervisor operaciones
+            {
+                this.Text = "Minuta de Trabajo por Supervision";
+                reportes.crpMinutaTrabajo objreport = new reportes.crpMinutaTrabajo();
+                objreport.SetParameterValue("@nosupervision", param1);
+                objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
+                crpvisor.ReportSource = objreport;
+               
+            }
+            else if (destino == 2)//consultando reporte de contestacion de sucursal
+            {
+                this.Text = "Contestacion de supervision por sucursal";
+                reportes.crpContestacion objreport = new reportes.crpContestacion();
+                objreport.SetParameterValue("@nosupervision", param1);
+                objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
+                crpvisor.ReportSource = objreport;
+                
+            }
 
-            reportes.crpMinutaTrabajo objreport = new reportes.crpMinutaTrabajo();
-            objreport.SetParameterValue("@nosupervision", valor);
-            objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
-            crpvisor.ReportSource = objreport;
+            else if (destino == 3)//consultando historico de supervision 
+            {
+                this.Text = "Historico por Supervision";
+                reportes.crpHistoricoSuperv objreport = new reportes.crpHistoricoSuperv();
+                objreport.SetParameterValue("@nosupervision", param1);
+                objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
+                crpvisor.ReportSource = objreport;
+            }
+            else if (destino == 4)//consultando seguimiento creado por supervisor
+            {
+                this.Text = "Seguimiento por Supervision";
+                reportes.crpSeguimiento objreport = new reportes.crpSeguimiento();
+                objreport.SetParameterValue("@idsupervision", param1);
+                objreport.SetParameterValue("@idseguimiento", param2);
+                objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
+                crpvisor.ReportSource = objreport;
+            }
         }
     }
 }

@@ -98,12 +98,6 @@
     <Compile Include="forms\FormBusConsultasSupervision.Designer.cs">
       <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\formSeguiRespuesta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\formSeguiRespuesta.Designer.cs">
-      <DependentUpon>formSeguiRespuesta.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\FormTemplParametroCR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,8 +191,20 @@
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reportes\crpContestSucursal.cs">
-      <DependentUpon>crpContestSucursal.rpt</DependentUpon>
+    <Compile Include="reportes\crpHistoricoSuperv.cs">
+      <DependentUpon>crpHistoricoSuperv.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\crpContestacion.cs">
+      <DependentUpon>crpContestacion.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\crpSeguimiento.cs">
+      <DependentUpon>crpSeguimiento.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -211,9 +217,6 @@
     </Compile>
     <EmbeddedResource Include="forms\FormBusConsultasSupervision.resx">
       <DependentUpon>FormBusConsultasSupervision.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\formSeguiRespuesta.resx">
-      <DependentUpon>formSeguiRespuesta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormTemplParametroCR.resx">
       <DependentUpon>FormTemplParametroCR.cs</DependentUpon>
@@ -273,9 +276,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="reportes\crpContestSucursal.rpt">
+    <EmbeddedResource Include="reportes\crpHistoricoSuperv.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpContestSucursal.cs</LastGenOutput>
+      <LastGenOutput>crpHistoricoSuperv.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\crpContestacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpContestacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\crpSeguimiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpSeguimiento.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\crpMinutaTrabajo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cierres.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="ContestacionesSuperv_Sucursales.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
@@ -98,6 +101,7 @@
     <Compile Include="DTO\DatosBuscarSeguimiento.cs" />
     <Compile Include="DTO\DatosBuscarSupervision.cs" />
     <Compile Include="DTO\DatosComboSucursales.cs" />
+    <Compile Include="DTO\DatosgridSeguimientoSup.cs" />
     <Compile Include="DTO\DatosGridSupervisiones.cs" />
     <Compile Include="DTO\DatosHistSupervision.cs" />
     <Compile Include="DTO\DatosSucursales.cs" />
@@ -128,13 +132,22 @@
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reasignaciones.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="SeguimientoSupervision_Supervisores.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Seguimiento_RespuestaSucursales.cs">
+    <Compile Include="spconsultarContestacion_Result.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spconsultarHistoricoSup_Result.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="spconsultarminuta_Result.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spconsultarSeguimiento_Result.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Sucursales.cs">

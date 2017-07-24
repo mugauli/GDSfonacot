@@ -12,16 +12,15 @@ namespace GDSfonacotDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Seguimiento_RespuestaSucursales
+    public partial class Cierres
     {
-        public int IdRespuesta { get; set; }
-        public Nullable<int> IdSupervision { get; set; }
-        public string OficioRespuesta { get; set; }
-        public Nullable<System.DateTime> FechaRespuesta { get; set; }
-        public Nullable<bool> Solventada { get; set; }
-        public Nullable<int> IdusuarioCreador { get; set; }
-        public Nullable<System.DateTime> FechaRespCreacion { get; set; }
+        public int Idcierre { get; set; }
+        public string MotivoCierre { get; set; }
+        public Nullable<System.DateTime> fechacierre { get; set; }
+        public Nullable<int> Idsupervision { get; set; }
+        public Nullable<int> Idusuariocreador { get; set; }
     
         public virtual HistorialSupervisiones HistorialSupervisiones { get; set; }
+        public virtual Usuarios Usuarios { get; set; }
     }
 }

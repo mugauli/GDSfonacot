@@ -110,6 +110,7 @@
             this.toolButImprimir.Name = "toolButImprimir";
             this.toolButImprimir.Size = new System.Drawing.Size(73, 22);
             this.toolButImprimir.Text = "Imprimir";
+            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);
             // 
             // toolButGuardar
             // 

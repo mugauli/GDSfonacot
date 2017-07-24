@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuModulos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicioSup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuConstSupSuc = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuCerrarSup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSegSup = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCerrarSup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuMinutas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReportes = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +61,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.timesup = new System.Windows.Forms.Timer(this.components);
             this.menuPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -84,8 +86,8 @@
             this.menuModulos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuInicioSup,
             this.menuConstSupSuc,
-            this.menuCerrarSup,
             this.menuSegSup,
+            this.menuCerrarSup,
             this.toolStripSeparator3,
             this.menuMinutas,
             this.menuReportes,
@@ -110,18 +112,19 @@
             this.menuConstSupSuc.Text = "Contestar una Supervisión";
             this.menuConstSupSuc.Click += new System.EventHandler(this.menuConstSupSuc_Click);
             // 
+            // menuSegSup
+            // 
+            this.menuSegSup.Name = "menuSegSup";
+            this.menuSegSup.Size = new System.Drawing.Size(214, 22);
+            this.menuSegSup.Text = "Seguimiento a Supervisión";
+            this.menuSegSup.Click += new System.EventHandler(this.menuSegSup_Click);
+            // 
             // menuCerrarSup
             // 
             this.menuCerrarSup.Name = "menuCerrarSup";
             this.menuCerrarSup.Size = new System.Drawing.Size(214, 22);
             this.menuCerrarSup.Text = "Cerrar una Supervisión";
             this.menuCerrarSup.Click += new System.EventHandler(this.menuCerrarSup_Click);
-            // 
-            // menuSegSup
-            // 
-            this.menuSegSup.Name = "menuSegSup";
-            this.menuSegSup.Size = new System.Drawing.Size(214, 22);
-            this.menuSegSup.Text = "Seguimiento a Supervisión";
             // 
             // toolStripSeparator3
             // 
@@ -190,6 +193,7 @@
             this.menubuscSeguim.Name = "menubuscSeguim";
             this.menubuscSeguim.Size = new System.Drawing.Size(235, 22);
             this.menubuscSeguim.Text = "Seguimientos de Supervision";
+            this.menubuscSeguim.Click += new System.EventHandler(this.menubuscSeguim_Click);
             // 
             // menuHistsupOp
             // 
@@ -335,7 +339,11 @@
             this.lblNombreUsuario.TabIndex = 277;
             this.lblNombreUsuario.Text = "Usuario";
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-           
+            // 
+            // timesup
+            // 
+            this.timesup.Interval = 20000;
+            this.timesup.Tick += new System.EventHandler(this.timesup_Tick);
             // 
             // MDIPrincip
             // 
@@ -395,5 +403,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuConsulSucur;
         private System.Windows.Forms.ToolStripMenuItem menuConsulEmp;
         private System.Windows.Forms.ToolStripMenuItem menucatEmp;
+        private System.Windows.Forms.Timer timesup;
     }
 }

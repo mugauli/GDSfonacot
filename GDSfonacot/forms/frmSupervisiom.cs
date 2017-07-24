@@ -52,6 +52,10 @@ namespace GDSfonacot.forms
             {
                 return;
             }
+            if (validarlongitudDatos())
+            {
+                return;
+            }
 
             // MessageBox.Show("pASO VALIDACION");
             if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
@@ -109,6 +113,7 @@ namespace GDSfonacot.forms
         }
         private bool validarDatos()
         {
+            
             if (cmbSucursales.SelectedIndex <= -1)
             {
                 MessageBox.Show("Selecciona una Sucursal", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -121,6 +126,7 @@ namespace GDSfonacot.forms
                 MessageBox.Show("Ingresa un numero de supervision", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtNoSupervision.Focus();
                 return true;
+
             }
 
             if (string.IsNullOrEmpty(cmbSupervisor1.Text.Trim()) || cmbSupervisor1.Text.Trim() == "")
@@ -207,6 +213,80 @@ namespace GDSfonacot.forms
                 return true;
             }
 
+
+            return false;
+        }
+
+        private bool validarlongitudDatos()
+        {
+            int longitud = Globales.longitudChars;
+           
+            if (txtInmuble.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtInmuble.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtInmuble.Focus();
+                return true;
+            }
+            if (txtGestionDireccion.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtGestionDireccion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtGestionDireccion.Focus();
+                return true;
+            }
+            if (txtOriginacion.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtOriginacion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtOriginacion.Focus();
+                return true;
+            }
+            if (txtOriginacion.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtOriginacion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtOriginacion.Focus();
+                return true;
+            }
+            if (txtTarjetasTransfer.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtTarjetasTransfer.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtTarjetasTransfer.Focus();
+                return true;
+            }
+            if (txtCredito.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtCredito.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCredito.Focus();
+                return true;
+            }
+            if (txtUtys.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtUtys.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtUtys.Focus();
+                return true;
+            }
+            if (txtPromocionales.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtPromocionales.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPromocionales.Focus();
+                return true;
+            }
+            if (txtCobranza.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtCobranza.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCobranza.Focus();
+                return true;
+            }
+            if (txtFondoFijo.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtFondoFijo.Text.Length + " en este campo" , System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtFondoFijo.Focus();
+                return true;
+            }
+            if (txtAcuerdosCompromisos.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtAcuerdosCompromisos.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtAcuerdosCompromisos.Focus();
+                return true;
+            }
 
             return false;
         }
@@ -319,9 +399,9 @@ namespace GDSfonacot.forms
 
         private void toolButImprimir_Click(object sender, EventArgs e)
         {
-            forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR();//crea una instancia del formulario
+            forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(1);//crea una instancia del formulario
 
-            frmvisor.valor = txtNoSupervision.Text.Trim();
+            frmvisor.param1 = txtNoSupervision.Text.Trim();
             //frmvisor.MdiParen8t = MDIPrincip();
             frmvisor.ShowDialog();
 

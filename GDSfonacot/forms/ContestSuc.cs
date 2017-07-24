@@ -66,7 +66,7 @@ namespace GDSfonacot
                 txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
                 txthidStatus.Text = busqueda.Result.Idstatus.ToString();
                 toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = false;
+                toolButImprimir.Enabled = true;
 
             }
 
@@ -253,6 +253,13 @@ namespace GDSfonacot
 
         }
 
-      
+        private void toolButImprimir_Click(object sender, EventArgs e)
+        {
+            forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(2);//crea una instancia del formulario
+
+            frmvisor.param1 = txtNoSupervision.Text.Trim();
+            //frmvisor.MdiParen8t = MDIPrincip();
+            frmvisor.ShowDialog();
+        }
     }
 }

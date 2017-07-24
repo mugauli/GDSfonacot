@@ -38,7 +38,7 @@ namespace GDSfonacot
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
                 int[] varstatus = { 3 };
-                var frmbusquedasup = new frmBusquedaSupervisiones(3, varstatus, 1);//crea una instancia del formulario
+                var frmbusquedasup = new frmBusquedaSupervisiones(3, varstatus, 1,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
                 varstatus = null;
@@ -150,7 +150,7 @@ namespace GDSfonacot
             {
                 int[] varstatus = { 1 };
 
-                var frmbusquedasup = new frmBusquedaSupervisiones(1, varstatus, 0);//crea una instancia del formulario
+                var frmbusquedasup = new frmBusquedaSupervisiones(1, varstatus, 0,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
                 varstatus = null;
@@ -199,7 +199,7 @@ namespace GDSfonacot
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
                 int[] varstatus = { 1 };
-                var frmbusquedasup = new frmBusquedaSupervisiones(2, varstatus, 0);//crea una instancia del formulario
+                var frmbusquedasup = new frmBusquedaSupervisiones(2, varstatus, 0,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
                 varstatus = null;
@@ -216,7 +216,7 @@ namespace GDSfonacot
             {
                 int[] varstatus = { 2 };
 
-                var frmbusquedasup = new frmBusquedaSupervisiones(3, varstatus, 0);//crea una instancia del formulario
+                var frmbusquedasup = new frmBusquedaSupervisiones(3, varstatus, 0,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
                 varstatus = null;
@@ -232,7 +232,7 @@ namespace GDSfonacot
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
                 int[] varstatus = {2,5};
-                var frmbusquedasup = new frmBusquedaSupervisiones(2, varstatus, 1);//crea una instancia del formulario
+                var frmbusquedasup = new frmBusquedaSupervisiones(2, varstatus, 1,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
                 varstatus = null;
@@ -248,7 +248,7 @@ namespace GDSfonacot
             if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1004)
             {
                 int[] varstatus = { 1,2,3,5 };
-                var frmbusquedasup = new frmBusquedaSupervisiones(4, varstatus, 1);//crea una instancia del formulario
+                var frmbusquedasup = new frmBusquedaSupervisiones(4, varstatus, 1,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
                 varstatus = null;
@@ -325,6 +325,43 @@ namespace GDSfonacot
                 frmemp.Show();
 
             }
+        }
+
+        private void menuSegSup_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1004)
+            {
+                int[] varstatus = {1,2};
+                var frmbusquedasup = new frmBusquedaSupervisiones(1, varstatus, 0,0);//crea una instancia del formulario
+                frmbusquedasup.MdiParent = this;
+                frmbusquedasup.Show();
+                varstatus = null;
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void menubuscSeguim_Click(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1004)
+            {
+                int[] varstatus = { 2, 5,3,1 };
+                var frmbusquedasup = new frmBusquedaSupervisiones(1, varstatus, 1, 1);//crea una instancia del formulario
+                frmbusquedasup.MdiParent = this;
+                frmbusquedasup.Show();
+                varstatus = null;
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+            }
+        }
+
+        private void timesup_Tick(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tienes Solicitudes pendientes");
         }
     }
 }

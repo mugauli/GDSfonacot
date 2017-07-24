@@ -17,10 +17,12 @@ namespace GDSfonacotDatos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuarios()
         {
+            this.Cierres = new HashSet<Cierres>();
             this.ContestacionesSuperv_Sucursales = new HashSet<ContestacionesSuperv_Sucursales>();
             this.HistorialSupervisiones = new HashSet<HistorialSupervisiones>();
             this.HistorialSupervisiones1 = new HashSet<HistorialSupervisiones>();
             this.HistorialSupervisiones2 = new HashSet<HistorialSupervisiones>();
+            this.Reasignaciones = new HashSet<Reasignaciones>();
             this.SeguimientoSupervision_Supervisores = new HashSet<SeguimientoSupervision_Supervisores>();
             this.TiraAuditora = new HashSet<TiraAuditora>();
         }
@@ -33,7 +35,10 @@ namespace GDSfonacotDatos
         public Nullable<System.DateTime> fechaalta { get; set; }
         public Nullable<System.DateTime> fechabaja { get; set; }
         public Nullable<int> IdSucursal { get; set; }
+        public Nullable<System.DateTime> fechareingreso { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cierres> Cierres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ContestacionesSuperv_Sucursales> ContestacionesSuperv_Sucursales { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -42,6 +47,8 @@ namespace GDSfonacotDatos
         public virtual ICollection<HistorialSupervisiones> HistorialSupervisiones1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistorialSupervisiones> HistorialSupervisiones2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reasignaciones> Reasignaciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SeguimientoSupervision_Supervisores> SeguimientoSupervision_Supervisores { get; set; }
         public virtual Sucursales Sucursales { get; set; }
