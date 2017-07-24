@@ -85,7 +85,6 @@ C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\EntityFramework
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.csprojResolveAssemblyReference.cache
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormBusConsultasSupervision.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.formSeguiRespuesta.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormTemplParametroCR.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormVisorConsultarSupervCR.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.formVisorReportes.resources
@@ -164,3 +163,5 @@ C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSf
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.pdb
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmUsuariosSucursales.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmUsuariosSucursales.resources
+C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmCerrarSupervision.resources
+C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmReasignarSuperv.resources

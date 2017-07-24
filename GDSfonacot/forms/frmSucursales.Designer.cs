@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSeleccionarImagen = new System.Windows.Forms.Button();
-            this.pbxSucursal = new System.Windows.Forms.PictureBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbZonaRegional = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -100,8 +99,9 @@
             this.txtAnalistasAdministrativos = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
+            this.pbxSucursal = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSeleccionarImagen
@@ -109,32 +109,18 @@
             this.btnSeleccionarImagen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSeleccionarImagen.Location = new System.Drawing.Point(33, 259);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
-            this.btnSeleccionarImagen.Size = new System.Drawing.Size(288, 27);
+            this.btnSeleccionarImagen.Size = new System.Drawing.Size(290, 27);
             this.btnSeleccionarImagen.TabIndex = 29;
             this.btnSeleccionarImagen.Text = "Seleccionar imagen";
             this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
             this.btnSeleccionarImagen.Click += new System.EventHandler(this.btnSeleccionarImagen_Click);
-            // 
-            // pbxSucursal
-            // 
-            this.pbxSucursal.BackColor = System.Drawing.Color.White;
-            this.pbxSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbxSucursal.Image = global::GDSfonacot.Properties.Resources.sucursales;
-            this.pbxSucursal.Location = new System.Drawing.Point(33, 56);
-            this.pbxSucursal.Name = "pbxSucursal";
-            this.tableLayoutPanel1.SetRowSpan(this.pbxSucursal, 8);
-            this.pbxSucursal.Size = new System.Drawing.Size(288, 197);
-            this.pbxSucursal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxSucursal.TabIndex = 28;
-            this.pbxSucursal.TabStop = false;
-            this.pbxSucursal.Click += new System.EventHandler(this.pbxSucursal_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.DimGray;
             this.btnGuardar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnGuardar.Location = new System.Drawing.Point(327, 23);
+            this.btnGuardar.Location = new System.Drawing.Point(329, 23);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(132, 27);
             this.btnGuardar.TabIndex = 27;
@@ -146,12 +132,12 @@
             // 
             this.cmbZonaRegional.BackColor = System.Drawing.SystemColors.MenuText;
             this.cmbZonaRegional.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbZonaRegional.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbZonaRegional.ForeColor = System.Drawing.Color.DimGray;
+            this.cmbZonaRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmbZonaRegional.ForeColor = System.Drawing.Color.White;
             this.cmbZonaRegional.FormattingEnabled = true;
-            this.cmbZonaRegional.Location = new System.Drawing.Point(1020, 56);
+            this.cmbZonaRegional.Location = new System.Drawing.Point(1026, 56);
             this.cmbZonaRegional.Name = "cmbZonaRegional";
-            this.cmbZonaRegional.Size = new System.Drawing.Size(343, 23);
+            this.cmbZonaRegional.Size = new System.Drawing.Size(345, 24);
             this.cmbZonaRegional.TabIndex = 2;
             this.cmbZonaRegional.SelectedIndexChanged += new System.EventHandler(this.cmbZonaRegional_SelectedIndexChanged);
             // 
@@ -162,10 +148,10 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(328, 134);
+            this.label7.Location = new System.Drawing.Point(330, 134);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1034, 20);
+            this.label7.Size = new System.Drawing.Size(1040, 20);
             this.label7.TabIndex = 16;
             this.label7.Text = "Domicilio";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -176,10 +162,10 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(328, 80);
+            this.label6.Location = new System.Drawing.Point(330, 80);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(328, 22);
+            this.label6.Size = new System.Drawing.Size(330, 22);
             this.label6.TabIndex = 15;
             this.label6.Text = "Nombre de Sucursal";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -190,10 +176,10 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(1021, 80);
+            this.label5.Location = new System.Drawing.Point(1027, 80);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(341, 22);
+            this.label5.Size = new System.Drawing.Size(343, 22);
             this.label5.TabIndex = 14;
             this.label5.Text = "Región";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -204,10 +190,10 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(1021, 185);
+            this.label4.Location = new System.Drawing.Point(1027, 185);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(341, 19);
+            this.label4.Size = new System.Drawing.Size(343, 19);
             this.label4.TabIndex = 13;
             this.label4.Text = "Director Regional";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -218,10 +204,10 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(664, 80);
+            this.label3.Location = new System.Drawing.Point(668, 80);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(349, 22);
+            this.label3.Size = new System.Drawing.Size(351, 22);
             this.label3.TabIndex = 12;
             this.label3.Text = "No. Sucursal";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -232,12 +218,12 @@
             this.tableLayoutPanel1.SetColumnSpan(this.txtDireccion, 3);
             this.txtDireccion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDireccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtDireccion.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDireccion.Location = new System.Drawing.Point(328, 106);
+            this.txtDireccion.ForeColor = System.Drawing.Color.White;
+            this.txtDireccion.Location = new System.Drawing.Point(330, 106);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(1034, 24);
+            this.txtDireccion.Size = new System.Drawing.Size(1040, 24);
             this.txtDireccion.TabIndex = 3;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
@@ -247,12 +233,12 @@
             this.tableLayoutPanel1.SetColumnSpan(this.txtRepresentaciones, 2);
             this.txtRepresentaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtRepresentaciones.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtRepresentaciones.ForeColor = System.Drawing.Color.DimGray;
-            this.txtRepresentaciones.Location = new System.Drawing.Point(328, 158);
+            this.txtRepresentaciones.ForeColor = System.Drawing.Color.White;
+            this.txtRepresentaciones.Location = new System.Drawing.Point(330, 158);
             this.txtRepresentaciones.Margin = new System.Windows.Forms.Padding(4);
             this.txtRepresentaciones.Multiline = true;
             this.txtRepresentaciones.Name = "txtRepresentaciones";
-            this.txtRepresentaciones.Size = new System.Drawing.Size(685, 23);
+            this.txtRepresentaciones.Size = new System.Drawing.Size(689, 23);
             this.txtRepresentaciones.TabIndex = 4;
             this.txtRepresentaciones.TextChanged += new System.EventHandler(this.txtRepresentaciones_TextChanged);
             // 
@@ -261,11 +247,11 @@
             this.txtNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtNoSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNoSucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtNoSucursal.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNoSucursal.Location = new System.Drawing.Point(664, 57);
+            this.txtNoSucursal.ForeColor = System.Drawing.Color.White;
+            this.txtNoSucursal.Location = new System.Drawing.Point(668, 57);
             this.txtNoSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoSucursal.Name = "txtNoSucursal";
-            this.txtNoSucursal.Size = new System.Drawing.Size(349, 22);
+            this.txtNoSucursal.Size = new System.Drawing.Size(351, 22);
             this.txtNoSucursal.TabIndex = 1;
             this.txtNoSucursal.TextChanged += new System.EventHandler(this.txtNoSucursal_TextChanged);
             // 
@@ -275,10 +261,10 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(328, 234);
+            this.label2.Location = new System.Drawing.Point(330, 234);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(328, 22);
+            this.label2.Size = new System.Drawing.Size(330, 22);
             this.label2.TabIndex = 22;
             this.label2.Text = "Director Estatal";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -290,10 +276,10 @@
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(328, 185);
+            this.label9.Location = new System.Drawing.Point(330, 185);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(685, 19);
+            this.label9.Size = new System.Drawing.Size(689, 19);
             this.label9.TabIndex = 24;
             this.label9.Text = "Representaciones";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -418,7 +404,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1366, 613);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1374, 613);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -428,10 +414,10 @@
             this.txtCoordinadorCobranza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCoordinadorCobranza.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCoordinadorCobranza.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCoordinadorCobranza.Location = new System.Drawing.Point(328, 260);
+            this.txtCoordinadorCobranza.Location = new System.Drawing.Point(330, 260);
             this.txtCoordinadorCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorCobranza.Name = "txtCoordinadorCobranza";
-            this.txtCoordinadorCobranza.Size = new System.Drawing.Size(328, 22);
+            this.txtCoordinadorCobranza.Size = new System.Drawing.Size(330, 22);
             this.txtCoordinadorCobranza.TabIndex = 9;
             this.txtCoordinadorCobranza.TextChanged += new System.EventHandler(this.txtCoordinadorCobranza_TextChanged);
             // 
@@ -441,10 +427,10 @@
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(328, 289);
+            this.label11.Location = new System.Drawing.Point(330, 289);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(328, 20);
+            this.label11.Size = new System.Drawing.Size(330, 20);
             this.label11.TabIndex = 245;
             this.label11.Text = "Coordinador Cobranza";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -455,10 +441,10 @@
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(1021, 234);
+            this.label10.Location = new System.Drawing.Point(1027, 234);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(341, 22);
+            this.label10.Size = new System.Drawing.Size(343, 22);
             this.label10.TabIndex = 244;
             this.label10.Text = "Coordinador de Crédito";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -469,10 +455,10 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(664, 234);
+            this.label8.Location = new System.Drawing.Point(668, 234);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(349, 22);
+            this.label8.Size = new System.Drawing.Size(351, 22);
             this.label8.TabIndex = 241;
             this.label8.Text = "Coordinador Administrativo";
             // 
@@ -481,11 +467,11 @@
             this.txtDirectorRegional.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtDirectorRegional.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDirectorRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtDirectorRegional.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDirectorRegional.Location = new System.Drawing.Point(1021, 158);
+            this.txtDirectorRegional.ForeColor = System.Drawing.Color.White;
+            this.txtDirectorRegional.Location = new System.Drawing.Point(1027, 158);
             this.txtDirectorRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirectorRegional.Name = "txtDirectorRegional";
-            this.txtDirectorRegional.Size = new System.Drawing.Size(341, 22);
+            this.txtDirectorRegional.Size = new System.Drawing.Size(343, 22);
             this.txtDirectorRegional.TabIndex = 5;
             this.txtDirectorRegional.TextChanged += new System.EventHandler(this.txtDirectorRegional_TextChanged);
             // 
@@ -494,11 +480,11 @@
             this.txtSucursal.BackColor = System.Drawing.SystemColors.MenuText;
             this.txtSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSucursal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtSucursal.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSucursal.Location = new System.Drawing.Point(328, 57);
+            this.txtSucursal.ForeColor = System.Drawing.Color.White;
+            this.txtSucursal.Location = new System.Drawing.Point(330, 57);
             this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(328, 22);
+            this.txtSucursal.Size = new System.Drawing.Size(330, 22);
             this.txtSucursal.TabIndex = 0;
             this.txtSucursal.TextChanged += new System.EventHandler(this.txtSucursal_TextChanged);
             // 
@@ -508,10 +494,10 @@
             this.txtCoordinadorCredito.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCoordinadorCredito.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCoordinadorCredito.ForeColor = System.Drawing.Color.White;
-            this.txtCoordinadorCredito.Location = new System.Drawing.Point(1021, 208);
+            this.txtCoordinadorCredito.Location = new System.Drawing.Point(1027, 208);
             this.txtCoordinadorCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorCredito.Name = "txtCoordinadorCredito";
-            this.txtCoordinadorCredito.Size = new System.Drawing.Size(341, 22);
+            this.txtCoordinadorCredito.Size = new System.Drawing.Size(343, 22);
             this.txtCoordinadorCredito.TabIndex = 8;
             this.txtCoordinadorCredito.TextChanged += new System.EventHandler(this.txtCoordinadorCredito_TextChanged);
             // 
@@ -521,10 +507,10 @@
             this.txtCoordinadorAdministrativo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCoordinadorAdministrativo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtCoordinadorAdministrativo.ForeColor = System.Drawing.Color.White;
-            this.txtCoordinadorAdministrativo.Location = new System.Drawing.Point(664, 208);
+            this.txtCoordinadorAdministrativo.Location = new System.Drawing.Point(668, 208);
             this.txtCoordinadorAdministrativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorAdministrativo.Name = "txtCoordinadorAdministrativo";
-            this.txtCoordinadorAdministrativo.Size = new System.Drawing.Size(349, 22);
+            this.txtCoordinadorAdministrativo.Size = new System.Drawing.Size(351, 22);
             this.txtCoordinadorAdministrativo.TabIndex = 7;
             this.txtCoordinadorAdministrativo.TextChanged += new System.EventHandler(this.txtCoordinadorAdministrativo_TextChanged);
             // 
@@ -534,10 +520,10 @@
             this.txtDirectorEstatal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDirectorEstatal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtDirectorEstatal.ForeColor = System.Drawing.Color.White;
-            this.txtDirectorEstatal.Location = new System.Drawing.Point(328, 208);
+            this.txtDirectorEstatal.Location = new System.Drawing.Point(330, 208);
             this.txtDirectorEstatal.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirectorEstatal.Name = "txtDirectorEstatal";
-            this.txtDirectorEstatal.Size = new System.Drawing.Size(328, 22);
+            this.txtDirectorEstatal.Size = new System.Drawing.Size(330, 22);
             this.txtDirectorEstatal.TabIndex = 6;
             this.txtDirectorEstatal.TextChanged += new System.EventHandler(this.txtDirectorEstatal_TextChanged);
             // 
@@ -547,10 +533,10 @@
             this.txtTotalAnalistas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotalAnalistas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtTotalAnalistas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTotalAnalistas.Location = new System.Drawing.Point(664, 260);
+            this.txtTotalAnalistas.Location = new System.Drawing.Point(668, 260);
             this.txtTotalAnalistas.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalAnalistas.Name = "txtTotalAnalistas";
-            this.txtTotalAnalistas.Size = new System.Drawing.Size(349, 22);
+            this.txtTotalAnalistas.Size = new System.Drawing.Size(351, 22);
             this.txtTotalAnalistas.TabIndex = 10;
             this.txtTotalAnalistas.TextChanged += new System.EventHandler(this.txtTotalAnalistas_TextChanged);
             // 
@@ -560,10 +546,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(664, 289);
+            this.label1.Location = new System.Drawing.Point(668, 289);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 20);
+            this.label1.Size = new System.Drawing.Size(351, 20);
             this.label1.TabIndex = 248;
             this.label1.Text = "Analistas";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -577,7 +563,7 @@
             this.label12.Location = new System.Drawing.Point(34, 342);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(286, 21);
+            this.label12.Size = new System.Drawing.Size(288, 21);
             this.label12.TabIndex = 252;
             this.label12.Text = "Analistas Comercial";
             this.label12.Click += new System.EventHandler(this.label12_Click);
@@ -591,7 +577,7 @@
             this.txtAnalistaComercial.Location = new System.Drawing.Point(34, 313);
             this.txtAnalistaComercial.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistaComercial.Name = "txtAnalistaComercial";
-            this.txtAnalistaComercial.Size = new System.Drawing.Size(286, 22);
+            this.txtAnalistaComercial.Size = new System.Drawing.Size(288, 22);
             this.txtAnalistaComercial.TabIndex = 12;
             this.txtAnalistaComercial.TextChanged += new System.EventHandler(this.txtAnalistaComercial_TextChanged);
             // 
@@ -611,10 +597,10 @@
             this.txtTotalVentanillas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTotalVentanillas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalVentanillas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtTotalVentanillas.Location = new System.Drawing.Point(1021, 260);
+            this.txtTotalVentanillas.Location = new System.Drawing.Point(1027, 260);
             this.txtTotalVentanillas.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalVentanillas.Name = "txtTotalVentanillas";
-            this.txtTotalVentanillas.Size = new System.Drawing.Size(341, 22);
+            this.txtTotalVentanillas.Size = new System.Drawing.Size(343, 22);
             this.txtTotalVentanillas.TabIndex = 11;
             this.txtTotalVentanillas.TextChanged += new System.EventHandler(this.txtTotalVentanillas_TextChanged);
             // 
@@ -624,10 +610,10 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.DimGray;
-            this.label17.Location = new System.Drawing.Point(1021, 289);
+            this.label17.Location = new System.Drawing.Point(1027, 289);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(341, 20);
+            this.label17.Size = new System.Drawing.Size(343, 20);
             this.label17.TabIndex = 287;
             this.label17.Text = "Ventanillas";
             this.label17.Click += new System.EventHandler(this.label17_Click);
@@ -638,10 +624,10 @@
             this.txtAnalistasCredito.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnalistasCredito.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtAnalistasCredito.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAnalistasCredito.Location = new System.Drawing.Point(328, 313);
+            this.txtAnalistasCredito.Location = new System.Drawing.Point(330, 313);
             this.txtAnalistasCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasCredito.Name = "txtAnalistasCredito";
-            this.txtAnalistasCredito.Size = new System.Drawing.Size(328, 22);
+            this.txtAnalistasCredito.Size = new System.Drawing.Size(330, 22);
             this.txtAnalistasCredito.TabIndex = 13;
             this.txtAnalistasCredito.TextChanged += new System.EventHandler(this.txtAnalistasCredito_TextChanged);
             // 
@@ -651,10 +637,10 @@
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(328, 342);
+            this.label13.Location = new System.Drawing.Point(330, 342);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(328, 21);
+            this.label13.Size = new System.Drawing.Size(330, 21);
             this.label13.TabIndex = 253;
             this.label13.Text = "Analistas de Crédito";
             this.label13.Click += new System.EventHandler(this.label13_Click);
@@ -665,10 +651,10 @@
             this.txtAnalistasCobranza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnalistasCobranza.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtAnalistasCobranza.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAnalistasCobranza.Location = new System.Drawing.Point(664, 313);
+            this.txtAnalistasCobranza.Location = new System.Drawing.Point(668, 313);
             this.txtAnalistasCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasCobranza.Name = "txtAnalistasCobranza";
-            this.txtAnalistasCobranza.Size = new System.Drawing.Size(349, 22);
+            this.txtAnalistasCobranza.Size = new System.Drawing.Size(351, 22);
             this.txtAnalistasCobranza.TabIndex = 14;
             this.txtAnalistasCobranza.TextChanged += new System.EventHandler(this.txtAnalistasCobranza_TextChanged);
             // 
@@ -678,10 +664,10 @@
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(664, 342);
+            this.label14.Location = new System.Drawing.Point(668, 342);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(349, 21);
+            this.label14.Size = new System.Drawing.Size(351, 21);
             this.label14.TabIndex = 256;
             this.label14.Text = "Analistas Cobranza";
             this.label14.Click += new System.EventHandler(this.label14_Click);
@@ -692,10 +678,10 @@
             this.txtEmpresasAfiliadas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmpresasAfiliadas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtEmpresasAfiliadas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasAfiliadas.Location = new System.Drawing.Point(1021, 313);
+            this.txtEmpresasAfiliadas.Location = new System.Drawing.Point(1027, 313);
             this.txtEmpresasAfiliadas.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasAfiliadas.Name = "txtEmpresasAfiliadas";
-            this.txtEmpresasAfiliadas.Size = new System.Drawing.Size(341, 22);
+            this.txtEmpresasAfiliadas.Size = new System.Drawing.Size(343, 22);
             this.txtEmpresasAfiliadas.TabIndex = 15;
             this.txtEmpresasAfiliadas.TextChanged += new System.EventHandler(this.txtEmpresasAfiliadas_TextChanged);
             // 
@@ -705,10 +691,10 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(1021, 342);
+            this.label15.Location = new System.Drawing.Point(1027, 342);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(341, 21);
+            this.label15.Size = new System.Drawing.Size(343, 21);
             this.label15.TabIndex = 258;
             this.label15.Text = "Empresas Afiliadas";
             this.label15.Click += new System.EventHandler(this.label15_Click);
@@ -722,7 +708,7 @@
             this.txtTrabajadoresAfiliados.Location = new System.Drawing.Point(34, 367);
             this.txtTrabajadoresAfiliados.Margin = new System.Windows.Forms.Padding(4);
             this.txtTrabajadoresAfiliados.Name = "txtTrabajadoresAfiliados";
-            this.txtTrabajadoresAfiliados.Size = new System.Drawing.Size(286, 22);
+            this.txtTrabajadoresAfiliados.Size = new System.Drawing.Size(288, 22);
             this.txtTrabajadoresAfiliados.TabIndex = 16;
             this.txtTrabajadoresAfiliados.TextChanged += new System.EventHandler(this.txtTrabajadoresAfiliados_TextChanged);
             // 
@@ -735,7 +721,7 @@
             this.label16.Location = new System.Drawing.Point(34, 392);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(286, 17);
+            this.label16.Size = new System.Drawing.Size(288, 17);
             this.label16.TabIndex = 261;
             this.label16.Text = "Trabajadores Afiliados";
             this.label16.Click += new System.EventHandler(this.label16_Click);
@@ -746,10 +732,10 @@
             this.txtPotencialEmpresas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPotencialEmpresas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPotencialEmpresas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPotencialEmpresas.Location = new System.Drawing.Point(328, 367);
+            this.txtPotencialEmpresas.Location = new System.Drawing.Point(330, 367);
             this.txtPotencialEmpresas.Margin = new System.Windows.Forms.Padding(4);
             this.txtPotencialEmpresas.Name = "txtPotencialEmpresas";
-            this.txtPotencialEmpresas.Size = new System.Drawing.Size(328, 22);
+            this.txtPotencialEmpresas.Size = new System.Drawing.Size(330, 22);
             this.txtPotencialEmpresas.TabIndex = 17;
             this.txtPotencialEmpresas.TextChanged += new System.EventHandler(this.txtPotencialEmpresas_TextChanged);
             // 
@@ -759,10 +745,10 @@
             this.txtPotencialTrabajadores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPotencialTrabajadores.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPotencialTrabajadores.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPotencialTrabajadores.Location = new System.Drawing.Point(664, 367);
+            this.txtPotencialTrabajadores.Location = new System.Drawing.Point(668, 367);
             this.txtPotencialTrabajadores.Margin = new System.Windows.Forms.Padding(4);
             this.txtPotencialTrabajadores.Name = "txtPotencialTrabajadores";
-            this.txtPotencialTrabajadores.Size = new System.Drawing.Size(349, 22);
+            this.txtPotencialTrabajadores.Size = new System.Drawing.Size(351, 22);
             this.txtPotencialTrabajadores.TabIndex = 18;
             this.txtPotencialTrabajadores.TextChanged += new System.EventHandler(this.txtPotencialTrabajadores_TextChanged);
             // 
@@ -772,10 +758,10 @@
             this.txtEmpresasEstatus1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmpresasEstatus1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresasEstatus1.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasEstatus1.Location = new System.Drawing.Point(1021, 367);
+            this.txtEmpresasEstatus1.Location = new System.Drawing.Point(1027, 367);
             this.txtEmpresasEstatus1.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus1.Name = "txtEmpresasEstatus1";
-            this.txtEmpresasEstatus1.Size = new System.Drawing.Size(341, 22);
+            this.txtEmpresasEstatus1.Size = new System.Drawing.Size(343, 22);
             this.txtEmpresasEstatus1.TabIndex = 19;
             this.txtEmpresasEstatus1.TextChanged += new System.EventHandler(this.txtEmpresasEstatus1_TextChanged);
             // 
@@ -785,10 +771,10 @@
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(328, 392);
+            this.label18.Location = new System.Drawing.Point(330, 392);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(328, 17);
+            this.label18.Size = new System.Drawing.Size(330, 17);
             this.label18.TabIndex = 291;
             this.label18.Text = "Potencial Empresas";
             this.label18.Click += new System.EventHandler(this.label18_Click);
@@ -799,10 +785,10 @@
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DimGray;
-            this.label20.Location = new System.Drawing.Point(664, 392);
+            this.label20.Location = new System.Drawing.Point(668, 392);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(349, 17);
+            this.label20.Size = new System.Drawing.Size(351, 17);
             this.label20.TabIndex = 293;
             this.label20.Text = "Potencial trabajadores";
             this.label20.Click += new System.EventHandler(this.label20_Click);
@@ -813,10 +799,10 @@
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.DimGray;
-            this.label21.Location = new System.Drawing.Point(1021, 392);
+            this.label21.Location = new System.Drawing.Point(1027, 392);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(341, 17);
+            this.label21.Size = new System.Drawing.Size(343, 17);
             this.label21.TabIndex = 294;
             this.label21.Text = "Empresas Estatus1";
             this.label21.Click += new System.EventHandler(this.label21_Click);
@@ -830,7 +816,7 @@
             this.txtEmpresasEstatus18.Location = new System.Drawing.Point(34, 413);
             this.txtEmpresasEstatus18.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus18.Name = "txtEmpresasEstatus18";
-            this.txtEmpresasEstatus18.Size = new System.Drawing.Size(286, 22);
+            this.txtEmpresasEstatus18.Size = new System.Drawing.Size(288, 22);
             this.txtEmpresasEstatus18.TabIndex = 20;
             this.txtEmpresasEstatus18.TextChanged += new System.EventHandler(this.txtEmpresasEstatus18_TextChanged);
             // 
@@ -840,10 +826,10 @@
             this.txtEmpresasEstatus30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmpresasEstatus30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresasEstatus30.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasEstatus30.Location = new System.Drawing.Point(664, 413);
+            this.txtEmpresasEstatus30.Location = new System.Drawing.Point(668, 413);
             this.txtEmpresasEstatus30.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus30.Name = "txtEmpresasEstatus30";
-            this.txtEmpresasEstatus30.Size = new System.Drawing.Size(349, 22);
+            this.txtEmpresasEstatus30.Size = new System.Drawing.Size(351, 22);
             this.txtEmpresasEstatus30.TabIndex = 22;
             this.txtEmpresasEstatus30.TextChanged += new System.EventHandler(this.txtEmpresasEstatus30_TextChanged);
             // 
@@ -853,10 +839,10 @@
             this.txtEmpresasEstatus21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmpresasEstatus21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresasEstatus21.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasEstatus21.Location = new System.Drawing.Point(328, 413);
+            this.txtEmpresasEstatus21.Location = new System.Drawing.Point(330, 413);
             this.txtEmpresasEstatus21.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus21.Name = "txtEmpresasEstatus21";
-            this.txtEmpresasEstatus21.Size = new System.Drawing.Size(328, 22);
+            this.txtEmpresasEstatus21.Size = new System.Drawing.Size(330, 22);
             this.txtEmpresasEstatus21.TabIndex = 21;
             this.txtEmpresasEstatus21.TextChanged += new System.EventHandler(this.txtEmpresasEstatus21_TextChanged);
             // 
@@ -866,10 +852,10 @@
             this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label22.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.DimGray;
-            this.label22.Location = new System.Drawing.Point(328, 439);
+            this.label22.Location = new System.Drawing.Point(330, 439);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(328, 18);
+            this.label22.Size = new System.Drawing.Size(330, 18);
             this.label22.TabIndex = 298;
             this.label22.Text = "Empresas estatus 21";
             this.label22.Click += new System.EventHandler(this.label22_Click);
@@ -880,10 +866,10 @@
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.DimGray;
-            this.label23.Location = new System.Drawing.Point(664, 439);
+            this.label23.Location = new System.Drawing.Point(668, 439);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(349, 18);
+            this.label23.Size = new System.Drawing.Size(351, 18);
             this.label23.TabIndex = 299;
             this.label23.Text = "Empresas estatus 30";
             this.label23.Click += new System.EventHandler(this.label23_Click);
@@ -897,7 +883,7 @@
             this.label19.Location = new System.Drawing.Point(34, 439);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(286, 18);
+            this.label19.Size = new System.Drawing.Size(288, 18);
             this.label19.TabIndex = 292;
             this.label19.Text = "Empresas estatus 18";
             this.label19.Click += new System.EventHandler(this.label19_Click);
@@ -908,10 +894,10 @@
             this.txtMetaMensual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMetaMensual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMetaMensual.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtMetaMensual.Location = new System.Drawing.Point(1021, 413);
+            this.txtMetaMensual.Location = new System.Drawing.Point(1027, 413);
             this.txtMetaMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetaMensual.Name = "txtMetaMensual";
-            this.txtMetaMensual.Size = new System.Drawing.Size(341, 22);
+            this.txtMetaMensual.Size = new System.Drawing.Size(343, 22);
             this.txtMetaMensual.TabIndex = 23;
             this.txtMetaMensual.TextChanged += new System.EventHandler(this.txtMetaMensual_TextChanged);
             // 
@@ -921,10 +907,10 @@
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.DimGray;
-            this.label24.Location = new System.Drawing.Point(1021, 439);
+            this.label24.Location = new System.Drawing.Point(1027, 439);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(341, 18);
+            this.label24.Size = new System.Drawing.Size(343, 18);
             this.label24.TabIndex = 302;
             this.label24.Text = "Meta Mensual";
             this.label24.Click += new System.EventHandler(this.label24_Click);
@@ -938,7 +924,7 @@
             this.label25.Location = new System.Drawing.Point(34, 486);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(286, 18);
+            this.label25.Size = new System.Drawing.Size(288, 18);
             this.label25.TabIndex = 303;
             this.label25.Text = "Meta Anual";
             this.label25.Click += new System.EventHandler(this.label25_Click);
@@ -952,7 +938,7 @@
             this.txtMetaAnual.Location = new System.Drawing.Point(34, 461);
             this.txtMetaAnual.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetaAnual.Name = "txtMetaAnual";
-            this.txtMetaAnual.Size = new System.Drawing.Size(286, 22);
+            this.txtMetaAnual.Size = new System.Drawing.Size(288, 22);
             this.txtMetaAnual.TabIndex = 24;
             this.txtMetaAnual.TextChanged += new System.EventHandler(this.txtMetaAnual_TextChanged);
             // 
@@ -962,10 +948,10 @@
             this.txtMetaAcumulada.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMetaAcumulada.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMetaAcumulada.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtMetaAcumulada.Location = new System.Drawing.Point(328, 461);
+            this.txtMetaAcumulada.Location = new System.Drawing.Point(330, 461);
             this.txtMetaAcumulada.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetaAcumulada.Name = "txtMetaAcumulada";
-            this.txtMetaAcumulada.Size = new System.Drawing.Size(328, 22);
+            this.txtMetaAcumulada.Size = new System.Drawing.Size(330, 22);
             this.txtMetaAcumulada.TabIndex = 25;
             this.txtMetaAcumulada.TextChanged += new System.EventHandler(this.txtMetaAcumulada_TextChanged);
             // 
@@ -975,10 +961,10 @@
             this.txtColocacionMensual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtColocacionMensual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColocacionMensual.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtColocacionMensual.Location = new System.Drawing.Point(664, 461);
+            this.txtColocacionMensual.Location = new System.Drawing.Point(668, 461);
             this.txtColocacionMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtColocacionMensual.Name = "txtColocacionMensual";
-            this.txtColocacionMensual.Size = new System.Drawing.Size(349, 22);
+            this.txtColocacionMensual.Size = new System.Drawing.Size(351, 22);
             this.txtColocacionMensual.TabIndex = 26;
             this.txtColocacionMensual.TextChanged += new System.EventHandler(this.txtColocacionMensual_TextChanged);
             // 
@@ -988,10 +974,10 @@
             this.txtColocacionAnual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtColocacionAnual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtColocacionAnual.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtColocacionAnual.Location = new System.Drawing.Point(1021, 461);
+            this.txtColocacionAnual.Location = new System.Drawing.Point(1027, 461);
             this.txtColocacionAnual.Margin = new System.Windows.Forms.Padding(4);
             this.txtColocacionAnual.Name = "txtColocacionAnual";
-            this.txtColocacionAnual.Size = new System.Drawing.Size(341, 22);
+            this.txtColocacionAnual.Size = new System.Drawing.Size(343, 22);
             this.txtColocacionAnual.TabIndex = 27;
             this.txtColocacionAnual.TextChanged += new System.EventHandler(this.txtColocacionAnual_TextChanged);
             // 
@@ -1001,10 +987,10 @@
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.DimGray;
-            this.label26.Location = new System.Drawing.Point(328, 486);
+            this.label26.Location = new System.Drawing.Point(330, 486);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(328, 18);
+            this.label26.Size = new System.Drawing.Size(330, 18);
             this.label26.TabIndex = 307;
             this.label26.Text = "Meta Acumulada";
             this.label26.Click += new System.EventHandler(this.label26_Click);
@@ -1015,10 +1001,10 @@
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.DimGray;
-            this.label27.Location = new System.Drawing.Point(664, 486);
+            this.label27.Location = new System.Drawing.Point(668, 486);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(349, 18);
+            this.label27.Size = new System.Drawing.Size(351, 18);
             this.label27.TabIndex = 308;
             this.label27.Text = "Colocación Mensual";
             // 
@@ -1028,10 +1014,10 @@
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.DimGray;
-            this.label28.Location = new System.Drawing.Point(1021, 486);
+            this.label28.Location = new System.Drawing.Point(1027, 486);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(341, 18);
+            this.label28.Size = new System.Drawing.Size(343, 18);
             this.label28.TabIndex = 309;
             this.label28.Text = "Colocación Anual";
             this.label28.Click += new System.EventHandler(this.label28_Click);
@@ -1045,7 +1031,7 @@
             this.txtCobranzaMetaMensual.Location = new System.Drawing.Point(34, 508);
             this.txtCobranzaMetaMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaMetaMensual.Name = "txtCobranzaMetaMensual";
-            this.txtCobranzaMetaMensual.Size = new System.Drawing.Size(286, 22);
+            this.txtCobranzaMetaMensual.Size = new System.Drawing.Size(288, 22);
             this.txtCobranzaMetaMensual.TabIndex = 28;
             // 
             // txtcobranzaAnual
@@ -1054,10 +1040,10 @@
             this.txtcobranzaAnual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtcobranzaAnual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcobranzaAnual.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtcobranzaAnual.Location = new System.Drawing.Point(328, 508);
+            this.txtcobranzaAnual.Location = new System.Drawing.Point(330, 508);
             this.txtcobranzaAnual.Margin = new System.Windows.Forms.Padding(4);
             this.txtcobranzaAnual.Name = "txtcobranzaAnual";
-            this.txtcobranzaAnual.Size = new System.Drawing.Size(328, 22);
+            this.txtcobranzaAnual.Size = new System.Drawing.Size(330, 22);
             this.txtcobranzaAnual.TabIndex = 29;
             // 
             // txtCobranzaCumplimiento
@@ -1066,10 +1052,10 @@
             this.txtCobranzaCumplimiento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCobranzaCumplimiento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCobranzaCumplimiento.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCobranzaCumplimiento.Location = new System.Drawing.Point(664, 508);
+            this.txtCobranzaCumplimiento.Location = new System.Drawing.Point(668, 508);
             this.txtCobranzaCumplimiento.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaCumplimiento.Name = "txtCobranzaCumplimiento";
-            this.txtCobranzaCumplimiento.Size = new System.Drawing.Size(349, 22);
+            this.txtCobranzaCumplimiento.Size = new System.Drawing.Size(351, 22);
             this.txtCobranzaCumplimiento.TabIndex = 30;
             // 
             // txtCobranzaPorcentaje
@@ -1078,10 +1064,10 @@
             this.txtCobranzaPorcentaje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCobranzaPorcentaje.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCobranzaPorcentaje.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCobranzaPorcentaje.Location = new System.Drawing.Point(1021, 508);
+            this.txtCobranzaPorcentaje.Location = new System.Drawing.Point(1027, 508);
             this.txtCobranzaPorcentaje.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaPorcentaje.Name = "txtCobranzaPorcentaje";
-            this.txtCobranzaPorcentaje.Size = new System.Drawing.Size(341, 22);
+            this.txtCobranzaPorcentaje.Size = new System.Drawing.Size(343, 22);
             this.txtCobranzaPorcentaje.TabIndex = 31;
             // 
             // label29
@@ -1093,7 +1079,7 @@
             this.label29.Location = new System.Drawing.Point(34, 533);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(286, 18);
+            this.label29.Size = new System.Drawing.Size(288, 18);
             this.label29.TabIndex = 314;
             this.label29.Text = "Cobranza Meta Mensual";
             // 
@@ -1103,10 +1089,10 @@
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.DimGray;
-            this.label30.Location = new System.Drawing.Point(328, 533);
+            this.label30.Location = new System.Drawing.Point(330, 533);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(328, 18);
+            this.label30.Size = new System.Drawing.Size(330, 18);
             this.label30.TabIndex = 315;
             this.label30.Text = "Cobranza Meta Anual";
             // 
@@ -1116,10 +1102,10 @@
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.DimGray;
-            this.label31.Location = new System.Drawing.Point(664, 533);
+            this.label31.Location = new System.Drawing.Point(668, 533);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(349, 18);
+            this.label31.Size = new System.Drawing.Size(351, 18);
             this.label31.TabIndex = 316;
             this.label31.Text = "Cobranza Cumplimiento";
             // 
@@ -1129,10 +1115,10 @@
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.DimGray;
-            this.label32.Location = new System.Drawing.Point(1021, 533);
+            this.label32.Location = new System.Drawing.Point(1027, 533);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(341, 18);
+            this.label32.Size = new System.Drawing.Size(343, 18);
             this.label32.TabIndex = 317;
             this.label32.Text = "Cobranza Porcentaje";
             // 
@@ -1145,7 +1131,7 @@
             this.txtAnalistasAdministrativos.Location = new System.Drawing.Point(34, 555);
             this.txtAnalistasAdministrativos.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasAdministrativos.Name = "txtAnalistasAdministrativos";
-            this.txtAnalistasAdministrativos.Size = new System.Drawing.Size(286, 22);
+            this.txtAnalistasAdministrativos.Size = new System.Drawing.Size(288, 22);
             this.txtAnalistasAdministrativos.TabIndex = 319;
             // 
             // label33
@@ -1157,7 +1143,7 @@
             this.label33.Location = new System.Drawing.Point(34, 580);
             this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(286, 33);
+            this.label33.Size = new System.Drawing.Size(288, 33);
             this.label33.TabIndex = 320;
             this.label33.Text = "Analistas Administrativos";
             // 
@@ -1167,7 +1153,7 @@
             this.btnNuevo.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnNuevo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnNuevo.Location = new System.Drawing.Point(189, 23);
+            this.btnNuevo.Location = new System.Drawing.Point(191, 23);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(132, 27);
             this.btnNuevo.TabIndex = 318;
@@ -1175,21 +1161,35 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // pbxSucursal
+            // 
+            this.pbxSucursal.BackColor = System.Drawing.Color.White;
+            this.pbxSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbxSucursal.Image = global::GDSfonacot.Properties.Resources.sucursales;
+            this.pbxSucursal.Location = new System.Drawing.Point(33, 56);
+            this.pbxSucursal.Name = "pbxSucursal";
+            this.tableLayoutPanel1.SetRowSpan(this.pbxSucursal, 8);
+            this.pbxSucursal.Size = new System.Drawing.Size(290, 197);
+            this.pbxSucursal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxSucursal.TabIndex = 28;
+            this.pbxSucursal.TabStop = false;
+            this.pbxSucursal.Click += new System.EventHandler(this.pbxSucursal_Click);
+            // 
             // frmSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1362, 389);
+            this.ClientSize = new System.Drawing.Size(1379, 406);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimizeBox = false;
             this.Name = "frmSucursales";
             this.Text = "Sucursales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmSucursales_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

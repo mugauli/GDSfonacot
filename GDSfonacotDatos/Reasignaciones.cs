@@ -19,6 +19,7 @@ namespace GDSfonacotDatos
         public Nullable<System.DateTime> fechareasignada { get; set; }
         public Nullable<int> Idsupervision { get; set; }
         public Nullable<int> Idusuariocreador { get; set; }
+        public Nullable<System.DateTime> FechaCreacion { get; set; }
     
         public virtual HistorialSupervisiones HistorialSupervisiones { get; set; }
         public virtual Usuarios Usuarios { get; set; }

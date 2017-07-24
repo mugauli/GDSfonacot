@@ -5,22 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="98d4d929f7f94116a8c814521ad5b86e" Name="Diagram1" ZoomLevel="53">
-        <EntityTypeShape EntityType="GDSfonacotModel.Cierres" Width="1.5" PointX="14.25" PointY="7.125" />
-        <EntityTypeShape EntityType="GDSfonacotModel.ContestacionesSuperv_Sucursales" Width="1.5" PointX="11.25" PointY="10.125" />
-        <EntityTypeShape EntityType="GDSfonacotModel.ctActividad" Width="1.5" PointX="3.75" PointY="0.5" />
-        <EntityTypeShape EntityType="GDSfonacotModel.ctArea" Width="1.5" PointX="3.75" PointY="3.25" />
-        <EntityTypeShape EntityType="GDSfonacotModel.ctEstatusSupervision" Width="1.5" PointX="6.75" PointY="4.25" />
-        <EntityTypeShape EntityType="GDSfonacotModel.ctPerfilSistema" Width="1.5" PointX="3.75" PointY="18.25" />
-        <EntityTypeShape EntityType="GDSfonacotModel.ctRegional" Width="1.5" PointX="1.5" PointY="4.375" />
-        <EntityTypeShape EntityType="GDSfonacotModel.ctTipoPersonal" Width="1.5" PointX="3.75" PointY="15.875" />
-        <EntityTypeShape EntityType="GDSfonacotModel.Empleados" Width="1.5" PointX="6" PointY="7.375" />
-        <EntityTypeShape EntityType="GDSfonacotModel.HistorialSupervisiones" Width="1.5" PointX="9" PointY="7.125" />
-        <EntityTypeShape EntityType="GDSfonacotModel.Reasignaciones" Width="1.5" PointX="14.25" PointY="11.125" />
-        <EntityTypeShape EntityType="GDSfonacotModel.SeguimientoSupervision_Supervisores" Width="1.5" PointX="14.25" PointY="14.375" />
-        <EntityTypeShape EntityType="GDSfonacotModel.Sucursales" Width="1.5" PointX="3.75" PointY="6" />
-        <EntityTypeShape EntityType="GDSfonacotModel.TiraAuditora" Width="1.5" PointX="8.25" PointY="14.25" />
-        <EntityTypeShape EntityType="GDSfonacotModel.Usuarios" Width="1.5" PointX="6" PointY="13" />
-        <EntityTypeShape EntityType="GDSfonacotModel.Usuarios_Nivel" Width="1.5" PointX="3.75" PointY="21.5" />
+        <EntityTypeShape EntityType="GDSfonacotModel.Cierres" Width="1.5" PointX="11" PointY="10.875" />
+        <EntityTypeShape EntityType="GDSfonacotModel.ContestacionesSuperv_Sucursales" Width="1.5" PointX="11" PointY="15" />
+        <EntityTypeShape EntityType="GDSfonacotModel.ctActividad" Width="1.5" PointX="3.5" PointY="15.75" />
+        <EntityTypeShape EntityType="GDSfonacotModel.ctArea" Width="1.5" PointX="3.5" PointY="3.125" />
+        <EntityTypeShape EntityType="GDSfonacotModel.ctEstatusSupervision" Width="1.5" PointX="6.5" PointY="4.125" />
+        <EntityTypeShape EntityType="GDSfonacotModel.ctPerfilSistema" Width="1.5" PointX="3.5" PointY="18.125" />
+        <EntityTypeShape EntityType="GDSfonacotModel.ctRegional" Width="1.5" PointX="1.25" PointY="4.25" />
+        <EntityTypeShape EntityType="GDSfonacotModel.ctTipoPersonal" Width="1.5" PointX="3.5" PointY="0.5" />
+        <EntityTypeShape EntityType="GDSfonacotModel.Empleados" Width="1.5" PointX="5.75" PointY="7.25" />
+        <EntityTypeShape EntityType="GDSfonacotModel.HistorialSupervisiones" Width="1.5" PointX="8.75" PointY="7" />
+        <EntityTypeShape EntityType="GDSfonacotModel.Reasignaciones" Width="1.5" PointX="14" PointY="11" />
+        <EntityTypeShape EntityType="GDSfonacotModel.SeguimientoSupervision_Supervisores" Width="1.5" PointX="11" PointY="5.125" />
+        <EntityTypeShape EntityType="GDSfonacotModel.Sucursales" Width="1.5" PointX="3.5" PointY="5.875" />
+        <EntityTypeShape EntityType="GDSfonacotModel.TiraAuditora" Width="1.5" PointX="8" PointY="14.25" />
+        <EntityTypeShape EntityType="GDSfonacotModel.Usuarios" Width="1.5" PointX="5.75" PointY="12.875" />
+        <EntityTypeShape EntityType="GDSfonacotModel.Usuarios_Nivel" Width="1.5" PointX="3.5" PointY="21.375" />
         <AssociationConnector Association="GDSfonacotModel.FK_Cierres_HistorialSupervisiones" />
         <AssociationConnector Association="GDSfonacotModel.FK_Cierres_Usuarios" />
         <AssociationConnector Association="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" />

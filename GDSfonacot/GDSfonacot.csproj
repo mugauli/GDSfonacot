@@ -128,6 +128,12 @@
     <Compile Include="forms\frmAgregarSucursal.Designer.cs">
       <DependentUpon>frmAgregarSucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmCerrarSupervision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmCerrarSupervision.Designer.cs">
+      <DependentUpon>frmCerrarSupervision.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmContestacionSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     </Compile>
     <Compile Include="forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmReasignarSuperv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmReasignarSuperv.Designer.cs">
+      <DependentUpon>frmReasignarSuperv.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmSeguimiento.cs">
       <SubType>Form</SubType>
@@ -236,6 +248,9 @@
     <EmbeddedResource Include="forms\frmBusquedaSupervisiones.resx">
       <DependentUpon>frmBusquedaSupervisiones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmCerrarSupervision.resx">
+      <DependentUpon>frmCerrarSupervision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmContestacionSucursal.resx">
       <DependentUpon>frmContestacionSucursal.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmReasignarSuperv.resx">
+      <DependentUpon>frmReasignarSuperv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmSeguimiento.resx">
       <DependentUpon>frmSeguimiento.cs</DependentUpon>

@@ -57,8 +57,6 @@
             this.Supervisor1 = new System.Windows.Forms.Label();
             this.txtSupervisor1 = new System.Windows.Forms.TextBox();
             this.FechadeSupervision = new System.Windows.Forms.Label();
-            this.txtNoOficio = new System.Windows.Forms.TextBox();
-            this.NumerodeOficio = new System.Windows.Forms.Label();
             this.DirectorEstatal = new System.Windows.Forms.Label();
             this.txtDirectorEstatal = new System.Windows.Forms.TextBox();
             this.DireccionRegional = new System.Windows.Forms.Label();
@@ -67,10 +65,7 @@
             this.txtSucursal = new System.Windows.Forms.TextBox();
             this.NoSupervision = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
-            this.FechadeRespuesta = new System.Windows.Forms.Label();
-            this.checksolventada = new System.Windows.Forms.CheckBox();
+            this.dtfechaSeguimiento = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolButNuevo = new System.Windows.Forms.ToolStripButton();
             this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
@@ -136,8 +131,6 @@
             this.tableLayoutPanel1.Controls.Add(this.Supervisor1, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtSupervisor1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.FechadeSupervision, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtNoOficio, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.NumerodeOficio, 6, 1);
             this.tableLayoutPanel1.Controls.Add(this.DirectorEstatal, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtDirectorEstatal, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.DireccionRegional, 3, 1);
@@ -146,10 +139,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtSucursal, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.NoSupervision, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNoSupervision, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dtFechaSupervision, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.FechadeRespuesta, 5, 3);
-            this.tableLayoutPanel1.Controls.Add(this.checksolventada, 6, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dtfechaSeguimiento, 0, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 29);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 26;
@@ -530,34 +520,7 @@
             this.FechadeSupervision.Name = "FechadeSupervision";
             this.FechadeSupervision.Size = new System.Drawing.Size(162, 30);
             this.FechadeSupervision.TabIndex = 269;
-            this.FechadeSupervision.Text = "Fecha de Supervisión";
-            // 
-            // txtNoOficio
-            // 
-            this.txtNoOficio.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtNoOficio, 2);
-            this.txtNoOficio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNoOficio.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoOficio.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNoOficio.Location = new System.Drawing.Point(1024, 4);
-            this.txtNoOficio.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNoOficio.Name = "txtNoOficio";
-            this.txtNoOficio.Size = new System.Drawing.Size(338, 22);
-            this.txtNoOficio.TabIndex = 210;
-            // 
-            // NumerodeOficio
-            // 
-            this.NumerodeOficio.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.NumerodeOficio, 2);
-            this.NumerodeOficio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NumerodeOficio.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumerodeOficio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.NumerodeOficio.Location = new System.Drawing.Point(1024, 30);
-            this.NumerodeOficio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.NumerodeOficio.Name = "NumerodeOficio";
-            this.NumerodeOficio.Size = new System.Drawing.Size(338, 30);
-            this.NumerodeOficio.TabIndex = 211;
-            this.NumerodeOficio.Text = "No de Oficio";
+            this.FechadeSupervision.Text = "Fecha de Seguimiento";
             // 
             // DirectorEstatal
             // 
@@ -663,50 +626,16 @@
             this.txtNoSupervision.Size = new System.Drawing.Size(332, 22);
             this.txtNoSupervision.TabIndex = 202;
             // 
-            // dateTimePicker1
+            // dtfechaSeguimiento
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Black;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 63);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(145, 20);
-            this.dateTimePicker1.TabIndex = 270;
-            // 
-            // dtFechaSupervision
-            // 
-            this.dtFechaSupervision.CalendarForeColor = System.Drawing.Color.White;
-            this.dtFechaSupervision.CalendarTitleBackColor = System.Drawing.Color.Black;
-            this.dtFechaSupervision.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dtFechaSupervision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaSupervision.Location = new System.Drawing.Point(853, 63);
-            this.dtFechaSupervision.Name = "dtFechaSupervision";
-            this.dtFechaSupervision.Size = new System.Drawing.Size(148, 20);
-            this.dtFechaSupervision.TabIndex = 238;
-            // 
-            // FechadeRespuesta
-            // 
-            this.FechadeRespuesta.AutoSize = true;
-            this.FechadeRespuesta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechadeRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FechadeRespuesta.Location = new System.Drawing.Point(854, 90);
-            this.FechadeRespuesta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.FechadeRespuesta.Name = "FechadeRespuesta";
-            this.FechadeRespuesta.Size = new System.Drawing.Size(128, 16);
-            this.FechadeRespuesta.TabIndex = 239;
-            this.FechadeRespuesta.Text = "Fecha de Respuesta";
-            // 
-            // checksolventada
-            // 
-            this.checksolventada.AutoSize = true;
-            this.checksolventada.Dock = System.Windows.Forms.DockStyle.Left;
-            this.checksolventada.Location = new System.Drawing.Point(1023, 63);
-            this.checksolventada.Name = "checksolventada";
-            this.checksolventada.Size = new System.Drawing.Size(80, 24);
-            this.checksolventada.TabIndex = 268;
-            this.checksolventada.Text = "Solventada";
-            this.checksolventada.UseVisualStyleBackColor = true;
+            this.dtfechaSeguimiento.CalendarForeColor = System.Drawing.Color.White;
+            this.dtfechaSeguimiento.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtfechaSeguimiento.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtfechaSeguimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtfechaSeguimiento.Location = new System.Drawing.Point(3, 63);
+            this.dtfechaSeguimiento.Name = "dtfechaSeguimiento";
+            this.dtfechaSeguimiento.Size = new System.Drawing.Size(145, 20);
+            this.dtfechaSeguimiento.TabIndex = 270;
             // 
             // toolStrip1
             // 
@@ -802,8 +731,6 @@
         private System.Windows.Forms.Label Supervisor1;
         private System.Windows.Forms.TextBox txtSupervisor1;
         private System.Windows.Forms.Label FechadeSupervision;
-        private System.Windows.Forms.TextBox txtNoOficio;
-        private System.Windows.Forms.Label NumerodeOficio;
         private System.Windows.Forms.Label DirectorEstatal;
         private System.Windows.Forms.TextBox txtDirectorEstatal;
         private System.Windows.Forms.Label DireccionRegional;
@@ -812,10 +739,7 @@
         private System.Windows.Forms.TextBox txtSucursal;
         private System.Windows.Forms.Label NoSupervision;
         private System.Windows.Forms.TextBox txtNoSupervision;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dtFechaSupervision;
-        private System.Windows.Forms.Label FechadeRespuesta;
-        private System.Windows.Forms.CheckBox checksolventada;
+        private System.Windows.Forms.DateTimePicker dtfechaSeguimiento;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolButNuevo;
         private System.Windows.Forms.ToolStripButton toolButGuardar;

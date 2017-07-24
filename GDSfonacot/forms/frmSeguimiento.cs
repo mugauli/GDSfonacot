@@ -305,7 +305,7 @@ namespace GDSfonacot.forms
         {
             txthidIdSegui.Text = "0";
             txtNoSupervision.Text = String.Empty;
-            dtFechaSupervision.Value = DateTime.Now;
+            dtfechaSeguimiento.Value = DateTime.Now;
             txtInmuble.Text = String.Empty;
             txtGestionDireccion.Text = String.Empty;
             txtOriginacion.Text = String.Empty;

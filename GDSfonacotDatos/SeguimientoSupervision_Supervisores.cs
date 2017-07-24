@@ -28,6 +28,7 @@ namespace GDSfonacotDatos
         public string AcuerdosCompromisos { get; set; }
         public Nullable<int> IdusuarioCreador { get; set; }
         public Nullable<System.DateTime> FechaSeguimCreacion { get; set; }
+        public Nullable<System.DateTime> FechaCreacion { get; set; }
     
         public virtual HistorialSupervisiones HistorialSupervisiones { get; set; }
         public virtual Usuarios Usuarios { get; set; }

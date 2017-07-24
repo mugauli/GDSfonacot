@@ -123,11 +123,23 @@ namespace GDSfonacot.forms
             CargarDatosHistoricoSupervision();
             if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
             {
-                toolButReasignar.Enabled = true;
-                toolButReasignar.Visible = true;
-                toolButCerrarSup.Enabled = true;
-                toolButCerrarSup.Visible = true;
-                toolButImprimir.Enabled = true;
+                if (txthidStatus.Text == "3")
+                {
+                    toolButReasignar.Enabled = false;
+                    toolButReasignar.Visible = true;
+                    toolButCerrarSup.Enabled = false;
+                    toolButCerrarSup.Visible = true;
+                    toolButImprimir.Enabled = true;
+                }
+                else if(txthidStatus.Text =="2") {
+                    toolButReasignar.Enabled = true;
+                    toolButReasignar.Visible = true;
+                    toolButCerrarSup.Enabled = true;
+                    toolButCerrarSup.Visible = true;
+                    toolButImprimir.Enabled = true;
+
+                }
+
             }
             else {
                 toolButReasignar.Enabled = false;
@@ -273,6 +285,21 @@ namespace GDSfonacot.forms
             frmvisor.param1 = txtNoSupervision.Text.Trim();
             //frmvisor.MdiParen8t = MDIPrincip();
             frmvisor.ShowDialog();
+        }
+
+        private void toolButReasignar_Click(object sender, EventArgs e)
+        {
+            var frmreasignar = new frmReasignarSuperv();//crea una instancia del formulario
+                                                               // frmPersonsuc.MdiParent = this.ParentForm;
+            frmreasignar.ShowDialog();
+        }
+    
+
+        private void toolButCerrarSup_Click(object sender, EventArgs e)
+        {
+            var frmcerrar = new frmCerrarSupervision();//crea una instancia del formulario
+            //frmcerrar.MdiParent = this.ParentForm;                                                          // frmPersonsuc.MdiParent = this.ParentForm;
+            frmcerrar.ShowDialog();
         }
     }
 }

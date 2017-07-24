@@ -14,6 +14,8 @@
           <Property Name="fechacierre" Type="datetime" />
           <Property Name="Idsupervision" Type="int" />
           <Property Name="Idusuariocreador" Type="int" />
+          <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="solventada" Type="bit" />
         </EntityType>
         <EntityType Name="ContestacionesSuperv_Sucursales">
           <Key>
@@ -128,6 +130,7 @@
           <Property Name="fechareasignada" Type="datetime" />
           <Property Name="Idsupervision" Type="int" />
           <Property Name="Idusuariocreador" Type="int" />
+          <Property Name="FechaCreacion" Type="datetime" />
         </EntityType>
         <EntityType Name="SeguimientoSupervision_Supervisores">
           <Key>
@@ -147,6 +150,7 @@
           <Property Name="AcuerdosCompromisos" Type="ntext" />
           <Property Name="IdusuarioCreador" Type="int" />
           <Property Name="FechaSeguimCreacion" Type="datetime" />
+          <Property Name="FechaCreacion" Type="datetime" />
         </EntityType>
         <EntityType Name="Sucursales">
           <Key>
@@ -506,7 +510,8 @@
           <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="spconsultarSeguimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
+          <Parameter Name="idsupervision" Type="int" Mode="In" />
+          <Parameter Name="idseguimiento" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="GDSfonacotModelStoreContainer">
           <EntitySet Name="Cierres" EntityType="Self.Cierres" Schema="dbo" store:Type="Tables" />
@@ -633,7 +638,8 @@
           <Parameter Name="nosupervision" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spconsultarSeguimiento" ReturnType="Collection(GDSfonacotModel.spconsultarSeguimiento_Result)">
-          <Parameter Name="nosupervision" Mode="In" Type="String" />
+            <Parameter Name="idsupervision" Mode="In" Type="Int32" />
+            <Parameter Name="idseguimiento" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="Cierres" EntityType="GDSfonacotModel.Cierres" />
           <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="GDSfonacotModel.ContestacionesSuperv_Sucursales" />
@@ -840,6 +846,8 @@
           <Property Name="fechacierre" Type="DateTime" Precision="3" />
           <Property Name="Idsupervision" Type="Int32" />
           <Property Name="Idusuariocreador" Type="Int32" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="solventada" Type="Boolean" />
           <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_Cierres_HistorialSupervisiones" FromRole="Cierres" ToRole="HistorialSupervisiones" />
           <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Cierres_Usuarios" FromRole="Cierres" ToRole="Usuarios" />
         </EntityType>
@@ -980,6 +988,7 @@
           <Property Name="fechareasignada" Type="DateTime" Precision="3" />
           <Property Name="Idsupervision" Type="Int32" />
           <Property Name="Idusuariocreador" Type="Int32" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
           <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_Reasignaciones_Reasignaciones" FromRole="Reasignaciones" ToRole="HistorialSupervisiones" />
           <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Reasignaciones_Usuarios" FromRole="Reasignaciones" ToRole="Usuarios" />
         </EntityType>
@@ -1001,6 +1010,7 @@
           <Property Name="AcuerdosCompromisos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IdusuarioCreador" Type="Int32" />
           <Property Name="FechaSeguimCreacion" Type="DateTime" Precision="3" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
           <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" FromRole="SeguimientoSupervision_Supervisores" ToRole="HistorialSupervisiones" />
           <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios" FromRole="SeguimientoSupervision_Supervisores" ToRole="Usuarios" />
         </EntityType>
@@ -1479,6 +1489,8 @@
           <EntitySetMapping Name="Cierres">
             <EntityTypeMapping TypeName="GDSfonacotModel.Cierres">
               <MappingFragment StoreEntitySet="Cierres">
+                <ScalarProperty Name="solventada" ColumnName="solventada" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
                 <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
                 <ScalarProperty Name="Idsupervision" ColumnName="Idsupervision" />
                 <ScalarProperty Name="fechacierre" ColumnName="fechacierre" />
@@ -1603,6 +1615,7 @@
           <EntitySetMapping Name="Reasignaciones">
             <EntityTypeMapping TypeName="GDSfonacotModel.Reasignaciones">
               <MappingFragment StoreEntitySet="Reasignaciones">
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
                 <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
                 <ScalarProperty Name="Idsupervision" ColumnName="Idsupervision" />
                 <ScalarProperty Name="fechareasignada" ColumnName="fechareasignada" />
@@ -1614,6 +1627,7 @@
           <EntitySetMapping Name="SeguimientoSupervision_Supervisores">
             <EntityTypeMapping TypeName="GDSfonacotModel.SeguimientoSupervision_Supervisores">
               <MappingFragment StoreEntitySet="SeguimientoSupervision_Supervisores">
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
                 <ScalarProperty Name="FechaSeguimCreacion" ColumnName="FechaSeguimCreacion" />
                 <ScalarProperty Name="IdusuarioCreador" ColumnName="IdusuarioCreador" />
                 <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />

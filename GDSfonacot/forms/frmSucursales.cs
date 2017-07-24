@@ -90,6 +90,8 @@ namespace GDSfonacot.forms
             txtCobranzaPorcentaje.Text = (objSucursal.Cobranza_Porcentaje_Meta != null ? objSucursal.Cobranza_Porcentaje_Meta.ToString() : "");
             txtCobranzaCumplimiento.Text = (objSucursal.Cobranza_Cumplimiento_Meta != null ? objSucursal.Cobranza_Cumplimiento_Meta.ToString() : "");
             cmbZonaRegional.SelectedValue = objSucursal.IdRegional;
+            btnGuardar.Enabled = true;
+            btnNuevo.Enabled = false;
             //tx.Text = objSucursal.Ventanillas.ToString();
 
 
@@ -267,7 +269,38 @@ namespace GDSfonacot.forms
             mensaje = string.Empty;
 
             if (cmbZonaRegional.SelectedIndex == -1) mensaje += "Favor de seleccionar direccion regional\n";
-           
+            if (txtNoSucursal.Text == string.Empty) mensaje += "Favor de introducir numero de sucursal\n";
+            if(txtSucursal.Text == string.Empty) mensaje += "Favor de introducir el nombre de sucursak\n";
+            if(txtDireccion.Text == string.Empty) mensaje += "Favor de introducir el domicilio\n";
+            if(txtDirectorRegional.Text == string.Empty) mensaje += "Favor de introducir director regional\n";
+            if(txtDirectorEstatal.Text == string.Empty) mensaje += "Favor de introducir director estatal\n";
+            if(txtCoordinadorAdministrativo.Text == string.Empty) mensaje += "Favor de introducir coordinador administrativo\n";
+            if(txtCoordinadorCredito.Text == string.Empty) mensaje += "Favor de introducir coordinador de credio\n";
+            if(txtCoordinadorCobranza.Text == string.Empty) mensaje += "Favor de introducir coordinador de cobranza\n";
+            if(txtTotalAnalistas.Text == string.Empty) mensaje += "Favor de introducir total de analistas\n";
+            if(txtTotalVentanillas.Text == string.Empty) mensaje += "Favor de introducir total ventanillas\n";
+            if(txtAnalistasCredito.Text == string.Empty) mensaje += "Favor de introducir analistas credito\n";
+            if(txtAnalistasAdministrativos.Text == string.Empty) mensaje += "Favor de introducir analistas admnistrativos\n";
+            if(txtAnalistaComercial.Text == string.Empty) mensaje += "Favor de introducir analistas comerciales\n";
+            if(txtAnalistasCobranza.Text == string.Empty) mensaje += "Favor de introducir analistas cobranza\n";
+            if(txtEmpresasAfiliadas.Text == string.Empty) mensaje += "Favor de introducir empresas afiliadas\n";
+            if(txtTrabajadoresAfiliados.Text == string.Empty) mensaje += "Favor de introducir trabajadores afiliados\n";
+            if(txtPotencialEmpresas.Text == string.Empty) mensaje += "Favor de introducir potencial de empresas\n";
+            if(txtPotencialTrabajadores.Text == string.Empty) mensaje += "Favor de introducir potencial trabajadores\n";
+            if(txtEmpresasEstatus1.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 1\n";
+            if(txtEmpresasEstatus18.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 18\n";
+            if(txtEmpresasEstatus21.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 21\n";
+            if(txtEmpresasEstatus30.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 30\n";
+            if(txtMetaMensual.Text == string.Empty) mensaje += "Favor de introducir meta mensual\n";
+            if(txtColocacionAnual.Text == string.Empty) mensaje += "Favor de introducir colocacion anual\n";
+            if(txtColocacionMensual.Text == string.Empty) mensaje += "Favor de introducir colocacion mensual\n";
+            if(txtMetaAcumulada.Text == string.Empty) mensaje += "Favor de introducir meta acumulada\n";
+            if(txtcobranzaAnual.Text == string.Empty) mensaje += "Favor de introducir cobranza anual\n";
+            if(txtCobranzaMetaMensual.Text == string.Empty) mensaje += "Favor de introducir cobranza meta mensual\n";
+            if(txtCobranzaPorcentaje.Text == string.Empty) mensaje += "Favor de introducir cobranza porcentaje\n";
+            if(txtCobranzaCumplimiento.Text == string.Empty) mensaje += "Favor de introducir cobranza cumplimiento\n";
+
+
             return !(mensaje == string.Empty);
         }
 

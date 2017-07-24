@@ -11,7 +11,8 @@
       <Parameter Name="nosupervision" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="spconsultarSeguimiento" ReturnType="Collection(GDSfonacotModel.spconsultarSeguimiento_Result)">
-      <Parameter Name="nosupervision" Mode="In" Type="String" />
+      <Parameter Name="idsupervision" Mode="In" Type="Int32" />
+      <Parameter Name="idseguimiento" Mode="In" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="Cierres" EntityType="GDSfonacotModel.Cierres" />
     <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="GDSfonacotModel.ContestacionesSuperv_Sucursales" />
@@ -218,6 +219,8 @@
     <Property Name="fechacierre" Type="DateTime" Precision="3" />
     <Property Name="Idsupervision" Type="Int32" />
     <Property Name="Idusuariocreador" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="solventada" Type="Boolean" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_Cierres_HistorialSupervisiones" FromRole="Cierres" ToRole="HistorialSupervisiones" />
     <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Cierres_Usuarios" FromRole="Cierres" ToRole="Usuarios" />
   </EntityType>
@@ -358,6 +361,7 @@
     <Property Name="fechareasignada" Type="DateTime" Precision="3" />
     <Property Name="Idsupervision" Type="Int32" />
     <Property Name="Idusuariocreador" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_Reasignaciones_Reasignaciones" FromRole="Reasignaciones" ToRole="HistorialSupervisiones" />
     <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_Reasignaciones_Usuarios" FromRole="Reasignaciones" ToRole="Usuarios" />
   </EntityType>
@@ -379,6 +383,7 @@
     <Property Name="AcuerdosCompromisos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IdusuarioCreador" Type="Int32" />
     <Property Name="FechaSeguimCreacion" Type="DateTime" Precision="3" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_HistorialSupervisiones" FromRole="SeguimientoSupervision_Supervisores" ToRole="HistorialSupervisiones" />
     <NavigationProperty Name="Usuarios" Relationship="GDSfonacotModel.FK_SeguimientoSupervision_Supervisores_Usuarios" FromRole="SeguimientoSupervision_Supervisores" ToRole="Usuarios" />
   </EntityType>

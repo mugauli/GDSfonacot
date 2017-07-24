@@ -597,6 +597,7 @@
             this.toolButReasignar.Name = "toolButReasignar";
             this.toolButReasignar.Size = new System.Drawing.Size(145, 17);
             this.toolButReasignar.Text = "Reasignar Supervision ";
+            this.toolButReasignar.Click += new System.EventHandler(this.toolButReasignar_Click);
             // 
             // toolButCerrarSup
             // 
@@ -606,6 +607,7 @@
             this.toolButCerrarSup.Name = "toolButCerrarSup";
             this.toolButCerrarSup.Size = new System.Drawing.Size(123, 17);
             this.toolButCerrarSup.Text = "Cerrar Supervisión";
+            this.toolButCerrarSup.Click += new System.EventHandler(this.toolButCerrarSup_Click);
             // 
             // toolButImprimir
             // 

@@ -21,7 +21,10 @@ namespace GDSfonacot.forms
             LoadingCatalogos();
             IdEmpleadoInt = IdEmpleado;
 
-            if (IdEmpleado != 0) CargarEmpleado(IdEmpleado);
+            if (IdEmpleado != 0)
+            {
+                CargarEmpleado(IdEmpleado);
+            }
             else
             {
                 LimpiarDatos();
@@ -239,6 +242,8 @@ namespace GDSfonacot.forms
             cmbActividad.SelectedValue = emp.IdActividad;
             cmbPerfilSistema.SelectedValue = emp.IdPerfilSistema;
             cmbArea.SelectedValue = emp.IdArea;
+            btnNuevo.Enabled = false;
+            btnGuardar.Enabled = true;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

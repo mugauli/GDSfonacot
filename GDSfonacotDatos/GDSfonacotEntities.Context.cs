@@ -71,13 +71,17 @@ namespace GDSfonacotDatos
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spconsultarHistoricoSup_Result>("spconsultarHistoricoSup", nosupervisionParameter);
         }
     
-        public virtual ObjectResult<spconsultarSeguimiento_Result> spconsultarSeguimiento(string nosupervision)
+        public virtual ObjectResult<spconsultarSeguimiento_Result> spconsultarSeguimiento(Nullable<int> idsupervision, Nullable<int> idseguimiento)
         {
-            var nosupervisionParameter = nosupervision != null ?
-                new ObjectParameter("nosupervision", nosupervision) :
-                new ObjectParameter("nosupervision", typeof(string));
+            var idsupervisionParameter = idsupervision.HasValue ?
+                new ObjectParameter("idsupervision", idsupervision) :
+                new ObjectParameter("idsupervision", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spconsultarSeguimiento_Result>("spconsultarSeguimiento", nosupervisionParameter);
+            var idseguimientoParameter = idseguimiento.HasValue ?
+                new ObjectParameter("idseguimiento", idseguimiento) :
+                new ObjectParameter("idseguimiento", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spconsultarSeguimiento_Result>("spconsultarSeguimiento", idsupervisionParameter, idseguimientoParameter);
         }
     }
 }

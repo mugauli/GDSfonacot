@@ -20,7 +20,13 @@ namespace GDSfonacot.forms
             InitializeComponent();
             LoadingCatalogos();
             Idusuario = usuario;
-            if (Idusuario != 0) CargarUsuario(Idusuario);
+            if (Idusuario != 0) {
+                CargarUsuario(Idusuario);
+            }
+            else
+            {
+                LimpiarDatos();
+            }
 
         }
 
@@ -179,6 +185,8 @@ namespace GDSfonacot.forms
                 dtpickerfechabaja.Value = usu.fechabaja.Value;
 
             }
+            btnNuevo.Enabled = false;
+            btnGuardar.Enabled = true;
         }
         private void LimpiarDatos()
         {

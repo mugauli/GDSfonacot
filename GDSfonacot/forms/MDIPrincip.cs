@@ -37,7 +37,7 @@ namespace GDSfonacot
             
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
-                int[] varstatus = { 3 };
+                int[] varstatus = { 3,2 };
                 var frmbusquedasup = new frmBusquedaSupervisiones(3, varstatus, 1,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
@@ -113,7 +113,7 @@ namespace GDSfonacot
             }
             else
             {
-                var frmPersonsuc = new frmBusquedaSucursal(3);//crea una instancia del formulario
+                var frmPersonsuc = new frmUsuarios(0);//crea una instancia del formulario
                 frmPersonsuc.MdiParent = this;
                 frmPersonsuc.Show();
             }

@@ -107,6 +107,8 @@
     <EntitySetMapping Name="Cierres">
       <EntityTypeMapping TypeName="GDSfonacotModel.Cierres">
         <MappingFragment StoreEntitySet="Cierres">
+          <ScalarProperty Name="solventada" ColumnName="solventada" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
           <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
           <ScalarProperty Name="Idsupervision" ColumnName="Idsupervision" />
           <ScalarProperty Name="fechacierre" ColumnName="fechacierre" />
@@ -231,6 +233,7 @@
     <EntitySetMapping Name="Reasignaciones">
       <EntityTypeMapping TypeName="GDSfonacotModel.Reasignaciones">
         <MappingFragment StoreEntitySet="Reasignaciones">
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
           <ScalarProperty Name="Idusuariocreador" ColumnName="Idusuariocreador" />
           <ScalarProperty Name="Idsupervision" ColumnName="Idsupervision" />
           <ScalarProperty Name="fechareasignada" ColumnName="fechareasignada" />
@@ -242,6 +245,7 @@
     <EntitySetMapping Name="SeguimientoSupervision_Supervisores">
       <EntityTypeMapping TypeName="GDSfonacotModel.SeguimientoSupervision_Supervisores">
         <MappingFragment StoreEntitySet="SeguimientoSupervision_Supervisores">
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
           <ScalarProperty Name="FechaSeguimCreacion" ColumnName="FechaSeguimCreacion" />
           <ScalarProperty Name="IdusuarioCreador" ColumnName="IdusuarioCreador" />
           <ScalarProperty Name="AcuerdosCompromisos" ColumnName="AcuerdosCompromisos" />

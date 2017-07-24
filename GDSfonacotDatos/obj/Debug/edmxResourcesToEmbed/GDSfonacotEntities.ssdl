@@ -9,6 +9,8 @@
     <Property Name="fechacierre" Type="datetime" />
     <Property Name="Idsupervision" Type="int" />
     <Property Name="Idusuariocreador" Type="int" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="solventada" Type="bit" />
   </EntityType>
   <EntityType Name="ContestacionesSuperv_Sucursales">
     <Key>
@@ -123,6 +125,7 @@
     <Property Name="fechareasignada" Type="datetime" />
     <Property Name="Idsupervision" Type="int" />
     <Property Name="Idusuariocreador" Type="int" />
+    <Property Name="FechaCreacion" Type="datetime" />
   </EntityType>
   <EntityType Name="SeguimientoSupervision_Supervisores">
     <Key>
@@ -142,6 +145,7 @@
     <Property Name="AcuerdosCompromisos" Type="ntext" />
     <Property Name="IdusuarioCreador" Type="int" />
     <Property Name="FechaSeguimCreacion" Type="datetime" />
+    <Property Name="FechaCreacion" Type="datetime" />
   </EntityType>
   <EntityType Name="Sucursales">
     <Key>
@@ -501,7 +505,8 @@
     <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="spconsultarSeguimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="nosupervision" Type="nvarchar" Mode="In" />
+    <Parameter Name="idsupervision" Type="int" Mode="In" />
+    <Parameter Name="idseguimiento" Type="int" Mode="In" />
   </Function>
   <EntityContainer Name="GDSfonacotModelStoreContainer">
     <EntitySet Name="Cierres" EntityType="Self.Cierres" Schema="dbo" store:Type="Tables" />
