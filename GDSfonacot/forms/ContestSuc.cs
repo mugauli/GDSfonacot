@@ -230,7 +230,7 @@ namespace GDSfonacot
                             if (actualizarsup.Code!=0)
                             {
                         
-                                MessageBox.Show(gdSupervisiones.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show(actualizarsup.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         
                             }
                         MessageBox.Show("Favor de esperar a la revisión de un supervisor", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);

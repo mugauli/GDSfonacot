@@ -18,20 +18,35 @@ namespace GDSfonacot.forms
         private int guardaractualizar =0;
         private int destinoInt = 0;
         private int[] varstatus = { 0 };
+        private int varseguimiento = 0;
         public frmBusquedaSupervisiones(int Destino,int [] status,int guardaactualiza,int seguimiento)
         {
             InitializeComponent();
             destinoInt = Destino;
             varstatus = status;
             guardaractualizar = guardaactualiza;
-            if (seguimiento == 0) {
-            CargarSupervisiones(dpickerFechafin.Value.ToShortDateString(),dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
-            }
-            else
+            varseguimiento = seguimiento;
+            if (destinoInt == 1)
             {
-                CargarSeguimientoSupervisiones();
+                this.Text = "Busqueda de Seguimientos de Supervision";
             }
-        }
+            else if (destinoInt == 2)
+            {
+                this.Text = "Busqueda de Contestaciones de Supervision";                               
+            }
+            else if (destinoInt == 3)
+            {
+
+                this.Text = "Busqueda de Histórico de Supervision";
+            }
+
+            else if (destinoInt == 4)
+            {
+                this.Text = "Busqueda de  Supervision";
+            }
+            
+        
+    }
         private void CargarSupervisiones(string fechaini,string fechafin,string buscasup)
         {
                 lblRegistros.Text = "";
@@ -99,40 +114,73 @@ namespace GDSfonacot.forms
 
         }
 
-        private void CargarSeguimientoSupervisiones()
+        private void CargarSeguimientoSupervisiones(string fechaini, string fechafin, string buscasup)
         {
 
             lblRegistros.Text = "";
 
-            var totalsupe = new SeguimientosData().ObtenerSegSupervisones(0,varstatus);
-            if (totalsupe.Code != 0)
+
+            if (fechaini != null && fechafin != null)//busca entre fechas de supervision
             {
-                MessageBox.Show("error");
-                dataGlistaSup.Columns.Clear();
-                dataGlistaSup.DataSource = null;
+                var totalsupe2 = new SeguimientosData().ObtenerSupervisonesSegporSucFechas(0, varstatus, DateTime.Parse(fechaini), DateTime.Parse(fechafin));
+                #region buscaRegistrosentrefechas
+                if (totalsupe2.Code != 0)
+                {
+                    MessageBox.Show("error:" + totalsupe2.Message);
+                    dataGlistaSup.Columns.Clear();
+                    dataGlistaSup.DataSource = null;
+                }
+
+                else
+                {
+                    dataGlistaSup.DataSource = totalsupe2.Result;
+                    dataGlistaSup.ReadOnly = true;
+                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    dataGlistaSup.Columns[0].Visible = false;
+                    dataGlistaSup.Columns[0].HeaderText = "IdSup";
+                    dataGlistaSup.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                    dataGlistaSup.Columns[1].HeaderText = "No. Seguimiento";
+                    dataGlistaSup.Columns[2].HeaderText = "Fecha Seguimiento";
+                    dataGlistaSup.Columns[3].HeaderText = "No. Supervision";
+                    dataGlistaSup.Columns[4].HeaderText = "Fecha Supervision";
+                    dataGlistaSup.Columns[5].HeaderText = "Sucursal";
+                    lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+                }
+                #endregion 
+
             }
 
             else
-            {
-                dataGlistaSup.DataSource = totalsupe.Result;
-                dataGlistaSup.ReadOnly = true;
-                dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            {//se quita el filtrado y busca por supervision
+                #region buscaRegistrosporsupervision
+                var totalsupe2 = new SeguimientosData().ObtenerSupervisonesSegporSucIndividual(0, varstatus, buscasup.Trim());
+                if (totalsupe2.Code != 0)
+                {
+                    MessageBox.Show("error:" + totalsupe2.Message);
+                    dataGlistaSup.Columns.Clear();
+                    dataGlistaSup.DataSource = null;
+                }
 
-                dataGlistaSup.Columns[0].Visible = false;
-                dataGlistaSup.Columns[0].HeaderText = "IdSup";
-                dataGlistaSup.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                dataGlistaSup.Columns[1].HeaderText = "No. Seguimiento";
-                dataGlistaSup.Columns[2].HeaderText = "Fecha Seguimiento";
-                dataGlistaSup.Columns[3].HeaderText = "No. Supervision";
-                dataGlistaSup.Columns[4].HeaderText = "Fecha Supervision";
-                dataGlistaSup.Columns[5].HeaderText = "Sucursal";
+                else
+                {
+                    dataGlistaSup.DataSource = totalsupe2.Result;
+                    dataGlistaSup.ReadOnly = true;
+                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-
-
-
-
-                lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+                    dataGlistaSup.Columns[0].Visible = false;
+                    dataGlistaSup.Columns[0].HeaderText = "IdSup";
+                    dataGlistaSup.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                    dataGlistaSup.Columns[1].HeaderText = "No. Seguimiento";
+                    dataGlistaSup.Columns[2].HeaderText = "Fecha Seguimiento";
+                    dataGlistaSup.Columns[3].HeaderText = "No. Supervision";
+                    dataGlistaSup.Columns[4].HeaderText = "Fecha Supervision";
+                    dataGlistaSup.Columns[5].HeaderText = "Sucursal";
+                    lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+                }
+                #endregion 
             }
+
 
 
         }
@@ -287,8 +335,17 @@ namespace GDSfonacot.forms
 
         private void txtsupervision_TextChanged(object sender, EventArgs e)
         {
-            if (txtsupervision.Text.Length > 3) { 
-                CargarSupervisiones(null, null, txtsupervision.Text);
+            if (txtsupervision.Text.Length > 3) {
+
+                if (varseguimiento == 0)
+                {
+                    CargarSupervisiones(null, null, txtsupervision.Text);
+                }
+                else
+                {
+                    CargarSeguimientoSupervisiones(null, null, txtsupervision.Text);
+                }
+               
             }
 
 
@@ -296,12 +353,27 @@ namespace GDSfonacot.forms
 
         private void dpickerFechaini_ValueChanged(object sender, EventArgs e)
         {
-            CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+
+            if (varseguimiento == 0)
+            {
+                CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            }
+            else
+            {
+                CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            }
         }
 
         private void dpickerFechafin_ValueChanged(object sender, EventArgs e)
         {
-            CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            if (varseguimiento == 0)
+            {
+                CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            }
+            else
+            {
+                CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            }
         }
     }
 }

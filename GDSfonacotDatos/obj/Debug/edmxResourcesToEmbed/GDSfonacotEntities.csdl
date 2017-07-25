@@ -214,7 +214,7 @@
     <Key>
       <PropertyRef Name="Idcierre" />
     </Key>
-    <Property Name="Idcierre" Type="Int32" Nullable="false" />
+    <Property Name="Idcierre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MotivoCierre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="fechacierre" Type="DateTime" Precision="3" />
     <Property Name="Idsupervision" Type="Int32" />
@@ -356,7 +356,7 @@
     <Key>
       <PropertyRef Name="Idreasignacion" />
     </Key>
-    <Property Name="Idreasignacion" Type="Int32" Nullable="false" />
+    <Property Name="Idreasignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MotivoReasigna" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="fechareasignada" Type="DateTime" Precision="3" />
     <Property Name="Idsupervision" Type="Int32" />

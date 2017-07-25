@@ -69,6 +69,7 @@ namespace GDSfonacot.forms
                 txtCobranza.Text = busqueda.Result.Cobranza.ToString();
                 txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
                 txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
+                dtfechaSeguimiento.Value = busqueda.Result.FechaSeguimCreacion.Value;
                // txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
                // txthidStatus.Text = busqueda.Result.Idstatus.ToString();
                 toolButGuardar.Enabled = true;

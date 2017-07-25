@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txthidStatus = new System.Windows.Forms.TextBox();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
             this.checksolventada = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txthidIdEmpleado = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.dtfechacierre = new System.Windows.Forms.DateTimePicker();
+            this.txthidIdCierre = new System.Windows.Forms.TextBox();
+            this.txtMotivocierre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -49,12 +51,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.Controls.Add(this.txthidStatus, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdSup, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.checksolventada, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txthidIdEmpleado, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtfechacierre, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdCierre, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtMotivocierre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 2, 6);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -72,8 +76,28 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(615, 274);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(615, 193);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // txthidStatus
+            // 
+            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidStatus.Location = new System.Drawing.Point(4, 74);
+            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidStatus.Name = "txthidStatus";
+            this.txthidStatus.Size = new System.Drawing.Size(18, 20);
+            this.txthidStatus.TabIndex = 326;
+            // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(4, 55);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
+            this.txthidIdSup.TabIndex = 325;
             // 
             // checksolventada
             // 
@@ -84,6 +108,7 @@
             this.checksolventada.Size = new System.Drawing.Size(15, 24);
             this.checksolventada.TabIndex = 324;
             this.checksolventada.UseVisualStyleBackColor = true;
+            this.checksolventada.CheckedChanged += new System.EventHandler(this.checksolventada_CheckedChanged);
             // 
             // label4
             // 
@@ -98,41 +123,41 @@
             this.label4.TabIndex = 323;
             this.label4.Text = "Fecha de Cierre";
             // 
-            // dateTimePicker1
+            // dtfechacierre
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Black;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(33, 121);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(132, 20);
-            this.dateTimePicker1.TabIndex = 322;
+            this.dtfechacierre.CalendarForeColor = System.Drawing.Color.White;
+            this.dtfechacierre.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtfechacierre.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtfechacierre.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtfechacierre.Location = new System.Drawing.Point(33, 121);
+            this.dtfechacierre.Name = "dtfechacierre";
+            this.dtfechacierre.Size = new System.Drawing.Size(132, 20);
+            this.dtfechacierre.TabIndex = 322;
             // 
-            // txthidIdEmpleado
+            // txthidIdCierre
             // 
-            this.txthidIdEmpleado.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txthidIdEmpleado.ForeColor = System.Drawing.SystemColors.Info;
-            this.txthidIdEmpleado.Location = new System.Drawing.Point(4, 24);
-            this.txthidIdEmpleado.Margin = new System.Windows.Forms.Padding(4);
-            this.txthidIdEmpleado.Name = "txthidIdEmpleado";
-            this.txthidIdEmpleado.Size = new System.Drawing.Size(12, 20);
-            this.txthidIdEmpleado.TabIndex = 321;
+            this.txthidIdCierre.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdCierre.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdCierre.Location = new System.Drawing.Point(4, 24);
+            this.txthidIdCierre.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdCierre.Name = "txthidIdCierre";
+            this.txthidIdCierre.Size = new System.Drawing.Size(12, 20);
+            this.txthidIdCierre.TabIndex = 321;
             // 
-            // txtNombre
+            // txtMotivocierre
             // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtNombre, 4);
-            this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtNombre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNombre.Location = new System.Drawing.Point(34, 24);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombre.Multiline = true;
-            this.txtNombre.Name = "txtNombre";
-            this.tableLayoutPanel1.SetRowSpan(this.txtNombre, 3);
-            this.txtNombre.Size = new System.Drawing.Size(544, 72);
-            this.txtNombre.TabIndex = 6;
+            this.txtMotivocierre.BackColor = System.Drawing.SystemColors.MenuText;
+            this.tableLayoutPanel1.SetColumnSpan(this.txtMotivocierre, 4);
+            this.txtMotivocierre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMotivocierre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMotivocierre.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMotivocierre.Location = new System.Drawing.Point(34, 24);
+            this.txtMotivocierre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMotivocierre.Multiline = true;
+            this.txtMotivocierre.Name = "txtMotivocierre";
+            this.tableLayoutPanel1.SetRowSpan(this.txtMotivocierre, 3);
+            this.txtMotivocierre.Size = new System.Drawing.Size(544, 72);
+            this.txtMotivocierre.TabIndex = 6;
             // 
             // label1
             // 
@@ -159,16 +184,18 @@
             this.btnGuardar.TabIndex = 27;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmCerrarSupervision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 274);
+            this.ClientSize = new System.Drawing.Size(615, 193);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmCerrarSupervision";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cerrar Supervision";
+            this.Load += new System.EventHandler(this.frmCerrarSupervision_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -181,10 +208,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.CheckBox checksolventada;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txthidIdEmpleado;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.DateTimePicker dtfechacierre;
+        private System.Windows.Forms.TextBox txthidIdCierre;
+        private System.Windows.Forms.TextBox txtMotivocierre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txthidIdSup;
+        private System.Windows.Forms.TextBox txthidStatus;
     }
 }

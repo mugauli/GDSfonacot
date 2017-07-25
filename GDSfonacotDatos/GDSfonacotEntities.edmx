@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="Idcierre" />
           </Key>
-          <Property Name="Idcierre" Type="int" Nullable="false" />
+          <Property Name="Idcierre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MotivoCierre" Type="nvarchar" MaxLength="500" />
           <Property Name="fechacierre" Type="datetime" />
           <Property Name="Idsupervision" Type="int" />
@@ -125,7 +125,7 @@
           <Key>
             <PropertyRef Name="Idreasignacion" />
           </Key>
-          <Property Name="Idreasignacion" Type="int" Nullable="false" />
+          <Property Name="Idreasignacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MotivoReasigna" Type="nvarchar" MaxLength="500" />
           <Property Name="fechareasignada" Type="datetime" />
           <Property Name="Idsupervision" Type="int" />
@@ -841,7 +841,7 @@
           <Key>
             <PropertyRef Name="Idcierre" />
           </Key>
-          <Property Name="Idcierre" Type="Int32" Nullable="false" />
+          <Property Name="Idcierre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MotivoCierre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="fechacierre" Type="DateTime" Precision="3" />
           <Property Name="Idsupervision" Type="Int32" />
@@ -983,7 +983,7 @@
           <Key>
             <PropertyRef Name="Idreasignacion" />
           </Key>
-          <Property Name="Idreasignacion" Type="Int32" Nullable="false" />
+          <Property Name="Idreasignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MotivoReasigna" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="fechareasignada" Type="DateTime" Precision="3" />
           <Property Name="Idsupervision" Type="Int32" />

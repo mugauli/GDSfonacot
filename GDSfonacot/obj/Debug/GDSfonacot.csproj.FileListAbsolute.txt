@@ -165,3 +165,5 @@ C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSf
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmUsuariosSucursales.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmCerrarSupervision.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmReasignarSuperv.resources
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmCerrarSupervision.resources
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmReasignarSuperv.resources

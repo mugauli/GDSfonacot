@@ -292,14 +292,18 @@ namespace GDSfonacot.forms
             var frmreasignar = new frmReasignarSuperv();//crea una instancia del formulario
                                                                // frmPersonsuc.MdiParent = this.ParentForm;
             frmreasignar.ShowDialog();
+            this.Close();
         }
     
 
         private void toolButCerrarSup_Click(object sender, EventArgs e)
         {
-            var frmcerrar = new frmCerrarSupervision();//crea una instancia del formulario
-            //frmcerrar.MdiParent = this.ParentForm;                                                          // frmPersonsuc.MdiParent = this.ParentForm;
+            var frmcerrar = new frmCerrarSupervision(0);//crea una instancia del formulario
+            frmcerrar.valor1 = Convert.ToInt32(txthidIdSup.Text);
+            frmcerrar.varstatus= Convert.ToInt32(txthidStatus.Text);
+            // frmPersonsuc.MdiParent = this.ParentForm;
             frmcerrar.ShowDialog();
+            this.Close();
         }
     }
 }

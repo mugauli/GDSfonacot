@@ -65,7 +65,7 @@ namespace GDSfonacotDatos.Data
             {
                 using (var context = new GDSfonacotEntities())
                 {
-                    response.Result =  context.Empleados.Where(x => (x.IdEmpleado == IdEmpleado || IdEmpleado == 0) && (x.IdSucursal == IdSucursal || IdSucursal == 0)).ToList();
+                    response.Result = context.Empleados.Where(x => (x.IdEmpleado == IdEmpleado || IdEmpleado == 0) && (x.IdSucursal == IdSucursal || IdSucursal == 0)).ToList();
                 }
                 return response;
             }
@@ -77,7 +77,7 @@ namespace GDSfonacotDatos.Data
             }
         }
 
-        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosGeneral(int IdSucursal,int IdPerfilsistema)
+        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosGeneral(int IdSucursal, int IdPerfilsistema)
         {
             var response = new MethodResponse<List<EmpleadosDGV>> { Code = 0 };
 
@@ -87,7 +87,7 @@ namespace GDSfonacotDatos.Data
                 using (var context = new GDSfonacotEntities())
                 {
                     response.Result = context.Empleados
-                        .Where(x => (x.IdSucursal==IdSucursal && x.IdPerfilSistema==IdPerfilsistema))
+                        .Where(x => (x.IdSucursal == IdSucursal && x.IdPerfilSistema == IdPerfilsistema))
                         .Select(x => new EmpleadosDGV { IdEmpleado = x.IdEmpleado, Gafete = x.Gafete, Nombre = x.Nombre, Horario = x.Horario, Jornada = x.Jornada })
                         .ToList();
                 }
@@ -114,7 +114,7 @@ namespace GDSfonacotDatos.Data
                     var devolverdatos = context.Empleados // seleccion de tabla inicial
                           .Join(context.ctPerfilSistema, tabla1 => tabla1.IdPerfilSistema, tabla2 => tabla2.IdPerfilSistema, (emp, perfil) => new { emp, perfil })
                           .Join(context.ctTipoPersonal, tabla1 => tabla1.emp.IdTipoPersonal, tabla2 => tabla2.IdTipoPersonal, (emp2, tipopers) => new { emp2, tipopers })// se realiza el join para crear el contexto completo es decir todos los dato 
-                          .Where(ep => ep.emp2.emp.IdPerfilSistema ==ep.emp2.perfil.IdPerfilSistema && ep.emp2.emp.IdSucursal == IdSucursal && ep.emp2.emp.IdTipoPersonal==IdTipoPersonal)
+                          .Where(ep => ep.emp2.emp.IdPerfilSistema == ep.emp2.perfil.IdPerfilSistema && ep.emp2.emp.IdSucursal == IdSucursal && ep.emp2.emp.IdTipoPersonal == IdTipoPersonal)
 
                          .Select(x => new EmpleadosDGV
                          {
@@ -124,7 +124,7 @@ namespace GDSfonacotDatos.Data
                              Horario = x.emp2.emp.Horario,
                              Jornada = x.emp2.emp.Jornada,
                              TipoPersonal = x.tipopers.Descripcion,
-                             TipoPerfil=x.emp2.perfil.Descripcion
+                             TipoPerfil = x.emp2.perfil.Descripcion
 
                          }).ToList();
 
@@ -142,119 +142,5 @@ namespace GDSfonacotDatos.Data
         }
 
 
-        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosAdministrativos(int IdSucursal)
-        {
-            var response = new MethodResponse<List<EmpleadosDGV>> { Code = 0 };
-
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    response.Result = context.Empleados
-                        .Where(x => (x.IdSucursal == IdSucursal || IdSucursal == 0))
-                        .Select(x=> new EmpleadosDGV { IdEmpleado = x.IdEmpleado, Gafete = x.Gafete , Nombre = x.Nombre, Horario = x.Horario , Jornada = x.Jornada })
-                        .ToList();
-                }
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.Code = -100;
-                response.Message = ex.Message;
-                return response;
-            }
-        }
-
-        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosOriginacion( int IdSucursal)
-        {
-            var response = new MethodResponse<List<EmpleadosDGV>> { Code = 0 };
-
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    response.Result = context.Empleados
-                        .Where(x => (x.IdSucursal == IdSucursal || IdSucursal == 0))
-                        .Select(x => new EmpleadosDGV { IdEmpleado = x.IdEmpleado, Gafete = x.Gafete, Nombre = x.Nombre, Horario = x.Horario, Jornada = x.Jornada })
-                        .ToList();
-                }
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.Code = -100;
-                response.Message = ex.Message;
-                return response;
-            }
-        }
-
-        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosCredito(int IdSucursal)
-        {
-            var response = new MethodResponse<List<EmpleadosDGV>> { Code = 0 };
-
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    response.Result = context.Empleados
-                        .Where(x => (x.IdSucursal == IdSucursal || IdSucursal == 0))
-                        .Select(x => new EmpleadosDGV { IdEmpleado = x.IdEmpleado, Gafete = x.Gafete, Nombre = x.Nombre, Horario = x.Horario, Jornada = x.Jornada })
-                        .ToList();
-                }
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.Code = -100;
-                response.Message = ex.Message;
-                return response;
-            }
-        }
-
-        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosCobranza(int IdSucursal)
-        {
-            var response = new MethodResponse<List<EmpleadosDGV>> { Code = 0 };
-
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    response.Result = context.Empleados
-                        .Where(x => (x.IdSucursal == IdSucursal || IdSucursal == 0))
-                        .Select(x => new EmpleadosDGV { IdEmpleado = x.IdEmpleado, Gafete = x.Gafete, Nombre = x.Nombre, Horario = x.Horario, Jornada = x.Jornada })
-                        .ToList();
-                }
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.Code = -100;
-                response.Message = ex.Message;
-                return response;
-            }
-        }
-
-        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosOutsourcing(int IdSucursal)
-        {
-            var response = new MethodResponse<List<EmpleadosDGV>> { Code = 0 };
-
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    response.Result = context.Empleados
-                        .Where(x => (x.IdSucursal == IdSucursal || IdSucursal == 0))
-                        .Select(x => new EmpleadosDGV { IdEmpleado = x.IdEmpleado, Gafete = x.Gafete, Nombre = x.Nombre, Horario = x.Horario, Jornada = x.Jornada })
-                        .ToList();
-                }
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.Code = -100;
-                response.Message = ex.Message;
-                return response;
-            }
-        }
     }
 }
