@@ -116,6 +116,7 @@ namespace GDSfonacot.forms
                 dgvUsuarios.Columns[1].HeaderText = "Nombre Usuario";
                 dgvUsuarios.Columns[2].HeaderText = "Nivel de Acceso";
                 dgvUsuarios.Columns[3].HeaderText = "Sucursal";
+                lblRegistros.Text = "Total de Registros: " + dgvUsuarios.RowCount;
 
             }
 

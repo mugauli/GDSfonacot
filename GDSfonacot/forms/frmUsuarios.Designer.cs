@@ -49,6 +49,7 @@
             this.fechabaja = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.chkverpassword = new System.Windows.Forms.CheckBox();
+            this.dtreingresotemp = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,6 +145,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.15504F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.71207F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel1.Controls.Add(this.dtreingresotemp, 8, 5);
             this.tableLayoutPanel1.Controls.Add(this.dtfechareingreso, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblfechareingreso, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.txthidIdusuario, 0, 0);
@@ -360,6 +362,19 @@
             this.chkverpassword.UseVisualStyleBackColor = false;
             this.chkverpassword.CheckedChanged += new System.EventHandler(this.chkverpassword_CheckedChanged);
             // 
+            // dtreingresotemp
+            // 
+            this.dtreingresotemp.CalendarForeColor = System.Drawing.Color.White;
+            this.dtreingresotemp.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtreingresotemp.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtreingresotemp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtreingresotemp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtreingresotemp.Location = new System.Drawing.Point(824, 153);
+            this.dtreingresotemp.Name = "dtreingresotemp";
+            this.dtreingresotemp.Size = new System.Drawing.Size(257, 22);
+            this.dtreingresotemp.TabIndex = 325;
+            this.dtreingresotemp.Visible = false;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,5 +414,6 @@
         private System.Windows.Forms.CheckBox chkverpassword;
         private System.Windows.Forms.DateTimePicker dtfechareingreso;
         private System.Windows.Forms.Label lblfechareingreso;
+        private System.Windows.Forms.DateTimePicker dtreingresotemp;
     }
 }

@@ -58,6 +58,7 @@
             this.tabadmin = new System.Windows.Forms.TabPage();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblRegistros = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.TabsEmpleados.SuspendLayout();
             this.tabadmin.SuspendLayout();
@@ -356,10 +357,10 @@
             // 
             this.TabsEmpleados.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.TabsEmpleados.Controls.Add(this.tabadmin);
-            this.TabsEmpleados.Location = new System.Drawing.Point(12, 289);
+            this.TabsEmpleados.Location = new System.Drawing.Point(12, 315);
             this.TabsEmpleados.Name = "TabsEmpleados";
             this.TabsEmpleados.SelectedIndex = 0;
-            this.TabsEmpleados.Size = new System.Drawing.Size(1548, 255);
+            this.TabsEmpleados.Size = new System.Drawing.Size(1548, 229);
             this.TabsEmpleados.TabIndex = 252;
             // 
             // tabadmin
@@ -369,7 +370,7 @@
             this.tabadmin.Location = new System.Drawing.Point(4, 25);
             this.tabadmin.Name = "tabadmin";
             this.tabadmin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabadmin.Size = new System.Drawing.Size(1540, 226);
+            this.tabadmin.Size = new System.Drawing.Size(1540, 200);
             this.tabadmin.TabIndex = 0;
             this.tabadmin.Click += new System.EventHandler(this.tabadmin_Click);
             // 
@@ -383,7 +384,7 @@
             this.dgvEmpleados.Location = new System.Drawing.Point(3, 3);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.Size = new System.Drawing.Size(1534, 220);
+            this.dgvEmpleados.Size = new System.Drawing.Size(1534, 194);
             this.dgvEmpleados.TabIndex = 0;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             this.dgvEmpleados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentDoubleClick);
@@ -400,6 +401,16 @@
             this.label1.TabIndex = 254;
             this.label1.Text = "Tipo de Personal";
             // 
+            // lblRegistros
+            // 
+            this.lblRegistros.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lblRegistros.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistros.Location = new System.Drawing.Point(9, 286);
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(299, 24);
+            this.lblRegistros.TabIndex = 281;
+            this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // PersonalSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,6 +418,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1362, 574);
+            this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbperfilsistema);
             this.Controls.Add(this.TabsEmpleados);
@@ -479,5 +491,6 @@
         private System.Windows.Forms.TabPage tabadmin;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRegistros;
     }
 }

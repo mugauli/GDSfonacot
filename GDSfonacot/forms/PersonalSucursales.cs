@@ -131,6 +131,7 @@ namespace GDSfonacot
                     dgvEmpleados.Columns[4].HeaderText = "Perfil Sistema";
                     dgvEmpleados.Columns[5].HeaderText = "Jornada";
                     dgvEmpleados.Columns[6].HeaderText = "Horario";
+                    lblRegistros.Text = "Total de Registros: " + dgvEmpleados.RowCount;
             }
 
 

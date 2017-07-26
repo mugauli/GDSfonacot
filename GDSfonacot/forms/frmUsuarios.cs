@@ -15,6 +15,7 @@ namespace GDSfonacot.forms
     public partial class frmUsuarios : Form
     {
         private int Idusuario = 0;
+        private string fecha=null;
      
         public frmUsuarios(int usuario)
         {
@@ -64,8 +65,35 @@ namespace GDSfonacot.forms
                     }
                     else
                     {
-                        usuario.fechareingreso = System.DateTime.Now;
-                        usuario.fechabaja = null;
+                        //usuario.fechareingreso = System.DateTime.Now;
+                        //usuario.fechabaja = null;
+                        if (fechaalta.Visible==true && fechabaja.Visible==true && lblfechareingreso.Visible==false)
+                        {
+                            #region muestradatos
+                            usuario.fechabaja = null;
+                            usuario.fechareingreso = System.DateTime.Now;
+                            fecha = null;
+                            #endregion
+                        }
+                        else
+                        {
+                            if (fechaalta.Visible == true && lblfechareingreso.Visible == false && fechabaja.Visible==true)
+                            {
+                                #region muestradatos
+                                usuario.fechabaja = null;
+                                usuario.fechareingreso = null;
+                                fecha = null;
+                                #endregion
+                            }
+                            else if (fechaalta.Visible == true && fechabaja.Visible==false && lblfechareingreso.Visible==true)
+                            {
+                                #region muestradatos
+                                usuario.fechabaja = null;
+                                fecha = Convert.ToString(dtfechareingreso.Value);
+                                usuario.fechareingreso = Convert.ToDateTime(fecha);
+                                #endregion
+                            }
+                        }
                     }
                 }
 
@@ -173,9 +201,9 @@ namespace GDSfonacot.forms
                 fechaalta.Visible = true;
                 checkinactivar.Checked = false;
                 dtpickerfechabaja.Visible = true;
-                dtpickerfechabaja.Enabled = true;
+                dtpickerfechabaja.Enabled = false;
                 dtpickerfechabaja.Value = usu.fechabaja.Value;
-                fechabaja.Visible = false;
+                fechabaja.Visible = true;
                 dtfechareingreso.Visible = false;
                 dtfechareingreso.Enabled = false;
                 lblfechareingreso.Visible = false;
@@ -192,7 +220,6 @@ namespace GDSfonacot.forms
                     checkinactivar.Checked = false;
                     dtpickerfechabaja.Visible = false;
                     dtpickerfechabaja.Enabled = false;
-
                     fechabaja.Visible = false;
                     dtfechareingreso.Visible = false;
                     dtfechareingreso.Enabled = false;

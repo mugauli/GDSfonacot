@@ -67,6 +67,7 @@ namespace GDSfonacot
                 textAcuerdosCompr.Text = busqueda.Result.AcuerdosCompromisos.ToString();
                 txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
                 txthidStatus.Text = busqueda.Result.Idstatus.ToString();
+                dtFechaRespOficio.Value = busqueda.Result.FechaRespuesta.Value;
                 toolButGuardar.Enabled = true;
                 toolButImprimir.Enabled = true;
 
@@ -189,6 +190,21 @@ namespace GDSfonacot
                 return;
             }
 
+            if (validarlongitudDatos())
+            {
+                return;
+            }
+            if (txthidIdConst.Text=="0") {
+                var objbuscaOficio = new ContestacionesData();
+                var busqueda = objbuscaOficio.BuscarNoOficio(txtNoOficio.Text.Trim());
+                if (busqueda.Result != null)
+                {
+                    MessageBox.Show("El No. de Oficio '" + txtNoOficio.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtNoOficio.Focus();
+                    return;
+                }
+            }
+
             // MessageBox.Show("pASO VALIDACION");
             if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
@@ -209,6 +225,7 @@ namespace GDSfonacot
                 objSupervision.AcuerdosCompromisos = textAcuerdosCompr.Text.Trim();
                 objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
                 objSupervision.FechaCreacionContest= DateTime.Now;
+                objSupervision.FechaRespuesta = dtFechaRespOficio.Value;
                 var gdSupervisiones = new ContestacionesData().GuardarConstestacionSucursal(objSupervision);
                 if (gdSupervisiones.Code != 0)
                 {
@@ -249,6 +266,79 @@ namespace GDSfonacot
                 toolButGuardar.Enabled = true;
                 toolButImprimir.Enabled = false;
             }
+        }
+        private bool validarlongitudDatos()
+        {
+            int longitud = Globales.longitudChars;
+
+            if (txtInmueble.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtInmueble.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtInmueble.Focus();
+                return true;
+            }
+            if (txtGesDireccion.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtGesDireccion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtGesDireccion.Focus();
+                return true;
+            }
+            if (txtOriginacion.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtOriginacion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtOriginacion.Focus();
+                return true;
+            }
+            if (txtOriginacion.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtOriginacion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtOriginacion.Focus();
+                return true;
+            }
+            if (txtTransfer.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtTransfer.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtTransfer.Focus();
+                return true;
+            }
+            if (txtCredito.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtCredito.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCredito.Focus();
+                return true;
+            }
+            if (txtUTYS.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtUTYS.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtUTYS.Focus();
+                return true;
+            }
+            if (txtPromocionales.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtPromocionales.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtPromocionales.Focus();
+                return true;
+            }
+            if (txtCobranza.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtCobranza.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCobranza.Focus();
+                return true;
+            }
+            if (txtFonFijo.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtFonFijo.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtFonFijo.Focus();
+                return true;
+            }
+            if (textAcuerdosCompr.Text.Length >= longitud)
+            {
+                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + textAcuerdosCompr.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textAcuerdosCompr.Focus();
+                return true;
+            }
+
+            return false;
         }
 
         private void txthidIdSup_TextChanged(object sender, EventArgs e)

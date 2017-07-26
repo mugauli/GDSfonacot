@@ -119,20 +119,7 @@ namespace GDSfonacot
             }
         }
 
-        private void menuReportes_Click(object sender, EventArgs e)
-        {
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1)
-            {
-                 forms.FormTemplParametroCR   frmtempparam = new forms.FormTemplParametroCR();//crea una instancia del formulario
-                frmtempparam.ShowDialog();//muestra el formulario forma modal
-              
-            }
-            else
-            {
-                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-                
-            }
-        }
+      
 
         private void mnuSupContestSuc_Click(object sender, EventArgs e)
         {
@@ -362,6 +349,11 @@ namespace GDSfonacot
         private void timesup_Tick(object sender, EventArgs e)
         {
             MessageBox.Show("Tienes Solicitudes pendientes");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

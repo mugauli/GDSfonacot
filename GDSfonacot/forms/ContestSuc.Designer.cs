@@ -38,8 +38,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNoOficio = new System.Windows.Forms.TextBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.textNoSucursal = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.txtFonFijo = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -67,6 +65,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNoSupervision = new System.Windows.Forms.TextBox();
             this.txthidStatus = new System.Windows.Forms.TextBox();
+            this.dtFechaRespOficio = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,29 +166,6 @@
             this.txtNoOficio.Name = "txtNoOficio";
             this.txtNoOficio.Size = new System.Drawing.Size(287, 20);
             this.txtNoOficio.TabIndex = 251;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.DimGray;
-            this.label47.Location = new System.Drawing.Point(742, 66);
-            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(104, 16);
-            this.label47.TabIndex = 275;
-            this.label47.Text = "No de Sucursal";
-            // 
-            // textNoSucursal
-            // 
-            this.textNoSucursal.BackColor = System.Drawing.SystemColors.MenuText;
-            this.textNoSucursal.ForeColor = System.Drawing.Color.White;
-            this.textNoSucursal.Location = new System.Drawing.Point(741, 41);
-            this.textNoSucursal.Margin = new System.Windows.Forms.Padding(4);
-            this.textNoSucursal.Name = "textNoSucursal";
-            this.textNoSucursal.ReadOnly = true;
-            this.textNoSucursal.Size = new System.Drawing.Size(105, 20);
-            this.textNoSucursal.TabIndex = 249;
             // 
             // label46
             // 
@@ -440,7 +417,7 @@
             this.txtDirRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirRegional.Name = "txtDirRegional";
             this.txtDirRegional.ReadOnly = true;
-            this.txtDirRegional.Size = new System.Drawing.Size(199, 20);
+            this.txtDirRegional.Size = new System.Drawing.Size(325, 20);
             this.txtDirRegional.TabIndex = 248;
             // 
             // label3
@@ -499,6 +476,29 @@
             this.txthidStatus.Size = new System.Drawing.Size(18, 20);
             this.txthidStatus.TabIndex = 281;
             // 
+            // dtFechaRespOficio
+            // 
+            this.dtFechaRespOficio.CalendarForeColor = System.Drawing.Color.White;
+            this.dtFechaRespOficio.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtFechaRespOficio.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtFechaRespOficio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaRespOficio.Location = new System.Drawing.Point(723, 87);
+            this.dtFechaRespOficio.Name = "dtFechaRespOficio";
+            this.dtFechaRespOficio.Size = new System.Drawing.Size(202, 20);
+            this.dtFechaRespOficio.TabIndex = 282;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(724, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 16);
+            this.label2.TabIndex = 283;
+            this.label2.Text = "Fecha de Respuesta del Oficio";
+            // 
             // ContestSuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,6 +506,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.dtFechaRespOficio);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txthidStatus);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txthidIdConst);
@@ -514,8 +516,6 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNoOficio);
-            this.Controls.Add(this.label47);
-            this.Controls.Add(this.textNoSucursal);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.txtFonFijo);
             this.Controls.Add(this.label45);
@@ -564,8 +564,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNoOficio;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textNoSucursal;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox txtFonFijo;
         private System.Windows.Forms.Label label45;
@@ -593,5 +591,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNoSupervision;
         private System.Windows.Forms.TextBox txthidStatus;
+        private System.Windows.Forms.DateTimePicker dtFechaRespOficio;
+        private System.Windows.Forms.Label label2;
     }
 }

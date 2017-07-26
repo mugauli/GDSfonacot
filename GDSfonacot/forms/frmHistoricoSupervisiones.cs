@@ -310,7 +310,14 @@ namespace GDSfonacot.forms
             frmcerrar.varstatus= Convert.ToInt32(txthidStatus.Text);
             // frmPersonsuc.MdiParent = this.ParentForm;
             frmcerrar.ShowDialog();
-            this.Close();
+            if (frmcerrar.cierramanual == 1)
+            {
+                // se mantiene la ventana de historico abierta
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

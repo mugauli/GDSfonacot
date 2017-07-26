@@ -56,8 +56,6 @@ C:\Users\jesus.sanchez\Documents\Respaldo Fonacot\GDSFonacot\GDSfonacot\obj\Debu
 C:\Users\jesus.sanchez\Documents\Respaldo Fonacot\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.SeguimientoSup.resources
 C:\Users\jesus.sanchez\Documents\Respaldo Fonacot\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.csproj.GenerateResource.Cache
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.csprojResolveAssemblyReference.cache
-C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormBusConsultasSupervision.resources
-C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormTemplParametroCR.resources
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormVisorConsultarSupervCR.resources
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.formVisorReportes.resources
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmBusquedaSucursal.resources
@@ -74,7 +72,6 @@ C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSf
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmSucursales.resources
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.Properties.Resources.resources
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.ContestSuc.resources
-C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.FormContestSuperv.resources
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.PersonalSucursales.resources
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.SeguimientoSup.resources
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.csproj.GenerateResource.Cache

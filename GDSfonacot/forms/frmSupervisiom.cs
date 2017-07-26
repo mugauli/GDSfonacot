@@ -58,9 +58,20 @@ namespace GDSfonacot.forms
             {
                 return;
             }
+            if (txthidIdSup.Text == "0")
+            {
+                var objbuscaSupervision = new SupervisionesData();
+                var busqueda = objbuscaSupervision.BuscarSupervision(txtNoSupervision.Text.Trim());
+                if (busqueda.Result != null)
+                {
+                    MessageBox.Show("La supervision '" + txtNoSupervision.Text.Trim() + "' ya se encuentra registrada,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtNoSupervision.Focus();
+                    return;
+                }
+            }
 
-            // MessageBox.Show("pASO VALIDACION");
-            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                // MessageBox.Show("pASO VALIDACION");
+                if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 ;// Mensaje en pantallas)
                 var objSupervision = new HistorialSupervisiones();

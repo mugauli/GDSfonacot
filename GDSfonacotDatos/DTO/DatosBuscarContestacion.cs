@@ -11,6 +11,8 @@ namespace GDSfonacotDatos.DTO
         public int Idcontestacion { get; set; }
         public Nullable<int> Idsupervision { get; set; }
         public string NoSupervision { get; set; }
+        public Nullable<System.DateTime> FechaCreacionContest { get; set; }
+        public Nullable<System.DateTime> FechaRespuesta { get; set; }
         public Nullable<System.DateTime> FechaSupervision { get; set; }
         public string Inmueble { get; set; }
         public string Gestion_direccion { get; set; }

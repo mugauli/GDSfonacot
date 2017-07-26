@@ -58,6 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtDirectorRegional = new System.Windows.Forms.TextBox();
             this.pbxSucursal = new System.Windows.Forms.PictureBox();
+            this.lblRegistros = new System.Windows.Forms.Label();
             this.TabsEmpleados.SuspendLayout();
             this.tabadmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -80,10 +81,10 @@
             // 
             this.TabsEmpleados.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.TabsEmpleados.Controls.Add(this.tabadmin);
-            this.TabsEmpleados.Location = new System.Drawing.Point(9, 284);
+            this.TabsEmpleados.Location = new System.Drawing.Point(9, 308);
             this.TabsEmpleados.Name = "TabsEmpleados";
             this.TabsEmpleados.SelectedIndex = 0;
-            this.TabsEmpleados.Size = new System.Drawing.Size(1548, 255);
+            this.TabsEmpleados.Size = new System.Drawing.Size(1548, 231);
             this.TabsEmpleados.TabIndex = 280;
             // 
             // tabadmin
@@ -93,7 +94,7 @@
             this.tabadmin.Location = new System.Drawing.Point(4, 25);
             this.tabadmin.Name = "tabadmin";
             this.tabadmin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabadmin.Size = new System.Drawing.Size(1540, 226);
+            this.tabadmin.Size = new System.Drawing.Size(1540, 202);
             this.tabadmin.TabIndex = 0;
             // 
             // dgvUsuarios
@@ -106,7 +107,7 @@
             this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(1534, 220);
+            this.dgvUsuarios.Size = new System.Drawing.Size(1534, 196);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentDoubleClick);
             // 
@@ -119,7 +120,6 @@
             this.cmbNivelusuario.Name = "cmbNivelusuario";
             this.cmbNivelusuario.Size = new System.Drawing.Size(298, 21);
             this.cmbNivelusuario.TabIndex = 281;
-           
             this.cmbNivelusuario.SelectionChangeCommitted += new System.EventHandler(this.cmbNivelusuario_SelectionChangeCommitted);
             // 
             // label47
@@ -399,12 +399,23 @@
             this.pbxSucursal.TabIndex = 255;
             this.pbxSucursal.TabStop = false;
             // 
+            // lblRegistros
+            // 
+            this.lblRegistros.BackColor = System.Drawing.SystemColors.Control;
+            this.lblRegistros.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistros.Location = new System.Drawing.Point(6, 281);
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(299, 24);
+            this.lblRegistros.TabIndex = 283;
+            this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // frmUsuariosSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1362, 574);
+            this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TabsEmpleados);
             this.Controls.Add(this.cmbNivelusuario);
@@ -477,5 +488,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDirectorRegional;
         private System.Windows.Forms.PictureBox pbxSucursal;
+        private System.Windows.Forms.Label lblRegistros;
     }
 }

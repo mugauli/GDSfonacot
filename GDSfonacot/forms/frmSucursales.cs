@@ -220,7 +220,19 @@ namespace GDSfonacot.forms
                 return;
                 //Mandar mensaje de error con sucursales.Message
             }
-            // new SupervisionesData().GuardarImagen(SucursalInt, ImageHelper.ImageToByteArray(pbxSucursal.Image));
+            else
+            {
+                if (txthidIdSucursal.Text == "0")
+                {
+                    MessageBox.Show("La nueva sucursal ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarDatos();
+                }
+                else
+                {
+                    MessageBox.Show("La sucursal sucursal ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarDatos(Convert.ToInt32(txthidIdSucursal.Text.ToString()));
+                }
+            }
         }
 
         private void LimpiarDatos()

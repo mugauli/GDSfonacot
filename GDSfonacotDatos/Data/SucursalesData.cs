@@ -158,6 +158,7 @@ namespace GDSfonacotDatos.Data
                         sucursalDB.Fecha_baja = sucursal.Fecha_baja;
                         sucursalDB.Meta_Acumulada_Porcentaje = sucursal.Meta_Acumulada_Porcentaje;
                         sucursalDB.Cobranza_Meta_Anual = sucursal.Cobranza_Meta_Anual;
+                        sucursalDB.Cobranza_Meta_Mensual = sucursal.Cobranza_Meta_Mensual;
                         sucursalDB.Cobranza_Porcentaje_Meta = sucursal.Cobranza_Porcentaje_Meta;
                         sucursalDB.Cobranza_Cumplimiento_Meta = sucursal.Cobranza_Cumplimiento_Meta;
                         sucursalDB.IdRegional = sucursal.IdRegional;

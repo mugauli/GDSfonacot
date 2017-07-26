@@ -110,21 +110,11 @@ namespace GDSfonacotDatos.Data
                         usuariosDB.IdUsuario = usuario.IdUsuario;
                         usuariosDB.IdNivel = usuario.IdNivel;
                         usuariosDB.IdSucursal = usuario.IdSucursal;
-
-                        if (inactivar == true)
-                        {
-                            usuariosDB.fechabaja = usuario.fechabaja;
-                           usuariosDB.fechareingreso= usuario.fechareingreso;
-                        }
-                        else
-                        {
-                            usuariosDB.fechareingreso = usuario.fechareingreso;
-                            usuariosDB.fechabaja = usuario.fechabaja;
-                        }
-
                         usuariosDB.Nombre_Usuario = usuario.Nombre_Usuario;
                         usuariosDB.Pass = usuario.Pass;
                         usuariosDB.Usuario = usuario.Usuario;
+                        usuariosDB.fechabaja = usuario.fechabaja;
+                        usuariosDB.fechareingreso = usuario.fechareingreso;
                         context.SaveChanges();
 
                     }

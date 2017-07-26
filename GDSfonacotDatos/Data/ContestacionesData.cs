@@ -43,7 +43,7 @@ namespace GDSfonacotDatos.Data
                         objUsuario.Fondofijo = contestacion.Fondofijo;
                         objUsuario.AcuerdosCompromisos = contestacion.AcuerdosCompromisos;
                         objUsuario.NoOficio = contestacion.NoOficio;
-                        objUsuario.FechaCreacionContest = contestacion.FechaCreacionContest;
+                        objUsuario.FechaRespuesta = contestacion.FechaRespuesta;
                         objUsuario.Idusuariocreador = contestacion.Idusuariocreador;
 
 
@@ -100,7 +100,10 @@ namespace GDSfonacotDatos.Data
                             Fondofijo = x.Constsuc.Fondofijo,
                             AcuerdosCompromisos = x.Constsuc.AcuerdosCompromisos,
                             NoOficio = x.Constsuc.NoOficio,
-                            Idstatus = x.HistSup2.HistSup.Idstatus
+                            Idstatus = x.HistSup2.HistSup.Idstatus,
+                            FechaRespuesta = x.Constsuc.FechaRespuesta,
+                            FechaSupervision = x.HistSup2.HistSup.FechaSupervision
+
 
 
 
@@ -119,6 +122,32 @@ namespace GDSfonacotDatos.Data
             {
 
                 return new MethodResponse<DatosBuscarContestacion> { Code = -100, Message = ex.Message };
+            }
+        }
+
+        public MethodResponse<ContestacionesSuperv_Sucursales> BuscarNoOficio(string Oficio)
+        {
+
+            try
+            {
+
+
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<ContestacionesSuperv_Sucursales> { Code = 0 };
+
+                    var nooficio = context.ContestacionesSuperv_Sucursales.Where(x => x.NoOficio == Oficio.Trim()).SingleOrDefault();
+
+                    if (nooficio != null) response.Result = nooficio;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<ContestacionesSuperv_Sucursales> { Code = -100, Message = ex.Message };
             }
         }
     }

@@ -375,5 +375,10 @@ namespace GDSfonacot.forms
                 CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
             }
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
