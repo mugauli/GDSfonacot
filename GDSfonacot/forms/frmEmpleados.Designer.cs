@@ -116,6 +116,7 @@
             this.txthidIdEmpleado.Name = "txthidIdEmpleado";
             this.txthidIdEmpleado.Size = new System.Drawing.Size(12, 20);
             this.txthidIdEmpleado.TabIndex = 321;
+            this.txthidIdEmpleado.Visible = false;
             // 
             // txtNombre
             // 

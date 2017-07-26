@@ -233,6 +233,7 @@
             this.txthidIdusuario.Name = "txthidIdusuario";
             this.txthidIdusuario.Size = new System.Drawing.Size(12, 22);
             this.txthidIdusuario.TabIndex = 320;
+            this.txthidIdusuario.Visible = false;
             // 
             // txtGafete
             // 

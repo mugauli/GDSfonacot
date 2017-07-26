@@ -565,6 +565,7 @@
             this.txthidStatus.Name = "txthidStatus";
             this.txthidStatus.Size = new System.Drawing.Size(12, 20);
             this.txthidStatus.TabIndex = 285;
+            this.txthidStatus.Visible = false;
             // 
             // txthidIdSup
             // 
@@ -575,6 +576,7 @@
             this.txthidIdSup.Name = "txthidIdSup";
             this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
             this.txthidIdSup.TabIndex = 284;
+            this.txthidIdSup.Visible = false;
             // 
             // toolStrip1
             // 
@@ -1186,7 +1188,6 @@
             this.txtEmpresasEstatus30.Name = "txtEmpresasEstatus30";
             this.txtEmpresasEstatus30.Size = new System.Drawing.Size(144, 22);
             this.txtEmpresasEstatus30.TabIndex = 63;
-          
             // 
             // label24
             // 
@@ -1199,7 +1200,6 @@
             this.label24.Size = new System.Drawing.Size(134, 16);
             this.label24.TabIndex = 62;
             this.label24.Text = "Empresas Estatus 21";
-      
             // 
             // txtEmpresasEstatus21
             // 
@@ -1211,7 +1211,6 @@
             this.txtEmpresasEstatus21.Name = "txtEmpresasEstatus21";
             this.txtEmpresasEstatus21.Size = new System.Drawing.Size(144, 22);
             this.txtEmpresasEstatus21.TabIndex = 61;
-          
             // 
             // label23
             // 
@@ -1224,7 +1223,6 @@
             this.label23.Size = new System.Drawing.Size(134, 16);
             this.label23.TabIndex = 60;
             this.label23.Text = "Empresas Estatus 18";
-          
             // 
             // txtEmpresasEstatus18
             // 
@@ -1236,7 +1234,6 @@
             this.txtEmpresasEstatus18.Name = "txtEmpresasEstatus18";
             this.txtEmpresasEstatus18.Size = new System.Drawing.Size(144, 22);
             this.txtEmpresasEstatus18.TabIndex = 59;
-         
             // 
             // label22
             // 
@@ -1249,7 +1246,6 @@
             this.label22.Size = new System.Drawing.Size(127, 16);
             this.label22.TabIndex = 58;
             this.label22.Text = "Empresas Estatus 1";
-          
             // 
             // txtEmpresasEstatus1
             // 
@@ -1261,7 +1257,6 @@
             this.txtEmpresasEstatus1.Name = "txtEmpresasEstatus1";
             this.txtEmpresasEstatus1.Size = new System.Drawing.Size(144, 22);
             this.txtEmpresasEstatus1.TabIndex = 57;
-        
             // 
             // label21
             // 
@@ -1274,7 +1269,6 @@
             this.label21.Size = new System.Drawing.Size(144, 16);
             this.label21.TabIndex = 56;
             this.label21.Text = "Potencial  Trabajadores";
-     
             // 
             // txtPotencialTrabajadores
             // 
@@ -1286,7 +1280,6 @@
             this.txtPotencialTrabajadores.Name = "txtPotencialTrabajadores";
             this.txtPotencialTrabajadores.Size = new System.Drawing.Size(144, 22);
             this.txtPotencialTrabajadores.TabIndex = 55;
-       
             // 
             // label20
             // 
@@ -1299,7 +1292,6 @@
             this.label20.Size = new System.Drawing.Size(125, 16);
             this.label20.TabIndex = 54;
             this.label20.Text = "Potencial Empresas";
-          
             // 
             // txtPotencialEmpresas
             // 
@@ -1311,7 +1303,6 @@
             this.txtPotencialEmpresas.Name = "txtPotencialEmpresas";
             this.txtPotencialEmpresas.Size = new System.Drawing.Size(144, 22);
             this.txtPotencialEmpresas.TabIndex = 53;
-          
             // 
             // label19
             // 
@@ -1324,7 +1315,6 @@
             this.label19.Size = new System.Drawing.Size(134, 16);
             this.label19.TabIndex = 52;
             this.label19.Text = "Trabajadores Afiliados";
-        
             // 
             // txtTrabajadoresAfiliados
             // 
@@ -1336,7 +1326,6 @@
             this.txtTrabajadoresAfiliados.Name = "txtTrabajadoresAfiliados";
             this.txtTrabajadoresAfiliados.Size = new System.Drawing.Size(144, 22);
             this.txtTrabajadoresAfiliados.TabIndex = 51;
-       
             // 
             // label18
             // 
@@ -1349,7 +1338,6 @@
             this.label18.Size = new System.Drawing.Size(119, 16);
             this.label18.TabIndex = 50;
             this.label18.Text = "Empresas Afiliadas";
-       
             // 
             // txtEmpresasAfiliadas
             // 
@@ -1361,7 +1349,6 @@
             this.txtEmpresasAfiliadas.Name = "txtEmpresasAfiliadas";
             this.txtEmpresasAfiliadas.Size = new System.Drawing.Size(144, 22);
             this.txtEmpresasAfiliadas.TabIndex = 49;
-           
             // 
             // label17
             // 
@@ -1374,7 +1361,6 @@
             this.label17.Size = new System.Drawing.Size(121, 16);
             this.label17.TabIndex = 48;
             this.label17.Text = "Analistas Cobranza";
-         
             // 
             // txtAnalistasCobranza
             // 
@@ -1386,7 +1372,6 @@
             this.txtAnalistasCobranza.Name = "txtAnalistasCobranza";
             this.txtAnalistasCobranza.Size = new System.Drawing.Size(144, 22);
             this.txtAnalistasCobranza.TabIndex = 47;
-           
             // 
             // label16
             // 
@@ -1399,7 +1384,6 @@
             this.label16.Size = new System.Drawing.Size(107, 16);
             this.label16.TabIndex = 46;
             this.label16.Text = "Analistas Crédito";
-           
             // 
             // txtAnalistasCredito
             // 
@@ -1411,7 +1395,6 @@
             this.txtAnalistasCredito.Name = "txtAnalistasCredito";
             this.txtAnalistasCredito.Size = new System.Drawing.Size(144, 22);
             this.txtAnalistasCredito.TabIndex = 45;
-          
             // 
             // label14
             // 
@@ -1424,7 +1407,6 @@
             this.label14.Size = new System.Drawing.Size(124, 16);
             this.label14.TabIndex = 44;
             this.label14.Text = "Analistas Comercial";
-          
             // 
             // txtAnalistaComercial
             // 
@@ -1436,7 +1418,6 @@
             this.txtAnalistaComercial.Name = "txtAnalistaComercial";
             this.txtAnalistaComercial.Size = new System.Drawing.Size(144, 22);
             this.txtAnalistaComercial.TabIndex = 43;
-           
             // 
             // label15
             // 
