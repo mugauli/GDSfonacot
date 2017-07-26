@@ -230,7 +230,7 @@ namespace GDSfonacot.forms
                             //
                             if (guardaractualizar == 0)
                             {
-                                ContestSuc frmconstSuc = new ContestSuc(0);//crea una instancia del formulario
+                                frmContestacionSucursal frmconstSuc = new frmContestacionSucursal(0);//crea una instancia del formulario
                                 frmconstSuc.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
                                 frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
                                 frmconstSuc.MdiParent = this.ParentForm;
@@ -239,7 +239,7 @@ namespace GDSfonacot.forms
                             }
                             else
                             {
-                                ContestSuc frmconstSuc = new ContestSuc(1);//crea una instancia del formulario
+                                frmContestacionSucursal frmconstSuc = new frmContestacionSucursal(1);//crea una instancia del formulario
                                 frmconstSuc.valor1 = Convert.ToInt32(dataGlistaSup.Rows[e.RowIndex].Cells[0].Value);
                                 frmconstSuc.valor2 = dataGlistaSup.Rows[e.RowIndex].Cells[1].Value.ToString();
                                 frmconstSuc.MdiParent = this.ParentForm;
@@ -305,13 +305,9 @@ namespace GDSfonacot.forms
             }
         }
 
-        private void dataGlistaSup_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void checkbuscaSup_CheckedChanged(object sender, EventArgs e)
         {
+            lblRegistros.Text = "";
             if (checkbuscaSup.Checked == true)
             {
                 txtsupervision.Enabled = true;
@@ -376,9 +372,9 @@ namespace GDSfonacot.forms
             }
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void frmBusquedaSupervisiones_Load(object sender, EventArgs e)
         {
-
+            CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
         }
     }
 }

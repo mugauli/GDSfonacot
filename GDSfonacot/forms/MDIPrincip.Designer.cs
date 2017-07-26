@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIPrincip));
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.menuModulos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInicioSup = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,7 +37,6 @@
             this.menuSegSup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCerrarSup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menubuscSup = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +61,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.timerreasig = new System.Windows.Forms.Timer(this.components);
+            this.notifySupCreadas = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifySupReasignadas = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuPrincipal.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -88,7 +91,6 @@
             this.menuSegSup,
             this.menuCerrarSup,
             this.toolStripSeparator3,
-            this.toolStripSeparator5,
             this.menuSalir});
             this.menuModulos.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.menuModulos.Name = "menuModulos";
@@ -127,11 +129,6 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(311, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(311, 6);
             // 
             // menuSalir
             // 
@@ -220,7 +217,6 @@
             this.menuCatalogos.Name = "menuCatalogos";
             this.menuCatalogos.Size = new System.Drawing.Size(72, 20);
             this.menuCatalogos.Text = "&Catalogos";
-            this.menuCatalogos.Click += new System.EventHandler(this.menuCatalogos_Click);
             // 
             // submenuSuc
             // 
@@ -266,7 +262,8 @@
             // 
             // timesup
             // 
-            this.timesup.Interval = 20000;
+            this.timesup.Enabled = true;
+            this.timesup.Interval = 10000;
             this.timesup.Tick += new System.EventHandler(this.timesup_Tick);
             // 
             // tableLayoutPanel1
@@ -278,7 +275,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
@@ -325,7 +322,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.tableLayoutPanel1.SetRowSpan(this.pictureBox2, 3);
-            this.pictureBox2.Size = new System.Drawing.Size(198, 84);
+            this.pictureBox2.Size = new System.Drawing.Size(197, 84);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 285;
             this.pictureBox2.TabStop = false;
@@ -335,11 +332,11 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(208, 0);
+            this.label2.Location = new System.Drawing.Point(207, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.tableLayoutPanel1.SetRowSpan(this.label2, 3);
-            this.label2.Size = new System.Drawing.Size(426, 90);
+            this.label2.Size = new System.Drawing.Size(424, 90);
             this.label2.TabIndex = 284;
             this.label2.Text = "Dirección General Adjunta Comercial\r\nSubdirección General Comercial\r\nDirección de" +
     " Supervisión de Operaciones \r\n\r\n";
@@ -354,6 +351,26 @@
             this.lblNombreUsuario.TabIndex = 284;
             this.lblNombreUsuario.Text = "Usuario";
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timerreasig
+            // 
+            this.timerreasig.Enabled = true;
+            this.timerreasig.Interval = 10000;
+            this.timerreasig.Tick += new System.EventHandler(this.timerreasig_Tick);
+            // 
+            // notifySupCreadas
+            // 
+            this.notifySupCreadas.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifySupCreadas.BalloonTipTitle = "Aviso de Supervisiones por Contestar";
+            this.notifySupCreadas.Icon = ((System.Drawing.Icon)(resources.GetObject("notifySupCreadas.Icon")));
+            this.notifySupCreadas.Visible = true;
+            // 
+            // notifySupReasignadas
+            // 
+            this.notifySupReasignadas.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifySupReasignadas.BalloonTipTitle = "Aviso de Supervisiones Reasignadas por Supervisor";
+            this.notifySupReasignadas.Icon = ((System.Drawing.Icon)(resources.GetObject("notifySupReasignadas.Icon")));
+            this.notifySupReasignadas.Visible = true;
             // 
             // MDIPrincip
             // 
@@ -385,7 +402,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuModulos;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem menuInicioSup;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem menuSalir;
         private System.Windows.Forms.ToolStripMenuItem menuCatalogos;
         private System.Windows.Forms.ToolStripMenuItem submenuSuc;
@@ -413,5 +429,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.Timer timerreasig;
+        private System.Windows.Forms.NotifyIcon notifySupCreadas;
+        private System.Windows.Forms.NotifyIcon notifySupReasignadas;
     }
 }

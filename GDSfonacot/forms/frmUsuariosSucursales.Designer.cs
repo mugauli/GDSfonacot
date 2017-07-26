@@ -59,6 +59,7 @@
             this.txtDirectorRegional = new System.Windows.Forms.TextBox();
             this.pbxSucursal = new System.Windows.Forms.PictureBox();
             this.lblRegistros = new System.Windows.Forms.Label();
+            this.checkmostrartodos = new System.Windows.Forms.CheckBox();
             this.TabsEmpleados.SuspendLayout();
             this.tabadmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -409,12 +410,24 @@
             this.lblRegistros.TabIndex = 283;
             this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // checkmostrartodos
+            // 
+            this.checkmostrartodos.AutoSize = true;
+            this.checkmostrartodos.Location = new System.Drawing.Point(314, 261);
+            this.checkmostrartodos.Name = "checkmostrartodos";
+            this.checkmostrartodos.Size = new System.Drawing.Size(148, 17);
+            this.checkmostrartodos.TabIndex = 326;
+            this.checkmostrartodos.Text = "Mostrar todos los usuarios";
+            this.checkmostrartodos.UseVisualStyleBackColor = true;
+            this.checkmostrartodos.CheckedChanged += new System.EventHandler(this.checkmostrartodos_CheckedChanged);
+            // 
             // frmUsuariosSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1362, 574);
+            this.Controls.Add(this.checkmostrartodos);
             this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TabsEmpleados);
@@ -489,5 +502,6 @@
         private System.Windows.Forms.TextBox txtDirectorRegional;
         private System.Windows.Forms.PictureBox pbxSucursal;
         private System.Windows.Forms.Label lblRegistros;
+        private System.Windows.Forms.CheckBox checkmostrartodos;
     }
 }

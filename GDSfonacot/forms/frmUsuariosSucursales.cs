@@ -41,10 +41,6 @@ namespace GDSfonacot.forms
             cmbNivelusuario.ValueMember = "IdNivel";
             cmbNivelusuario.SelectedIndex = -1;
         }
-        private void tabadmin_Click(object sender, EventArgs e)
-        {
-
-        }
 
         public void CargarDatos(int Sucursal)
         {
@@ -99,7 +95,7 @@ namespace GDSfonacot.forms
         private void CargarGridUsuarios(int tipoacceso)
         {
             var _usuariosData = new UsuariosData();
-            var usuarios = _usuariosData.ObtenerUsuariosGeneral(sucursalInt, tipoacceso);
+            var usuarios = _usuariosData.ObtenerUsuariosGeneralNivelUsuario(sucursalInt, tipoacceso);
             if (usuarios.Code != 0)
             {
                 MessageBox.Show("Error: " + usuarios.Message);
@@ -123,7 +119,6 @@ namespace GDSfonacot.forms
 
         }
 
-
         private DataGridView CargarDatos(List<UsuariosDGV> usuarios)
         {
             var dataGV = new DataGridView();
@@ -141,13 +136,12 @@ namespace GDSfonacot.forms
             return dataGV;
         }
 
-
         private void cmbNivelusuario_SelectionChangeCommitted(object sender, EventArgs e)
         {
 
             if (cmbNivelusuario.SelectedIndex != 0 || cmbNivelusuario.SelectedIndex != -1)
             {
-
+                checkmostrartodos.Checked = false;
                 CargarGridUsuarios(Convert.ToInt32(cmbNivelusuario.SelectedValue));
 
             }
@@ -171,11 +165,40 @@ namespace GDSfonacot.forms
             }
         }
 
-        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void checkmostrartodos_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkmostrartodos.Checked == true)
+            {
+                #region mostrartodosusuarios
+                var _usuariosData = new UsuariosData();
+                var usuarios = _usuariosData.ObtenerUsuariosGeneral(sucursalInt);
+                if (usuarios.Code != 0)
+                {
+                    MessageBox.Show("Error: " + usuarios.Message);
+                }
+                else
+                {
 
+                    dgvUsuarios.DataSource = usuarios.Result;
+                    dgvUsuarios.ReadOnly = true;
+                    dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgvUsuarios.Columns[0].Visible = false;
+                    dgvUsuarios.Columns[0].HeaderText = "ID";
+                    dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                    dgvUsuarios.Columns[1].HeaderText = "Nombre Usuario";
+                    dgvUsuarios.Columns[2].HeaderText = "Nivel de Acceso";
+                    dgvUsuarios.Columns[3].HeaderText = "Sucursal";
+                    lblRegistros.Text = "Total de Registros: " + dgvUsuarios.RowCount;
+
+                }
+
+                #endregion
+            }
+            else
+            {
+                dgvUsuarios.Columns.Clear();
+
+            }
         }
-
-       
     }
 }

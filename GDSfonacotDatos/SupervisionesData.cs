@@ -143,7 +143,7 @@ namespace GDSfonacotDatos
             }
         }
 
-        public MethodResponse<List<HistorialSupervisiones>> ObtenerSupervisones(int IdSupervisiones, string filter)
+        public MethodResponse<List<HistorialSupervisiones>> ObtenerSupervisones(int IdSupervisiones, int[] clavestatus,string filter)
         {
             try
             {
@@ -167,6 +167,8 @@ namespace GDSfonacotDatos
                 return new MethodResponse<List<HistorialSupervisiones>> { Code = -100, Message = ex.Message };
             }
         }
+
+     
 
         public MethodResponse<List<Usuarios>> ObtenerUsuarios(int IdUsuario)
         {
@@ -255,7 +257,7 @@ namespace GDSfonacotDatos
         //Obtiene los datos de la contestacion generada por la sucursal,
         
 
-        public MethodResponse<DatosHistSupervision> ObtenerDatosHistoricoSupervision(int Idsupervision)
+        public MethodResponse<DatosHistSupervision> ObtenerDatosHistoricoSupervisionContesSuc(int Idsupervision)
         {
             try
             {
@@ -346,6 +348,93 @@ namespace GDSfonacotDatos
             }
         }
 
+        public MethodResponse<DatosHistSupervision> ObtenerDatosHistoricoSupervision(int Idsupervision)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<DatosHistSupervision> { Code = 0 };
+
+                    var consultarContestacionDB = context.HistorialSupervisiones
+                        .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc })
+                         .Join(context.ctRegional, tabla1 => tabla1.Suc.IdRegional, tabla2 => tabla2.IdRegional, (suc2, reg) => new { suc2, reg })
+                       .Join(context.Usuarios, tabla1 => tabla1.suc2.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup3, Usu1) => new { HistSup3, Usu1 })
+                       .Join(context.Usuarios, tabla1 => tabla1.HistSup3.suc2.HistSup.Idsupervisor2, tabla3 => tabla3.IdUsuario, (HistSup4, Usu2) => new { HistSup4, Usu2 })
+                        .Where(q1 => (q1.HistSup4.HistSup3.suc2.HistSup.IdSupervisiones == Idsupervision && q1.HistSup4.HistSup3.reg.IdRegional == q1.HistSup4.HistSup3.suc2.Suc.IdRegional && q1.HistSup4.Usu1.IdUsuario == q1.HistSup4.HistSup3.suc2.HistSup.Idsupervisor1 && q1.Usu2.IdUsuario == q1.HistSup4.HistSup3.suc2.HistSup.Idsupervisor2))
+
+                        .Select(x => new DatosHistSupervision
+                        {
+                            //datos de la supervision original
+                            Idsupervision = x.HistSup4.HistSup3.suc2.HistSup.IdSupervisiones,
+                            Supervisor1 = x.HistSup4.Usu1.Nombre_Usuario,
+                            Supervisor2 = x.Usu2.Nombre_Usuario,
+                            NoSupervision = x.HistSup4.HistSup3.suc2.HistSup.NoSupervision,
+                            //datos de la contestacion
+                            FechaSupervision = x.HistSup4.HistSup3.suc2.HistSup.FechaSupervision,
+                            Inmueble = x.HistSup4.HistSup3.suc2.HistSup.Inmueble,
+                            Gestion_direccion = x.HistSup4.HistSup3.suc2.HistSup.Gestion_direccion,
+                            Originacion = x.HistSup4.HistSup3.suc2.HistSup.Originacion,
+                            Tarjetas_transfer = x.HistSup4.HistSup3.suc2.HistSup.Tarjetas_transfer,
+                            Credito = x.HistSup4.HistSup3.suc2.HistSup.Credito,
+                            Utys = x.HistSup4.HistSup3.suc2.HistSup.Utys,
+                            Promocionales = x.HistSup4.HistSup3.suc2.HistSup.Promocionales,
+                            Cobranza = x.HistSup4.HistSup3.suc2.HistSup.Cobranza,
+                            Fondofijo = x.HistSup4.HistSup3.suc2.HistSup.Fondofijo,
+                            AcuerdosCompromisos = x.HistSup4.HistSup3.suc2.HistSup.AcuerdosCompromisos,
+                            Idstatus = x.HistSup4.HistSup3.suc2.HistSup.Idstatus,
+                            //datos la sucursal
+                            DescripcionSucursal = x.HistSup4.HistSup3.suc2.Suc.DescripcionSucursal,
+                            NoSucursal = x.HistSup4.HistSup3.suc2.Suc.NoSucursal,
+                            Dirección = x.HistSup4.HistSup3.suc2.Suc.Dirección,
+                            Representaciones = x.HistSup4.HistSup3.suc2.Suc.Representaciones,
+                            DireccionRegional = x.HistSup4.HistSup3.reg.Descripcion,
+                            Director_Estatal = x.HistSup4.HistSup3.suc2.Suc.Director_Estatal,
+                            Director_Regional = x.HistSup4.HistSup3.suc2.Suc.Director_Regional,
+                            Coordinador_Administrativo = x.HistSup4.HistSup3.suc2.Suc.Coordinador_Administrativo,
+                            Coordinador_Cobranza = x.HistSup4.HistSup3.suc2.Suc.Coordinador_Cobranza,
+                            Coordinador_Crédito = x.HistSup4.HistSup3.suc2.Suc.Coordinador_Crédito,
+                            Analistas = x.HistSup4.HistSup3.suc2.Suc.Analistas,
+                            Ventanillas = x.HistSup4.HistSup3.suc2.Suc.Ventanillas,
+                            Analistas_Otorgamiento_de_Crédito = x.HistSup4.HistSup3.suc2.Suc.Analistas_Otorgamiento_de_Crédito,
+                            Analistas_Administrativo_y_SAM = x.HistSup4.HistSup3.suc2.Suc.Analistas_Administrativo_y_SAM,
+                            Analistas_Crédito_Control_Documental = x.HistSup4.HistSup3.suc2.Suc.Analistas_Crédito_Control_Documental,
+                            Analistas_Cobranza = x.HistSup4.HistSup3.suc2.Suc.Analistas_Cobranza,
+                            Empresas_Afiliadas = x.HistSup4.HistSup3.suc2.Suc.Empresas_Afiliadas,
+                            Trabajadores_Afiliados = x.HistSup4.HistSup3.suc2.Suc.Trabajadores_Afiliados,
+                            Potencial_de_Empresas = x.HistSup4.HistSup3.suc2.Suc.Potencial_de_Empresas,
+                            Potencial_de_Trabajadores = x.HistSup4.HistSup3.suc2.Suc.Potencial_de_Trabajadores,
+                            Empresas_Status_1 = x.HistSup4.HistSup3.suc2.Suc.Empresas_Status_1,
+                            Empresas_Status_18 = x.HistSup4.HistSup3.suc2.Suc.Empresas_Status_18,
+                            Empresas_Status_21 = x.HistSup4.HistSup3.suc2.Suc.Empresas_Status_21,
+                            Empresas_Status_30 = x.HistSup4.HistSup3.suc2.Suc.Empresas_Status_30,
+                            Meta_Anual = x.HistSup4.HistSup3.suc2.Suc.Meta_Anual,
+                            Meta_Mensual = x.HistSup4.HistSup3.suc2.Suc.Meta_Mensual,
+                            Colocación_Anual = x.HistSup4.HistSup3.suc2.Suc.Colocación_Anual,
+                            Colocación_Mensual = x.HistSup4.HistSup3.suc2.Suc.Colocación_Mensual,
+                            Fecha_baja = x.HistSup4.HistSup3.suc2.Suc.Fecha_baja,
+                            Meta_Acumulada_Porcentaje = x.HistSup4.HistSup3.suc2.Suc.Meta_Acumulada_Porcentaje,
+                            Cobranza_Meta_Anual = x.HistSup4.HistSup3.suc2.Suc.Cobranza_Meta_Anual,
+                            Cobranza_Porcentaje_Meta = x.HistSup4.HistSup3.suc2.Suc.Cobranza_Porcentaje_Meta,
+                            Cobranza_Cumplimiento_Meta = x.HistSup4.HistSup3.suc2.Suc.Cobranza_Cumplimiento_Meta,
+                            IdRegional = x.HistSup4.HistSup3.suc2.Suc.IdRegional,
+                            Fotografia = x.HistSup4.HistSup3.suc2.Suc.Fotografia
+
+
+                        }).SingleOrDefault();
+
+                    if (consultarContestacionDB != null) response.Result = consultarContestacionDB;
+                    return response;
+                    //  response.Result = HistoricoSucursalesDB;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<DatosHistSupervision> { Code = -100, Message = ex.Message };
+            }
+        }
         public MethodResponse<DatosBuscarSupervision> ObtenerDatosSupervision(int IdSupervisiones, string filter, int[] clavestatus)
         {
             try
@@ -619,7 +708,68 @@ namespace GDSfonacotDatos
             }
         }
 
-     
+        public MethodResponse<List<DatosGridSupervisiones>> ObtenerTotalSupSucursal(int[] clavestatus)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<DatosGridSupervisiones>> { Code = 0 };
+
+
+                    if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 1004 || Globales.objpasardatosusuario.IdNivel == 3)
+                    {
+
+                        var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
+                       .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
+                       .Join(context.ctEstatusSupervision, tabla1 => tabla1.HistSup.Idstatus, tabla3 => tabla3.idstatus, (histsup2, estat) => new { histsup2, estat })
+                       .Where(sc => sc.histsup2.HistSup.NoSupervision != null && sc.histsup2.Suc.IdSucursal == sc.histsup2.HistSup.IdSucursal && sc.histsup2.HistSup.Idstatus == sc.estat.idstatus && clavestatus.Contains((int)sc.histsup2.HistSup.Idstatus)
+                      ) //ya teniendo los datos, se filtran con el where
+                       .Select(x => new DatosGridSupervisiones
+                       {
+                           IdSupervisiones = x.histsup2.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                           NoSupervision = x.histsup2.HistSup.NoSupervision,
+                           FechaSupervision = x.histsup2.HistSup.FechaSupervision,
+                           DescripcionSucursal = x.histsup2.Suc.DescripcionSucursal,
+                           Estatus = x.estat.statusdescrip
+
+                       }).ToList();
+                        response.Result = HistoricoSucursalesDB;
+                        return response;
+
+
+
+                    }
+                    else
+                    {
+                        var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
+                        .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
+                        .Join(context.ctEstatusSupervision, tabla1 => tabla1.HistSup.Idstatus, tabla3 => tabla3.idstatus, (histsup2, estat) => new { histsup2, estat })
+                        .Where(sc => sc.histsup2.HistSup.NoSupervision != null && sc.histsup2.Suc.IdSucursal == sc.histsup2.HistSup.IdSucursal && sc.histsup2.HistSup.IdSucursal == Globales.objpasardatosusuario.IdSucursal && sc.histsup2.HistSup.Idstatus == sc.estat.idstatus && clavestatus.Contains((int)sc.histsup2.HistSup.Idstatus)) //ya teniendo los datos, se filtran con el where
+                        .Select(x => new DatosGridSupervisiones
+                        {
+                            IdSupervisiones = x.histsup2.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                            NoSupervision = x.histsup2.HistSup.NoSupervision,
+                            FechaSupervision = x.histsup2.HistSup.FechaSupervision,
+                            DescripcionSucursal = x.histsup2.Suc.DescripcionSucursal,
+                            Estatus = x.estat.statusdescrip
+
+                        }).ToList();
+                        response.Result = HistoricoSucursalesDB;
+                        return response;
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<DatosGridSupervisiones>> { Code = -100, Message = ex.Message };
+            }
+        }
+
+
 
 
 

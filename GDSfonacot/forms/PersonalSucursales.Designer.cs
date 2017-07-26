@@ -59,6 +59,7 @@
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRegistros = new System.Windows.Forms.Label();
+            this.checkmostrartodos = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.TabsEmpleados.SuspendLayout();
             this.tabadmin.SuspendLayout();
@@ -84,6 +85,7 @@
             this.txtNoSucursal.Location = new System.Drawing.Point(530, 34);
             this.txtNoSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoSucursal.Name = "txtNoSucursal";
+            this.txtNoSucursal.ReadOnly = true;
             this.txtNoSucursal.Size = new System.Drawing.Size(105, 20);
             this.txtNoSucursal.TabIndex = 250;
             this.txtNoSucursal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -118,6 +120,7 @@
             this.txtAnalistas.Location = new System.Drawing.Point(1154, 197);
             this.txtAnalistas.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistas.Name = "txtAnalistas";
+            this.txtAnalistas.ReadOnly = true;
             this.txtAnalistas.Size = new System.Drawing.Size(193, 20);
             this.txtAnalistas.TabIndex = 246;
             this.txtAnalistas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -141,6 +144,7 @@
             this.txtCoordinadorCobranza.Location = new System.Drawing.Point(721, 197);
             this.txtCoordinadorCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorCobranza.Name = "txtCoordinadorCobranza";
+            this.txtCoordinadorCobranza.ReadOnly = true;
             this.txtCoordinadorCobranza.Size = new System.Drawing.Size(413, 20);
             this.txtCoordinadorCobranza.TabIndex = 244;
             // 
@@ -163,6 +167,7 @@
             this.txtCoordinadorCredito.Location = new System.Drawing.Point(317, 197);
             this.txtCoordinadorCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorCredito.Name = "txtCoordinadorCredito";
+            this.txtCoordinadorCredito.ReadOnly = true;
             this.txtCoordinadorCredito.Size = new System.Drawing.Size(381, 20);
             this.txtCoordinadorCredito.TabIndex = 242;
             // 
@@ -197,6 +202,7 @@
             this.txtCoordinadorAdministrativo.Location = new System.Drawing.Point(1153, 139);
             this.txtCoordinadorAdministrativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorAdministrativo.Name = "txtCoordinadorAdministrativo";
+            this.txtCoordinadorAdministrativo.ReadOnly = true;
             this.txtCoordinadorAdministrativo.Size = new System.Drawing.Size(410, 20);
             this.txtCoordinadorAdministrativo.TabIndex = 240;
             // 
@@ -207,6 +213,7 @@
             this.txtDireccionRegional.Location = new System.Drawing.Point(317, 34);
             this.txtDireccionRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccionRegional.Name = "txtDireccionRegional";
+            this.txtDireccionRegional.ReadOnly = true;
             this.txtDireccionRegional.Size = new System.Drawing.Size(199, 20);
             this.txtDireccionRegional.TabIndex = 230;
             // 
@@ -229,6 +236,7 @@
             this.txtSucursal.Location = new System.Drawing.Point(656, 34);
             this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSucursal.Name = "txtSucursal";
+            this.txtSucursal.ReadOnly = true;
             this.txtSucursal.Size = new System.Drawing.Size(253, 20);
             this.txtSucursal.TabIndex = 228;
             // 
@@ -251,6 +259,7 @@
             this.txtDirectorEstatal.Location = new System.Drawing.Point(721, 139);
             this.txtDirectorEstatal.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirectorEstatal.Name = "txtDirectorEstatal";
+            this.txtDirectorEstatal.ReadOnly = true;
             this.txtDirectorEstatal.Size = new System.Drawing.Size(418, 20);
             this.txtDirectorEstatal.TabIndex = 238;
             // 
@@ -273,6 +282,7 @@
             this.txtDirectorRegional.Location = new System.Drawing.Point(317, 139);
             this.txtDirectorRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirectorRegional.Name = "txtDirectorRegional";
+            this.txtDirectorRegional.ReadOnly = true;
             this.txtDirectorRegional.Size = new System.Drawing.Size(381, 20);
             this.txtDirectorRegional.TabIndex = 236;
             // 
@@ -295,6 +305,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(317, 81);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(1249, 20);
             this.txtDireccion.TabIndex = 234;
             // 
@@ -317,6 +328,7 @@
             this.txtRepresentaciones.Location = new System.Drawing.Point(938, 34);
             this.txtRepresentaciones.Margin = new System.Windows.Forms.Padding(4);
             this.txtRepresentaciones.Name = "txtRepresentaciones";
+            this.txtRepresentaciones.ReadOnly = true;
             this.txtRepresentaciones.Size = new System.Drawing.Size(628, 20);
             this.txtRepresentaciones.TabIndex = 232;
             // 
@@ -386,7 +398,6 @@
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.Size = new System.Drawing.Size(1534, 194);
             this.dgvEmpleados.TabIndex = 0;
-            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             this.dgvEmpleados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentDoubleClick);
             // 
             // label1
@@ -411,13 +422,25 @@
             this.lblRegistros.TabIndex = 281;
             this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // checkmostrartodos
+            // 
+            this.checkmostrartodos.AutoSize = true;
+            this.checkmostrartodos.Location = new System.Drawing.Point(322, 262);
+            this.checkmostrartodos.Name = "checkmostrartodos";
+            this.checkmostrartodos.Size = new System.Drawing.Size(160, 17);
+            this.checkmostrartodos.TabIndex = 325;
+            this.checkmostrartodos.Text = "Mostrar todos los empleados";
+            this.checkmostrartodos.UseVisualStyleBackColor = true;
+            this.checkmostrartodos.CheckedChanged += new System.EventHandler(this.checkmostrartodos_CheckedChanged);
+            // 
             // PersonalSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1362, 574);
+            this.ClientSize = new System.Drawing.Size(1362, 591);
+            this.Controls.Add(this.checkmostrartodos);
             this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbperfilsistema);
@@ -492,5 +515,6 @@
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRegistros;
+        private System.Windows.Forms.CheckBox checkmostrartodos;
     }
 }

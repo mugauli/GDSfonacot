@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContestacionSucursal));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAcuerdosCompromisos = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             this.txtInmuble = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtFechaSupervision = new System.Windows.Forms.DateTimePicker();
+            this.dtFechaRespOficio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNoOficio = new System.Windows.Forms.TextBox();
             this.txtDirectorEstatal = new System.Windows.Forms.TextBox();
@@ -59,7 +60,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSucursal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
+            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
+            this.txthidIdConst = new System.Windows.Forms.TextBox();
+            this.txthidStatus = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -77,6 +85,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.Controls.Add(this.txthidStatus, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdConst, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdSup, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtAcuerdosCompromisos, 1, 23);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 22);
             this.tableLayoutPanel1.Controls.Add(this.txtFondoFijo, 1, 21);
@@ -98,7 +110,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtInmuble, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label38, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label8, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dtFechaSupervision, 8, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtFechaRespOficio, 8, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtNoOficio, 6, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtDirectorEstatal, 4, 1);
@@ -139,6 +151,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1274, 502);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabStop = true;
             // 
             // txtAcuerdosCompromisos
             // 
@@ -166,7 +179,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1224, 30);
             this.label4.TabIndex = 261;
-            this.label4.Text = "Acuerdos y Compromisos";
+            this.label4.Text = "Acuerdos y Compromisos *";
             // 
             // txtFondoFijo
             // 
@@ -194,7 +207,7 @@
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(1224, 30);
             this.label46.TabIndex = 259;
-            this.label46.Text = "Fondo Fijo";
+            this.label46.Text = "Fondo Fijo *";
             // 
             // txtCobranza
             // 
@@ -222,7 +235,7 @@
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(1224, 30);
             this.label45.TabIndex = 257;
-            this.label45.Text = "Cobranza";
+            this.label45.Text = "Cobranza *";
             // 
             // txtPromocionales
             // 
@@ -250,7 +263,7 @@
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(1224, 30);
             this.label44.TabIndex = 255;
-            this.label44.Text = "Promocionales";
+            this.label44.Text = "Promocionales *";
             // 
             // txtUtys
             // 
@@ -278,7 +291,7 @@
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(1224, 30);
             this.label43.TabIndex = 253;
-            this.label43.Text = "UTYS";
+            this.label43.Text = "UTYS *";
             // 
             // txtCredito
             // 
@@ -306,7 +319,7 @@
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(1224, 30);
             this.label42.TabIndex = 251;
-            this.label42.Text = "Crédito";
+            this.label42.Text = "Crédito *";
             // 
             // txtTarjetasTransfer
             // 
@@ -334,7 +347,7 @@
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(1224, 30);
             this.label41.TabIndex = 249;
-            this.label41.Text = "Tarjetas Transfer";
+            this.label41.Text = "Tarjetas Transfer *";
             // 
             // txtOriginacion
             // 
@@ -362,7 +375,7 @@
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(1224, 30);
             this.label40.TabIndex = 247;
-            this.label40.Text = "Originación\r\n";
+            this.label40.Text = "Originación\r\n*";
             // 
             // txtGestionDireccion
             // 
@@ -390,7 +403,7 @@
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(1224, 30);
             this.label39.TabIndex = 245;
-            this.label39.Text = "Gestión de la Dirección\r\n";
+            this.label39.Text = "Gestión de la Dirección*\r\n";
             // 
             // txtInmuble
             // 
@@ -418,7 +431,7 @@
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(1224, 30);
             this.label38.TabIndex = 243;
-            this.label38.Text = "Inmueble\r\n";
+            this.label38.Text = "Inmueble\r\n*";
             // 
             // label8
             // 
@@ -434,16 +447,16 @@
             this.label8.TabIndex = 239;
             this.label8.Text = "Director Estatal";
             // 
-            // dtFechaSupervision
+            // dtFechaRespOficio
             // 
-            this.dtFechaSupervision.CalendarForeColor = System.Drawing.Color.White;
-            this.dtFechaSupervision.CalendarTitleBackColor = System.Drawing.Color.Black;
-            this.dtFechaSupervision.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dtFechaSupervision.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFechaSupervision.Location = new System.Drawing.Point(1101, 23);
-            this.dtFechaSupervision.Name = "dtFechaSupervision";
-            this.dtFechaSupervision.Size = new System.Drawing.Size(148, 20);
-            this.dtFechaSupervision.TabIndex = 236;
+            this.dtFechaRespOficio.CalendarForeColor = System.Drawing.Color.White;
+            this.dtFechaRespOficio.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtFechaRespOficio.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtFechaRespOficio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFechaRespOficio.Location = new System.Drawing.Point(1101, 23);
+            this.dtFechaRespOficio.Name = "dtFechaRespOficio";
+            this.dtFechaRespOficio.Size = new System.Drawing.Size(148, 20);
+            this.dtFechaRespOficio.TabIndex = 236;
             // 
             // label1
             // 
@@ -493,9 +506,9 @@
             this.label2.Location = new System.Drawing.Point(1102, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 16);
+            this.label2.Size = new System.Drawing.Size(133, 16);
             this.label2.TabIndex = 237;
-            this.label2.Text = "Fecha de Respuesta";
+            this.label2.Text = "Fecha de Respuesta*";
             // 
             // txtNoSupervision
             // 
@@ -522,7 +535,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(300, 30);
             this.label5.TabIndex = 200;
-            this.label5.Text = "No de Oficio";
+            this.label5.Text = "No de Oficio*";
             // 
             // txtSucursal
             // 
@@ -549,16 +562,86 @@
             this.label3.TabIndex = 204;
             this.label3.Text = "Sucursal";
             // 
+            // toolStrip1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 10);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolButGuardar,
+            this.toolButImprimir});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1274, 20);
+            this.toolStrip1.TabIndex = 278;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolButGuardar
+            // 
+            this.toolButGuardar.Enabled = false;
+            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
+            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButGuardar.Name = "toolButGuardar";
+            this.toolButGuardar.Size = new System.Drawing.Size(69, 17);
+            this.toolButGuardar.Text = "Guardar";
+            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
+            // 
+            // toolButImprimir
+            // 
+            this.toolButImprimir.Enabled = false;
+            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
+            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButImprimir.Name = "toolButImprimir";
+            this.toolButImprimir.Size = new System.Drawing.Size(73, 17);
+            this.toolButImprimir.Text = "Imprimir";
+            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);
+            // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(4, 24);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
+            this.txthidIdSup.TabIndex = 279;
+            this.txthidIdSup.Visible = false;
+            // 
+            // txthidIdConst
+            // 
+            this.txthidIdConst.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdConst.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdConst.Location = new System.Drawing.Point(4, 54);
+            this.txthidIdConst.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdConst.Name = "txthidIdConst";
+            this.txthidIdConst.Size = new System.Drawing.Size(12, 20);
+            this.txthidIdConst.TabIndex = 280;
+            this.txthidIdConst.Visible = false;
+            // 
+            // txthidStatus
+            // 
+            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidStatus.Location = new System.Drawing.Point(4, 84);
+            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidStatus.Name = "txthidStatus";
+            this.txthidStatus.Size = new System.Drawing.Size(12, 20);
+            this.txthidStatus.TabIndex = 282;
+            this.txthidStatus.Visible = false;
+            // 
             // frmContestacionSucursal
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 502);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmContestacionSucursal";
-            this.Text = "frmContestacionSucursal";
+            this.Text = "Contestaciones de Sucursales";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmContestacionSucursal_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -572,7 +655,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSucursal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtFechaSupervision;
+        private System.Windows.Forms.DateTimePicker dtFechaRespOficio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDirectorEstatal;
@@ -596,5 +679,11 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox txtAcuerdosCompromisos;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolButGuardar;
+        private System.Windows.Forms.ToolStripButton toolButImprimir;
+        private System.Windows.Forms.TextBox txthidIdSup;
+        private System.Windows.Forms.TextBox txthidIdConst;
+        private System.Windows.Forms.TextBox txthidStatus;
     }
 }

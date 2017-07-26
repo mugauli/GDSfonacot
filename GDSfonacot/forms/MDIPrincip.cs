@@ -23,13 +23,9 @@ namespace GDSfonacot
        
         private void MDIPrincip_Load(object sender, EventArgs e)
         {
+            timesup.Start();
+            timerreasig.Start();
             lblNombreUsuario.Text = Globales.objpasardatosusuario.Nombre_Usuario;
-        }
-
-        private void menuSupOp_Click(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void menuHistsupOp_Click(object sender, EventArgs e)
@@ -50,16 +46,6 @@ namespace GDSfonacot
 
         }
 
-      
-
-        private void menuFichasPerson_Click(object sender, EventArgs e)
-        {
-           
-          
-        }
-
-        
-
         private void menuMinutas_Click(object sender, EventArgs e)
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
@@ -72,22 +58,11 @@ namespace GDSfonacot
             }
         }
 
-        private void MDIPrincip_Resize(object sender, EventArgs e)
-        {
-
-        }
-
         private void menuSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();//
         }
 
-       
-
-        private void menuCatalogos_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void submenuSuc_Click(object sender, EventArgs e)
         {
@@ -119,18 +94,6 @@ namespace GDSfonacot
             }
         }
 
-      
-
-        private void mnuSupContestSuc_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void mnuSupConsultaSuperv_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void mnuSupContestSeguimSuperv_Click(object sender, EventArgs e)
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
@@ -151,7 +114,7 @@ namespace GDSfonacot
    
 
    
- private void mnuSolventarSeg_Click(object sender, EventArgs e)
+        private void mnuSolventarSeg_Click(object sender, EventArgs e)
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
@@ -348,12 +311,68 @@ namespace GDSfonacot
 
         private void timesup_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("Tienes Solicitudes pendientes");
+            notificationcreadas();
+
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void timerreasig_Tick(object sender, EventArgs e)
         {
-
+            notificationreasignadas();
         }
+        private void notificationcreadas()
+        {
+            int[] varstatus = { 1 };
+            var objcreadasSupervision = new SupervisionesData();
+            var busqueda = objcreadasSupervision.ObtenerTotalSupSucursal(varstatus);
+
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                if (busqueda.Result != null)
+                {
+                    if (busqueda.Result.Count != 0)
+                    {
+
+                        notifySupCreadas.BalloonTipText = "*Tienes " + busqueda.Result.Count + " supervisiones pendientes favor de ingresar a 'Crear Contestación para Supervisión'";
+                        notifySupCreadas.ShowBalloonTip(0);
+                      
+                    }
+                    else
+                    {
+                        //No muestro nada
+                    }
+
+                }
+              
+            }
+            objcreadasSupervision = null;
+            busqueda = null;
+        }
+
+        private void notificationreasignadas()
+        {
+            int[] varstatus2 = { 5 };
+            var objreasignadasSupervision = new SupervisionesData();
+            var busqueda2 = objreasignadasSupervision.ObtenerTotalSupSucursal(varstatus2);
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                if (busqueda2.Result != null)
+                {
+                    if (busqueda2.Result.Count != 0)
+                    {
+
+                        notifySupReasignadas.BalloonTipText = "*Tienes " + busqueda2.Result.Count + " supervisiones reasignadas favor de ingresar a 'Contestaciones de Supervision'";
+                        notifySupReasignadas.ShowBalloonTip(5);
+                    }
+                    else
+                    {
+                        //No muestro nada
+                    }
+                }
+
+            }
+            objreasignadasSupervision = null;
+            busqueda2 = null;
+        }
+    
     }
 }

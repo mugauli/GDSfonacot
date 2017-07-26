@@ -35,6 +35,7 @@
             this.Sucursal = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dtreingresotemp = new System.Windows.Forms.DateTimePicker();
             this.dtfechareingreso = new System.Windows.Forms.DateTimePicker();
             this.lblfechareingreso = new System.Windows.Forms.Label();
             this.txthidIdusuario = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.fechabaja = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.chkverpassword = new System.Windows.Forms.CheckBox();
-            this.dtreingresotemp = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(556, 22);
-            this.txtNombre.TabIndex = 20;
+            this.txtNombre.TabIndex = 0;
             // 
             // Nombre
             // 
@@ -184,6 +184,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1084, 266);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // dtreingresotemp
+            // 
+            this.dtreingresotemp.CalendarForeColor = System.Drawing.Color.White;
+            this.dtreingresotemp.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtreingresotemp.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtreingresotemp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtreingresotemp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtreingresotemp.Location = new System.Drawing.Point(824, 153);
+            this.dtreingresotemp.Name = "dtreingresotemp";
+            this.dtreingresotemp.Size = new System.Drawing.Size(257, 22);
+            this.dtreingresotemp.TabIndex = 325;
+            this.dtreingresotemp.Visible = false;
+            // 
             // dtfechareingreso
             // 
             this.dtfechareingreso.CalendarForeColor = System.Drawing.Color.White;
@@ -231,7 +244,7 @@
             this.txtGafete.Margin = new System.Windows.Forms.Padding(4);
             this.txtGafete.Name = "txtGafete";
             this.txtGafete.Size = new System.Drawing.Size(249, 22);
-            this.txtGafete.TabIndex = 31;
+            this.txtGafete.TabIndex = 1;
             // 
             // txtpassword
             // 
@@ -244,7 +257,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(255, 22);
-            this.txtpassword.TabIndex = 47;
+            this.txtpassword.TabIndex = 2;
             // 
             // cmbNivelusuario
             // 
@@ -256,7 +269,7 @@
             this.cmbNivelusuario.Location = new System.Drawing.Point(3, 93);
             this.cmbNivelusuario.Name = "cmbNivelusuario";
             this.cmbNivelusuario.Size = new System.Drawing.Size(301, 24);
-            this.cmbNivelusuario.TabIndex = 288;
+            this.cmbNivelusuario.TabIndex = 3;
             // 
             // cmbSucursales
             // 
@@ -268,7 +281,7 @@
             this.cmbSucursales.Location = new System.Drawing.Point(310, 93);
             this.cmbSucursales.Name = "cmbSucursales";
             this.cmbSucursales.Size = new System.Drawing.Size(508, 24);
-            this.cmbSucursales.TabIndex = 289;
+            this.cmbSucursales.TabIndex = 4;
             // 
             // checkinactivar
             // 
@@ -279,7 +292,7 @@
             this.checkinactivar.Location = new System.Drawing.Point(3, 153);
             this.checkinactivar.Name = "checkinactivar";
             this.checkinactivar.Size = new System.Drawing.Size(301, 31);
-            this.checkinactivar.TabIndex = 290;
+            this.checkinactivar.TabIndex = 6;
             this.checkinactivar.Text = "Inactivo";
             this.checkinactivar.UseVisualStyleBackColor = true;
             // 
@@ -293,7 +306,7 @@
             this.dtFechaalta.Location = new System.Drawing.Point(824, 93);
             this.dtFechaalta.Name = "dtFechaalta";
             this.dtFechaalta.Size = new System.Drawing.Size(257, 22);
-            this.dtFechaalta.TabIndex = 291;
+            this.dtFechaalta.TabIndex = 5;
             // 
             // fechaalta
             // 
@@ -361,19 +374,6 @@
             this.chkverpassword.Text = "Mostrar Password";
             this.chkverpassword.UseVisualStyleBackColor = false;
             this.chkverpassword.CheckedChanged += new System.EventHandler(this.chkverpassword_CheckedChanged);
-            // 
-            // dtreingresotemp
-            // 
-            this.dtreingresotemp.CalendarForeColor = System.Drawing.Color.White;
-            this.dtreingresotemp.CalendarTitleBackColor = System.Drawing.Color.Black;
-            this.dtreingresotemp.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dtreingresotemp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtreingresotemp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtreingresotemp.Location = new System.Drawing.Point(824, 153);
-            this.dtreingresotemp.Name = "dtreingresotemp";
-            this.dtreingresotemp.Size = new System.Drawing.Size(257, 22);
-            this.dtreingresotemp.TabIndex = 325;
-            this.dtreingresotemp.Visible = false;
             // 
             // frmUsuarios
             // 

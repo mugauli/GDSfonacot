@@ -112,31 +112,32 @@ namespace GDSfonacot
         private void CargarGridEmpleados(int tipoperfil)
         {
             var _EmpleadosData = new EmpleadosData();
-            var empleados1 = _EmpleadosData.ObtenerEmpleadosGeneral2(sucursalInt,tipoperfil);
-                    if (empleados1.Code != 0)
-                    {
-                        MessageBox.Show("Error: " + empleados1.Message);
-                    }
-            else { 
+            var empleados1 = _EmpleadosData.ObtenerEmpleadosGeneralporTipoPersonal(sucursalInt, tipoperfil);
+            if (empleados1.Code != 0)
+            {
+                MessageBox.Show("Error: " + empleados1.Message);
+            }
+            else
+            {
 
-                    dgvEmpleados.DataSource = empleados1.Result;
-                    dgvEmpleados.ReadOnly = true;
-                    dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dgvEmpleados.Columns[0].Visible = false;
-                    dgvEmpleados.Columns[0].HeaderText = "ID";
-                    dgvEmpleados.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                    dgvEmpleados.Columns[1].HeaderText = "Nombre";
-                    dgvEmpleados.Columns[2].HeaderText = "Gafete";
-                    dgvEmpleados.Columns[3].HeaderText = "Tipo Personal";
-                    dgvEmpleados.Columns[4].HeaderText = "Perfil Sistema";
-                    dgvEmpleados.Columns[5].HeaderText = "Jornada";
-                    dgvEmpleados.Columns[6].HeaderText = "Horario";
-                    lblRegistros.Text = "Total de Registros: " + dgvEmpleados.RowCount;
+                dgvEmpleados.DataSource = empleados1.Result;
+                dgvEmpleados.ReadOnly = true;
+                dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvEmpleados.Columns[0].Visible = false;
+                dgvEmpleados.Columns[0].HeaderText = "ID";
+                dgvEmpleados.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                dgvEmpleados.Columns[1].HeaderText = "Nombre";
+                dgvEmpleados.Columns[2].HeaderText = "Gafete";
+                dgvEmpleados.Columns[3].HeaderText = "Tipo Personal";
+                dgvEmpleados.Columns[4].HeaderText = "Perfil Sistema";
+                dgvEmpleados.Columns[5].HeaderText = "Jornada";
+                dgvEmpleados.Columns[6].HeaderText = "Horario";
+                lblRegistros.Text = "Total de Registros: " + dgvEmpleados.RowCount;
             }
 
 
         }
-       
+
 
         private DataGridView CargarDatos(List<EmpleadosDGV> empleados)
         {
@@ -161,12 +162,12 @@ namespace GDSfonacot
 
         private void cmbperfilsistema_SelectionChangeCommitted(object sender, EventArgs e)
         {
-          
-            if (cmbperfilsistema.SelectedIndex!=0 || cmbperfilsistema.SelectedIndex!=-1)
+
+            if (cmbperfilsistema.SelectedIndex != 0 || cmbperfilsistema.SelectedIndex != -1)
             {
- 
+                checkmostrartodos.Checked = false;
                 CargarGridEmpleados(Convert.ToInt32(cmbperfilsistema.SelectedValue));
-                
+
             }
         }
 
@@ -188,9 +189,42 @@ namespace GDSfonacot
             }
         }
 
-        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void checkmostrartodos_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkmostrartodos.Checked == true)
+            {
+                #region mostrartodosempleados
+                cmbperfilsistema.SelectedIndex = -1;
+                var _EmpleadosData = new EmpleadosData();
+                var empleados1 = _EmpleadosData.ObtenerEmpleadosGeneral(sucursalInt);
+                if (empleados1.Code != 0)
+                {
+                    MessageBox.Show("Error: " + empleados1.Message);
+                }
+                else
+                {
 
+                    dgvEmpleados.DataSource = empleados1.Result;
+                    dgvEmpleados.ReadOnly = true;
+                    dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgvEmpleados.Columns[0].Visible = false;
+                    dgvEmpleados.Columns[0].HeaderText = "ID";
+                    dgvEmpleados.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                    dgvEmpleados.Columns[1].HeaderText = "Nombre";
+                    dgvEmpleados.Columns[2].HeaderText = "Gafete";
+                    dgvEmpleados.Columns[3].HeaderText = "Tipo Personal";
+                    dgvEmpleados.Columns[4].HeaderText = "Perfil Sistema";
+                    dgvEmpleados.Columns[5].HeaderText = "Jornada";
+                    dgvEmpleados.Columns[6].HeaderText = "Horario";
+                    lblRegistros.Text = "Total de Registros: " + dgvEmpleados.RowCount;
+                }
+#endregion
+            }
+            else
+            {
+                dgvEmpleados.Columns.Clear();
+
+            }
         }
     }
-}
+ }

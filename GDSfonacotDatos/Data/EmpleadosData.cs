@@ -77,7 +77,7 @@ namespace GDSfonacotDatos.Data
             }
         }
 
-        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosGeneral(int IdSucursal, int IdPerfilsistema)
+        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosGeneralPerfilSistema(int IdSucursal, int IdPerfilsistema)
         {
             var response = new MethodResponse<List<EmpleadosDGV>> { Code = 0 };
 
@@ -101,7 +101,7 @@ namespace GDSfonacotDatos.Data
             }
         }
 
-        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosGeneral2(int IdSucursal, int IdTipoPersonal)
+        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosGeneralporTipoPersonal(int IdSucursal, int IdTipoPersonal)
         {
             try
             {
@@ -115,6 +115,46 @@ namespace GDSfonacotDatos.Data
                           .Join(context.ctPerfilSistema, tabla1 => tabla1.IdPerfilSistema, tabla2 => tabla2.IdPerfilSistema, (emp, perfil) => new { emp, perfil })
                           .Join(context.ctTipoPersonal, tabla1 => tabla1.emp.IdTipoPersonal, tabla2 => tabla2.IdTipoPersonal, (emp2, tipopers) => new { emp2, tipopers })// se realiza el join para crear el contexto completo es decir todos los dato 
                           .Where(ep => ep.emp2.emp.IdPerfilSistema == ep.emp2.perfil.IdPerfilSistema && ep.emp2.emp.IdSucursal == IdSucursal && ep.emp2.emp.IdTipoPersonal == IdTipoPersonal)
+
+                         .Select(x => new EmpleadosDGV
+                         {
+                             IdEmpleado = x.emp2.emp.IdEmpleado,
+                             Gafete = x.emp2.emp.Gafete,
+                             Nombre = x.emp2.emp.Nombre,
+                             Horario = x.emp2.emp.Horario,
+                             Jornada = x.emp2.emp.Jornada,
+                             TipoPersonal = x.tipopers.Descripcion,
+                             TipoPerfil = x.emp2.perfil.Descripcion
+
+                         }).ToList();
+
+                    response.Result = devolverdatos;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<EmpleadosDGV>> { Code = -100, Message = ex.Message };
+            }
+        }
+
+        public MethodResponse<List<EmpleadosDGV>> ObtenerEmpleadosGeneral(int IdSucursal)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<EmpleadosDGV>> { Code = 0 };
+
+
+
+                    var devolverdatos = context.Empleados // seleccion de tabla inicial
+                          .Join(context.ctPerfilSistema, tabla1 => tabla1.IdPerfilSistema, tabla2 => tabla2.IdPerfilSistema, (emp, perfil) => new { emp, perfil })
+                          .Join(context.ctTipoPersonal, tabla1 => tabla1.emp.IdTipoPersonal, tabla2 => tabla2.IdTipoPersonal, (emp2, tipopers) => new { emp2, tipopers })// se realiza el join para crear el contexto completo es decir todos los dato 
+                          .Where(ep => ep.emp2.emp.IdPerfilSistema == ep.emp2.perfil.IdPerfilSistema && ep.emp2.emp.IdSucursal == IdSucursal && ep.emp2.emp.IdTipoPersonal ==ep.tipopers.IdTipoPersonal)
 
                          .Select(x => new EmpleadosDGV
                          {

@@ -56,8 +56,8 @@ namespace GDSfonacot.forms
                 txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
                 txthidIdSegui.Text = busqueda.Result.Idseguimiento.ToString();
                 txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtDireccionRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
-                txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                //txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
                 txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
                 txtInmuble.Text = busqueda.Result.Inmueble.ToString();
                 txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
@@ -334,8 +334,8 @@ namespace GDSfonacot.forms
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
                 txthidIdSegui.Text = "0";
                 txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtDireccionRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
-                txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                //txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
                 txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
                 txthidstatus.Text = busqueda.Result.Idstatus.ToString();
@@ -356,8 +356,6 @@ namespace GDSfonacot.forms
             frmvisor.ShowDialog();
 
         }
-
-        
     }
 }
 

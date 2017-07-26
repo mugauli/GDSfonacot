@@ -55,7 +55,7 @@ namespace GDSfonacotDatos.Data
             }
         }
 
-        public MethodResponse<List<UsuariosDGV>> ObtenerUsuariosGeneral(int IdSucursal, int IdNivelusuario)
+        public MethodResponse<List<UsuariosDGV>> ObtenerUsuariosGeneralNivelUsuario(int IdSucursal, int IdNivelusuario)
         {
             try
             {
@@ -76,6 +76,42 @@ namespace GDSfonacotDatos.Data
                           Nombre_Usuario=x.usu2.usu.Nombre_Usuario,                        
                           NivelUsuarioDescrip=x.usu2.nivelusu.Nivel_Usuario,
                           DescripcionSucursal = x.suc.DescripcionSucursal
+                         }).ToList();
+
+                    response.Result = devolverdatos;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<UsuariosDGV>> { Code = -100, Message = ex.Message };
+            }
+        }
+
+        public MethodResponse<List<UsuariosDGV>> ObtenerUsuariosGeneral(int IdSucursal)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<UsuariosDGV>> { Code = 0 };
+
+
+
+                    var devolverdatos = context.Usuarios // seleccion de tabla inicial
+                         .Join(context.Usuarios_Nivel, tabla1 => tabla1.IdNivel, tabla2 => tabla2.IdNivel, (usu, nivelusu) => new { usu, nivelusu })
+                        .Join(context.Sucursales, tabla1 => tabla1.usu.IdSucursal, tabla3 => tabla3.IdSucursal, (usu2, suc) => new { usu2, suc })
+                        .Where(x => x.usu2.nivelusu.IdNivel == x.usu2.usu.IdNivel && x.suc.IdSucursal == x.usu2.usu.IdSucursal && x.usu2.usu.IdSucursal == IdSucursal && x.usu2.usu.IdNivel == x.usu2.nivelusu.IdNivel)
+
+                         .Select(x => new UsuariosDGV
+                         {
+                             IdUsuario = x.usu2.usu.IdUsuario,
+                             Nombre_Usuario = x.usu2.usu.Nombre_Usuario,
+                             NivelUsuarioDescrip = x.usu2.nivelusu.Nivel_Usuario,
+                             DescripcionSucursal = x.suc.DescripcionSucursal
                          }).ToList();
 
                     response.Result = devolverdatos;
@@ -130,8 +166,6 @@ namespace GDSfonacotDatos.Data
 
 
         }
-
-        
 
         public MethodResponse<Usuarios> LoginUsuario(string Usuario, string password)
         {

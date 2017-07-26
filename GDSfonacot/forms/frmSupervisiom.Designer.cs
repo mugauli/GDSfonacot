@@ -160,6 +160,7 @@
             this.txthidStatus.Name = "txthidStatus";
             this.txthidStatus.Size = new System.Drawing.Size(12, 20);
             this.txthidStatus.TabIndex = 282;
+            this.txthidStatus.Visible = false;
             // 
             // cmbSupervisor2
             // 
@@ -202,6 +203,7 @@
             this.txthidIdSup.Name = "txthidIdSup";
             this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
             this.txthidIdSup.TabIndex = 262;
+            this.txthidIdSup.Visible = false;
             // 
             // toolStrip1
             // 
@@ -218,6 +220,7 @@
             // 
             // toolButNuevo
             // 
+            this.toolButNuevo.Enabled = false;
             this.toolButNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolButNuevo.Name = "toolButNuevo";
             this.toolButNuevo.Size = new System.Drawing.Size(46, 17);

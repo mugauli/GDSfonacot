@@ -61,6 +61,15 @@ namespace GDSfonacot.forms
                 objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
                 crpvisor.ReportSource = objreport;
             }
+            else if (destino == 5)//consultando seguimiento creado por supervisor
+            {
+                this.Text = "Historico por Supervision Contestada por Sucursal";
+                reportes.crpHistoricoSupervSuc objreport = new reportes.crpHistoricoSupervSuc();
+                objreport.SetParameterValue("@idsupervision", param1);
+                objreport.SetParameterValue("@idseguimiento", param2);
+                objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
+                crpvisor.ReportSource = objreport;
+            }
         }
     }
 }

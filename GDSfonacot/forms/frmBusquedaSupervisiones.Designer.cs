@@ -31,10 +31,10 @@
             this.lblRegistros = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtsupervision = new System.Windows.Forms.TextBox();
-            this.dataGlistaSup = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.dpickerFechaini = new System.Windows.Forms.DateTimePicker();
             this.dpickerFechafin = new System.Windows.Forms.DateTimePicker();
+            this.dataGlistaSup = new System.Windows.Forms.DataGridView();
             this.checkbuscaSup = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGlistaSup)).BeginInit();
@@ -47,7 +47,7 @@
             this.lblRegistros.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistros.Location = new System.Drawing.Point(126, 70);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(722, 30);
+            this.lblRegistros.Size = new System.Drawing.Size(720, 30);
             this.lblRegistros.TabIndex = 280;
             this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
@@ -66,7 +66,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.Controls.Add(this.txtsupervision, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dpickerFechaini, 0, 1);
@@ -100,7 +100,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1195, 310);
             this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // txtsupervision
             // 
@@ -112,27 +111,9 @@
             this.txtsupervision.Location = new System.Drawing.Point(127, 43);
             this.txtsupervision.Margin = new System.Windows.Forms.Padding(4);
             this.txtsupervision.Name = "txtsupervision";
-            this.txtsupervision.Size = new System.Drawing.Size(720, 22);
+            this.txtsupervision.Size = new System.Drawing.Size(718, 22);
             this.txtsupervision.TabIndex = 283;
             this.txtsupervision.TextChanged += new System.EventHandler(this.txtsupervision_TextChanged);
-            // 
-            // dataGlistaSup
-            // 
-            this.dataGlistaSup.AllowUserToAddRows = false;
-            this.dataGlistaSup.AllowUserToDeleteRows = false;
-            this.dataGlistaSup.AllowUserToOrderColumns = true;
-            this.dataGlistaSup.BackgroundColor = System.Drawing.SystemColors.WindowText;
-            this.dataGlistaSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGlistaSup, 3);
-            this.dataGlistaSup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGlistaSup.Enabled = false;
-            this.dataGlistaSup.Location = new System.Drawing.Point(3, 103);
-            this.dataGlistaSup.Name = "dataGlistaSup";
-            this.dataGlistaSup.ReadOnly = true;
-            this.dataGlistaSup.Size = new System.Drawing.Size(845, 514);
-            this.dataGlistaSup.TabIndex = 279;
-            this.dataGlistaSup.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellContentClick);
-            this.dataGlistaSup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellDoubleClick);
             // 
             // label10
             // 
@@ -143,7 +124,7 @@
             this.label10.Location = new System.Drawing.Point(4, 0);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(843, 39);
+            this.label10.Size = new System.Drawing.Size(841, 39);
             this.label10.TabIndex = 277;
             this.label10.Text = "Por favor selecciona las fechas para filtrar supervisiones";
             this.label10.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -170,12 +151,28 @@
             this.dpickerFechafin.TabIndex = 282;
             this.dpickerFechafin.ValueChanged += new System.EventHandler(this.dpickerFechafin_ValueChanged);
             // 
+            // dataGlistaSup
+            // 
+            this.dataGlistaSup.AllowUserToAddRows = false;
+            this.dataGlistaSup.AllowUserToDeleteRows = false;
+            this.dataGlistaSup.AllowUserToOrderColumns = true;
+            this.dataGlistaSup.BackgroundColor = System.Drawing.SystemColors.WindowText;
+            this.dataGlistaSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.dataGlistaSup, 3);
+            this.dataGlistaSup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGlistaSup.Location = new System.Drawing.Point(3, 103);
+            this.dataGlistaSup.Name = "dataGlistaSup";
+            this.dataGlistaSup.ReadOnly = true;
+            this.dataGlistaSup.Size = new System.Drawing.Size(843, 514);
+            this.dataGlistaSup.TabIndex = 279;
+            this.dataGlistaSup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellDoubleClick);
+            // 
             // checkbuscaSup
             // 
             this.checkbuscaSup.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.checkbuscaSup, 3);
             this.checkbuscaSup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkbuscaSup.Location = new System.Drawing.Point(854, 42);
+            this.checkbuscaSup.Location = new System.Drawing.Point(852, 42);
             this.checkbuscaSup.Name = "checkbuscaSup";
             this.checkbuscaSup.Size = new System.Drawing.Size(204, 25);
             this.checkbuscaSup.TabIndex = 284;
@@ -192,6 +189,7 @@
             this.Name = "frmBusquedaSupervisiones";
             this.Text = "Busqueda de Supervisiones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmBusquedaSupervisiones_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGlistaSup)).EndInit();

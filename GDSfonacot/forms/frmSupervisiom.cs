@@ -31,9 +31,17 @@ namespace GDSfonacot.forms
             LoadingCatSupervisor1();
             if (saveorupdate == 1)
             {
-               ConsultarDatos(valor2);
+               
             }
-            
+            if (saveorupdate == 0)
+            {
+                LimpiarDatos();
+            }
+            else
+            {
+                ConsultarDatos(valor2);
+            }
+
         }
 
         private void toolButNuevo_Click(object sender, EventArgs e)
@@ -106,7 +114,7 @@ namespace GDSfonacot.forms
                 }
                 else
                 {
-                    toolButNuevo.Enabled = true;
+                    toolButNuevo.Enabled = false;
                     toolButGuardar.Enabled = false;
                     toolButImprimir.Enabled = true;
                     MessageBox.Show("La supervision ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -131,6 +139,11 @@ namespace GDSfonacot.forms
             {
                 MessageBox.Show("Selecciona una Sucursal", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 cmbSucursales.Focus();
+                return true;
+            }
+            if (Convert.ToInt32(cmbSupervisor1.SelectedValue)== Convert.ToInt32(cmbSupervisor2.SelectedValue))
+            {
+                MessageBox.Show("No puedes seleccionar el mismo supervisor para los campos 'supervisor1' y 'supervisor2',favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return true;
             }
 
@@ -331,7 +344,6 @@ namespace GDSfonacot.forms
             cmbSupervisor1.ValueMember = "IdUsuario";
             cmbSupervisor1.SelectedIndex = -1;
         }
-
         private void LoadingCatSupervisor2()
         {
             var sucursales = new SupervisionesData().ObtenerSupervisores();
@@ -365,6 +377,7 @@ namespace GDSfonacot.forms
             cmbSupervisor2.SelectedIndex = -1;
             toolButNuevo.Enabled = false;
             toolButGuardar.Enabled = true;
+            txtNoSupervision.Enabled = true;
 
 
         }
@@ -395,7 +408,7 @@ namespace GDSfonacot.forms
                 cmbSupervisor2.SelectedValue = busqueda.Result.Idsupervisor2;
                 toolButNuevo.Enabled = false;
                 toolButGuardar.Enabled = true;
-
+                txtNoSupervision.Enabled = false;
                 toolButImprimir.Enabled = true;
             }
             else
@@ -420,16 +433,6 @@ namespace GDSfonacot.forms
             //frmvisor.MdiParen8t = MDIPrincip();
             frmvisor.ShowDialog();
 
-        }
-
-        private void txtNoSupervision_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                ConsultarDatos(txtNoSupervision.Text.Trim());
-            }
-        }
-
-       
+        }     
     }
 }
