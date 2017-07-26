@@ -271,6 +271,7 @@
             this.txthidIdSeg.Name = "txthidIdSeg";
             this.txthidIdSeg.Size = new System.Drawing.Size(18, 20);
             this.txthidIdSeg.TabIndex = 245;
+            this.txthidIdSeg.Visible = false;
             // 
             // txthidIdSup
             // 
@@ -281,6 +282,7 @@
             this.txthidIdSup.Name = "txthidIdSup";
             this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
             this.txthidIdSup.TabIndex = 244;
+            this.txthidIdSup.Visible = false;
             // 
             // SeguimientoSup
             // 

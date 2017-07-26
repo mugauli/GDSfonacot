@@ -28,6 +28,7 @@ namespace GDSfonacotDatos.DTO
         public string DireccionRegional { get; set; }
         public string NoSupervision { get; set; }
         public short NoSucursal { get; set; }
+        public Nullable<System.DateTime> FechaCreacion { get; set; }
 
     }
 }

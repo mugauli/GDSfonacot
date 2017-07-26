@@ -120,7 +120,8 @@ namespace GDSfonacot.forms
                 objSeguimiento.Fondofijo = txtFondoFijo.Text.Trim();
                 objSeguimiento.AcuerdosCompromisos = txtAcuerdosCompromisos.Text.Trim();
                 objSeguimiento.IdusuarioCreador = Globales.objpasardatosusuario.IdUsuario;
-                objSeguimiento.FechaSeguimCreacion = DateTime.Now;
+                objSeguimiento.FechaSeguimCreacion = dtfechaSeguimiento.Value;
+                objSeguimiento.FechaCreacion = DateTime.Now;
                 var gdSeguimiento = new SeguimientosData().GuadarSeguimiento(objSeguimiento);
                 if (gdSeguimiento.Code != 0)
                 {
@@ -138,6 +139,7 @@ namespace GDSfonacot.forms
                     toolButImprimir.Enabled = true;
                     MessageBox.Show("El Seguimiento ha sido guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarDatos();
+                    this.Close();
                 }
 
             }
@@ -317,12 +319,16 @@ namespace GDSfonacot.forms
             txtCobranza.Text = String.Empty;
             txtFondoFijo.Text = String.Empty;
             txtAcuerdosCompromisos.Text = String.Empty;
+           // toolButNuevo.Enabled = false;
+            //toolButGuardar.Enabled = true;
+          
         }
 
         private void LlenarDatos()
         {
+            int[] varstatus = { 1, 2 };
             var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(idsup,valor2, 1);
+            var busqueda = objSupervision.ObtenerDatosSupervision(idsup,valor2,varstatus);
             if (busqueda.Result != null)
             {
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
@@ -332,6 +338,7 @@ namespace GDSfonacot.forms
                 txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
                 txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
+                txthidstatus.Text = busqueda.Result.Idstatus.ToString();
                 txtSupervisor1.Text = busqueda.Result.Supervisor1.ToString();
                 txtSupervisor2.Text = busqueda.Result.Supervisor2.ToString();
                 toolButGuardar.Enabled = true;

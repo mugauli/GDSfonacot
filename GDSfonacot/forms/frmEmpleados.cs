@@ -204,7 +204,7 @@ namespace GDSfonacot.forms
 
             #region ctSucursal
 
-            var sucursales = new SupervisionesData().ObtenerSucursalesCombo();
+            var sucursales = new SucursalesData().ObtenerSucursalesCombo();
             if (sucursales.Code != 0)
             {
                 MessageBox.Show("Error: " + ctRegional.Message);

@@ -29,9 +29,22 @@ namespace GDSfonacotDatos.Data
                     }
                     else
                     {
-                        var empleadoDB = context.SeguimientoSupervision_Supervisores.FirstOrDefault(x => x.Idseguimiento == seguimiento.Idseguimiento);
-
-  
+                        var seguimientoDB = context.SeguimientoSupervision_Supervisores.FirstOrDefault(x => x.Idseguimiento == seguimiento.Idseguimiento);
+                        seguimientoDB.Idseguimiento = seguimiento.Idseguimiento;
+                        seguimientoDB.Idsupervision = seguimiento.Idsupervision;
+                        seguimientoDB.Inmueble = seguimiento.Inmueble;
+                        seguimientoDB.Gestion_direccion = seguimiento.Gestion_direccion;
+                        seguimientoDB.Originacion = seguimiento.Originacion;
+                        seguimientoDB.Tarjetas_transfer = seguimiento.Tarjetas_transfer;
+                        seguimientoDB.Credito = seguimiento.Credito;
+                        seguimientoDB.Utys = seguimiento.Utys;
+                        seguimientoDB.Promocionales = seguimiento.Promocionales;
+                        seguimientoDB.Cobranza = seguimiento.Cobranza;
+                        seguimientoDB.Fondofijo = seguimiento.Fondofijo;
+                        seguimientoDB.AcuerdosCompromisos = seguimiento.AcuerdosCompromisos;
+                        seguimientoDB.IdusuarioCreador = Globales.objpasardatosusuario.IdUsuario;
+                        seguimientoDB.FechaSeguimCreacion = seguimiento.FechaSeguimCreacion;
+                      //  seguimientoDB.FechaCreacion = seguimiento.FechaCreacion;
 
                         context.SaveChanges();
 

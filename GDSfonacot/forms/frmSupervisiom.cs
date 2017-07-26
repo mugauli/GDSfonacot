@@ -1,5 +1,6 @@
 ﻿using System;
 using GDSfonacotDatos;
+using GDSfonacotDatos.Data;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GDSfonacotDatos.DTO;
 
 namespace GDSfonacot.forms
 {
@@ -293,7 +295,7 @@ namespace GDSfonacot.forms
 
         private void LoadingCatSucursales()
         {
-            var sucursales = new SupervisionesData().ObtenerSucursalesCombo();
+            var sucursales = new SucursalesData().ObtenerSucursalesCombo();
             if (sucursales.Code != 0)
             {
                 //Mandar mensaje de error con sucursales.Message
@@ -350,6 +352,8 @@ namespace GDSfonacot.forms
             txtAcuerdosCompromisos.Text = String.Empty;
             cmbSupervisor1.SelectedIndex = -1;
             cmbSupervisor2.SelectedIndex = -1;
+            toolButNuevo.Enabled = false;
+            toolButGuardar.Enabled = true;
 
 
         }

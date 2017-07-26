@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GDSfonacotDatos;
+using GDSfonacotDatos.Data;
 
 
 namespace GDSfonacot
@@ -15,7 +16,7 @@ namespace GDSfonacot
 
     public partial class frmLogin : Form
     {
-        GDSfonacotDatos.SupervisionesData objusuario = new GDSfonacotDatos.SupervisionesData();
+      UsuariosData objusuario = new UsuariosData();
 
 
         public frmLogin()

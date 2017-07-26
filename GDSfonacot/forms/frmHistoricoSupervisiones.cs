@@ -281,6 +281,7 @@ namespace GDSfonacot.forms
 
         private void toolButImprimir_Click(object sender, EventArgs e)
         {
+            
             forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(3);//crea una instancia del formulario
             frmvisor.param1 = txtNoSupervision.Text.Trim();
             //frmvisor.MdiParen8t = MDIPrincip();
@@ -289,10 +290,16 @@ namespace GDSfonacot.forms
 
         private void toolButReasignar_Click(object sender, EventArgs e)
         {
-            var frmreasignar = new frmReasignarSuperv();//crea una instancia del formulario
-                                                               // frmPersonsuc.MdiParent = this.ParentForm;
+            var frmreasignar = new frmReasignarSuperv(0);//crea una instancia del formulario
+            frmreasignar.valor1 = Convert.ToInt32(txthidIdSup.Text);
+            frmreasignar.varstatus = Convert.ToInt32(txthidStatus.Text);                                                   // frmPersonsuc.MdiParent = this.ParentForm;
             frmreasignar.ShowDialog();
+            if (frmreasignar.cierramanual == 1)
+            {
+                // se mantiene la ventana de historico abierta
+            }else { 
             this.Close();
+            }
         }
     
 

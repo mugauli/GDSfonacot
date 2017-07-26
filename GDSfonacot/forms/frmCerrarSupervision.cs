@@ -17,6 +17,8 @@ namespace GDSfonacot.forms
         public int valor1 = 0;
         public int varstatus = 0;
         private int IdCierre = 0;
+        public int cierramanual = 0;
+        private int guardo = 0;
         public frmCerrarSupervision(int cierre)
         {
             InitializeComponent();
@@ -68,13 +70,17 @@ namespace GDSfonacot.forms
                     }
                 
                     MessageBox.Show("El cierre de supervision fue guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cierramanual = 0;
+                    guardo = 1;
                     this.Close();
                 }
 
             }
          else
             {
-                MessageBox.Show("La supervision no fue guardada, por favor intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El Ciere no fue guardado, por favor intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cierramanual = 0;
+                guardo = 0;
             }
 
        }
@@ -121,6 +127,18 @@ namespace GDSfonacot.forms
             {
 
                 checksolventada.Text = "No Solventada";
+            }
+        }
+
+        private void frmCerrarSupervision_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (guardo == 0)
+            {
+                cierramanual = 1;
+            }
+            else
+            {
+                cierramanual = 0;
             }
         }
     }

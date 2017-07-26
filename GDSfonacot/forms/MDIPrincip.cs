@@ -214,7 +214,7 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1004)
             {
-                int[] varstatus = { 2 };
+                int[] varstatus = { 2, };
 
                 var frmbusquedasup = new frmBusquedaSupervisiones(3, varstatus, 0,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;

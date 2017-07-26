@@ -88,6 +88,7 @@
             this.txthidStatus.Name = "txthidStatus";
             this.txthidStatus.Size = new System.Drawing.Size(18, 20);
             this.txthidStatus.TabIndex = 326;
+            this.txthidStatus.Visible = false;
             // 
             // txthidIdSup
             // 
@@ -98,6 +99,7 @@
             this.txthidIdSup.Name = "txthidIdSup";
             this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
             this.txthidIdSup.TabIndex = 325;
+            this.txthidIdSup.Visible = false;
             // 
             // checksolventada
             // 
@@ -143,6 +145,7 @@
             this.txthidIdCierre.Name = "txthidIdCierre";
             this.txthidIdCierre.Size = new System.Drawing.Size(12, 20);
             this.txthidIdCierre.TabIndex = 321;
+            this.txthidIdCierre.Visible = false;
             // 
             // txtMotivocierre
             // 
@@ -150,12 +153,13 @@
             this.tableLayoutPanel1.SetColumnSpan(this.txtMotivocierre, 4);
             this.txtMotivocierre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMotivocierre.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotivocierre.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMotivocierre.ForeColor = System.Drawing.Color.White;
             this.txtMotivocierre.Location = new System.Drawing.Point(34, 24);
             this.txtMotivocierre.Margin = new System.Windows.Forms.Padding(4);
             this.txtMotivocierre.Multiline = true;
             this.txtMotivocierre.Name = "txtMotivocierre";
             this.tableLayoutPanel1.SetRowSpan(this.txtMotivocierre, 3);
+            this.txtMotivocierre.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtMotivocierre.Size = new System.Drawing.Size(544, 72);
             this.txtMotivocierre.TabIndex = 6;
             // 
@@ -195,6 +199,7 @@
             this.Name = "frmCerrarSupervision";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cerrar Supervision";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCerrarSupervision_FormClosed);
             this.Load += new System.EventHandler(this.frmCerrarSupervision_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

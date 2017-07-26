@@ -22,7 +22,7 @@ namespace GDSfonacotDatos.Data
                     var usuariosDB = context.Usuarios
                         .Join(context.Usuarios_Nivel, tabla1 => tabla1.IdNivel, tabla2 => tabla2.IdNivel, (usu, nivelusu) => new { usu, nivelusu })
                         .Join(context.Sucursales, tabla1 => tabla1.usu.IdSucursal, tabla3 => tabla3.IdSucursal, (usu2, suc) => new { usu2, suc })
-                        .Where(x => x.usu2.nivelusu.IdNivel == x.usu2.usu.IdNivel && x.suc.IdSucursal == x.usu2.usu.IdSucursal && x.usu2.usu.IdUsuario==Idusuario)
+                        .Where(x => x.usu2.nivelusu.IdNivel == x.usu2.usu.IdNivel && x.suc.IdSucursal == x.usu2.usu.IdSucursal && x.usu2.usu.IdUsuario == Idusuario)
                       .Select(x => new DatosUsuario
                       {
                           IdUsuario = x.usu2.usu.IdUsuario,
@@ -34,7 +34,9 @@ namespace GDSfonacotDatos.Data
                           fechabaja = x.usu2.usu.fechabaja,
                           Nombre_Usuario = x.usu2.usu.Nombre_Usuario,
                           Pass = x.usu2.usu.Pass,
-                          Usuario=x.usu2.usu.Usuario
+                          Usuario = x.usu2.usu.Usuario,
+                          fechareingreso = x.usu2.usu.fechareingreso
+                          
 
 
                       }
@@ -66,7 +68,7 @@ namespace GDSfonacotDatos.Data
                     var devolverdatos = context.Usuarios // seleccion de tabla inicial
                          .Join(context.Usuarios_Nivel, tabla1 => tabla1.IdNivel, tabla2 => tabla2.IdNivel, (usu, nivelusu) => new { usu, nivelusu })
                         .Join(context.Sucursales, tabla1 => tabla1.usu.IdSucursal, tabla3 => tabla3.IdSucursal, (usu2, suc) => new { usu2, suc })
-                        .Where(x => x.usu2.nivelusu.IdNivel == x.usu2.usu.IdNivel && x.suc.IdSucursal == x.usu2.usu.IdSucursal  && x.usu2.usu.IdNivel==IdNivelusuario)
+                        .Where(x => x.usu2.nivelusu.IdNivel == x.usu2.usu.IdNivel && x.suc.IdSucursal == x.usu2.usu.IdSucursal && x.usu2.usu.IdSucursal == IdSucursal && x.usu2.usu.IdNivel==IdNivelusuario)
 
                          .Select(x => new UsuariosDGV
                          {
@@ -108,18 +110,18 @@ namespace GDSfonacotDatos.Data
                         usuariosDB.IdUsuario = usuario.IdUsuario;
                         usuariosDB.IdNivel = usuario.IdNivel;
                         usuariosDB.IdSucursal = usuario.IdSucursal;
-                      
-                            if (inactivar == false)
-                            {                      
-                               usuariosDB.fechabaja = usuario.fechabaja;
-                            usuariosDB.fechaalta = usuario.fechaalta;
-                            }
-                            else
-                            {
-                                usuariosDB.fechaalta = null;
-                                usuariosDB.fechabaja = usuario.fechabaja;
-                            }
-                           
+
+                        if (inactivar == true)
+                        {
+                            usuariosDB.fechabaja = usuario.fechabaja;
+                           usuariosDB.fechareingreso= usuario.fechareingreso;
+                        }
+                        else
+                        {
+                            usuariosDB.fechareingreso = usuario.fechareingreso;
+                            usuariosDB.fechabaja = usuario.fechabaja;
+                        }
+
                         usuariosDB.Nombre_Usuario = usuario.Nombre_Usuario;
                         usuariosDB.Pass = usuario.Pass;
                         usuariosDB.Usuario = usuario.Usuario;
@@ -137,6 +139,34 @@ namespace GDSfonacotDatos.Data
             }
 
 
+        }
+
+        
+
+        public MethodResponse<Usuarios> LoginUsuario(string Usuario, string password)
+        {
+
+            try
+            {
+
+
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<Usuarios> { Code = 0 };
+
+                    var usuariosDB = context.Usuarios.Where(x => x.Usuario == Usuario && x.Pass == password).SingleOrDefault();
+
+                    if (usuariosDB != null) response.Result = usuariosDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<Usuarios> { Code = -100, Message = ex.Message };
+            }
         }
     }
 }

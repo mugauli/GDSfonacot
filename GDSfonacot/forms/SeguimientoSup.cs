@@ -37,8 +37,9 @@ namespace GDSfonacot
         }
         private void LlenarDatos()
         {
+            int[] varstatus = { 1, 2 };
             var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2, 1);
+            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2, varstatus);
             if (busqueda.Result != null)
             {
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();

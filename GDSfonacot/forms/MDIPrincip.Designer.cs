@@ -36,8 +36,6 @@
             this.menuSegSup = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCerrarSup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.menuMinutas = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,8 +87,6 @@
             this.menuSegSup,
             this.menuCerrarSup,
             this.toolStripSeparator3,
-            this.menuMinutas,
-            this.menuReportes,
             this.toolStripSeparator5,
             this.menuSalir});
             this.menuModulos.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
@@ -101,60 +97,45 @@
             // menuInicioSup
             // 
             this.menuInicioSup.Name = "menuInicioSup";
-            this.menuInicioSup.Size = new System.Drawing.Size(214, 22);
+            this.menuInicioSup.Size = new System.Drawing.Size(314, 22);
             this.menuInicioSup.Text = "Crear una Supervisión";
             this.menuInicioSup.Click += new System.EventHandler(this.menuInicioSup_Click);
             // 
             // menuConstSupSuc
             // 
             this.menuConstSupSuc.Name = "menuConstSupSuc";
-            this.menuConstSupSuc.Size = new System.Drawing.Size(214, 22);
-            this.menuConstSupSuc.Text = "Contestar una Supervisión";
+            this.menuConstSupSuc.Size = new System.Drawing.Size(314, 22);
+            this.menuConstSupSuc.Text = "Crear Contestación para Supervisión";
             this.menuConstSupSuc.Click += new System.EventHandler(this.menuConstSupSuc_Click);
             // 
             // menuSegSup
             // 
             this.menuSegSup.Name = "menuSegSup";
-            this.menuSegSup.Size = new System.Drawing.Size(214, 22);
-            this.menuSegSup.Text = "Seguimiento a Supervisión";
+            this.menuSegSup.Size = new System.Drawing.Size(314, 22);
+            this.menuSegSup.Text = "Crear Seguimiento a Supervisión";
             this.menuSegSup.Click += new System.EventHandler(this.menuSegSup_Click);
             // 
             // menuCerrarSup
             // 
             this.menuCerrarSup.Name = "menuCerrarSup";
-            this.menuCerrarSup.Size = new System.Drawing.Size(214, 22);
-            this.menuCerrarSup.Text = "Cerrar una Supervisión";
+            this.menuCerrarSup.Size = new System.Drawing.Size(314, 22);
+            this.menuCerrarSup.Text = "Crear Cierre/Reasignacion de una Supervisión";
             this.menuCerrarSup.Click += new System.EventHandler(this.menuCerrarSup_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(211, 6);
-            // 
-            // menuMinutas
-            // 
-            this.menuMinutas.ImageTransparentColor = System.Drawing.Color.Black;
-            this.menuMinutas.Name = "menuMinutas";
-            this.menuMinutas.Size = new System.Drawing.Size(214, 22);
-            this.menuMinutas.Text = "Minuta de Trabajo";
-            this.menuMinutas.Click += new System.EventHandler(this.menuMinutas_Click);
-            // 
-            // menuReportes
-            // 
-            this.menuReportes.Name = "menuReportes";
-            this.menuReportes.Size = new System.Drawing.Size(214, 22);
-            this.menuReportes.Text = "Reportes";
-            this.menuReportes.Click += new System.EventHandler(this.menuReportes_Click);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(311, 6);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(211, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(311, 6);
             // 
             // menuSalir
             // 
             this.menuSalir.Name = "menuSalir";
-            this.menuSalir.Size = new System.Drawing.Size(214, 22);
+            this.menuSalir.Size = new System.Drawing.Size(314, 22);
             this.menuSalir.Text = "Cerrar Aplicativo";
             this.menuSalir.Click += new System.EventHandler(this.menuSalir_Click);
             // 
@@ -178,7 +159,7 @@
             // 
             this.menubuscSup.Name = "menubuscSup";
             this.menubuscSup.Size = new System.Drawing.Size(235, 22);
-            this.menubuscSup.Text = "Una Supervision";
+            this.menubuscSup.Text = "Supervisiones";
             this.menubuscSup.Click += new System.EventHandler(this.menubuscSup_Click);
             // 
             // menuBuscarConst
@@ -375,8 +356,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuModulos;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem menuInicioSup;
-        private System.Windows.Forms.ToolStripMenuItem menuMinutas;
-        private System.Windows.Forms.ToolStripMenuItem menuReportes;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem menuSalir;
         private System.Windows.Forms.ToolStripMenuItem menuCatalogos;

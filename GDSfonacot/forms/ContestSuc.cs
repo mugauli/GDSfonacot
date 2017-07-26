@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GDSfonacotDatos;
+using GDSfonacotDatos.DTO;
+using GDSfonacotDatos.Data;
 
 namespace GDSfonacot
 {
@@ -43,7 +45,7 @@ namespace GDSfonacot
         }
         private void CargarContestacionSucursal()
         {
-            var objSupervision = new SupervisionesData();
+            var objSupervision = new ContestacionesData();
             var busqueda = objSupervision.ObtenerDatosContestacionSupervision(valor1);
             if (busqueda.Result != null)
             {
@@ -73,8 +75,9 @@ namespace GDSfonacot
         }
         private void LlenarDatos()
         {
+            int[] varstatus = { 1};
             var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2,1);
+            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2,varstatus);
             if (busqueda.Result != null)
             {
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
@@ -206,7 +209,7 @@ namespace GDSfonacot
                 objSupervision.AcuerdosCompromisos = textAcuerdosCompr.Text.Trim();
                 objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
                 objSupervision.FechaCreacionContest= DateTime.Now;
-                var gdSupervisiones = new SupervisionesData().GuardarConstestacionSucursal(objSupervision);
+                var gdSupervisiones = new ContestacionesData().GuardarConstestacionSucursal(objSupervision);
                 if (gdSupervisiones.Code != 0)
                 {
                     //Mensage de error con g

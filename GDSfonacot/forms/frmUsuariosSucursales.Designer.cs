@@ -119,6 +119,7 @@
             this.cmbNivelusuario.Name = "cmbNivelusuario";
             this.cmbNivelusuario.Size = new System.Drawing.Size(298, 21);
             this.cmbNivelusuario.TabIndex = 281;
+           
             this.cmbNivelusuario.SelectionChangeCommitted += new System.EventHandler(this.cmbNivelusuario_SelectionChangeCommitted);
             // 
             // label47

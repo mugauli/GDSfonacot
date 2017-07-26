@@ -15,6 +15,7 @@ namespace GDSfonacot.forms
     public partial class frmUsuarios : Form
     {
         private int Idusuario = 0;
+     
         public frmUsuarios(int usuario)
         {
             InitializeComponent();
@@ -52,17 +53,18 @@ namespace GDSfonacot.forms
                 {
                     usuario.fechaalta = System.DateTime.Now;
                     usuario.fechabaja = null;
+                    usuario.fechareingreso = null;
                 }
                 else
                 {
                     if (checkinactivar.Checked == true)
                     {
                         usuario.fechabaja = System.DateTime.Now;
-                        usuario.fechaalta = null;
+                        usuario.fechareingreso = null;
                     }
                     else
                     {
-                        usuario.fechaalta = System.DateTime.Now;
+                        usuario.fechareingreso = System.DateTime.Now;
                         usuario.fechabaja = null;
                     }
                 }
@@ -111,7 +113,7 @@ namespace GDSfonacot.forms
           
             #region ctSucursal
 
-            var sucursales = new SupervisionesData().ObtenerSucursalesCombo();
+            var sucursales = new SucursalesData().ObtenerSucursalesCombo();
             if (sucursales.Code != 0)
             {
                 MessageBox.Show("Error: " + sucursales.Message);
@@ -162,32 +164,64 @@ namespace GDSfonacot.forms
             txtNombre.Text = usu.Nombre_Usuario;
             txtGafete.Text = usu.Usuario;
             txtpassword.Text =Globales.Desencriptar(usu.Pass);
-            if (usu.fechaalta!=null)
+            if (usu.fechaalta != null && usu.fechabaja!= null && usu.fechareingreso== null)
             {
+                #region muestradatos
                 dtFechaalta.Visible = true;
                 dtFechaalta.Enabled = false;
-                fechaalta.Visible = true;
                 dtFechaalta.Value = usu.fechaalta.Value;
+                fechaalta.Visible = true;
                 checkinactivar.Checked = false;
-                dtpickerfechabaja.Visible = false;
-                dtpickerfechabaja.Enabled = false;
+                dtpickerfechabaja.Visible = true;
+                dtpickerfechabaja.Enabled = true;
+                dtpickerfechabaja.Value = usu.fechabaja.Value;
                 fechabaja.Visible = false;
+                dtfechareingreso.Visible = false;
+                dtfechareingreso.Enabled = false;
+                lblfechareingreso.Visible = false;
+                #endregion
             }
             else
             {
-                dtFechaalta.Visible = false;
-                dtFechaalta.Enabled = false;
-                fechaalta.Visible = false;
-                checkinactivar.Checked = true;
-                dtpickerfechabaja.Visible = true;
-                dtpickerfechabaja.Enabled = false;
-                fechabaja.Visible = true;
-                dtpickerfechabaja.Value = usu.fechabaja.Value;
+                if (usu.fechaalta != null && usu.fechareingreso==null && usu.fechabaja==null) {
+                    #region muestradatos
+                    dtFechaalta.Visible = true;
+                    dtFechaalta.Enabled = false;
+                    dtFechaalta.Value = usu.fechaalta.Value;
+                    fechaalta.Visible = true;
+                    checkinactivar.Checked = false;
+                    dtpickerfechabaja.Visible = false;
+                    dtpickerfechabaja.Enabled = false;
 
+                    fechabaja.Visible = false;
+                    dtfechareingreso.Visible = false;
+                    dtfechareingreso.Enabled = false;
+                    lblfechareingreso.Visible = false;
+                    #endregion
+                }
+                else if (usu.fechaalta!= null && usu.fechabaja == null && usu.fechareingreso != null)
+                {
+                    #region muestradatos
+                    dtFechaalta.Visible = true;
+                    dtFechaalta.Enabled = false;
+                    dtFechaalta.Value = usu.fechaalta.Value;
+                    fechaalta.Visible = true;
+                    checkinactivar.Checked = false;
+                    dtpickerfechabaja.Visible = false;
+                    dtpickerfechabaja.Enabled = false;
+                    fechabaja.Visible = false;
+                    dtfechareingreso.Visible = true;
+                    dtfechareingreso.Enabled = false;
+                    lblfechareingreso.Visible = true;
+                    dtfechareingreso.Value = usu.fechareingreso.Value;
+                    #endregion
+                }             
             }
             btnNuevo.Enabled = false;
             btnGuardar.Enabled = true;
         }
+       
+
         private void LimpiarDatos()
         {
             txthidIdusuario.Text = "0";
@@ -237,5 +271,7 @@ namespace GDSfonacot.forms
                 }
             }
         }
+
+       
     }
 }

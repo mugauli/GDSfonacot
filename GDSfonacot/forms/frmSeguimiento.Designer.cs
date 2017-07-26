@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeguimiento));
-            this.txthidIdSegui = new System.Windows.Forms.TextBox();
-            this.txthidIdSup = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtAcuerdosCompromisos = new System.Windows.Forms.TextBox();
             this.AcuerdosCompromisos = new System.Windows.Forms.Label();
@@ -70,29 +68,12 @@
             this.toolButNuevo = new System.Windows.Forms.ToolStripButton();
             this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
             this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
+            this.txthidIdSegui = new System.Windows.Forms.TextBox();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
+            this.txthidstatus = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txthidIdSegui
-            // 
-            this.txthidIdSegui.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txthidIdSegui.ForeColor = System.Drawing.SystemColors.Info;
-            this.txthidIdSegui.Location = new System.Drawing.Point(39, 28);
-            this.txthidIdSegui.Margin = new System.Windows.Forms.Padding(4);
-            this.txthidIdSegui.Name = "txthidIdSegui";
-            this.txthidIdSegui.Size = new System.Drawing.Size(18, 20);
-            this.txthidIdSegui.TabIndex = 248;
-            // 
-            // txthidIdSup
-            // 
-            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
-            this.txthidIdSup.Location = new System.Drawing.Point(13, 29);
-            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
-            this.txthidIdSup.Name = "txthidIdSup";
-            this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
-            this.txthidIdSup.TabIndex = 247;
             // 
             // tableLayoutPanel1
             // 
@@ -100,12 +81,15 @@
             this.tableLayoutPanel1.ColumnCount = 8;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.37189F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5183F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.Controls.Add(this.txthidstatus, 6, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdSegui, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txthidIdSup, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtAcuerdosCompromisos, 0, 24);
             this.tableLayoutPanel1.Controls.Add(this.AcuerdosCompromisos, 0, 23);
             this.tableLayoutPanel1.Controls.Add(this.txtFondoFijo, 0, 22);
@@ -140,7 +124,8 @@
             this.tableLayoutPanel1.Controls.Add(this.NoSupervision, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNoSupervision, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtfechaSeguimiento, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 29);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 26;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -169,13 +154,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1366, 665);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(904, 519);
             this.tableLayoutPanel1.TabIndex = 249;
             // 
             // txtAcuerdosCompromisos
             // 
             this.txtAcuerdosCompromisos.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtAcuerdosCompromisos, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtAcuerdosCompromisos, 6);
             this.txtAcuerdosCompromisos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAcuerdosCompromisos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAcuerdosCompromisos.ForeColor = System.Drawing.SystemColors.Window;
@@ -183,7 +169,8 @@
             this.txtAcuerdosCompromisos.Margin = new System.Windows.Forms.Padding(4);
             this.txtAcuerdosCompromisos.Multiline = true;
             this.txtAcuerdosCompromisos.Name = "txtAcuerdosCompromisos";
-            this.txtAcuerdosCompromisos.Size = new System.Drawing.Size(1358, 122);
+            this.txtAcuerdosCompromisos.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtAcuerdosCompromisos.Size = new System.Drawing.Size(1012, 122);
             this.txtAcuerdosCompromisos.TabIndex = 294;
             // 
             // AcuerdosCompromisos
@@ -203,7 +190,7 @@
             // txtFondoFijo
             // 
             this.txtFondoFijo.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtFondoFijo, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtFondoFijo, 6);
             this.txtFondoFijo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFondoFijo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFondoFijo.ForeColor = System.Drawing.SystemColors.Window;
@@ -211,7 +198,8 @@
             this.txtFondoFijo.Margin = new System.Windows.Forms.Padding(4);
             this.txtFondoFijo.Multiline = true;
             this.txtFondoFijo.Name = "txtFondoFijo";
-            this.txtFondoFijo.Size = new System.Drawing.Size(1358, 122);
+            this.txtFondoFijo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtFondoFijo.Size = new System.Drawing.Size(1012, 122);
             this.txtFondoFijo.TabIndex = 292;
             // 
             // FondoFijo
@@ -231,7 +219,7 @@
             // txtCobranza
             // 
             this.txtCobranza.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtCobranza, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtCobranza, 6);
             this.txtCobranza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCobranza.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCobranza.ForeColor = System.Drawing.SystemColors.Window;
@@ -239,7 +227,8 @@
             this.txtCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranza.Multiline = true;
             this.txtCobranza.Name = "txtCobranza";
-            this.txtCobranza.Size = new System.Drawing.Size(1358, 122);
+            this.txtCobranza.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtCobranza.Size = new System.Drawing.Size(1012, 122);
             this.txtCobranza.TabIndex = 290;
             // 
             // Cobranza
@@ -259,7 +248,7 @@
             // txtPromocionales
             // 
             this.txtPromocionales.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtPromocionales, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtPromocionales, 6);
             this.txtPromocionales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPromocionales.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPromocionales.ForeColor = System.Drawing.SystemColors.Window;
@@ -267,7 +256,8 @@
             this.txtPromocionales.Margin = new System.Windows.Forms.Padding(4);
             this.txtPromocionales.Multiline = true;
             this.txtPromocionales.Name = "txtPromocionales";
-            this.txtPromocionales.Size = new System.Drawing.Size(1358, 122);
+            this.txtPromocionales.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtPromocionales.Size = new System.Drawing.Size(1012, 122);
             this.txtPromocionales.TabIndex = 288;
             // 
             // Promocionales
@@ -287,7 +277,7 @@
             // txtUtys
             // 
             this.txtUtys.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtUtys, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtUtys, 6);
             this.txtUtys.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUtys.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUtys.ForeColor = System.Drawing.SystemColors.Window;
@@ -296,7 +286,7 @@
             this.txtUtys.Multiline = true;
             this.txtUtys.Name = "txtUtys";
             this.txtUtys.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtUtys.Size = new System.Drawing.Size(1358, 122);
+            this.txtUtys.Size = new System.Drawing.Size(1012, 122);
             this.txtUtys.TabIndex = 286;
             // 
             // UTYS
@@ -316,7 +306,7 @@
             // txtCredito
             // 
             this.txtCredito.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtCredito, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtCredito, 6);
             this.txtCredito.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCredito.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCredito.ForeColor = System.Drawing.SystemColors.Window;
@@ -325,7 +315,7 @@
             this.txtCredito.Multiline = true;
             this.txtCredito.Name = "txtCredito";
             this.txtCredito.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtCredito.Size = new System.Drawing.Size(1358, 122);
+            this.txtCredito.Size = new System.Drawing.Size(1012, 122);
             this.txtCredito.TabIndex = 284;
             // 
             // Credito
@@ -345,7 +335,7 @@
             // txtTarjetasTransfer
             // 
             this.txtTarjetasTransfer.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtTarjetasTransfer, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtTarjetasTransfer, 6);
             this.txtTarjetasTransfer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTarjetasTransfer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTarjetasTransfer.ForeColor = System.Drawing.SystemColors.Window;
@@ -354,7 +344,7 @@
             this.txtTarjetasTransfer.Multiline = true;
             this.txtTarjetasTransfer.Name = "txtTarjetasTransfer";
             this.txtTarjetasTransfer.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtTarjetasTransfer.Size = new System.Drawing.Size(1358, 122);
+            this.txtTarjetasTransfer.Size = new System.Drawing.Size(1012, 122);
             this.txtTarjetasTransfer.TabIndex = 282;
             // 
             // TarjetasTransfer
@@ -374,7 +364,7 @@
             // txtOriginacion
             // 
             this.txtOriginacion.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtOriginacion, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtOriginacion, 6);
             this.txtOriginacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtOriginacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOriginacion.ForeColor = System.Drawing.SystemColors.Window;
@@ -383,7 +373,7 @@
             this.txtOriginacion.Multiline = true;
             this.txtOriginacion.Name = "txtOriginacion";
             this.txtOriginacion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOriginacion.Size = new System.Drawing.Size(1358, 122);
+            this.txtOriginacion.Size = new System.Drawing.Size(1012, 122);
             this.txtOriginacion.TabIndex = 280;
             // 
             // Originacion
@@ -403,7 +393,7 @@
             // txtGestionDireccion
             // 
             this.txtGestionDireccion.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtGestionDireccion, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtGestionDireccion, 6);
             this.txtGestionDireccion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtGestionDireccion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGestionDireccion.ForeColor = System.Drawing.SystemColors.Window;
@@ -411,7 +401,8 @@
             this.txtGestionDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtGestionDireccion.Multiline = true;
             this.txtGestionDireccion.Name = "txtGestionDireccion";
-            this.txtGestionDireccion.Size = new System.Drawing.Size(1358, 122);
+            this.txtGestionDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtGestionDireccion.Size = new System.Drawing.Size(1012, 122);
             this.txtGestionDireccion.TabIndex = 278;
             // 
             // GestionDireccion
@@ -431,7 +422,7 @@
             // txtInmuble
             // 
             this.txtInmuble.BackColor = System.Drawing.SystemColors.MenuText;
-            this.tableLayoutPanel1.SetColumnSpan(this.txtInmuble, 8);
+            this.tableLayoutPanel1.SetColumnSpan(this.txtInmuble, 6);
             this.txtInmuble.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtInmuble.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInmuble.ForeColor = System.Drawing.SystemColors.Window;
@@ -439,7 +430,8 @@
             this.txtInmuble.Margin = new System.Windows.Forms.Padding(4);
             this.txtInmuble.Multiline = true;
             this.txtInmuble.Name = "txtInmuble";
-            this.txtInmuble.Size = new System.Drawing.Size(1358, 122);
+            this.txtInmuble.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtInmuble.Size = new System.Drawing.Size(1012, 122);
             this.txtInmuble.TabIndex = 276;
             // 
             // Inmueble
@@ -463,10 +455,10 @@
             this.Supervisor2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Supervisor2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Supervisor2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Supervisor2.Location = new System.Drawing.Point(514, 90);
+            this.Supervisor2.Location = new System.Drawing.Point(513, 90);
             this.Supervisor2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Supervisor2.Name = "Supervisor2";
-            this.Supervisor2.Size = new System.Drawing.Size(332, 30);
+            this.Supervisor2.Size = new System.Drawing.Size(333, 30);
             this.Supervisor2.TabIndex = 274;
             this.Supervisor2.Text = "Supervisor 2";
             // 
@@ -476,7 +468,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.txtSupervisor2, 2);
             this.txtSupervisor2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSupervisor2.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtSupervisor2.Location = new System.Drawing.Point(514, 64);
+            this.txtSupervisor2.Location = new System.Drawing.Point(513, 64);
             this.txtSupervisor2.Margin = new System.Windows.Forms.Padding(4);
             this.txtSupervisor2.Name = "txtSupervisor2";
             this.txtSupervisor2.Size = new System.Drawing.Size(296, 22);
@@ -492,7 +484,7 @@
             this.Supervisor1.Location = new System.Drawing.Point(174, 90);
             this.Supervisor1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Supervisor1.Name = "Supervisor1";
-            this.Supervisor1.Size = new System.Drawing.Size(332, 30);
+            this.Supervisor1.Size = new System.Drawing.Size(331, 30);
             this.Supervisor1.TabIndex = 272;
             this.Supervisor1.Text = "Supervisor 1";
             // 
@@ -506,7 +498,7 @@
             this.txtSupervisor1.Location = new System.Drawing.Point(174, 64);
             this.txtSupervisor1.Margin = new System.Windows.Forms.Padding(4);
             this.txtSupervisor1.Name = "txtSupervisor1";
-            this.txtSupervisor1.Size = new System.Drawing.Size(332, 22);
+            this.txtSupervisor1.Size = new System.Drawing.Size(331, 22);
             this.txtSupervisor1.TabIndex = 271;
             // 
             // FechadeSupervision
@@ -555,10 +547,10 @@
             this.DireccionRegional.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DireccionRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DireccionRegional.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.DireccionRegional.Location = new System.Drawing.Point(514, 30);
+            this.DireccionRegional.Location = new System.Drawing.Point(513, 30);
             this.DireccionRegional.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DireccionRegional.Name = "DireccionRegional";
-            this.DireccionRegional.Size = new System.Drawing.Size(162, 30);
+            this.DireccionRegional.Size = new System.Drawing.Size(163, 30);
             this.DireccionRegional.TabIndex = 207;
             this.DireccionRegional.Text = "Dirección Regional";
             // 
@@ -568,10 +560,10 @@
             this.txtDireccionRegional.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDireccionRegional.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccionRegional.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtDireccionRegional.Location = new System.Drawing.Point(514, 4);
+            this.txtDireccionRegional.Location = new System.Drawing.Point(513, 4);
             this.txtDireccionRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccionRegional.Name = "txtDireccionRegional";
-            this.txtDireccionRegional.Size = new System.Drawing.Size(162, 22);
+            this.txtDireccionRegional.Size = new System.Drawing.Size(163, 22);
             this.txtDireccionRegional.TabIndex = 206;
             // 
             // Sucursal
@@ -583,7 +575,7 @@
             this.Sucursal.Location = new System.Drawing.Point(344, 30);
             this.Sucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Sucursal.Name = "Sucursal";
-            this.Sucursal.Size = new System.Drawing.Size(162, 30);
+            this.Sucursal.Size = new System.Drawing.Size(161, 30);
             this.Sucursal.TabIndex = 205;
             this.Sucursal.Text = "Sucursal";
             // 
@@ -596,7 +588,7 @@
             this.txtSucursal.Location = new System.Drawing.Point(344, 4);
             this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.Size = new System.Drawing.Size(162, 22);
+            this.txtSucursal.Size = new System.Drawing.Size(161, 22);
             this.txtSucursal.TabIndex = 204;
             // 
             // NoSupervision
@@ -645,8 +637,8 @@
             this.toolButImprimir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1378, 25);
-            this.toolStrip1.TabIndex = 262;
+            this.toolStrip1.Size = new System.Drawing.Size(904, 25);
+            this.toolStrip1.TabIndex = 263;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolButNuevo
@@ -678,16 +670,44 @@
             this.toolButImprimir.Text = "Imprimir";
             this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);
             // 
+            // txthidIdSegui
+            // 
+            this.txthidIdSegui.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSegui.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSegui.Location = new System.Drawing.Point(1024, 34);
+            this.txthidIdSegui.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSegui.Name = "txthidIdSegui";
+            this.txthidIdSegui.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdSegui.TabIndex = 296;
+            // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(1024, 4);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(18, 20);
+            this.txthidIdSup.TabIndex = 295;
+            // 
+            // txthidstatus
+            // 
+            this.txthidstatus.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidstatus.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidstatus.Location = new System.Drawing.Point(1024, 64);
+            this.txthidstatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidstatus.Name = "txthidstatus";
+            this.txthidstatus.Size = new System.Drawing.Size(18, 20);
+            this.txthidstatus.TabIndex = 297;
+            // 
             // frmSeguimiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1254, 519);
+            this.ClientSize = new System.Drawing.Size(904, 519);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.txthidIdSegui);
-            this.Controls.Add(this.txthidIdSup);
             this.Name = "frmSeguimiento";
             this.Text = "Seguimiento de Supervisiones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -702,9 +722,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txthidIdSegui;
-        private System.Windows.Forms.TextBox txthidIdSup;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox txtAcuerdosCompromisos;
         private System.Windows.Forms.Label AcuerdosCompromisos;
@@ -744,5 +761,8 @@
         private System.Windows.Forms.ToolStripButton toolButNuevo;
         private System.Windows.Forms.ToolStripButton toolButGuardar;
         private System.Windows.Forms.ToolStripButton toolButImprimir;
+        private System.Windows.Forms.TextBox txthidstatus;
+        private System.Windows.Forms.TextBox txthidIdSegui;
+        private System.Windows.Forms.TextBox txthidIdSup;
     }
 }

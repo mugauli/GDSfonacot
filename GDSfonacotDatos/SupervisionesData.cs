@@ -102,63 +102,6 @@ namespace GDSfonacotDatos
             }
         }
 
-
-        public MethodResponse<int> GuardarConstestacionSucursal(ContestacionesSuperv_Sucursales contestacion)
-        {
-
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    var response = new MethodResponse<int> { Code = 0 };
-
-                    if (contestacion.Idcontestacion == 0)
-                    {
-                        //guardar una constestacion nueva
-                        var usuariosDB = context.ContestacionesSuperv_Sucursales.Add(contestacion);
-                        context.SaveChanges();
-                    }
-                    else
-                    {
-
-                        //Edicion de una constestacion de sucursal
-                        var objUsuario = context.ContestacionesSuperv_Sucursales.Where(x => x.Idcontestacion == contestacion.Idcontestacion).FirstOrDefault();
-                        objUsuario.Idsupervision = contestacion.Idsupervision;
-                        objUsuario.Idcontestacion = contestacion.Idcontestacion;
-                        objUsuario.Inmueble = contestacion.Inmueble;
-                        objUsuario.Gestion_direccion = contestacion.Gestion_direccion;
-                        objUsuario.Originacion = contestacion.Originacion;
-                        objUsuario.Tarjetas_transfer = contestacion.Tarjetas_transfer;
-                        objUsuario.Credito = contestacion.Credito;
-                        objUsuario.Utys = contestacion.Utys;
-                        objUsuario.Promocionales = contestacion.Promocionales;
-                        objUsuario.Cobranza = contestacion.Cobranza;
-                        objUsuario.Fondofijo = contestacion.Fondofijo;
-                        objUsuario.AcuerdosCompromisos = contestacion.AcuerdosCompromisos;
-                        objUsuario.NoOficio = contestacion.NoOficio;
-                        objUsuario.FechaCreacionContest = contestacion.FechaCreacionContest;
-                        objUsuario.Idusuariocreador = contestacion.Idusuariocreador;
-
-
-
-
-
-                        context.SaveChanges();
-
-                    }
-                    //Cambios de chucho
-
-                    return response;
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                return new MethodResponse<int> { Code = -100, Message = ex.Message };
-            }
-        }
-
         public MethodResponse<int> GuardarSeguimientoSupervisor(SeguimientoSupervision_Supervisores seguimiento)
         {
 
@@ -251,32 +194,6 @@ namespace GDSfonacotDatos
             }
         }
 
-        public MethodResponse<Usuarios> LoginUsuario(string Usuario, string password)
-        {
-
-            try
-            {
-
-
-                using (var context = new GDSfonacotEntities())
-                {
-                    var response = new MethodResponse<Usuarios> { Code = 0 };
-
-                    var usuariosDB = context.Usuarios.Where(x => x.Usuario == Usuario && x.Pass == password).SingleOrDefault();
-
-                    if (usuariosDB != null) response.Result = usuariosDB;
-
-                    return response;
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                return new MethodResponse<Usuarios> { Code = -100, Message = ex.Message };
-            }
-        }
-
         public MethodResponse<HistorialSupervisiones> BuscarSupervision(string Supervision)
         {
 
@@ -303,33 +220,7 @@ namespace GDSfonacotDatos
             }
         }
 
-        public MethodResponse<List<DatosComboSucursales>> ObtenerSucursalesCombo()
-        {
-
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
-
-                    var usuariosDB = context.Sucursales.OrderBy(x => x.NoSucursal)
-                       .Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NameSucursal = (x.NoSucursal + " - " + x.DescripcionSucursal) }).ToList();
-
-                    response.Result = usuariosDB;
-
-                    return response;
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                return new MethodResponse<List<DatosComboSucursales>> { Code = -100, Message = ex.Message };
-            }
-        }
-
-
-
+       
 
         public MethodResponse<List<DatosSupervisores>> ObtenerSupervisores()
         {
@@ -362,61 +253,7 @@ namespace GDSfonacotDatos
         }
 
         //Obtiene los datos de la contestacion generada por la sucursal,
-        public MethodResponse<DatosBuscarContestacion> ObtenerDatosContestacionSupervision(int Idsupervision)
-        {
-            try
-            {
-                using (var context = new GDSfonacotEntities())
-                {
-                    var response = new MethodResponse<DatosBuscarContestacion> { Code = 0 };
-
-                    var consultarContestacionDB = context.HistorialSupervisiones
-                        .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc })
-                        .Join(context.ContestacionesSuperv_Sucursales, tabla1 => tabla1.HistSup.IdSupervisiones, tabla2 => tabla2.Idsupervision, (HistSup2, Constsuc) => new { HistSup2, Constsuc })
-                        .Where(q1 =>  (q1.HistSup2.HistSup.IdSupervisiones == Idsupervision))
-                        .Select(x => new DatosBuscarContestacion
-                        {
-                            //datos de la supervision original
-                           Idsupervision = x.Constsuc.Idsupervision,
-                            DescripcionSucursal = x.HistSup2.Suc.DescripcionSucursal,
-                            NoSucursal=x.HistSup2.Suc.NoSucursal,
-                            Director_Estatal=x.HistSup2.Suc.Director_Estatal,
-                            Director_Regional=x.HistSup2.Suc.Director_Regional,
-                            NoSupervision=x.HistSup2.HistSup.NoSupervision,
-                            //datos de la contestacion
-                            Idcontestacion = x.Constsuc.Idcontestacion,
-                            Inmueble =x.Constsuc.Inmueble,
-                            Gestion_direccion=x.Constsuc.Gestion_direccion,
-                            Originacion=x.Constsuc.Originacion,
-                            Tarjetas_transfer=x.Constsuc.Tarjetas_transfer,
-                            Credito=x.Constsuc.Credito,
-                            Utys=x.Constsuc.Utys,
-                            Promocionales=x.Constsuc.Promocionales,
-                            Cobranza=x.Constsuc.Cobranza,
-                            Fondofijo=x.Constsuc.Fondofijo,
-                            AcuerdosCompromisos=x.Constsuc.AcuerdosCompromisos,
-                            NoOficio = x.Constsuc.NoOficio,
-                            Idstatus=x.HistSup2.HistSup.Idstatus
-                            
-                           
-
-
-
-
-                        }).SingleOrDefault();
-
-                if (consultarContestacionDB != null) response.Result = consultarContestacionDB;
-                return response;
-                    //  response.Result = HistoricoSucursalesDB;
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                return new MethodResponse<DatosBuscarContestacion> { Code = -100, Message = ex.Message };
-            }
-        }
+        
 
         public MethodResponse<DatosHistSupervision> ObtenerDatosHistoricoSupervision(int Idsupervision)
         {
@@ -509,7 +346,7 @@ namespace GDSfonacotDatos
             }
         }
 
-        public MethodResponse<DatosBuscarSupervision> ObtenerDatosSupervision(int IdSupervisiones, string filter, int clavestatus)
+        public MethodResponse<DatosBuscarSupervision> ObtenerDatosSupervision(int IdSupervisiones, string filter, int[] clavestatus)
         {
             try
             {
@@ -522,8 +359,7 @@ namespace GDSfonacotDatos
                          .Join(context.Usuarios, tabla1 => tabla1.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup2, Usu1) => new { HistSup2, Usu1 })
                           .Join(context.Usuarios, tabla1 => tabla1.HistSup2.HistSup.Idsupervisor2, tabla2 => tabla2.IdUsuario, (HistSup3, Usu2) => new { HistSup3, Usu2 })
                         .Join(context.ctRegional, tabla1 => tabla1.HistSup3.HistSup2.Suc.IdRegional, tabla2 => tabla2.IdRegional, (suc2, reg) => new { suc2, reg })
-                         
-                        .Where(sc => sc.suc2.HistSup3.HistSup2.HistSup.Idstatus == clavestatus && sc.reg.IdRegional == sc.suc2.HistSup3.HistSup2.Suc.IdRegional && (sc.suc2.HistSup3.HistSup2.HistSup.IdSupervisiones == IdSupervisiones) && (sc.suc2.HistSup3.HistSup2.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
+                        .Where(sc => clavestatus.Contains((int)sc.suc2.HistSup3.HistSup2.HistSup.Idstatus) && sc.reg.IdRegional == sc.suc2.HistSup3.HistSup2.Suc.IdRegional && (sc.suc2.HistSup3.HistSup2.HistSup.IdSupervisiones == IdSupervisiones) && (sc.suc2.HistSup3.HistSup2.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
                         .Select(x => new DatosBuscarSupervision
                         {
                             IdSupervisiones = x.suc2.HistSup3.HistSup2.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D

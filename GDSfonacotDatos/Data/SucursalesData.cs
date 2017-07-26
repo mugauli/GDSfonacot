@@ -179,5 +179,32 @@ namespace GDSfonacotDatos.Data
 
         }
 
+        public MethodResponse<List<DatosComboSucursales>> ObtenerSucursalesCombo()
+        {
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
+
+                    var usuariosDB = context.Sucursales.OrderBy(x => x.NoSucursal)
+                       .Select(x => new DatosComboSucursales { IdSucursal = x.IdSucursal, NameSucursal = (x.NoSucursal + " - " + x.DescripcionSucursal) }).ToList();
+
+                    response.Result = usuariosDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<DatosComboSucursales>> { Code = -100, Message = ex.Message };
+            }
+        }
+
+
+
     }
 }
