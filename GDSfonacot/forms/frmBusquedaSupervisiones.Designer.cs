@@ -47,7 +47,7 @@
             this.lblRegistros.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistros.Location = new System.Drawing.Point(126, 70);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(720, 30);
+            this.lblRegistros.Size = new System.Drawing.Size(718, 30);
             this.lblRegistros.TabIndex = 280;
             this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
@@ -66,7 +66,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.Controls.Add(this.txtsupervision, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dpickerFechaini, 0, 1);
@@ -111,7 +111,7 @@
             this.txtsupervision.Location = new System.Drawing.Point(127, 43);
             this.txtsupervision.Margin = new System.Windows.Forms.Padding(4);
             this.txtsupervision.Name = "txtsupervision";
-            this.txtsupervision.Size = new System.Drawing.Size(718, 22);
+            this.txtsupervision.Size = new System.Drawing.Size(716, 22);
             this.txtsupervision.TabIndex = 283;
             this.txtsupervision.TextChanged += new System.EventHandler(this.txtsupervision_TextChanged);
             // 
@@ -124,7 +124,7 @@
             this.label10.Location = new System.Drawing.Point(4, 0);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(841, 39);
+            this.label10.Size = new System.Drawing.Size(839, 39);
             this.label10.TabIndex = 277;
             this.label10.Text = "Por favor selecciona las fechas para filtrar supervisiones";
             this.label10.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -163,7 +163,7 @@
             this.dataGlistaSup.Location = new System.Drawing.Point(3, 103);
             this.dataGlistaSup.Name = "dataGlistaSup";
             this.dataGlistaSup.ReadOnly = true;
-            this.dataGlistaSup.Size = new System.Drawing.Size(843, 514);
+            this.dataGlistaSup.Size = new System.Drawing.Size(841, 514);
             this.dataGlistaSup.TabIndex = 279;
             this.dataGlistaSup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellDoubleClick);
             // 
@@ -172,9 +172,9 @@
             this.checkbuscaSup.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.checkbuscaSup, 3);
             this.checkbuscaSup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkbuscaSup.Location = new System.Drawing.Point(852, 42);
+            this.checkbuscaSup.Location = new System.Drawing.Point(850, 42);
             this.checkbuscaSup.Name = "checkbuscaSup";
-            this.checkbuscaSup.Size = new System.Drawing.Size(204, 25);
+            this.checkbuscaSup.Size = new System.Drawing.Size(203, 25);
             this.checkbuscaSup.TabIndex = 284;
             this.checkbuscaSup.Text = "Buscar por supervision";
             this.checkbuscaSup.UseVisualStyleBackColor = true;

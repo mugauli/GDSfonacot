@@ -39,15 +39,21 @@ namespace GDSfonacot.forms
             }
             else
             {
-                CargarSeguimientoSup();
-                toolButNuevo.Enabled = false;
-                toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = true;
+                if (CargarSeguimientoSup()== false)
+                {
+
+                    return;
+                }
+                else { 
+                    toolButNuevo.Enabled = false;
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = true;
+                }
             }
 
         }
 
-        private void CargarSeguimientoSup()
+        private bool CargarSeguimientoSup()
         {
             var objSeguimiento = new SeguimientosData();
             var busqueda = objSeguimiento.ObtenerDatosSeguimientoSupervision(idsup,idseg);
@@ -70,11 +76,18 @@ namespace GDSfonacot.forms
                 txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
                 txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
                 dtfechaSeguimiento.Value = busqueda.Result.FechaSeguimCreacion.Value;
-               // txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
-               // txthidStatus.Text = busqueda.Result.Idstatus.ToString();
+                txtSupervisor1.Text = busqueda.Result.Supervisor1;
+                txtSupervisor2.Text=busqueda.Result.Supervisor2;
+                // txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
+                // txthidStatus.Text = busqueda.Result.Idstatus.ToString();
                 toolButGuardar.Enabled = true;
                 toolButImprimir.Enabled = false;
-
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("No hay ningun seguimiento asociado a la supervision,por lo tanto el modulo no esta disponible para su uso", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
             }
 
         }

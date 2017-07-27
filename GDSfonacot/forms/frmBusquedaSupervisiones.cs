@@ -374,7 +374,14 @@ namespace GDSfonacot.forms
 
         private void frmBusquedaSupervisiones_Load(object sender, EventArgs e)
         {
-            CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            if (varseguimiento == 0)
+            {
+                CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            }
+            else
+            {
+                CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            }
         }
     }
 }

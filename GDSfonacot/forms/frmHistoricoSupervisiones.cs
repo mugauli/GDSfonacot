@@ -203,7 +203,7 @@ namespace GDSfonacot.forms
             MDIPrincip temp = new MDIPrincip();
             temp.timesup.Start();
             temp.timerreasig.Start();
-            
+
 
         }
         public static Bitmap ByteToImage(byte[] blob)

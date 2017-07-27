@@ -38,7 +38,11 @@ namespace GDSfonacot.forms
             }
             else
             {
-                CargarContestacionSucursal();
+                if (CargarContestacionSucursal()== false)
+                {
+                    
+                    return;
+                }
             }
             MDIPrincip temp = new MDIPrincip();
             temp.timesup.Start();
@@ -46,7 +50,7 @@ namespace GDSfonacot.forms
            
 
         }
-        private void CargarContestacionSucursal()
+        private bool CargarContestacionSucursal()
         {
             var objSupervision = new ContestacionesData();
             var busqueda = objSupervision.ObtenerDatosContestacionSupervision(valor1);
@@ -75,7 +79,13 @@ namespace GDSfonacot.forms
 
                 toolButGuardar.Enabled = true;
                 toolButImprimir.Enabled = true;
+                return true;
 
+            }
+            else
+            {
+                MessageBox.Show("No hay ningun contestacion asociada,por lo tanto el modulo no esta disponible para su uso", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
             }
 
         }

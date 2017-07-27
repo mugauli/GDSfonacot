@@ -73,17 +73,19 @@ namespace GDSfonacotDatos.Data
 
                     var consultarContestacionDB = context.HistorialSupervisiones
                         .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc })
-                        .Join(context.SeguimientoSupervision_Supervisores, tabla1 => tabla1.HistSup.IdSupervisiones, tabla2 => tabla2.Idsupervision, (HistSup2, SegSup) => new { HistSup2, SegSup })
-                        .Where(q1 => (q1.HistSup2.HistSup.IdSupervisiones == Idsupervision && q1.SegSup.Idseguimiento==IdSeguimiento))
+                           .Join(context.Usuarios, tabla1 => tabla1.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup2, Usu1) => new { HistSup2, Usu1 })
+                          .Join(context.Usuarios, tabla1 => tabla1.HistSup2.HistSup.Idsupervisor2, tabla2 => tabla2.IdUsuario, (HistSup3, Usu2) => new { HistSup3, Usu2 })
+                        .Join(context.SeguimientoSupervision_Supervisores, tabla1 => tabla1.HistSup3.HistSup2.HistSup.IdSupervisiones, tabla2 => tabla2.Idsupervision, (HistSup4, SegSup) => new { HistSup4, SegSup })
+                        .Where(q1 => (q1.HistSup4.HistSup3.HistSup2.HistSup.IdSupervisiones == Idsupervision && q1.SegSup.Idseguimiento==IdSeguimiento))
                         .Select(x => new DatosBuscarSeguimiento
                         {
                             //datos de la supervision original
                             Idsupervision = x.SegSup.Idsupervision,
-                            DescripcionSucursal = x.HistSup2.Suc.DescripcionSucursal,
-                            NoSucursal = x.HistSup2.Suc.NoSucursal,
-                            Director_Estatal = x.HistSup2.Suc.Director_Estatal,
-                            Director_Regional = x.HistSup2.Suc.Director_Regional,
-                            NoSupervision = x.HistSup2.HistSup.NoSupervision,
+                            DescripcionSucursal = x.HistSup4.HistSup3.HistSup2.Suc.DescripcionSucursal,
+                            NoSucursal = x.HistSup4.HistSup3.HistSup2.Suc.NoSucursal,
+                            Director_Estatal = x.HistSup4.HistSup3.HistSup2.Suc.Director_Estatal,
+                            Director_Regional = x.HistSup4.HistSup3.HistSup2.Suc.Director_Regional,
+                            NoSupervision = x.HistSup4.HistSup3.HistSup2.HistSup.NoSupervision,
                             //datos del seguimiento
                             Idseguimiento = x.SegSup.Idseguimiento,
                             Inmueble = x.SegSup.Inmueble,
@@ -96,10 +98,10 @@ namespace GDSfonacotDatos.Data
                             Cobranza = x.SegSup.Cobranza,
                             Fondofijo = x.SegSup.Fondofijo,
                             AcuerdosCompromisos = x.SegSup.AcuerdosCompromisos,
-                            FechaSeguimCreacion=x.SegSup.FechaSeguimCreacion
+                            FechaSeguimCreacion=x.SegSup.FechaSeguimCreacion,
+                            Supervisor1=x.HistSup4.HistSup3.Usu1.Nombre_Usuario,
+                            Supervisor2= x.HistSup4.Usu2.Nombre_Usuario,
                             
-
-
                         }).SingleOrDefault();
 
                     if (consultarContestacionDB != null) response.Result = consultarContestacionDB;

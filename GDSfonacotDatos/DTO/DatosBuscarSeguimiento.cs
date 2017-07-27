@@ -29,6 +29,8 @@ namespace GDSfonacotDatos.DTO
         public string NoSupervision { get; set; }
         public short NoSucursal { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
+        public string Supervisor1 { get; set; }
+        public string Supervisor2 { get; set; }
 
     }
 }

@@ -77,7 +77,7 @@ namespace GDSfonacotDatos.Data
                     var consultarContestacionDB = context.HistorialSupervisiones
                         .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc })
                         .Join(context.ContestacionesSuperv_Sucursales, tabla1 => tabla1.HistSup.IdSupervisiones, tabla2 => tabla2.Idsupervision, (HistSup2, Constsuc) => new { HistSup2, Constsuc })
-                        .Where(q1 => (q1.HistSup2.HistSup.IdSupervisiones == Idsupervision))
+                        .Where(q1 => (q1.HistSup2.HistSup.IdSupervisiones == Idsupervision && q1.HistSup2.HistSup.IdSupervisiones==q1.Constsuc.Idsupervision))
                         .Select(x => new DatosBuscarContestacion
                         {
                             //datos de la supervision original
