@@ -263,7 +263,7 @@
             // timesup
             // 
             this.timesup.Enabled = true;
-            this.timesup.Interval = 10000;
+            this.timesup.Interval = 15000;
             this.timesup.Tick += new System.EventHandler(this.timesup_Tick);
             // 
             // tableLayoutPanel1
@@ -275,7 +275,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
@@ -336,7 +336,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.tableLayoutPanel1.SetRowSpan(this.label2, 3);
-            this.label2.Size = new System.Drawing.Size(424, 90);
+            this.label2.Size = new System.Drawing.Size(423, 90);
             this.label2.TabIndex = 284;
             this.label2.Text = "Dirección General Adjunta Comercial\r\nSubdirección General Comercial\r\nDirección de" +
     " Supervisión de Operaciones \r\n\r\n";
@@ -355,7 +355,7 @@
             // timerreasig
             // 
             this.timerreasig.Enabled = true;
-            this.timerreasig.Interval = 10000;
+            this.timerreasig.Interval = 20000;
             this.timerreasig.Tick += new System.EventHandler(this.timerreasig_Tick);
             // 
             // notifySupCreadas
@@ -367,7 +367,7 @@
             // 
             // notifySupReasignadas
             // 
-            this.notifySupReasignadas.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifySupReasignadas.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
             this.notifySupReasignadas.BalloonTipTitle = "Aviso de Supervisiones Reasignadas por Supervisor";
             this.notifySupReasignadas.Icon = ((System.Drawing.Icon)(resources.GetObject("notifySupReasignadas.Icon")));
             this.notifySupReasignadas.Visible = true;

@@ -26,6 +26,7 @@ namespace GDSfonacot
             timesup.Start();
             timerreasig.Start();
             lblNombreUsuario.Text = Globales.objpasardatosusuario.Nombre_Usuario;
+            CargarMenus();
         }
 
         private void menuHistsupOp_Click(object sender, EventArgs e)
@@ -334,6 +335,7 @@ namespace GDSfonacot
 
                         notifySupCreadas.BalloonTipText = "*Tienes " + busqueda.Result.Count + " supervisiones pendientes favor de ingresar a 'Crear Contestación para Supervisión'";
                         notifySupCreadas.ShowBalloonTip(0);
+                        notifySupCreadas.Dispose();
                       
                     }
                     else
@@ -362,6 +364,7 @@ namespace GDSfonacot
 
                         notifySupReasignadas.BalloonTipText = "*Tienes " + busqueda2.Result.Count + " supervisiones reasignadas favor de ingresar a 'Contestaciones de Supervision'";
                         notifySupReasignadas.ShowBalloonTip(5);
+                        notifySupReasignadas.Dispose();
                     }
                     else
                     {
@@ -372,6 +375,46 @@ namespace GDSfonacot
             }
             objreasignadasSupervision = null;
             busqueda2 = null;
+        }
+
+        private void CargarMenus()
+        {
+            ////if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+            {
+                menuInicioSup.Visible = true;
+                menuConstSupSuc.Visible = true;
+                menuSegSup.Visible = true;
+                menuCerrarSup.Visible = true;
+                menuSalir.Visible = true;
+                menubuscSup.Visible = true;
+                menuBuscarConst.Visible = true;
+                menubuscSeguim.Visible = true;
+                menuHistsupOp.Visible = true;
+                menuConsulUsu.Visible = true;
+                menuConsulSucur.Visible = true;
+                menuConsulEmp.Visible = true;
+                submenuSuc.Visible = true;
+                submenuUsers.Visible = true;
+                menucatEmp.Visible = true;
+            }
+            else if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                menuInicioSup.Visible = false;
+                menuConstSupSuc.Visible = true;
+                menuSegSup.Visible = false;
+                menuCerrarSup.Visible = false;
+                menuSalir.Visible = true;
+                menubuscSup.Visible = false;
+                menuBuscarConst.Visible = true;
+                menubuscSeguim.Visible = false;
+                menuHistsupOp.Visible = true;
+                menuConsulSucur.Visible = false;
+                menuConsulUsu.Visible = false;
+                menuConsulEmp.Visible = false;
+                submenuSuc.Visible = false;
+                submenuUsers.Visible = false;
+                menucatEmp.Visible = false;
+            }
         }
     
     }
