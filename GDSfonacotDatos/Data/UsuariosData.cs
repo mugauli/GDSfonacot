@@ -192,5 +192,31 @@ namespace GDSfonacotDatos.Data
                 return new MethodResponse<Usuarios> { Code = -100, Message = ex.Message };
             }
         }
+
+        public MethodResponse<Usuarios> BuscarUsuario(string Usuario)
+        {
+
+            try
+            {
+
+
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<Usuarios> { Code = 0 };
+
+                    var usuariosDB = context.Usuarios.Where(x => x.Usuario == Usuario.Trim()).SingleOrDefault();
+
+                    if (usuariosDB != null) response.Result = usuariosDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<Usuarios> { Code = -100, Message = ex.Message };
+            }
+        }
     }
 }

@@ -40,6 +40,19 @@ namespace GDSfonacot.forms
                 MessageBox.Show(mensaje);
                 return;
             }
+            if (txthidIdusuario.Text == "0")
+            {
+                var objbuscaUsuario = new UsuariosData();
+                var busqueda = objbuscaUsuario.BuscarUsuario(txtGafete.Text.Trim());
+                if (busqueda.Result != null)
+                {
+                    MessageBox.Show("El usuario '" + txtGafete.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtGafete.Focus();
+                    return;
+                }
+            }
+
+
             if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 var usuario = new Usuarios();
@@ -191,6 +204,7 @@ namespace GDSfonacot.forms
             cmbNivelusuario.SelectedValue = usu.IdNivel;
             txtNombre.Text = usu.Nombre_Usuario;
             txtGafete.Text = usu.Usuario;
+            txtGafete.Enabled = false;
             txtpassword.Text =Globales.Desencriptar(usu.Pass);
             if (usu.fechaalta != null && usu.fechabaja!= null && usu.fechareingreso== null)
             {
