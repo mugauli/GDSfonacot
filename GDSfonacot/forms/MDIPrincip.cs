@@ -410,7 +410,7 @@ namespace GDSfonacot
                 menuHistsupOp.Visible = true;
                 menuConsulSucur.Visible = false;
                 menuConsulUsu.Visible = false;
-                menuConsulEmp.Visible = false;
+                menuConsulEmp.Visible = true;
                 submenuSuc.Visible = false;
                 submenuUsers.Visible = false;
                 menucatEmp.Visible = false;
