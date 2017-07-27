@@ -40,6 +40,10 @@ namespace GDSfonacot.forms
             {
                 CargarContestacionSucursal();
             }
+            MDIPrincip temp = new MDIPrincip();
+            temp.timesup.Start();
+            temp.timerreasig.Start();
+           
 
         }
         private void CargarContestacionSucursal()

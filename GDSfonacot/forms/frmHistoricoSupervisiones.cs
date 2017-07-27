@@ -200,6 +200,10 @@ namespace GDSfonacot.forms
                 toolButImprimir.Enabled = true;
             }
             #endregion
+            MDIPrincip temp = new MDIPrincip();
+            temp.timesup.Start();
+            temp.timerreasig.Start();
+            
 
         }
         public static Bitmap ByteToImage(byte[] blob)

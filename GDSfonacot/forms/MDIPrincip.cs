@@ -310,17 +310,17 @@ namespace GDSfonacot
             }
         }
 
-        private void timesup_Tick(object sender, EventArgs e)
+        public void timesup_Tick(object sender, EventArgs e)
         {
             notificationcreadas();
 
         }
 
-        private void timerreasig_Tick(object sender, EventArgs e)
+        public void timerreasig_Tick(object sender, EventArgs e)
         {
             notificationreasignadas();
         }
-        private void notificationcreadas()
+        public void notificationcreadas()
         {
             int[] varstatus = { 1 };
             var objcreadasSupervision = new SupervisionesData();
@@ -350,7 +350,7 @@ namespace GDSfonacot
             busqueda = null;
         }
 
-        private void notificationreasignadas()
+        public void notificationreasignadas()
         {
             int[] varstatus2 = { 5 };
             var objreasignadasSupervision = new SupervisionesData();
@@ -363,7 +363,7 @@ namespace GDSfonacot
                     {
 
                         notifySupReasignadas.BalloonTipText = "*Tienes " + busqueda2.Result.Count + " supervisiones reasignadas favor de ingresar a 'Contestaciones de Supervision'";
-                        notifySupReasignadas.ShowBalloonTip(5);
+                        notifySupReasignadas.ShowBalloonTip(0);
                         notifySupReasignadas.Dispose();
                     }
                     else
@@ -379,7 +379,7 @@ namespace GDSfonacot
 
         private void CargarMenus()
         {
-            ////if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
             {
                 menuInicioSup.Visible = true;
                 menuConstSupSuc.Visible = true;

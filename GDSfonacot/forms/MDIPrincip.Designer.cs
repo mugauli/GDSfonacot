@@ -1,6 +1,6 @@
 ﻿namespace GDSfonacot
 {
-    partial class MDIPrincip
+   public partial class MDIPrincip
     {
         /// <summary>
         /// Required designer variable.
@@ -422,15 +422,15 @@
         private System.Windows.Forms.ToolStripMenuItem menuConsulSucur;
         private System.Windows.Forms.ToolStripMenuItem menuConsulEmp;
         private System.Windows.Forms.ToolStripMenuItem menucatEmp;
-        private System.Windows.Forms.Timer timesup;
+        public System.Windows.Forms.Timer timesup;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Timer timerreasig;
-        private System.Windows.Forms.NotifyIcon notifySupCreadas;
-        private System.Windows.Forms.NotifyIcon notifySupReasignadas;
+        public System.Windows.Forms.Timer timerreasig;
+        public System.Windows.Forms.NotifyIcon notifySupCreadas;
+        public System.Windows.Forms.NotifyIcon notifySupReasignadas;
     }
 }
