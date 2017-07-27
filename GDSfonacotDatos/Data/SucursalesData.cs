@@ -88,19 +88,38 @@ namespace GDSfonacotDatos.Data
                 using (var context = new GDSfonacotEntities())
                 {
                     var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
-                    var usuariosDB = context.Sucursales
+                    if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 1004 || Globales.objpasardatosusuario.IdNivel == 3)
+                    {
+                        var usuariosDB = context.Sucursales
                       .Join(context.ctRegional, tabla1 => tabla1.IdRegional, tabla2 => tabla2.IdRegional, (suc, reg) => new { suc, reg })
                       .Where(x => x.reg.IdRegional == x.suc.IdRegional && x.suc.DescripcionSucursal.Contains(filter))
                       .Select(x => new DatosComboSucursales { IdSucursal = x.suc.IdSucursal, NoSucursal = x.suc.NoSucursal, NameSucursal = x.suc.DescripcionSucursal, DireccionRegional = x.reg.Descripcion }).ToList();
 
 
 
-                    //var usuariosDB = context.Usuarios.Where(x => x.IdUsuario == IdUsuario && IdUsuario == 0).ToList();
+                        //var usuariosDB = context.Usuarios.Where(x => x.IdUsuario == IdUsuario && IdUsuario == 0).ToList();
 
 
-                    response.Result = usuariosDB;
+                        response.Result = usuariosDB;
 
-                    return response;
+                        return response;
+                    }
+                    else
+                    {
+                        var usuariosDB = context.Sucursales
+                     .Join(context.ctRegional, tabla1 => tabla1.IdRegional, tabla2 => tabla2.IdRegional, (suc, reg) => new { suc, reg })
+                     .Where(x => x.reg.IdRegional == x.suc.IdRegional && x.suc.IdSucursal==Globales.objpasardatosusuario.IdSucursal && x.suc.DescripcionSucursal.Contains(filter))
+                     .Select(x => new DatosComboSucursales { IdSucursal = x.suc.IdSucursal, NoSucursal = x.suc.NoSucursal, NameSucursal = x.suc.DescripcionSucursal, DireccionRegional = x.reg.Descripcion }).ToList();
+
+
+
+                        //var usuariosDB = context.Usuarios.Where(x => x.IdUsuario == IdUsuario && IdUsuario == 0).ToList();
+
+
+                        response.Result = usuariosDB;
+
+                        return response;
+                    }
                 }
 
             }
@@ -111,6 +130,37 @@ namespace GDSfonacotDatos.Data
             }
         }
 
+        public MethodResponse<List<DatosComboSucursales>> ObtenerSucursalesporNivelUsuario()
+        {
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<DatosComboSucursales>> { Code = 0 };
+                      var usuariosDB = context.Sucursales
+                     .Join(context.ctRegional, tabla1 => tabla1.IdRegional, tabla2 => tabla2.IdRegional, (suc, reg) => new { suc, reg })
+                     .Where(x => x.reg.IdRegional == x.suc.IdRegional && x.suc.IdSucursal == Globales.objpasardatosusuario.IdSucursal)
+                     .Select(x => new DatosComboSucursales { IdSucursal = x.suc.IdSucursal, NoSucursal = x.suc.NoSucursal, NameSucursal = x.suc.DescripcionSucursal, DireccionRegional = x.reg.Descripcion }).ToList();
+
+
+
+                        //var usuariosDB = context.Usuarios.Where(x => x.IdUsuario == IdUsuario && IdUsuario == 0).ToList();
+
+
+                        response.Result = usuariosDB;
+
+                        return response;
+                    
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<DatosComboSucursales>> { Code = -100, Message = ex.Message };
+            }
+        }
         public MethodResponse<int> GuadarSucursal(Sucursales sucursal)
         {
             var response = new MethodResponse<int> { Code = 0 };

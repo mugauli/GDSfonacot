@@ -28,31 +28,7 @@ namespace GDSfonacot.forms
         {
             if (txtSucursal.Text.Length > 3)
             {
-                lblRegistros.Text = "";
-                var totalsupe = new SucursalesData().ObtenerSucursalesFilter(txtSucursal.Text.Trim());
-                if (totalsupe.Code != 0)
-                {
-                    MessageBox.Show("error");
-                }
-
-
-                dataGlistaSup.DataSource = totalsupe.Result;
-                dataGlistaSup.ReadOnly = true;
-                dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                dataGlistaSup.Columns[0].Visible = false;
-                dataGlistaSup.Columns[0].HeaderText = "ID";
-                dataGlistaSup.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-
-                dataGlistaSup.Columns[1].HeaderText = "Nombre";
-                dataGlistaSup.Columns[2].HeaderText= "No. Sucursal";
-                dataGlistaSup.Columns[3].HeaderText = "Regional";
-
-
-
-
-                
-                lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+                CargarGridSucursalesFilter();
             }
             else
             {
@@ -60,7 +36,62 @@ namespace GDSfonacot.forms
                  dataGlistaSup.DataSource=null;
             }
         }
+        private void CargarGridSucursalesFilter()
+        {
+            lblRegistros.Text = "";
+            var totalsupe = new SucursalesData().ObtenerSucursalesFilter(txtSucursal.Text.Trim());
+            if (totalsupe.Code != 0)
+            {
+                MessageBox.Show("error");
+            }
 
+
+            dataGlistaSup.DataSource = totalsupe.Result;
+            dataGlistaSup.ReadOnly = true;
+            dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGlistaSup.Columns[0].Visible = false;
+            dataGlistaSup.Columns[0].HeaderText = "ID";
+            dataGlistaSup.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+
+            dataGlistaSup.Columns[1].HeaderText = "Nombre";
+            dataGlistaSup.Columns[2].HeaderText = "No. Sucursal";
+            dataGlistaSup.Columns[3].HeaderText = "Regional";
+
+
+
+
+
+            lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+        }
+        private void CargarGridSucursalesNivelUsuario()
+        {
+            lblRegistros.Text = "";
+            var totalsupe = new SucursalesData().ObtenerSucursalesporNivelUsuario();
+            if (totalsupe.Code != 0)
+            {
+                MessageBox.Show("error");
+            }
+
+
+            dataGlistaSup.DataSource = totalsupe.Result;
+            dataGlistaSup.ReadOnly = true;
+            dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGlistaSup.Columns[0].Visible = false;
+            dataGlistaSup.Columns[0].HeaderText = "ID";
+            dataGlistaSup.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+
+            dataGlistaSup.Columns[1].HeaderText = "Nombre";
+            dataGlistaSup.Columns[2].HeaderText = "No. Sucursal";
+            dataGlistaSup.Columns[3].HeaderText = "Regional";
+
+
+
+
+
+            lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+        }
         private void dataGlistaSup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -130,5 +161,12 @@ namespace GDSfonacot.forms
             }
         }
 
+        private void frmBusquedaSucursal_Load(object sender, EventArgs e)
+        {
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                CargarGridSucursalesNivelUsuario();
+            }
+        }
     }
 }

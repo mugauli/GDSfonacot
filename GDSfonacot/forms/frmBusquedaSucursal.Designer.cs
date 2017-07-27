@@ -44,7 +44,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel1.Controls.Add(this.dataGlistaSup, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtSucursal, 1, 1);
@@ -74,7 +74,7 @@
             this.dataGlistaSup.Name = "dataGlistaSup";
             this.dataGlistaSup.ReadOnly = true;
             this.tableLayoutPanel1.SetRowSpan(this.dataGlistaSup, 3);
-            this.dataGlistaSup.Size = new System.Drawing.Size(781, 574);
+            this.dataGlistaSup.Size = new System.Drawing.Size(780, 574);
             this.dataGlistaSup.TabIndex = 279;
             this.dataGlistaSup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGlistaSup_CellDoubleClick);
             // 
@@ -107,7 +107,7 @@
             // 
             this.lblRegistros.AutoSize = true;
             this.lblRegistros.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblRegistros.Location = new System.Drawing.Point(1328, 620);
+            this.lblRegistros.Location = new System.Drawing.Point(1327, 620);
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(0, 30);
             this.lblRegistros.TabIndex = 280;
@@ -121,6 +121,7 @@
             this.Name = "frmBusquedaSucursal";
             this.Text = "frmBusquedaSucursal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmBusquedaSucursal_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGlistaSup)).EndInit();
