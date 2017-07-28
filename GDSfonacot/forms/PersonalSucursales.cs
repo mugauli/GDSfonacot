@@ -189,7 +189,8 @@ namespace GDSfonacot
                     dgvEmpleados.Columns.Clear();
                     checkmostrartodos.Checked = false;
                     cmbperfilsistema.SelectedIndex = -1;
-                   
+                    lblRegistros.Text = "";
+
 
                 }
             }
