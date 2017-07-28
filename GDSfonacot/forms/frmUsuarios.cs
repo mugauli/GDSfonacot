@@ -124,11 +124,13 @@ namespace GDSfonacot.forms
                     {
                         MessageBox.Show("El nuevo usuario ha sido guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarDatos();
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("El usuario ha sido actualizado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarUsuario(Convert.ToInt32(txthidIdusuario.Text.ToString()));
+                        this.Close();
                     }
                 }
             }
@@ -268,6 +270,7 @@ namespace GDSfonacot.forms
             txthidIdusuario.Text = "0";
             txtNombre.Text = null;
             txtGafete.Text = null;
+            txtGafete.Enabled = true;
             txtpassword.Text = null;
             cmbNivelusuario.SelectedIndex = -1;
             cmbSucursales.SelectedIndex = -1;

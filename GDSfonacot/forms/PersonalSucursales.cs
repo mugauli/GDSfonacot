@@ -132,6 +132,7 @@ namespace GDSfonacot
                 dgvEmpleados.Columns[4].HeaderText = "Perfil Sistema";
                 dgvEmpleados.Columns[5].HeaderText = "Jornada";
                 dgvEmpleados.Columns[6].HeaderText = "Horario";
+                dgvEmpleados.Columns[7].HeaderText = "Actividad";
                 lblRegistros.Text = "Total de Registros: " + dgvEmpleados.RowCount;
             }
 
@@ -156,6 +157,7 @@ namespace GDSfonacot
             dataGV.Columns[4].HeaderText = "Perfil Sistema";
             dataGV.Columns[5].HeaderText = "Jornada";
             dataGV.Columns[6].HeaderText = "Horario";
+            dataGV.Columns[7].HeaderText = "Actividad";
             return dataGV;
         }
 
@@ -180,9 +182,13 @@ namespace GDSfonacot
                     var valor = dgvEmpleados.Rows[e.RowIndex].Cells[0].Value;
 
 
-                    var frmPersonsuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
-                    frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.Show();
+                    var frmusuSuc = new frmEmpleados(Convert.ToInt32(valor));//crea una instancia del formulario
+                    //frmPersonsuc.MdiParent = this.ParentForm;
+                    frmusuSuc.ShowDialog();
+                    //this.Close();
+                    dgvEmpleados.Columns.Clear();
+                    checkmostrartodos.Checked = false;
+                    cmbperfilsistema.SelectedIndex = -1;
                     this.Close();
 
                 }
@@ -216,6 +222,7 @@ namespace GDSfonacot
                     dgvEmpleados.Columns[4].HeaderText = "Perfil Sistema";
                     dgvEmpleados.Columns[5].HeaderText = "Jornada";
                     dgvEmpleados.Columns[6].HeaderText = "Horario";
+                    dgvEmpleados.Columns[7].HeaderText = "Actividad";
                     lblRegistros.Text = "Total de Registros: " + dgvEmpleados.RowCount;
                 }
 #endregion
@@ -225,6 +232,27 @@ namespace GDSfonacot
                 dgvEmpleados.Columns.Clear();
 
             }
+        }
+
+        private void butImprimir_Click(object sender, EventArgs e)
+        {
+            forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(6);//crea una instancia del formulario
+            if (checkmostrartodos.Checked == true)
+            {
+                frmvisor.param1 = Convert.ToString(sucursalInt);
+                frmvisor.param2 = "";
+                frmvisor.ShowDialog();
+            }
+            else if (cmbperfilsistema.SelectedIndex != -1) {
+            frmvisor.param1 = Convert.ToString(sucursalInt);
+            frmvisor.param2 = Convert.ToString(cmbperfilsistema.SelectedValue);
+                frmvisor.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un tipo de 'personal' o la casilla 'Mostrar todos los empleados' para imprimir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
     }
  }

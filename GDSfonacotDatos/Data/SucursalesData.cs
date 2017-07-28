@@ -80,6 +80,42 @@ namespace GDSfonacotDatos.Data
             }
         }
 
+        public MethodResponse<List<DatosSucursales>> ObtenerRegionSucursal(int IdSucursal)
+        {
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<List<DatosSucursales>> { Code = 0 };
+
+                    var usuariosDB = context.Sucursales
+                        .Join(context.ctRegional, tabla1 => tabla1.IdRegional, tabla2 => tabla2.IdRegional, (suc, reg) => new { suc, reg })
+                        .Where(x => x.suc.IdSucursal == IdSucursal && x.reg.IdRegional == x.suc.IdRegional)
+                      .Select(x => new DatosSucursales
+                      {
+                          IdSucursal = x.suc.IdSucursal,
+                          NoSucursal = x.suc.NoSucursal,
+                          DireccionRegional = x.reg.Descripcion,
+                          IdRegional = x.suc.IdRegional
+
+
+                      }
+
+                      ).ToList();
+                    response.Result = usuariosDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<List<DatosSucursales>> { Code = -100, Message = ex.Message };
+            }
+        }
+
         public MethodResponse<List<DatosComboSucursales>> ObtenerSucursalesFilter(string filter)
         {
 

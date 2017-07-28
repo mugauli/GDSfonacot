@@ -17,15 +17,12 @@ namespace GDSfonacotDatos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ctRegional()
         {
-            this.Empleados = new HashSet<Empleados>();
             this.Sucursales = new HashSet<Sucursales>();
         }
     
         public int IdRegional { get; set; }
         public string Descripcion { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Empleados> Empleados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sucursales> Sucursales { get; set; }
     }

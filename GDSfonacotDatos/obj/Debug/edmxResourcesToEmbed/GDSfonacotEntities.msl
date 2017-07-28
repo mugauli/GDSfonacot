@@ -196,7 +196,6 @@
           <ScalarProperty Name="IdArea" ColumnName="IdArea" />
           <ScalarProperty Name="IdTipoPersonal" ColumnName="IdTipoPersonal" />
           <ScalarProperty Name="IdSucursal" ColumnName="IdSucursal" />
-          <ScalarProperty Name="IdRegional" ColumnName="IdRegional" />
           <ScalarProperty Name="Horario" ColumnName="Horario" />
           <ScalarProperty Name="Jornada" ColumnName="Jornada" />
           <ScalarProperty Name="Gafete" ColumnName="Gafete" />

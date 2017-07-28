@@ -383,8 +383,8 @@
             this.ClientSize = new System.Drawing.Size(1084, 266);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control de Usuarios";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

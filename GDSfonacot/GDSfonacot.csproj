@@ -191,6 +191,18 @@
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reportes\crpListaEmpleadosSucAll.cs">
+      <DependentUpon>crpListaEmpleadosSucAll.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\crpListaEmpleadosSuc.cs">
+      <DependentUpon>crpListaEmpleadosSuc.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="reportes\crpHistoricoSupervSuc.cs">
       <DependentUpon>crpHistoricoSupervSuc.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -282,6 +294,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reportes\crpListaEmpleadosSucAll.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpListaEmpleadosSucAll.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\crpListaEmpleadosSuc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpListaEmpleadosSuc.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportes\crpHistoricoSupervSuc.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpHistoricoSupervSuc.cs</LastGenOutput>

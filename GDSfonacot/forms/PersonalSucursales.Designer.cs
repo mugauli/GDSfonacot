@@ -60,6 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblRegistros = new System.Windows.Forms.Label();
             this.checkmostrartodos = new System.Windows.Forms.CheckBox();
+            this.butImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             this.TabsEmpleados.SuspendLayout();
             this.tabadmin.SuspendLayout();
@@ -433,6 +434,16 @@
             this.checkmostrartodos.UseVisualStyleBackColor = true;
             this.checkmostrartodos.CheckedChanged += new System.EventHandler(this.checkmostrartodos_CheckedChanged);
             // 
+            // butImprimir
+            // 
+            this.butImprimir.Location = new System.Drawing.Point(488, 258);
+            this.butImprimir.Name = "butImprimir";
+            this.butImprimir.Size = new System.Drawing.Size(99, 23);
+            this.butImprimir.TabIndex = 326;
+            this.butImprimir.Text = "Imprimir Lista";
+            this.butImprimir.UseVisualStyleBackColor = true;
+            this.butImprimir.Click += new System.EventHandler(this.butImprimir_Click);
+            // 
             // PersonalSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +451,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1362, 591);
+            this.Controls.Add(this.butImprimir);
             this.Controls.Add(this.checkmostrartodos);
             this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.label1);
@@ -516,5 +528,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRegistros;
         private System.Windows.Forms.CheckBox checkmostrartodos;
+        private System.Windows.Forms.Button butImprimir;
     }
 }

@@ -263,18 +263,16 @@ namespace GDSfonacot
 
         private void menucatEmp_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004 || Globales.objpasardatosusuario.IdNivel ==1)
             {
-                MessageBox.Show("No tienes acceso a este modulo, verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-            }
-            else
-            {
-                //if (Globales.objpasardatosusuario.IdNivel == 1)
-                //{
+               
                 var frmemp = new frmEmpleados(0);//crea una instancia del formulario
                 frmemp.MdiParent = this;
                 frmemp.Show();
-
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo, verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
             }
         }
 
@@ -413,7 +411,7 @@ namespace GDSfonacot
                 menuConsulEmp.Visible = true;
                 submenuSuc.Visible = false;
                 submenuUsers.Visible = false;
-                menucatEmp.Visible = false;
+                menucatEmp.Visible = true;
             }
         }
     

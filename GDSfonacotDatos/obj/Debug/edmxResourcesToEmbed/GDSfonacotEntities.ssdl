@@ -85,7 +85,6 @@
     <Property Name="Gafete" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="Jornada" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Horario" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="IdRegional" Type="int" Nullable="false" />
     <Property Name="IdSucursal" Type="int" Nullable="false" />
     <Property Name="IdTipoPersonal" Type="int" Nullable="false" />
     <Property Name="IdArea" Type="int" Nullable="false" />
@@ -299,18 +298,6 @@
       </Principal>
       <Dependent Role="Empleados">
         <PropertyRef Name="IdPerfilSistema" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Empleados_ctRegional">
-    <End Role="ctRegional" Type="Self.ctRegional" Multiplicity="1" />
-    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ctRegional">
-        <PropertyRef Name="IdRegional" />
-      </Principal>
-      <Dependent Role="Empleados">
-        <PropertyRef Name="IdRegional" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -551,10 +538,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_Empleados_ctPerfilSistema" Association="Self.FK_Empleados_ctPerfilSistema">
       <End Role="ctPerfilSistema" EntitySet="ctPerfilSistema" />
-      <End Role="Empleados" EntitySet="Empleados" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Empleados_ctRegional" Association="Self.FK_Empleados_ctRegional">
-      <End Role="ctRegional" EntitySet="ctRegional" />
       <End Role="Empleados" EntitySet="Empleados" />
     </AssociationSet>
     <AssociationSet Name="FK_Empleados_ctTipoPersonal" Association="Self.FK_Empleados_ctTipoPersonal">

@@ -33,7 +33,6 @@ namespace GDSfonacotDatos.Data
                         empleadoDB.Gafete = empleado.Gafete;
                         empleadoDB.Jornada = empleado.Jornada;
                         empleadoDB.Horario = empleado.Horario;
-                        empleadoDB.IdRegional = empleado.IdRegional;
                         empleadoDB.IdSucursal = empleado.IdSucursal;
                         empleadoDB.IdTipoPersonal = empleado.IdTipoPersonal;
                         empleadoDB.IdArea = empleado.IdArea;
@@ -112,19 +111,21 @@ namespace GDSfonacotDatos.Data
 
 
                     var devolverdatos = context.Empleados // seleccion de tabla inicial
-                          .Join(context.ctPerfilSistema, tabla1 => tabla1.IdPerfilSistema, tabla2 => tabla2.IdPerfilSistema, (emp, perfil) => new { emp, perfil })
+                           .Join(context.ctPerfilSistema, tabla1 => tabla1.IdPerfilSistema, tabla2 => tabla2.IdPerfilSistema, (emp, perfil) => new { emp, perfil })
                           .Join(context.ctTipoPersonal, tabla1 => tabla1.emp.IdTipoPersonal, tabla2 => tabla2.IdTipoPersonal, (emp2, tipopers) => new { emp2, tipopers })// se realiza el join para crear el contexto completo es decir todos los dato 
-                          .Where(ep => ep.emp2.emp.IdPerfilSistema == ep.emp2.perfil.IdPerfilSistema && ep.emp2.emp.IdSucursal == IdSucursal && ep.emp2.emp.IdTipoPersonal == IdTipoPersonal)
+                         .Join(context.ctActividad, tabla1 => tabla1.emp2.emp.IdActividad, tabla2 => tabla2.IdActividad, (emp3, activi) => new { emp3, activi })
+                          .Where(ep => ep.activi.IdActividad == ep.emp3.emp2.emp.IdActividad && ep.emp3.emp2.emp.IdPerfilSistema == ep.emp3.emp2.perfil.IdPerfilSistema && ep.emp3.emp2.emp.IdSucursal == IdSucursal && ep.emp3.emp2.emp.IdTipoPersonal == IdTipoPersonal)
 
                          .Select(x => new EmpleadosDGV
                          {
-                             IdEmpleado = x.emp2.emp.IdEmpleado,
-                             Gafete = x.emp2.emp.Gafete,
-                             Nombre = x.emp2.emp.Nombre,
-                             Horario = x.emp2.emp.Horario,
-                             Jornada = x.emp2.emp.Jornada,
-                             TipoPersonal = x.tipopers.Descripcion,
-                             TipoPerfil = x.emp2.perfil.Descripcion
+                             IdEmpleado = x.emp3.emp2.emp.IdEmpleado,
+                             Gafete = x.emp3.emp2.emp.Gafete,
+                             Nombre = x.emp3.emp2.emp.Nombre,
+                             Horario = x.emp3.emp2.emp.Horario,
+                             Jornada = x.emp3.emp2.emp.Jornada,
+                             TipoPersonal = x.emp3.tipopers.Descripcion,
+                             TipoPerfil = x.emp3.emp2.perfil.Descripcion,
+                             TipoActividad = x.activi.Descripcion
 
                          }).ToList();
 
@@ -154,17 +155,19 @@ namespace GDSfonacotDatos.Data
                     var devolverdatos = context.Empleados // seleccion de tabla inicial
                           .Join(context.ctPerfilSistema, tabla1 => tabla1.IdPerfilSistema, tabla2 => tabla2.IdPerfilSistema, (emp, perfil) => new { emp, perfil })
                           .Join(context.ctTipoPersonal, tabla1 => tabla1.emp.IdTipoPersonal, tabla2 => tabla2.IdTipoPersonal, (emp2, tipopers) => new { emp2, tipopers })// se realiza el join para crear el contexto completo es decir todos los dato 
-                          .Where(ep => ep.emp2.emp.IdPerfilSistema == ep.emp2.perfil.IdPerfilSistema && ep.emp2.emp.IdSucursal == IdSucursal && ep.emp2.emp.IdTipoPersonal ==ep.tipopers.IdTipoPersonal)
+                            .Join(context.ctActividad, tabla1 => tabla1.emp2.emp.IdActividad, tabla2 => tabla2.IdActividad, (emp3, activi) => new { emp3, activi })
+                          .Where(ep => ep.activi.IdActividad == ep.emp3.emp2.emp.IdActividad &&  ep.emp3.emp2.emp.IdPerfilSistema == ep.emp3.emp2.perfil.IdPerfilSistema && ep.emp3.emp2.emp.IdSucursal == IdSucursal && ep.emp3.emp2.emp.IdTipoPersonal ==ep.emp3.tipopers.IdTipoPersonal)
 
                          .Select(x => new EmpleadosDGV
                          {
-                             IdEmpleado = x.emp2.emp.IdEmpleado,
-                             Gafete = x.emp2.emp.Gafete,
-                             Nombre = x.emp2.emp.Nombre,
-                             Horario = x.emp2.emp.Horario,
-                             Jornada = x.emp2.emp.Jornada,
-                             TipoPersonal = x.tipopers.Descripcion,
-                             TipoPerfil = x.emp2.perfil.Descripcion
+                             IdEmpleado = x.emp3.emp2.emp.IdEmpleado,
+                             Gafete = x.emp3.emp2.emp.Gafete,
+                             Nombre = x.emp3.emp2.emp.Nombre,
+                             Horario = x.emp3.emp2.emp.Horario,
+                             Jornada = x.emp3.emp2.emp.Jornada,
+                             TipoPersonal = x.emp3.tipopers.Descripcion,
+                             TipoPerfil = x.emp3.emp2.perfil.Descripcion,
+                             TipoActividad = x.activi.Descripcion
 
                          }).ToList();
 
@@ -178,6 +181,32 @@ namespace GDSfonacotDatos.Data
             {
 
                 return new MethodResponse<List<EmpleadosDGV>> { Code = -100, Message = ex.Message };
+            }
+        }
+
+        public MethodResponse<Empleados> BuscarGafeteEmpleado(string gafete)
+        {
+
+            try
+            {
+
+
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<Empleados> { Code = 0 };
+
+                    var empDB = context.Empleados.Where(x => x.Gafete == gafete.Trim()).SingleOrDefault();
+
+                    if (empDB != null) response.Result = empDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<Empleados> { Code = -100, Message = ex.Message };
             }
         }
 

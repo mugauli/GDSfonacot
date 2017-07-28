@@ -19,7 +19,6 @@ namespace GDSfonacotDatos
         public string Gafete { get; set; }
         public string Jornada { get; set; }
         public string Horario { get; set; }
-        public int IdRegional { get; set; }
         public int IdSucursal { get; set; }
         public int IdTipoPersonal { get; set; }
         public int IdArea { get; set; }
@@ -29,7 +28,6 @@ namespace GDSfonacotDatos
         public virtual ctActividad ctActividad { get; set; }
         public virtual ctArea ctArea { get; set; }
         public virtual ctPerfilSistema ctPerfilSistema { get; set; }
-        public virtual ctRegional ctRegional { get; set; }
         public virtual ctTipoPersonal ctTipoPersonal { get; set; }
         public virtual Sucursales Sucursales { get; set; }
     }

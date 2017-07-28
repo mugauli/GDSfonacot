@@ -623,6 +623,7 @@
             // pbxSucursal
             // 
             this.pbxSucursal.BackColor = System.Drawing.Color.White;
+            this.pbxSucursal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel1.SetColumnSpan(this.pbxSucursal, 2);
             this.pbxSucursal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbxSucursal.Image = global::GDSfonacot.Properties.Resources.sucursales;

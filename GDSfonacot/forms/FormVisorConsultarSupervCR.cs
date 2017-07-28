@@ -70,6 +70,26 @@ namespace GDSfonacot.forms
                 objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
                 crpvisor.ReportSource = objreport;
             }
+            else if (destino == 6)//consultando lista de empleados
+            {
+                if(param1!=String.Empty && param2 != String.Empty) { 
+                this.Text = "Lista de Empleados por Sucursal y Tipo de Personal";
+                reportes.crpListaEmpleadosSuc objreport = new reportes.crpListaEmpleadosSuc();
+                objreport.SetParameterValue("@idsucursal", Convert.ToInt32(param1));
+                objreport.SetParameterValue("@idtipopersonal", Convert.ToInt32(param2));
+                objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
+                crpvisor.ReportSource = objreport;
+                }
+                else if (param1 != String.Empty && param2==String.Empty)
+                {
+                    this.Text = "Lista General de Empleados por Sucursal";
+                    reportes.crpListaEmpleadosSucAll objreport = new reportes.crpListaEmpleadosSucAll();
+                    objreport.SetParameterValue("@idsucursal", Convert.ToInt32(param1));
+                    objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
+                    crpvisor.ReportSource = objreport;
+                }
+
+            }
         }
     }
 }

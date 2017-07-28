@@ -38,8 +38,19 @@ namespace GDSfonacot.forms
             var mensaje = string.Empty;
             if (ValidateEmpleado(out mensaje))
             {
-                MessageBox.Show(mensaje);
+                MessageBox.Show(mensaje,System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
+            }
+            if (txthidIdEmpleado.Text == "0")
+            {
+                var objbuscaEmpleado = new EmpleadosData();
+                var busqueda = objbuscaEmpleado.BuscarGafeteEmpleado(txtGafete.Text.Trim());
+                if (busqueda.Result != null)
+                {
+                    MessageBox.Show("El gafete de este empledo '" + txtGafete.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtGafete.Focus();
+                    return;
+                }
             }
             if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             { 
@@ -49,7 +60,7 @@ namespace GDSfonacot.forms
                 empleados.Gafete = txtGafete.Text.ToString().Trim();
                 empleados.Jornada = txtJornada.Text.ToString().Trim();
                 empleados.Horario = txtHorario.Text.ToString().Trim();
-                empleados.IdRegional = Convert.ToInt32(cmbRegional.SelectedValue);
+               // empleados.IdRegional = Convert.ToInt32(textRegional.Text);
                 empleados.IdSucursal = Convert.ToInt32(cmbSucursal.SelectedValue);
                 empleados.IdTipoPersonal = Convert.ToInt32(cmbTipoPersonal.SelectedValue);
                 empleados.IdArea = Convert.ToInt32(cmbActividad.SelectedValue);
@@ -69,11 +80,13 @@ namespace GDSfonacot.forms
                     {
                         MessageBox.Show("El nuevo empleado ha sido guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarDatos();
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("El empleado ha sido actualizado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarEmpleado(Convert.ToInt32(txthidIdEmpleado.Text.ToString()));
+                        this.Close();
                     }
                 }
 
@@ -89,7 +102,6 @@ namespace GDSfonacot.forms
             if (txtGafete.Text == string.Empty) mensaje += "Favor de introducir el gafete\n";
             if (txtJornada.Text == string.Empty) mensaje += "Favor de introducir la jornada\n";
             if (txtHorario.Text == string.Empty) mensaje += "Favor de introducir el horario\n";
-            if (cmbRegional.SelectedIndex == -1) mensaje += "Favor de seleccionar regional\n";
             if (cmbSucursal.SelectedIndex == -1) mensaje += "Favor de seleccionar sucursal\n";
             if (cmbTipoPersonal.SelectedIndex == -1) mensaje += "Favor de seleccionar tipo de personal\n";
             if (cmbActividad.SelectedIndex == -1) mensaje += "Favor de seleccionar actividad\n";
@@ -105,7 +117,7 @@ namespace GDSfonacot.forms
             txtGafete.Text = null;
             txtJornada.Text=null;
             txtHorario.Text = null;
-            cmbRegional.SelectedIndex = -1;
+            textRegional.Text = null;
             cmbSucursal.SelectedIndex = -1;
             cmbTipoPersonal.SelectedIndex = -1;
             cmbActividad.SelectedIndex = -1;
@@ -168,23 +180,6 @@ namespace GDSfonacot.forms
 
             #endregion
 
-            #region ctRegional
-
-            var ctRegional = new CatalogosData().ObtenerRegional();
-            if (ctRegional.Code != 0)
-            {
-                MessageBox.Show("Error: " + ctRegional.Message);
-                return;
-                //Mandar mensaje de error con sucursales.Message
-            }
-
-            cmbRegional.DataSource = ctRegional.Result;
-            cmbRegional.DisplayMember = "Descripcion";
-            cmbRegional.ValueMember = "IdRegional";
-            cmbRegional.SelectedIndex = -1;
-
-            #endregion
-
             #region ctTipoPersonal
 
             var ctTipoPersonal = new CatalogosData().ObtenerTipoPersonal();
@@ -207,7 +202,7 @@ namespace GDSfonacot.forms
             var sucursales = new SucursalesData().ObtenerSucursalesCombo();
             if (sucursales.Code != 0)
             {
-                MessageBox.Show("Error: " + ctRegional.Message);
+                MessageBox.Show("Error: " + sucursales.Message);
                 return;
                 //Mandar mensaje de error con sucursales.Message
             }
@@ -232,12 +227,22 @@ namespace GDSfonacot.forms
 
             var emp = empleadoDB.Result.First();
             txthidIdEmpleado.Text = IdEmpleado.ToString();
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                txtNombre.Enabled = false;
+                txtGafete.Enabled = false;
+            }
+            else
+            { 
+                txtNombre.Enabled = true;
+                txtGafete.Enabled = true;
+            }
             txtNombre.Text = emp.Nombre.ToString().Trim();
             txtGafete.Text = emp.Gafete.ToString().Trim();
             txtJornada.Text = emp.Jornada.ToString().Trim();
             txtHorario.Text = emp.Horario.ToString().Trim();
-            cmbRegional.SelectedValue = emp.IdRegional;
             cmbSucursal.SelectedValue= emp.IdSucursal;
+            textRegional.Text = DevuelveRegion(Convert.ToInt32(cmbSucursal.SelectedValue));
             cmbTipoPersonal.SelectedValue = emp.IdTipoPersonal;
             cmbActividad.SelectedValue = emp.IdActividad;
             cmbPerfilSistema.SelectedValue = emp.IdPerfilSistema;
@@ -249,6 +254,32 @@ namespace GDSfonacot.forms
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             LimpiarDatos();
+        }
+
+        private void cmbSucursal_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cmbSucursal.SelectedIndex != 0 || cmbSucursal.SelectedIndex != -1)
+            {
+                textRegional.Text = DevuelveRegion(Convert.ToInt32(cmbSucursal.SelectedValue));
+            }
+            else
+            {
+                 textRegional.Text = "";
+            }
+        }
+        
+        private String DevuelveRegion(int sucursal)
+        {
+            var regionDB = new SucursalesData().ObtenerRegionSucursal(sucursal);
+            if (regionDB.Code != 0 || regionDB.Result.Count < 1)
+            {
+                MessageBox.Show("Error: " + regionDB.Message);
+                return "";
+            }
+            else { 
+            var reg = regionDB.Result.First();
+            return reg.DireccionRegional;
+            }
         }
     }
 }

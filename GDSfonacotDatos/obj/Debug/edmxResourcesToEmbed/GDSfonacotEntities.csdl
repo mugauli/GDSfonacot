@@ -62,10 +62,6 @@
       <End Role="ctPerfilSistema" EntitySet="ctPerfilSistema" />
       <End Role="Empleados" EntitySet="Empleados" />
     </AssociationSet>
-    <AssociationSet Name="FK_Empleados_ctRegional" Association="GDSfonacotModel.FK_Empleados_ctRegional">
-      <End Role="ctRegional" EntitySet="ctRegional" />
-      <End Role="Empleados" EntitySet="Empleados" />
-    </AssociationSet>
     <AssociationSet Name="FK_Sucursales_ctRegional" Association="GDSfonacotModel.FK_Sucursales_ctRegional">
       <End Role="ctRegional" EntitySet="ctRegional" />
       <End Role="Sucursales" EntitySet="Sucursales" />
@@ -286,7 +282,6 @@
     </Key>
     <Property Name="IdRegional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctRegional" FromRole="ctRegional" ToRole="Empleados" />
     <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="ctRegional" ToRole="Sucursales" />
   </EntityType>
   <EntityType Name="ctTipoPersonal">
@@ -306,7 +301,6 @@
     <Property Name="Gafete" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="Jornada" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Horario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IdRegional" Type="Int32" Nullable="false" />
     <Property Name="IdSucursal" Type="Int32" Nullable="false" />
     <Property Name="IdTipoPersonal" Type="Int32" Nullable="false" />
     <Property Name="IdArea" Type="Int32" Nullable="false" />
@@ -315,7 +309,6 @@
     <NavigationProperty Name="ctActividad" Relationship="GDSfonacotModel.FK_Empleados_ctActividad" FromRole="Empleados" ToRole="ctActividad" />
     <NavigationProperty Name="ctArea" Relationship="GDSfonacotModel.FK_Empleados_ctArea" FromRole="Empleados" ToRole="ctArea" />
     <NavigationProperty Name="ctPerfilSistema" Relationship="GDSfonacotModel.FK_Empleados_ctPerfilSistema" FromRole="Empleados" ToRole="ctPerfilSistema" />
-    <NavigationProperty Name="ctRegional" Relationship="GDSfonacotModel.FK_Empleados_ctRegional" FromRole="Empleados" ToRole="ctRegional" />
     <NavigationProperty Name="ctTipoPersonal" Relationship="GDSfonacotModel.FK_Empleados_ctTipoPersonal" FromRole="Empleados" ToRole="ctTipoPersonal" />
     <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Empleados" ToRole="Sucursales" />
   </EntityType>
@@ -567,18 +560,6 @@
       </Principal>
       <Dependent Role="Empleados">
         <PropertyRef Name="IdPerfilSistema" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Empleados_ctRegional">
-    <End Type="GDSfonacotModel.ctRegional" Role="ctRegional" Multiplicity="1" />
-    <End Type="GDSfonacotModel.Empleados" Role="Empleados" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ctRegional">
-        <PropertyRef Name="IdRegional" />
-      </Principal>
-      <Dependent Role="Empleados">
-        <PropertyRef Name="IdRegional" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
