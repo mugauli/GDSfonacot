@@ -45,6 +45,8 @@ namespace GDSfonacotDatos.DTO
         public string Cobranza_Porcentaje_Meta { get; set; }
         public string Cobranza_Cumplimiento_Meta { get; set; }
         public Nullable<int> IdRegional { get; set; }
-      
+        public string Latitud { get; set; }
+        public string Altitud { get; set; }
+
     }
 }

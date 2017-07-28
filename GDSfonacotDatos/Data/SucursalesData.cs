@@ -58,12 +58,12 @@ namespace GDSfonacotDatos.Data
                           Fecha_baja = x.suc.Fecha_baja,
                           Meta_Acumulada_Porcentaje = x.suc.Meta_Acumulada_Porcentaje,
                           Cobranza_Meta_Anual = x.suc.Cobranza_Meta_Anual,
-                          Cobranza_Meta_Mensual=x.suc.Cobranza_Meta_Mensual,
+                          Cobranza_Meta_Mensual = x.suc.Cobranza_Meta_Mensual,
                           Cobranza_Porcentaje_Meta = x.suc.Cobranza_Porcentaje_Meta,
                           Cobranza_Cumplimiento_Meta = x.suc.Cobranza_Cumplimiento_Meta,
-                          IdRegional = x.suc.IdRegional
-
-
+                          IdRegional = x.suc.IdRegional,
+                          Latitud = x.suc.Latitud,
+                          Altitud=x.suc.Altitud
                       }
 
                       ).ToList();
@@ -248,6 +248,8 @@ namespace GDSfonacotDatos.Data
                         sucursalDB.Cobranza_Porcentaje_Meta = sucursal.Cobranza_Porcentaje_Meta;
                         sucursalDB.Cobranza_Cumplimiento_Meta = sucursal.Cobranza_Cumplimiento_Meta;
                         sucursalDB.IdRegional = sucursal.IdRegional;
+                        sucursalDB.Altitud = sucursal.Altitud;
+                        sucursalDB.Latitud = sucursal.Latitud;
 
 
                         context.SaveChanges();

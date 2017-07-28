@@ -12,7 +12,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
-
+using GMap.NET;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+using GMap.NET.WindowsForms.ToolTips;
+using GMap.NET.ObjectModel;
 namespace GDSfonacot.forms
 {
     public partial class frmSucursales : Form
@@ -90,6 +95,17 @@ namespace GDSfonacot.forms
             txtCobranzaPorcentaje.Text = (objSucursal.Cobranza_Porcentaje_Meta != null ? objSucursal.Cobranza_Porcentaje_Meta.ToString() : "");
             txtCobranzaCumplimiento.Text = (objSucursal.Cobranza_Cumplimiento_Meta != null ? objSucursal.Cobranza_Cumplimiento_Meta.ToString() : "");
             cmbZonaRegional.SelectedValue = objSucursal.IdRegional;
+            txtLatitud.Text = (objSucursal.Latitud != null ? objSucursal.Latitud.ToString() : "");
+            txtAltitud.Text= (objSucursal.Altitud != null ? objSucursal.Altitud.ToString() : "");
+            if (txtLatitud.Text!=String.Empty && txtAltitud.Text != String.Empty)
+            {
+                CargarMapa(txtLatitud.Text, txtAltitud.Text);
+            }
+            else
+            {
+                LimpiarMapa();
+            }
+            
             btnGuardar.Enabled = true;
             btnNuevo.Enabled = false;
             //tx.Text = objSucursal.Ventanillas.ToString();
@@ -102,6 +118,47 @@ namespace GDSfonacot.forms
 
         }
 
+        public void LimpiarMapa()
+        {
+            gMapControl1.DragButton = MouseButtons.Left;
+            gMapControl1.CanDragMap = true;
+            gMapControl1.MapProvider = GMapProviders.GoogleMap;
+            gMapControl1.MinZoom = 0;
+            gMapControl1.MaxZoom = 50;
+            gMapControl1.AutoScroll = true;
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
+            gMapControl1.SetPositionByKeywords("Ciudad de Mexico");
+      
+            gMapControl1.Zoom = 14;
+            numzoom.Value=Convert.ToDecimal(gMapControl1.Zoom);
+        }
+        public void CargarMapa(string latitud, string altitud)
+        {
+
+            LimpiarMapa();
+            GMapMarker marker = null;
+            GMapOverlay markers = new GMapOverlay("markers");
+            markers.Clear();
+            marker = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(latitud), Convert.ToDouble(altitud)), GMarkerGoogleType.blue_pushpin);
+            numzoom.Value = 18;
+            numzoom.Enabled = true;
+            gMapControl1.Zoom = Convert.ToDouble(numzoom.Value);
+            markers.Markers.Add(marker);
+            gMapControl1.Overlays.Clear();
+            gMapControl1.Overlays.Add(markers);
+            marker.Position = new PointLatLng(Convert.ToDouble(latitud), Convert.ToDouble(altitud));
+            gMapControl1.Position = marker.Position;
+            marker.ToolTip = new GMapRoundedToolTip(marker);
+            marker.ToolTipMode = MarkerTooltipMode.Always;
+            Font font = new Font("Arial", 8, FontStyle.Regular);
+            marker.ToolTipText = "Sucursal: \n" + txtSucursal.Text + "\nDomicilio:\n" + txtDireccion.Text.Trim() + "";
+            marker.ToolTip.Font = font;
+            marker.ToolTip.Format.Alignment = StringAlignment.Near;
+
+          
+
+
+        }
         public static Bitmap ByteToImage(byte[] blob)
         {
             try
@@ -163,74 +220,68 @@ namespace GDSfonacot.forms
                 MessageBox.Show(mensaje, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-            var sucursales = new Sucursales();
-            sucursales.IdSucursal = Convert.ToInt32(txthidIdSucursal.Text.ToString());
-            sucursales.NoSucursal = Convert.ToInt16(txtNoSucursal.Text.Trim());
-            sucursales.DescripcionSucursal = txtSucursal.Text.Trim();
-            sucursales.Dirección = txtDireccion.Text;
-            sucursales.Representaciones = txtRepresentaciones.Text;
-            sucursales.Director_Regional = txtDirectorRegional.Text;
-            sucursales.Director_Estatal = txtDirectorEstatal.Text;
-            sucursales.Coordinador_Administrativo = txtCoordinadorAdministrativo.Text;
-            sucursales.Coordinador_Crédito = txtCoordinadorCredito.Text;
-            sucursales.Coordinador_Cobranza = txtCoordinadorCobranza.Text;
-            sucursales.Analistas =Convert.ToInt16(txtTotalAnalistas.Text);
-            sucursales.Ventanillas = Convert.ToInt16(txtTotalVentanillas.Text);
-            sucursales.Analistas_Otorgamiento_de_Crédito = Convert.ToInt16(txtAnalistasCredito.Text);
-            sucursales.Analistas_Administrativo_y_SAM = Convert.ToInt16(txtAnalistasAdministrativos.Text);
-            sucursales.Analistas_Crédito_Control_Documental = Convert.ToInt16(txtAnalistaComercial.Text);
-            sucursales.Analistas_Cobranza = Convert.ToInt16(txtAnalistasCobranza.Text);
-            sucursales.Fotografia = ImageHelper.ImageToByteArray(pbxSucursal.Image);
-            sucursales.Empresas_Afiliadas = Convert.ToInt32(txtEmpresasAfiliadas.Text);
-            sucursales.Trabajadores_Afiliados = Convert.ToInt32(txtTrabajadoresAfiliados.Text);
-            sucursales.Potencial_de_Empresas = Convert.ToInt32(txtPotencialEmpresas.Text);
-            sucursales.Potencial_de_Trabajadores = Convert.ToInt32(txtPotencialTrabajadores.Text);
-            sucursales.Empresas_Status_1 = Convert.ToInt32(txtEmpresasEstatus1.Text);
-            sucursales.Empresas_Status_18 = Convert.ToInt32(txtEmpresasEstatus18.Text);
-            sucursales.Empresas_Status_21 = Convert.ToInt32(txtEmpresasEstatus21.Text);
-            sucursales.Empresas_Status_30 = Convert.ToInt32(txtEmpresasEstatus30.Text);
-            sucursales.Meta_Anual = Convert.ToDecimal(txtMetaAnual.Text);
-            sucursales.Meta_Mensual = Convert.ToDecimal(txtMetaMensual.Text);
-            sucursales.Colocación_Anual = Convert.ToDecimal(txtColocacionAnual.Text);
-            sucursales.Colocación_Mensual = Convert.ToDecimal(txtColocacionMensual.Text);
-            //sucursales.Fecha_baja = sucursal.Fecha_baja;
-            sucursales.Meta_Acumulada_Porcentaje = Convert.ToDecimal(txtMetaAcumulada.Text);
-            sucursales.Cobranza_Meta_Anual = txtcobranzaAnual.Text;
-            sucursales.Cobranza_Meta_Mensual = txtCobranzaMetaMensual.Text;
-            sucursales.Cobranza_Porcentaje_Meta = txtCobranzaPorcentaje.Text;
-            sucursales.Cobranza_Cumplimiento_Meta = txtCobranzaCumplimiento.Text;
-            sucursales.IdRegional = Convert.ToInt32(cmbZonaRegional.SelectedValue);
-            //empleado.IdEmpleado = IdEmpleadoInt;
-            //empleado.Nombre = txtNombre.Text.ToString().Trim();
-            //empleado.Gafete = txtGafete.Text.ToString().Trim();
-            //empleado.Jornada = txtJornada.Text.ToString().Trim();
-            //empleado.Horario = txtHorario.Text.ToString().Trim();
-            //empleado.IdRegional = cmbRegional.SelectedIndex;
-            //empleado.IdSucursal = cmbSucursal.SelectedIndex;
-            //empleado.IdTipoPersonal = cmbTipoPersonal.SelectedIndex;
-            //empleado.IdArea = cmbActividad.SelectedIndex;
-            //empleado.IdPerfilSistema = cmbPerfilSistema.SelectedIndex;
-            //empleado.IdActividad = cmbActividad.SelectedIndex;
-
-            var objSucursal = new SucursalesData().GuadarSucursal(sucursales);
-            if (objSucursal.Code != 0)
+            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                MessageBox.Show("Error: " + objSucursal.Message);
-                return;
-                //Mandar mensaje de error con sucursales.Message
-            }
-            else
-            {
-                if (txthidIdSucursal.Text == "0")
+                var sucursales = new Sucursales();
+                sucursales.IdSucursal = Convert.ToInt32(txthidIdSucursal.Text.ToString());
+                sucursales.NoSucursal = Convert.ToInt16(txtNoSucursal.Text.Trim());
+                sucursales.DescripcionSucursal = txtSucursal.Text.Trim();
+                sucursales.Dirección = txtDireccion.Text;
+                sucursales.Representaciones = txtRepresentaciones.Text;
+                sucursales.Director_Regional = txtDirectorRegional.Text;
+                sucursales.Director_Estatal = txtDirectorEstatal.Text;
+                sucursales.Coordinador_Administrativo = txtCoordinadorAdministrativo.Text;
+                sucursales.Coordinador_Crédito = txtCoordinadorCredito.Text;
+                sucursales.Coordinador_Cobranza = txtCoordinadorCobranza.Text;
+                sucursales.Analistas = Convert.ToInt16(txtTotalAnalistas.Text);
+                sucursales.Ventanillas = Convert.ToInt16(txtTotalVentanillas.Text);
+                sucursales.Analistas_Otorgamiento_de_Crédito = Convert.ToInt16(txtAnalistasCredito.Text);
+                sucursales.Analistas_Administrativo_y_SAM = Convert.ToInt16(txtAnalistasAdministrativos.Text);
+                sucursales.Analistas_Crédito_Control_Documental = Convert.ToInt16(txtAnalistaComercial.Text);
+                sucursales.Analistas_Cobranza = Convert.ToInt16(txtAnalistasCobranza.Text);
+                sucursales.Fotografia = ImageHelper.ImageToByteArray(pbxSucursal.Image);
+                sucursales.Empresas_Afiliadas = Convert.ToInt32(txtEmpresasAfiliadas.Text);
+                sucursales.Trabajadores_Afiliados = Convert.ToInt32(txtTrabajadoresAfiliados.Text);
+                sucursales.Potencial_de_Empresas = Convert.ToInt32(txtPotencialEmpresas.Text);
+                sucursales.Potencial_de_Trabajadores = Convert.ToInt32(txtPotencialTrabajadores.Text);
+                sucursales.Empresas_Status_1 = Convert.ToInt32(txtEmpresasEstatus1.Text);
+                sucursales.Empresas_Status_18 = Convert.ToInt32(txtEmpresasEstatus18.Text);
+                sucursales.Empresas_Status_21 = Convert.ToInt32(txtEmpresasEstatus21.Text);
+                sucursales.Empresas_Status_30 = Convert.ToInt32(txtEmpresasEstatus30.Text);
+                sucursales.Meta_Anual = Convert.ToDecimal(txtMetaAnual.Text);
+                sucursales.Meta_Mensual = Convert.ToDecimal(txtMetaMensual.Text);
+                sucursales.Colocación_Anual = Convert.ToDecimal(txtColocacionAnual.Text);
+                sucursales.Colocación_Mensual = Convert.ToDecimal(txtColocacionMensual.Text);
+                //sucursales.Fecha_baja = sucursal.Fecha_baja;
+                sucursales.Meta_Acumulada_Porcentaje = Convert.ToDecimal(txtMetaAcumulada.Text);
+                sucursales.Cobranza_Meta_Anual = txtcobranzaAnual.Text;
+                sucursales.Cobranza_Meta_Mensual = txtCobranzaMetaMensual.Text;
+                sucursales.Cobranza_Porcentaje_Meta = txtCobranzaPorcentaje.Text;
+                sucursales.Cobranza_Cumplimiento_Meta = txtCobranzaCumplimiento.Text;
+                sucursales.IdRegional = Convert.ToInt32(cmbZonaRegional.SelectedValue);
+                sucursales.Latitud = txtLatitud.Text.ToString().Trim();
+                sucursales.Altitud = txtAltitud.Text.ToString().Trim();
+
+
+                var objSucursal = new SucursalesData().GuadarSucursal(sucursales);
+                if (objSucursal.Code != 0)
                 {
-                    MessageBox.Show("La nueva sucursal ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarDatos();
+                    MessageBox.Show("Error: " + objSucursal.Message);
+                    return;
+                    //Mandar mensaje de error con sucursales.Message
                 }
                 else
                 {
-                    MessageBox.Show("La sucursal sucursal ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarDatos(Convert.ToInt32(txthidIdSucursal.Text.ToString()));
+                    if (txthidIdSucursal.Text == "0")
+                    {
+                        MessageBox.Show("La nueva sucursal ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimpiarDatos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La sucursal sucursal ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarDatos(Convert.ToInt32(txthidIdSucursal.Text.ToString()));
+                    }
                 }
             }
         }
@@ -241,10 +292,10 @@ namespace GDSfonacot.forms
 
             txtNoSucursal.Text = null;
             txtSucursal.Text = null;
-            txtDireccion.Text=null;
-            txtRepresentaciones.Text=null;
-            txtDirectorRegional.Text=null;
-            txtDirectorEstatal.Text= null;
+            txtDireccion.Text = null;
+            txtRepresentaciones.Text = null;
+            txtDirectorRegional.Text = null;
+            txtDirectorEstatal.Text = null;
             txtCoordinadorAdministrativo.Text = null;
             txtCoordinadorCredito.Text = null;
             txtCoordinadorCobranza.Text = null;
@@ -254,7 +305,7 @@ namespace GDSfonacot.forms
             txtAnalistasAdministrativos.Text = null;
             txtAnalistaComercial.Text = null;
             txtAnalistasCobranza.Text = null;
-            pbxSucursal.Image =null;
+            pbxSucursal.Image = null;
             txtEmpresasAfiliadas.Text = null;
             txtTrabajadoresAfiliados.Text = null;
             txtPotencialEmpresas.Text = null;
@@ -273,6 +324,9 @@ namespace GDSfonacot.forms
             txtCobranzaPorcentaje.Text = null;
             txtCobranzaCumplimiento.Text = null;
             cmbZonaRegional.SelectedIndex = -1;
+            LimpiarMapa();
+            txtAltitud.Text = null;
+            txtLatitud.Text = null;
             btnNuevo.Enabled = false;
             btnGuardar.Enabled = true;
         }
@@ -311,14 +365,30 @@ namespace GDSfonacot.forms
             if(txtCobranzaMetaMensual.Text == string.Empty) mensaje += "Favor de introducir cobranza meta mensual\n";
             if(txtCobranzaPorcentaje.Text == string.Empty) mensaje += "Favor de introducir cobranza porcentaje\n";
             if(txtCobranzaCumplimiento.Text == string.Empty) mensaje += "Favor de introducir cobranza cumplimiento\n";
+            if (txtAltitud.Text == string.Empty && txtLatitud.Text==string.Empty) mensaje += "Favor de indicar la ubicación geografica de la sucursal\n";
 
 
             return !(mensaje == string.Empty);
         }
 
+        private void txtubicacion_TextChanged(object sender, EventArgs e)
+        {
+          
+
+
+            //markerOverlay = new GMapOverlay("Marcador");
+            //marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.green);
+            //markerOverlay.Markers.Add(marker);
+            //marker.ToolTipMode = MarkerTooltipMode.Always;
+            //marker.ToolTipText = string.Format("Ubicacion: \n Latitud {0} \n Longitud:{1}", LatInicial, LngInicial);
+            //Ahora agregamos el overlays en el maa
+
+        }
+
         private void frmSucursales_Load(object sender, EventArgs e)
         {
             LoadingCatRegional();
+   
             if (SucursalInt!=0)
             {
                 CargarDatos(SucursalInt);
@@ -333,279 +403,73 @@ namespace GDSfonacot.forms
             LimpiarDatos();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+             
+        private void txtubicacion_KeyPress(object sender, KeyPressEventArgs e)
         {
+             if (e.KeyChar==13)
+            {
+                gMapControl1.DragButton = MouseButtons.Left;
+                gMapControl1.CanDragMap = true;
+                gMapControl1.MapProvider = GMapProviders.GoogleMap;
+                gMapControl1.MinZoom = 0;
+                gMapControl1.MaxZoom = 50;
+                gMapControl1.AutoScroll = true;
+                GMaps.Instance.Mode = AccessMode.ServerOnly;
+                gMapControl1.SetPositionByKeywords(txtubicacion.Text.Trim());
+                gMapControl1.Zoom = 18;
+                numzoom.Value = Convert.ToDecimal(gMapControl1.Zoom);
+                //markerOverlay = new GMapOverlay("Marcador");
+                //marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.none);
+                //markerOverlay.Markers.Add(marker);
+                ////Ahora agregamos el overlays en el maa
+                //gMapControl1.Overlays.Add(markerOverlay);
+                gMapControl1.ShowCenter = true;
+                numzoom.Enabled = true;
+            }
+            else
+            {
+                numzoom.Enabled =false;
+            }
+        }
+
+        private void numzoom_ValueChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToDouble(numzoom.Value) <= gMapControl1.MaxZoom)
+            {
+                gMapControl1.Zoom = Convert.ToDouble(numzoom.Value);
+            }
+        }
+        private void gMapControl1_DoubleClick(object sender, EventArgs e)
+        {
+            GMapMarker marker = null;
+            txtAltitud.Text = "";
+            txtLatitud.Text = "";
+            GMapControl gm = (GMapControl)sender;
+            MouseEventArgs hj = (MouseEventArgs)e;
+            PointLatLng plg = gm.FromLocalToLatLng(hj.X, hj.Y);
+            PointLatLng ultimopunto = plg;
+            txtLatitud.Text = ultimopunto.Lat.ToString().Trim();
+            txtAltitud.Text = ultimopunto.Lng.ToString().Trim();
+            GMapOverlay markers = new GMapOverlay("markers");
+            markers.Clear();
+
+            marker = new GMarkerGoogle(new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtAltitud.Text)), GMarkerGoogleType.blue_pushpin);
+            gMapControl1.Zoom = Convert.ToDouble(numzoom.Value);
+            markers.Markers.Add(marker);
+            gMapControl1.Overlays.Clear();
+            gMapControl1.Overlays.Add(markers);
+            marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtAltitud.Text));
+            gMapControl1.Position = marker.Position;
+            marker.ToolTipMode = MarkerTooltipMode.Always;
+            Font font = new Font("Arial", 8, FontStyle.Regular);
+            marker.ToolTipText = "Sucursal: \n" + txtSucursal.Text + "\nDomicilio:\n" + txtDireccion.Text.Trim() + "";
+            marker.ToolTip.Font = font;
+            marker.ToolTip.Format.Alignment = StringAlignment.Near;
+
+
 
         }
 
-        private void txtSucursal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDireccion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNoSucursal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbZonaRegional_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtRepresentaciones_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDirectorEstatal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCoordinadorAdministrativo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pbxSucursal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDirectorRegional_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCoordinadorCredito_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTotalAnalistas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCoordinadorCobranza_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAnalistaComercial_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAnalistasCredito_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAnalistasCobranza_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTrabajadoresAfiliados_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPotencialEmpresas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPotencialTrabajadores_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmpresasEstatus30_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmpresasEstatus21_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmpresasEstatus18_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMetaAnual_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMetaAcumulada_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtColocacionMensual_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtColocacionAnual_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMetaMensual_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmpresasEstatus1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmpresasAfiliadas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTotalVentanillas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

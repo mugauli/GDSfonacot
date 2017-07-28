@@ -159,3 +159,7 @@ C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\EntityFramework
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.exe
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.pdb
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GMap.NET.Core.dll
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GMap.NET.WindowsForms.dll
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GMap.NET.Core.xml
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GMap.NET.WindowsForms.xml

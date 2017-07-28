@@ -186,6 +186,8 @@
     <Property Name="Cobranza_Meta_Mensual" Type="nvarchar" MaxLength="255" />
     <Property Name="Cobranza_Porcentaje_Meta" Type="nvarchar" MaxLength="255" />
     <Property Name="Cobranza_Cumplimiento_Meta" Type="nvarchar" MaxLength="255" />
+    <Property Name="Latitud" Type="nvarchar" MaxLength="500" />
+    <Property Name="Altitud" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="TiraAuditora">
     <Key>
