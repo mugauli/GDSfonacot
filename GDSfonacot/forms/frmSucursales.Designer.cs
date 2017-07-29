@@ -133,7 +133,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(354, 23);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(132, 27);
-            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.TabIndex = 37;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -1273,7 +1273,7 @@
             this.txtubicacion.Location = new System.Drawing.Point(25, 616);
             this.txtubicacion.Name = "txtubicacion";
             this.txtubicacion.Size = new System.Drawing.Size(812, 22);
-            this.txtubicacion.TabIndex = 322;
+            this.txtubicacion.TabIndex = 35;
             this.txtubicacion.TextChanged += new System.EventHandler(this.txtubicacion_TextChanged);
             this.txtubicacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtubicacion_KeyPress);
             // 
@@ -1287,7 +1287,7 @@
             this.txtLatitud.Location = new System.Drawing.Point(354, 554);
             this.txtLatitud.Name = "txtLatitud";
             this.txtLatitud.Size = new System.Drawing.Size(280, 22);
-            this.txtLatitud.TabIndex = 326;
+            this.txtLatitud.TabIndex = 33;
             // 
             // txtAltitud
             // 
@@ -1299,7 +1299,7 @@
             this.txtAltitud.Location = new System.Drawing.Point(640, 554);
             this.txtAltitud.Name = "txtAltitud";
             this.txtAltitud.Size = new System.Drawing.Size(197, 22);
-            this.txtAltitud.TabIndex = 327;
+            this.txtAltitud.TabIndex = 34;
             // 
             // label35
             // 
@@ -1350,7 +1350,7 @@
             this.numzoom.Location = new System.Drawing.Point(843, 616);
             this.numzoom.Name = "numzoom";
             this.numzoom.Size = new System.Drawing.Size(217, 22);
-            this.numzoom.TabIndex = 329;
+            this.numzoom.TabIndex = 36;
             this.numzoom.ValueChanged += new System.EventHandler(this.numzoom_ValueChanged);
             // 
             // frmSucursales

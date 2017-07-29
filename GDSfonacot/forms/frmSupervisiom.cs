@@ -100,7 +100,10 @@ namespace GDSfonacot.forms
                 objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
                 objSupervision.Idstatus = 1;
                 objSupervision.Idsupervisor1 = Convert.ToInt32(cmbSupervisor1.SelectedValue);
+                if (cmbSupervisor2.SelectedValue != null) { 
                 objSupervision.Idsupervisor2 = Convert.ToInt32(cmbSupervisor2.SelectedValue);
+                }
+                
                 objSupervision.Fechacreacion = DateTime.Now;
                 var gdSupervisiones = new SupervisionesData().GuardarSupervision(objSupervision);
                 if (gdSupervisiones.Code != 0)
@@ -162,12 +165,12 @@ namespace GDSfonacot.forms
                 return true;
             }
 
-            if (string.IsNullOrEmpty(cmbSupervisor2.Text.Trim()) || cmbSupervisor2.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa el nombre del supervisor 2", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                cmbSupervisor2.Focus();
-                return true;
-            }
+            //if (string.IsNullOrEmpty(cmbSupervisor2.Text.Trim()) || cmbSupervisor2.Text.Trim() == "")
+            //{
+            //    MessageBox.Show("Ingresa el nombre del supervisor 2", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    cmbSupervisor2.Focus();
+            //    return true;
+            //}
 
             if (string.IsNullOrEmpty(txtInmuble.Text.Trim()) || txtInmuble.Text.Trim() == "")
             {
@@ -405,7 +408,13 @@ namespace GDSfonacot.forms
                 txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
                 txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
                 cmbSupervisor1.SelectedValue = busqueda.Result.Idsupervisor1;
+                if (busqueda.Result.Idsupervisor2!=null) { 
                 cmbSupervisor2.SelectedValue = busqueda.Result.Idsupervisor2;
+                }
+                else
+                {
+                    cmbSupervisor2.SelectedIndex = -1;
+                }
                 toolButNuevo.Enabled = false;
                 toolButGuardar.Enabled = true;
                 txtNoSupervision.Enabled = false;
