@@ -171,9 +171,11 @@ namespace GDSfonacot.forms
 
         private void checkmostrartodos_CheckedChanged(object sender, EventArgs e)
         {
+            lblRegistros.Text = "";
             if (checkmostrartodos.Checked == true)
             {
                 #region mostrartodosusuarios
+                cmbNivelusuario.SelectedIndex = -1;
                 var _usuariosData = new UsuariosData();
                 var usuarios = _usuariosData.ObtenerUsuariosGeneral(sucursalInt);
                 if (usuarios.Code != 0)

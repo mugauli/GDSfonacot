@@ -45,8 +45,17 @@ namespace GDSfonacot.forms
                 }
             }
             MDIPrincip temp = new MDIPrincip();
-            temp.timesup.Start();
-            temp.timerreasig.Start();
+            if (Globales.objpasardatosusuario.IdNivel == 2)
+            {
+                temp.timesup.Start();
+                temp.timerreasig.Start();
+            }
+            else
+            {
+                temp.timesup.Stop();
+                temp.timerreasig.Stop();
+            }
+     
            
 
         }

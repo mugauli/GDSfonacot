@@ -23,8 +23,15 @@ namespace GDSfonacot
        
         private void MDIPrincip_Load(object sender, EventArgs e)
         {
-            timesup.Start();
+            if (Globales.objpasardatosusuario.IdNivel == 2) { 
+               timesup.Start();
             timerreasig.Start();
+            }
+            else
+            {
+                timesup.Stop();
+                timerreasig.Stop();
+            }
             lblNombreUsuario.Text = Globales.objpasardatosusuario.Nombre_Usuario;
             CargarMenus();
         }
@@ -339,6 +346,7 @@ namespace GDSfonacot
                     else
                     {
                         //No muestro nada
+                        notifySupReasignadas.Dispose();
                     }
 
                 }
@@ -367,6 +375,7 @@ namespace GDSfonacot
                     else
                     {
                         //No muestro nada
+                        notifySupReasignadas.Dispose();
                     }
                 }
 

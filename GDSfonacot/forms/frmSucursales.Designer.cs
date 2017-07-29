@@ -1248,6 +1248,7 @@
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomEnabled = true;
             this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMapControl1.Name = "gMapControl1";
             this.gMapControl1.NegativeMode = false;
@@ -1325,7 +1326,7 @@
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(195, 33);
             this.label36.TabIndex = 331;
-            this.label36.Text = "Altitud";
+            this.label36.Text = "Longitud";
             // 
             // label37
             // 

@@ -198,6 +198,7 @@ namespace GDSfonacot
 
         private void checkmostrartodos_CheckedChanged(object sender, EventArgs e)
         {
+            lblRegistros.Text = "";
             if (checkmostrartodos.Checked == true)
             {
                 #region mostrartodosempleados
