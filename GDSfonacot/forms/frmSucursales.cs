@@ -279,7 +279,7 @@ namespace GDSfonacot.forms
                     }
                     else
                     {
-                        MessageBox.Show("La sucursal sucursal ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("La sucursal ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDatos(Convert.ToInt32(txthidIdSucursal.Text.ToString()));
                     }
                 }
