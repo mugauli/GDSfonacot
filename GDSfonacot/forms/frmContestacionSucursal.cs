@@ -74,11 +74,46 @@ namespace GDSfonacot.forms
             }
             else
             {
-                toolButReasignar.Enabled = false;
-                toolButReasignar.Visible = false;
-                toolButCerrarSup.Enabled = false;
-                toolButCerrarSup.Visible = false;
-                toolButImprimir.Enabled = true;
+                if (txthidStatus.Text == "3")
+                {
+                    toolButReasignar.Enabled = false;
+                    toolButReasignar.Visible = false;
+                    toolButCerrarSup.Enabled = false;
+                    toolButCerrarSup.Visible = false;
+                    toolButGuardar.Enabled = false;
+                    toolButImprimir.Enabled = true;
+                }
+                else if (txthidStatus.Text == "2")
+                {
+                    toolButReasignar.Enabled = false;
+                    toolButReasignar.Visible = false;
+                    toolButCerrarSup.Enabled = false;
+                    toolButCerrarSup.Visible = false;
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = true;
+
+                }
+                else if (txthidStatus.Text == "1")
+                {
+                    toolButReasignar.Enabled = false;
+                    toolButReasignar.Visible = false;
+                    toolButCerrarSup.Enabled = false;
+                    toolButCerrarSup.Visible = false;
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = true;
+
+                }
+                else if (txthidStatus.Text == "" || txthidStatus.Text == "0")
+                {
+                    toolButReasignar.Enabled = false;
+                    toolButReasignar.Visible = false;
+                    toolButCerrarSup.Enabled = false;
+                    toolButCerrarSup.Visible = false;
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = true;
+
+                }
+
             }
             #endregion
 
@@ -141,7 +176,7 @@ namespace GDSfonacot.forms
         {
             int[] varstatus = { 1 };
             var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2, varstatus);
+            var busqueda = objSupervision.ObtenerDatosSupervisionCargaDatos(valor1, valor2, varstatus);
             if (busqueda.Result != null)
             {
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();

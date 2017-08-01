@@ -37,9 +37,25 @@ namespace GDSfonacot
         }
         private void LlenarDatos()
         {
+            var objbuscaSupervision = new SupervisionesData();
+            var busqueda2 = objbuscaSupervision.BuscarSupervision(txtNoSupervision.Text.Trim());
+            int sup1 = 0, sup2 = 0;
+            if (busqueda2.Result != null)
+            {
+                sup1 = Convert.ToInt32(busqueda2.Result.Idsupervisor1);
+                if (busqueda2.Result.Idsupervisor2 == null)
+                {
+                    sup2 = Convert.ToInt32(busqueda2.Result.Idsupervisor2);
+                }
+                else
+                {
+                    sup2 = 0;
+                }
+            }
+
             int[] varstatus = { 1, 2 };
             var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2, varstatus);
+            var busqueda = objSupervision.ObtenerDatosSupervision(valor1, valor2, varstatus, sup1, sup2);
             if (busqueda.Result != null)
             {
                 txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();

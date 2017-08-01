@@ -443,38 +443,118 @@ namespace GDSfonacotDatos
                 return new MethodResponse<DatosHistSupervision> { Code = -100, Message = ex.Message };
             }
         }
-        public MethodResponse<DatosBuscarSupervision> ObtenerDatosSupervision(int IdSupervisiones, string filter, int[] clavestatus)
+        public MethodResponse<DatosBuscarSupervision> ObtenerDatosSupervision(int IdSupervisiones, string filter, int[] clavestatus,int supervisor1, int supervisor2)
         {
             try
             {
                 using (var context = new GDSfonacotEntities())
                 {
+
+                    var response = new MethodResponse<DatosBuscarSupervision> { Code = 0 };
+
+                    if (supervisor1 != 0 && supervisor2 == 0) {
+                        var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
+                       .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
+                        .Join(context.Usuarios, tabla1 => tabla1.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup2, Usu1) => new { HistSup2, Usu1 })
+                       .Join(context.ctRegional, tabla1 => tabla1.HistSup2.Suc.IdRegional, tabla2 => tabla2.IdRegional, (suc2, reg) => new { suc2, reg })
+                       .Where(sc => clavestatus.Contains((int)sc.suc2.HistSup2.HistSup.Idstatus) && sc.reg.IdRegional == sc.suc2.HistSup2.Suc.IdRegional && (sc.suc2.HistSup2.HistSup.IdSupervisiones == IdSupervisiones) && (sc.suc2.HistSup2.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
+                       .Select(x => new DatosBuscarSupervision
+                       {
+                           IdSupervisiones = x.suc2.HistSup2.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                           NoSupervision = x.suc2.HistSup2.HistSup.NoSupervision,
+                           FechaSupervision = x.suc2.HistSup2.HistSup.FechaSupervision,
+                           DescripcionSucursal = x.suc2.HistSup2.Suc.DescripcionSucursal,
+                           Director_Regional = x.suc2.HistSup2.Suc.Director_Regional,
+                           Director_Estatal = x.suc2.HistSup2.Suc.Director_Estatal,
+                           NoSucursal = x.suc2.HistSup2.Suc.NoSucursal,
+                           DireccionRegional = x.reg.Descripcion,
+                           Representaciones = x.suc2.HistSup2.Suc.Representaciones,
+                           Idstatus = x.suc2.HistSup2.HistSup.Idstatus,
+                           Supervisor1 = x.suc2.Usu1.Nombre_Usuario,
+                           Supervisor2 = null
+
+                       }).SingleOrDefault();
+                        if (HistoricoSucursalesDB != null) response.Result = HistoricoSucursalesDB;
+                        return response;
+
+                    }
+                    else
+                    {
+                        var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
+                      .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
+                       .Join(context.Usuarios, tabla1 => tabla1.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup2, Usu1) => new { HistSup2, Usu1 })
+                        .Join(context.Usuarios, tabla1 => tabla1.HistSup2.HistSup.Idsupervisor2, tabla2 => tabla2.IdUsuario, (HistSup3, Usu2) => new { HistSup3, Usu2 })
+                      .Join(context.ctRegional, tabla1 => tabla1.HistSup3.HistSup2.Suc.IdRegional, tabla2 => tabla2.IdRegional, (suc2, reg) => new { suc2, reg })
+                      .Where(sc => clavestatus.Contains((int)sc.suc2.HistSup3.HistSup2.HistSup.Idstatus) && sc.reg.IdRegional == sc.suc2.HistSup3.HistSup2.Suc.IdRegional && (sc.suc2.HistSup3.HistSup2.HistSup.IdSupervisiones == IdSupervisiones) && (sc.suc2.HistSup3.HistSup2.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
+                      .Select(x => new DatosBuscarSupervision
+                      {
+                          IdSupervisiones = x.suc2.HistSup3.HistSup2.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                            NoSupervision = x.suc2.HistSup3.HistSup2.HistSup.NoSupervision,
+                          FechaSupervision = x.suc2.HistSup3.HistSup2.HistSup.FechaSupervision,
+                          DescripcionSucursal = x.suc2.HistSup3.HistSup2.Suc.DescripcionSucursal,
+                          Director_Regional = x.suc2.HistSup3.HistSup2.Suc.Director_Regional,
+                          Director_Estatal = x.suc2.HistSup3.HistSup2.Suc.Director_Estatal,
+                          NoSucursal = x.suc2.HistSup3.HistSup2.Suc.NoSucursal,
+                          DireccionRegional = x.reg.Descripcion,
+                          Representaciones = x.suc2.HistSup3.HistSup2.Suc.Representaciones,
+                          Idstatus = x.suc2.HistSup3.HistSup2.HistSup.Idstatus,
+                          Supervisor1 = x.suc2.HistSup3.Usu1.Nombre_Usuario,
+                          Supervisor2 = x.suc2.Usu2.Nombre_Usuario
+
+                      }).SingleOrDefault();
+                        if (HistoricoSucursalesDB != null) response.Result = HistoricoSucursalesDB;
+                        return response;
+                    }
+
+
+
+                  
+
+              
+                    //  response.Result = HistoricoSucursalesDB;
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<DatosBuscarSupervision> { Code = -100, Message = ex.Message };
+            }
+        }
+
+        public MethodResponse<DatosBuscarSupervision> ObtenerDatosSupervisionCargaDatos(int IdSupervisiones, string filter, int[] clavestatus)
+        {
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+
                     var response = new MethodResponse<DatosBuscarSupervision> { Code = 0 };
 
                     var HistoricoSucursalesDB = context.HistorialSupervisiones // seleccion de tabla inicial
                         .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (HistSup, Suc) => new { HistSup, Suc }) // se realiza el join para crear el contexto completo es decir todos los dato 
-                         .Join(context.Usuarios, tabla1 => tabla1.HistSup.Idsupervisor1, tabla2 => tabla2.IdUsuario, (HistSup2, Usu1) => new { HistSup2, Usu1 })
-                          .Join(context.Usuarios, tabla1 => tabla1.HistSup2.HistSup.Idsupervisor2, tabla2 => tabla2.IdUsuario, (HistSup3, Usu2) => new { HistSup3, Usu2 })
-                        .Join(context.ctRegional, tabla1 => tabla1.HistSup3.HistSup2.Suc.IdRegional, tabla2 => tabla2.IdRegional, (suc2, reg) => new { suc2, reg })
-                        .Where(sc => clavestatus.Contains((int)sc.suc2.HistSup3.HistSup2.HistSup.Idstatus) && sc.reg.IdRegional == sc.suc2.HistSup3.HistSup2.Suc.IdRegional && (sc.suc2.HistSup3.HistSup2.HistSup.IdSupervisiones == IdSupervisiones) && (sc.suc2.HistSup3.HistSup2.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
+                        .Join(context.ctRegional, tabla1 => tabla1.Suc.IdRegional, tabla2 => tabla2.IdRegional, (suc2, reg) => new { suc2, reg })
+                        .Where(sc => clavestatus.Contains((int)sc.suc2.HistSup.Idstatus) && sc.reg.IdRegional == sc.suc2.Suc.IdRegional && (sc.suc2.HistSup.IdSupervisiones == IdSupervisiones) && (sc.suc2.HistSup.NoSupervision.Contains(filter))) //ya teniendo los datos, se filtran con el where
                         .Select(x => new DatosBuscarSupervision
                         {
-                            IdSupervisiones = x.suc2.HistSup3.HistSup2.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
-                            NoSupervision = x.suc2.HistSup3.HistSup2.HistSup.NoSupervision,
-                            FechaSupervision = x.suc2.HistSup3.HistSup2.HistSup.FechaSupervision,
-                            DescripcionSucursal = x.suc2.HistSup3.HistSup2.Suc.DescripcionSucursal,
-                            Director_Regional = x.suc2.HistSup3.HistSup2.Suc.Director_Regional,
-                            Director_Estatal = x.suc2.HistSup3.HistSup2.Suc.Director_Estatal,
-                            NoSucursal = x.suc2.HistSup3.HistSup2.Suc.NoSucursal,
+                            IdSupervisiones = x.suc2.HistSup.IdSupervisiones,  // solo eligen los datos a utilizar, y com dijera la peregila :-D liiiisto :-D
+                            NoSupervision = x.suc2.HistSup.NoSupervision,
+                            FechaSupervision = x.suc2.HistSup.FechaSupervision,
+                            DescripcionSucursal = x.suc2.Suc.DescripcionSucursal,
+                            Director_Regional = x.suc2.Suc.Director_Regional,
+                            Director_Estatal = x.suc2.Suc.Director_Estatal,
+                            NoSucursal = x.suc2.Suc.NoSucursal,
                             DireccionRegional = x.reg.Descripcion,
-                            Representaciones = x.suc2.HistSup3.HistSup2.Suc.Representaciones,
-                            Idstatus=x.suc2.HistSup3.HistSup2.HistSup.Idstatus,
-                            Supervisor1=x.suc2.HistSup3.Usu1.Nombre_Usuario,
-                            Supervisor2=x.suc2.Usu2.Nombre_Usuario
-                          
-                            
-                            
-                            
+                            Representaciones = x.suc2.Suc.Representaciones,
+                            Idstatus = x.suc2.HistSup.Idstatus,
+                            //Supervisor1 = x.suc2.HistSup3.Usu1.Nombre_Usuario,
+                            //Supervisor2 = x.suc2.Usu2.Nombre_Usuario
+
+
+
+
 
 
                         }).SingleOrDefault();
