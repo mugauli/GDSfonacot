@@ -364,6 +364,7 @@
             this.cmbperfilsistema.Name = "cmbperfilsistema";
             this.cmbperfilsistema.Size = new System.Drawing.Size(298, 21);
             this.cmbperfilsistema.TabIndex = 253;
+          
             this.cmbperfilsistema.SelectionChangeCommitted += new System.EventHandler(this.cmbperfilsistema_SelectionChangeCommitted);
             // 
             // TabsEmpleados

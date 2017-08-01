@@ -32,6 +32,9 @@ namespace GDSfonacot.forms
 
         private void frmContestacionSucursal_Load(object sender, EventArgs e)
         {
+
+
+
             if (saveorupdate == 0)
             {
                 LlenarDatos();
@@ -44,6 +47,42 @@ namespace GDSfonacot.forms
                     return;
                 }
             }
+
+            #region validabotones
+            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+            {
+                if (txthidStatus.Text == "3")
+                {
+                    toolButReasignar.Enabled = false;
+                    toolButReasignar.Visible = true;
+                    toolButCerrarSup.Enabled = false;
+                    toolButCerrarSup.Visible = true;
+                    toolButGuardar.Enabled = false;
+                    toolButImprimir.Enabled = true;
+                }
+                else if (txthidStatus.Text == "2")
+                {
+                    toolButReasignar.Enabled = true;
+                    toolButReasignar.Visible = true;
+                    toolButCerrarSup.Enabled = true;
+                    toolButCerrarSup.Visible = true;
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = true;
+
+                }
+
+            }
+            else
+            {
+                toolButReasignar.Enabled = false;
+                toolButReasignar.Visible = false;
+                toolButCerrarSup.Enabled = false;
+                toolButCerrarSup.Visible = false;
+                toolButImprimir.Enabled = true;
+            }
+            #endregion
+
+
             MDIPrincip temp = new MDIPrincip();
             if (Globales.objpasardatosusuario.IdNivel == 2)
             {
@@ -383,6 +422,39 @@ namespace GDSfonacot.forms
             frmvisor.param1 = txtNoSupervision.Text.Trim();
             //frmvisor.MdiParen8t = MDIPrincip();
             frmvisor.ShowDialog();
+        }
+
+        private void toolButReasignar_Click(object sender, EventArgs e)
+        {
+            var frmreasignar = new frmReasignarSuperv(0);//crea una instancia del formulario
+            frmreasignar.valor1 = Convert.ToInt32(txthidIdSup.Text);
+            frmreasignar.varstatus = Convert.ToInt32(txthidStatus.Text);                                                   // frmPersonsuc.MdiParent = this.ParentForm;
+            frmreasignar.ShowDialog();
+            if (frmreasignar.cierramanual == 1)
+            {
+                // se mantiene la ventana de historico abierta
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void toolButCerrarSup_Click(object sender, EventArgs e)
+        {
+            var frmcerrar = new frmCerrarSupervision(0);//crea una instancia del formulario
+            frmcerrar.valor1 = Convert.ToInt32(txthidIdSup.Text);
+            frmcerrar.varstatus = Convert.ToInt32(txthidStatus.Text);
+            // frmPersonsuc.MdiParent = this.ParentForm;
+            frmcerrar.ShowDialog();
+            if (frmcerrar.cierramanual == 1)
+            {
+                // se mantiene la ventana de historico abierta
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -47,6 +47,8 @@ namespace GDSfonacotDatos.DTO
         public Nullable<int> IdRegional { get; set; }
         public string Latitud { get; set; }
         public string Altitud { get; set; }
+        public Nullable<int> IdsucursalPadre { get; set; }
+
 
     }
 }

@@ -30,6 +30,19 @@ namespace GDSfonacot.forms
             SucursalInt = Sucursal;
            
         }
+        private void LoadingCatRepreSucursales()
+        {
+            var sucursales = new SucursalesData().ObtenerSucursalesCombo();
+            if (sucursales.Code != 0)
+            {
+                //Mandar mensaje de error con sucursales.Message
+            }
+
+            cborepresentacion.DataSource = sucursales.Result;
+            cborepresentacion.DisplayMember = "NameSucursal";
+            cborepresentacion.ValueMember = "IdSucursal";
+            cborepresentacion.SelectedIndex = -1;
+        }
         private void LoadingCatRegional()
         {
             var perfilessistema = new CatalogosData().ObtenerRegional();
@@ -105,7 +118,17 @@ namespace GDSfonacot.forms
             {
                 LimpiarMapa();
             }
-            
+            if (objSucursal.IdsucursalPadre==0)
+            {
+                checkrepresentacion.Checked = false;
+                cborepresentacion.Visible = false;
+            }
+            else
+            {
+                checkrepresentacion.Checked = true;
+                cborepresentacion.Visible = true;
+                cborepresentacion.SelectedValue = objSucursal.IdsucursalPadre;
+            }
             btnGuardar.Enabled = true;
             btnNuevo.Enabled = false;
             //tx.Text = objSucursal.Ventanillas.ToString();
@@ -214,6 +237,11 @@ namespace GDSfonacot.forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (Globales.objpasardatosusuario.IdNivel != 1)
+            {
+                MessageBox.Show("Solo el administrador tiene acceso a esta accion", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+                return;    
+            }
             var mensaje = string.Empty;
             if (ValidateSucursal(out mensaje))
             {
@@ -261,6 +289,14 @@ namespace GDSfonacot.forms
                 sucursales.IdRegional = Convert.ToInt32(cmbZonaRegional.SelectedValue);
                 sucursales.Latitud = txtLatitud.Text.ToString().Trim();
                 sucursales.Altitud = txtAltitud.Text.ToString().Trim();
+                if (checkrepresentacion.Checked==true)
+                {
+                    sucursales.IdsucursalPadre = Convert.ToInt32(cborepresentacion.SelectedValue);
+                }
+                else
+                {
+                    sucursales.IdsucursalPadre = 0;
+                }
 
 
                 var objSucursal = new SucursalesData().GuadarSucursal(sucursales);
@@ -365,7 +401,20 @@ namespace GDSfonacot.forms
             if(txtCobranzaMetaMensual.Text == string.Empty) mensaje += "Favor de introducir cobranza meta mensual\n";
             if(txtCobranzaPorcentaje.Text == string.Empty) mensaje += "Favor de introducir cobranza porcentaje\n";
             if(txtCobranzaCumplimiento.Text == string.Empty) mensaje += "Favor de introducir cobranza cumplimiento\n";
-            if (txtAltitud.Text == string.Empty && txtLatitud.Text==string.Empty) mensaje += "Favor de indicar la ubicación geografica de la sucursal\n";
+            //if (txtAltitud.Text == string.Empty && txtLatitud.Text==string.Empty) mensaje += "Favor de indicar la ubicación geografica de la sucursal\n";
+
+            if (checkrepresentacion.Checked == true)
+            {
+                if (cborepresentacion.SelectedIndex == -1) mensaje += "Favor de seleccionar una sucursal Padre para asociarla a esta\n";
+
+
+                if (Convert.ToInt32(txthidIdSucursal.Text) == Convert.ToInt32(cborepresentacion.SelectedValue))
+                {
+                    mensaje += "No se puede asignar una misma sucursal asi misma\n";
+                }
+            }
+
+        
 
 
             return !(mensaje == string.Empty);
@@ -388,7 +437,9 @@ namespace GDSfonacot.forms
         private void frmSucursales_Load(object sender, EventArgs e)
         {
             LoadingCatRegional();
-   
+            LoadingCatRepreSucursales();
+
+
             if (SucursalInt!=0)
             {
                 CargarDatos(SucursalInt);
@@ -470,6 +521,51 @@ namespace GDSfonacot.forms
 
         }
 
-      
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkrepresentacion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkrepresentacion.Checked == true)
+            {
+                cborepresentacion.Visible = true;
+            }
+            else
+            {
+                cborepresentacion.Visible = false;
+            }
+        }
+
+        private void cmbZonaRegional_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cmbZonaRegional.SelectedIndex != 0 || cmbZonaRegional.SelectedIndex != -1)
+            {
+
+                txtDirectorRegional.Text = DevuelveDirectorRegional(Convert.ToInt32(cmbZonaRegional.SelectedValue));
+
+            }
+            else {
+                txtDirectorRegional.Text = null;
+
+            }
+
+        }
+
+        private String DevuelveDirectorRegional(int idregion)
+        {
+            var regionDB = new SucursalesData().ObtenerRegionTitular(idregion);
+            if (regionDB.Code != 0 || regionDB.Result.Count < 1)
+            {
+                MessageBox.Show("Error: " + regionDB.Message);
+                return "";
+            }
+            else
+            {
+                var reg = regionDB.Result.First();
+                return reg.Director_Regional;
+            }
+        }
     }
 }

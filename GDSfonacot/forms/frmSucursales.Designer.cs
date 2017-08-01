@@ -109,6 +109,8 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.numzoom = new System.Windows.Forms.NumericUpDown();
+            this.cborepresentacion = new System.Windows.Forms.ComboBox();
+            this.checkrepresentacion = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numzoom)).BeginInit();
@@ -149,6 +151,7 @@
             this.cmbZonaRegional.Name = "cmbZonaRegional";
             this.cmbZonaRegional.Size = new System.Drawing.Size(217, 24);
             this.cmbZonaRegional.TabIndex = 2;
+            this.cmbZonaRegional.SelectionChangeCommitted += new System.EventHandler(this.cmbZonaRegional_SelectionChangeCommitted);
             // 
             // label7
             // 
@@ -227,7 +230,7 @@
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtDireccion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtDireccion.Size = new System.Drawing.Size(704, 24);
             this.txtDireccion.TabIndex = 3;
             // 
@@ -242,7 +245,7 @@
             this.txtRepresentaciones.Margin = new System.Windows.Forms.Padding(4);
             this.txtRepresentaciones.Multiline = true;
             this.txtRepresentaciones.Name = "txtRepresentaciones";
-            this.txtRepresentaciones.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtRepresentaciones.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtRepresentaciones.Size = new System.Drawing.Size(481, 23);
             this.txtRepresentaciones.TabIndex = 4;
             // 
@@ -256,7 +259,7 @@
             this.txtNoSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoSucursal.Multiline = true;
             this.txtNoSucursal.Name = "txtNoSucursal";
-            this.txtNoSucursal.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtNoSucursal.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtNoSucursal.Size = new System.Drawing.Size(195, 21);
             this.txtNoSucursal.TabIndex = 1;
             // 
@@ -300,7 +303,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64019F));
-            this.tableLayoutPanel1.Controls.Add(this.label34, 1, 25);
+            this.tableLayoutPanel1.Controls.Add(this.cborepresentacion, 2, 24);
+            this.tableLayoutPanel1.Controls.Add(this.label34, 1, 27);
             this.tableLayoutPanel1.Controls.Add(this.txtCoordinadorCobranza, 2, 10);
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 11);
@@ -372,18 +376,19 @@
             this.tableLayoutPanel1.Controls.Add(this.txtAnalistasAdministrativos, 1, 22);
             this.tableLayoutPanel1.Controls.Add(this.label33, 1, 23);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.gMapControl1, 1, 26);
-            this.tableLayoutPanel1.Controls.Add(this.txtubicacion, 1, 24);
+            this.tableLayoutPanel1.Controls.Add(this.gMapControl1, 1, 28);
+            this.tableLayoutPanel1.Controls.Add(this.txtubicacion, 1, 26);
             this.tableLayoutPanel1.Controls.Add(this.txtLatitud, 2, 22);
             this.tableLayoutPanel1.Controls.Add(this.txtAltitud, 3, 22);
             this.tableLayoutPanel1.Controls.Add(this.label35, 2, 23);
             this.tableLayoutPanel1.Controls.Add(this.label36, 3, 23);
-            this.tableLayoutPanel1.Controls.Add(this.label37, 4, 25);
-            this.tableLayoutPanel1.Controls.Add(this.numzoom, 4, 24);
+            this.tableLayoutPanel1.Controls.Add(this.label37, 4, 27);
+            this.tableLayoutPanel1.Controls.Add(this.numzoom, 4, 26);
+            this.tableLayoutPanel1.Controls.Add(this.checkrepresentacion, 1, 24);
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.DimGray;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 46;
+            this.tableLayoutPanel1.RowCount = 48;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
@@ -395,8 +400,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
@@ -436,6 +441,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(65082, 1133);
             this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label34
             // 
@@ -444,10 +450,10 @@
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label34.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.DimGray;
-            this.label34.Location = new System.Drawing.Point(26, 639);
+            this.label34.Location = new System.Drawing.Point(26, 680);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(810, 14);
+            this.label34.Size = new System.Drawing.Size(810, 13);
             this.label34.TabIndex = 328;
             this.label34.Text = "Buscar Zona Geográfica, escribe tu busqueda y presiona enter para mostrar el mapa" +
     "";
@@ -462,7 +468,7 @@
             this.txtCoordinadorCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorCobranza.Multiline = true;
             this.txtCoordinadorCobranza.Name = "txtCoordinadorCobranza";
-            this.txtCoordinadorCobranza.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtCoordinadorCobranza.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCoordinadorCobranza.Size = new System.Drawing.Size(278, 25);
             this.txtCoordinadorCobranza.TabIndex = 9;
             // 
@@ -475,7 +481,7 @@
             this.label11.Location = new System.Drawing.Point(355, 289);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(278, 20);
+            this.label11.Size = new System.Drawing.Size(278, 17);
             this.label11.TabIndex = 245;
             this.label11.Text = "Coordinador Cobranza";
             // 
@@ -515,7 +521,7 @@
             this.txtDirectorRegional.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirectorRegional.Multiline = true;
             this.txtDirectorRegional.Name = "txtDirectorRegional";
-            this.txtDirectorRegional.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtDirectorRegional.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtDirectorRegional.Size = new System.Drawing.Size(215, 23);
             this.txtDirectorRegional.TabIndex = 5;
             // 
@@ -529,7 +535,7 @@
             this.txtSucursal.Margin = new System.Windows.Forms.Padding(4);
             this.txtSucursal.Multiline = true;
             this.txtSucursal.Name = "txtSucursal";
-            this.txtSucursal.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtSucursal.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtSucursal.Size = new System.Drawing.Size(278, 21);
             this.txtSucursal.TabIndex = 0;
             // 
@@ -556,7 +562,7 @@
             this.txtCoordinadorCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorCredito.Multiline = true;
             this.txtCoordinadorCredito.Name = "txtCoordinadorCredito";
-            this.txtCoordinadorCredito.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtCoordinadorCredito.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCoordinadorCredito.Size = new System.Drawing.Size(215, 22);
             this.txtCoordinadorCredito.TabIndex = 8;
             // 
@@ -570,7 +576,7 @@
             this.txtCoordinadorAdministrativo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCoordinadorAdministrativo.Multiline = true;
             this.txtCoordinadorAdministrativo.Name = "txtCoordinadorAdministrativo";
-            this.txtCoordinadorAdministrativo.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtCoordinadorAdministrativo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCoordinadorAdministrativo.Size = new System.Drawing.Size(195, 22);
             this.txtCoordinadorAdministrativo.TabIndex = 7;
             // 
@@ -584,7 +590,7 @@
             this.txtDirectorEstatal.Margin = new System.Windows.Forms.Padding(4);
             this.txtDirectorEstatal.Multiline = true;
             this.txtDirectorEstatal.Name = "txtDirectorEstatal";
-            this.txtDirectorEstatal.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtDirectorEstatal.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtDirectorEstatal.Size = new System.Drawing.Size(278, 22);
             this.txtDirectorEstatal.TabIndex = 6;
             // 
@@ -598,7 +604,7 @@
             this.txtTotalAnalistas.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalAnalistas.Multiline = true;
             this.txtTotalAnalistas.Name = "txtTotalAnalistas";
-            this.txtTotalAnalistas.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtTotalAnalistas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTotalAnalistas.Size = new System.Drawing.Size(195, 25);
             this.txtTotalAnalistas.TabIndex = 10;
             // 
@@ -611,7 +617,7 @@
             this.label1.Location = new System.Drawing.Point(641, 289);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 20);
+            this.label1.Size = new System.Drawing.Size(195, 17);
             this.label1.TabIndex = 248;
             this.label1.Text = "Analistas";
             // 
@@ -634,12 +640,12 @@
             this.txtAnalistaComercial.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnalistaComercial.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtAnalistaComercial.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAnalistaComercial.Location = new System.Drawing.Point(26, 313);
+            this.txtAnalistaComercial.Location = new System.Drawing.Point(26, 310);
             this.txtAnalistaComercial.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistaComercial.Multiline = true;
             this.txtAnalistaComercial.Name = "txtAnalistaComercial";
-            this.txtAnalistaComercial.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtAnalistaComercial.Size = new System.Drawing.Size(321, 25);
+            this.txtAnalistaComercial.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtAnalistaComercial.Size = new System.Drawing.Size(321, 28);
             this.txtAnalistaComercial.TabIndex = 12;
             // 
             // txthidIdSucursal
@@ -663,7 +669,7 @@
             this.txtTotalVentanillas.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalVentanillas.Multiline = true;
             this.txtTotalVentanillas.Name = "txtTotalVentanillas";
-            this.txtTotalVentanillas.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtTotalVentanillas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTotalVentanillas.Size = new System.Drawing.Size(215, 25);
             this.txtTotalVentanillas.TabIndex = 11;
             // 
@@ -676,7 +682,7 @@
             this.label17.Location = new System.Drawing.Point(844, 289);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(215, 20);
+            this.label17.Size = new System.Drawing.Size(215, 17);
             this.label17.TabIndex = 287;
             this.label17.Text = "Ventanillas";
             // 
@@ -686,12 +692,12 @@
             this.txtAnalistasCredito.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnalistasCredito.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtAnalistasCredito.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAnalistasCredito.Location = new System.Drawing.Point(355, 313);
+            this.txtAnalistasCredito.Location = new System.Drawing.Point(355, 310);
             this.txtAnalistasCredito.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasCredito.Multiline = true;
             this.txtAnalistasCredito.Name = "txtAnalistasCredito";
-            this.txtAnalistasCredito.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtAnalistasCredito.Size = new System.Drawing.Size(278, 25);
+            this.txtAnalistasCredito.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtAnalistasCredito.Size = new System.Drawing.Size(278, 28);
             this.txtAnalistasCredito.TabIndex = 13;
             // 
             // label13
@@ -713,12 +719,12 @@
             this.txtAnalistasCobranza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAnalistasCobranza.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtAnalistasCobranza.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtAnalistasCobranza.Location = new System.Drawing.Point(641, 313);
+            this.txtAnalistasCobranza.Location = new System.Drawing.Point(641, 310);
             this.txtAnalistasCobranza.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasCobranza.Multiline = true;
             this.txtAnalistasCobranza.Name = "txtAnalistasCobranza";
-            this.txtAnalistasCobranza.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtAnalistasCobranza.Size = new System.Drawing.Size(195, 25);
+            this.txtAnalistasCobranza.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtAnalistasCobranza.Size = new System.Drawing.Size(195, 28);
             this.txtAnalistasCobranza.TabIndex = 14;
             // 
             // label14
@@ -740,12 +746,12 @@
             this.txtEmpresasAfiliadas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmpresasAfiliadas.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtEmpresasAfiliadas.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmpresasAfiliadas.Location = new System.Drawing.Point(844, 313);
+            this.txtEmpresasAfiliadas.Location = new System.Drawing.Point(844, 310);
             this.txtEmpresasAfiliadas.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasAfiliadas.Multiline = true;
             this.txtEmpresasAfiliadas.Name = "txtEmpresasAfiliadas";
-            this.txtEmpresasAfiliadas.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtEmpresasAfiliadas.Size = new System.Drawing.Size(215, 25);
+            this.txtEmpresasAfiliadas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtEmpresasAfiliadas.Size = new System.Drawing.Size(215, 28);
             this.txtEmpresasAfiliadas.TabIndex = 15;
             // 
             // label15
@@ -771,7 +777,7 @@
             this.txtTrabajadoresAfiliados.Margin = new System.Windows.Forms.Padding(4);
             this.txtTrabajadoresAfiliados.Multiline = true;
             this.txtTrabajadoresAfiliados.Name = "txtTrabajadoresAfiliados";
-            this.txtTrabajadoresAfiliados.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtTrabajadoresAfiliados.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTrabajadoresAfiliados.Size = new System.Drawing.Size(321, 22);
             this.txtTrabajadoresAfiliados.TabIndex = 16;
             // 
@@ -798,7 +804,7 @@
             this.txtPotencialEmpresas.Margin = new System.Windows.Forms.Padding(4);
             this.txtPotencialEmpresas.Multiline = true;
             this.txtPotencialEmpresas.Name = "txtPotencialEmpresas";
-            this.txtPotencialEmpresas.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtPotencialEmpresas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtPotencialEmpresas.Size = new System.Drawing.Size(278, 22);
             this.txtPotencialEmpresas.TabIndex = 17;
             // 
@@ -812,7 +818,7 @@
             this.txtPotencialTrabajadores.Margin = new System.Windows.Forms.Padding(4);
             this.txtPotencialTrabajadores.Multiline = true;
             this.txtPotencialTrabajadores.Name = "txtPotencialTrabajadores";
-            this.txtPotencialTrabajadores.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtPotencialTrabajadores.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtPotencialTrabajadores.Size = new System.Drawing.Size(195, 22);
             this.txtPotencialTrabajadores.TabIndex = 18;
             // 
@@ -826,7 +832,7 @@
             this.txtEmpresasEstatus1.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus1.Multiline = true;
             this.txtEmpresasEstatus1.Name = "txtEmpresasEstatus1";
-            this.txtEmpresasEstatus1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtEmpresasEstatus1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtEmpresasEstatus1.Size = new System.Drawing.Size(215, 22);
             this.txtEmpresasEstatus1.TabIndex = 19;
             // 
@@ -879,7 +885,7 @@
             this.txtEmpresasEstatus18.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus18.Multiline = true;
             this.txtEmpresasEstatus18.Name = "txtEmpresasEstatus18";
-            this.txtEmpresasEstatus18.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtEmpresasEstatus18.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtEmpresasEstatus18.Size = new System.Drawing.Size(321, 22);
             this.txtEmpresasEstatus18.TabIndex = 20;
             // 
@@ -892,6 +898,7 @@
             this.txtEmpresasEstatus30.Location = new System.Drawing.Point(641, 413);
             this.txtEmpresasEstatus30.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus30.Name = "txtEmpresasEstatus30";
+            this.txtEmpresasEstatus30.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtEmpresasEstatus30.Size = new System.Drawing.Size(195, 22);
             this.txtEmpresasEstatus30.TabIndex = 22;
             // 
@@ -905,7 +912,7 @@
             this.txtEmpresasEstatus21.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresasEstatus21.Multiline = true;
             this.txtEmpresasEstatus21.Name = "txtEmpresasEstatus21";
-            this.txtEmpresasEstatus21.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtEmpresasEstatus21.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtEmpresasEstatus21.Size = new System.Drawing.Size(278, 22);
             this.txtEmpresasEstatus21.TabIndex = 21;
             // 
@@ -958,7 +965,7 @@
             this.txtMetaMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetaMensual.Multiline = true;
             this.txtMetaMensual.Name = "txtMetaMensual";
-            this.txtMetaMensual.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtMetaMensual.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtMetaMensual.Size = new System.Drawing.Size(215, 22);
             this.txtMetaMensual.TabIndex = 23;
             // 
@@ -998,7 +1005,7 @@
             this.txtMetaAnual.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetaAnual.Multiline = true;
             this.txtMetaAnual.Name = "txtMetaAnual";
-            this.txtMetaAnual.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtMetaAnual.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtMetaAnual.Size = new System.Drawing.Size(321, 21);
             this.txtMetaAnual.TabIndex = 24;
             // 
@@ -1012,7 +1019,7 @@
             this.txtMetaAcumulada.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetaAcumulada.Multiline = true;
             this.txtMetaAcumulada.Name = "txtMetaAcumulada";
-            this.txtMetaAcumulada.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtMetaAcumulada.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtMetaAcumulada.Size = new System.Drawing.Size(278, 21);
             this.txtMetaAcumulada.TabIndex = 25;
             // 
@@ -1026,7 +1033,7 @@
             this.txtColocacionMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtColocacionMensual.Multiline = true;
             this.txtColocacionMensual.Name = "txtColocacionMensual";
-            this.txtColocacionMensual.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtColocacionMensual.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtColocacionMensual.Size = new System.Drawing.Size(195, 21);
             this.txtColocacionMensual.TabIndex = 26;
             // 
@@ -1040,7 +1047,7 @@
             this.txtColocacionAnual.Margin = new System.Windows.Forms.Padding(4);
             this.txtColocacionAnual.Multiline = true;
             this.txtColocacionAnual.Name = "txtColocacionAnual";
-            this.txtColocacionAnual.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtColocacionAnual.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtColocacionAnual.Size = new System.Drawing.Size(215, 21);
             this.txtColocacionAnual.TabIndex = 27;
             // 
@@ -1093,7 +1100,7 @@
             this.txtCobranzaMetaMensual.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaMetaMensual.Multiline = true;
             this.txtCobranzaMetaMensual.Name = "txtCobranzaMetaMensual";
-            this.txtCobranzaMetaMensual.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtCobranzaMetaMensual.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCobranzaMetaMensual.Size = new System.Drawing.Size(321, 21);
             this.txtCobranzaMetaMensual.TabIndex = 28;
             // 
@@ -1107,7 +1114,7 @@
             this.txtcobranzaAnual.Margin = new System.Windows.Forms.Padding(4);
             this.txtcobranzaAnual.Multiline = true;
             this.txtcobranzaAnual.Name = "txtcobranzaAnual";
-            this.txtcobranzaAnual.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtcobranzaAnual.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtcobranzaAnual.Size = new System.Drawing.Size(278, 21);
             this.txtcobranzaAnual.TabIndex = 29;
             // 
@@ -1121,7 +1128,7 @@
             this.txtCobranzaCumplimiento.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaCumplimiento.Multiline = true;
             this.txtCobranzaCumplimiento.Name = "txtCobranzaCumplimiento";
-            this.txtCobranzaCumplimiento.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtCobranzaCumplimiento.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCobranzaCumplimiento.Size = new System.Drawing.Size(195, 21);
             this.txtCobranzaCumplimiento.TabIndex = 30;
             // 
@@ -1135,7 +1142,7 @@
             this.txtCobranzaPorcentaje.Margin = new System.Windows.Forms.Padding(4);
             this.txtCobranzaPorcentaje.Multiline = true;
             this.txtCobranzaPorcentaje.Name = "txtCobranzaPorcentaje";
-            this.txtCobranzaPorcentaje.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtCobranzaPorcentaje.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtCobranzaPorcentaje.Size = new System.Drawing.Size(215, 21);
             this.txtCobranzaPorcentaje.TabIndex = 31;
             // 
@@ -1201,7 +1208,7 @@
             this.txtAnalistasAdministrativos.Margin = new System.Windows.Forms.Padding(4);
             this.txtAnalistasAdministrativos.Multiline = true;
             this.txtAnalistasAdministrativos.Name = "txtAnalistasAdministrativos";
-            this.txtAnalistasAdministrativos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtAnalistasAdministrativos.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAnalistasAdministrativos.Size = new System.Drawing.Size(321, 21);
             this.txtAnalistasAdministrativos.TabIndex = 32;
             // 
@@ -1244,11 +1251,10 @@
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(25, 656);
+            this.gMapControl1.Location = new System.Drawing.Point(25, 696);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
-            this.gMapControl1.MouseWheelZoomEnabled = true;
             this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.gMapControl1.Name = "gMapControl1";
             this.gMapControl1.NegativeMode = false;
@@ -1259,7 +1265,7 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(1035, 474);
+            this.gMapControl1.Size = new System.Drawing.Size(1035, 434);
             this.gMapControl1.TabIndex = 325;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.DoubleClick += new System.EventHandler(this.gMapControl1_DoubleClick);
@@ -1271,7 +1277,7 @@
             this.txtubicacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtubicacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.txtubicacion.ForeColor = System.Drawing.Color.White;
-            this.txtubicacion.Location = new System.Drawing.Point(25, 616);
+            this.txtubicacion.Location = new System.Drawing.Point(25, 656);
             this.txtubicacion.Name = "txtubicacion";
             this.txtubicacion.Size = new System.Drawing.Size(812, 22);
             this.txtubicacion.TabIndex = 35;
@@ -1287,6 +1293,7 @@
             this.txtLatitud.ForeColor = System.Drawing.SystemColors.Window;
             this.txtLatitud.Location = new System.Drawing.Point(354, 554);
             this.txtLatitud.Name = "txtLatitud";
+            this.txtLatitud.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtLatitud.Size = new System.Drawing.Size(280, 22);
             this.txtLatitud.TabIndex = 33;
             // 
@@ -1299,6 +1306,7 @@
             this.txtAltitud.ForeColor = System.Drawing.SystemColors.Window;
             this.txtAltitud.Location = new System.Drawing.Point(640, 554);
             this.txtAltitud.Name = "txtAltitud";
+            this.txtAltitud.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtAltitud.Size = new System.Drawing.Size(197, 22);
             this.txtAltitud.TabIndex = 34;
             // 
@@ -1334,10 +1342,10 @@
             this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label37.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.DimGray;
-            this.label37.Location = new System.Drawing.Point(844, 639);
+            this.label37.Location = new System.Drawing.Point(844, 680);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(215, 14);
+            this.label37.Size = new System.Drawing.Size(215, 13);
             this.label37.TabIndex = 332;
             this.label37.Text = "Aumentar / Disminuir Zoom";
             // 
@@ -1348,11 +1356,36 @@
             this.numzoom.Enabled = false;
             this.numzoom.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.numzoom.ForeColor = System.Drawing.Color.White;
-            this.numzoom.Location = new System.Drawing.Point(843, 616);
+            this.numzoom.Location = new System.Drawing.Point(843, 656);
             this.numzoom.Name = "numzoom";
             this.numzoom.Size = new System.Drawing.Size(217, 22);
             this.numzoom.TabIndex = 36;
             this.numzoom.ValueChanged += new System.EventHandler(this.numzoom_ValueChanged);
+            // 
+            // cborepresentacion
+            // 
+            this.cborepresentacion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.cborepresentacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cborepresentacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cborepresentacion.ForeColor = System.Drawing.Color.White;
+            this.cborepresentacion.FormattingEnabled = true;
+            this.cborepresentacion.Location = new System.Drawing.Point(354, 616);
+            this.cborepresentacion.Name = "cborepresentacion";
+            this.cborepresentacion.Size = new System.Drawing.Size(280, 24);
+            this.cborepresentacion.TabIndex = 333;
+            this.cborepresentacion.Visible = false;
+            // 
+            // checkrepresentacion
+            // 
+            this.checkrepresentacion.AutoSize = true;
+            this.checkrepresentacion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.checkrepresentacion.Location = new System.Drawing.Point(25, 616);
+            this.checkrepresentacion.Name = "checkrepresentacion";
+            this.checkrepresentacion.Size = new System.Drawing.Size(143, 18);
+            this.checkrepresentacion.TabIndex = 334;
+            this.checkrepresentacion.Text = "¿Es Representacion?";
+            this.checkrepresentacion.UseVisualStyleBackColor = true;
+            this.checkrepresentacion.CheckedChanged += new System.EventHandler(this.checkrepresentacion_CheckedChanged);
             // 
             // frmSucursales
             // 
@@ -1457,5 +1490,7 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox cborepresentacion;
+        private System.Windows.Forms.CheckBox checkrepresentacion;
     }
 }

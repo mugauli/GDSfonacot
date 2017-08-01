@@ -167,20 +167,62 @@ namespace GDSfonacotDatos.Data
 
         }
 
-        public MethodResponse<Usuarios> LoginUsuario(string Usuario, string password)
+        //public MethodResponse<Usuarios> LoginUsuario(string Usuario, string password)
+        //{
+
+        //    try
+        //    {
+
+
+        //        using (var context = new GDSfonacotEntities())
+        //        {
+        //            var response = new MethodResponse<Usuarios> { Code = 0 };
+
+        //            var usuariosDB = context.Usuarios
+        //                .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (usu, suc) => new { usu, suc })
+        //                .Where(x => x.usu.Usuario == Usuario && x.usu.Pass == password).SingleOrDefault();
+
+        //            if (usuariosDB != null) response.Result = usuariosDB;
+
+        //            return response;
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        return new MethodResponse<Usuarios> { Code = -100, Message = ex.Message };
+        //    }
+        //}
+        public MethodResponse<DatosUsuario> LoginUsuario(string Usuario, string password)
         {
 
             try
             {
-
-
                 using (var context = new GDSfonacotEntities())
                 {
-                    var response = new MethodResponse<Usuarios> { Code = 0 };
+                    var response = new MethodResponse<DatosUsuario> { Code = 0 };
 
-                    var usuariosDB = context.Usuarios.Where(x => x.Usuario == Usuario && x.Pass == password).SingleOrDefault();
+                    
+                    var devolverdatos = context.Usuarios
+                        .Join(context.Sucursales, tabla1 => tabla1.IdSucursal, tabla2 => tabla2.IdSucursal, (usu, suc) => new { usu, suc })
+                        .Where(x => x.usu.Usuario == Usuario && x.usu.Pass == password && x.suc.IdSucursal==x.usu.IdSucursal)
+                         .Select(x => new DatosUsuario
+                         {
+                             IdUsuario = x.usu.IdUsuario,
+                             Nombre_Usuario = x.usu.Nombre_Usuario,
+                             IdSucursal=x.usu.IdSucursal,
+                             IdsucursalPadre=x.suc.IdsucursalPadre,
+                             fechaalta=x.usu.fechaalta,
+                             fechabaja=x.usu.fechabaja,
+                             fechareingreso=x.usu.fechareingreso,
+                             IdNivel=x.usu.IdNivel,
+                             Pass=x.usu.Pass,
+                             Usuario=x.usu.Usuario,
+                             DescripcionSucursal=x.suc.DescripcionSucursal
+                         }).SingleOrDefault();
 
-                    if (usuariosDB != null) response.Result = usuariosDB;
+                    response.Result = devolverdatos;
 
                     return response;
                 }
@@ -189,7 +231,7 @@ namespace GDSfonacotDatos.Data
             catch (Exception ex)
             {
 
-                return new MethodResponse<Usuarios> { Code = -100, Message = ex.Message };
+                return new MethodResponse<DatosUsuario> { Code = -100, Message = ex.Message };
             }
         }
 

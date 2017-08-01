@@ -22,5 +22,6 @@ namespace GDSfonacotDatos.DTO
         public string DescripcionSucursal { get; set; }
         public string NivelUsuarioDescrip { get; set; }
         public Nullable<System.DateTime> fechareingreso { get; set; }
+        public Nullable<int> IdsucursalPadre { get; set; }
     }
 }

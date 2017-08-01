@@ -189,7 +189,7 @@ namespace GDSfonacot
         {
             if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3)
             {
-                int[] varstatus = {2,5};
+                int[] varstatus = {2,3,5};
                 var frmbusquedasup = new frmBusquedaSupervisiones(2, varstatus, 1,0);//crea una instancia del formulario
                 frmbusquedasup.MdiParent = this;
                 frmbusquedasup.Show();
@@ -233,15 +233,16 @@ namespace GDSfonacot
 
         private void menuConsulSucur_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
-            {
-                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-            }
-            else
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel ==1 || Globales.objpasardatosusuario.IdNivel ==1004)
             {
                 var frmPersonsuc = new frmBusquedaSucursal(2);//crea una instancia del formulario
                 frmPersonsuc.MdiParent = this;
                 frmPersonsuc.Show();
+              
+            }
+            else
+            {
+                MessageBox.Show("No tienes acceso a este modulo,verifique con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
             }
         }
 
@@ -415,7 +416,7 @@ namespace GDSfonacot
                 menuBuscarConst.Visible = true;
                 menubuscSeguim.Visible = false;
                 menuHistsupOp.Visible = true;
-                menuConsulSucur.Visible = false;
+                menuConsulSucur.Visible = true;
                 menuConsulUsu.Visible = false;
                 menuConsulEmp.Visible = true;
                 submenuSuc.Visible = false;

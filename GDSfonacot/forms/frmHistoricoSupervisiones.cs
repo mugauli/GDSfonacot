@@ -183,9 +183,9 @@ namespace GDSfonacot.forms
                     toolButImprimir.Enabled = true;
                 }
                 else if(txthidStatus.Text =="2") {
-                    toolButReasignar.Enabled = true;
+                    toolButReasignar.Enabled = false;
                     toolButReasignar.Visible = true;
-                    toolButCerrarSup.Enabled = true;
+                    toolButCerrarSup.Enabled = false;
                     toolButCerrarSup.Visible = true;
                     toolButImprimir.Enabled = true;
 

@@ -42,6 +42,7 @@ namespace GDSfonacotDatos
         public Nullable<int> Idstatus { get; set; }
         public Nullable<int> Idsupervisor1 { get; set; }
         public Nullable<int> Idsupervisor2 { get; set; }
+        public Nullable<int> IdsucursalPadre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cierres> Cierres { get; set; }

@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContestacionSucursal));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txthidStatus = new System.Windows.Forms.TextBox();
+            this.txthidIdConst = new System.Windows.Forms.TextBox();
+            this.txthidIdSup = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
+            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
             this.txtAcuerdosCompromisos = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFondoFijo = new System.Windows.Forms.TextBox();
@@ -60,12 +66,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSucursal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolButGuardar = new System.Windows.Forms.ToolStripButton();
-            this.toolButImprimir = new System.Windows.Forms.ToolStripButton();
-            this.txthidIdSup = new System.Windows.Forms.TextBox();
-            this.txthidIdConst = new System.Windows.Forms.TextBox();
-            this.txthidStatus = new System.Windows.Forms.TextBox();
+            this.toolButReasignar = new System.Windows.Forms.ToolStripButton();
+            this.toolButCerrarSup = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -152,6 +154,73 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1274, 502);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.TabStop = true;
+            // 
+            // txthidStatus
+            // 
+            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidStatus.Location = new System.Drawing.Point(4, 84);
+            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidStatus.Name = "txthidStatus";
+            this.txthidStatus.Size = new System.Drawing.Size(12, 20);
+            this.txthidStatus.TabIndex = 282;
+            this.txthidStatus.Visible = false;
+            // 
+            // txthidIdConst
+            // 
+            this.txthidIdConst.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdConst.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdConst.Location = new System.Drawing.Point(4, 54);
+            this.txthidIdConst.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdConst.Name = "txthidIdConst";
+            this.txthidIdConst.Size = new System.Drawing.Size(12, 20);
+            this.txthidIdConst.TabIndex = 280;
+            this.txthidIdConst.Visible = false;
+            // 
+            // txthidIdSup
+            // 
+            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
+            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
+            this.txthidIdSup.Location = new System.Drawing.Point(4, 24);
+            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
+            this.txthidIdSup.Name = "txthidIdSup";
+            this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
+            this.txthidIdSup.TabIndex = 279;
+            this.txthidIdSup.Visible = false;
+            // 
+            // toolStrip1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 10);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolButReasignar,
+            this.toolButCerrarSup,
+            this.toolButGuardar,
+            this.toolButImprimir});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1274, 20);
+            this.toolStrip1.TabIndex = 278;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolButGuardar
+            // 
+            this.toolButGuardar.Enabled = false;
+            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
+            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButGuardar.Name = "toolButGuardar";
+            this.toolButGuardar.Size = new System.Drawing.Size(69, 17);
+            this.toolButGuardar.Text = "Guardar";
+            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
+            // 
+            // toolButImprimir
+            // 
+            this.toolButImprimir.Enabled = false;
+            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
+            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButImprimir.Name = "toolButImprimir";
+            this.toolButImprimir.Size = new System.Drawing.Size(73, 17);
+            this.toolButImprimir.Text = "Imprimir";
+            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);
             // 
             // txtAcuerdosCompromisos
             // 
@@ -562,70 +631,25 @@
             this.label3.TabIndex = 204;
             this.label3.Text = "Sucursal";
             // 
-            // toolStrip1
+            // toolButReasignar
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip1, 10);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolButGuardar,
-            this.toolButImprimir});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1274, 20);
-            this.toolStrip1.TabIndex = 278;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolButReasignar.Enabled = false;
+            this.toolButReasignar.Image = ((System.Drawing.Image)(resources.GetObject("toolButReasignar.Image")));
+            this.toolButReasignar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButReasignar.Name = "toolButReasignar";
+            this.toolButReasignar.Size = new System.Drawing.Size(142, 17);
+            this.toolButReasignar.Text = "Reasignar Supervision";
+            this.toolButReasignar.Click += new System.EventHandler(this.toolButReasignar_Click);
             // 
-            // toolButGuardar
+            // toolButCerrarSup
             // 
-            this.toolButGuardar.Enabled = false;
-            this.toolButGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolButGuardar.Image")));
-            this.toolButGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButGuardar.Name = "toolButGuardar";
-            this.toolButGuardar.Size = new System.Drawing.Size(69, 17);
-            this.toolButGuardar.Text = "Guardar";
-            this.toolButGuardar.Click += new System.EventHandler(this.toolButGuardar_Click);
-            // 
-            // toolButImprimir
-            // 
-            this.toolButImprimir.Enabled = false;
-            this.toolButImprimir.Image = ((System.Drawing.Image)(resources.GetObject("toolButImprimir.Image")));
-            this.toolButImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolButImprimir.Name = "toolButImprimir";
-            this.toolButImprimir.Size = new System.Drawing.Size(73, 17);
-            this.toolButImprimir.Text = "Imprimir";
-            this.toolButImprimir.Click += new System.EventHandler(this.toolButImprimir_Click);
-            // 
-            // txthidIdSup
-            // 
-            this.txthidIdSup.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txthidIdSup.ForeColor = System.Drawing.SystemColors.Info;
-            this.txthidIdSup.Location = new System.Drawing.Point(4, 24);
-            this.txthidIdSup.Margin = new System.Windows.Forms.Padding(4);
-            this.txthidIdSup.Name = "txthidIdSup";
-            this.txthidIdSup.Size = new System.Drawing.Size(12, 20);
-            this.txthidIdSup.TabIndex = 279;
-            this.txthidIdSup.Visible = false;
-            // 
-            // txthidIdConst
-            // 
-            this.txthidIdConst.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txthidIdConst.ForeColor = System.Drawing.SystemColors.Info;
-            this.txthidIdConst.Location = new System.Drawing.Point(4, 54);
-            this.txthidIdConst.Margin = new System.Windows.Forms.Padding(4);
-            this.txthidIdConst.Name = "txthidIdConst";
-            this.txthidIdConst.Size = new System.Drawing.Size(12, 20);
-            this.txthidIdConst.TabIndex = 280;
-            this.txthidIdConst.Visible = false;
-            // 
-            // txthidStatus
-            // 
-            this.txthidStatus.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txthidStatus.ForeColor = System.Drawing.SystemColors.Info;
-            this.txthidStatus.Location = new System.Drawing.Point(4, 84);
-            this.txthidStatus.Margin = new System.Windows.Forms.Padding(4);
-            this.txthidStatus.Name = "txthidStatus";
-            this.txthidStatus.Size = new System.Drawing.Size(12, 20);
-            this.txthidStatus.TabIndex = 282;
-            this.txthidStatus.Visible = false;
+            this.toolButCerrarSup.Enabled = false;
+            this.toolButCerrarSup.Image = ((System.Drawing.Image)(resources.GetObject("toolButCerrarSup.Image")));
+            this.toolButCerrarSup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolButCerrarSup.Name = "toolButCerrarSup";
+            this.toolButCerrarSup.Size = new System.Drawing.Size(123, 17);
+            this.toolButCerrarSup.Text = "Cerrar Supervision";
+            this.toolButCerrarSup.Click += new System.EventHandler(this.toolButCerrarSup_Click);
             // 
             // frmContestacionSucursal
             // 
@@ -685,5 +709,7 @@
         private System.Windows.Forms.TextBox txthidIdSup;
         private System.Windows.Forms.TextBox txthidIdConst;
         private System.Windows.Forms.TextBox txthidStatus;
+        private System.Windows.Forms.ToolStripButton toolButReasignar;
+        private System.Windows.Forms.ToolStripButton toolButCerrarSup;
     }
 }

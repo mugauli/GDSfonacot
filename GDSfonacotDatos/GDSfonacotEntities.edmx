@@ -73,6 +73,7 @@
           </Key>
           <Property Name="IdRegional" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Titular" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="ctTipoPersonal">
           <Key>
@@ -119,6 +120,7 @@
           <Property Name="Idstatus" Type="int" />
           <Property Name="Idsupervisor1" Type="int" />
           <Property Name="Idsupervisor2" Type="int" />
+          <Property Name="IdsucursalPadre" Type="int" />
         </EntityType>
         <EntityType Name="Reasignaciones">
           <Key>
@@ -193,6 +195,7 @@
           <Property Name="Cobranza_Cumplimiento_Meta" Type="nvarchar" MaxLength="255" />
           <Property Name="Latitud" Type="nvarchar" MaxLength="500" />
           <Property Name="Altitud" Type="nvarchar" MaxLength="500" />
+          <Property Name="IdsucursalPadre" Type="int" />
         </EntityType>
         <EntityType Name="TiraAuditora">
           <Key>
@@ -894,6 +897,7 @@
           </Key>
           <Property Name="IdRegional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Titular" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="ctRegional" ToRole="Sucursales" />
         </EntityType>
         <EntityType Name="ctTipoPersonal">
@@ -947,6 +951,7 @@
           <Property Name="Idstatus" Type="Int32" />
           <Property Name="Idsupervisor1" Type="Int32" />
           <Property Name="Idsupervisor2" Type="Int32" />
+          <Property Name="IdsucursalPadre" Type="Int32" />
           <NavigationProperty Name="Cierres" Relationship="GDSfonacotModel.FK_Cierres_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="Cierres" />
           <NavigationProperty Name="ContestacionesSuperv_Sucursales" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="ContestacionesSuperv_Sucursales" />
           <NavigationProperty Name="ctEstatusSupervision" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_cat_estatus" FromRole="HistorialSupervisiones" ToRole="ctEstatusSupervision" />
@@ -1034,6 +1039,7 @@
           <Property Name="Cobranza_Cumplimiento_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Latitud" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Altitud" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IdsucursalPadre" Type="Int32" />
           <NavigationProperty Name="ctRegional" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="Sucursales" ToRole="ctRegional" />
           <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Sucursales" ToRole="Empleados" />
           <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" FromRole="Sucursales" ToRole="HistorialSupervisiones" />
@@ -1525,6 +1531,7 @@
           <EntitySetMapping Name="ctRegional">
             <EntityTypeMapping TypeName="GDSfonacotModel.ctRegional">
               <MappingFragment StoreEntitySet="ctRegional">
+                <ScalarProperty Name="Titular" ColumnName="Titular" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="IdRegional" ColumnName="IdRegional" />
               </MappingFragment>
@@ -1557,6 +1564,7 @@
           <EntitySetMapping Name="HistorialSupervisiones">
             <EntityTypeMapping TypeName="GDSfonacotModel.HistorialSupervisiones">
               <MappingFragment StoreEntitySet="HistorialSupervisiones">
+                <ScalarProperty Name="IdsucursalPadre" ColumnName="IdsucursalPadre" />
                 <ScalarProperty Name="Idsupervisor2" ColumnName="Idsupervisor2" />
                 <ScalarProperty Name="Idsupervisor1" ColumnName="Idsupervisor1" />
                 <ScalarProperty Name="Idstatus" ColumnName="Idstatus" />
@@ -1615,6 +1623,7 @@
           <EntitySetMapping Name="Sucursales">
             <EntityTypeMapping TypeName="GDSfonacotModel.Sucursales">
               <MappingFragment StoreEntitySet="Sucursales">
+                <ScalarProperty Name="IdsucursalPadre" ColumnName="IdsucursalPadre" />
                 <ScalarProperty Name="Altitud" ColumnName="Altitud" />
                 <ScalarProperty Name="Latitud" ColumnName="Latitud" />
                 <ScalarProperty Name="Cobranza_Cumplimiento_Meta" ColumnName="Cobranza_Cumplimiento_Meta" />

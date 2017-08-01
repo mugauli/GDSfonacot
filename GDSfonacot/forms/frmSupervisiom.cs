@@ -100,7 +100,26 @@ namespace GDSfonacot.forms
                 objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
                 objSupervision.Idstatus = 1;
                 objSupervision.Idsupervisor1 = Convert.ToInt32(cmbSupervisor1.SelectedValue);
-                if (cmbSupervisor2.SelectedValue != null) { 
+
+                var SucursalDB = new SucursalesData().ObtenerSucursal(Convert.ToInt32(cmbSucursales.SelectedValue));
+                if (SucursalDB.Code != 0)
+                {
+                    MessageBox.Show("Error: " + SucursalDB.Message + "favor de volver a intentar otra vez");
+                    LimpiarDatos();
+                    return;
+                }
+
+                if (SucursalDB.Result.IdSucursal != 0 && SucursalDB.Result.IdsucursalPadre == 0)
+                {
+                    objSupervision.IdsucursalPadre = SucursalDB.Result.IdSucursal;
+                }
+                else
+                {
+                    objSupervision.IdsucursalPadre = SucursalDB.Result.IdsucursalPadre;
+                }
+
+
+                    if (cmbSupervisor2.SelectedValue != null) { 
                 objSupervision.Idsupervisor2 = Convert.ToInt32(cmbSupervisor2.SelectedValue);
                 }
                 
@@ -122,6 +141,7 @@ namespace GDSfonacot.forms
                     toolButImprimir.Enabled = true;
                     MessageBox.Show("La supervision ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //LimpiarDatos();
+                    this.Close();
                 }
 
             }

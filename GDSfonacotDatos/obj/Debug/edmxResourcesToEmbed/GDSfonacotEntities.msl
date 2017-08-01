@@ -175,6 +175,7 @@
     <EntitySetMapping Name="ctRegional">
       <EntityTypeMapping TypeName="GDSfonacotModel.ctRegional">
         <MappingFragment StoreEntitySet="ctRegional">
+          <ScalarProperty Name="Titular" ColumnName="Titular" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="IdRegional" ColumnName="IdRegional" />
         </MappingFragment>
@@ -207,6 +208,7 @@
     <EntitySetMapping Name="HistorialSupervisiones">
       <EntityTypeMapping TypeName="GDSfonacotModel.HistorialSupervisiones">
         <MappingFragment StoreEntitySet="HistorialSupervisiones">
+          <ScalarProperty Name="IdsucursalPadre" ColumnName="IdsucursalPadre" />
           <ScalarProperty Name="Idsupervisor2" ColumnName="Idsupervisor2" />
           <ScalarProperty Name="Idsupervisor1" ColumnName="Idsupervisor1" />
           <ScalarProperty Name="Idstatus" ColumnName="Idstatus" />
@@ -265,6 +267,7 @@
     <EntitySetMapping Name="Sucursales">
       <EntityTypeMapping TypeName="GDSfonacotModel.Sucursales">
         <MappingFragment StoreEntitySet="Sucursales">
+          <ScalarProperty Name="IdsucursalPadre" ColumnName="IdsucursalPadre" />
           <ScalarProperty Name="Altitud" ColumnName="Altitud" />
           <ScalarProperty Name="Latitud" ColumnName="Latitud" />
           <ScalarProperty Name="Cobranza_Cumplimiento_Meta" ColumnName="Cobranza_Cumplimiento_Meta" />

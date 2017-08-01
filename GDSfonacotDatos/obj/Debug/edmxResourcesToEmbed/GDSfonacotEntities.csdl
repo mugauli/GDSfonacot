@@ -282,6 +282,7 @@
     </Key>
     <Property Name="IdRegional" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Titular" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="ctRegional" ToRole="Sucursales" />
   </EntityType>
   <EntityType Name="ctTipoPersonal">
@@ -335,6 +336,7 @@
     <Property Name="Idstatus" Type="Int32" />
     <Property Name="Idsupervisor1" Type="Int32" />
     <Property Name="Idsupervisor2" Type="Int32" />
+    <Property Name="IdsucursalPadre" Type="Int32" />
     <NavigationProperty Name="Cierres" Relationship="GDSfonacotModel.FK_Cierres_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="Cierres" />
     <NavigationProperty Name="ContestacionesSuperv_Sucursales" Relationship="GDSfonacotModel.FK_ContestacionesSuperv_Sucursales_HistorialSupervisiones" FromRole="HistorialSupervisiones" ToRole="ContestacionesSuperv_Sucursales" />
     <NavigationProperty Name="ctEstatusSupervision" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_cat_estatus" FromRole="HistorialSupervisiones" ToRole="ctEstatusSupervision" />
@@ -422,6 +424,7 @@
     <Property Name="Cobranza_Cumplimiento_Meta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Latitud" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Altitud" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IdsucursalPadre" Type="Int32" />
     <NavigationProperty Name="ctRegional" Relationship="GDSfonacotModel.FK_Sucursales_ctRegional" FromRole="Sucursales" ToRole="ctRegional" />
     <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Sucursales" ToRole="Empleados" />
     <NavigationProperty Name="HistorialSupervisiones" Relationship="GDSfonacotModel.FK_HistorialSupervisiones_Sucursales" FromRole="Sucursales" ToRole="HistorialSupervisiones" />

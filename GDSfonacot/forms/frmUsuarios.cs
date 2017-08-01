@@ -34,6 +34,12 @@ namespace GDSfonacot.forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (Globales.objpasardatosusuario.IdNivel != 1)
+            {
+                MessageBox.Show("Solo el administrador tiene acceso a esta accion", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
+                return;
+            }
+
             var mensaje = string.Empty;
             if (ValidateUsuario(out mensaje))
             {

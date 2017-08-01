@@ -68,6 +68,7 @@
     </Key>
     <Property Name="IdRegional" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Titular" Type="nvarchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="ctTipoPersonal">
     <Key>
@@ -114,6 +115,7 @@
     <Property Name="Idstatus" Type="int" />
     <Property Name="Idsupervisor1" Type="int" />
     <Property Name="Idsupervisor2" Type="int" />
+    <Property Name="IdsucursalPadre" Type="int" />
   </EntityType>
   <EntityType Name="Reasignaciones">
     <Key>
@@ -188,6 +190,7 @@
     <Property Name="Cobranza_Cumplimiento_Meta" Type="nvarchar" MaxLength="255" />
     <Property Name="Latitud" Type="nvarchar" MaxLength="500" />
     <Property Name="Altitud" Type="nvarchar" MaxLength="500" />
+    <Property Name="IdsucursalPadre" Type="int" />
   </EntityType>
   <EntityType Name="TiraAuditora">
     <Key>

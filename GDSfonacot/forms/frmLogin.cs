@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GDSfonacotDatos;
 using GDSfonacotDatos.Data;
+using GDSfonacotDatos.DTO;
 
 
 namespace GDSfonacot
@@ -85,6 +86,7 @@ namespace GDSfonacot
                         Globales.objpasardatosusuario.IdUsuario = logueo.Result.IdUsuario;
                         Globales.objpasardatosusuario.fechabaja = logueo.Result.fechabaja;
                         Globales.objpasardatosusuario.IdSucursal = logueo.Result.IdSucursal;
+                        Globales.objpasardatosusuario.IdsucursalPadre = logueo.Result.IdsucursalPadre;
                         MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
                         this.Hide();  //oculta el formulario
                         frmPanel.ShowDialog();//muestra el formulario forma modal

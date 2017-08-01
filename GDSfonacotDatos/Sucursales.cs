@@ -60,6 +60,7 @@ namespace GDSfonacotDatos
         public string Cobranza_Cumplimiento_Meta { get; set; }
         public string Latitud { get; set; }
         public string Altitud { get; set; }
+        public Nullable<int> IdsucursalPadre { get; set; }
     
         public virtual ctRegional ctRegional { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
