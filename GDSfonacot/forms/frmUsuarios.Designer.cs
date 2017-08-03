@@ -129,7 +129,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(824, 213);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(115, 30);
-            this.btnGuardar.TabIndex = 287;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -194,7 +194,7 @@
             this.dtreingresotemp.Location = new System.Drawing.Point(824, 153);
             this.dtreingresotemp.Name = "dtreingresotemp";
             this.dtreingresotemp.Size = new System.Drawing.Size(257, 22);
-            this.dtreingresotemp.TabIndex = 325;
+            this.dtreingresotemp.TabIndex = 9;
             this.dtreingresotemp.Visible = false;
             // 
             // dtfechareingreso
@@ -207,7 +207,7 @@
             this.dtfechareingreso.Location = new System.Drawing.Point(567, 153);
             this.dtfechareingreso.Name = "dtfechareingreso";
             this.dtfechareingreso.Size = new System.Drawing.Size(251, 22);
-            this.dtfechareingreso.TabIndex = 323;
+            this.dtfechareingreso.TabIndex = 8;
             this.dtfechareingreso.Visible = false;
             // 
             // lblfechareingreso
@@ -332,7 +332,7 @@
             this.dtpickerfechabaja.Location = new System.Drawing.Point(310, 153);
             this.dtpickerfechabaja.Name = "dtpickerfechabaja";
             this.dtpickerfechabaja.Size = new System.Drawing.Size(251, 22);
-            this.dtpickerfechabaja.TabIndex = 293;
+            this.dtpickerfechabaja.TabIndex = 7;
             this.dtpickerfechabaja.Visible = false;
             // 
             // fechabaja
@@ -358,7 +358,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(694, 213);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(124, 30);
-            this.btnNuevo.TabIndex = 319;
+            this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);

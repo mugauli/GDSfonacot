@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cborepresentacion = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.txtCoordinadorCobranza = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -109,7 +110,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.numzoom = new System.Windows.Forms.NumericUpDown();
-            this.cborepresentacion = new System.Windows.Forms.ComboBox();
             this.checkrepresentacion = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSucursal)).BeginInit();
@@ -122,7 +122,7 @@
             this.btnSeleccionarImagen.Location = new System.Drawing.Point(25, 259);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
             this.btnSeleccionarImagen.Size = new System.Drawing.Size(323, 27);
-            this.btnSeleccionarImagen.TabIndex = 29;
+            this.btnSeleccionarImagen.TabIndex = 39;
             this.btnSeleccionarImagen.Text = "Seleccionar imagen";
             this.btnSeleccionarImagen.UseVisualStyleBackColor = true;
             this.btnSeleccionarImagen.Click += new System.EventHandler(this.btnSeleccionarImagen_Click);
@@ -135,7 +135,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(354, 23);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(132, 27);
-            this.btnGuardar.TabIndex = 37;
+            this.btnGuardar.TabIndex = 41;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -442,6 +442,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(65082, 1133);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // cborepresentacion
+            // 
+            this.cborepresentacion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.cborepresentacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cborepresentacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cborepresentacion.ForeColor = System.Drawing.Color.White;
+            this.cborepresentacion.FormattingEnabled = true;
+            this.cborepresentacion.Location = new System.Drawing.Point(354, 616);
+            this.cborepresentacion.Name = "cborepresentacion";
+            this.cborepresentacion.Size = new System.Drawing.Size(280, 24);
+            this.cborepresentacion.TabIndex = 36;
+            this.cborepresentacion.Visible = false;
             // 
             // label34
             // 
@@ -1234,7 +1247,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(216, 23);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(132, 27);
-            this.btnNuevo.TabIndex = 318;
+            this.btnNuevo.TabIndex = 40;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -1280,7 +1293,7 @@
             this.txtubicacion.Location = new System.Drawing.Point(25, 656);
             this.txtubicacion.Name = "txtubicacion";
             this.txtubicacion.Size = new System.Drawing.Size(812, 22);
-            this.txtubicacion.TabIndex = 35;
+            this.txtubicacion.TabIndex = 37;
             this.txtubicacion.TextChanged += new System.EventHandler(this.txtubicacion_TextChanged);
             this.txtubicacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtubicacion_KeyPress);
             // 
@@ -1359,21 +1372,8 @@
             this.numzoom.Location = new System.Drawing.Point(843, 656);
             this.numzoom.Name = "numzoom";
             this.numzoom.Size = new System.Drawing.Size(217, 22);
-            this.numzoom.TabIndex = 36;
+            this.numzoom.TabIndex = 38;
             this.numzoom.ValueChanged += new System.EventHandler(this.numzoom_ValueChanged);
-            // 
-            // cborepresentacion
-            // 
-            this.cborepresentacion.BackColor = System.Drawing.SystemColors.MenuText;
-            this.cborepresentacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cborepresentacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.cborepresentacion.ForeColor = System.Drawing.Color.White;
-            this.cborepresentacion.FormattingEnabled = true;
-            this.cborepresentacion.Location = new System.Drawing.Point(354, 616);
-            this.cborepresentacion.Name = "cborepresentacion";
-            this.cborepresentacion.Size = new System.Drawing.Size(280, 24);
-            this.cborepresentacion.TabIndex = 333;
-            this.cborepresentacion.Visible = false;
             // 
             // checkrepresentacion
             // 
@@ -1382,7 +1382,7 @@
             this.checkrepresentacion.Location = new System.Drawing.Point(25, 616);
             this.checkrepresentacion.Name = "checkrepresentacion";
             this.checkrepresentacion.Size = new System.Drawing.Size(143, 18);
-            this.checkrepresentacion.TabIndex = 334;
+            this.checkrepresentacion.TabIndex = 35;
             this.checkrepresentacion.Text = "¿Es Representacion?";
             this.checkrepresentacion.UseVisualStyleBackColor = true;
             this.checkrepresentacion.CheckedChanged += new System.EventHandler(this.checkrepresentacion_CheckedChanged);
@@ -1392,7 +1392,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1134, 440);
+            this.ClientSize = new System.Drawing.Size(1069, 440);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimizeBox = false;
             this.Name = "frmSucursales";

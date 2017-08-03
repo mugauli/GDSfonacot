@@ -118,7 +118,7 @@
             this.textRegional.Margin = new System.Windows.Forms.Padding(4);
             this.textRegional.Name = "textRegional";
             this.textRegional.Size = new System.Drawing.Size(186, 22);
-            this.textRegional.TabIndex = 322;
+            this.textRegional.TabIndex = 3;
             // 
             // txthidIdEmpleado
             // 
@@ -142,7 +142,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(380, 22);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TabIndex = 0;
             // 
             // label1
             // 
@@ -167,7 +167,7 @@
             this.txtGafete.Margin = new System.Windows.Forms.Padding(4);
             this.txtGafete.Name = "txtGafete";
             this.txtGafete.Size = new System.Drawing.Size(186, 22);
-            this.txtGafete.TabIndex = 7;
+            this.txtGafete.TabIndex = 1;
             // 
             // label3
             // 
@@ -192,7 +192,7 @@
             this.cmbSucursal.Location = new System.Drawing.Point(615, 23);
             this.cmbSucursal.Name = "cmbSucursal";
             this.cmbSucursal.Size = new System.Drawing.Size(188, 24);
-            this.cmbSucursal.TabIndex = 21;
+            this.cmbSucursal.TabIndex = 2;
             this.cmbSucursal.SelectionChangeCommitted += new System.EventHandler(this.cmbSucursal_SelectionChangeCommitted);
             // 
             // label5
@@ -218,7 +218,7 @@
             this.cmbTipoPersonal.Location = new System.Drawing.Point(227, 73);
             this.cmbTipoPersonal.Name = "cmbTipoPersonal";
             this.cmbTipoPersonal.Size = new System.Drawing.Size(188, 24);
-            this.cmbTipoPersonal.TabIndex = 19;
+            this.cmbTipoPersonal.TabIndex = 4;
             // 
             // txtJornada
             // 
@@ -230,7 +230,7 @@
             this.txtJornada.Margin = new System.Windows.Forms.Padding(4);
             this.txtJornada.Name = "txtJornada";
             this.txtJornada.Size = new System.Drawing.Size(186, 22);
-            this.txtJornada.TabIndex = 8;
+            this.txtJornada.TabIndex = 5;
             // 
             // txtHorario
             // 
@@ -242,7 +242,7 @@
             this.txtHorario.Margin = new System.Windows.Forms.Padding(4);
             this.txtHorario.Name = "txtHorario";
             this.txtHorario.Size = new System.Drawing.Size(186, 22);
-            this.txtHorario.TabIndex = 9;
+            this.txtHorario.TabIndex = 6;
             // 
             // label4
             // 
@@ -306,7 +306,7 @@
             this.cmbArea.Location = new System.Drawing.Point(33, 121);
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(188, 24);
-            this.cmbArea.TabIndex = 20;
+            this.cmbArea.TabIndex = 7;
             // 
             // label2
             // 
@@ -331,7 +331,7 @@
             this.cmbPerfilSistema.Location = new System.Drawing.Point(227, 121);
             this.cmbPerfilSistema.Name = "cmbPerfilSistema";
             this.cmbPerfilSistema.Size = new System.Drawing.Size(188, 24);
-            this.cmbPerfilSistema.TabIndex = 23;
+            this.cmbPerfilSistema.TabIndex = 8;
             // 
             // label9
             // 
@@ -356,7 +356,7 @@
             this.cmbActividad.Location = new System.Drawing.Point(421, 121);
             this.cmbActividad.Name = "cmbActividad";
             this.cmbActividad.Size = new System.Drawing.Size(188, 24);
-            this.cmbActividad.TabIndex = 25;
+            this.cmbActividad.TabIndex = 9;
             // 
             // label10
             // 
@@ -380,7 +380,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(504, 171);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(105, 35);
-            this.btnNuevo.TabIndex = 319;
+            this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -394,7 +394,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(615, 171);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(105, 35);
-            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
