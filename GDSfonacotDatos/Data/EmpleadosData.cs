@@ -161,18 +161,20 @@ namespace GDSfonacotDatos.Data
                           .Join(context.ctPerfilSistema, tabla1 => tabla1.IdPerfilSistema, tabla2 => tabla2.IdPerfilSistema, (emp, perfil) => new { emp, perfil })
                           .Join(context.ctTipoPersonal, tabla1 => tabla1.emp.IdTipoPersonal, tabla2 => tabla2.IdTipoPersonal, (emp2, tipopers) => new { emp2, tipopers })// se realiza el join para crear el contexto completo es decir todos los dato 
                             .Join(context.ctActividad, tabla1 => tabla1.emp2.emp.IdActividad, tabla2 => tabla2.IdActividad, (emp3, activi) => new { emp3, activi })
-                          .Where(ep => ep.activi.IdActividad == ep.emp3.emp2.emp.IdActividad &&  ep.emp3.emp2.emp.IdPerfilSistema == ep.emp3.emp2.perfil.IdPerfilSistema && ep.emp3.emp2.emp.IdSucursal == IdSucursal && ep.emp3.emp2.emp.IdTipoPersonal ==ep.emp3.tipopers.IdTipoPersonal)
+                              .Join(context.ctClasificaciones, tabla1 => tabla1.emp3.emp2.emp.IdClasificacion, tabla2 => tabla2.IdClasificacion, (emp4, clasif) => new { emp4, clasif })
+                          .Where(ep => ep.emp4.activi.IdActividad == ep.emp4.emp3.emp2.emp.IdActividad &&  ep.emp4.emp3.emp2.emp.IdPerfilSistema == ep.emp4.emp3.emp2.perfil.IdPerfilSistema && ep.emp4.emp3.emp2.emp.IdSucursal == IdSucursal && ep.emp4.emp3.emp2.emp.IdTipoPersonal ==ep.emp4.emp3.tipopers.IdTipoPersonal)
 
                          .Select(x => new EmpleadosDGV
                          {
-                             IdEmpleado = x.emp3.emp2.emp.IdEmpleado,
-                             Gafete = x.emp3.emp2.emp.Gafete,
-                             Nombre = x.emp3.emp2.emp.Nombre,
-                             Horario = x.emp3.emp2.emp.Horario,
-                             Jornada = x.emp3.emp2.emp.Jornada,
-                             TipoPersonal = x.emp3.tipopers.Descripcion,
-                             TipoPerfil = x.emp3.emp2.perfil.Descripcion,
-                             TipoActividad = x.activi.Descripcion
+                             IdEmpleado = x.emp4.emp3.emp2.emp.IdEmpleado,
+                             Gafete = x.emp4.emp3.emp2.emp.Gafete,
+                             Nombre = x.emp4.emp3.emp2.emp.Nombre,
+                             Horario = x.emp4.emp3.emp2.emp.Horario,
+                             Jornada = x.emp4.emp3.emp2.emp.Jornada,
+                             TipoPersonal = x.emp4.emp3.tipopers.Descripcion,
+                             TipoPerfil = x.emp4.emp3.emp2.perfil.Descripcion,
+                             TipoActividad = x.emp4.activi.Descripcion,
+                             ClasifDescripcion=x.clasif.ClasifDescripcion
 
                          }).ToList();
 

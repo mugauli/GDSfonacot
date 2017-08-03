@@ -105,7 +105,7 @@ namespace GDSfonacot.forms
 
                 dgvUsuarios.DataSource = usuarios.Result;
                 dgvUsuarios.ReadOnly = true;
-                dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvUsuarios.Columns[0].Visible = false;
                 dgvUsuarios.Columns[0].HeaderText = "ID";
                 dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
@@ -187,7 +187,7 @@ namespace GDSfonacot.forms
 
                     dgvUsuarios.DataSource = usuarios.Result;
                     dgvUsuarios.ReadOnly = true;
-                    dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dgvUsuarios.Columns[0].Visible = false;
                     dgvUsuarios.Columns[0].HeaderText = "ID";
                     dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
