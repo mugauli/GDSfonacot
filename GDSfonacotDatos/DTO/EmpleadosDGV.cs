@@ -16,7 +16,7 @@ namespace GDSfonacotDatos.DTO
         public string Jornada { get; set; }
         public string Horario { get; set; }
         public string TipoActividad { get; set; }
-
+        public string ClasifDescripcion { get; set; }
 
 
 

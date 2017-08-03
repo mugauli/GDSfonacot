@@ -122,7 +122,7 @@ namespace GDSfonacot
 
                 dgvEmpleados.DataSource = empleados1.Result;
                 dgvEmpleados.ReadOnly = true;
-                dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvEmpleados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvEmpleados.Columns[0].Visible = false;
                 dgvEmpleados.Columns[0].HeaderText = "ID";
                 dgvEmpleados.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
@@ -133,6 +133,7 @@ namespace GDSfonacot
                 dgvEmpleados.Columns[5].HeaderText = "Jornada";
                 dgvEmpleados.Columns[6].HeaderText = "Horario";
                 dgvEmpleados.Columns[7].HeaderText = "Actividad";
+                dgvEmpleados.Columns[8].HeaderText = "Clasificación";
                 lblRegistros.Text = "Total de Registros: " + dgvEmpleados.RowCount;
             }
 
@@ -145,7 +146,7 @@ namespace GDSfonacot
             var dataGV = new DataGridView();
             dataGV.DataSource = empleados;
             dataGV.ReadOnly = true;
-            dataGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             dataGV.Columns[0].Visible = false;
             dataGV.Columns[0].HeaderText = "ID";
@@ -158,6 +159,7 @@ namespace GDSfonacot
             dataGV.Columns[5].HeaderText = "Jornada";
             dataGV.Columns[6].HeaderText = "Horario";
             dataGV.Columns[7].HeaderText = "Actividad";
+            dataGV.Columns[8].HeaderText = "Clasificación";
             return dataGV;
         }
 

@@ -35,7 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblnosucursal = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtRepresentaciones = new System.Windows.Forms.TextBox();
             this.txtNoSucursal = new System.Windows.Forms.TextBox();
@@ -56,51 +56,51 @@
             this.txtDirectorEstatal = new System.Windows.Forms.TextBox();
             this.txtTotalAnalistas = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblanalistascomercial = new System.Windows.Forms.Label();
             this.txtAnalistaComercial = new System.Windows.Forms.TextBox();
             this.txthidIdSucursal = new System.Windows.Forms.TextBox();
             this.txtTotalVentanillas = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblventanillas = new System.Windows.Forms.Label();
             this.txtAnalistasCredito = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblanalistcredito = new System.Windows.Forms.Label();
             this.txtAnalistasCobranza = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblanalistascob = new System.Windows.Forms.Label();
             this.txtEmpresasAfiliadas = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblempafiliadas = new System.Windows.Forms.Label();
             this.txtTrabajadoresAfiliados = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lbltrabajadorafiliados = new System.Windows.Forms.Label();
             this.txtPotencialEmpresas = new System.Windows.Forms.TextBox();
             this.txtPotencialTrabajadores = new System.Windows.Forms.TextBox();
             this.txtEmpresasEstatus1 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblpoteempresas = new System.Windows.Forms.Label();
+            this.lblpotentrabajadores = new System.Windows.Forms.Label();
+            this.lblempresasest1 = new System.Windows.Forms.Label();
             this.txtEmpresasEstatus18 = new System.Windows.Forms.TextBox();
             this.txtEmpresasEstatus30 = new System.Windows.Forms.TextBox();
             this.txtEmpresasEstatus21 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblempesta21 = new System.Windows.Forms.Label();
+            this.lblempesta30 = new System.Windows.Forms.Label();
+            this.lblempestatus18 = new System.Windows.Forms.Label();
             this.txtMetaMensual = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lblmetamensual = new System.Windows.Forms.Label();
+            this.lblmetaanual = new System.Windows.Forms.Label();
             this.txtMetaAnual = new System.Windows.Forms.TextBox();
             this.txtMetaAcumulada = new System.Windows.Forms.TextBox();
             this.txtColocacionMensual = new System.Windows.Forms.TextBox();
             this.txtColocacionAnual = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblmetaacumulada = new System.Windows.Forms.Label();
+            this.lblcolmensual = new System.Windows.Forms.Label();
+            this.lblcolanual = new System.Windows.Forms.Label();
             this.txtCobranzaMetaMensual = new System.Windows.Forms.TextBox();
             this.txtcobranzaAnual = new System.Windows.Forms.TextBox();
             this.txtCobranzaCumplimiento = new System.Windows.Forms.TextBox();
             this.txtCobranzaPorcentaje = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lblcobmetamensual = new System.Windows.Forms.Label();
+            this.lblcobmetaanual = new System.Windows.Forms.Label();
+            this.lblcobcump = new System.Windows.Forms.Label();
+            this.lblcobporcen = new System.Windows.Forms.Label();
             this.txtAnalistasAdministrativos = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
+            this.lblanaadministrativos = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.txtubicacion = new System.Windows.Forms.TextBox();
@@ -206,18 +206,18 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Director Regional";
             // 
-            // label3
+            // lblnosucursal
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(641, 82);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "No. Sucursal";
+            this.lblnosucursal.AutoSize = true;
+            this.lblnosucursal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblnosucursal.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnosucursal.ForeColor = System.Drawing.Color.DimGray;
+            this.lblnosucursal.Location = new System.Drawing.Point(641, 82);
+            this.lblnosucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnosucursal.Name = "lblnosucursal";
+            this.lblnosucursal.Size = new System.Drawing.Size(195, 20);
+            this.lblnosucursal.TabIndex = 12;
+            this.lblnosucursal.Text = "No. Sucursal";
             // 
             // txtDireccion
             // 
@@ -317,7 +317,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtNoSucursal, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtRepresentaciones, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblnosucursal, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 4, 7);
             this.tableLayoutPanel1.Controls.Add(this.label5, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 3);
@@ -330,51 +330,51 @@
             this.tableLayoutPanel1.Controls.Add(this.txtDirectorEstatal, 2, 8);
             this.tableLayoutPanel1.Controls.Add(this.txtTotalAnalistas, 3, 10);
             this.tableLayoutPanel1.Controls.Add(this.label1, 3, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 1, 13);
+            this.tableLayoutPanel1.Controls.Add(this.lblanalistascomercial, 1, 13);
             this.tableLayoutPanel1.Controls.Add(this.txtAnalistaComercial, 1, 12);
             this.tableLayoutPanel1.Controls.Add(this.txthidIdSucursal, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtTotalVentanillas, 4, 10);
-            this.tableLayoutPanel1.Controls.Add(this.label17, 4, 11);
+            this.tableLayoutPanel1.Controls.Add(this.lblventanillas, 4, 11);
             this.tableLayoutPanel1.Controls.Add(this.txtAnalistasCredito, 2, 12);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 2, 13);
+            this.tableLayoutPanel1.Controls.Add(this.lblanalistcredito, 2, 13);
             this.tableLayoutPanel1.Controls.Add(this.txtAnalistasCobranza, 3, 12);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 3, 13);
+            this.tableLayoutPanel1.Controls.Add(this.lblanalistascob, 3, 13);
             this.tableLayoutPanel1.Controls.Add(this.txtEmpresasAfiliadas, 4, 12);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 4, 13);
+            this.tableLayoutPanel1.Controls.Add(this.lblempafiliadas, 4, 13);
             this.tableLayoutPanel1.Controls.Add(this.txtTrabajadoresAfiliados, 1, 14);
-            this.tableLayoutPanel1.Controls.Add(this.label16, 1, 15);
+            this.tableLayoutPanel1.Controls.Add(this.lbltrabajadorafiliados, 1, 15);
             this.tableLayoutPanel1.Controls.Add(this.txtPotencialEmpresas, 2, 14);
             this.tableLayoutPanel1.Controls.Add(this.txtPotencialTrabajadores, 3, 14);
             this.tableLayoutPanel1.Controls.Add(this.txtEmpresasEstatus1, 4, 14);
-            this.tableLayoutPanel1.Controls.Add(this.label18, 2, 15);
-            this.tableLayoutPanel1.Controls.Add(this.label20, 3, 15);
-            this.tableLayoutPanel1.Controls.Add(this.label21, 4, 15);
+            this.tableLayoutPanel1.Controls.Add(this.lblpoteempresas, 2, 15);
+            this.tableLayoutPanel1.Controls.Add(this.lblpotentrabajadores, 3, 15);
+            this.tableLayoutPanel1.Controls.Add(this.lblempresasest1, 4, 15);
             this.tableLayoutPanel1.Controls.Add(this.txtEmpresasEstatus18, 1, 16);
             this.tableLayoutPanel1.Controls.Add(this.txtEmpresasEstatus30, 3, 16);
             this.tableLayoutPanel1.Controls.Add(this.txtEmpresasEstatus21, 2, 16);
-            this.tableLayoutPanel1.Controls.Add(this.label22, 2, 17);
-            this.tableLayoutPanel1.Controls.Add(this.label23, 3, 17);
-            this.tableLayoutPanel1.Controls.Add(this.label19, 1, 17);
+            this.tableLayoutPanel1.Controls.Add(this.lblempesta21, 2, 17);
+            this.tableLayoutPanel1.Controls.Add(this.lblempesta30, 3, 17);
+            this.tableLayoutPanel1.Controls.Add(this.lblempestatus18, 1, 17);
             this.tableLayoutPanel1.Controls.Add(this.txtMetaMensual, 4, 16);
-            this.tableLayoutPanel1.Controls.Add(this.label24, 4, 17);
-            this.tableLayoutPanel1.Controls.Add(this.label25, 1, 19);
+            this.tableLayoutPanel1.Controls.Add(this.lblmetamensual, 4, 17);
+            this.tableLayoutPanel1.Controls.Add(this.lblmetaanual, 1, 19);
             this.tableLayoutPanel1.Controls.Add(this.txtMetaAnual, 1, 18);
             this.tableLayoutPanel1.Controls.Add(this.txtMetaAcumulada, 2, 18);
             this.tableLayoutPanel1.Controls.Add(this.txtColocacionMensual, 3, 18);
             this.tableLayoutPanel1.Controls.Add(this.txtColocacionAnual, 4, 18);
-            this.tableLayoutPanel1.Controls.Add(this.label26, 2, 19);
-            this.tableLayoutPanel1.Controls.Add(this.label27, 3, 19);
-            this.tableLayoutPanel1.Controls.Add(this.label28, 4, 19);
+            this.tableLayoutPanel1.Controls.Add(this.lblmetaacumulada, 2, 19);
+            this.tableLayoutPanel1.Controls.Add(this.lblcolmensual, 3, 19);
+            this.tableLayoutPanel1.Controls.Add(this.lblcolanual, 4, 19);
             this.tableLayoutPanel1.Controls.Add(this.txtCobranzaMetaMensual, 1, 20);
             this.tableLayoutPanel1.Controls.Add(this.txtcobranzaAnual, 2, 20);
             this.tableLayoutPanel1.Controls.Add(this.txtCobranzaCumplimiento, 3, 20);
             this.tableLayoutPanel1.Controls.Add(this.txtCobranzaPorcentaje, 4, 20);
-            this.tableLayoutPanel1.Controls.Add(this.label29, 1, 21);
-            this.tableLayoutPanel1.Controls.Add(this.label30, 2, 21);
-            this.tableLayoutPanel1.Controls.Add(this.label31, 3, 21);
-            this.tableLayoutPanel1.Controls.Add(this.label32, 4, 21);
+            this.tableLayoutPanel1.Controls.Add(this.lblcobmetamensual, 1, 21);
+            this.tableLayoutPanel1.Controls.Add(this.lblcobmetaanual, 2, 21);
+            this.tableLayoutPanel1.Controls.Add(this.lblcobcump, 3, 21);
+            this.tableLayoutPanel1.Controls.Add(this.lblcobporcen, 4, 21);
             this.tableLayoutPanel1.Controls.Add(this.txtAnalistasAdministrativos, 1, 22);
-            this.tableLayoutPanel1.Controls.Add(this.label33, 1, 23);
+            this.tableLayoutPanel1.Controls.Add(this.lblanaadministrativos, 1, 23);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.gMapControl1, 1, 28);
             this.tableLayoutPanel1.Controls.Add(this.txtubicacion, 1, 26);
@@ -634,18 +634,18 @@
             this.label1.TabIndex = 248;
             this.label1.Text = "Analistas";
             // 
-            // label12
+            // lblanalistascomercial
             // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(26, 342);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(321, 21);
-            this.label12.TabIndex = 252;
-            this.label12.Text = "Analistas Comercial";
+            this.lblanalistascomercial.AutoSize = true;
+            this.lblanalistascomercial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblanalistascomercial.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblanalistascomercial.ForeColor = System.Drawing.Color.DimGray;
+            this.lblanalistascomercial.Location = new System.Drawing.Point(26, 342);
+            this.lblanalistascomercial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblanalistascomercial.Name = "lblanalistascomercial";
+            this.lblanalistascomercial.Size = new System.Drawing.Size(321, 21);
+            this.lblanalistascomercial.TabIndex = 252;
+            this.lblanalistascomercial.Text = "Analistas Comercial";
             // 
             // txtAnalistaComercial
             // 
@@ -686,18 +686,18 @@
             this.txtTotalVentanillas.Size = new System.Drawing.Size(215, 25);
             this.txtTotalVentanillas.TabIndex = 11;
             // 
-            // label17
+            // lblventanillas
             // 
-            this.label17.AutoSize = true;
-            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.DimGray;
-            this.label17.Location = new System.Drawing.Point(844, 289);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(215, 17);
-            this.label17.TabIndex = 287;
-            this.label17.Text = "Ventanillas";
+            this.lblventanillas.AutoSize = true;
+            this.lblventanillas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblventanillas.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblventanillas.ForeColor = System.Drawing.Color.DimGray;
+            this.lblventanillas.Location = new System.Drawing.Point(844, 289);
+            this.lblventanillas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblventanillas.Name = "lblventanillas";
+            this.lblventanillas.Size = new System.Drawing.Size(215, 17);
+            this.lblventanillas.TabIndex = 287;
+            this.lblventanillas.Text = "Ventanillas";
             // 
             // txtAnalistasCredito
             // 
@@ -713,18 +713,18 @@
             this.txtAnalistasCredito.Size = new System.Drawing.Size(278, 28);
             this.txtAnalistasCredito.TabIndex = 13;
             // 
-            // label13
+            // lblanalistcredito
             // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(355, 342);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(278, 21);
-            this.label13.TabIndex = 253;
-            this.label13.Text = "Analistas de Crédito";
+            this.lblanalistcredito.AutoSize = true;
+            this.lblanalistcredito.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblanalistcredito.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblanalistcredito.ForeColor = System.Drawing.Color.DimGray;
+            this.lblanalistcredito.Location = new System.Drawing.Point(355, 342);
+            this.lblanalistcredito.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblanalistcredito.Name = "lblanalistcredito";
+            this.lblanalistcredito.Size = new System.Drawing.Size(278, 21);
+            this.lblanalistcredito.TabIndex = 253;
+            this.lblanalistcredito.Text = "Analistas de Crédito";
             // 
             // txtAnalistasCobranza
             // 
@@ -740,18 +740,18 @@
             this.txtAnalistasCobranza.Size = new System.Drawing.Size(195, 28);
             this.txtAnalistasCobranza.TabIndex = 14;
             // 
-            // label14
+            // lblanalistascob
             // 
-            this.label14.AutoSize = true;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(641, 342);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(195, 21);
-            this.label14.TabIndex = 256;
-            this.label14.Text = "Analistas Cobranza";
+            this.lblanalistascob.AutoSize = true;
+            this.lblanalistascob.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblanalistascob.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblanalistascob.ForeColor = System.Drawing.Color.DimGray;
+            this.lblanalistascob.Location = new System.Drawing.Point(641, 342);
+            this.lblanalistascob.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblanalistascob.Name = "lblanalistascob";
+            this.lblanalistascob.Size = new System.Drawing.Size(195, 21);
+            this.lblanalistascob.TabIndex = 256;
+            this.lblanalistascob.Text = "Analistas Cobranza";
             // 
             // txtEmpresasAfiliadas
             // 
@@ -767,18 +767,18 @@
             this.txtEmpresasAfiliadas.Size = new System.Drawing.Size(215, 28);
             this.txtEmpresasAfiliadas.TabIndex = 15;
             // 
-            // label15
+            // lblempafiliadas
             // 
-            this.label15.AutoSize = true;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(844, 342);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(215, 21);
-            this.label15.TabIndex = 258;
-            this.label15.Text = "Empresas Afiliadas";
+            this.lblempafiliadas.AutoSize = true;
+            this.lblempafiliadas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblempafiliadas.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempafiliadas.ForeColor = System.Drawing.Color.DimGray;
+            this.lblempafiliadas.Location = new System.Drawing.Point(844, 342);
+            this.lblempafiliadas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblempafiliadas.Name = "lblempafiliadas";
+            this.lblempafiliadas.Size = new System.Drawing.Size(215, 21);
+            this.lblempafiliadas.TabIndex = 258;
+            this.lblempafiliadas.Text = "Empresas Afiliadas";
             // 
             // txtTrabajadoresAfiliados
             // 
@@ -794,18 +794,18 @@
             this.txtTrabajadoresAfiliados.Size = new System.Drawing.Size(321, 22);
             this.txtTrabajadoresAfiliados.TabIndex = 16;
             // 
-            // label16
+            // lbltrabajadorafiliados
             // 
-            this.label16.AutoSize = true;
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.DimGray;
-            this.label16.Location = new System.Drawing.Point(26, 393);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(321, 16);
-            this.label16.TabIndex = 261;
-            this.label16.Text = "Trabajadores Afiliados";
+            this.lbltrabajadorafiliados.AutoSize = true;
+            this.lbltrabajadorafiliados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbltrabajadorafiliados.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltrabajadorafiliados.ForeColor = System.Drawing.Color.DimGray;
+            this.lbltrabajadorafiliados.Location = new System.Drawing.Point(26, 393);
+            this.lbltrabajadorafiliados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltrabajadorafiliados.Name = "lbltrabajadorafiliados";
+            this.lbltrabajadorafiliados.Size = new System.Drawing.Size(321, 16);
+            this.lbltrabajadorafiliados.TabIndex = 261;
+            this.lbltrabajadorafiliados.Text = "Trabajadores Afiliados";
             // 
             // txtPotencialEmpresas
             // 
@@ -849,44 +849,44 @@
             this.txtEmpresasEstatus1.Size = new System.Drawing.Size(215, 22);
             this.txtEmpresasEstatus1.TabIndex = 19;
             // 
-            // label18
+            // lblpoteempresas
             // 
-            this.label18.AutoSize = true;
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(355, 393);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(278, 16);
-            this.label18.TabIndex = 291;
-            this.label18.Text = "Potencial Empresas";
+            this.lblpoteempresas.AutoSize = true;
+            this.lblpoteempresas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblpoteempresas.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpoteempresas.ForeColor = System.Drawing.Color.DimGray;
+            this.lblpoteempresas.Location = new System.Drawing.Point(355, 393);
+            this.lblpoteempresas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblpoteempresas.Name = "lblpoteempresas";
+            this.lblpoteempresas.Size = new System.Drawing.Size(278, 16);
+            this.lblpoteempresas.TabIndex = 291;
+            this.lblpoteempresas.Text = "Potencial Empresas";
             // 
-            // label20
+            // lblpotentrabajadores
             // 
-            this.label20.AutoSize = true;
-            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.DimGray;
-            this.label20.Location = new System.Drawing.Point(641, 393);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(195, 16);
-            this.label20.TabIndex = 293;
-            this.label20.Text = "Potencial trabajadores";
+            this.lblpotentrabajadores.AutoSize = true;
+            this.lblpotentrabajadores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblpotentrabajadores.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpotentrabajadores.ForeColor = System.Drawing.Color.DimGray;
+            this.lblpotentrabajadores.Location = new System.Drawing.Point(641, 393);
+            this.lblpotentrabajadores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblpotentrabajadores.Name = "lblpotentrabajadores";
+            this.lblpotentrabajadores.Size = new System.Drawing.Size(195, 16);
+            this.lblpotentrabajadores.TabIndex = 293;
+            this.lblpotentrabajadores.Text = "Potencial trabajadores";
             // 
-            // label21
+            // lblempresasest1
             // 
-            this.label21.AutoSize = true;
-            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.DimGray;
-            this.label21.Location = new System.Drawing.Point(844, 393);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(215, 16);
-            this.label21.TabIndex = 294;
-            this.label21.Text = "Empresas Estatus1";
+            this.lblempresasest1.AutoSize = true;
+            this.lblempresasest1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblempresasest1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempresasest1.ForeColor = System.Drawing.Color.DimGray;
+            this.lblempresasest1.Location = new System.Drawing.Point(844, 393);
+            this.lblempresasest1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblempresasest1.Name = "lblempresasest1";
+            this.lblempresasest1.Size = new System.Drawing.Size(215, 16);
+            this.lblempresasest1.TabIndex = 294;
+            this.lblempresasest1.Text = "Empresas Estatus1";
             // 
             // txtEmpresasEstatus18
             // 
@@ -929,44 +929,44 @@
             this.txtEmpresasEstatus21.Size = new System.Drawing.Size(278, 22);
             this.txtEmpresasEstatus21.TabIndex = 21;
             // 
-            // label22
+            // lblempesta21
             // 
-            this.label22.AutoSize = true;
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.DimGray;
-            this.label22.Location = new System.Drawing.Point(355, 439);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(278, 18);
-            this.label22.TabIndex = 298;
-            this.label22.Text = "Empresas estatus 21";
+            this.lblempesta21.AutoSize = true;
+            this.lblempesta21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblempesta21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempesta21.ForeColor = System.Drawing.Color.DimGray;
+            this.lblempesta21.Location = new System.Drawing.Point(355, 439);
+            this.lblempesta21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblempesta21.Name = "lblempesta21";
+            this.lblempesta21.Size = new System.Drawing.Size(278, 18);
+            this.lblempesta21.TabIndex = 298;
+            this.lblempesta21.Text = "Empresas estatus 21";
             // 
-            // label23
+            // lblempesta30
             // 
-            this.label23.AutoSize = true;
-            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label23.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.DimGray;
-            this.label23.Location = new System.Drawing.Point(641, 439);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(195, 18);
-            this.label23.TabIndex = 299;
-            this.label23.Text = "Empresas estatus 30";
+            this.lblempesta30.AutoSize = true;
+            this.lblempesta30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblempesta30.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempesta30.ForeColor = System.Drawing.Color.DimGray;
+            this.lblempesta30.Location = new System.Drawing.Point(641, 439);
+            this.lblempesta30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblempesta30.Name = "lblempesta30";
+            this.lblempesta30.Size = new System.Drawing.Size(195, 18);
+            this.lblempesta30.TabIndex = 299;
+            this.lblempesta30.Text = "Empresas estatus 30";
             // 
-            // label19
+            // lblempestatus18
             // 
-            this.label19.AutoSize = true;
-            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.DimGray;
-            this.label19.Location = new System.Drawing.Point(26, 439);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(321, 18);
-            this.label19.TabIndex = 292;
-            this.label19.Text = "Empresas estatus 18";
+            this.lblempestatus18.AutoSize = true;
+            this.lblempestatus18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblempestatus18.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempestatus18.ForeColor = System.Drawing.Color.DimGray;
+            this.lblempestatus18.Location = new System.Drawing.Point(26, 439);
+            this.lblempestatus18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblempestatus18.Name = "lblempestatus18";
+            this.lblempestatus18.Size = new System.Drawing.Size(321, 18);
+            this.lblempestatus18.TabIndex = 292;
+            this.lblempestatus18.Text = "Empresas estatus 18";
             // 
             // txtMetaMensual
             // 
@@ -982,31 +982,31 @@
             this.txtMetaMensual.Size = new System.Drawing.Size(215, 22);
             this.txtMetaMensual.TabIndex = 23;
             // 
-            // label24
+            // lblmetamensual
             // 
-            this.label24.AutoSize = true;
-            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label24.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.DimGray;
-            this.label24.Location = new System.Drawing.Point(844, 439);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(215, 18);
-            this.label24.TabIndex = 302;
-            this.label24.Text = "Meta Mensual";
+            this.lblmetamensual.AutoSize = true;
+            this.lblmetamensual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblmetamensual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmetamensual.ForeColor = System.Drawing.Color.DimGray;
+            this.lblmetamensual.Location = new System.Drawing.Point(844, 439);
+            this.lblmetamensual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblmetamensual.Name = "lblmetamensual";
+            this.lblmetamensual.Size = new System.Drawing.Size(215, 18);
+            this.lblmetamensual.TabIndex = 302;
+            this.lblmetamensual.Text = "Meta Mensual";
             // 
-            // label25
+            // lblmetaanual
             // 
-            this.label25.AutoSize = true;
-            this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label25.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.DimGray;
-            this.label25.Location = new System.Drawing.Point(26, 486);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(321, 18);
-            this.label25.TabIndex = 303;
-            this.label25.Text = "Meta Anual";
+            this.lblmetaanual.AutoSize = true;
+            this.lblmetaanual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblmetaanual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmetaanual.ForeColor = System.Drawing.Color.DimGray;
+            this.lblmetaanual.Location = new System.Drawing.Point(26, 486);
+            this.lblmetaanual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblmetaanual.Name = "lblmetaanual";
+            this.lblmetaanual.Size = new System.Drawing.Size(321, 18);
+            this.lblmetaanual.TabIndex = 303;
+            this.lblmetaanual.Text = "Meta Anual";
             // 
             // txtMetaAnual
             // 
@@ -1064,44 +1064,44 @@
             this.txtColocacionAnual.Size = new System.Drawing.Size(215, 21);
             this.txtColocacionAnual.TabIndex = 27;
             // 
-            // label26
+            // lblmetaacumulada
             // 
-            this.label26.AutoSize = true;
-            this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label26.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.DimGray;
-            this.label26.Location = new System.Drawing.Point(355, 486);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(278, 18);
-            this.label26.TabIndex = 307;
-            this.label26.Text = "Meta Acumulada";
+            this.lblmetaacumulada.AutoSize = true;
+            this.lblmetaacumulada.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblmetaacumulada.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmetaacumulada.ForeColor = System.Drawing.Color.DimGray;
+            this.lblmetaacumulada.Location = new System.Drawing.Point(355, 486);
+            this.lblmetaacumulada.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblmetaacumulada.Name = "lblmetaacumulada";
+            this.lblmetaacumulada.Size = new System.Drawing.Size(278, 18);
+            this.lblmetaacumulada.TabIndex = 307;
+            this.lblmetaacumulada.Text = "Meta Acumulada";
             // 
-            // label27
+            // lblcolmensual
             // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label27.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.DimGray;
-            this.label27.Location = new System.Drawing.Point(641, 486);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(195, 18);
-            this.label27.TabIndex = 308;
-            this.label27.Text = "Colocación Mensual";
+            this.lblcolmensual.AutoSize = true;
+            this.lblcolmensual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblcolmensual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcolmensual.ForeColor = System.Drawing.Color.DimGray;
+            this.lblcolmensual.Location = new System.Drawing.Point(641, 486);
+            this.lblcolmensual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcolmensual.Name = "lblcolmensual";
+            this.lblcolmensual.Size = new System.Drawing.Size(195, 18);
+            this.lblcolmensual.TabIndex = 308;
+            this.lblcolmensual.Text = "Colocación Mensual";
             // 
-            // label28
+            // lblcolanual
             // 
-            this.label28.AutoSize = true;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label28.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.DimGray;
-            this.label28.Location = new System.Drawing.Point(844, 486);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(215, 18);
-            this.label28.TabIndex = 309;
-            this.label28.Text = "Colocación Anual";
+            this.lblcolanual.AutoSize = true;
+            this.lblcolanual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblcolanual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcolanual.ForeColor = System.Drawing.Color.DimGray;
+            this.lblcolanual.Location = new System.Drawing.Point(844, 486);
+            this.lblcolanual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcolanual.Name = "lblcolanual";
+            this.lblcolanual.Size = new System.Drawing.Size(215, 18);
+            this.lblcolanual.TabIndex = 309;
+            this.lblcolanual.Text = "Colocación Anual";
             // 
             // txtCobranzaMetaMensual
             // 
@@ -1159,57 +1159,57 @@
             this.txtCobranzaPorcentaje.Size = new System.Drawing.Size(215, 21);
             this.txtCobranzaPorcentaje.TabIndex = 31;
             // 
-            // label29
+            // lblcobmetamensual
             // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label29.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.DimGray;
-            this.label29.Location = new System.Drawing.Point(26, 533);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(321, 18);
-            this.label29.TabIndex = 314;
-            this.label29.Text = "Cobranza Meta Mensual";
+            this.lblcobmetamensual.AutoSize = true;
+            this.lblcobmetamensual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblcobmetamensual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcobmetamensual.ForeColor = System.Drawing.Color.DimGray;
+            this.lblcobmetamensual.Location = new System.Drawing.Point(26, 533);
+            this.lblcobmetamensual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcobmetamensual.Name = "lblcobmetamensual";
+            this.lblcobmetamensual.Size = new System.Drawing.Size(321, 18);
+            this.lblcobmetamensual.TabIndex = 314;
+            this.lblcobmetamensual.Text = "Cobranza Meta Mensual";
             // 
-            // label30
+            // lblcobmetaanual
             // 
-            this.label30.AutoSize = true;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.DimGray;
-            this.label30.Location = new System.Drawing.Point(355, 533);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(278, 18);
-            this.label30.TabIndex = 315;
-            this.label30.Text = "Cobranza Meta Anual";
+            this.lblcobmetaanual.AutoSize = true;
+            this.lblcobmetaanual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblcobmetaanual.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcobmetaanual.ForeColor = System.Drawing.Color.DimGray;
+            this.lblcobmetaanual.Location = new System.Drawing.Point(355, 533);
+            this.lblcobmetaanual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcobmetaanual.Name = "lblcobmetaanual";
+            this.lblcobmetaanual.Size = new System.Drawing.Size(278, 18);
+            this.lblcobmetaanual.TabIndex = 315;
+            this.lblcobmetaanual.Text = "Cobranza Meta Anual";
             // 
-            // label31
+            // lblcobcump
             // 
-            this.label31.AutoSize = true;
-            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label31.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.DimGray;
-            this.label31.Location = new System.Drawing.Point(641, 533);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(195, 18);
-            this.label31.TabIndex = 316;
-            this.label31.Text = "Cobranza Cumplimiento";
+            this.lblcobcump.AutoSize = true;
+            this.lblcobcump.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblcobcump.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcobcump.ForeColor = System.Drawing.Color.DimGray;
+            this.lblcobcump.Location = new System.Drawing.Point(641, 533);
+            this.lblcobcump.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcobcump.Name = "lblcobcump";
+            this.lblcobcump.Size = new System.Drawing.Size(195, 18);
+            this.lblcobcump.TabIndex = 316;
+            this.lblcobcump.Text = "Cobranza Cumplimiento";
             // 
-            // label32
+            // lblcobporcen
             // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label32.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.DimGray;
-            this.label32.Location = new System.Drawing.Point(844, 533);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(215, 18);
-            this.label32.TabIndex = 317;
-            this.label32.Text = "Cobranza Porcentaje";
+            this.lblcobporcen.AutoSize = true;
+            this.lblcobporcen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblcobporcen.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcobporcen.ForeColor = System.Drawing.Color.DimGray;
+            this.lblcobporcen.Location = new System.Drawing.Point(844, 533);
+            this.lblcobporcen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcobporcen.Name = "lblcobporcen";
+            this.lblcobporcen.Size = new System.Drawing.Size(215, 18);
+            this.lblcobporcen.TabIndex = 317;
+            this.lblcobporcen.Text = "Cobranza Porcentaje";
             // 
             // txtAnalistasAdministrativos
             // 
@@ -1225,18 +1225,18 @@
             this.txtAnalistasAdministrativos.Size = new System.Drawing.Size(321, 21);
             this.txtAnalistasAdministrativos.TabIndex = 32;
             // 
-            // label33
+            // lblanaadministrativos
             // 
-            this.label33.AutoSize = true;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label33.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.ForeColor = System.Drawing.Color.DimGray;
-            this.label33.Location = new System.Drawing.Point(26, 580);
-            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(321, 33);
-            this.label33.TabIndex = 320;
-            this.label33.Text = "Analistas Administrativos";
+            this.lblanaadministrativos.AutoSize = true;
+            this.lblanaadministrativos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblanaadministrativos.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblanaadministrativos.ForeColor = System.Drawing.Color.DimGray;
+            this.lblanaadministrativos.Location = new System.Drawing.Point(26, 580);
+            this.lblanaadministrativos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblanaadministrativos.Name = "lblanaadministrativos";
+            this.lblanaadministrativos.Size = new System.Drawing.Size(321, 33);
+            this.lblanaadministrativos.TabIndex = 320;
+            this.lblanaadministrativos.Text = "Analistas Administrativos";
             // 
             // btnNuevo
             // 
@@ -1417,7 +1417,7 @@
         private System.Windows.Forms.TextBox txtNoSucursal;
         private System.Windows.Forms.TextBox txtRepresentaciones;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblnosucursal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -1436,51 +1436,51 @@
         private System.Windows.Forms.TextBox txtTotalAnalistas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAnalistaComercial;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblanalistascomercial;
         private System.Windows.Forms.TextBox txtAnalistasCredito;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblanalistcredito;
         private System.Windows.Forms.TextBox txtAnalistasCobranza;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblanalistascob;
         private System.Windows.Forms.TextBox txtEmpresasAfiliadas;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblempafiliadas;
         private System.Windows.Forms.TextBox txtTrabajadoresAfiliados;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbltrabajadorafiliados;
         private System.Windows.Forms.TextBox txthidIdSucursal;
         private System.Windows.Forms.TextBox txtTotalVentanillas;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblventanillas;
         private System.Windows.Forms.TextBox txtPotencialEmpresas;
         private System.Windows.Forms.TextBox txtPotencialTrabajadores;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblempestatus18;
         private System.Windows.Forms.TextBox txtEmpresasEstatus1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblpoteempresas;
+        private System.Windows.Forms.Label lblpotentrabajadores;
+        private System.Windows.Forms.Label lblempresasest1;
         private System.Windows.Forms.TextBox txtEmpresasEstatus21;
         private System.Windows.Forms.TextBox txtEmpresasEstatus30;
         private System.Windows.Forms.TextBox txtEmpresasEstatus18;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblempesta21;
+        private System.Windows.Forms.Label lblempesta30;
         private System.Windows.Forms.TextBox txtMetaMensual;
         private System.Windows.Forms.TextBox txtMetaAnual;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblmetamensual;
+        private System.Windows.Forms.Label lblmetaanual;
         private System.Windows.Forms.TextBox txtMetaAcumulada;
         private System.Windows.Forms.TextBox txtColocacionMensual;
         private System.Windows.Forms.TextBox txtColocacionAnual;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblmetaacumulada;
+        private System.Windows.Forms.Label lblcolmensual;
+        private System.Windows.Forms.Label lblcolanual;
         private System.Windows.Forms.TextBox txtcobranzaAnual;
         private System.Windows.Forms.TextBox txtCobranzaCumplimiento;
         private System.Windows.Forms.TextBox txtCobranzaPorcentaje;
         private System.Windows.Forms.TextBox txtCobranzaMetaMensual;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblcobmetamensual;
+        private System.Windows.Forms.Label lblcobmetaanual;
+        private System.Windows.Forms.Label lblcobcump;
+        private System.Windows.Forms.Label lblcobporcen;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtAnalistasAdministrativos;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lblanaadministrativos;
         private System.Windows.Forms.TextBox txtubicacion;
         private System.Windows.Forms.TextBox txtAltitud;
         private System.Windows.Forms.TextBox txtLatitud;
