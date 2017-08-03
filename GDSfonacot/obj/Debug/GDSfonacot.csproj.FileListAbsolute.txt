@@ -161,9 +161,11 @@ C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.exe
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.pdb
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GMap.NET.Core.dll
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GMap.NET.WindowsForms.dll
-C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GDSfonacotDatos.dll.config
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\CrystalDecisions.Web.dll
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\GMap.NET.Core.dll
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\GMap.NET.WindowsForms.dll
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\GMap.NET.Core.xml
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\GMap.NET.WindowsForms.xml
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\CrystalDecisions.Web.dll
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GMap.NET.Core.xml
+C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\bin\Debug\GMap.NET.WindowsForms.xml

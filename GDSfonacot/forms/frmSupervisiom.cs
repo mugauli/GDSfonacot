@@ -139,9 +139,17 @@ namespace GDSfonacot.forms
                     toolButNuevo.Enabled = false;
                     toolButGuardar.Enabled = false;
                     toolButImprimir.Enabled = true;
-                    MessageBox.Show("La supervision ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //LimpiarDatos();
-                    this.Close();
+                    if (txthidIdSup.Text == "0")
+                    {
+                        MessageBox.Show("La supervision ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La supervision ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                   
                 }
 
             }

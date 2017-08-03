@@ -155,6 +155,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ctClasificaciones">
+      <EntityTypeMapping TypeName="GDSfonacotModel.ctClasificaciones">
+        <MappingFragment StoreEntitySet="ctClasificaciones">
+          <ScalarProperty Name="ClasifDescripcion" ColumnName="ClasifDescripcion" />
+          <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ctEstatusSupervision">
       <EntityTypeMapping TypeName="GDSfonacotModel.ctEstatusSupervision">
         <MappingFragment StoreEntitySet="ctEstatusSupervision">
@@ -192,6 +200,10 @@
     <EntitySetMapping Name="Empleados">
       <EntityTypeMapping TypeName="GDSfonacotModel.Empleados">
         <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+          <ScalarProperty Name="fechareingreso" ColumnName="fechareingreso" />
+          <ScalarProperty Name="fechabaja" ColumnName="fechabaja" />
+          <ScalarProperty Name="fechaalta" ColumnName="fechaalta" />
           <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
           <ScalarProperty Name="IdPerfilSistema" ColumnName="IdPerfilSistema" />
           <ScalarProperty Name="IdArea" ColumnName="IdArea" />

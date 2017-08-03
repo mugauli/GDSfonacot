@@ -15,6 +15,7 @@ namespace GDSfonacot.forms
     public partial class frmEmpleados : Form
     {
         private int IdEmpleadoInt = 0;
+        private string fecha = null;
         public frmEmpleados(int IdEmpleado)
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace GDSfonacot.forms
                 var busqueda = objbuscaEmpleado.BuscarGafeteEmpleado(txtGafete.Text.Trim());
                 if (busqueda.Result != null)
                 {
-                    MessageBox.Show("El gafete de este empledo '" + txtGafete.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El gafete de este empleado '" + txtGafete.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtGafete.Focus();
                     return;
                 }
@@ -66,6 +67,109 @@ namespace GDSfonacot.forms
                 empleados.IdArea = Convert.ToInt32(cmbActividad.SelectedValue);
                 empleados.IdPerfilSistema = Convert.ToInt32(cmbPerfilSistema.SelectedValue);
                 empleados.IdActividad = Convert.ToInt32(cmbActividad.SelectedValue);
+                if(Convert.ToInt32(txthidIdEmpleado.Text.ToString()) == 0)
+                {
+                    empleados.fechaalta = System.DateTime.Now;
+                    empleados.fechabaja = null;
+                    empleados.fechareingreso = null;
+                    if (Convert.ToInt32(cmbClasificacion.SelectedValue) != 3)
+                    {
+                        empleados.IdClasificacion = Convert.ToInt32(cmbClasificacion.SelectedValue);
+                    }
+                    else
+                    {
+                        empleados.IdClasificacion = 8;
+                    }
+                }
+                else
+                {
+                    if (checkinactivar.Checked == true)
+                    {
+                        empleados.fechabaja = System.DateTime.Now;
+                        empleados.fechareingreso = null;
+                        if (Convert.ToInt32(cmbClasificacion.SelectedValue) != 3)
+                        {
+                            empleados.IdClasificacion = 3;
+                        }
+                        else
+                        {
+                            empleados.IdClasificacion = 3;
+                        }
+                       
+                    }
+                    else
+                    {
+                        //usuario.fechareingreso = System.DateTime.Now;
+                        //usuario.fechabaja = null;
+                        if (fechaalta.Visible == true && fechabaja.Visible == true && lblfechareingreso.Visible == false)
+                        {
+                            #region muestradatos
+                            empleados.fechabaja = null;
+                            empleados.fechareingreso = System.DateTime.Now;
+                            if (Convert.ToInt32(cmbClasificacion.SelectedValue)== 3)
+                            {
+                                empleados.IdClasificacion = 8;
+                            }
+                            else
+                            {
+                                empleados.IdClasificacion = Convert.ToInt32(cmbClasificacion.SelectedValue);
+                            }
+                            fecha = null;
+                            #endregion
+                        }
+                        else
+                        {
+                            if (fechaalta.Visible == true && lblfechareingreso.Visible == false && fechabaja.Visible == true)
+                            {
+                                #region muestradatos
+                                empleados.fechabaja = null;
+                                empleados.fechareingreso = null;
+                                fecha = null;
+                                if (Convert.ToInt32(cmbClasificacion.SelectedValue) == 3)
+                                {
+                                    empleados.IdClasificacion = 8;
+                                }
+                                else
+                                {
+                                    empleados.IdClasificacion = Convert.ToInt32(cmbClasificacion.SelectedValue);
+                                }
+                                #endregion
+                            }
+                            else if (fechaalta.Visible == true && fechabaja.Visible == false && lblfechareingreso.Visible == true)
+                            {
+                                #region muestradatos
+                                empleados.fechabaja = null;
+                                fecha = Convert.ToString(dtfechareingreso.Value);
+                                empleados.fechareingreso = Convert.ToDateTime(fecha);
+                                if (Convert.ToInt32(cmbClasificacion.SelectedValue) == 3)
+                                {
+                                    empleados.IdClasificacion = 8;
+                                }
+                                else
+                                {
+                                    empleados.IdClasificacion = Convert.ToInt32(cmbClasificacion.SelectedValue);
+                                }
+                                #endregion
+                            }
+                            else if (fechaalta.Visible == true && fechabaja.Visible == false && lblfechareingreso.Visible == false)
+                            {
+                                #region muestradatos
+                                empleados.fechabaja = null;
+                                empleados.fechareingreso = null;
+                                if (Convert.ToInt32(cmbClasificacion.SelectedValue) == 3)
+                                {
+                                    empleados.IdClasificacion = 8;
+                                }
+                                else
+                                {
+                                    empleados.IdClasificacion = Convert.ToInt32(cmbClasificacion.SelectedValue);
+                                }
+                                #endregion
+                            }
+
+                        }
+                    }
+                }
 
                 var objEmpleado = new EmpleadosData().GuadarEmpleado(empleados);
                 if (objEmpleado.Code != 0)
@@ -143,6 +247,22 @@ namespace GDSfonacot.forms
             cmbActividad.DisplayMember = "Descripcion";
             cmbActividad.ValueMember = "IdActividad";
             cmbActividad.SelectedIndex = -1;
+
+            #endregion
+            #region ctClasificaciones
+
+            var ctClasificaciones = new CatalogosData().ObtenerClasificaciones();
+            if (ctClasificaciones.Code != 0)
+            {
+                MessageBox.Show("Error: " + ctClasificaciones.Message);
+                return;
+                //Mandar mensaje de error con sucursales.Message
+            }
+
+            cmbClasificacion.DataSource = ctClasificaciones.Result;
+            cmbClasificacion.DisplayMember = "ClasifDescripcion";
+            cmbClasificacion.ValueMember = "IdClasificacion";
+            cmbClasificacion.SelectedIndex = -1;
 
             #endregion
 
@@ -235,7 +355,7 @@ namespace GDSfonacot.forms
             else
             { 
                 txtNombre.Enabled = true;
-                txtGafete.Enabled = true;
+                txtGafete.Enabled = false;
             }
             txtNombre.Text = emp.Nombre.ToString().Trim();
             txtGafete.Text = emp.Gafete.ToString().Trim();
@@ -247,6 +367,62 @@ namespace GDSfonacot.forms
             cmbActividad.SelectedValue = emp.IdActividad;
             cmbPerfilSistema.SelectedValue = emp.IdPerfilSistema;
             cmbArea.SelectedValue = emp.IdArea;
+            if (emp.fechaalta != null && emp.fechabaja != null && emp.fechareingreso == null)
+            {
+                #region muestradatos
+                dtFechaalta.Visible = true;
+                dtFechaalta.Enabled = false;
+                dtFechaalta.Value = emp.fechaalta.Value;
+                fechaalta.Visible = true;
+                checkinactivar.Checked = false;
+                dtpickerfechabaja.Visible = true;
+                dtpickerfechabaja.Enabled = false;
+                dtpickerfechabaja.Value = emp.fechabaja.Value;
+                fechabaja.Visible = true;
+                dtfechareingreso.Visible = false;
+                dtfechareingreso.Enabled = false;
+                lblfechareingreso.Visible = false;
+                cmbClasificacion.SelectedValue = emp.IdClasificacion;
+                #endregion
+            }
+            else
+            {
+                if (emp.fechaalta != null && emp.fechareingreso == null && emp.fechabaja == null)
+                {
+                    #region muestradatos
+                    dtFechaalta.Visible = true;
+                    dtFechaalta.Enabled = false;
+                    dtFechaalta.Value = emp.fechaalta.Value;
+                    fechaalta.Visible = true;
+                    checkinactivar.Checked = false;
+                    dtpickerfechabaja.Visible = false;
+                    dtpickerfechabaja.Enabled = false;
+                    fechabaja.Visible = false;
+                    dtfechareingreso.Visible = false;
+                    dtfechareingreso.Enabled = false;
+                    lblfechareingreso.Visible = false;
+                    cmbClasificacion.SelectedValue = emp.IdClasificacion;
+                    #endregion
+                }
+                else if (emp.fechaalta != null && emp.fechabaja == null && emp.fechareingreso != null)
+                {
+                    #region muestradatos
+                    dtFechaalta.Visible = true;
+                    dtFechaalta.Enabled = false;
+                    dtFechaalta.Value = emp.fechaalta.Value;
+                    fechaalta.Visible = true;
+                    checkinactivar.Checked = false;
+                    dtpickerfechabaja.Visible = false;
+                    dtpickerfechabaja.Enabled = false;
+                    fechabaja.Visible = false;
+                    dtfechareingreso.Visible = true;
+                    dtfechareingreso.Enabled = false;
+                    lblfechareingreso.Visible = true;
+                    dtfechareingreso.Value = emp.fechareingreso.Value;
+                    cmbClasificacion.SelectedValue = emp.IdClasificacion;
+                    #endregion
+                }
+            }
             btnNuevo.Enabled = false;
             btnGuardar.Enabled = true;
         }

@@ -37,7 +37,7 @@ namespace GDSfonacot.forms
             {
                 var cierre = new Cierres();
                 cierre.Idcierre = Convert.ToInt32(txthidIdCierre.Text.ToString());
-                cierre.MotivoCierre = txtMotivocierre.Text.ToString();
+                cierre.MotivoCierre = txtMotivocierre.Text.ToString().Trim();
                 cierre.fechacierre = dtfechacierre.Value;
                 cierre.solventada = checksolventada.Checked;
                 cierre.Idsupervision = Convert.ToInt32(txthidIdSup.Text.ToString());

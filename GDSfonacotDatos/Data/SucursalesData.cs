@@ -81,6 +81,32 @@ namespace GDSfonacotDatos.Data
             }
         }
 
+        public MethodResponse<Sucursales> BuscarNoSucursal(int nosucursal)
+        {
+
+            try
+            {
+
+
+                using (var context = new GDSfonacotEntities())
+                {
+                    var response = new MethodResponse<Sucursales> { Code = 0 };
+
+                    var sucDB = context.Sucursales.Where(x => x.NoSucursal == nosucursal).SingleOrDefault();
+
+                    if (sucDB != null) response.Result = sucDB;
+
+                    return response;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return new MethodResponse<Sucursales> { Code = -100, Message = ex.Message };
+            }
+        }
+
         public MethodResponse<DatosSucursales> ObtenerSucursal(int IdSucursal)
         {
 

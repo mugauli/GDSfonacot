@@ -342,10 +342,12 @@ namespace GDSfonacot.forms
                     if (txthidIdConst.Text == "0")
                     {
                         MessageBox.Show("La Contestacion ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("La Contestacion ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
 
 

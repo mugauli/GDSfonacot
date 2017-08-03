@@ -34,6 +34,26 @@ namespace GDSfonacotDatos.Data
             }
         }
 
+        public MethodResponse<List<ctClasificaciones>> ObtenerClasificaciones()
+        {
+            var response = new MethodResponse<List<ctClasificaciones>> { Code = 0 };
+
+            try
+            {
+                using (var context = new GDSfonacotEntities())
+                {
+                    response.Result = context.ctClasificaciones.ToList();
+                }
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Code = -100;
+                response.Message = ex.Message;
+                return response;
+            }
+        }
+
         public MethodResponse<List<ctArea>> ObtenerArea()
         {
             var response = new MethodResponse<List<ctArea>> { Code = 0 };

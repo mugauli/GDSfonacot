@@ -31,6 +31,7 @@ namespace GDSfonacotDatos
         public virtual DbSet<ContestacionesSuperv_Sucursales> ContestacionesSuperv_Sucursales { get; set; }
         public virtual DbSet<ctActividad> ctActividad { get; set; }
         public virtual DbSet<ctArea> ctArea { get; set; }
+        public virtual DbSet<ctClasificaciones> ctClasificaciones { get; set; }
         public virtual DbSet<ctEstatusSupervision> ctEstatusSupervision { get; set; }
         public virtual DbSet<ctPerfilSistema> ctPerfilSistema { get; set; }
         public virtual DbSet<ctRegional> ctRegional { get; set; }

@@ -52,6 +52,13 @@
           <Property Name="IdArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="ctClasificaciones">
+          <Key>
+            <PropertyRef Name="IdClasificacion" />
+          </Key>
+          <Property Name="IdClasificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClasifDescripcion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="ctEstatusSupervision">
           <Key>
             <PropertyRef Name="idstatus" />
@@ -96,6 +103,10 @@
           <Property Name="IdArea" Type="int" Nullable="false" />
           <Property Name="IdPerfilSistema" Type="int" Nullable="false" />
           <Property Name="IdActividad" Type="int" Nullable="false" />
+          <Property Name="fechaalta" Type="datetime" />
+          <Property Name="fechabaja" Type="datetime" />
+          <Property Name="fechareingreso" Type="datetime" />
+          <Property Name="IdClasificacion" Type="int" />
         </EntityType>
         <EntityType Name="HistorialSupervisiones">
           <Key>
@@ -296,6 +307,18 @@
             </Principal>
             <Dependent Role="Empleados">
               <PropertyRef Name="IdArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleados_ctClasificaciones">
+          <End Role="ctClasificaciones" Type="Self.ctClasificaciones" Multiplicity="0..1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ctClasificaciones">
+              <PropertyRef Name="IdClasificacion" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="IdClasificacion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -510,6 +533,7 @@
           <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="Self.ContestacionesSuperv_Sucursales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ctActividad" EntityType="Self.ctActividad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ctArea" EntityType="Self.ctArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ctClasificaciones" EntityType="Self.ctClasificaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ctEstatusSupervision" EntityType="Self.ctEstatusSupervision" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ctPerfilSistema" EntityType="Self.ctPerfilSistema" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ctRegional" EntityType="Self.ctRegional" Schema="dbo" store:Type="Tables" />
@@ -544,6 +568,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Empleados_ctArea" Association="Self.FK_Empleados_ctArea">
             <End Role="ctArea" EntitySet="ctArea" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_ctClasificaciones" Association="Self.FK_Empleados_ctClasificaciones">
+            <End Role="ctClasificaciones" EntitySet="ctClasificaciones" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
           <AssociationSet Name="FK_Empleados_ctPerfilSistema" Association="Self.FK_Empleados_ctPerfilSistema">
@@ -633,6 +661,7 @@
           <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="GDSfonacotModel.ContestacionesSuperv_Sucursales" />
           <EntitySet Name="ctActividad" EntityType="GDSfonacotModel.ctActividad" />
           <EntitySet Name="ctArea" EntityType="GDSfonacotModel.ctArea" />
+          <EntitySet Name="ctClasificaciones" EntityType="GDSfonacotModel.ctClasificaciones" />
           <EntitySet Name="ctEstatusSupervision" EntityType="GDSfonacotModel.ctEstatusSupervision" />
           <EntitySet Name="ctPerfilSistema" EntityType="GDSfonacotModel.ctPerfilSistema" />
           <EntitySet Name="ctRegional" EntityType="GDSfonacotModel.ctRegional" />
@@ -667,6 +696,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Empleados_ctArea" Association="GDSfonacotModel.FK_Empleados_ctArea">
             <End Role="ctArea" EntitySet="ctArea" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_ctClasificaciones" Association="GDSfonacotModel.FK_Empleados_ctClasificaciones">
+            <End Role="ctClasificaciones" EntitySet="ctClasificaciones" />
             <End Role="Empleados" EntitySet="Empleados" />
           </AssociationSet>
           <AssociationSet Name="FK_HistorialSupervisiones_cat_estatus" Association="GDSfonacotModel.FK_HistorialSupervisiones_cat_estatus">
@@ -874,6 +907,14 @@
           <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctArea" FromRole="ctArea" ToRole="Empleados" />
         </EntityType>
+        <EntityType Name="ctClasificaciones">
+          <Key>
+            <PropertyRef Name="IdClasificacion" />
+          </Key>
+          <Property Name="IdClasificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClasifDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Empleados" Relationship="GDSfonacotModel.FK_Empleados_ctClasificaciones" FromRole="ctClasificaciones" ToRole="Empleados" />
+        </EntityType>
         <EntityType Name="ctEstatusSupervision">
           <Key>
             <PropertyRef Name="idstatus" />
@@ -922,8 +963,13 @@
           <Property Name="IdArea" Type="Int32" Nullable="false" />
           <Property Name="IdPerfilSistema" Type="Int32" Nullable="false" />
           <Property Name="IdActividad" Type="Int32" Nullable="false" />
+          <Property Name="fechaalta" Type="DateTime" Precision="3" />
+          <Property Name="fechabaja" Type="DateTime" Precision="3" />
+          <Property Name="fechareingreso" Type="DateTime" Precision="3" />
+          <Property Name="IdClasificacion" Type="Int32" />
           <NavigationProperty Name="ctActividad" Relationship="GDSfonacotModel.FK_Empleados_ctActividad" FromRole="Empleados" ToRole="ctActividad" />
           <NavigationProperty Name="ctArea" Relationship="GDSfonacotModel.FK_Empleados_ctArea" FromRole="Empleados" ToRole="ctArea" />
+          <NavigationProperty Name="ctClasificaciones" Relationship="GDSfonacotModel.FK_Empleados_ctClasificaciones" FromRole="Empleados" ToRole="ctClasificaciones" />
           <NavigationProperty Name="ctPerfilSistema" Relationship="GDSfonacotModel.FK_Empleados_ctPerfilSistema" FromRole="Empleados" ToRole="ctPerfilSistema" />
           <NavigationProperty Name="ctTipoPersonal" Relationship="GDSfonacotModel.FK_Empleados_ctTipoPersonal" FromRole="Empleados" ToRole="ctTipoPersonal" />
           <NavigationProperty Name="Sucursales" Relationship="GDSfonacotModel.FK_Empleados_Sucursales" FromRole="Empleados" ToRole="Sucursales" />
@@ -1156,6 +1202,18 @@
             </Principal>
             <Dependent Role="Empleados">
               <PropertyRef Name="IdArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleados_ctClasificaciones">
+          <End Type="GDSfonacotModel.ctClasificaciones" Role="ctClasificaciones" Multiplicity="0..1" />
+          <End Type="GDSfonacotModel.Empleados" Role="Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ctClasificaciones">
+              <PropertyRef Name="IdClasificacion" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="IdClasificacion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1511,6 +1569,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ctClasificaciones">
+            <EntityTypeMapping TypeName="GDSfonacotModel.ctClasificaciones">
+              <MappingFragment StoreEntitySet="ctClasificaciones">
+                <ScalarProperty Name="ClasifDescripcion" ColumnName="ClasifDescripcion" />
+                <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ctEstatusSupervision">
             <EntityTypeMapping TypeName="GDSfonacotModel.ctEstatusSupervision">
               <MappingFragment StoreEntitySet="ctEstatusSupervision">
@@ -1548,6 +1614,10 @@
           <EntitySetMapping Name="Empleados">
             <EntityTypeMapping TypeName="GDSfonacotModel.Empleados">
               <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="IdClasificacion" ColumnName="IdClasificacion" />
+                <ScalarProperty Name="fechareingreso" ColumnName="fechareingreso" />
+                <ScalarProperty Name="fechabaja" ColumnName="fechabaja" />
+                <ScalarProperty Name="fechaalta" ColumnName="fechaalta" />
                 <ScalarProperty Name="IdActividad" ColumnName="IdActividad" />
                 <ScalarProperty Name="IdPerfilSistema" ColumnName="IdPerfilSistema" />
                 <ScalarProperty Name="IdArea" ColumnName="IdArea" />

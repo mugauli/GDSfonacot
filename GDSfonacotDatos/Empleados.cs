@@ -24,9 +24,14 @@ namespace GDSfonacotDatos
         public int IdArea { get; set; }
         public int IdPerfilSistema { get; set; }
         public int IdActividad { get; set; }
+        public Nullable<System.DateTime> fechaalta { get; set; }
+        public Nullable<System.DateTime> fechabaja { get; set; }
+        public Nullable<System.DateTime> fechareingreso { get; set; }
+        public Nullable<int> IdClasificacion { get; set; }
     
         public virtual ctActividad ctActividad { get; set; }
         public virtual ctArea ctArea { get; set; }
+        public virtual ctClasificaciones ctClasificaciones { get; set; }
         public virtual ctPerfilSistema ctPerfilSistema { get; set; }
         public virtual ctTipoPersonal ctTipoPersonal { get; set; }
         public virtual Sucursales Sucursales { get; set; }

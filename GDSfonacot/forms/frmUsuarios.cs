@@ -112,6 +112,13 @@ namespace GDSfonacot.forms
                                 usuario.fechareingreso = Convert.ToDateTime(fecha);
                                 #endregion
                             }
+                            else if (fechaalta.Visible == true && fechabaja.Visible == false && lblfechareingreso.Visible == false)
+                            {
+                                #region muestradatos
+                                usuario.fechabaja = null;
+                                usuario.fechareingreso = null;
+                                #endregion
+                            }
                         }
                     }
                 }
@@ -203,6 +210,15 @@ namespace GDSfonacot.forms
             {
                 MessageBox.Show("Error: " + usuarioDB.Message);
                 return;
+            }
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
+            {
+                txtGafete.Enabled = false;
+                
+            }
+            else
+            {
+                txtGafete.Enabled = true;
             }
 
             var usu = usuarioDB.Result.First();

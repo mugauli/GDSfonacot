@@ -35,7 +35,7 @@ namespace GDSfonacot.forms
             {
                 var reasignacion = new Reasignaciones ();
                 reasignacion.Idreasignacion = Convert.ToInt32(txthidIdReasignacion.Text.ToString());
-                reasignacion.MotivoReasigna = txtMotivoReasigna.Text.ToString();
+                reasignacion.MotivoReasigna = txtMotivoReasigna.Text.ToString().Trim();
                 reasignacion.fechareasignada = dtFechaReasigna.Value;
                 reasignacion.Idsupervision = Convert.ToInt32(txthidIdSup.Text.ToString());
                 reasignacion.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;

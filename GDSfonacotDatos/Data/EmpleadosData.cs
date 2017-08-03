@@ -38,6 +38,9 @@ namespace GDSfonacotDatos.Data
                         empleadoDB.IdArea = empleado.IdArea;
                         empleadoDB.IdPerfilSistema = empleado.IdPerfilSistema;
                         empleadoDB.IdActividad = empleado.IdActividad;
+                        empleadoDB.fechabaja = empleado.fechabaja;
+                        empleadoDB.fechareingreso = empleado.fechareingreso;
+                        empleadoDB.IdClasificacion = empleado.IdClasificacion;
 
                         context.SaveChanges();
 

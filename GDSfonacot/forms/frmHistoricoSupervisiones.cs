@@ -162,14 +162,15 @@ namespace GDSfonacot.forms
         private void frmHistoricoSupervisiones_Load(object sender, EventArgs e)
         {
             #region validarcargadesupervision
-            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
-            {
-                CargarDatosHistoricoSupervision();
-            }
-            else if (Globales.objpasardatosusuario.IdNivel == 2)
-            {
-                CargarDatosHistoricoSupervisionConstSuc();
-            }
+            CargarDatosHistoricoSupervision();
+            //if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+            //{
+            //    CargarDatosHistoricoSupervision();
+            //}
+            //else if (Globales.objpasardatosusuario.IdNivel == 2)
+            //{
+            //    CargarDatosHistoricoSupervisionConstSuc();
+            //}
             #endregion
             #region validabotones
             if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)

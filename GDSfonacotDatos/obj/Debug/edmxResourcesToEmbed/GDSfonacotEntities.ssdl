@@ -47,6 +47,13 @@
     <Property Name="IdArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="ctClasificaciones">
+    <Key>
+      <PropertyRef Name="IdClasificacion" />
+    </Key>
+    <Property Name="IdClasificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClasifDescripcion" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="ctEstatusSupervision">
     <Key>
       <PropertyRef Name="idstatus" />
@@ -91,6 +98,10 @@
     <Property Name="IdArea" Type="int" Nullable="false" />
     <Property Name="IdPerfilSistema" Type="int" Nullable="false" />
     <Property Name="IdActividad" Type="int" Nullable="false" />
+    <Property Name="fechaalta" Type="datetime" />
+    <Property Name="fechabaja" Type="datetime" />
+    <Property Name="fechareingreso" Type="datetime" />
+    <Property Name="IdClasificacion" Type="int" />
   </EntityType>
   <EntityType Name="HistorialSupervisiones">
     <Key>
@@ -291,6 +302,18 @@
       </Principal>
       <Dependent Role="Empleados">
         <PropertyRef Name="IdArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_ctClasificaciones">
+    <End Role="ctClasificaciones" Type="Self.ctClasificaciones" Multiplicity="0..1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ctClasificaciones">
+        <PropertyRef Name="IdClasificacion" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdClasificacion" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -505,6 +528,7 @@
     <EntitySet Name="ContestacionesSuperv_Sucursales" EntityType="Self.ContestacionesSuperv_Sucursales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ctActividad" EntityType="Self.ctActividad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ctArea" EntityType="Self.ctArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ctClasificaciones" EntityType="Self.ctClasificaciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ctEstatusSupervision" EntityType="Self.ctEstatusSupervision" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ctPerfilSistema" EntityType="Self.ctPerfilSistema" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ctRegional" EntityType="Self.ctRegional" Schema="dbo" store:Type="Tables" />
@@ -539,6 +563,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Empleados_ctArea" Association="Self.FK_Empleados_ctArea">
       <End Role="ctArea" EntitySet="ctArea" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_ctClasificaciones" Association="Self.FK_Empleados_ctClasificaciones">
+      <End Role="ctClasificaciones" EntitySet="ctClasificaciones" />
       <End Role="Empleados" EntitySet="Empleados" />
     </AssociationSet>
     <AssociationSet Name="FK_Empleados_ctPerfilSistema" Association="Self.FK_Empleados_ctPerfilSistema">

@@ -80,6 +80,9 @@
     <Compile Include="ctArea.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ctClasificaciones.cs">
+      <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="ctEstatusSupervision.cs">
       <DependentUpon>GDSfonacotEntities.tt</DependentUpon>
     </Compile>

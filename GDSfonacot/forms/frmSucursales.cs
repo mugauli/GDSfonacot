@@ -18,6 +18,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.WindowsForms.ToolTips;
 using GMap.NET.ObjectModel;
+using System.Text.RegularExpressions;
 namespace GDSfonacot.forms
 {
     public partial class frmSucursales : Form
@@ -66,7 +67,16 @@ namespace GDSfonacot.forms
                 //LimpiarDatos();
                 return;
             }
-
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel ==3)
+            {
+                txtNoSucursal.Enabled = false;
+                txtSucursal.Enabled = false;
+            }
+            else
+            {
+                txtNoSucursal.Enabled = true;
+                txtSucursal.Enabled = true;
+            }
             var objSucursal = SucursalDB.Result.First();
             var imagen = ByteToImage(objSucursal.Fotografia);
           
@@ -248,19 +258,39 @@ namespace GDSfonacot.forms
                 MessageBox.Show(mensaje, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            //var mensaje2 = string.Empty;
+            //if (ValidarDatosIntroducidos(out mensaje2))
+            //{
+            //    MessageBox.Show(mensaje2, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
+
+            if (txthidIdSucursal.Text == "0")
+            {
+                var objbuscaSucursal = new SucursalesData();
+                var busqueda = objbuscaSucursal.BuscarNoSucursal(Convert.ToInt32(txtNoSucursal.Text.Trim()));
+                if (busqueda.Result != null)
+                {
+                    MessageBox.Show("El número de sucursal '" + txtNoSucursal.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtNoSucursal.Focus();
+                    return;
+                }
+            }
+
             if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 var sucursales = new Sucursales();
                 sucursales.IdSucursal = Convert.ToInt32(txthidIdSucursal.Text.ToString());
                 sucursales.NoSucursal = Convert.ToInt16(txtNoSucursal.Text.Trim());
                 sucursales.DescripcionSucursal = txtSucursal.Text.Trim();
-                sucursales.Dirección = txtDireccion.Text;
-                sucursales.Representaciones = txtRepresentaciones.Text;
-                sucursales.Director_Regional = txtDirectorRegional.Text;
-                sucursales.Director_Estatal = txtDirectorEstatal.Text;
-                sucursales.Coordinador_Administrativo = txtCoordinadorAdministrativo.Text;
-                sucursales.Coordinador_Crédito = txtCoordinadorCredito.Text;
-                sucursales.Coordinador_Cobranza = txtCoordinadorCobranza.Text;
+                sucursales.Dirección = txtDireccion.Text.Trim();
+                sucursales.Representaciones = txtRepresentaciones.Text.Trim();
+                sucursales.Director_Regional = txtDirectorRegional.Text.Trim();
+                sucursales.Director_Estatal = txtDirectorEstatal.Text.Trim();
+                sucursales.Coordinador_Administrativo = txtCoordinadorAdministrativo.Text.Trim();
+                sucursales.Coordinador_Crédito = txtCoordinadorCredito.Text.Trim();
+                sucursales.Coordinador_Cobranza = txtCoordinadorCobranza.Text.Trim();
                 sucursales.Analistas = Convert.ToInt16(txtTotalAnalistas.Text);
                 sucursales.Ventanillas = Convert.ToInt16(txtTotalVentanillas.Text);
                 sucursales.Analistas_Otorgamiento_de_Crédito = Convert.ToInt16(txtAnalistasCredito.Text);
@@ -282,10 +312,10 @@ namespace GDSfonacot.forms
                 sucursales.Colocación_Mensual = Convert.ToDecimal(txtColocacionMensual.Text);
                 //sucursales.Fecha_baja = sucursal.Fecha_baja;
                 sucursales.Meta_Acumulada_Porcentaje = Convert.ToDecimal(txtMetaAcumulada.Text);
-                sucursales.Cobranza_Meta_Anual = txtcobranzaAnual.Text;
-                sucursales.Cobranza_Meta_Mensual = txtCobranzaMetaMensual.Text;
-                sucursales.Cobranza_Porcentaje_Meta = txtCobranzaPorcentaje.Text;
-                sucursales.Cobranza_Cumplimiento_Meta = txtCobranzaCumplimiento.Text;
+                sucursales.Cobranza_Meta_Anual = txtcobranzaAnual.Text.Trim();
+                sucursales.Cobranza_Meta_Mensual = txtCobranzaMetaMensual.Text.Trim();
+                sucursales.Cobranza_Porcentaje_Meta = txtCobranzaPorcentaje.Text.Trim();
+                sucursales.Cobranza_Cumplimiento_Meta = txtCobranzaCumplimiento.Text.Trim();
                 sucursales.IdRegional = Convert.ToInt32(cmbZonaRegional.SelectedValue);
                 sucursales.Latitud = txtLatitud.Text.ToString().Trim();
                 sucursales.Altitud = txtAltitud.Text.ToString().Trim();
@@ -312,11 +342,13 @@ namespace GDSfonacot.forms
                     {
                         MessageBox.Show("La nueva sucursal ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarDatos();
+                        this.Close();
                     }
                     else
                     {
                         MessageBox.Show("La sucursal ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarDatos(Convert.ToInt32(txthidIdSucursal.Text.ToString()));
+                        this.Close();
                     }
                 }
             }
@@ -418,6 +450,18 @@ namespace GDSfonacot.forms
 
 
             return !(mensaje == string.Empty);
+        }
+
+        private bool ValidarDatosIntroducidos(out string mensaje)
+        {
+            mensaje = string.Empty;
+            ////if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalAnalistas.Text, "^[0-9]*$")) mensaje += "El campo "+label1.Text+ " solo acepta datos númericos";
+            //if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalAnalistas.Text, "^d+$|^d+,d+$")) mensaje += "El campo " + label1.Text + " solo acepta datos númericos";
+            return !(mensaje == string.Empty);
+        }
+        private bool IsNumeric(string sValue)
+        {
+            return Regex.IsMatch(sValue, "^[0-9]+$.");
         }
 
         private void txtubicacion_TextChanged(object sender, EventArgs e)
