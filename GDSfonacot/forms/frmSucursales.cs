@@ -454,28 +454,30 @@ namespace GDSfonacot.forms
 
         private bool ValidarDatosIntroducidos(out string mensaje)
         {
-           Regex expreg = new Regex(@"(?:\d*\.)?\d+");
+            Regex expreg = new Regex(@"(?:\d*\.)?\d+");
+            //Regex expreg = new Regex(@"^((d*\.)?\d+)$");
+
             mensaje = string.Empty;
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalAnalistas.Text, Convert.ToString(expreg))) mensaje += "El campo "+label1.Text+ " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtNoSucursal.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblnosucursal.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalVentanillas.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblventanillas.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtAnalistasCredito.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanalistcredito.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtAnalistasAdministrativos.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanaadministrativos.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtAnalistaComercial.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanalistascomercial.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtAnalistasCobranza.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanalistascob.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasAfiliadas.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempafiliadas.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTrabajadoresAfiliados.Text, Convert.ToString(expreg))) mensaje += "El campo " + lbltrabajadorafiliados.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtPotencialEmpresas.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblpoteempresas.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtPotencialTrabajadores.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblpotentrabajadores.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasEstatus1.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempresasest1.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasEstatus18.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempestatus18.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasEstatus21.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempesta21.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasEstatus30.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempesta30.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtMetaAnual.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblmetaanual.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtMetaMensual.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblmetamensual.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtColocacionAnual.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblcolanual.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtColocacionMensual.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblcolmensual.Text + " solo acepta datos númericos";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtMetaAcumulada.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblmetaacumulada.Text + " solo acepta datos númericos";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalAnalistas.Text, Convert.ToString(expreg))) mensaje += "El campo "+label1.Text+ " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtNoSucursal.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblnosucursal.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalVentanillas.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblventanillas.Text + " solo acepta datos númericos\n";
+            if (!Regex.IsMatch(txtAnalistasCredito.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanalistcredito.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtAnalistasAdministrativos.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanaadministrativos.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtAnalistaComercial.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanalistascomercial.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtAnalistasCobranza.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanalistascob.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasAfiliadas.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempafiliadas.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTrabajadoresAfiliados.Text, Convert.ToString(expreg))) mensaje += "El campo " + lbltrabajadorafiliados.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtPotencialEmpresas.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblpoteempresas.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtPotencialTrabajadores.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblpotentrabajadores.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasEstatus1.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempresasest1.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasEstatus18.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempestatus18.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasEstatus21.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempesta21.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmpresasEstatus30.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblempesta30.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtMetaAnual.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblmetaanual.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtMetaMensual.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblmetamensual.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtColocacionAnual.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblcolanual.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtColocacionMensual.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblcolmensual.Text + " solo acepta datos númericos\n";
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtMetaAcumulada.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblmetaacumulada.Text + " solo acepta datos númericos\n";
 
             //if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalAnalistas.Text, "^d+$|^d+,d+$")) mensaje += "El campo " + label1.Text + " solo acepta datos númericos";
             return !(mensaje == string.Empty);

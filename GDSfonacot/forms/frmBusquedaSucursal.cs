@@ -42,13 +42,14 @@ namespace GDSfonacot.forms
             var totalsupe = new SucursalesData().ObtenerSucursalesFilter(txtSucursal.Text.Trim());
             if (totalsupe.Code != 0)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("error:" + totalsupe.Message);
+                return;
             }
 
 
             dataGlistaSup.DataSource = totalsupe.Result;
             dataGlistaSup.ReadOnly = true;
-            dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             dataGlistaSup.Columns[0].Visible = false;
             dataGlistaSup.Columns[0].HeaderText = "ID";
@@ -76,7 +77,7 @@ namespace GDSfonacot.forms
 
             dataGlistaSup.DataSource = totalsupe.Result;
             dataGlistaSup.ReadOnly = true;
-            dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             dataGlistaSup.Columns[0].Visible = false;
             dataGlistaSup.Columns[0].HeaderText = "ID";

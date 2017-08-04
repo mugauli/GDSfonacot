@@ -67,7 +67,7 @@ namespace GDSfonacot.forms
                 {
                     dataGlistaSup.DataSource = totalsupe.Result;
                     dataGlistaSup.ReadOnly = true;
-                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                     dataGlistaSup.Columns[0].Visible = false;
                     dataGlistaSup.Columns[0].HeaderText = "ID";
@@ -96,7 +96,7 @@ namespace GDSfonacot.forms
                 {
                     dataGlistaSup.DataSource = totalsupe.Result;
                     dataGlistaSup.ReadOnly = true;
-                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                     dataGlistaSup.Columns[0].Visible = false;
                     dataGlistaSup.Columns[0].HeaderText = "ID";
@@ -135,7 +135,7 @@ namespace GDSfonacot.forms
                 {
                     dataGlistaSup.DataSource = totalsupe2.Result;
                     dataGlistaSup.ReadOnly = true;
-                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                     dataGlistaSup.Columns[0].Visible = false;
                     dataGlistaSup.Columns[0].HeaderText = "IdSup";
@@ -166,7 +166,7 @@ namespace GDSfonacot.forms
                 {
                     dataGlistaSup.DataSource = totalsupe2.Result;
                     dataGlistaSup.ReadOnly = true;
-                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGlistaSup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                     dataGlistaSup.Columns[0].Visible = false;
                     dataGlistaSup.Columns[0].HeaderText = "IdSup";
