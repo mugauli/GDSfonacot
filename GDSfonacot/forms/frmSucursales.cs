@@ -78,7 +78,7 @@ namespace GDSfonacot.forms
                 txtSucursal.Enabled = true;
             }
             var objSucursal = SucursalDB.Result.First();
-            var imagen = ByteToImage(objSucursal.Fotografia);
+            var imagen = ImageHelper.ByteArrayToImage(objSucursal.Fotografia);
           
             if (imagen != null) pbxSucursal.Image = imagen;
             //  txtDireccionRegional.Text = objSucursal.DireccionRegional;
@@ -167,7 +167,7 @@ namespace GDSfonacot.forms
         }
         public void CargarMapa(string latitud, string altitud)
         {
-
+            try { 
             LimpiarMapa();
             GMapMarker marker = null;
             GMapOverlay markers = new GMapOverlay("markers");
@@ -187,8 +187,14 @@ namespace GDSfonacot.forms
             marker.ToolTipText = "Sucursal: \n" + txtSucursal.Text + "\nDomicilio:\n" + txtDireccion.Text.Trim() + "";
             marker.ToolTip.Font = font;
             marker.ToolTip.Format.Alignment = StringAlignment.Near;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-          
+
 
 
         }
@@ -197,14 +203,22 @@ namespace GDSfonacot.forms
             try
             {
                 if (blob == null) return null;
-                MemoryStream mStream = new MemoryStream();
+                //MemoryStream mStream = new MemoryStream();
 
 
-                mStream.Write(blob, 0, Convert.ToInt32(blob.Length));
+                //mStream.Write(blob, 0, Convert.ToInt32(blob.Length));
 
-                Bitmap bm = new Bitmap(mStream, true);
-                mStream.Dispose();
-                return bm;
+                //Bitmap bm = new Bitmap(mStream, true);
+                //mStream.Dispose();
+                //return bm;
+                using (MemoryStream mStream = new MemoryStream())
+                {
+                    mStream.Write(blob, 0, blob.Length);
+                    mStream.Seek(0, SeekOrigin.Begin);
+                    Bitmap bm = new Bitmap(mStream);
+                    mStream.Dispose();
+                    return bm ;
+                }
             }
             catch (Exception ex)
             {
@@ -247,6 +261,9 @@ namespace GDSfonacot.forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+
             if (Globales.objpasardatosusuario.IdNivel != 1)
             {
                 MessageBox.Show("Solo el administrador tiene acceso a esta accion", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
@@ -351,6 +368,13 @@ namespace GDSfonacot.forms
                         this.Close();
                     }
                 }
+            }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
@@ -607,16 +631,26 @@ namespace GDSfonacot.forms
 
         private void cmbZonaRegional_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (cmbZonaRegional.SelectedIndex != 0 || cmbZonaRegional.SelectedIndex != -1)
+            try
             {
+                if (cmbZonaRegional.SelectedIndex != 0 || cmbZonaRegional.SelectedIndex != -1)
+                {
 
-                txtDirectorRegional.Text = DevuelveDirectorRegional(Convert.ToInt32(cmbZonaRegional.SelectedValue));
+                    txtDirectorRegional.Text = DevuelveDirectorRegional(Convert.ToInt32(cmbZonaRegional.SelectedValue));
 
+                }
+                else
+                {
+                    txtDirectorRegional.Text = null;
+
+                }
             }
-            else {
-                txtDirectorRegional.Text = null;
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
 
         }
 
