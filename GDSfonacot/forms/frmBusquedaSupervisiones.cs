@@ -21,6 +21,8 @@ namespace GDSfonacot.forms
         private int varseguimiento = 0;
         public frmBusquedaSupervisiones(int Destino,int [] status,int guardaactualiza,int seguimiento)
         {
+            try
+            { 
             InitializeComponent();
             destinoInt = Destino;
             varstatus = status;
@@ -32,7 +34,7 @@ namespace GDSfonacot.forms
             }
             else if (destinoInt == 2)
             {
-                this.Text = "Busqueda de Contestaciones de Supervision";                               
+                this.Text = "Busqueda de Contestaciones de Supervision";
             }
             else if (destinoInt == 3)
             {
@@ -44,21 +46,28 @@ namespace GDSfonacot.forms
             {
                 this.Text = "Busqueda de  Supervision";
             }
-            
-        
-    }
-        private void CargarSupervisiones(string fechaini,string fechafin,string buscasup)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
+        }
+        private void CargarSupervisiones(string fechaini, string fechafin, string buscasup)
         {
-                lblRegistros.Text = "";
-           
-            
+            try { 
+            lblRegistros.Text = "";
+
+
             if (fechaini != null && fechafin != null)//busca entre fechas de supervision
             {
-                var totalsupe = new SupervisionesData().ObtenerSupervisonesporSucFechas(0, varstatus,DateTime.Parse(fechaini), DateTime.Parse(fechafin));
+                var totalsupe = new SupervisionesData().ObtenerSupervisonesporSucFechas(0, varstatus, DateTime.Parse(fechaini), DateTime.Parse(fechafin));
                 #region buscaRegistrosentrefechas
                 if (totalsupe.Code != 0)
                 {
-                    MessageBox.Show("error:" +totalsupe.Message);
+                    MessageBox.Show("error:" + totalsupe.Message);
                     dataGlistaSup.Columns.Clear();
                     dataGlistaSup.DataSource = null;
                 }
@@ -82,7 +91,8 @@ namespace GDSfonacot.forms
 
             }
 
-            else {//se quita el filtrado y busca por supervision
+            else
+            {//se quita el filtrado y busca por supervision
                 #region buscaRegistrosporsupervision
                 var totalsupe = new SupervisionesData().ObtenerUnaSup_porSucIndividual(0, varstatus, buscasup.Trim());
                 if (totalsupe.Code != 0)
@@ -109,17 +119,20 @@ namespace GDSfonacot.forms
                 }
                 #endregion 
             }
-
-
-
         }
+        catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+            }
+
+
+}
 
         private void CargarSeguimientoSupervisiones(string fechaini, string fechafin, string buscasup)
         {
-
+            try {
             lblRegistros.Text = "";
-
-
             if (fechaini != null && fechafin != null)//busca entre fechas de supervision
             {
                 var totalsupe2 = new SeguimientosData().ObtenerSupervisonesSegporSucFechas(0, varstatus, DateTime.Parse(fechaini), DateTime.Parse(fechafin));
@@ -180,8 +193,12 @@ namespace GDSfonacot.forms
                 }
                 #endregion 
             }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
+            }
 
         }
 
@@ -331,6 +348,7 @@ namespace GDSfonacot.forms
 
         private void txtsupervision_TextChanged(object sender, EventArgs e)
         {
+            try { 
             if (txtsupervision.Text.Length > 3) {
 
                 if (varseguimiento == 0)
@@ -341,15 +359,20 @@ namespace GDSfonacot.forms
                 {
                     CargarSeguimientoSupervisiones(null, null, txtsupervision.Text);
                 }
-               
-            }
 
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private void dpickerFechaini_ValueChanged(object sender, EventArgs e)
         {
-
+            try {
             if (varseguimiento == 0)
             {
                 CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
@@ -357,30 +380,52 @@ namespace GDSfonacot.forms
             else
             {
                 CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
         private void dpickerFechafin_ValueChanged(object sender, EventArgs e)
         {
-            if (varseguimiento == 0)
+            try
             {
-                CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+                if (varseguimiento == 0)
+                {
+                    CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+                }
+                else
+                {
+                    CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+                }
             }
-            else
+            catch (Exception ex)
             {
-                CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
         private void frmBusquedaSupervisiones_Load(object sender, EventArgs e)
         {
-            if (varseguimiento == 0)
+            try
             {
-                CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+                if (varseguimiento == 0)
+                {
+                    CargarSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+                }
+                else
+                {
+                    CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+                }
             }
-            else
+            catch (Exception ex)
             {
-                CargarSeguimientoSupervisiones(dpickerFechaini.Value.ToShortDateString(), dpickerFechafin.Value.ToShortDateString(), txtsupervision.Text.Trim());
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

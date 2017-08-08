@@ -33,19 +33,28 @@ namespace GDSfonacot.forms
         }
         private void LoadingCatRepreSucursales()
         {
-            var sucursales = new SucursalesData().ObtenerSucursalesCombo();
-            if (sucursales.Code != 0)
+            try
             {
-                //Mandar mensaje de error con sucursales.Message
-            }
+                var sucursales = new SucursalesData().ObtenerSucursalesCombo();
+                if (sucursales.Code != 0)
+                {
+                    //Mandar mensaje de error con sucursales.Message
+                }
 
-            cborepresentacion.DataSource = sucursales.Result;
-            cborepresentacion.DisplayMember = "NameSucursal";
-            cborepresentacion.ValueMember = "IdSucursal";
-            cborepresentacion.SelectedIndex = -1;
+                cborepresentacion.DataSource = sucursales.Result;
+                cborepresentacion.DisplayMember = "NameSucursal";
+                cborepresentacion.ValueMember = "IdSucursal";
+                cborepresentacion.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
         private void LoadingCatRegional()
         {
+            try {
             var perfilessistema = new CatalogosData().ObtenerRegional();
             if (perfilessistema.Code != 0)
             {
@@ -56,10 +65,17 @@ namespace GDSfonacot.forms
             cmbZonaRegional.DisplayMember = "Descripcion";
             cmbZonaRegional.ValueMember = "IdRegional";
             cmbZonaRegional.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
         public void CargarDatos(int Sucursal)
         {
-
+            try
+            { 
             var SucursalDB = new SucursalesData().ObtenerSucursales(Sucursal);
             if (SucursalDB.Code != 0)
             {
@@ -67,7 +83,7 @@ namespace GDSfonacot.forms
                 //LimpiarDatos();
                 return;
             }
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel ==3)
+            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
             {
                 txtNoSucursal.Enabled = false;
                 txtSucursal.Enabled = false;
@@ -79,7 +95,7 @@ namespace GDSfonacot.forms
             }
             var objSucursal = SucursalDB.Result.First();
             var imagen = ImageHelper.ByteArrayToImage(objSucursal.Fotografia);
-          
+
             if (imagen != null) pbxSucursal.Image = imagen;
             //  txtDireccionRegional.Text = objSucursal.DireccionRegional;
             txthidIdSucursal.Text = objSucursal.IdSucursal.ToString();
@@ -119,8 +135,8 @@ namespace GDSfonacot.forms
             txtCobranzaCumplimiento.Text = (objSucursal.Cobranza_Cumplimiento_Meta != null ? objSucursal.Cobranza_Cumplimiento_Meta.ToString() : "");
             cmbZonaRegional.SelectedValue = objSucursal.IdRegional;
             txtLatitud.Text = (objSucursal.Latitud != null ? objSucursal.Latitud.ToString() : "");
-            txtAltitud.Text= (objSucursal.Altitud != null ? objSucursal.Altitud.ToString() : "");
-            if (txtLatitud.Text!=String.Empty && txtAltitud.Text != String.Empty)
+            txtAltitud.Text = (objSucursal.Altitud != null ? objSucursal.Altitud.ToString() : "");
+            if (txtLatitud.Text != String.Empty && txtAltitud.Text != String.Empty)
             {
                 CargarMapa(txtLatitud.Text, txtAltitud.Text);
             }
@@ -128,7 +144,7 @@ namespace GDSfonacot.forms
             {
                 LimpiarMapa();
             }
-            if (objSucursal.IdsucursalPadre==0)
+            if (objSucursal.IdsucursalPadre == 0)
             {
                 checkrepresentacion.Checked = false;
                 cborepresentacion.Visible = false;
@@ -142,12 +158,12 @@ namespace GDSfonacot.forms
             btnGuardar.Enabled = true;
             btnNuevo.Enabled = false;
             //tx.Text = objSucursal.Ventanillas.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
-
-
-
-
+            }
 
         }
 
@@ -236,26 +252,42 @@ namespace GDSfonacot.forms
 
         private void brsImagen_HelpRequest(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
+            try
             {
-                pbxSucursal.Image = Image.FromFile(dialog.FileName);
+                OpenFileDialog dialog = new OpenFileDialog();
+                // Se muestra al usuario esperando una acción
+                DialogResult result = dialog.ShowDialog();
+
+                // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+                // la mostramos en el PictureBox de la inferfaz
+                if (result == DialogResult.OK)
+                {
+                    pbxSucursal.Image = Image.FromFile(dialog.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Archivo JPG|*.jpg|Archivo PNG (*.png)|*.png";
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                pbxSucursal.Image = Image.FromFile(fileDialog.FileName);
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.Filter = "Archivo JPG|*.jpg|Archivo PNG (*.png)|*.png";
+
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    pbxSucursal.Image = Image.FromFile(fileDialog.FileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
@@ -380,109 +412,121 @@ namespace GDSfonacot.forms
 
         private void LimpiarDatos()
         {
-            txthidIdSucursal.Text = "0";
+            try
+            {
+                txthidIdSucursal.Text = "0";
 
-            txtNoSucursal.Text = null;
-            txtSucursal.Text = null;
-            txtDireccion.Text = null;
-            txtRepresentaciones.Text = null;
-            txtDirectorRegional.Text = null;
-            txtDirectorEstatal.Text = null;
-            txtCoordinadorAdministrativo.Text = null;
-            txtCoordinadorCredito.Text = null;
-            txtCoordinadorCobranza.Text = null;
-            txtTotalAnalistas.Text = null;
-            txtTotalVentanillas.Text = null;
-            txtAnalistasCredito.Text = null;
-            txtAnalistasAdministrativos.Text = null;
-            txtAnalistaComercial.Text = null;
-            txtAnalistasCobranza.Text = null;
-            pbxSucursal.Image = null;
-            txtEmpresasAfiliadas.Text = null;
-            txtTrabajadoresAfiliados.Text = null;
-            txtPotencialEmpresas.Text = null;
-            txtPotencialTrabajadores.Text = null;
-            txtEmpresasEstatus1.Text = null;
-            txtEmpresasEstatus18.Text = null;
-            txtEmpresasEstatus21.Text = null;
-            txtEmpresasEstatus30.Text = null;
-            txtMetaAnual.Text = null;
-            txtMetaMensual.Text = null;
-            txtColocacionAnual.Text = null;
-            txtColocacionMensual.Text = null;
-            txtMetaAcumulada.Text = null;
-            txtcobranzaAnual.Text = null;
-            txtCobranzaMetaMensual.Text = null;
-            txtCobranzaPorcentaje.Text = null;
-            txtCobranzaCumplimiento.Text = null;
-            cmbZonaRegional.SelectedIndex = -1;
-            LimpiarMapa();
-            txtAltitud.Text = null;
-            txtLatitud.Text = null;
-            btnNuevo.Enabled = false;
-            btnGuardar.Enabled = true;
+                txtNoSucursal.Text = null;
+                txtSucursal.Text = null;
+                txtDireccion.Text = null;
+                txtRepresentaciones.Text = null;
+                txtDirectorRegional.Text = null;
+                txtDirectorEstatal.Text = null;
+                txtCoordinadorAdministrativo.Text = null;
+                txtCoordinadorCredito.Text = null;
+                txtCoordinadorCobranza.Text = null;
+                txtTotalAnalistas.Text = null;
+                txtTotalVentanillas.Text = null;
+                txtAnalistasCredito.Text = null;
+                txtAnalistasAdministrativos.Text = null;
+                txtAnalistaComercial.Text = null;
+                txtAnalistasCobranza.Text = null;
+                pbxSucursal.Image = null;
+                txtEmpresasAfiliadas.Text = null;
+                txtTrabajadoresAfiliados.Text = null;
+                txtPotencialEmpresas.Text = null;
+                txtPotencialTrabajadores.Text = null;
+                txtEmpresasEstatus1.Text = null;
+                txtEmpresasEstatus18.Text = null;
+                txtEmpresasEstatus21.Text = null;
+                txtEmpresasEstatus30.Text = null;
+                txtMetaAnual.Text = null;
+                txtMetaMensual.Text = null;
+                txtColocacionAnual.Text = null;
+                txtColocacionMensual.Text = null;
+                txtMetaAcumulada.Text = null;
+                txtcobranzaAnual.Text = null;
+                txtCobranzaMetaMensual.Text = null;
+                txtCobranzaPorcentaje.Text = null;
+                txtCobranzaCumplimiento.Text = null;
+                cmbZonaRegional.SelectedIndex = -1;
+                LimpiarMapa();
+                txtAltitud.Text = null;
+                txtLatitud.Text = null;
+                btnNuevo.Enabled = false;
+                btnGuardar.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
         private bool ValidateSucursal(out string mensaje)
         {
             mensaje = string.Empty;
-
-            if (cmbZonaRegional.SelectedIndex == -1) mensaje += "Favor de seleccionar direccion regional\n";
-            if (txtNoSucursal.Text == string.Empty) mensaje += "Favor de introducir numero de sucursal\n";
-            if(txtSucursal.Text == string.Empty) mensaje += "Favor de introducir el nombre de sucursak\n";
-            if(txtDireccion.Text == string.Empty) mensaje += "Favor de introducir el domicilio\n";
-            if(txtDirectorRegional.Text == string.Empty) mensaje += "Favor de introducir director regional\n";
-            if(txtDirectorEstatal.Text == string.Empty) mensaje += "Favor de introducir director estatal\n";
-            if(txtCoordinadorAdministrativo.Text == string.Empty) mensaje += "Favor de introducir coordinador administrativo\n";
-            if(txtCoordinadorCredito.Text == string.Empty) mensaje += "Favor de introducir coordinador de credio\n";
-            if(txtCoordinadorCobranza.Text == string.Empty) mensaje += "Favor de introducir coordinador de cobranza\n";
-            if(txtTotalAnalistas.Text == string.Empty) mensaje += "Favor de introducir total de analistas\n";
-            if(txtTotalVentanillas.Text == string.Empty) mensaje += "Favor de introducir total ventanillas\n";
-            if(txtAnalistasCredito.Text == string.Empty) mensaje += "Favor de introducir analistas credito\n";
-            if(txtAnalistasAdministrativos.Text == string.Empty) mensaje += "Favor de introducir analistas admnistrativos\n";
-            if(txtAnalistaComercial.Text == string.Empty) mensaje += "Favor de introducir analistas comerciales\n";
-            if(txtAnalistasCobranza.Text == string.Empty) mensaje += "Favor de introducir analistas cobranza\n";
-            if(txtEmpresasAfiliadas.Text == string.Empty) mensaje += "Favor de introducir empresas afiliadas\n";
-            if(txtTrabajadoresAfiliados.Text == string.Empty) mensaje += "Favor de introducir trabajadores afiliados\n";
-            if(txtPotencialEmpresas.Text == string.Empty) mensaje += "Favor de introducir potencial de empresas\n";
-            if(txtPotencialTrabajadores.Text == string.Empty) mensaje += "Favor de introducir potencial trabajadores\n";
-            if(txtEmpresasEstatus1.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 1\n";
-            if(txtEmpresasEstatus18.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 18\n";
-            if(txtEmpresasEstatus21.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 21\n";
-            if(txtEmpresasEstatus30.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 30\n";
-            if(txtMetaMensual.Text == string.Empty) mensaje += "Favor de introducir meta mensual\n";
-            if(txtColocacionAnual.Text == string.Empty) mensaje += "Favor de introducir colocacion anual\n";
-            if(txtColocacionMensual.Text == string.Empty) mensaje += "Favor de introducir colocacion mensual\n";
-            if(txtMetaAcumulada.Text == string.Empty) mensaje += "Favor de introducir meta acumulada\n";
-            if(txtcobranzaAnual.Text == string.Empty) mensaje += "Favor de introducir cobranza anual\n";
-            if(txtCobranzaMetaMensual.Text == string.Empty) mensaje += "Favor de introducir cobranza meta mensual\n";
-            if(txtCobranzaPorcentaje.Text == string.Empty) mensaje += "Favor de introducir cobranza porcentaje\n";
-            if(txtCobranzaCumplimiento.Text == string.Empty) mensaje += "Favor de introducir cobranza cumplimiento\n";
-            //if (txtAltitud.Text == string.Empty && txtLatitud.Text==string.Empty) mensaje += "Favor de indicar la ubicación geografica de la sucursal\n";
-
-            if (checkrepresentacion.Checked == true)
+            try
             {
-                if (cborepresentacion.SelectedIndex == -1) mensaje += "Favor de seleccionar una sucursal Padre para asociarla a esta\n";
+                if (cmbZonaRegional.SelectedIndex == -1) mensaje += "Favor de seleccionar direccion regional\n";
+                if (txtNoSucursal.Text == string.Empty) mensaje += "Favor de introducir numero de sucursal\n";
+                if (txtSucursal.Text == string.Empty) mensaje += "Favor de introducir el nombre de sucursak\n";
+                if (txtDireccion.Text == string.Empty) mensaje += "Favor de introducir el domicilio\n";
+                if (txtDirectorRegional.Text == string.Empty) mensaje += "Favor de introducir director regional\n";
+                if (txtDirectorEstatal.Text == string.Empty) mensaje += "Favor de introducir director estatal\n";
+                if (txtCoordinadorAdministrativo.Text == string.Empty) mensaje += "Favor de introducir coordinador administrativo\n";
+                if (txtCoordinadorCredito.Text == string.Empty) mensaje += "Favor de introducir coordinador de credio\n";
+                if (txtCoordinadorCobranza.Text == string.Empty) mensaje += "Favor de introducir coordinador de cobranza\n";
+                if (txtTotalAnalistas.Text == string.Empty) mensaje += "Favor de introducir total de analistas\n";
+                if (txtTotalVentanillas.Text == string.Empty) mensaje += "Favor de introducir total ventanillas\n";
+                if (txtAnalistasCredito.Text == string.Empty) mensaje += "Favor de introducir analistas credito\n";
+                if (txtAnalistasAdministrativos.Text == string.Empty) mensaje += "Favor de introducir analistas admnistrativos\n";
+                if (txtAnalistaComercial.Text == string.Empty) mensaje += "Favor de introducir analistas comerciales\n";
+                if (txtAnalistasCobranza.Text == string.Empty) mensaje += "Favor de introducir analistas cobranza\n";
+                if (txtEmpresasAfiliadas.Text == string.Empty) mensaje += "Favor de introducir empresas afiliadas\n";
+                if (txtTrabajadoresAfiliados.Text == string.Empty) mensaje += "Favor de introducir trabajadores afiliados\n";
+                if (txtPotencialEmpresas.Text == string.Empty) mensaje += "Favor de introducir potencial de empresas\n";
+                if (txtPotencialTrabajadores.Text == string.Empty) mensaje += "Favor de introducir potencial trabajadores\n";
+                if (txtEmpresasEstatus1.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 1\n";
+                if (txtEmpresasEstatus18.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 18\n";
+                if (txtEmpresasEstatus21.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 21\n";
+                if (txtEmpresasEstatus30.Text == string.Empty) mensaje += "Favor de introducir empresas estatus 30\n";
+                if (txtMetaMensual.Text == string.Empty) mensaje += "Favor de introducir meta mensual\n";
+                if (txtColocacionAnual.Text == string.Empty) mensaje += "Favor de introducir colocacion anual\n";
+                if (txtColocacionMensual.Text == string.Empty) mensaje += "Favor de introducir colocacion mensual\n";
+                if (txtMetaAcumulada.Text == string.Empty) mensaje += "Favor de introducir meta acumulada\n";
+                if (txtcobranzaAnual.Text == string.Empty) mensaje += "Favor de introducir cobranza anual\n";
+                if (txtCobranzaMetaMensual.Text == string.Empty) mensaje += "Favor de introducir cobranza meta mensual\n";
+                if (txtCobranzaPorcentaje.Text == string.Empty) mensaje += "Favor de introducir cobranza porcentaje\n";
+                if (txtCobranzaCumplimiento.Text == string.Empty) mensaje += "Favor de introducir cobranza cumplimiento\n";
+                //if (txtAltitud.Text == string.Empty && txtLatitud.Text==string.Empty) mensaje += "Favor de indicar la ubicación geografica de la sucursal\n";
 
-
-                if (Convert.ToInt32(txthidIdSucursal.Text) == Convert.ToInt32(cborepresentacion.SelectedValue))
+                if (checkrepresentacion.Checked == true)
                 {
-                    mensaje += "No se puede asignar una misma sucursal asi misma\n";
+                    if (cborepresentacion.SelectedIndex == -1) mensaje += "Favor de seleccionar una sucursal Padre para asociarla a esta\n";
+
+
+                    if (Convert.ToInt32(txthidIdSucursal.Text) == Convert.ToInt32(cborepresentacion.SelectedValue))
+                    {
+                        mensaje += "No se puede asignar una misma sucursal asi misma\n";
+                    }
                 }
+                return !(mensaje == string.Empty);
             }
-
-        
-
-
-            return !(mensaje == string.Empty);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
         private bool ValidarDatosIntroducidos(out string mensaje)
         {
             Regex expreg = new Regex(@"(?:\d*\.)?\d+");
             //Regex expreg = new Regex(@"^((d*\.)?\d+)$");
-
             mensaje = string.Empty;
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalAnalistas.Text, Convert.ToString(expreg))) mensaje += "El campo "+label1.Text+ " solo acepta datos númericos\n";
+            try
+            { 
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalAnalistas.Text, Convert.ToString(expreg))) mensaje += "El campo " + label1.Text + " solo acepta datos númericos\n";
             if (!System.Text.RegularExpressions.Regex.IsMatch(txtNoSucursal.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblnosucursal.Text + " solo acepta datos númericos\n";
             if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalVentanillas.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblventanillas.Text + " solo acepta datos númericos\n";
             if (!Regex.IsMatch(txtAnalistasCredito.Text, Convert.ToString(expreg))) mensaje += "El campo " + lblanalistcredito.Text + " solo acepta datos númericos\n";
@@ -505,6 +549,12 @@ namespace GDSfonacot.forms
 
             //if (!System.Text.RegularExpressions.Regex.IsMatch(txtTotalAnalistas.Text, "^d+$|^d+,d+$")) mensaje += "El campo " + label1.Text + " solo acepta datos númericos";
             return !(mensaje == string.Empty);
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
         private bool IsNumeric(string sValue)
         {
@@ -527,16 +577,24 @@ namespace GDSfonacot.forms
 
         private void frmSucursales_Load(object sender, EventArgs e)
         {
-            LoadingCatRegional();
-            LoadingCatRepreSucursales();
-
-
-            if (SucursalInt!=0)
+            try
             {
-                CargarDatos(SucursalInt);
+                LoadingCatRegional();
+                LoadingCatRepreSucursales();
+
+                if (SucursalInt != 0)
+                {
+                    CargarDatos(SucursalInt);
+                }
+                else
+                {
+                    LimpiarDatos();
+                }
             }
-            else {
-                LimpiarDatos();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -548,37 +606,53 @@ namespace GDSfonacot.forms
              
         private void txtubicacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-             if (e.KeyChar==13)
+            try
             {
-                gMapControl1.DragButton = MouseButtons.Left;
-                gMapControl1.CanDragMap = true;
-                gMapControl1.MapProvider = GMapProviders.GoogleMap;
-                gMapControl1.MinZoom = 0;
-                gMapControl1.MaxZoom = 50;
-                gMapControl1.AutoScroll = true;
-                GMaps.Instance.Mode = AccessMode.ServerOnly;
-                gMapControl1.SetPositionByKeywords(txtubicacion.Text.Trim());
-                gMapControl1.Zoom = 18;
-                numzoom.Value = Convert.ToDecimal(gMapControl1.Zoom);
-                //markerOverlay = new GMapOverlay("Marcador");
-                //marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.none);
-                //markerOverlay.Markers.Add(marker);
-                ////Ahora agregamos el overlays en el maa
-                //gMapControl1.Overlays.Add(markerOverlay);
-                gMapControl1.ShowCenter = true;
-                numzoom.Enabled = true;
+                if (e.KeyChar == 13)
+                {
+                    gMapControl1.DragButton = MouseButtons.Left;
+                    gMapControl1.CanDragMap = true;
+                    gMapControl1.MapProvider = GMapProviders.GoogleMap;
+                    gMapControl1.MinZoom = 0;
+                    gMapControl1.MaxZoom = 50;
+                    gMapControl1.AutoScroll = true;
+                    GMaps.Instance.Mode = AccessMode.ServerOnly;
+                    gMapControl1.SetPositionByKeywords(txtubicacion.Text.Trim());
+                    gMapControl1.Zoom = 18;
+                    numzoom.Value = Convert.ToDecimal(gMapControl1.Zoom);
+                    //markerOverlay = new GMapOverlay("Marcador");
+                    //marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.none);
+                    //markerOverlay.Markers.Add(marker);
+                    ////Ahora agregamos el overlays en el maa
+                    //gMapControl1.Overlays.Add(markerOverlay);
+                    gMapControl1.ShowCenter = true;
+                    numzoom.Enabled = true;
+                }
+                else
+                {
+                    numzoom.Enabled = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                numzoom.Enabled =false;
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
             }
         }
 
         private void numzoom_ValueChanged(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(numzoom.Value) <= gMapControl1.MaxZoom)
+            try
             {
-                gMapControl1.Zoom = Convert.ToDouble(numzoom.Value);
+                if (Convert.ToDouble(numzoom.Value) <= gMapControl1.MaxZoom)
+                {
+                    gMapControl1.Zoom = Convert.ToDouble(numzoom.Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
         private void gMapControl1_DoubleClick(object sender, EventArgs e)
@@ -656,16 +730,24 @@ namespace GDSfonacot.forms
 
         private String DevuelveDirectorRegional(int idregion)
         {
-            var regionDB = new SucursalesData().ObtenerRegionTitular(idregion);
-            if (regionDB.Code != 0 || regionDB.Result.Count < 1)
+            try
             {
-                MessageBox.Show("Error: " + regionDB.Message);
-                return "";
+                var regionDB = new SucursalesData().ObtenerRegionTitular(idregion);
+                if (regionDB.Code != 0 || regionDB.Result.Count < 1)
+                {
+                    MessageBox.Show("Error: " + regionDB.Message);
+                    return "";
+                }
+                else
+                {
+                    var reg = regionDB.Result.First();
+                    return reg.Director_Regional;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                var reg = regionDB.Result.First();
-                return reg.Director_Regional;
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
             }
         }
     }

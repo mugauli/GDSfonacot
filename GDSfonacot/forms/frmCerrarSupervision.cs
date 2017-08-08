@@ -27,63 +27,71 @@ namespace GDSfonacot.forms
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            var mensaje = string.Empty;
-            if (ValidateCierre(out mensaje))
+            try
             {
-                MessageBox.Show(mensaje);
-                return;
-            }
-            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada, despues no se podrá modificar", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                var cierre = new Cierres();
-                cierre.Idcierre = Convert.ToInt32(txthidIdCierre.Text.ToString());
-                cierre.MotivoCierre = txtMotivocierre.Text.ToString().Trim();
-                cierre.fechacierre = dtfechacierre.Value;
-                cierre.solventada = checksolventada.Checked;
-                cierre.Idsupervision = Convert.ToInt32(txthidIdSup.Text.ToString());
-                cierre.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
-                cierre.FechaCreacion = DateTime.Now;
-
-                var objCierre= new CierresData().GuadarCierre(cierre);
-                if (objCierre.Code != 0)
+                var mensaje = string.Empty;
+                if (ValidateCierre(out mensaje))
                 {
-                    MessageBox.Show("Error: " + objCierre.Message);
+                    MessageBox.Show(mensaje);
                     return;
-                    //Mandar mensaje de error con sucursales.Message
+                }
+                if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada, despues no se podrá modificar", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    var cierre = new Cierres();
+                    cierre.Idcierre = Convert.ToInt32(txthidIdCierre.Text.ToString());
+                    cierre.MotivoCierre = txtMotivocierre.Text.ToString().Trim();
+                    cierre.fechacierre = dtfechacierre.Value;
+                    cierre.solventada = checksolventada.Checked;
+                    cierre.Idsupervision = Convert.ToInt32(txthidIdSup.Text.ToString());
+                    cierre.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
+                    cierre.FechaCreacion = DateTime.Now;
+
+                    var objCierre = new CierresData().GuadarCierre(cierre);
+                    if (objCierre.Code != 0)
+                    {
+                        MessageBox.Show("Error: " + objCierre.Message);
+                        return;
+                        //Mandar mensaje de error con sucursales.Message
+                    }
+                    else
+                    {
+                        if (txthidStatus.Text == "2")
+                        {
+                            var obactualizarsup = new HistorialSupervisiones();
+                            obactualizarsup.IdSupervisiones = Convert.ToInt32(txthidIdSup.Text.Trim());
+                            obactualizarsup.Idstatus = 3;
+                            var actualizarsup = new SupervisionesData().ActualizarSupervision(obactualizarsup);
+                            if (actualizarsup.Code != 0)
+                            {
+
+                                MessageBox.Show(actualizarsup.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            }
+                            MessageBox.Show("Esta supervision ha sido cerrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // this.Close();
+                        }
+
+                        MessageBox.Show("El cierre de supervision fue guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cierramanual = 0;
+                        guardo = 1;
+                        this.Close();
+                    }
+
                 }
                 else
                 {
-                    if (txthidStatus.Text == "2")
-                    {
-                    var obactualizarsup = new HistorialSupervisiones();
-                    obactualizarsup.IdSupervisiones = Convert.ToInt32(txthidIdSup.Text.Trim());
-                    obactualizarsup.Idstatus = 3;
-                    var actualizarsup = new SupervisionesData().ActualizarSupervision(obactualizarsup);
-                    if (actualizarsup.Code != 0)
-                    {
-
-                        MessageBox.Show(actualizarsup.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
-                    MessageBox.Show("Esta supervision ha sido cerrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   // this.Close();
-                    }
-                
-                    MessageBox.Show("El cierre de supervision fue guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El Ciere no fue guardado, por favor intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     cierramanual = 0;
-                    guardo = 1;
-                    this.Close();
+                    guardo = 0;
                 }
-
             }
-         else
+            catch (Exception ex)
             {
-                MessageBox.Show("El Ciere no fue guardado, por favor intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cierramanual = 0;
-                guardo = 0;
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
-       }
+        }
         private bool ValidateCierre(out string mensaje)
         {
             mensaje = string.Empty;

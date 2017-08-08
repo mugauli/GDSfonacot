@@ -119,23 +119,11 @@
     <Compile Include="forms\FormVisorConsultarSupervCR.Designer.cs">
       <DependentUpon>FormVisorConsultarSupervCR.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\formVisorReportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\formVisorReportes.Designer.cs">
-      <DependentUpon>formVisorReportes.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\frmBusquedaSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmBusquedaSucursal.Designer.cs">
       <DependentUpon>frmBusquedaSucursal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\frmAgregarSucursal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmAgregarSucursal.Designer.cs">
-      <DependentUpon>frmAgregarSucursal.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmCerrarSupervision.cs">
       <SubType>Form</SubType>
@@ -257,14 +245,8 @@
     <EmbeddedResource Include="forms\FormVisorConsultarSupervCR.resx">
       <DependentUpon>FormVisorConsultarSupervCR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\formVisorReportes.resx">
-      <DependentUpon>formVisorReportes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmBusquedaSucursal.resx">
       <DependentUpon>frmBusquedaSucursal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmAgregarSucursal.resx">
-      <DependentUpon>frmAgregarSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmBusquedaSupervisiones.resx">
       <DependentUpon>frmBusquedaSupervisiones.cs</DependentUpon>
@@ -364,17 +346,8 @@
     <Compile Include="forms\PersonalSucursales.Designer.cs">
       <DependentUpon>PersonalSucursales.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\SeguimientoSup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\SeguimientoSup.Designer.cs">
-      <DependentUpon>SeguimientoSup.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="forms\PersonalSucursales.resx">
       <DependentUpon>PersonalSucursales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\SeguimientoSup.resx">
-      <DependentUpon>SeguimientoSup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

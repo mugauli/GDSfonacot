@@ -21,10 +21,11 @@ namespace GDSfonacot.forms
             InitializeComponent();
             destino = destinoreport;
         }
-       
+
 
         private void FormVisorConsultarSupervC_Load(object sender, EventArgs e)
         {
+            try {
             if (destino == 1)//consultando reporte de supervision creado por supervisor operaciones
             {
                 this.Text = "Minuta de Trabajo por Supervision";
@@ -32,7 +33,7 @@ namespace GDSfonacot.forms
                 objreport.SetParameterValue("@nosupervision", param1);
                 objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
                 crpvisor.ReportSource = objreport;
-               
+
             }
             else if (destino == 2)//consultando reporte de contestacion de sucursal
             {
@@ -41,7 +42,7 @@ namespace GDSfonacot.forms
                 objreport.SetParameterValue("@nosupervision", param1);
                 objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
                 crpvisor.ReportSource = objreport;
-                
+
             }
 
             else if (destino == 3)//consultando historico de supervision 
@@ -72,15 +73,15 @@ namespace GDSfonacot.forms
             }
             else if (destino == 6)//consultando lista de empleados
             {
-                if(param1!=String.Empty && param2 != String.Empty) { 
-                this.Text = "Lista de Empleados por Sucursal y Tipo de Personal";
-                reportes.crpListaEmpleadosSuc objreport = new reportes.crpListaEmpleadosSuc();
-                objreport.SetParameterValue("@idsucursal", Convert.ToInt32(param1));
-                objreport.SetParameterValue("@idtipopersonal", Convert.ToInt32(param2));
-                objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
-                crpvisor.ReportSource = objreport;
+                if (param1 != String.Empty && param2 != String.Empty) {
+                    this.Text = "Lista de Empleados por Sucursal y Tipo de Personal";
+                    reportes.crpListaEmpleadosSuc objreport = new reportes.crpListaEmpleadosSuc();
+                    objreport.SetParameterValue("@idsucursal", Convert.ToInt32(param1));
+                    objreport.SetParameterValue("@idtipopersonal", Convert.ToInt32(param2));
+                    objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
+                    crpvisor.ReportSource = objreport;
                 }
-                else if (param1 != String.Empty && param2==String.Empty)
+                else if (param1 != String.Empty && param2 == String.Empty)
                 {
                     this.Text = "Lista General de Empleados por Sucursal";
                     reportes.crpListaEmpleadosSucAll objreport = new reportes.crpListaEmpleadosSucAll();
@@ -88,6 +89,12 @@ namespace GDSfonacot.forms
                     objreport.SetDatabaseLogon(Globales.userbd, Globales.pass);
                     crpvisor.ReportSource = objreport;
                 }
+
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

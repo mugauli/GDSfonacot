@@ -33,141 +33,154 @@ namespace GDSfonacot.forms
         private void frmContestacionSucursal_Load(object sender, EventArgs e)
         {
 
-
-
-            if (saveorupdate == 0)
+            try
             {
-                LlenarDatos();
+                if (saveorupdate == 0)
+                {
+                    LlenarDatos();
+                }
+                else
+                {
+                    if (CargarContestacionSucursal() == false)
+                    {
+
+                        return;
+                    }
+                }
+
+                #region validabotones
+                if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+                {
+                    if (txthidStatus.Text == "3")
+                    {
+                        toolButReasignar.Enabled = false;
+                        toolButReasignar.Visible = true;
+                        toolButCerrarSup.Enabled = false;
+                        toolButCerrarSup.Visible = true;
+                        toolButGuardar.Enabled = false;
+                        toolButImprimir.Enabled = true;
+                    }
+                    else if (txthidStatus.Text == "2")
+                    {
+                        toolButReasignar.Enabled = true;
+                        toolButReasignar.Visible = true;
+                        toolButCerrarSup.Enabled = true;
+                        toolButCerrarSup.Visible = true;
+                        toolButGuardar.Enabled = true;
+                        toolButImprimir.Enabled = true;
+
+                    }
+
+                }
+                else
+                {
+                    if (txthidStatus.Text == "3")
+                    {
+                        toolButReasignar.Enabled = false;
+                        toolButReasignar.Visible = false;
+                        toolButCerrarSup.Enabled = false;
+                        toolButCerrarSup.Visible = false;
+                        toolButGuardar.Enabled = false;
+                        toolButImprimir.Enabled = true;
+                    }
+                    else if (txthidStatus.Text == "2")
+                    {
+                        toolButReasignar.Enabled = false;
+                        toolButReasignar.Visible = false;
+                        toolButCerrarSup.Enabled = false;
+                        toolButCerrarSup.Visible = false;
+                        toolButGuardar.Enabled = true;
+                        toolButImprimir.Enabled = true;
+
+                    }
+                    else if (txthidStatus.Text == "1")
+                    {
+                        toolButReasignar.Enabled = false;
+                        toolButReasignar.Visible = false;
+                        toolButCerrarSup.Enabled = false;
+                        toolButCerrarSup.Visible = false;
+                        toolButGuardar.Enabled = true;
+                        toolButImprimir.Enabled = true;
+
+                    }
+                    else if (txthidStatus.Text == "" || txthidStatus.Text == "0")
+                    {
+                        toolButReasignar.Enabled = false;
+                        toolButReasignar.Visible = false;
+                        toolButCerrarSup.Enabled = false;
+                        toolButCerrarSup.Visible = false;
+                        toolButGuardar.Enabled = true;
+                        toolButImprimir.Enabled = true;
+
+                    }
+
+                }
+                #endregion
+
+
+                MDIPrincip temp = new MDIPrincip();
+                if (Globales.objpasardatosusuario.IdNivel == 2)
+                {
+                    temp.timesup.Start();
+                    temp.timerreasig.Start();
+                }
+                else
+                {
+                    temp.timesup.Stop();
+                    temp.timerreasig.Stop();
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                if (CargarContestacionSucursal()== false)
-                {
-                    
-                    return;
-                }
-            }
-
-            #region validabotones
-            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
-            {
-                if (txthidStatus.Text == "3")
-                {
-                    toolButReasignar.Enabled = false;
-                    toolButReasignar.Visible = true;
-                    toolButCerrarSup.Enabled = false;
-                    toolButCerrarSup.Visible = true;
-                    toolButGuardar.Enabled = false;
-                    toolButImprimir.Enabled = true;
-                }
-                else if (txthidStatus.Text == "2")
-                {
-                    toolButReasignar.Enabled = true;
-                    toolButReasignar.Visible = true;
-                    toolButCerrarSup.Enabled = true;
-                    toolButCerrarSup.Visible = true;
-                    toolButGuardar.Enabled = true;
-                    toolButImprimir.Enabled = true;
-
-                }
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            else
-            {
-                if (txthidStatus.Text == "3")
-                {
-                    toolButReasignar.Enabled = false;
-                    toolButReasignar.Visible = false;
-                    toolButCerrarSup.Enabled = false;
-                    toolButCerrarSup.Visible = false;
-                    toolButGuardar.Enabled = false;
-                    toolButImprimir.Enabled = true;
-                }
-                else if (txthidStatus.Text == "2")
-                {
-                    toolButReasignar.Enabled = false;
-                    toolButReasignar.Visible = false;
-                    toolButCerrarSup.Enabled = false;
-                    toolButCerrarSup.Visible = false;
-                    toolButGuardar.Enabled = true;
-                    toolButImprimir.Enabled = true;
-
-                }
-                else if (txthidStatus.Text == "1")
-                {
-                    toolButReasignar.Enabled = false;
-                    toolButReasignar.Visible = false;
-                    toolButCerrarSup.Enabled = false;
-                    toolButCerrarSup.Visible = false;
-                    toolButGuardar.Enabled = true;
-                    toolButImprimir.Enabled = true;
-
-                }
-                else if (txthidStatus.Text == "" || txthidStatus.Text == "0")
-                {
-                    toolButReasignar.Enabled = false;
-                    toolButReasignar.Visible = false;
-                    toolButCerrarSup.Enabled = false;
-                    toolButCerrarSup.Visible = false;
-                    toolButGuardar.Enabled = true;
-                    toolButImprimir.Enabled = true;
-
-                }
-
-            }
-            #endregion
-
-
-            MDIPrincip temp = new MDIPrincip();
-            if (Globales.objpasardatosusuario.IdNivel == 2)
-            {
-                temp.timesup.Start();
-                temp.timerreasig.Start();
-            }
-            else
-            {
-                temp.timesup.Stop();
-                temp.timerreasig.Stop();
-            }
-     
-           
 
         }
         private bool CargarContestacionSucursal()
         {
-            var objSupervision = new ContestacionesData();
-            var busqueda = objSupervision.ObtenerDatosContestacionSupervision(valor1);
-            if (busqueda.Result != null)
+            try
             {
-                txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
-                txthidIdConst.Text = busqueda.Result.Idcontestacion.ToString();
-                txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                //txtDirRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
-                txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
-                txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
-                txtInmuble.Text = busqueda.Result.Inmueble.ToString();
-                txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
-                txtOriginacion.Text = busqueda.Result.Originacion.ToString();
-                txtTarjetasTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
-                txtCredito.Text = busqueda.Result.Credito.ToString();
-                txtUtys.Text = busqueda.Result.Utys.ToString();
-                txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
-                txtCobranza.Text = busqueda.Result.Cobranza.ToString();
-                txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
-                txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
-                txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
-                txtNoOficio.Enabled = false;
-                txthidStatus.Text = busqueda.Result.Idstatus.ToString();
-                dtFechaRespOficio.Value = busqueda.Result.FechaRespuesta.Value;
+                var objSupervision = new ContestacionesData();
+                var busqueda = objSupervision.ObtenerDatosContestacionSupervision(valor1);
+                if (busqueda.Result != null)
+                {
+                    txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
+                    txthidIdConst.Text = busqueda.Result.Idcontestacion.ToString();
+                    txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
+                    //txtDirRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                    txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                    txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
+                    txtInmuble.Text = busqueda.Result.Inmueble.ToString();
+                    txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
+                    txtOriginacion.Text = busqueda.Result.Originacion.ToString();
+                    txtTarjetasTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
+                    txtCredito.Text = busqueda.Result.Credito.ToString();
+                    txtUtys.Text = busqueda.Result.Utys.ToString();
+                    txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
+                    txtCobranza.Text = busqueda.Result.Cobranza.ToString();
+                    txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
+                    txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
+                    txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
+                    txtNoOficio.Enabled = false;
+                    txthidStatus.Text = busqueda.Result.Idstatus.ToString();
+                    dtFechaRespOficio.Value = busqueda.Result.FechaRespuesta.Value;
 
-                toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = true;
-                return true;
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = true;
+                    return true;
 
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningun contestacion asociada,por lo tanto el modulo no esta disponible para su uso", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No hay ningun contestacion asociada,por lo tanto el modulo no esta disponible para su uso", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -175,20 +188,28 @@ namespace GDSfonacot.forms
         private void LlenarDatos()
         {
             int[] varstatus = { 1 };
-            var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervisionCargaDatos(valor1, valor2, varstatus);
-            if (busqueda.Result != null)
+            try
             {
-                txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
-                txthidIdConst.Text = "0";
-                txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
-                txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
-                txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
-                txthidStatus.Text = busqueda.Result.Idstatus.ToString();
-                txtNoOficio.Enabled = true;
-                toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = false;
+                var objSupervision = new SupervisionesData();
+                var busqueda = objSupervision.ObtenerDatosSupervisionCargaDatos(valor1, valor2, varstatus);
+                if (busqueda.Result != null)
+                {
+                    txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
+                    txthidIdConst.Text = "0";
+                    txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
+                    txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                    txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
+                    txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
+                    txthidStatus.Text = busqueda.Result.Idstatus.ToString();
+                    txtNoOficio.Enabled = true;
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -283,100 +304,110 @@ namespace GDSfonacot.forms
         }
         private void toolButGuardar_Click(object sender, EventArgs e)
         {
-            if (validarDatos())
+            try
             {
-                return;
-            }
 
-            if (validarlongitudDatos())
-            {
-                return;
-            }
-            if (txthidIdConst.Text == "0")
-            {
-                var objbuscaOficio = new ContestacionesData();
-                var busqueda = objbuscaOficio.BuscarNoOficio(txtNoOficio.Text.Trim());
-                if (busqueda.Result != null)
+                if (validarDatos())
                 {
-                    MessageBox.Show("El No. de Oficio '" + txtNoOficio.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtNoOficio.Focus();
                     return;
                 }
-            }
 
-            // MessageBox.Show("pASO VALIDACION");
-            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                // Mensaje en pantallas)
-                var objSupervision = new ContestacionesSuperv_Sucursales();
-                objSupervision.Idcontestacion = Convert.ToInt32(txthidIdConst.Text.Trim());
-                objSupervision.Idsupervision = Convert.ToInt32(txthidIdSup.Text.Trim());
-                objSupervision.NoOficio = txtNoOficio.Text.Trim();
-                objSupervision.Inmueble = txtInmuble.Text.Trim();
-                objSupervision.Gestion_direccion = txtGestionDireccion.Text.Trim();
-                objSupervision.Originacion = txtOriginacion.Text.Trim();
-                objSupervision.Tarjetas_transfer = txtTarjetasTransfer.Text.Trim();
-                objSupervision.Credito = txtCredito.Text.Trim();
-                objSupervision.Utys = txtUtys.Text.Trim();
-                objSupervision.Promocionales = txtPromocionales.Text.Trim();
-                objSupervision.Cobranza = txtCobranza.Text.Trim();
-                objSupervision.Fondofijo = txtFondoFijo.Text.Trim();
-                objSupervision.AcuerdosCompromisos = txtAcuerdosCompromisos.Text.Trim();
-                objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
-                objSupervision.FechaCreacionContest = DateTime.Now;
-                objSupervision.FechaRespuesta = dtFechaRespOficio.Value;
-                var gdSupervisiones = new ContestacionesData().GuardarConstestacionSucursal(objSupervision);
-                if (gdSupervisiones.Code != 0)
+                if (validarlongitudDatos())
                 {
-                    //Mensage de error con g
-                    toolButGuardar.Enabled = true;
-                    MessageBox.Show(gdSupervisiones.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    toolButImprimir.Enabled = false;
+                    return;
+                }
+                if (txthidIdConst.Text == "0")
+                {
+                    var objbuscaOficio = new ContestacionesData();
+                    var busqueda = objbuscaOficio.BuscarNoOficio(txtNoOficio.Text.Trim());
+                    if (busqueda.Result != null)
+                    {
+                        MessageBox.Show("El No. de Oficio '" + txtNoOficio.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtNoOficio.Focus();
+                        return;
+                    }
+                }
+
+                // MessageBox.Show("pASO VALIDACION");
+                if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    // Mensaje en pantallas)
+                    var objSupervision = new ContestacionesSuperv_Sucursales();
+                    objSupervision.Idcontestacion = Convert.ToInt32(txthidIdConst.Text.Trim());
+                    objSupervision.Idsupervision = Convert.ToInt32(txthidIdSup.Text.Trim());
+                    objSupervision.NoOficio = txtNoOficio.Text.Trim();
+                    objSupervision.Inmueble = txtInmuble.Text.Trim();
+                    objSupervision.Gestion_direccion = txtGestionDireccion.Text.Trim();
+                    objSupervision.Originacion = txtOriginacion.Text.Trim();
+                    objSupervision.Tarjetas_transfer = txtTarjetasTransfer.Text.Trim();
+                    objSupervision.Credito = txtCredito.Text.Trim();
+                    objSupervision.Utys = txtUtys.Text.Trim();
+                    objSupervision.Promocionales = txtPromocionales.Text.Trim();
+                    objSupervision.Cobranza = txtCobranza.Text.Trim();
+                    objSupervision.Fondofijo = txtFondoFijo.Text.Trim();
+                    objSupervision.AcuerdosCompromisos = txtAcuerdosCompromisos.Text.Trim();
+                    objSupervision.Idusuariocreador = Globales.objpasardatosusuario.IdUsuario;
+                    objSupervision.FechaCreacionContest = DateTime.Now;
+                    objSupervision.FechaRespuesta = dtFechaRespOficio.Value;
+                    var gdSupervisiones = new ContestacionesData().GuardarConstestacionSucursal(objSupervision);
+                    if (gdSupervisiones.Code != 0)
+                    {
+                        //Mensage de error con g
+                        toolButGuardar.Enabled = true;
+                        MessageBox.Show(gdSupervisiones.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        toolButImprimir.Enabled = false;
+
+                    }
+                    else
+                    {
+
+                        toolButGuardar.Enabled = false;
+                        toolButImprimir.Enabled = true;
+                        if (txthidIdConst.Text == "0")
+                        {
+                            MessageBox.Show("La Contestacion ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("La Contestacion ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+
+
+
+                        //  LimpiarDatos();
+                        if (txthidStatus.Text == "5" || txthidStatus.Text == "1")
+                        {
+                            var obactualizarsup = new HistorialSupervisiones();
+                            obactualizarsup.IdSupervisiones = Convert.ToInt32(txthidIdSup.Text.Trim());
+                            obactualizarsup.Idstatus = 2;
+                            var actualizarsup = new SupervisionesData().ActualizarSupervision(obactualizarsup);
+                            if (actualizarsup.Code != 0)
+                            {
+
+                                MessageBox.Show(actualizarsup.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            }
+                            MessageBox.Show("Favor de esperar a la revisión de un supervisor", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
 
                 }
                 else
                 {
+                    MessageBox.Show("La Contestacion no fue guardada, por favor intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    toolButGuardar.Enabled = false;
-                    toolButImprimir.Enabled = true;
-                    if (txthidIdConst.Text == "0")
-                    {
-                        MessageBox.Show("La Contestacion ha sido guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("La Contestacion ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-
-
-                 
-                    //  LimpiarDatos();
-                    if (txthidStatus.Text == "5" || txthidStatus.Text == "1")
-                    {
-                        var obactualizarsup = new HistorialSupervisiones();
-                        obactualizarsup.IdSupervisiones = Convert.ToInt32(txthidIdSup.Text.Trim());
-                        obactualizarsup.Idstatus = 2;
-                        var actualizarsup = new SupervisionesData().ActualizarSupervision(obactualizarsup);
-                        if (actualizarsup.Code != 0)
-                        {
-
-                            MessageBox.Show(actualizarsup.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                        }
-                        MessageBox.Show("Favor de esperar a la revisión de un supervisor", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = false;
                 }
-
             }
-            else
-            {
-                MessageBox.Show("La Contestacion no fue guardada, por favor intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = false;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
         private bool validarlongitudDatos()

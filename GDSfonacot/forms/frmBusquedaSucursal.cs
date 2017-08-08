@@ -38,6 +38,8 @@ namespace GDSfonacot.forms
         }
         private void CargarGridSucursalesFilter()
         {
+            try
+            {
             lblRegistros.Text = "";
             var totalsupe = new SucursalesData().ObtenerSucursalesFilter(txtSucursal.Text.Trim());
             if (totalsupe.Code != 0)
@@ -58,15 +60,18 @@ namespace GDSfonacot.forms
             dataGlistaSup.Columns[1].HeaderText = "Nombre";
             dataGlistaSup.Columns[2].HeaderText = "No. Sucursal";
             dataGlistaSup.Columns[3].HeaderText = "Regional";
-
-
-
-
-
             lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
         private void CargarGridSucursalesNivelUsuario()
         {
+            try
+            {
             lblRegistros.Text = "";
             var totalsupe = new SucursalesData().ObtenerSucursalesporNivelUsuario();
             if (totalsupe.Code != 0)
@@ -86,12 +91,13 @@ namespace GDSfonacot.forms
             dataGlistaSup.Columns[1].HeaderText = "Nombre";
             dataGlistaSup.Columns[2].HeaderText = "No. Sucursal";
             dataGlistaSup.Columns[3].HeaderText = "Regional";
-
-
-
-
-
             lblRegistros.Text = "Total de Registros: " + dataGlistaSup.RowCount;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
         private void dataGlistaSup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -164,9 +170,17 @@ namespace GDSfonacot.forms
 
         private void frmBusquedaSucursal_Load(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel == 2)
+            try
             {
-                CargarGridSucursalesNivelUsuario();
+                if (Globales.objpasardatosusuario.IdNivel == 2)
+                {
+                    CargarGridSucursalesNivelUsuario();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }
