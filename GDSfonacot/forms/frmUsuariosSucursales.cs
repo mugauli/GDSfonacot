@@ -19,55 +19,87 @@ namespace GDSfonacot.forms
         private int sucursalInt = 0;
         public frmUsuariosSucursales(int Sucursal)
         {
-            InitializeComponent();
-            CargarDatos(Sucursal);
-            sucursalInt = Sucursal;
+            try
+            {
+                InitializeComponent();
+                CargarDatos(Sucursal);
+                sucursalInt = Sucursal;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
         private void frmUsuariosSucursales_Load(object sender, EventArgs e)
         {
-            LoadingNivelUsuario();
+            try
+            {
+                LoadingNivelUsuario();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void LoadingNivelUsuario()
         {
-            var nivelesusuario = new CatalogosData().ObtenerNivelUsuario();
-            if (nivelesusuario.Code != 0)
+            try
             {
-                //Mandar mensaje de error con sucursales.Message
-            }
+                var nivelesusuario = new CatalogosData().ObtenerNivelUsuario();
+                if (nivelesusuario.Code != 0)
+                {
+                    //Mandar mensaje de error con sucursales.Message
+                }
 
-            cmbNivelusuario.DataSource = nivelesusuario.Result;
-            cmbNivelusuario.DisplayMember = "Nivel_Usuario";
-            cmbNivelusuario.ValueMember = "IdNivel";
-            cmbNivelusuario.SelectedIndex = -1;
+                cmbNivelusuario.DataSource = nivelesusuario.Result;
+                cmbNivelusuario.DisplayMember = "Nivel_Usuario";
+                cmbNivelusuario.ValueMember = "IdNivel";
+                cmbNivelusuario.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         public void CargarDatos(int Sucursal)
         {
-
-            var SucursalDB = new SucursalesData().ObtenerSucursales(Sucursal);
-            if (SucursalDB.Code != 0)
+            try
             {
-                MessageBox.Show("Error: " + SucursalDB.Message);
-                return;
+
+                var SucursalDB = new SucursalesData().ObtenerSucursales(Sucursal);
+                if (SucursalDB.Code != 0)
+                {
+                    MessageBox.Show("Error: " + SucursalDB.Message);
+                    return;
+                }
+
+                var objSucursal = SucursalDB.Result.First();
+                var imagen = ByteToImage(objSucursal.Fotografia);
+
+                if (imagen != null) pbxSucursal.Image = imagen;
+                txtDireccionRegional.Text = objSucursal.DireccionRegional;
+                txtNoSucursal.Text = objSucursal.NoSucursal.ToString();
+                txtSucursal.Text = objSucursal.DescripcionSucursal;
+                txtRepresentaciones.Text = objSucursal.Representaciones;
+                txtDireccion.Text = objSucursal.Dirección;
+                txtDirectorRegional.Text = objSucursal.Director_Regional;
+                txtDirectorEstatal.Text = objSucursal.Director_Estatal;
+                txtCoordinadorAdministrativo.Text = objSucursal.Coordinador_Administrativo;
+                txtCoordinadorCredito.Text = objSucursal.Coordinador_Crédito;
+                txtCoordinadorCobranza.Text = objSucursal.Coordinador_Cobranza;
+                txtAnalistas.Text = objSucursal.Analistas.ToString();
+                txtVentanillas.Text = objSucursal.Ventanillas.ToString();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            var objSucursal = SucursalDB.Result.First();
-            var imagen = ByteToImage(objSucursal.Fotografia);
-
-            if (imagen != null) pbxSucursal.Image = imagen;
-            txtDireccionRegional.Text = objSucursal.DireccionRegional;
-            txtNoSucursal.Text = objSucursal.NoSucursal.ToString();
-            txtSucursal.Text = objSucursal.DescripcionSucursal;
-            txtRepresentaciones.Text = objSucursal.Representaciones;
-            txtDireccion.Text = objSucursal.Dirección;
-            txtDirectorRegional.Text = objSucursal.Director_Regional;
-            txtDirectorEstatal.Text = objSucursal.Director_Estatal;
-            txtCoordinadorAdministrativo.Text = objSucursal.Coordinador_Administrativo;
-            txtCoordinadorCredito.Text = objSucursal.Coordinador_Crédito;
-            txtCoordinadorCobranza.Text = objSucursal.Coordinador_Cobranza;
-            txtAnalistas.Text = objSucursal.Analistas.ToString();
-            txtVentanillas.Text = objSucursal.Ventanillas.ToString();
+            }
         }
 
         public static Bitmap ByteToImage(byte[] blob)
@@ -122,89 +154,123 @@ namespace GDSfonacot.forms
         private DataGridView CargarDatos(List<UsuariosDGV> usuarios)
         {
             var dataGV = new DataGridView();
-            dataGV.DataSource = usuarios;
-            dataGV.ReadOnly = true;
-            dataGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            try
+            {
+               
+                dataGV.DataSource = usuarios;
+                dataGV.ReadOnly = true;
+                dataGV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGV.Columns[0].Visible = false;
-            dataGV.Columns[0].HeaderText = "ID";
-            dataGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                dataGV.Columns[0].Visible = false;
+                dataGV.Columns[0].HeaderText = "ID";
+                dataGV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
 
-            dataGV.Columns[1].HeaderText = "Nombre Usuario";
-            dataGV.Columns[2].HeaderText = "Nivel de Acceso";
-            dataGV.Columns[3].HeaderText = "Sucursal";
-            return dataGV;
+                dataGV.Columns[1].HeaderText = "Nombre Usuario";
+                dataGV.Columns[2].HeaderText = "Nivel de Acceso";
+                dataGV.Columns[3].HeaderText = "Sucursal";
+                return dataGV;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return dataGV;
+            }
         }
 
         private void cmbNivelusuario_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
-            if (cmbNivelusuario.SelectedIndex != 0 || cmbNivelusuario.SelectedIndex != -1)
+            try
             {
-                checkmostrartodos.Checked = false;
-                CargarGridUsuarios(Convert.ToInt32(cmbNivelusuario.SelectedValue));
+                if (cmbNivelusuario.SelectedIndex != 0 || cmbNivelusuario.SelectedIndex != -1)
+                {
+                    checkmostrartodos.Checked = false;
+                    CargarGridUsuarios(Convert.ToInt32(cmbNivelusuario.SelectedValue));
 
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+              
+            }
+
         }
 
         private void dgvUsuarios_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex > -1 && e.ColumnIndex > -1)
+            try
             {
-                if (dgvUsuarios.CurrentCell.Selected)
+                if (e.RowIndex > -1 && e.ColumnIndex > -1)
                 {
-                    var valor = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value;
+                    if (dgvUsuarios.CurrentCell.Selected)
+                    {
+                        var valor = dgvUsuarios.Rows[e.RowIndex].Cells[0].Value;
 
 
-                    var frmPersonsuc = new frmUsuarios(Convert.ToInt32(valor));//crea una instancia del formulario
-                   // frmPersonsuc.MdiParent = this.ParentForm;                                                          // frmPersonsuc.MdiParent = this.ParentForm;
-                    frmPersonsuc.ShowDialog();
-                    dgvUsuarios.Columns.Clear();
-                    checkmostrartodos.Checked =false;
-                    cmbNivelusuario.SelectedIndex = -1;
-                    lblRegistros.Text= "";
-                    //  this.Close();
+                        var frmPersonsuc = new frmUsuarios(Convert.ToInt32(valor));//crea una instancia del formulario
+                                                                                   // frmPersonsuc.MdiParent = this.ParentForm;                                                          // frmPersonsuc.MdiParent = this.ParentForm;
+                        frmPersonsuc.ShowDialog();
+                        dgvUsuarios.Columns.Clear();
+                        checkmostrartodos.Checked = false;
+                        cmbNivelusuario.SelectedIndex = -1;
+                        lblRegistros.Text = "";
+                        //  this.Close();
 
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+         
             }
         }
 
         private void checkmostrartodos_CheckedChanged(object sender, EventArgs e)
         {
-            lblRegistros.Text = "";
-            if (checkmostrartodos.Checked == true)
+            try
             {
-                #region mostrartodosusuarios
-                cmbNivelusuario.SelectedIndex = -1;
-                var _usuariosData = new UsuariosData();
-                var usuarios = _usuariosData.ObtenerUsuariosGeneral(sucursalInt);
-                if (usuarios.Code != 0)
+                lblRegistros.Text = "";
+                if (checkmostrartodos.Checked == true)
                 {
-                    MessageBox.Show("Error: " + usuarios.Message);
+                    #region mostrartodosusuarios
+                    cmbNivelusuario.SelectedIndex = -1;
+                    var _usuariosData = new UsuariosData();
+                    var usuarios = _usuariosData.ObtenerUsuariosGeneral(sucursalInt);
+                    if (usuarios.Code != 0)
+                    {
+                        MessageBox.Show("Error: " + usuarios.Message);
+                    }
+                    else
+                    {
+
+                        dgvUsuarios.DataSource = usuarios.Result;
+                        dgvUsuarios.ReadOnly = true;
+                        dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                        dgvUsuarios.Columns[0].Visible = false;
+                        dgvUsuarios.Columns[0].HeaderText = "ID";
+                        dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                        dgvUsuarios.Columns[1].HeaderText = "Nombre Usuario";
+                        dgvUsuarios.Columns[2].HeaderText = "Nivel de Acceso";
+                        dgvUsuarios.Columns[3].HeaderText = "Sucursal";
+                        lblRegistros.Text = "Total de Registros: " + dgvUsuarios.RowCount;
+
+                    }
+
+                    #endregion
                 }
                 else
                 {
-
-                    dgvUsuarios.DataSource = usuarios.Result;
-                    dgvUsuarios.ReadOnly = true;
-                    dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dgvUsuarios.Columns[0].Visible = false;
-                    dgvUsuarios.Columns[0].HeaderText = "ID";
-                    dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                    dgvUsuarios.Columns[1].HeaderText = "Nombre Usuario";
-                    dgvUsuarios.Columns[2].HeaderText = "Nivel de Acceso";
-                    dgvUsuarios.Columns[3].HeaderText = "Sucursal";
-                    lblRegistros.Text = "Total de Registros: " + dgvUsuarios.RowCount;
+                    dgvUsuarios.Columns.Clear();
 
                 }
-
-                #endregion
             }
-            else
+            catch (Exception ex)
             {
-                dgvUsuarios.Columns.Clear();
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+
         }
     }
 }

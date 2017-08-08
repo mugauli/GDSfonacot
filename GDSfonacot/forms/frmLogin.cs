@@ -27,8 +27,16 @@ namespace GDSfonacot
 
         private void butEntrar_Click(object sender, EventArgs e)
         {
-            //
-            ValidaCajastexto(); //void que valida
+            try
+            {
+                //
+                ValidaCajastexto(); //void que valida
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
@@ -55,54 +63,62 @@ namespace GDSfonacot
         }
         private void ValidaCajastexto()
         {
-            #region ValidacajasUser
-            if (String.IsNullOrEmpty(textUsuario.Text.Trim()) || String.IsNullOrEmpty(textPass.Text.Trim()))
-            {//primer if valida usuario
+            try
+            {
+                #region ValidacajasUser
+                if (String.IsNullOrEmpty(textUsuario.Text.Trim()) || String.IsNullOrEmpty(textPass.Text.Trim()))
+                {//primer if valida usuario
 
-                MessageBox.Show("Debe ingresar el usuario y el password.", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                textUsuario.Focus();
+                    MessageBox.Show("Debe ingresar el usuario y el password.", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    textUsuario.Focus();
 
-            }//llave cierre del primer if que valida el usuario
-            else
-            {//else1 para anidar un segundo if y validar solo la contraseña
+                }//llave cierre del primer if que valida el usuario
+                else
+                {//else1 para anidar un segundo if y validar solo la contraseña
 
-                var logueo = objusuario.LoginUsuario(textUsuario.Text,Globales.Encriptar(textPass.Text));
-                //var insertar=   objusuario.GuardarSupervision(;
-                if (logueo.Result != null)
-                {
-
-
-                    if (logueo.Result.fechabaja != null)
+                    var logueo = objusuario.LoginUsuario(textUsuario.Text, Globales.Encriptar(textPass.Text));
+                    //var insertar=   objusuario.GuardarSupervision(;
+                    if (logueo.Result != null)
                     {
-                        MessageBox.Show("El usuario " + logueo.Result.Nombre_Usuario + " gafete " + logueo.Result.Usuario + " esta dado de baja,favor de verificar con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);// Mensaje en pantallas
 
+
+                        if (logueo.Result.fechabaja != null)
+                        {
+                            MessageBox.Show("El usuario " + logueo.Result.Nombre_Usuario + " gafete " + logueo.Result.Usuario + " esta dado de baja,favor de verificar con el administrador del sistema", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);// Mensaje en pantallas
+
+                        }
+                        else
+                        {
+                            // MessageBox.Show("Bienvenido " + logueo.Result.Nombre_Usuario, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
+
+                            Globales.objpasardatosusuario.IdNivel = logueo.Result.IdNivel;
+                            Globales.objpasardatosusuario.Nombre_Usuario = logueo.Result.Nombre_Usuario;
+                            Globales.objpasardatosusuario.IdUsuario = logueo.Result.IdUsuario;
+                            Globales.objpasardatosusuario.fechabaja = logueo.Result.fechabaja;
+                            Globales.objpasardatosusuario.IdSucursal = logueo.Result.IdSucursal;
+                            Globales.objpasardatosusuario.IdsucursalPadre = logueo.Result.IdsucursalPadre;
+                            MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
+                            this.Hide();  //oculta el formulario
+                            frmPanel.ShowDialog();//muestra el formulario forma modal
+                            this.Close();//cierra el formulario
+                        }
                     }
+
                     else
                     {
-                       // MessageBox.Show("Bienvenido " + logueo.Result.Nombre_Usuario, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);// Mensaje en pantallas
 
-                        Globales.objpasardatosusuario.IdNivel = logueo.Result.IdNivel;
-                        Globales.objpasardatosusuario.Nombre_Usuario = logueo.Result.Nombre_Usuario;
-                        Globales.objpasardatosusuario.IdUsuario = logueo.Result.IdUsuario;
-                        Globales.objpasardatosusuario.fechabaja = logueo.Result.fechabaja;
-                        Globales.objpasardatosusuario.IdSucursal = logueo.Result.IdSucursal;
-                        Globales.objpasardatosusuario.IdsucursalPadre = logueo.Result.IdsucursalPadre;
-                        MDIPrincip frmPanel = new MDIPrincip();//crea una instancia del formulario
-                        this.Hide();  //oculta el formulario
-                        frmPanel.ShowDialog();//muestra el formulario forma modal
-                        this.Close();//cierra el formulario
+                        MessageBox.Show("El usuario " + textUsuario.Text.Trim() + " y/o contraseña ingresado," + Environment.NewLine +
+                        "no existe o son invalidos.Intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
                     }
-                }
 
-                else
-                {
+                }//llave cierre del else1
+                #endregion Permiteacceso
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    MessageBox.Show("El usuario " + textUsuario.Text.Trim() + " y/o contraseña ingresado," + Environment.NewLine +
-                    "no existe o son invalidos.Intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-                }
-
-            }//llave cierre del else1
-            #endregion Permiteacceso
+            }
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

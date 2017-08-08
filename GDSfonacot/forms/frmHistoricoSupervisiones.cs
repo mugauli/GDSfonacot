@@ -26,66 +26,73 @@ namespace GDSfonacot.forms
         private void CargarDatosHistoricoSupervision()
         {
 
-
-            var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosHistoricoSupervision(valor1);
-            var imagen = ByteToImage(busqueda.Result.Fotografia);
-            if (busqueda.Result != null)
+            try
             {
+                var objSupervision = new SupervisionesData();
+                var busqueda = objSupervision.ObtenerDatosHistoricoSupervision(valor1);
+                var imagen = ByteToImage(busqueda.Result.Fotografia);
+                if (busqueda.Result != null)
+                {
 
-                if (imagen != null) pbxSucursal.Image = imagen;
-                txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
-                txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtInmuble.Text = busqueda.Result.Inmueble.ToString();
-                txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
-                txtOriginacion.Text = busqueda.Result.Originacion.ToString();
-                txtTarjetasTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
-                txtCredito.Text = busqueda.Result.Credito.ToString();
-                txtUtys.Text = busqueda.Result.Utys.ToString();
-                txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
-                txtCobranza.Text = busqueda.Result.Cobranza.ToString();
-                txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
-                txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
-                txthidStatus.Text = busqueda.Result.Idstatus.ToString();
-                txtSupervisor1.Text = busqueda.Result.Supervisor1.ToString();
-                txtSupervisor2.Text = busqueda.Result.Supervisor2.ToString();
-                txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
-                txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
-                txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
-                txtCoordinadorAdministrativo.Text = (busqueda.Result.Coordinador_Administrativo != null ? busqueda.Result.Coordinador_Administrativo.ToString() : "");
-                txtCoordinadorCobranza.Text = (busqueda.Result.Coordinador_Cobranza != null ? busqueda.Result.Coordinador_Cobranza.ToString() : "");
-                txtCoordinadorCredito.Text = (busqueda.Result.Coordinador_Crédito != null ? busqueda.Result.Coordinador_Crédito.ToString() : "");
-                txtDireccion.Text = (busqueda.Result.Dirección != null ? busqueda.Result.Dirección.ToString() : "");
-                txtRepresentaciones.Text= (busqueda.Result.Representaciones != null ? busqueda.Result.Representaciones.ToString() : "");
-                txtDireccionRegional.Text= (busqueda.Result.DireccionRegional != null ? busqueda.Result.DireccionRegional.ToString() : "");
-                txtTotalAnalistas.Text= (busqueda.Result.Analistas != null ? busqueda.Result.Analistas.ToString() : "");
-                txtTotalVentanillas.Text = (busqueda.Result.Ventanillas != null ? busqueda.Result.Ventanillas.ToString() : "");
-                txtAnalistasCredito.Text = (busqueda.Result.Analistas_Otorgamiento_de_Crédito != null ? busqueda.Result.Analistas_Otorgamiento_de_Crédito.ToString() : "");
-                txtAnalistasAdministrativos.Text= (busqueda.Result.Analistas_Administrativo_y_SAM != null ? busqueda.Result.Analistas_Administrativo_y_SAM.ToString() : "");
-                txtAnalistaComercial.Text = (busqueda.Result.Analistas_Crédito_Control_Documental != null ? busqueda.Result.Analistas_Crédito_Control_Documental.ToString() : "");
-                txtAnalistasCobranza.Text= (busqueda.Result.Analistas_Cobranza != null ? busqueda.Result.Analistas_Cobranza.ToString() : "");
-                txtEmpresasAfiliadas.Text= (busqueda.Result.Empresas_Afiliadas != null ? busqueda.Result.Empresas_Afiliadas.ToString() : "");
-                txtTrabajadoresAfiliados.Text= (busqueda.Result.Trabajadores_Afiliados != null ? busqueda.Result.Trabajadores_Afiliados.ToString() : "");
-                txtPotencialEmpresas.Text = (busqueda.Result.Potencial_de_Empresas != null ? busqueda.Result.Potencial_de_Empresas.ToString() : "");
-                txtPotencialTrabajadores.Text = (busqueda.Result.Potencial_de_Trabajadores != null ? busqueda.Result.Potencial_de_Trabajadores.ToString() : "");
-                txtEmpresasEstatus1.Text= (busqueda.Result.Empresas_Status_1 != null ? busqueda.Result.Empresas_Status_1.ToString() : "");
-                txtEmpresasEstatus18.Text= (busqueda.Result.Empresas_Status_18 != null ? busqueda.Result.Empresas_Status_18.ToString() : "");
-                txtEmpresasEstatus21.Text = (busqueda.Result.Empresas_Status_21 != null ? busqueda.Result.Empresas_Status_21.ToString() : "");
-                txtEmpresasEstatus30.Text= (busqueda.Result.Empresas_Status_30 != null ? busqueda.Result.Empresas_Status_30.ToString() : "");
-               //falta meta anual
-               txtMetaMensual.Text= (busqueda.Result.Meta_Mensual != null ? busqueda.Result.Meta_Mensual.ToString() : "");
-                txtColocacionAnual.Text= (busqueda.Result.Colocación_Anual != null ? busqueda.Result.Colocación_Anual.ToString() : "");
-                txtColocacionMensual.Text= (busqueda.Result.Colocación_Mensual != null ? busqueda.Result.Colocación_Mensual.ToString() : "");
-                txtMetaAcumulada.Text=(busqueda.Result.Meta_Acumulada_Porcentaje != null ? busqueda.Result.Meta_Acumulada_Porcentaje.ToString() : "");
-                dtFechaSupervision.Value = busqueda.Result.FechaSupervision.Value;
-                //falta  cobranza meta anual
-               // txtCobranzaMetaMensual.Text  Hay conflicto porque en la base de datos solo hay campo COBRANZAMETAANUAL , no hay ninguno que haga referencia
-               // a cobranza meta mensual
-                txtCobranzaPorcentaje.Text= (busqueda.Result.Cobranza_Porcentaje_Meta != null ? busqueda.Result.Cobranza_Porcentaje_Meta.ToString() : "");
-                txtCobranzaCumplimiento.Text= (busqueda.Result.Cobranza_Cumplimiento_Meta != null ? busqueda.Result.Cobranza_Cumplimiento_Meta.ToString() : "");
+                    if (imagen != null) pbxSucursal.Image = imagen;
+                    txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
+                    txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
+                    txtInmuble.Text = busqueda.Result.Inmueble.ToString();
+                    txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
+                    txtOriginacion.Text = busqueda.Result.Originacion.ToString();
+                    txtTarjetasTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
+                    txtCredito.Text = busqueda.Result.Credito.ToString();
+                    txtUtys.Text = busqueda.Result.Utys.ToString();
+                    txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
+                    txtCobranza.Text = busqueda.Result.Cobranza.ToString();
+                    txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
+                    txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
+                    txthidStatus.Text = busqueda.Result.Idstatus.ToString();
+                    txtSupervisor1.Text = busqueda.Result.Supervisor1.ToString();
+                    txtSupervisor2.Text = busqueda.Result.Supervisor2.ToString();
+                    txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
+                    txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                    txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                    txtCoordinadorAdministrativo.Text = (busqueda.Result.Coordinador_Administrativo != null ? busqueda.Result.Coordinador_Administrativo.ToString() : "");
+                    txtCoordinadorCobranza.Text = (busqueda.Result.Coordinador_Cobranza != null ? busqueda.Result.Coordinador_Cobranza.ToString() : "");
+                    txtCoordinadorCredito.Text = (busqueda.Result.Coordinador_Crédito != null ? busqueda.Result.Coordinador_Crédito.ToString() : "");
+                    txtDireccion.Text = (busqueda.Result.Dirección != null ? busqueda.Result.Dirección.ToString() : "");
+                    txtRepresentaciones.Text = (busqueda.Result.Representaciones != null ? busqueda.Result.Representaciones.ToString() : "");
+                    txtDireccionRegional.Text = (busqueda.Result.DireccionRegional != null ? busqueda.Result.DireccionRegional.ToString() : "");
+                    txtTotalAnalistas.Text = (busqueda.Result.Analistas != null ? busqueda.Result.Analistas.ToString() : "");
+                    txtTotalVentanillas.Text = (busqueda.Result.Ventanillas != null ? busqueda.Result.Ventanillas.ToString() : "");
+                    txtAnalistasCredito.Text = (busqueda.Result.Analistas_Otorgamiento_de_Crédito != null ? busqueda.Result.Analistas_Otorgamiento_de_Crédito.ToString() : "");
+                    txtAnalistasAdministrativos.Text = (busqueda.Result.Analistas_Administrativo_y_SAM != null ? busqueda.Result.Analistas_Administrativo_y_SAM.ToString() : "");
+                    txtAnalistaComercial.Text = (busqueda.Result.Analistas_Crédito_Control_Documental != null ? busqueda.Result.Analistas_Crédito_Control_Documental.ToString() : "");
+                    txtAnalistasCobranza.Text = (busqueda.Result.Analistas_Cobranza != null ? busqueda.Result.Analistas_Cobranza.ToString() : "");
+                    txtEmpresasAfiliadas.Text = (busqueda.Result.Empresas_Afiliadas != null ? busqueda.Result.Empresas_Afiliadas.ToString() : "");
+                    txtTrabajadoresAfiliados.Text = (busqueda.Result.Trabajadores_Afiliados != null ? busqueda.Result.Trabajadores_Afiliados.ToString() : "");
+                    txtPotencialEmpresas.Text = (busqueda.Result.Potencial_de_Empresas != null ? busqueda.Result.Potencial_de_Empresas.ToString() : "");
+                    txtPotencialTrabajadores.Text = (busqueda.Result.Potencial_de_Trabajadores != null ? busqueda.Result.Potencial_de_Trabajadores.ToString() : "");
+                    txtEmpresasEstatus1.Text = (busqueda.Result.Empresas_Status_1 != null ? busqueda.Result.Empresas_Status_1.ToString() : "");
+                    txtEmpresasEstatus18.Text = (busqueda.Result.Empresas_Status_18 != null ? busqueda.Result.Empresas_Status_18.ToString() : "");
+                    txtEmpresasEstatus21.Text = (busqueda.Result.Empresas_Status_21 != null ? busqueda.Result.Empresas_Status_21.ToString() : "");
+                    txtEmpresasEstatus30.Text = (busqueda.Result.Empresas_Status_30 != null ? busqueda.Result.Empresas_Status_30.ToString() : "");
+                    //falta meta anual
+                    txtMetaMensual.Text = (busqueda.Result.Meta_Mensual != null ? busqueda.Result.Meta_Mensual.ToString() : "");
+                    txtColocacionAnual.Text = (busqueda.Result.Colocación_Anual != null ? busqueda.Result.Colocación_Anual.ToString() : "");
+                    txtColocacionMensual.Text = (busqueda.Result.Colocación_Mensual != null ? busqueda.Result.Colocación_Mensual.ToString() : "");
+                    txtMetaAcumulada.Text = (busqueda.Result.Meta_Acumulada_Porcentaje != null ? busqueda.Result.Meta_Acumulada_Porcentaje.ToString() : "");
+                    dtFechaSupervision.Value = busqueda.Result.FechaSupervision.Value;
+                    //falta  cobranza meta anual
+                    // txtCobranzaMetaMensual.Text  Hay conflicto porque en la base de datos solo hay campo COBRANZAMETAANUAL , no hay ninguno que haga referencia
+                    // a cobranza meta mensual
+                    txtCobranzaPorcentaje.Text = (busqueda.Result.Cobranza_Porcentaje_Meta != null ? busqueda.Result.Cobranza_Porcentaje_Meta.ToString() : "");
+                    txtCobranzaCumplimiento.Text = (busqueda.Result.Cobranza_Cumplimiento_Meta != null ? busqueda.Result.Cobranza_Cumplimiento_Meta.ToString() : "");
 
-                toolButReasignar.Enabled = true;
-                toolButImprimir.Enabled = false;
+                    toolButReasignar.Enabled = true;
+                    toolButImprimir.Enabled = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -93,67 +100,74 @@ namespace GDSfonacot.forms
 
         private void CargarDatosHistoricoSupervisionConstSuc()
         {
-
-
-            var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosHistoricoSupervisionContesSuc(valor1);
-            var imagen = ByteToImage(busqueda.Result.Fotografia);
-            if (busqueda.Result != null)
+            try
             {
 
-                if (imagen != null) pbxSucursal.Image = imagen;
-                txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
-                txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtInmuble.Text = busqueda.Result.Inmueble.ToString();
-                txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
-                txtOriginacion.Text = busqueda.Result.Originacion.ToString();
-                txtTarjetasTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
-                txtCredito.Text = busqueda.Result.Credito.ToString();
-                txtUtys.Text = busqueda.Result.Utys.ToString();
-                txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
-                txtCobranza.Text = busqueda.Result.Cobranza.ToString();
-                txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
-                txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
-                txthidStatus.Text = busqueda.Result.Idstatus.ToString();
-                txtSupervisor1.Text = busqueda.Result.Supervisor1.ToString();
-                txtSupervisor2.Text = busqueda.Result.Supervisor2.ToString();
-                txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
-                txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
-                txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
-                txtCoordinadorAdministrativo.Text = (busqueda.Result.Coordinador_Administrativo != null ? busqueda.Result.Coordinador_Administrativo.ToString() : "");
-                txtCoordinadorCobranza.Text = (busqueda.Result.Coordinador_Cobranza != null ? busqueda.Result.Coordinador_Cobranza.ToString() : "");
-                txtCoordinadorCredito.Text = (busqueda.Result.Coordinador_Crédito != null ? busqueda.Result.Coordinador_Crédito.ToString() : "");
-                txtDireccion.Text = (busqueda.Result.Dirección != null ? busqueda.Result.Dirección.ToString() : "");
-                txtRepresentaciones.Text = (busqueda.Result.Representaciones != null ? busqueda.Result.Representaciones.ToString() : "");
-                txtDireccionRegional.Text = (busqueda.Result.DireccionRegional != null ? busqueda.Result.DireccionRegional.ToString() : "");
-                txtTotalAnalistas.Text = (busqueda.Result.Analistas != null ? busqueda.Result.Analistas.ToString() : "");
-                txtTotalVentanillas.Text = (busqueda.Result.Ventanillas != null ? busqueda.Result.Ventanillas.ToString() : "");
-                txtAnalistasCredito.Text = (busqueda.Result.Analistas_Otorgamiento_de_Crédito != null ? busqueda.Result.Analistas_Otorgamiento_de_Crédito.ToString() : "");
-                txtAnalistasAdministrativos.Text = (busqueda.Result.Analistas_Administrativo_y_SAM != null ? busqueda.Result.Analistas_Administrativo_y_SAM.ToString() : "");
-                txtAnalistaComercial.Text = (busqueda.Result.Analistas_Crédito_Control_Documental != null ? busqueda.Result.Analistas_Crédito_Control_Documental.ToString() : "");
-                txtAnalistasCobranza.Text = (busqueda.Result.Analistas_Cobranza != null ? busqueda.Result.Analistas_Cobranza.ToString() : "");
-                txtEmpresasAfiliadas.Text = (busqueda.Result.Empresas_Afiliadas != null ? busqueda.Result.Empresas_Afiliadas.ToString() : "");
-                txtTrabajadoresAfiliados.Text = (busqueda.Result.Trabajadores_Afiliados != null ? busqueda.Result.Trabajadores_Afiliados.ToString() : "");
-                txtPotencialEmpresas.Text = (busqueda.Result.Potencial_de_Empresas != null ? busqueda.Result.Potencial_de_Empresas.ToString() : "");
-                txtPotencialTrabajadores.Text = (busqueda.Result.Potencial_de_Trabajadores != null ? busqueda.Result.Potencial_de_Trabajadores.ToString() : "");
-                txtEmpresasEstatus1.Text = (busqueda.Result.Empresas_Status_1 != null ? busqueda.Result.Empresas_Status_1.ToString() : "");
-                txtEmpresasEstatus18.Text = (busqueda.Result.Empresas_Status_18 != null ? busqueda.Result.Empresas_Status_18.ToString() : "");
-                txtEmpresasEstatus21.Text = (busqueda.Result.Empresas_Status_21 != null ? busqueda.Result.Empresas_Status_21.ToString() : "");
-                txtEmpresasEstatus30.Text = (busqueda.Result.Empresas_Status_30 != null ? busqueda.Result.Empresas_Status_30.ToString() : "");
-                //falta meta anual
-                txtMetaMensual.Text = (busqueda.Result.Meta_Mensual != null ? busqueda.Result.Meta_Mensual.ToString() : "");
-                txtColocacionAnual.Text = (busqueda.Result.Colocación_Anual != null ? busqueda.Result.Colocación_Anual.ToString() : "");
-                txtColocacionMensual.Text = (busqueda.Result.Colocación_Mensual != null ? busqueda.Result.Colocación_Mensual.ToString() : "");
-                txtMetaAcumulada.Text = (busqueda.Result.Meta_Acumulada_Porcentaje != null ? busqueda.Result.Meta_Acumulada_Porcentaje.ToString() : "");
-                dtFechaSupervision.Value = busqueda.Result.FechaSupervision.Value;
-                //falta  cobranza meta anual
-                // txtCobranzaMetaMensual.Text  Hay conflicto porque en la base de datos solo hay campo COBRANZAMETAANUAL , no hay ninguno que haga referencia
-                // a cobranza meta mensual
-                txtCobranzaPorcentaje.Text = (busqueda.Result.Cobranza_Porcentaje_Meta != null ? busqueda.Result.Cobranza_Porcentaje_Meta.ToString() : "");
-                txtCobranzaCumplimiento.Text = (busqueda.Result.Cobranza_Cumplimiento_Meta != null ? busqueda.Result.Cobranza_Cumplimiento_Meta.ToString() : "");
+                var objSupervision = new SupervisionesData();
+                var busqueda = objSupervision.ObtenerDatosHistoricoSupervisionContesSuc(valor1);
+                var imagen = ByteToImage(busqueda.Result.Fotografia);
+                if (busqueda.Result != null)
+                {
 
-                toolButReasignar.Enabled = true;
-                toolButImprimir.Enabled = false;
+                    if (imagen != null) pbxSucursal.Image = imagen;
+                    txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
+                    txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
+                    txtInmuble.Text = busqueda.Result.Inmueble.ToString();
+                    txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
+                    txtOriginacion.Text = busqueda.Result.Originacion.ToString();
+                    txtTarjetasTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
+                    txtCredito.Text = busqueda.Result.Credito.ToString();
+                    txtUtys.Text = busqueda.Result.Utys.ToString();
+                    txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
+                    txtCobranza.Text = busqueda.Result.Cobranza.ToString();
+                    txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
+                    txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
+                    txthidStatus.Text = busqueda.Result.Idstatus.ToString();
+                    txtSupervisor1.Text = busqueda.Result.Supervisor1.ToString();
+                    txtSupervisor2.Text = busqueda.Result.Supervisor2.ToString();
+                    txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
+                    txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                    txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                    txtCoordinadorAdministrativo.Text = (busqueda.Result.Coordinador_Administrativo != null ? busqueda.Result.Coordinador_Administrativo.ToString() : "");
+                    txtCoordinadorCobranza.Text = (busqueda.Result.Coordinador_Cobranza != null ? busqueda.Result.Coordinador_Cobranza.ToString() : "");
+                    txtCoordinadorCredito.Text = (busqueda.Result.Coordinador_Crédito != null ? busqueda.Result.Coordinador_Crédito.ToString() : "");
+                    txtDireccion.Text = (busqueda.Result.Dirección != null ? busqueda.Result.Dirección.ToString() : "");
+                    txtRepresentaciones.Text = (busqueda.Result.Representaciones != null ? busqueda.Result.Representaciones.ToString() : "");
+                    txtDireccionRegional.Text = (busqueda.Result.DireccionRegional != null ? busqueda.Result.DireccionRegional.ToString() : "");
+                    txtTotalAnalistas.Text = (busqueda.Result.Analistas != null ? busqueda.Result.Analistas.ToString() : "");
+                    txtTotalVentanillas.Text = (busqueda.Result.Ventanillas != null ? busqueda.Result.Ventanillas.ToString() : "");
+                    txtAnalistasCredito.Text = (busqueda.Result.Analistas_Otorgamiento_de_Crédito != null ? busqueda.Result.Analistas_Otorgamiento_de_Crédito.ToString() : "");
+                    txtAnalistasAdministrativos.Text = (busqueda.Result.Analistas_Administrativo_y_SAM != null ? busqueda.Result.Analistas_Administrativo_y_SAM.ToString() : "");
+                    txtAnalistaComercial.Text = (busqueda.Result.Analistas_Crédito_Control_Documental != null ? busqueda.Result.Analistas_Crédito_Control_Documental.ToString() : "");
+                    txtAnalistasCobranza.Text = (busqueda.Result.Analistas_Cobranza != null ? busqueda.Result.Analistas_Cobranza.ToString() : "");
+                    txtEmpresasAfiliadas.Text = (busqueda.Result.Empresas_Afiliadas != null ? busqueda.Result.Empresas_Afiliadas.ToString() : "");
+                    txtTrabajadoresAfiliados.Text = (busqueda.Result.Trabajadores_Afiliados != null ? busqueda.Result.Trabajadores_Afiliados.ToString() : "");
+                    txtPotencialEmpresas.Text = (busqueda.Result.Potencial_de_Empresas != null ? busqueda.Result.Potencial_de_Empresas.ToString() : "");
+                    txtPotencialTrabajadores.Text = (busqueda.Result.Potencial_de_Trabajadores != null ? busqueda.Result.Potencial_de_Trabajadores.ToString() : "");
+                    txtEmpresasEstatus1.Text = (busqueda.Result.Empresas_Status_1 != null ? busqueda.Result.Empresas_Status_1.ToString() : "");
+                    txtEmpresasEstatus18.Text = (busqueda.Result.Empresas_Status_18 != null ? busqueda.Result.Empresas_Status_18.ToString() : "");
+                    txtEmpresasEstatus21.Text = (busqueda.Result.Empresas_Status_21 != null ? busqueda.Result.Empresas_Status_21.ToString() : "");
+                    txtEmpresasEstatus30.Text = (busqueda.Result.Empresas_Status_30 != null ? busqueda.Result.Empresas_Status_30.ToString() : "");
+                    //falta meta anual
+                    txtMetaMensual.Text = (busqueda.Result.Meta_Mensual != null ? busqueda.Result.Meta_Mensual.ToString() : "");
+                    txtColocacionAnual.Text = (busqueda.Result.Colocación_Anual != null ? busqueda.Result.Colocación_Anual.ToString() : "");
+                    txtColocacionMensual.Text = (busqueda.Result.Colocación_Mensual != null ? busqueda.Result.Colocación_Mensual.ToString() : "");
+                    txtMetaAcumulada.Text = (busqueda.Result.Meta_Acumulada_Porcentaje != null ? busqueda.Result.Meta_Acumulada_Porcentaje.ToString() : "");
+                    dtFechaSupervision.Value = busqueda.Result.FechaSupervision.Value;
+                    //falta  cobranza meta anual
+                    // txtCobranzaMetaMensual.Text  Hay conflicto porque en la base de datos solo hay campo COBRANZAMETAANUAL , no hay ninguno que haga referencia
+                    // a cobranza meta mensual
+                    txtCobranzaPorcentaje.Text = (busqueda.Result.Cobranza_Porcentaje_Meta != null ? busqueda.Result.Cobranza_Porcentaje_Meta.ToString() : "");
+                    txtCobranzaCumplimiento.Text = (busqueda.Result.Cobranza_Cumplimiento_Meta != null ? busqueda.Result.Cobranza_Cumplimiento_Meta.ToString() : "");
+
+                    toolButReasignar.Enabled = true;
+                    toolButImprimir.Enabled = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -161,49 +175,59 @@ namespace GDSfonacot.forms
 
         private void frmHistoricoSupervisiones_Load(object sender, EventArgs e)
         {
-            #region validarcargadesupervision
-            CargarDatosHistoricoSupervision();
-            //if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
-            //{
-            //    CargarDatosHistoricoSupervision();
-            //}
-            //else if (Globales.objpasardatosusuario.IdNivel == 2)
-            //{
-            //    CargarDatosHistoricoSupervisionConstSuc();
-            //}
-            #endregion
-            #region validabotones
-            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+            try
             {
-                if (txthidStatus.Text == "3")
+                #region validarcargadesupervision
+                CargarDatosHistoricoSupervision();
+                //if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+                //{
+                //    CargarDatosHistoricoSupervision();
+                //}
+                //else if (Globales.objpasardatosusuario.IdNivel == 2)
+                //{
+                //    CargarDatosHistoricoSupervisionConstSuc();
+                //}
+                #endregion
+                #region validabotones
+                if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+                {
+                    if (txthidStatus.Text == "3")
+                    {
+                        toolButReasignar.Enabled = false;
+                        toolButReasignar.Visible = true;
+                        toolButCerrarSup.Enabled = false;
+                        toolButCerrarSup.Visible = true;
+                        toolButImprimir.Enabled = true;
+                    }
+                    else if (txthidStatus.Text == "2")
+                    {
+                        toolButReasignar.Enabled = false;
+                        toolButReasignar.Visible = true;
+                        toolButCerrarSup.Enabled = false;
+                        toolButCerrarSup.Visible = true;
+                        toolButImprimir.Enabled = true;
+
+                    }
+
+                }
+                else
                 {
                     toolButReasignar.Enabled = false;
-                    toolButReasignar.Visible = true;
+                    toolButReasignar.Visible = false;
                     toolButCerrarSup.Enabled = false;
-                    toolButCerrarSup.Visible = true;
+                    toolButCerrarSup.Visible = false;
                     toolButImprimir.Enabled = true;
                 }
-                else if(txthidStatus.Text =="2") {
-                    toolButReasignar.Enabled = false;
-                    toolButReasignar.Visible = true;
-                    toolButCerrarSup.Enabled = false;
-                    toolButCerrarSup.Visible = true;
-                    toolButImprimir.Enabled = true;
-
-                }
+                #endregion
+                MDIPrincip temp = new MDIPrincip();
+                temp.timesup.Start();
+                temp.timerreasig.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            else {
-                toolButReasignar.Enabled = false;
-                toolButReasignar.Visible = false;
-                toolButCerrarSup.Enabled = false;
-                toolButCerrarSup.Visible = false;
-                toolButImprimir.Enabled = true;
-            }
-            #endregion
-            MDIPrincip temp = new MDIPrincip();
-            temp.timesup.Start();
-            temp.timerreasig.Start();
 
 
         }
@@ -233,51 +257,77 @@ namespace GDSfonacot.forms
 
         private void toolButImprimir_Click(object sender, EventArgs e)
         {
-
-            if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004) { 
-                forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(3);//crea una instancia del formulario
-            frmvisor.param1 = txtNoSupervision.Text.Trim();
-            //frmvisor.MdiParen8t = MDIPrincip();
-            frmvisor.ShowDialog();
-            }
-            else if (Globales.objpasardatosusuario.IdNivel == 2)
+            try
             {
-                forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(5);//crea una instancia del formulario
-                frmvisor.param1 = txtNoSupervision.Text.Trim();
-                //frmvisor.MdiParen8t = MDIPrincip();
-                frmvisor.ShowDialog();
+                if (Globales.objpasardatosusuario.IdNivel == 1 || Globales.objpasardatosusuario.IdNivel == 3 || Globales.objpasardatosusuario.IdNivel == 1004)
+                {
+                    forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(3);//crea una instancia del formulario
+                    frmvisor.param1 = txtNoSupervision.Text.Trim();
+                    //frmvisor.MdiParen8t = MDIPrincip();
+                    frmvisor.ShowDialog();
+                }
+                else if (Globales.objpasardatosusuario.IdNivel == 2)
+                {
+                    forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(5);//crea una instancia del formulario
+                    frmvisor.param1 = txtNoSupervision.Text.Trim();
+                    //frmvisor.MdiParen8t = MDIPrincip();
+                    frmvisor.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
         private void toolButReasignar_Click(object sender, EventArgs e)
         {
-            var frmreasignar = new frmReasignarSuperv(0);//crea una instancia del formulario
-            frmreasignar.valor1 = Convert.ToInt32(txthidIdSup.Text);
-            frmreasignar.varstatus = Convert.ToInt32(txthidStatus.Text);                                                   // frmPersonsuc.MdiParent = this.ParentForm;
-            frmreasignar.ShowDialog();
-            if (frmreasignar.cierramanual == 1)
+            try
             {
-                // se mantiene la ventana de historico abierta
-            }else { 
-            this.Close();
+                var frmreasignar = new frmReasignarSuperv(0);//crea una instancia del formulario
+                frmreasignar.valor1 = Convert.ToInt32(txthidIdSup.Text);
+                frmreasignar.varstatus = Convert.ToInt32(txthidStatus.Text);                                                   // frmPersonsuc.MdiParent = this.ParentForm;
+                frmreasignar.ShowDialog();
+                if (frmreasignar.cierramanual == 1)
+                {
+                    // se mantiene la ventana de historico abierta
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     
 
         private void toolButCerrarSup_Click(object sender, EventArgs e)
         {
-            var frmcerrar = new frmCerrarSupervision(0);//crea una instancia del formulario
-            frmcerrar.valor1 = Convert.ToInt32(txthidIdSup.Text);
-            frmcerrar.varstatus= Convert.ToInt32(txthidStatus.Text);
-            // frmPersonsuc.MdiParent = this.ParentForm;
-            frmcerrar.ShowDialog();
-            if (frmcerrar.cierramanual == 1)
+            try
             {
-                // se mantiene la ventana de historico abierta
+                var frmcerrar = new frmCerrarSupervision(0);//crea una instancia del formulario
+                frmcerrar.valor1 = Convert.ToInt32(txthidIdSup.Text);
+                frmcerrar.varstatus = Convert.ToInt32(txthidStatus.Text);
+                // frmPersonsuc.MdiParent = this.ParentForm;
+                frmcerrar.ShowDialog();
+                if (frmcerrar.cierramanual == 1)
+                {
+                    // se mantiene la ventana de historico abierta
+                }
+                else
+                {
+                    this.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                this.Close();
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

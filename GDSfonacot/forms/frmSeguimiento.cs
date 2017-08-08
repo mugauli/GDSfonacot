@@ -27,66 +27,82 @@ namespace GDSfonacot.forms
 
         private void frmSeguimiento_Load(object sender, EventArgs e)
         {
-
-            if (saveorupdate == 0)
+            try
             {
-                
-                toolButNuevo.Enabled = false;
-                toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = false;
-                LlenarDatos();
-                txthidIdSegui.Text = "0";
-            }
-            else
-            {
-                if (CargarSeguimientoSup()== false)
+                if (saveorupdate == 0)
                 {
 
-                    return;
-                }
-                else { 
                     toolButNuevo.Enabled = false;
                     toolButGuardar.Enabled = true;
-                    toolButImprimir.Enabled = true;
+                    toolButImprimir.Enabled = false;
+                    LlenarDatos();
+                    txthidIdSegui.Text = "0";
                 }
+                else
+                {
+                    if (CargarSeguimientoSup() == false)
+                    {
+
+                        return;
+                    }
+                    else
+                    {
+                        toolButNuevo.Enabled = false;
+                        toolButGuardar.Enabled = true;
+                        toolButImprimir.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
         }
 
         private bool CargarSeguimientoSup()
         {
-            var objSeguimiento = new SeguimientosData();
-            var busqueda = objSeguimiento.ObtenerDatosSeguimientoSupervision(idsup,idseg);
-            if (busqueda.Result != null)
+            try
             {
-                txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
-                txthidIdSegui.Text = busqueda.Result.Idseguimiento.ToString();
-                txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
-                //txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
-                txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
-                txtInmuble.Text = busqueda.Result.Inmueble.ToString();
-                txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
-                txtOriginacion.Text = busqueda.Result.Originacion.ToString();
-                txtTarjetasTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
-                txtCredito.Text = busqueda.Result.Credito.ToString();
-                txtUtys.Text = busqueda.Result.Utys.ToString();
-                txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
-                txtCobranza.Text = busqueda.Result.Cobranza.ToString();
-                txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
-                txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
-                dtfechaSeguimiento.Value = busqueda.Result.FechaSeguimCreacion.Value;
-                txtSupervisor1.Text = busqueda.Result.Supervisor1;
-                txtSupervisor2.Text=busqueda.Result.Supervisor2;
-                // txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
-                // txthidStatus.Text = busqueda.Result.Idstatus.ToString();
-                toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = false;
-                return true;
+                var objSeguimiento = new SeguimientosData();
+                var busqueda = objSeguimiento.ObtenerDatosSeguimientoSupervision(idsup, idseg);
+                if (busqueda.Result != null)
+                {
+                    txthidIdSup.Text = busqueda.Result.Idsupervision.ToString();
+                    txthidIdSegui.Text = busqueda.Result.Idseguimiento.ToString();
+                    txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
+                    txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                    //txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                    txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
+                    txtInmuble.Text = busqueda.Result.Inmueble.ToString();
+                    txtGestionDireccion.Text = busqueda.Result.Gestion_direccion.ToString();
+                    txtOriginacion.Text = busqueda.Result.Originacion.ToString();
+                    txtTarjetasTransfer.Text = busqueda.Result.Tarjetas_transfer.ToString();
+                    txtCredito.Text = busqueda.Result.Credito.ToString();
+                    txtUtys.Text = busqueda.Result.Utys.ToString();
+                    txtPromocionales.Text = busqueda.Result.Promocionales.ToString();
+                    txtCobranza.Text = busqueda.Result.Cobranza.ToString();
+                    txtFondoFijo.Text = busqueda.Result.Fondofijo.ToString();
+                    txtAcuerdosCompromisos.Text = busqueda.Result.AcuerdosCompromisos.ToString();
+                    dtfechaSeguimiento.Value = busqueda.Result.FechaSeguimCreacion.Value;
+                    txtSupervisor1.Text = busqueda.Result.Supervisor1;
+                    txtSupervisor2.Text = busqueda.Result.Supervisor2;
+                    // txtNoOficio.Text = busqueda.Result.NoOficio.ToString();
+                    // txthidStatus.Text = busqueda.Result.Idstatus.ToString();
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = false;
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("No hay ningun seguimiento asociado a la supervision,por lo tanto el modulo no esta disponible para su uso", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No hay ningun seguimiento asociado a la supervision,por lo tanto el modulo no esta disponible para su uso", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -94,235 +110,264 @@ namespace GDSfonacot.forms
 
         private void toolButNuevo_Click(object sender, EventArgs e)
         {
-            toolButNuevo.Enabled = false;
+            try
+            {
+                toolButNuevo.Enabled = false;
 
-            toolButGuardar.Enabled = true;
-            toolButImprimir.Enabled = false;
-            LimpiarDatos();
-            txthidIdSegui.Text = "0";
+                toolButGuardar.Enabled = true;
+                toolButImprimir.Enabled = false;
+                LimpiarDatos();
+                txthidIdSegui.Text = "0";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
         }
 
         private void toolButGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            if (validarDatos())
-            {
-                return;
-            }
-            if (validarlongitudDatos())
-            {
-                return;
-            }
-
-            // MessageBox.Show("pASO VALIDACION");
-            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                ;// Mensaje en pantallas)
-                var objSeguimiento = new SeguimientoSupervision_Supervisores();
-                objSeguimiento.Idseguimiento = Convert.ToInt32(txthidIdSegui.Text.ToString());
-                objSeguimiento.Idsupervision = Convert.ToInt32(txthidIdSup.Text.ToString());
-                objSeguimiento.Inmueble = txtInmuble.Text.Trim();
-                objSeguimiento.Gestion_direccion = txtGestionDireccion.Text.Trim();
-                objSeguimiento.Originacion = txtOriginacion.Text.Trim();
-                objSeguimiento.Tarjetas_transfer = txtTarjetasTransfer.Text.Trim();
-                objSeguimiento.Credito = txtCredito.Text.Trim();
-                objSeguimiento.Utys = txtUtys.Text.Trim();
-                objSeguimiento.Promocionales = txtPromocionales.Text.Trim();
-                objSeguimiento.Cobranza = txtCobranza.Text.Trim();
-                objSeguimiento.Fondofijo = txtFondoFijo.Text.Trim();
-                objSeguimiento.AcuerdosCompromisos = txtAcuerdosCompromisos.Text.Trim();
-                objSeguimiento.IdusuarioCreador = Globales.objpasardatosusuario.IdUsuario;
-                objSeguimiento.FechaSeguimCreacion = dtfechaSeguimiento.Value;
-                objSeguimiento.FechaCreacion = DateTime.Now;
-                var gdSeguimiento = new SeguimientosData().GuadarSeguimiento(objSeguimiento);
-                if (gdSeguimiento.Code != 0)
+                if (validarDatos())
                 {
-                    //Mensage de error con g
-                    toolButNuevo.Enabled = false;
-                    toolButGuardar.Enabled = true;
-                    MessageBox.Show(gdSeguimiento.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    toolButImprimir.Enabled = false;
+                    return;
+                }
+                if (validarlongitudDatos())
+                {
+                    return;
+                }
+
+                // MessageBox.Show("pASO VALIDACION");
+                if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    ;// Mensaje en pantallas)
+                    var objSeguimiento = new SeguimientoSupervision_Supervisores();
+                    objSeguimiento.Idseguimiento = Convert.ToInt32(txthidIdSegui.Text.ToString());
+                    objSeguimiento.Idsupervision = Convert.ToInt32(txthidIdSup.Text.ToString());
+                    objSeguimiento.Inmueble = txtInmuble.Text.Trim();
+                    objSeguimiento.Gestion_direccion = txtGestionDireccion.Text.Trim();
+                    objSeguimiento.Originacion = txtOriginacion.Text.Trim();
+                    objSeguimiento.Tarjetas_transfer = txtTarjetasTransfer.Text.Trim();
+                    objSeguimiento.Credito = txtCredito.Text.Trim();
+                    objSeguimiento.Utys = txtUtys.Text.Trim();
+                    objSeguimiento.Promocionales = txtPromocionales.Text.Trim();
+                    objSeguimiento.Cobranza = txtCobranza.Text.Trim();
+                    objSeguimiento.Fondofijo = txtFondoFijo.Text.Trim();
+                    objSeguimiento.AcuerdosCompromisos = txtAcuerdosCompromisos.Text.Trim();
+                    objSeguimiento.IdusuarioCreador = Globales.objpasardatosusuario.IdUsuario;
+                    objSeguimiento.FechaSeguimCreacion = dtfechaSeguimiento.Value;
+                    objSeguimiento.FechaCreacion = DateTime.Now;
+                    var gdSeguimiento = new SeguimientosData().GuadarSeguimiento(objSeguimiento);
+                    if (gdSeguimiento.Code != 0)
+                    {
+                        //Mensage de error con g
+                        toolButNuevo.Enabled = false;
+                        toolButGuardar.Enabled = true;
+                        MessageBox.Show(gdSeguimiento.Message.ToString(), System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        toolButImprimir.Enabled = false;
+
+                    }
+                    else
+                    {
+                        toolButNuevo.Enabled = false;
+                        toolButGuardar.Enabled = false;
+                        toolButImprimir.Enabled = true;
+                        if (txthidIdSegui.Text == "0")
+                        {
+                            MessageBox.Show("El Seguimiento ha sidoo guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El Seguimiento ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+
+                    }
 
                 }
                 else
                 {
+                    MessageBox.Show("El Seguimiento no fue guardado, por favor intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     toolButNuevo.Enabled = false;
-                    toolButGuardar.Enabled = false;
-                    toolButImprimir.Enabled = true;
-                    if (txthidIdSegui.Text == "0")
-                    {
-                        MessageBox.Show("El Seguimiento ha sidoo guardada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("El Seguimiento ha sido actualizada correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                   
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = false;
                 }
-
             }
-            else
+
+            catch (Exception ex)
             {
-                MessageBox.Show("El Seguimiento no fue guardado, por favor intente nuevamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                toolButNuevo.Enabled = false;
-                toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = false;
-            }
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
 
         }
         private bool validarDatos()
         {
-
-            if (string.IsNullOrEmpty(txtInmuble.Text.Trim()) || txtInmuble.Text.Trim() == "")
+            try
             {
-                MessageBox.Show("Ingresa la informacion del Inmueble", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtInmuble.Focus();
+                if (string.IsNullOrEmpty(txtInmuble.Text.Trim()) || txtInmuble.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion del Inmueble", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtInmuble.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtGestionDireccion.Text.Trim()) || txtGestionDireccion.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de gestión de la dirección", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtGestionDireccion.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtOriginacion.Text.Trim()) || txtOriginacion.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de Originación", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtOriginacion.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtTarjetasTransfer.Text.Trim()) || txtTarjetasTransfer.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de Tarjetas transfer", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtTarjetasTransfer.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtCredito.Text.Trim()) || txtCredito.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de Crédito", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtCredito.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtUtys.Text.Trim()) || txtUtys.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de UTYS", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtUtys.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtPromocionales.Text.Trim()) || txtPromocionales.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de promocionales", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtPromocionales.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtCobranza.Text.Trim()) || txtCobranza.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de cobranza", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtCobranza.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtFondoFijo.Text.Trim()) || txtFondoFijo.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de fondo fijo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtFondoFijo.Focus();
+                    return true;
+                }
+
+                if (string.IsNullOrEmpty(txtAcuerdosCompromisos.Text.Trim()) || txtAcuerdosCompromisos.Text.Trim() == "")
+                {
+                    MessageBox.Show("Ingresa la informacion de fondo fijo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtAcuerdosCompromisos.Focus();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-
-            if (string.IsNullOrEmpty(txtGestionDireccion.Text.Trim()) || txtGestionDireccion.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de gestión de la dirección", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtGestionDireccion.Focus();
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(txtOriginacion.Text.Trim()) || txtOriginacion.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de Originación", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtOriginacion.Focus();
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(txtTarjetasTransfer.Text.Trim()) || txtTarjetasTransfer.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de Tarjetas transfer", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtTarjetasTransfer.Focus();
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(txtCredito.Text.Trim()) || txtCredito.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de Crédito", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtCredito.Focus();
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(txtUtys.Text.Trim()) || txtUtys.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de UTYS", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtUtys.Focus();
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(txtPromocionales.Text.Trim()) || txtPromocionales.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de promocionales", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtPromocionales.Focus();
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(txtCobranza.Text.Trim()) || txtCobranza.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de cobranza", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtCobranza.Focus();
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(txtFondoFijo.Text.Trim()) || txtFondoFijo.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de fondo fijo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtFondoFijo.Focus();
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(txtAcuerdosCompromisos.Text.Trim()) || txtAcuerdosCompromisos.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingresa la informacion de fondo fijo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtAcuerdosCompromisos.Focus();
-                return true;
-            }
-
-
-            return false;
         }
 
         private bool validarlongitudDatos()
         {
-            int longitud = Globales.longitudChars;
+            try
+            {
+                int longitud = Globales.longitudChars;
 
-            if (txtInmuble.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtInmuble.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtInmuble.Focus();
-                return true;
-            }
-            if (txtGestionDireccion.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtGestionDireccion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtGestionDireccion.Focus();
-                return true;
-            }
-            if (txtOriginacion.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtOriginacion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtOriginacion.Focus();
-                return true;
-            }
-            if (txtOriginacion.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtOriginacion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtOriginacion.Focus();
-                return true;
-            }
-            if (txtTarjetasTransfer.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtTarjetasTransfer.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtTarjetasTransfer.Focus();
-                return true;
-            }
-            if (txtCredito.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtCredito.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtCredito.Focus();
-                return true;
-            }
-            if (txtUtys.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtUtys.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtUtys.Focus();
-                return true;
-            }
-            if (txtPromocionales.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtPromocionales.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtPromocionales.Focus();
-                return true;
-            }
-            if (txtCobranza.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtCobranza.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtCobranza.Focus();
-                return true;
-            }
-            if (txtFondoFijo.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtFondoFijo.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtFondoFijo.Focus();
-                return true;
-            }
-            if (txtAcuerdosCompromisos.Text.Length >= longitud)
-            {
-                MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtAcuerdosCompromisos.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtAcuerdosCompromisos.Focus();
-                return true;
+                if (txtInmuble.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtInmuble.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtInmuble.Focus();
+                    return true;
+                }
+                if (txtGestionDireccion.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtGestionDireccion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtGestionDireccion.Focus();
+                    return true;
+                }
+                if (txtOriginacion.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtOriginacion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtOriginacion.Focus();
+                    return true;
+                }
+                if (txtOriginacion.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtOriginacion.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtOriginacion.Focus();
+                    return true;
+                }
+                if (txtTarjetasTransfer.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtTarjetasTransfer.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtTarjetasTransfer.Focus();
+                    return true;
+                }
+                if (txtCredito.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtCredito.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtCredito.Focus();
+                    return true;
+                }
+                if (txtUtys.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtUtys.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtUtys.Focus();
+                    return true;
+                }
+                if (txtPromocionales.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtPromocionales.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtPromocionales.Focus();
+                    return true;
+                }
+                if (txtCobranza.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtCobranza.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtCobranza.Focus();
+                    return true;
+                }
+                if (txtFondoFijo.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtFondoFijo.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtFondoFijo.Focus();
+                    return true;
+                }
+                if (txtAcuerdosCompromisos.Text.Length >= longitud)
+                {
+                    MessageBox.Show("El limite de caracteres es de " + longitud + " has ingresado " + txtAcuerdosCompromisos.Text.Length + " en este campo", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtAcuerdosCompromisos.Focus();
+                    return true;
+                }
+
+                return false;
             }
 
-            return false;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
         }
 
         private void LimpiarDatos()
@@ -347,59 +392,76 @@ namespace GDSfonacot.forms
 
         private void LlenarDatos()
         {
-            var objbuscaSupervision = new SupervisionesData();
-            var busqueda2 = objbuscaSupervision.BuscarSupervision(valor2.Trim());
-            int sup1=0, sup2=0;
-            if (busqueda2.Result != null)
+            try
             {
-                sup1=Convert.ToInt32(busqueda2.Result.Idsupervisor1);
-                if (busqueda2.Result.Idsupervisor2 !=null) { 
-                sup2= Convert.ToInt32(busqueda2.Result.Idsupervisor2);
-                }
-                else
+                var objbuscaSupervision = new SupervisionesData();
+                var busqueda2 = objbuscaSupervision.BuscarSupervision(valor2.Trim());
+                int sup1 = 0, sup2 = 0;
+                if (busqueda2.Result != null)
                 {
-                    sup2 = 0;
+                    sup1 = Convert.ToInt32(busqueda2.Result.Idsupervisor1);
+                    if (busqueda2.Result.Idsupervisor2 != null)
+                    {
+                        sup2 = Convert.ToInt32(busqueda2.Result.Idsupervisor2);
+                    }
+                    else
+                    {
+                        sup2 = 0;
+                    }
+                }
+
+
+                int[] varstatus = { 1, 2 };
+
+                var objSupervision = new SupervisionesData();
+                var busqueda = objSupervision.ObtenerDatosSupervision(idsup, valor2, varstatus, sup1, sup2);
+                if (busqueda.Result != null)
+                {
+                    txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
+                    txthidIdSegui.Text = "0";
+                    txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
+                    txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
+                    //txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
+                    txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
+                    txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
+                    txthidstatus.Text = busqueda.Result.Idstatus.ToString();
+                    txtSupervisor1.Text = (busqueda.Result.Supervisor1.ToString() != null ? busqueda.Result.Supervisor1.ToString() : "");
+                    if (busqueda.Result.Supervisor2 != null)
+                    {
+                        txtSupervisor2.Text = (busqueda.Result.Supervisor2.ToString() != null ? busqueda.Result.Supervisor2.ToString() : "");
+                    }
+                    else
+                    {
+                        txtSupervisor2.Text = null;
+                    }
+
+                    toolButGuardar.Enabled = true;
+                    toolButImprimir.Enabled = false;
+
                 }
             }
-
-
-            int[] varstatus = { 1, 2 };
-
-            var objSupervision = new SupervisionesData();
-            var busqueda = objSupervision.ObtenerDatosSupervision(idsup,valor2,varstatus,sup1,sup2);
-            if (busqueda.Result != null)
+            catch (Exception ex)
             {
-                txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
-                txthidIdSegui.Text = "0";
-                txtNoSupervision.Text = busqueda.Result.NoSupervision.ToString();
-                txtDirectorRegional.Text = (busqueda.Result.Director_Regional != null ? busqueda.Result.Director_Regional.ToString() : "");
-                //txtDirectorEstatal.Text = (busqueda.Result.Director_Estatal != null ? busqueda.Result.Director_Estatal.ToString() : "");
-                txtSucursal.Text = busqueda.Result.NoSucursal.ToString() + "- " + busqueda.Result.DescripcionSucursal.ToString();
-                txthidIdSup.Text = busqueda.Result.IdSupervisiones.ToString();
-                txthidstatus.Text = busqueda.Result.Idstatus.ToString();
-                txtSupervisor1.Text = (busqueda.Result.Supervisor1.ToString() != null ? busqueda.Result.Supervisor1.ToString() : "");
-                if (busqueda.Result.Supervisor2!=null)
-                {
-                    txtSupervisor2.Text = (busqueda.Result.Supervisor2.ToString() != null ? busqueda.Result.Supervisor2.ToString() : "");
-                }
-                else
-                {
-                    txtSupervisor2.Text = null;
-                }
-             
-                toolButGuardar.Enabled = true;
-                toolButImprimir.Enabled = false;
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
 
         private void toolButImprimir_Click(object sender, EventArgs e)
         {
-            forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(4);//crea una instancia del formulario
+            try
+            {
+                forms.FormVisorConsultarSupervCR frmvisor = new forms.FormVisorConsultarSupervCR(4);//crea una instancia del formulario
 
-            frmvisor.param1 = txthidIdSup.Text;
-            frmvisor.param2 = txthidIdSegui.Text;
-            frmvisor.ShowDialog();
+                frmvisor.param1 = txthidIdSup.Text;
+                frmvisor.param2 = txthidIdSegui.Text;
+                frmvisor.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
     }

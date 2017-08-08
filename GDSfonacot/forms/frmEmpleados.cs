@@ -381,6 +381,10 @@ namespace GDSfonacot.forms
                 {
                     txtNombre.Enabled = false;
                     txtGafete.Enabled = false;
+                    cmbSucursal.Enabled = false;
+                    cmbTipoPersonal.Enabled = false;
+                    cmbPerfilSistema.Enabled = false;
+                    cmbClasificacion.Enabled = false;
                 }
                 else
                 {

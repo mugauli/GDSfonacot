@@ -19,133 +19,149 @@ namespace GDSfonacot.forms
      
         public frmUsuarios(int usuario)
         {
-            InitializeComponent();
-            LoadingCatalogos();
-            Idusuario = usuario;
-            if (Idusuario != 0) {
-                CargarUsuario(Idusuario);
-            }
-            else
+            try
             {
-                LimpiarDatos();
+                InitializeComponent();
+                LoadingCatalogos();
+                Idusuario = usuario;
+                if (Idusuario != 0)
+                {
+                    CargarUsuario(Idusuario);
+                }
+                else
+                {
+                    LimpiarDatos();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (Globales.objpasardatosusuario.IdNivel != 1)
+            try
             {
-                MessageBox.Show("Solo el administrador tiene acceso a esta accion", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
-                return;
-            }
-
-            var mensaje = string.Empty;
-            if (ValidateUsuario(out mensaje))
-            {
-                MessageBox.Show(mensaje);
-                return;
-            }
-            if (txthidIdusuario.Text == "0")
-            {
-                var objbuscaUsuario = new UsuariosData();
-                var busqueda = objbuscaUsuario.BuscarUsuario(txtGafete.Text.Trim());
-                if (busqueda.Result != null)
+                if (Globales.objpasardatosusuario.IdNivel != 1)
                 {
-                    MessageBox.Show("El usuario '" + txtGafete.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtGafete.Focus();
+                    MessageBox.Show("Solo el administrador tiene acceso a esta accion", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);// Mensaje en pantallas
                     return;
                 }
-            }
 
-
-            if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                var usuario = new Usuarios();
-                usuario.IdUsuario = Convert.ToInt32(txthidIdusuario.Text.ToString());
-                usuario.Nombre_Usuario = txtNombre.Text.ToString();
-                usuario.Usuario = txtGafete.Text.ToString();
-                usuario.Pass = Globales.Encriptar(txtpassword.Text.ToString());
-                usuario.IdNivel = Convert.ToInt32(cmbNivelusuario.SelectedValue);
-                usuario.IdSucursal = Convert.ToInt32(cmbSucursales.SelectedValue);
-
-                if (Convert.ToInt32(txthidIdusuario.Text.ToString()) == 0)
+                var mensaje = string.Empty;
+                if (ValidateUsuario(out mensaje))
                 {
-                    usuario.fechaalta = System.DateTime.Now;
-                    usuario.fechabaja = null;
-                    usuario.fechareingreso = null;
+                    MessageBox.Show(mensaje);
+                    return;
                 }
-                else
+                if (txthidIdusuario.Text == "0")
                 {
-                    if (checkinactivar.Checked == true)
+                    var objbuscaUsuario = new UsuariosData();
+                    var busqueda = objbuscaUsuario.BuscarUsuario(txtGafete.Text.Trim());
+                    if (busqueda.Result != null)
                     {
-                        usuario.fechabaja = System.DateTime.Now;
+                        MessageBox.Show("El usuario '" + txtGafete.Text.Trim() + "' ya se encuentra registrado,favor de corregir", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txtGafete.Focus();
+                        return;
+                    }
+                }
+
+
+                if (MessageBox.Show("¿La información es correcta? por favor verifique antes de ser registrada", System.Windows.Forms.Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                {
+                    var usuario = new Usuarios();
+                    usuario.IdUsuario = Convert.ToInt32(txthidIdusuario.Text.ToString());
+                    usuario.Nombre_Usuario = txtNombre.Text.ToString();
+                    usuario.Usuario = txtGafete.Text.ToString();
+                    usuario.Pass = Globales.Encriptar(txtpassword.Text.ToString());
+                    usuario.IdNivel = Convert.ToInt32(cmbNivelusuario.SelectedValue);
+                    usuario.IdSucursal = Convert.ToInt32(cmbSucursales.SelectedValue);
+
+                    if (Convert.ToInt32(txthidIdusuario.Text.ToString()) == 0)
+                    {
+                        usuario.fechaalta = System.DateTime.Now;
+                        usuario.fechabaja = null;
                         usuario.fechareingreso = null;
                     }
                     else
                     {
-                        //usuario.fechareingreso = System.DateTime.Now;
-                        //usuario.fechabaja = null;
-                        if (fechaalta.Visible==true && fechabaja.Visible==true && lblfechareingreso.Visible==false)
+                        if (checkinactivar.Checked == true)
                         {
-                            #region muestradatos
-                            usuario.fechabaja = null;
-                            usuario.fechareingreso = System.DateTime.Now;
-                            fecha = null;
-                            #endregion
+                            usuario.fechabaja = System.DateTime.Now;
+                            usuario.fechareingreso = null;
                         }
                         else
                         {
-                            if (fechaalta.Visible == true && lblfechareingreso.Visible == false && fechabaja.Visible==true)
+                            //usuario.fechareingreso = System.DateTime.Now;
+                            //usuario.fechabaja = null;
+                            if (fechaalta.Visible == true && fechabaja.Visible == true && lblfechareingreso.Visible == false)
                             {
                                 #region muestradatos
                                 usuario.fechabaja = null;
-                                usuario.fechareingreso = null;
+                                usuario.fechareingreso = System.DateTime.Now;
                                 fecha = null;
                                 #endregion
                             }
-                            else if (fechaalta.Visible == true && fechabaja.Visible==false && lblfechareingreso.Visible==true)
+                            else
                             {
-                                #region muestradatos
-                                usuario.fechabaja = null;
-                                fecha = Convert.ToString(dtfechareingreso.Value);
-                                usuario.fechareingreso = Convert.ToDateTime(fecha);
-                                #endregion
-                            }
-                            else if (fechaalta.Visible == true && fechabaja.Visible == false && lblfechareingreso.Visible == false)
-                            {
-                                #region muestradatos
-                                usuario.fechabaja = null;
-                                usuario.fechareingreso = null;
-                                #endregion
+                                if (fechaalta.Visible == true && lblfechareingreso.Visible == false && fechabaja.Visible == true)
+                                {
+                                    #region muestradatos
+                                    usuario.fechabaja = null;
+                                    usuario.fechareingreso = null;
+                                    fecha = null;
+                                    #endregion
+                                }
+                                else if (fechaalta.Visible == true && fechabaja.Visible == false && lblfechareingreso.Visible == true)
+                                {
+                                    #region muestradatos
+                                    usuario.fechabaja = null;
+                                    fecha = Convert.ToString(dtfechareingreso.Value);
+                                    usuario.fechareingreso = Convert.ToDateTime(fecha);
+                                    #endregion
+                                }
+                                else if (fechaalta.Visible == true && fechabaja.Visible == false && lblfechareingreso.Visible == false)
+                                {
+                                    #region muestradatos
+                                    usuario.fechabaja = null;
+                                    usuario.fechareingreso = null;
+                                    #endregion
+                                }
                             }
                         }
                     }
-                }
 
-                var objusuario = new UsuariosData().GuardarUsuario(usuario,checkinactivar.Checked);
-                if (objusuario.Code != 0)
-                {
-                    MessageBox.Show("Error: " + objusuario.Message);
-                    return;
-                    //Mandar mensaje de error con sucursales.Message
-                }
-           
-                else
-                {
-                    if (txthidIdusuario.Text == "0")
+                    var objusuario = new UsuariosData().GuardarUsuario(usuario, checkinactivar.Checked);
+                    if (objusuario.Code != 0)
                     {
-                        MessageBox.Show("El nuevo usuario ha sido guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiarDatos();
-                        this.Close();
+                        MessageBox.Show("Error: " + objusuario.Message);
+                        return;
+                        //Mandar mensaje de error con sucursales.Message
                     }
+
                     else
                     {
-                        MessageBox.Show("El usuario ha sido actualizado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CargarUsuario(Convert.ToInt32(txthidIdusuario.Text.ToString()));
-                        this.Close();
+                        if (txthidIdusuario.Text == "0")
+                        {
+                            MessageBox.Show("El nuevo usuario ha sido guardado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimpiarDatos();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El usuario ha sido actualizado correctamente", System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarUsuario(Convert.ToInt32(txthidIdusuario.Text.ToString()));
+                            this.Close();
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
 
@@ -162,109 +178,85 @@ namespace GDSfonacot.forms
             if (cmbSucursales.SelectedIndex == -1) mensaje += "Favor de seleccionar sucursal\n";
 
             return !(mensaje == string.Empty);
+
         }
 
         private void LoadingCatalogos()
         {
-          
-            #region ctSucursal
-
-            var sucursales = new SucursalesData().ObtenerSucursalesCombo();
-            if (sucursales.Code != 0)
+            try
             {
-                MessageBox.Show("Error: " + sucursales.Message);
-                return;
-                //Mandar mensaje de error con sucursales.Message
+                #region ctSucursal
+
+                var sucursales = new SucursalesData().ObtenerSucursalesCombo();
+                if (sucursales.Code != 0)
+                {
+                    MessageBox.Show("Error: " + sucursales.Message);
+                    return;
+                    //Mandar mensaje de error con sucursales.Message
+                }
+
+                cmbSucursales.DataSource = sucursales.Result;
+                cmbSucursales.DisplayMember = "NameSucursal";
+                cmbSucursales.ValueMember = "IdSucursal";
+                cmbSucursales.SelectedIndex = -1;
+
+                #endregion
+
+                #region ctnivelusuario
+
+                var nivelusuario = new CatalogosData().ObtenerNivelUsuario();
+                if (nivelusuario.Code != 0)
+                {
+                    MessageBox.Show("Error: " + nivelusuario.Message);
+                    return;
+                    //Mandar mensaje de error con sucursales.Message
+                }
+
+                cmbNivelusuario.DataSource = nivelusuario.Result;
+                cmbNivelusuario.DisplayMember = "Nivel_Usuario";
+                cmbNivelusuario.ValueMember = "IdNivel";
+                cmbNivelusuario.SelectedIndex = -1;
+
+                #endregion
             }
-
-            cmbSucursales.DataSource = sucursales.Result;
-            cmbSucursales.DisplayMember = "NameSucursal";
-            cmbSucursales.ValueMember = "IdSucursal";
-            cmbSucursales.SelectedIndex = -1;
-
-            #endregion
-
-            #region ctnivelusuario
-
-            var nivelusuario = new CatalogosData().ObtenerNivelUsuario();
-            if (nivelusuario.Code != 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: " + nivelusuario.Message);
-                return;
-                //Mandar mensaje de error con sucursales.Message
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-
-            cmbNivelusuario.DataSource = nivelusuario.Result;
-            cmbNivelusuario.DisplayMember = "Nivel_Usuario";
-            cmbNivelusuario.ValueMember = "IdNivel";
-            cmbNivelusuario.SelectedIndex = -1;
-
-            #endregion
 
         }
 
         private void CargarUsuario(int Idusuario)
         {
-            var usuarioDB = new UsuariosData().ObtenerUsuarios(Idusuario);
-            if (usuarioDB.Code != 0 || usuarioDB.Result.Count < 1)
+            try
             {
-                MessageBox.Show("Error: " + usuarioDB.Message);
-                return;
-            }
-            if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
-            {
-                txtGafete.Enabled = false;
-                
-            }
-            else
-            {
-                txtGafete.Enabled = true;
-            }
-
-            var usu = usuarioDB.Result.First();
-
-            txthidIdusuario.Text = usu.IdUsuario.ToString();
-            cmbSucursales.SelectedValue = usu.IdSucursal;
-            cmbNivelusuario.SelectedValue = usu.IdNivel;
-            txtNombre.Text = usu.Nombre_Usuario;
-            txtGafete.Text = usu.Usuario;
-            txtGafete.Enabled = false;
-            txtpassword.Text =Globales.Desencriptar(usu.Pass);
-            if (usu.fechaalta != null && usu.fechabaja!= null && usu.fechareingreso== null)
-            {
-                #region muestradatos
-                dtFechaalta.Visible = true;
-                dtFechaalta.Enabled = false;
-                dtFechaalta.Value = usu.fechaalta.Value;
-                fechaalta.Visible = true;
-                checkinactivar.Checked = false;
-                dtpickerfechabaja.Visible = true;
-                dtpickerfechabaja.Enabled = false;
-                dtpickerfechabaja.Value = usu.fechabaja.Value;
-                fechabaja.Visible = true;
-                dtfechareingreso.Visible = false;
-                dtfechareingreso.Enabled = false;
-                lblfechareingreso.Visible = false;
-                #endregion
-            }
-            else
-            {
-                if (usu.fechaalta != null && usu.fechareingreso==null && usu.fechabaja==null) {
-                    #region muestradatos
-                    dtFechaalta.Visible = true;
-                    dtFechaalta.Enabled = false;
-                    dtFechaalta.Value = usu.fechaalta.Value;
-                    fechaalta.Visible = true;
-                    checkinactivar.Checked = false;
-                    dtpickerfechabaja.Visible = false;
-                    dtpickerfechabaja.Enabled = false;
-                    fechabaja.Visible = false;
-                    dtfechareingreso.Visible = false;
-                    dtfechareingreso.Enabled = false;
-                    lblfechareingreso.Visible = false;
-                    #endregion
+                var usuarioDB = new UsuariosData().ObtenerUsuarios(Idusuario);
+                if (usuarioDB.Code != 0 || usuarioDB.Result.Count < 1)
+                {
+                    MessageBox.Show("Error: " + usuarioDB.Message);
+                    return;
                 }
-                else if (usu.fechaalta!= null && usu.fechabaja == null && usu.fechareingreso != null)
+                if (Globales.objpasardatosusuario.IdNivel == 2 || Globales.objpasardatosusuario.IdNivel == 3)
+                {
+                    txtGafete.Enabled = false;
+
+                }
+                else
+                {
+                    txtGafete.Enabled = true;
+                }
+
+                var usu = usuarioDB.Result.First();
+
+                txthidIdusuario.Text = usu.IdUsuario.ToString();
+                cmbSucursales.SelectedValue = usu.IdSucursal;
+                cmbNivelusuario.SelectedValue = usu.IdNivel;
+                txtNombre.Text = usu.Nombre_Usuario;
+                txtGafete.Text = usu.Usuario;
+                txtGafete.Enabled = false;
+                txtpassword.Text = Globales.Desencriptar(usu.Pass);
+                if (usu.fechaalta != null && usu.fechabaja != null && usu.fechareingreso == null)
                 {
                     #region muestradatos
                     dtFechaalta.Visible = true;
@@ -272,18 +264,59 @@ namespace GDSfonacot.forms
                     dtFechaalta.Value = usu.fechaalta.Value;
                     fechaalta.Visible = true;
                     checkinactivar.Checked = false;
-                    dtpickerfechabaja.Visible = false;
+                    dtpickerfechabaja.Visible = true;
                     dtpickerfechabaja.Enabled = false;
-                    fechabaja.Visible = false;
-                    dtfechareingreso.Visible = true;
+                    dtpickerfechabaja.Value = usu.fechabaja.Value;
+                    fechabaja.Visible = true;
+                    dtfechareingreso.Visible = false;
                     dtfechareingreso.Enabled = false;
-                    lblfechareingreso.Visible = true;
-                    dtfechareingreso.Value = usu.fechareingreso.Value;
+                    lblfechareingreso.Visible = false;
                     #endregion
-                }             
+                }
+                else
+                {
+                    if (usu.fechaalta != null && usu.fechareingreso == null && usu.fechabaja == null)
+                    {
+                        #region muestradatos
+                        dtFechaalta.Visible = true;
+                        dtFechaalta.Enabled = false;
+                        dtFechaalta.Value = usu.fechaalta.Value;
+                        fechaalta.Visible = true;
+                        checkinactivar.Checked = false;
+                        dtpickerfechabaja.Visible = false;
+                        dtpickerfechabaja.Enabled = false;
+                        fechabaja.Visible = false;
+                        dtfechareingreso.Visible = false;
+                        dtfechareingreso.Enabled = false;
+                        lblfechareingreso.Visible = false;
+                        #endregion
+                    }
+                    else if (usu.fechaalta != null && usu.fechabaja == null && usu.fechareingreso != null)
+                    {
+                        #region muestradatos
+                        dtFechaalta.Visible = true;
+                        dtFechaalta.Enabled = false;
+                        dtFechaalta.Value = usu.fechaalta.Value;
+                        fechaalta.Visible = true;
+                        checkinactivar.Checked = false;
+                        dtpickerfechabaja.Visible = false;
+                        dtpickerfechabaja.Enabled = false;
+                        fechabaja.Visible = false;
+                        dtfechareingreso.Visible = true;
+                        dtfechareingreso.Enabled = false;
+                        lblfechareingreso.Visible = true;
+                        dtfechareingreso.Value = usu.fechareingreso.Value;
+                        #endregion
+                    }
+                }
+                btnNuevo.Enabled = false;
+                btnGuardar.Enabled = true;
             }
-            btnNuevo.Enabled = false;
-            btnGuardar.Enabled = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex, System.Windows.Forms.Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
        
 

@@ -109,9 +109,7 @@ C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSf
 C:\Users\jesus.sanchez\Documents\SourceTree\GDSFonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmReasignarSuperv.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.csprojResolveAssemblyReference.cache
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.FormVisorConsultarSupervCR.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.formVisorReportes.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmBusquedaSucursal.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmAgregarSucursal.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmBusquedaSupervisiones.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmCerrarSupervision.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmContestacionSucursal.resources
@@ -127,7 +125,6 @@ C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.MDIP
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.forms.frmSucursales.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.Properties.Resources.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.PersonalSucursales.resources
-C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.SeguimientoSup.resources
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\obj\Debug\GDSfonacot.csproj.GenerateResource.Cache
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\GDSfonacot.exe.config
 C:\Users\jesus.sanchez\Desktop\GDSInfonacot\GDSfonacot\bin\Debug\GDSfonacot.exe

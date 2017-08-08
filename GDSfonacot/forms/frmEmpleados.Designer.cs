@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbClasificacion = new System.Windows.Forms.ComboBox();
+            this.checkinactivar = new System.Windows.Forms.CheckBox();
+            this.dtreingresotemp = new System.Windows.Forms.DateTimePicker();
             this.dtfechareingreso = new System.Windows.Forms.DateTimePicker();
             this.lblfechareingreso = new System.Windows.Forms.Label();
             this.dtpickerfechabaja = new System.Windows.Forms.DateTimePicker();
@@ -58,10 +62,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dtreingresotemp = new System.Windows.Forms.DateTimePicker();
-            this.checkinactivar = new System.Windows.Forms.CheckBox();
-            this.cmbClasificacion = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tableLayoutPanel1.Controls.Add(this.label11, 4, 6);
             this.tableLayoutPanel1.Controls.Add(this.cmbClasificacion, 4, 5);
             this.tableLayoutPanel1.Controls.Add(this.checkinactivar, 1, 7);
@@ -127,6 +127,56 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(832, 266);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(610, 148);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(184, 20);
+            this.label11.TabIndex = 331;
+            this.label11.Text = "Clasificacion";
+            // 
+            // cmbClasificacion
+            // 
+            this.cmbClasificacion.BackColor = System.Drawing.SystemColors.MenuText;
+            this.cmbClasificacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbClasificacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbClasificacion.ForeColor = System.Drawing.Color.White;
+            this.cmbClasificacion.FormattingEnabled = true;
+            this.cmbClasificacion.Location = new System.Drawing.Point(609, 121);
+            this.cmbClasificacion.Name = "cmbClasificacion";
+            this.cmbClasificacion.Size = new System.Drawing.Size(186, 24);
+            this.cmbClasificacion.TabIndex = 330;
+            // 
+            // checkinactivar
+            // 
+            this.checkinactivar.AutoSize = true;
+            this.checkinactivar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkinactivar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.checkinactivar.Location = new System.Drawing.Point(33, 171);
+            this.checkinactivar.Name = "checkinactivar";
+            this.checkinactivar.Size = new System.Drawing.Size(186, 24);
+            this.checkinactivar.TabIndex = 329;
+            this.checkinactivar.Text = "Inactivo";
+            this.checkinactivar.UseVisualStyleBackColor = true;
+            // 
+            // dtreingresotemp
+            // 
+            this.dtreingresotemp.CalendarForeColor = System.Drawing.Color.White;
+            this.dtreingresotemp.CalendarTitleBackColor = System.Drawing.Color.Black;
+            this.dtreingresotemp.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtreingresotemp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtreingresotemp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtreingresotemp.Location = new System.Drawing.Point(225, 221);
+            this.dtreingresotemp.Name = "dtreingresotemp";
+            this.dtreingresotemp.Size = new System.Drawing.Size(186, 20);
+            this.dtreingresotemp.TabIndex = 328;
+            this.dtreingresotemp.Visible = false;
             // 
             // dtfechareingreso
             // 
@@ -498,56 +548,6 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // dtreingresotemp
-            // 
-            this.dtreingresotemp.CalendarForeColor = System.Drawing.Color.White;
-            this.dtreingresotemp.CalendarTitleBackColor = System.Drawing.Color.Black;
-            this.dtreingresotemp.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dtreingresotemp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtreingresotemp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtreingresotemp.Location = new System.Drawing.Point(225, 221);
-            this.dtreingresotemp.Name = "dtreingresotemp";
-            this.dtreingresotemp.Size = new System.Drawing.Size(186, 20);
-            this.dtreingresotemp.TabIndex = 328;
-            this.dtreingresotemp.Visible = false;
-            // 
-            // checkinactivar
-            // 
-            this.checkinactivar.AutoSize = true;
-            this.checkinactivar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkinactivar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.checkinactivar.Location = new System.Drawing.Point(33, 171);
-            this.checkinactivar.Name = "checkinactivar";
-            this.checkinactivar.Size = new System.Drawing.Size(186, 24);
-            this.checkinactivar.TabIndex = 329;
-            this.checkinactivar.Text = "Inactivo";
-            this.checkinactivar.UseVisualStyleBackColor = true;
-            // 
-            // cmbClasificacion
-            // 
-            this.cmbClasificacion.BackColor = System.Drawing.SystemColors.MenuText;
-            this.cmbClasificacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbClasificacion.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbClasificacion.ForeColor = System.Drawing.Color.White;
-            this.cmbClasificacion.FormattingEnabled = true;
-            this.cmbClasificacion.Location = new System.Drawing.Point(609, 121);
-            this.cmbClasificacion.Name = "cmbClasificacion";
-            this.cmbClasificacion.Size = new System.Drawing.Size(186, 24);
-            this.cmbClasificacion.TabIndex = 330;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(610, 148);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(184, 20);
-            this.label11.TabIndex = 331;
-            this.label11.Text = "Clasificacion";
             // 
             // frmEmpleados
             // 
